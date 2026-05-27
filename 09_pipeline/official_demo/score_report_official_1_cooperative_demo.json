@@ -1,0 +1,234 @@
+{
+  "dialogue_id": "official_1_cooperative_demo",
+  "instruction_id": "official_1_feimaotui",
+  "score_report": {
+    "final_score": 45,
+    "raw_score": 76.25,
+    "ceiling": 45,
+    "ceiling_reason": "Critical通过率50% → 上限45",
+    "dim_scores": {
+      "D1_flow_compliance": 25.0,
+      "D2_task_completion": 100.0,
+      "D3_constraint_compliance": 100.0,
+      "D4_knowledge_accuracy": 100.0,
+      "D5_dialogue_quality": 66.67
+    },
+    "critical_pass_rate": 0.5,
+    "red_line_violations": [],
+    "suggestions": [
+      {
+        "priority": "P0_CRITICAL",
+        "msg": "3 条关键约束失败",
+        "constraint_ids": [
+          "official_1_feimaotui_C07",
+          "official_1_feimaotui_C08",
+          "official_1_feimaotui_C09"
+        ]
+      },
+      {
+        "priority": "P1_DIM",
+        "msg": "维度【流程遵循度】得分 25.0/100 最低",
+        "constraint_ids": [
+          "official_1_feimaotui_C07",
+          "official_1_feimaotui_C08",
+          "official_1_feimaotui_C09"
+        ]
+      }
+    ]
+  },
+  "detailed_suggestions": [
+    {
+      "constraint_id": "official_1_feimaotui_C07",
+      "constraint_name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
+      "priority": "P0_CRITICAL",
+      "severity": "严重",
+      "category": "流程步骤 S1",
+      "problem": "缺失流程步骤 S1 的核心动作",
+      "evidence": "缺失关键词: ['告知', '询问', '骑手']",
+      "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S1 要做的是「告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S1→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+      "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+      "example": "S1 核心动作示例: '告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。'"
+    },
+    {
+      "constraint_id": "official_1_feimaotui_C08",
+      "constraint_name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
+      "priority": "P0_CRITICAL",
+      "severity": "严重",
+      "category": "流程步骤 S2",
+      "problem": "缺失流程步骤 S2 的核心动作",
+      "evidence": "缺失关键词: ['说明']",
+      "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S2 要做的是「说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S2→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+      "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+      "example": "S2 核心动作示例: '说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。'"
+    },
+    {
+      "constraint_id": "official_1_feimaotui_C09",
+      "constraint_name": "S3 尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
+      "priority": "P0_CRITICAL",
+      "severity": "严重",
+      "category": "流程步骤 S3",
+      "problem": "缺失流程步骤 S3 的核心动作",
+      "evidence": "缺失关键词: ['提醒', '骑手']",
+      "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S3 要做的是「尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S3→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+      "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+      "example": "S3 核心动作示例: '尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。'"
+    },
+    {
+      "constraint_id": "official_1_feimaotui_C03",
+      "constraint_name": "保持语气随意，像打电话一样自然。",
+      "priority": "P2_MEDIUM",
+      "severity": "中等",
+      "category": "语言风格",
+      "problem": "语气不够口语化（偏书面/列点/文言）",
+      "evidence": "口语词:[] 书面词:[] 均长:23",
+      "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+      "expected_impact": "修复后 D5 对话质量 +5-8 分",
+      "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+    }
+  ],
+  "verdict_details": [
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "official_1_feimaotui_C01",
+      "constraint_name": "遵循对话流程和常见问题解答。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "na",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "用户未问越界问题, 约束未触发",
+      "constraint_id": "official_1_feimaotui_C02",
+      "constraint_name": "如被问及超出职责范围的问题，回复：\"我向同事确认后再回电给你。我现在能回答...",
+      "verifier_type": "llm_extract_then_rule"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "口语词:[] 书面词:[] 均长:23",
+      "confidence": 0.4,
+      "reason": "口语化: 失败 (书面词0/均长23/口语词0)",
+      "constraint_id": "official_1_feimaotui_C03",
+      "constraint_name": "保持语气随意，像打电话一样自然。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "official_1_feimaotui_C04",
+      "constraint_name": "每次回复控制在约 30 个字以内。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "未检测到大段重复",
+      "confidence": 0.8,
+      "reason": "未发现重复",
+      "constraint_id": "official_1_feimaotui_C05",
+      "constraint_name": "避免重复回复；如需重申，请换种方式礼貌表达。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "official_1_feimaotui_C06",
+      "constraint_name": "如果骑手坚持确实无法配送，安慰他们后挂断电话。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "缺失关键词: ['告知', '询问', '骑手']",
+      "confidence": 0.6,
+      "reason": "只匹配 1/4 (25%, 不足 2 个)",
+      "constraint_id": "official_1_feimaotui_C07",
+      "constraint_name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "缺失关键词: ['说明']",
+      "confidence": 0.6,
+      "reason": "只匹配 0/1 (0%, 不足 1 个)",
+      "constraint_id": "official_1_feimaotui_C08",
+      "constraint_name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "缺失关键词: ['提醒', '骑手']",
+      "confidence": 0.6,
+      "reason": "只匹配 0/2 (0%, 不足 1 个)",
+      "constraint_id": "official_1_feimaotui_C09",
+      "constraint_name": "S3 尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "turn1,9 含 ['超时', '站长']",
+      "confidence": 0.7857142857142857,
+      "reason": "匹配关键词 2/7 (29%, 阈值≥2个)",
+      "constraint_id": "official_1_feimaotui_C10",
+      "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "无法从约束推断'必含关键词',跳过",
+      "constraint_id": "official_1_feimaotui_C11",
+      "constraint_name": "[META] 开场白含必要变量",
+      "verifier_type": "rule_pattern"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "所有变量都已正确替换",
+      "constraint_id": "official_1_feimaotui_C12",
+      "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+      "verifier_type": "rule"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "对话 6 轮, assistant 总字数 143",
+      "confidence": 0.8,
+      "reason": "任务完整性的简单 mock 判定",
+      "constraint_id": "official_1_feimaotui_C13",
+      "constraint_name": "[META] 任务核心意图完成",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "最后回复: 加油，祝你单子多多。",
+      "confidence": 0.8,
+      "reason": "助手礼貌结束对话",
+      "constraint_id": "official_1_feimaotui_C14",
+      "constraint_name": "[META] 适时终结对话",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "未检测到明显矛盾",
+      "confidence": 0.6,
+      "reason": "FAQ 知识准确性 mock 判定",
+      "constraint_id": "official_1_feimaotui_C15",
+      "constraint_name": "[META] FAQ知识正确",
+      "verifier_type": "llm_extract_then_rule"
+    }
+  ],
+  "stats": {
+    "total_constraints": 15,
+    "pass": 6,
+    "fail": 4,
+    "na": 1,
+    "not_implemented": 4,
+    "error": 0
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Flow DAG Schema for Outbound Call Instructions",
+  "description": "支持嵌套子节点、分支条件、子流程的对话流程图Schema",
+  "type": "object",
+  "required": ["dag_id", "nodes", "edges", "entry_node", "exit_nodes"],
+  "properties": {
+    "dag_id": {
+      "type": "string",
+      "description": "DAG唯一标识"
+    },
+    "entry_node": {
+      "type": "string",
+      "description": "入口节点ID（开场白后第一个真正的对话节点）"
+    },
+    "exit_nodes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "终止节点ID列表（可能有多个，如正常结束/主动挂断）"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/Node"}
+    },
+    "edges": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/Edge"}
+    }
+  },
+  "$defs": {
+    "Node": {
+      "type": "object",
+      "required": ["id", "type", "label"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "节点ID，支持嵌套表示如 S3.1, S4.2.1"
+        },
+        "parent_id": {
+          "type": "string",
+          "description": "父节点ID（用于嵌套子节点）",
+          "default": null
+        },
+        "type": {
+          "type": "string",
+          "enum": ["step", "sub_step", "branch", "sub_flow_step", "terminal"],
+          "description": "节点类型: step=主流程步骤, sub_step=嵌套子步骤, branch=分支判定点, sub_flow_step=子流程的有序步骤, terminal=终止节点"
+        },
+        "label": {
+          "type": "string",
+          "description": "节点的简短描述"
+        },
+        "purpose": {
+          "type": "string",
+          "description": "该节点要达成的对话目的（详细描述）"
+        },
+        "expected_assistant_action": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "assistant在此节点期望做的动作列表"
+        },
+        "reference_utterances": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "参考话术（指令原文给的）"
+        },
+        "is_branch_point": {
+          "type": "boolean",
+          "default": false,
+          "description": "是否为分支判定点"
+        },
+        "branch_conditions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/BranchCondition"},
+          "description": "如果is_branch_point=true，列出所有分支条件"
+        },
+        "sub_flow": {
+          "$ref": "#/$defs/SubFlow",
+          "description": "如果该节点触发一个有序子流程（如'缓慢引导开通'），记录子流程"
+        },
+        "knowledge_points_referenced": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "该节点关联的FAQ知识点ID列表"
+        }
+      }
+    },
+    "Edge": {
+      "type": "object",
+      "required": ["from", "to"],
+      "properties": {
+        "from": {"type": "string"},
+        "to": {"type": "string"},
+        "condition": {
+          "type": "string",
+          "description": "跳转条件，如 'user_is_manager', 'always', 'user_says_busy'"
+        },
+        "edge_type": {
+          "type": "string",
+          "enum": ["sequential", "branch", "interrupt", "return_after_faq"],
+          "default": "sequential",
+          "description": "边的类型: sequential=顺序推进, branch=分支选择, interrupt=被打断, return_after_faq=FAQ后返回"
+        }
+      }
+    },
+    "BranchCondition": {
+      "type": "object",
+      "required": ["condition_id", "trigger", "next_node"],
+      "properties": {
+        "condition_id": {"type": "string"},
+        "trigger": {
+          "type": "string",
+          "description": "触发条件，如 '若是负责人', '若未显示低延迟'"
+        },
+        "next_node": {
+          "type": "string",
+          "description": "满足该条件后跳到的节点ID"
+        },
+        "action_before_jump": {
+          "type": "string",
+          "description": "跳转前需要做的额外动作，如'请其转达'"
+        }
+      }
+    },
+    "SubFlow": {
+      "type": "object",
+      "required": ["sub_flow_id", "trigger_condition", "steps", "constraints"],
+      "properties": {
+        "sub_flow_id": {"type": "string"},
+        "trigger_condition": {
+          "type": "string",
+          "description": "什么情况下触发这个子流程"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "order": {"type": "integer"},
+              "instruction": {"type": "string"}
+            }
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "子流程特有约束，如 '每步暂停3秒（在文本对话中=分轮发送不能一次说完）'"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>评分报告 - official_2_cooperative_demo</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 30px 20px;
+    color: #2d3748;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+}
+.header h1 { font-size: 28px; margin-bottom: 8px; }
+.header .subtitle { font-size: 14px; opacity: 0.85; }
+.header .meta {
+    display: flex;
+    gap: 30px;
+    margin-top: 18px;
+    font-size: 13px;
+    opacity: 0.9;
+}
+.score-section {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(180deg, white 0%, #f8fafc 100%);
+}
+.score-big {
+    display: inline-block;
+    position: relative;
+}
+.score-big .number {
+    font-size: 96px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+.score-big .max {
+    font-size: 32px;
+    color: #94a3b8;
+    margin-left: 8px;
+}
+.score-grade {
+    display: inline-block;
+    padding: 6px 24px;
+    background: #dc2626;
+    color: white;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+.score-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #64748b;
+}
+.score-meta .item strong { color: #2d3748; }
+.dim-section {
+    padding: 30px 40px;
+    border-top: 1px solid #e2e8f0;
+}
+.section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1a202c;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.dim-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+.radar-container { text-align: center; }
+.dim-list { display: flex; flex-direction: column; gap: 12px; }
+.dim-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: #f8fafc;
+    border-left: 4px solid #cbd5e0;
+    border-radius: 8px;
+}
+.dim-card.good { border-left-color: #4ade80; }
+.dim-card.ok { border-left-color: #fbbf24; }
+.dim-card.bad { border-left-color: #f87171; }
+.dim-card .name { flex: 1; font-weight: 600; }
+.dim-card .score { font-size: 22px; font-weight: 700; }
+.dim-card.good .score { color: #16a34a; }
+.dim-card.ok .score { color: #d97706; }
+.dim-card.bad .score { color: #dc2626; }
+.dim-card .weight { font-size: 11px; color: #94a3b8; }
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    padding: 20px;
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+.stat-card .label { font-size: 13px; color: #64748b; margin-bottom: 8px; }
+.stat-card .value { font-size: 32px; font-weight: 700; }
+.stat-card.pass .value { color: #16a34a; }
+.stat-card.fail .value { color: #dc2626; }
+.stat-card.na .value { color: #64748b; }
+.stat-card.skip .value { color: #d97706; }
+.suggestion-section {
+    padding: 30px 40px;
+    border-top: 1px solid #e2e8f0;
+    background: #fef3c7;
+}
+.suggestion {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    border-left: 5px solid #f59e0b;
+}
+.suggestion.p0 { border-left-color: #dc2626; background: #fef2f2; }
+.suggestion.p1 { border-left-color: #ea580c; }
+.suggestion.p2 { border-left-color: #f59e0b; }
+.suggestion.p3 { border-left-color: #84cc16; }
+.suggestion .head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.suggestion .priority-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #fee2e2;
+    color: #991b1b;
+}
+.suggestion .priority-badge.p1 { background: #fed7aa; color: #9a3412; }
+.suggestion .priority-badge.p2 { background: #fef3c7; color: #92400e; }
+.suggestion .priority-badge.p3 { background: #d9f99d; color: #3f6212; }
+.suggestion .cid { font-family: monospace; color: #64748b; }
+.suggestion .problem { font-size: 15px; font-weight: 600; margin: 4px 0 12px; }
+.suggestion .field { margin: 8px 0; font-size: 13px; }
+.suggestion .field strong { color: #475569; }
+.suggestion .evidence {
+    font-family: ui-monospace, "SF Mono", monospace;
+    background: #f1f5f9;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 12px;
+}
+.suggestion .fix { background: #fefce8; padding: 10px 12px; border-radius: 6px; white-space: pre-wrap; }
+.suggestion .example { background: #ecfdf5; padding: 10px 12px; border-radius: 6px; font-style: italic; }
+.verdict-section {
+    padding: 30px 40px;
+    border-top: 1px solid #e2e8f0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+th {
+    text-align: left;
+    padding: 10px 12px;
+    background: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+tr.pass { background: #f0fdf4; }
+tr.fail { background: #fef2f2; }
+tr.na { background: #f8fafc; }
+.verdict-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+}
+.verdict-badge.pass { background: #dcfce7; color: #166534; }
+.verdict-badge.fail { background: #fee2e2; color: #991b1b; }
+.verdict-badge.na { background: #e2e8f0; color: #475569; }
+.verdict-badge.notimpl { background: #fef3c7; color: #92400e; }
+.footer {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 20px 40px;
+    font-size: 12px;
+    text-align: center;
+}
+.footer a { color: #93c5fd; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 头部 -->
+    <div class="header">
+        <h1>📊 评分报告</h1>
+        <div class="subtitle">美团对话外呼任务评测系统</div>
+        <div class="meta">
+            <span>📋 对话: official_2_cooperative_demo</span>
+            <span>📑 指令: official_2_kecheng</span>
+            <span>🔢 约束: 21 条</span>
+        </div>
+    </div>
+
+    <!-- 大字评分 -->
+    <div class="score-section">
+        <div class="score-big">
+            <span class="number">45</span><span class="max">/ 100</span>
+        </div>
+        <div><span class="score-grade">❌ 不合格</span></div>
+        <div class="score-meta">
+            <div class="item">原始分: <strong>72.2</strong></div>
+            <div class="item">上限: <strong>45</strong></div>
+            <div class="item">Critical 通过率: <strong>60%</strong></div>
+        </div>
+    </div>
+
+    <!-- 维度分 + 雷达图 -->
+    <div class="dim-section">
+        <h2 class="section-title">📐 5 维度评分</h2>
+        <div class="dim-grid">
+            <div class="radar-container">
+                <svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="140.0,115.0 163.8,132.3 154.7,160.2 125.3,160.2 116.2,132.3" fill="none" stroke="#e2e8f0" stroke-width="1"/><polygon points="140.0,90.0 187.6,124.5 169.4,180.5 110.6,180.5 92.4,124.5" fill="none" stroke="#e2e8f0" stroke-width="1"/><polygon points="140.0,65.0 211.3,116.8 184.1,200.7 95.9,200.7 68.7,116.8" fill="none" stroke="#e2e8f0" stroke-width="1"/><polygon points="140.0,40.0 235.1,109.1 198.8,220.9 81.2,220.9 44.9,109.1" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="140.0" y1="140.0" x2="140.0" y2="40.0" stroke="#cbd5e0" stroke-width="1"/><line x1="140.0" y1="140.0" x2="235.1" y2="109.1" stroke="#cbd5e0" stroke-width="1"/><line x1="140.0" y1="140.0" x2="198.8" y2="220.9" stroke="#cbd5e0" stroke-width="1"/><line x1="140.0" y1="140.0" x2="81.2" y2="220.9" stroke="#cbd5e0" stroke-width="1"/><line x1="140.0" y1="140.0" x2="44.9" y2="109.1" stroke="#cbd5e0" stroke-width="1"/>
+    <polygon points="140.0,106.7 235.1,109.1 188.1,206.2 81.2,220.9 92.4,124.5" fill="rgba(102,126,234,0.3)" stroke="rgb(102,126,234)" stroke-width="2"/>
+    <circle cx="140.0" cy="106.7" r="4" fill="rgb(102,126,234)"/><circle cx="235.1" cy="109.1" r="4" fill="rgb(102,126,234)"/><circle cx="188.1" cy="206.2" r="4" fill="rgb(102,126,234)"/><circle cx="81.2" cy="220.9" r="4" fill="rgb(102,126,234)"/><circle cx="92.4" cy="124.5" r="4" fill="rgb(102,126,234)"/>
+    <text x="140.0" y="18.0" text-anchor="middle" font-size="12" fill="#475569" dy="4">D1 流程 (33)</text><text x="256.0" y="102.3" text-anchor="start" font-size="12" fill="#475569" dy="4">D2 任务 (100)</text><text x="211.7" y="238.7" text-anchor="start" font-size="12" fill="#475569" dy="4">D3 约束 (82)</text><text x="68.3" y="238.7" text-anchor="end" font-size="12" fill="#475569" dy="4">D4 知识 (100)</text><text x="24.0" y="102.3" text-anchor="end" font-size="12" fill="#475569" dy="4">D5 对话 (50)</text>
+</svg>
+            </div>
+            <div class="dim-list">
+                
+                <div class="dim-card bad">
+                    <div class="name">D1 流程遵循度</div>
+                    <div class="score">33</div>
+                    <div class="weight">权重 25%</div>
+                </div>
+
+                <div class="dim-card good">
+                    <div class="name">D2 任务完成度</div>
+                    <div class="score">100</div>
+                    <div class="weight">权重 25%</div>
+                </div>
+
+                <div class="dim-card good">
+                    <div class="name">D3 约束遵循度</div>
+                    <div class="score">82</div>
+                    <div class="weight">权重 20%</div>
+                </div>
+
+                <div class="dim-card good">
+                    <div class="name">D4 知识准确性</div>
+                    <div class="score">100</div>
+                    <div class="weight">权重 15%</div>
+                </div>
+
+                <div class="dim-card bad">
+                    <div class="name">D5 对话质量</div>
+                    <div class="score">50</div>
+                    <div class="weight">权重 15%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 约束统计 -->
+    <div class="dim-section">
+        <h2 class="section-title">✅ 约束执行情况</h2>
+        <div class="stats-grid">
+            <div class="stat-card pass">
+                <div class="label">Pass ✅</div>
+                <div class="value">7</div>
+            </div>
+            <div class="stat-card fail">
+                <div class="label">Fail ❌</div>
+                <div class="value">4</div>
+            </div>
+            <div class="stat-card na">
+                <div class="label">N/A ➖</div>
+                <div class="value">0</div>
+            </div>
+            <div class="stat-card skip">
+                <div class="label">Not Impl ⏳</div>
+                <div class="value">10</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 优化建议 -->
+    <div class="suggestion-section">
+<h2 class="section-title">💡 优化建议 (4 条)</h2>
+
+            <div class="suggestion p0">
+                <div class="head">
+                    <span class="priority-badge p0">CRITICAL</span>
+                    <span class="cid">official_2_kecheng_C13</span>
+                    <span style="color:#94a3b8;font-size:12px">| 流程步骤 S2</span>
+                </div>
+                <div class="problem">⚠️ 缺失流程步骤 S2 的核心动作</div>
+                <div class="field"><strong>📌 证据:</strong> <span class="evidence">缺失关键词: ['询问', '说明', '临时']</span></div>
+                <div class="field"><strong>🔧 改进方法:</strong></div>
+                <div class="fix">具体改进方法:
+  1. **明确步骤目标**: S2 要做的是「**确认是否知情** - 询问："您之前选的是标准直播，但我们后台其实已为您走低」
+  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S2→... 流程
+  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X
+  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步</div>
+                <div class="field"><strong>💚 示例:</strong></div><div class="example">S2 核心动作示例: '**确认是否知情** - 询问："您之前选的是标准直播，但我们后台其实已为您走低'</div>
+                <div class="field" style="margin-top:8px;color:#16a34a"><strong>📈 修复后 D1 流程遵循度 +10-15 分</strong></div>
+            </div>
+
+            <div class="suggestion p0">
+                <div class="head">
+                    <span class="priority-badge p0">CRITICAL</span>
+                    <span class="cid">official_2_kecheng_C17</span>
+                    <span style="color:#94a3b8;font-size:12px">| 流程步骤 S6</span>
+                </div>
+                <div class="problem">⚠️ 缺失流程步骤 S6 的核心动作</div>
+                <div class="field"><strong>📌 证据:</strong> <span class="evidence">缺失关键词: ['告知', '请通过验证']</span></div>
+                <div class="field"><strong>🔧 改进方法:</strong></div>
+                <div class="fix">具体改进方法:
+  1. **明确步骤目标**: S6 要做的是「**企业微信添加** - 告知稍后通过企业微信添加，请通过验证。」
+  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S6→... 流程
+  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X
+  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步</div>
+                <div class="field"><strong>💚 示例:</strong></div><div class="example">S6 核心动作示例: '**企业微信添加** - 告知稍后通过企业微信添加，请通过验证。'</div>
+                <div class="field" style="margin-top:8px;color:#16a34a"><strong>📈 修复后 D1 流程遵循度 +10-15 分</strong></div>
+            </div>
+
+            <div class="suggestion p2">
+                <div class="head">
+                    <span class="priority-badge p2">MEDIUM</span>
+                    <span class="cid">official_2_kecheng_C02</span>
+                    <span style="color:#94a3b8;font-size:12px">| 语言风格</span>
+                </div>
+                <div class="problem">⚠️ 语气不够口语化（偏书面/列点/文言）</div>
+                <div class="field"><strong>📌 证据:</strong> <span class="evidence">口语词:[] 书面词:['便'] 均长:15</span></div>
+                <div class="field"><strong>🔧 改进方法:</strong></div>
+                <div class="fix">具体改进方法:
+  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'
+  2. **去列点**: 不用 '1./2./首先/其次/综上'
+  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'
+  4. **短句优先**: 长句拆短,像电话沟通的口语</div>
+                <div class="field"><strong>💚 示例:</strong></div><div class="example">❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'</div>
+                <div class="field" style="margin-top:8px;color:#16a34a"><strong>📈 修复后 D5 对话质量 +5-8 分</strong></div>
+            </div>
+
+            <div class="suggestion p2">
+                <div class="head">
+                    <span class="priority-badge p2">MEDIUM</span>
+                    <span class="cid">official_2_kecheng_C07</span>
+                    <span style="color:#94a3b8;font-size:12px">| 语言风格</span>
+                </div>
+                <div class="problem">⚠️ 语气不够口语化（偏书面/列点/文言）</div>
+                <div class="field"><strong>📌 证据:</strong> <span class="evidence">口语词:[] 书面词:['便'] 均长:15</span></div>
+                <div class="field"><strong>🔧 改进方法:</strong></div>
+                <div class="fix">具体改进方法:
+  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'
+  2. **去列点**: 不用 '1./2./首先/其次/综上'
+  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'
+  4. **短句优先**: 长句拆短,像电话沟通的口语</div>
+                <div class="field"><strong>💚 示例:</strong></div><div class="example">❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'</div>
+                <div class="field" style="margin-top:8px;color:#16a34a"><strong>📈 修复后 D5 对话质量 +5-8 分</strong></div>
+            </div>
+</div>
+
+    <!-- 详细判定 -->
+    <div class="verdict-section">
+        <h2 class="section-title">📋 详细判定 (Fail + 主要 Pass)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>约束 ID</th>
+                    <th>类型</th>
+                    <th>Verdict</th>
+                    <th>名称</th>
+                    <th>证据</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr class="fail">
+                <td><strong>official_2_kecheng_C02</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge fail">fail</span></td>
+                <td>使用简短、自然的口语化表达，符合电话沟通风格。</td>
+                <td style="font-size:11px;color:#64748b">口语词:[] 书面词:['便'] 均长:15</td>
+            </tr>
+
+            <tr class="fail">
+                <td><strong>official_2_kecheng_C07</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge fail">fail</span></td>
+                <td>不使用正式或冗长的解释——保持随意直接。</td>
+                <td style="font-size:11px;color:#64748b">口语词:[] 书面词:['便'] 均长:15</td>
+            </tr>
+
+            <tr class="fail">
+                <td><strong>official_2_kecheng_C13</strong></td>
+                <td>state_tracker</td>
+                <td><span class="verdict-badge fail">fail</span></td>
+                <td>S2 **确认是否知情** - 询问："您之前选的是标准直播，但我们后台其实已为您走低</td>
+                <td style="font-size:11px;color:#64748b">缺失关键词: ['询问', '说明', '临时']</td>
+            </tr>
+
+            <tr class="fail">
+                <td><strong>official_2_kecheng_C17</strong></td>
+                <td>state_tracker</td>
+                <td><span class="verdict-badge fail">fail</span></td>
+                <td>S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。</td>
+                <td style="font-size:11px;color:#64748b">缺失关键词: ['告知', '请通过验证']</td>
+            </tr>
+
+            <tr class="pass">
+                <td><strong>official_2_kecheng_C06</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge pass">pass</span></td>
+                <td>即使任务完成，若商家有疑问，继续简短作答。</td>
+                <td style="font-size:11px;color:#64748b">对话 6 轮, assistant 总字数 97</td>
+            </tr>
+
+            <tr class="pass">
+                <td><strong>official_2_kecheng_C08</strong></td>
+                <td>rule_pattern</td>
+                <td><span class="verdict-badge pass">pass</span></td>
+                <td>不说"好的"、"哈哈"、"嘿嘿"、"嘻嘻"等语气词。</td>
+                <td style="font-size:11px;color:#64748b">全程未出现禁用词</td>
+            </tr>
+
+            <tr class="pass">
+                <td><strong>official_2_kecheng_C09</strong></td>
+                <td>llm_extract_th</td>
+                <td><span class="verdict-badge pass">pass</span></td>
+                <td>不能承诺给商家折扣券或优惠券。</td>
+                <td style="font-size:11px;color:#64748b">助手全程未承诺禁止内容</td>
+            </tr>
+
+            <tr class="pass">
+                <td><strong>official_2_kecheng_C14</strong></td>
+                <td>state_tracker</td>
+                <td><span class="verdict-badge pass">pass</span></td>
+                <td>S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可</td>
+                <td style="font-size:11px;color:#64748b">turn9 含 ['费用']</td>
+            </tr>
+
+            <tr class="pass">
+                <td><strong>official_2_kecheng_C21</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge pass">pass</span></td>
+                <td>[META] 任务核心意图完成</td>
+                <td style="font-size:11px;color:#64748b">对话 6 轮, assistant 总字数 97</td>
+            </tr>
+
+            <tr class="pass">
+                <td><strong>official_2_kecheng_C22</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge pass">pass</span></td>
+                <td>[META] 适时终结对话</td>
+                <td style="font-size:11px;color:#64748b">最后回复: 那我稍后再打，再见。</td>
+            </tr>
+
+            <tr class="pass">
+                <td><strong>official_2_kecheng_C23</strong></td>
+                <td>llm_extract_th</td>
+                <td><span class="verdict-badge pass">pass</span></td>
+                <td>[META] FAQ知识正确</td>
+                <td style="font-size:11px;color:#64748b">未检测到明显矛盾</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C01</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>每次回复极简——最多 15-20 个字。</td>
+                <td style="font-size:11px;color:#64748b">llm_judge 子类型 'generic' 暂未支持 mock</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C03</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>频繁给商家发言和提问的机会。</td>
+                <td style="font-size:11px;color:#64748b">llm_judge 子类型 'give_floor' 暂未支持 mock</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C04</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>若对话被打断，使用简短过渡语，如"您刚才提到……"或"我刚说到……"。</td>
+                <td style="font-size:11px;color:#64748b">llm_judge 子类型 'transition' 暂未支持 mock</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C05</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>给出信息后，暂停等待商家回应再继续。</td>
+                <td style="font-size:11px;color:#64748b">llm_judge 子类型 'give_floor' 暂未支持 mock</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C10</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>若老板说忙，说"就1分钟，保证简短"后继续简短说明。</td>
+                <td style="font-size:11px;color:#64748b">llm_judge 子类型 'generic' 暂未支持 mock</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C11</strong></td>
+                <td>llm_judge</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>若商家说在开车，礼貌说"那我稍后再打"后挂断。</td>
+                <td style="font-size:11px;color:#64748b">llm_judge 子类型 'generic' 暂未支持 mock</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C12</strong></td>
+                <td>state_tracker</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>S1 **身份确认** - 确认对方是负责人；若不是请其转达。给出参考话术："我们对直</td>
+                <td style="font-size:11px;color:#64748b">分支判定类约束需 LLM 支持(Day 9 实现): 'S1 **身份确认** - 确认对方是负责人；若不是请其转达。给出参考话术："我'</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C15</strong></td>
+                <td>state_tracker</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系</td>
+                <td style="font-size:11px;color:#64748b">分支判定类约束需 LLM 支持(Day 9 实现): 'S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/Sa'</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C16</strong></td>
+                <td>state_tracker</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。</td>
+                <td style="font-size:11px;color:#64748b">分支判定类约束需 LLM 支持(Day 9 实现): 'S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费'</td>
+            </tr>
+
+            <tr class="na">
+                <td><strong>official_2_kecheng_C18</strong></td>
+                <td>state_tracker</td>
+                <td><span class="verdict-badge notimpl">not_implemented</span></td>
+                <td>S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结</td>
+                <td style="font-size:11px;color:#64748b">分支判定类约束需 LLM 支持(Day 9 实现): 'S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满'</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        美团黑客松命题二 | 评测系统 v1.0 | 生成时间: 2026-05-22 07:02
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1056 @@
+﻿dialogue_id,constraint_id,verdict,evidence_turn,evidence_text,confidence,notes,rater
+V1_cooperative_1779193967_000,V1_C01,pass,,T1=62字 (超) T3=16字 T5=31字 T7=45字 (超) T9=36字 (超) T11=31字 T13=34字 T15=26字 T17=37字 (超) T19=20字 T21=15字 T23=19字 T25=17字 T27=16字 T29=33字 → 违规率 3/14,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C03,fail,,口语词:有 书面词数:4 列点:无,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C05,pass,,除 30 元外无额外补贴,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C07,fail,,T11 出现了禁用词: '好的',high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C09,na,,用户未明确拒绝，分支未触发,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C10,pass,,提醒了携带三件套,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_cooperative_1779193967_000,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C01,pass,,T1=62字 (超) T3=27字 T5=44字 (超) T7=34字 T9=29字 T11=27字 T13=17字 → 违规率 1/6,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C03,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C05,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C07,fail,,T11 出现了禁用词: '没问题',high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C09,fail,,用户拒绝后，助手未按规范询问原因,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C10,pass,,提醒了携带三件套,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_cooperative_1779199886_000,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C01,pass,,T1=62字 (超) T3=28字 T5=11字 T7=29字 T9=24字 T11=23字 → 违规率 0/5,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C05,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C07,pass,,全文无禁用词,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C09,na,,用户未明确拒绝，分支未触发,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C10,pass,,提醒了携带三件套,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_cooperative_1779199977_001,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C01,fail,,T1=59字 (超) T3=33字 T5=31字 T7=18字 T9=45字 (超) T11=29字 T13=47字 (超) T15=36字 (超) T17=38字 (超) → 违规率 4/8,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C05,pass,,除 30 元外无额外补贴,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C07,pass,,全文无禁用词,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C09,pass,,用户拒绝后，助手询问了原因并表示记录,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C10,fail,,未提醒携带三件套,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_interruption_1779195182_001,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C01,pass,,T1=62字 (超) T3=11字 T5=11字 T7=19字 T9=30字 T11=47字 (超) T13=33字 T15=30字 T17=35字 T19=11字 T21=36字 (超) T23=44字 (超) T25=31字 T27=32字 T29=36字 (超) → 违规率 4/14,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C03,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C04,fail,,助手回复完全重复,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C05,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C07,pass,,全文无禁用词,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C09,na,,用户未明确拒绝，分支未触发,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C10,pass,,提醒了携带三件套,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_interruption_1779200483_000,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C01,pass,,T1=62字 (超) T3=18字 T5=27字 T7=44字 (超) T9=22字 T11=36字 (超) T13=27字 T15=25字 T17=29字 T19=21字 T21=24字 T23=25字 T25=24字 T27=24字 T29=21字 → 违规率 2/14,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C03,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C05,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C07,pass,,全文无禁用词,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C09,na,,用户未明确拒绝，分支未触发,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C10,pass,,提醒了携带三件套,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_interruption_1779200667_001,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C01,fail,,T1=62字 (超) T3=39字 (超) T5=44字 (超) T7=34字 T9=41字 (超) T11=38字 (超) T13=27字 T15=31字 → 违规率 4/7,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C02,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C03,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C05,pass,,除 30 元外无额外补贴,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C07,fail,,T3 出现了禁用词: '好的',high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C09,na,,用户未明确拒绝，分支未触发,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C10,pass,,提醒了携带三件套,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_out_of_scope_1779194673_000,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C01,fail,,T1=62字 (超) T3=38字 (超) T5=40字 (超) T7=62字 (超) T9=33字 T11=43字 (超) T13=41字 (超) T15=66字 (超) T17=43字 (超) → 违规率 7/8,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C02,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C05,pass,,除 30 元外无额外补贴,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C07,pass,,全文无禁用词,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C09,na,,用户未明确拒绝，分支未触发,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C10,pass,,提醒了携带三件套,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_out_of_scope_1779194856_001,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C01,pass,,T1=62字 (超) T3=17字 T5=30字 T7=31字 T9=33字 T11=27字 T13=39字 (超) T15=27字 T17=26字 T19=28字 T21=29字 T23=27字 → 违规率 1/11,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C02,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C05,pass,,除 30 元外无额外补贴,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C07,pass,,全文无禁用词,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C09,na,,用户未明确拒绝，分支未触发,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C10,pass,,提醒了携带三件套,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_out_of_scope_1779200168_000,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C01,fail,,T1=62字 (超) T3=53字 (超) T5=48字 (超) → 违规率 2/2,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C03,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C05,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C07,pass,,全文无禁用词,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C09,pass,,用户拒绝后，助手询问了原因并表示记录,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C10,fail,,未提醒携带三件套,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C11,pass,,告知了不参加对评级的影响,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_refuse_persistent_1779194514_000,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C01,fail,,T1=62字 (超) T3=42字 (超) T5=23字 → 违规率 1/2,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C03,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C04,pass,,无重复片段,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C05,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C06,pass,,按通用流程判定通过,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C07,fail,,T3 出现了禁用词: '没问题',high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C08,pass,,T1 包含时间、地点及邀约问句,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C09,fail,,用户拒绝后，助手未按规范询问原因,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C10,fail,,未提醒携带三件套,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C11,fail,,未提及评级影响,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C12,pass,,T1 包含骑手姓名与培训时间变量,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C13,pass,,无变量残留,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C15,pass,,对话在任务完成后正常结束,high,,human_v6_friend
+V1_refuse_persistent_1779200071_000,V1_C16,pass,,FAQ 知识回答准确,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C01,pass,,T1=75字 (超) T3=35字 T5=48字 (超) T7=34字 T9=28字 T11=28字 T13=21字 T15=28字 T17=19字 T19=10字 → 违规率 1/9,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C03,fail,,口语词:有 书面词数:3 列点:有,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C07,fail,,T13 出现了禁用词: '好的',high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_cooperative_1779195497_001,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C01,fail,,T1=69字 (超) T3=49字 (超) T5=44字 (超) T7=40字 (超) T9=39字 (超) T11=26字 T13=20字 → 违规率 4/6,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C03,fail,,口语词:有 书面词数:2 列点:无,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C07,fail,,T13 出现了禁用词: '好的',high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_cooperative_1779200835_000,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C01,pass,,T1=69字 (超) T3=32字 T5=22字 T7=32字 T9=48字 (超) → 违规率 1/4,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_interruption_1779196169_000,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C01,fail,,T1=57字 (超) T3=38字 (超) T5=34字 T7=41字 (超) T9=32字 T11=40字 (超) T13=31字 T15=44字 (超) T17=20字 → 违规率 4/8,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C03,fail,,口语词:有 书面词数:3 列点:无,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_interruption_1779196266_001,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C01,pass,,T1=69字 (超) T3=34字 T5=30字 T7=27字 T9=31字 T11=26字 T13=28字 T15=31字 T17=32字 T19=28字 T21=36字 (超) T23=33字 T25=29字 T27=31字 T29=28字 → 违规率 1/14,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C03,fail,,口语词:有 书面词数:4 列点:无,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_interruption_1779201383_000,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C01,fail,,T1=69字 (超) T3=49字 (超) T5=56字 (超) T7=45字 (超) T9=43字 (超) T11=47字 (超) T13=36字 (超) T15=43字 (超) T17=44字 (超) T19=52字 (超) T21=34字 T23=32字 T25=34字 T27=43字 (超) T29=38字 (超) → 违规率 11/14,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C03,fail,,口语词:有 书面词数:7 列点:有,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C06,fail,,助手回复完全重复,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C07,fail,,T11 出现了禁用词: '没问题',high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_interruption_1779201531_001,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C01,fail,,T1=75字 (超) T3=50字 (超) T5=47字 (超) T7=35字 T9=54字 (超) T11=42字 (超) → 违规率 4/5,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C02,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C03,fail,,口语词:有 书面词数:1 列点:有,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_out_of_scope_1779195816_000,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C01,fail,,T1=69字 (超) T3=35字 T5=50字 (超) T7=38字 (超) T9=39字 (超) T11=39字 (超) → 违规率 4/5,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C02,pass,,"触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_out_of_scope_1779201136_000,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C01,pass,,T1=69字 (超) T3=35字 T5=32字 T7=26字 → 违规率 0/3,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_refuse_persistent_1779195668_000,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C01,pass,,T1=69字 (超) T3=25字 T5=32字 → 违规率 0/2,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C03,fail,,口语词:有 书面词数:2 列点:无,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_refuse_persistent_1779195756_001,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C01,fail,,T1=69字 (超) T3=40字 (超) T5=38字 (超) → 违规率 2/2,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_refuse_persistent_1779201049_000,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C01,pass,,T1=71字 (超) T3=29字 T5=22字 → 违规率 0/2,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C02,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C03,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C04,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C05,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C06,pass,,无重复片段,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C07,pass,,全文无禁用词,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C08,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C09,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C10,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C11,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C12,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C13,pass,,流程步骤执行正确,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C14,pass,,核心任务流程已走完,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C15,pass,,无变量残留,high,,human_v6_friend
+V2_refuse_persistent_1779201097_001,V2_C16,pass,,流程步骤执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C01,fail,,T1=64字 (超) T3=30字 (超) T5=23字 T7=36字 (超) T9=31字 (超) T11=13字 → 违规率 3/5,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C07,fail,,T11 出现了禁用词: '好的',high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196436_000,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C01,fail,,T1=66字 (超) T3=29字 (超) T5=28字 (超) T7=33字 (超) T9=41字 (超) T11=24字 → 违规率 4/5,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C07,pass,,全文无禁用词,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779196534_001,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C01,fail,,T1=60字 (超) T3=37字 (超) T5=24字 T7=45字 (超) T9=31字 (超) → 违规率 3/4,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C07,fail,,T9 出现了禁用词: '好的',high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_cooperative_1779201688_000,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C01,fail,,T1=60字 (超) T3=32字 (超) T5=31字 (超) T7=43字 (超) T9=42字 (超) T11=49字 (超) T13=30字 (超) → 违规率 6/6,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C07,pass,,全文无禁用词,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197000_000,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C01,fail,,T1=66字 (超) T3=46字 (超) T5=38字 (超) T7=57字 (超) T9=52字 (超) T11=43字 (超) T13=44字 (超) → 违规率 6/6,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C07,pass,,全文无禁用词,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779197143_001,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C01,fail,,T1=60字 (超) T3=33字 (超) T5=67字 (超) T7=45字 (超) T9=63字 (超) T11=49字 (超) T13=58字 (超) T15=61字 (超) T17=57字 (超) T19=47字 (超) T21=54字 (超) T23=52字 (超) T25=61字 (超) T27=47字 (超) T29=45字 (超) → 违规率 14/14,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C07,fail,,T3 出现了禁用词: '好的',high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202116_000,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C01,fail,,T1=60字 (超) T3=31字 (超) T5=29字 (超) T7=61字 (超) T9=46字 (超) T11=48字 (超) T13=47字 (超) T15=27字 (超) T17=38字 (超) T19=31字 (超) T21=39字 (超) T23=36字 (超) T25=30字 (超) T27=33字 (超) T29=53字 (超) → 违规率 14/14,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C07,fail,,T7 出现了禁用词: '可以的',high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_interruption_1779202280_001,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C01,fail,,T1=66字 (超) T3=31字 (超) T5=24字 T7=52字 (超) T9=35字 (超) T11=54字 (超) T13=42字 (超) → 违规率 5/6,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C07,fail,,T9 出现了禁用词: '好的',high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C08,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779196755_000,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C01,fail,,T1=60字 (超) T3=34字 (超) T5=33字 (超) T7=61字 (超) T9=43字 (超) T11=48字 (超) T13=49字 (超) T15=47字 (超) T17=49字 (超) T19=47字 (超) T21=49字 (超) T23=47字 (超) → 违规率 11/11,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C07,fail,,T5 出现了禁用词: '好的',high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C08,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C09,fail,,助手回复完全重复,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_out_of_scope_1779201993_001,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C01,fail,,T1=64字 (超) T3=39字 (超) T5=31字 (超) → 违规率 2/2,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C07,pass,,全文无禁用词,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779196709_001,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C01,fail,,T1=60字 (超) T3=36字 (超) T5=40字 (超) → 违规率 2/2,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C07,pass,,全文无禁用词,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201782_000,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C01,fail,,T1=60字 (超) T3=39字 (超) T5=49字 (超) → 违规率 2/2,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C06,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C07,fail,,T5 出现了禁用词: '没问题',high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C09,pass,,无重复片段,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C20,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C21,pass,,核心任务流程已走完,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C22,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C23,pass,,无变量残留,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V4_refuse_persistent_1779201819_001,V4_C26,pass,,未发现违规补贴承诺,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C01,fail,,T1=27字 (超) T3=41字 (超) T5=67字 (超) T7=40字 (超) T9=50字 (超) T11=60字 (超) T13=64字 (超) T15=41字 (超) T17=30字 (超) → 违规率 8/8,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197281_000,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C01,fail,,T1=53字 (超) T3=38字 (超) T5=42字 (超) T7=52字 (超) T9=36字 (超) T11=41字 (超) T13=58字 (超) T15=51字 (超) → 违规率 7/7,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779197454_001,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C01,fail,,T1=53字 (超) T3=44字 (超) T5=50字 (超) T7=59字 (超) T9=52字 (超) T11=68字 (超) T13=56字 (超) T15=68字 (超) T17=69字 (超) T19=54字 (超) T21=73字 (超) T23=68字 (超) T25=70字 (超) T27=38字 (超) → 违规率 13/13,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C06,fail,,T5 出现了禁用词: '好的',high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_cooperative_1779202511_001,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C01,fail,,T1=59字 (超) T3=48字 (超) T5=72字 (超) T7=62字 (超) T9=72字 (超) T11=65字 (超) T13=46字 (超) T15=81字 (超) T17=124字 (超) T19=73字 (超) T21=112字 (超) T23=55字 (超) T25=49字 (超) → 违规率 12/12,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C02,fail,,口语词:无 书面词数:1 列点:无,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C06,fail,,T19 出现了禁用词: '好的',high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198161_000,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C01,fail,,T1=59字 (超) T3=38字 (超) T5=49字 (超) T7=55字 (超) T9=52字 (超) T11=55字 (超) T13=55字 (超) → 违规率 6/6,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779198414_001,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C01,fail,,T1=53字 (超) T3=49字 (超) T5=70字 (超) T7=66字 (超) T9=89字 (超) T11=76字 (超) T13=80字 (超) T15=87字 (超) T17=80字 (超) T19=91字 (超) T21=97字 (超) T23=95字 (超) T25=86字 (超) T27=96字 (超) T29=90字 (超) → 违规率 14/14,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C02,pass,,口语词:有 书面词数:1 列点:无,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779202919_000,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C01,fail,,T1=53字 (超) T3=37字 (超) T5=50字 (超) T7=90字 (超) T9=55字 (超) T11=72字 (超) T13=55字 (超) T15=64字 (超) T17=77字 (超) T19=76字 (超) T21=51字 (超) T23=65字 (超) T25=63字 (超) T27=57字 (超) T29=52字 (超) → 违规率 14/14,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C06,fail,,T11 出现了禁用词: '可以的',high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_interruption_1779203124_001,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C01,fail,,T1=59字 (超) T3=34字 (超) T5=46字 (超) T7=54字 (超) T9=47字 (超) T11=53字 (超) T13=47字 (超) T15=45字 (超) T17=45字 (超) T19=51字 (超) → 违规率 9/9,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C08,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197726_000,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C01,fail,,T1=57字 (超) T3=44字 (超) T5=52字 (超) T7=49字 (超) T9=54字 (超) T11=42字 (超) T13=55字 (超) T15=50字 (超) T17=39字 (超) T19=67字 (超) T21=50字 (超) → 违规率 10/10,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C08,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779197944_001,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C01,fail,,T1=53字 (超) T3=33字 (超) T5=37字 (超) T7=44字 (超) T9=46字 (超) T11=40字 (超) T13=47字 (超) T15=45字 (超) T17=45字 (超) T19=46字 (超) T21=44字 (超) T23=48字 (超) → 违规率 11/11,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C08,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202733_000,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C01,fail,,T1=53字 (超) T3=43字 (超) T5=40字 (超) T7=46字 (超) T9=45字 (超) T11=31字 (超) → 违规率 5/5,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C08,fail,,"触发 OOS, 话术使用错误",high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_out_of_scope_1779202862_001,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C01,fail,,T1=57字 (超) T3=46字 (超) T5=34字 (超) T7=24字 → 违规率 2/3,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C06,fail,,T3 出现了禁用词: '好的',high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197604_000,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C01,fail,,T1=53字 (超) T3=30字 (超) T5=22字 → 违规率 1/2,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779197677_001,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C01,fail,,T1=53字 (超) T3=51字 (超) T5=30字 (超) → 违规率 2/2,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C02,fail,,口语词:无 书面词数:0 列点:无,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C06,pass,,全文无禁用词,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202662_000,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C01,fail,,T1=53字 (超) T3=48字 (超) T5=39字 (超) T7=21字 → 违规率 2/3,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C02,pass,,口语词:有 书面词数:0 列点:无,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C03,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C04,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C05,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C06,fail,,T7 出现了禁用词: '好的',high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C07,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C08,na,,"未触发 OOS, 话术使用正确",high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C09,pass,,无重复片段,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C10,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C11,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C12,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C13,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C14,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C15,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C16,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C17,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C18,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C19,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C20,pass,,核心任务流程已走完,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C21,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C22,pass,,无变量残留,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C23,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C24,pass,,商家沟通流程执行正确,high,,human_v6_friend
+V5_refuse_persistent_1779202695_001,V5_C25,pass,,商家沟通流程执行正确,high,,human_v6_friend

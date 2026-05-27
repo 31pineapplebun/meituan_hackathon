@@ -1,0 +1,1056 @@
+﻿dialogue_id,constraint_id,verdict,evidence_turn,evidence_text,confidence,notes,rater
+V1_cooperative_1779193967_000,V1_C01,pass,,T1=62字(豁免); 非首轮超35字: T7=45字 T9=36字 T17=37字; 违规率3/14=21%,medium,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C02,na,,用户仅问培训时长/地址/考试等培训相关问题，未问越界(个人/外平台/工资)，约束未触发,medium,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C03,fail,,"口语词:咱们/行 有 | 列点:无 | 书面词""务必""T13/T19共2处 → 触发""书面词≥2""规则",medium,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C04,fail,,"""培训对评级很关键""T11/T29重复; ""保持电话畅通""T23/25/27多次重复 → 8+字跨轮重复",high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C05,pass,,"T5""出席有30块补贴""为FAQ既定补贴，非承诺额外补贴；全文无""我帮你申请额外补贴""类承诺",medium,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C06,na,,合作型，用户全程同意参加，未明确拒绝，约束未触发,high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C07,fail,,"T11出现""好的"" → 违规",high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C08,pass,,"T1含培训时间(10月15号下午2点)+地点(望京培训中心)+""能过来参加吗""",high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C09,na,,用户全程同意参加，S2不参加分支未触发,high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C10,pass,,"用户确认参加，T5提醒""头盔、工牌和身份证""三样齐全",high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C11,pass,,"T7""不参加会直接影响你接单评级""",high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C14,pass,,覆盖告知时间地点(T1)+问参加+三样提醒(T5)+评级警示(T7)，用户明确同意参加,high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C15,fail,,"用户T22/26/28多次示意结束(等电话/不打扰)，助手仍反复重申""保持电话畅通""，对话30轮被截断未自然收尾",high,,human_v6_reviewed
+V1_cooperative_1779193967_000,V1_C16,pass,,"T2问培训时长→T3答""2小时左右""准确；30元补贴前后一致，无矛盾",high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C01,pass,,T1=62字(豁免); 非首轮超35字: T5=44字; 违规率1/6=17%,high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C02,na,,用户仅问时长/材料/内容等培训相关，无越界问题,medium,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C03,pass,,口语词:哦(T3) | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C04,fail,,"""头盔、工牌和身份证""T3/T5重复(8+字跨轮)",medium,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C05,pass,,全文无承诺补贴/赔付类话术,high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C06,na,,用户表示会参加，未拒绝，未触发,high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C08,pass,,T1含时间(10月15号下午2点)+地点(望京培训中心)+问能否参加,high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C09,na,,用户表示会参加，S2分支未触发,high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C10,pass,,"T3提醒""头盔、工牌和身份证""三样",high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C11,pass,,"T5""未参加会影响接单评级""",high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C14,pass,,告知时间地点+三样提醒+评级警示，用户同意参加，反馈明确,high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C15,pass,,"T13""培训见！保持安全""自然收尾，T14用户再见，未反复追问",high,,human_v6_reviewed
+V1_cooperative_1779199886_000,V1_C16,pass,,"T2时长→T3""2小时左右""准确，无矛盾",high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C01,pass,,T1=62字(豁免); 非首轮超35字: 无超限; 违规率0/5=0%,high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C02,na,,用户问培训时长/内容/注意事项等均培训内，无越界,medium,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C03,pass,,口语词:哦(T4) | 书面词:务必(T7)1处<2 | 列点:无,medium,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C04,pass,,未见8+字跨轮重复,medium,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C05,pass,,全文无承诺补贴,high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C06,na,,用户同意参加，未拒绝，未触发,high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C08,pass,,T1含时间+地点+问能否参加,high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C09,na,,用户同意参加，未触发,high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C10,pass,,"T3提醒""头盔、工牌和身份证""三样",high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C11,pass,,"T7""没参加会直接影响接单评级""",high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C14,pass,,告知+三样(T3)+评级(T7)，用户同意参加,high,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C15,pass,,"T11""有问题随时联系""一次，T12用户再见，自然收尾",medium,,human_v6_reviewed
+V1_cooperative_1779199977_001,V1_C16,pass,,"T2时长→T3""两小时左右""准确",high,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C01,fail,,T1=59字(豁免); 非首轮超35字: T9=45字 T13=47字 T15=36字 T17=38字; 违规率4/8=50%,high,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C02,pass,,"T10/T12用户问系统卡顿/升级(职责外)，T11/T13助手用""向同事确认/记下会反馈""规定话术",medium,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C03,pass,,"口语词:啊(T9""先挂了啊"") | 书面词:无 | 列点:无",low,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C04,pass,,措辞各异，未见同一8+字片段照搬,medium,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C05,pass,,"T5""出席30块补贴""为FAQ，无额外承诺",medium,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C06,pass,,"用户T8/T14明确""那天去不了""，T15助手""那15号算缺席…先挂了""礼貌收尾",medium,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C08,pass,,"T1含时间地点+T3""能来不""问参加",high,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C09,pass,,"用户T8""那天去不了""，T7助手""具体什么事能说下吗?我记录一下原因""问原因+记录",medium,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C10,na,,用户最终表示去不了，未确认参加，S3未触发,medium,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C11,pass,,"T9""不参加会影响接单评级""",high,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C14,pass,,已通知并在用户表示去不了后记录缺席+提出联系下一批,medium,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C15,pass,,"T17仅一次""还有别的事吗""，用户T18""没别的事我挂了""收尾，未≥2追问",medium,,human_v6_reviewed
+V1_interruption_1779195182_001,V1_C16,fail,,"T9""不参加会影响接单评级""与T11""这次不参加不影响评级，放心""前后自相矛盾",high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C01,pass,,T1=62字(豁免); 非首轮超35字: T11=47字 T21=36字 T23=44字 T29=36字; 违规率4/14=29%,medium,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C02,na,,用户问题(评级降多少/请假/通知方式)均培训相关，无明确越界,low,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C03,pass,,"口语词:哦(T9""身份证哦"") | 书面词:无 | 列点:无",medium,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C04,fail,,"""你能确认参加吗/你决定参加吗""在T11/13/15/21/25/27/29反复追问同一问题；""我向同事确认后再回电""T3/5/19重复",high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C05,pass,,全文无承诺补贴,high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C06,na,,用户最终多次确认参加，未坚持拒绝,medium,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C08,pass,,T1含时间地点+问参加,high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C09,na,,用户多次确认参加，未触发,medium,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C10,fail,,用户确认参加，但全程未提醒头盔/工牌/身份证三样,high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C11,pass,,"T11""未参加会影响接单评级""",high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C14,pass,,核心通知(时间地点+问参加+评级)完成，用户多次确认参加,medium,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C15,fail,,"30轮被截断，用户从未表示结束，助手反复追问""确认参加吗""未收尾",high,,human_v6_reviewed
+V1_interruption_1779200483_000,V1_C16,pass,,"T6时长→T7""2小时""准确；评级""降多少不清楚""为诚实未答，无错误矛盾",medium,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C01,pass,,T1=62字(豁免); 非首轮超35字: T7=44字 T11=36字; 违规率2/14=14%,high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C02,na,,用户问题(内容/证书/请假/餐饮/奖品/讲师等)均培训相关，无越界(无外平台/个人),low,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C03,pass,,"口语词:哦(T5""身份证哦"") | 书面词:无 | 列点:无",medium,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C04,fail,,"""我向同事确认后再回电""在T3/9/13/15/19/21/23/25/27/29十余轮照搬重复",high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C05,pass,,全文无承诺补贴,high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C06,na,,"用户""我会考虑/尽量安排""为敷衍，未明确拒绝，未触发",medium,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C08,pass,,T1含时间地点+问参加,high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C09,na,,"用户""会考虑""未明确不参加，S2未触发",medium,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C10,pass,,"T5已提醒""头盔、工牌和身份证""三样",medium,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C11,pass,,"T7""没参加会影响接单评级""",high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C14,fail,,"用户全程""会考虑/尽快决定""未给同意/拒绝的明确反馈，任务核心(确认参加)未达成",medium,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C15,fail,,"30轮截断，重复""向同事确认""与""确认参加吗""，未自然收尾",high,,human_v6_reviewed
+V1_interruption_1779200667_001,V1_C16,pass,,"T4时长→T5""2个小时""准确",medium,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C01,fail,,T1=62字(豁免); 非首轮超35字: T3=39字 T5=44字 T9=41字 T11=38字; 违规率4/7=57%,high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C02,fail,,"T4天气、T14""打多少电话/工资/考核""等越界问题，助手T5""还行挺凉爽""、T13""还行都习惯了""直接闲聊作答，未统一用规定话术",medium,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C03,pass,,"口语词:啊(T9""先挂了啊"") | 书面词:无 | 列点:无",medium,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C04,pass,,"""我向同事确认后再回电""为越界规定话术，应用于不同问题，非懒惰重复",medium,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C05,pass,,"T5""30元补贴""为FAQ既定，无额外承诺",medium,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C06,na,,用户接受参加，未拒绝,high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C07,fail,,"T3出现""好的"" → 违规",high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C08,pass,,T1含时间地点+问参加,high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C09,na,,用户记下并接受参加，未触发,high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C10,pass,,"T3提醒""头盔、工牌和身份证""三样",high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C11,pass,,"T3""不参加会直接影响接单评级""",high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C14,pass,,通知+三样(T3)+评级(T3)，用户记下并同意准备,high,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C15,pass,,"助手T9/T11/T15多次尝试""先挂了""收尾，T16用户再见结束，未反复追问""还有问题吗""",medium,,human_v6_reviewed
+V1_out_of_scope_1779194673_000,V1_C16,na,,用户未主动询问FAQ列表问题(时长/补贴/物品)，约束未触发,low,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C01,fail,,T1=62字(豁免); 非首轮超35字: T3=38字 T5=40字 T7=62字 T11=43字 T13=41字 T15=66字 T17=43字; 违规率7/8=88%,high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C02,fail,,"T8天气、T12""你干多久/工资待遇""越界，助手T9""天气是不错""直接闲聊作答未用规定话术(其余股价/老李电话/理财有用)",medium,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C03,pass,,口语词:啊/吧 | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C04,pass,,措辞各异，无明显8+字照搬,medium,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C05,pass,,"T15""30元补贴""为FAQ，无额外承诺",medium,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C06,na,,用户同意15号参加，未拒绝,high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C08,pass,,T1含时间+问参加，T3补充地点(望京SOHO T3 B1),high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C09,na,,用户同意15号参加，未触发,high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C10,pass,,"T7提醒""头盔、工牌和身份证""",high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C11,pass,,"T7/T9""不来会影响接单评级""",high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C14,pass,,告知时间地点(T3补地址)+三样(T7)+评级(T7/9/13)，用户确认参加,high,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C15,fail,,"用户T18拜拜前，助手T13""回头见""已收尾，但T14用户重开后助手仍多轮纠缠OOS事项，结尾拖沓",medium,,human_v6_reviewed
+V1_out_of_scope_1779194856_001,V1_C16,na,,用户未问FAQ列表题(时长/补贴/物品)，约束未触发(30元补贴为助手主动给出),low,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C01,pass,,T1=62字(豁免); 非首轮超35字: T13=39字; 违规率1/11=9%,high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C02,pass,,"T6股价/T8业务/T12联系方式/T10餐厅/T16书/T18音乐/T20电影等越界，助手T7/9/13等均用""我向同事确认后再回电""规定话术",medium,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C03,pass,,"口语词:哦(T5? )；含""哦/啊"" | 书面词:无 | 列点:无",low,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C04,fail,,"""我向同事确认后再回电""在T3/7/9/11/13/15/17/19/21/23反复照搬",high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C05,pass,,"T9""30元补贴""为FAQ，无额外承诺",medium,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C06,na,,用户表示会参加，未拒绝,high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C08,pass,,T1含时间地点+问参加,high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C09,na,,用户表示会参加，未触发,high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C10,pass,,"T5提醒""头盔、工牌和身份证""三样",high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C11,pass,,"T7""未参加会影响接单评级""",high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C14,pass,,通知时间地点(T1/T13)+三样(T5)+评级(T7)，用户确认参加,medium,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C15,fail,,"24轮被截断，用户不断闲聊，助手始终""向同事确认""未主动收尾结束",high,,human_v6_reviewed
+V1_out_of_scope_1779200168_000,V1_C16,na,,"用户问的多为越界闲聊，未问FAQ列表(时长/补贴/物品)；T9助手主动给""30元补贴/2小时""，无矛盾",low,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C01,fail,,T1=62字(豁免); 非首轮超35字: T3=53字 T5=48字; 违规率2/2=100%,high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C02,na,,用户仅就请假沟通，无越界问题,high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C03,pass,,口语词:行/吧 | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C04,pass,,无重复,medium,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C05,pass,,无承诺补贴,high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C06,fail,,"用户T2/T4/T6坚持""今天没法参加/受不了""，助手T3/T5仍劝说挽留(报下一批/记录)，未在用户坚拒后及时礼貌挂断",medium,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C08,pass,,T1含时间地点+问参加,high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C09,pass,,"用户T2发烧不能参加(原因已述)，T3/T5""帮你记录请假""记录原因",medium,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C10,na,,用户拒绝参加，S3未触发,high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C11,pass,,"T3""不参加会直接影响接单评级""",high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C14,pass,,用户拒绝后助手记录请假并提出补训(下一批)，符合拒绝场景处理,medium,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C15,fail,,"用户T6""我就挂了，受不了""已坚决结束，对话在用户挂断处截断，助手未先行礼貌收尾",medium,,human_v6_reviewed
+V1_refuse_persistent_1779194514_000,V1_C16,na,,用户未问FAQ列表问题,medium,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C01,fail,,T1=62字(豁免); 非首轮超35字: T3=42字; 违规率1/2=50%,high,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C02,na,,无越界问题,high,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C03,pass,,口语词:吧 | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C04,pass,,两轮措辞略同但<8字核心重复，整体可接受,low,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C05,pass,,无承诺补贴,high,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C06,pass,,"用户T2明确不能配合，助手T3""多休息…下次再联系…再见""1轮内礼貌收尾",medium,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C08,pass,,T1含时间地点+问参加,high,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C09,fail,,用户身体不适不能参加，助手仅安抚改期，未明确记录原因,medium,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C10,na,,用户拒绝参加，S3未触发,high,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C11,fail,,"全文未提及""未参加影响接单评级""等后果",medium,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C14,fail,,助手未告知培训时间地点细节/未提评级影响/未记录原因即结束，核心通知动作覆盖不足,medium,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C15,pass,,"T3即""再见""收尾，T5重申休息再见，未反复追问",medium,,human_v6_reviewed
+V1_refuse_persistent_1779200071_000,V1_C16,na,,用户未问FAQ问题,medium,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C01,pass,,T1=75字(豁免); 非首轮超35字: T5=48字; 违规率1/9=11%,high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C02,na,,用户仅问WiFi/流量/数据同步等更新相关，无越界(外平台/个人/工资),medium,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C03,pass,,口语词:行/啊/嗯/哈 | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C04,pass,,措辞各异，无8+字跨轮照搬,medium,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C05,na,,合作型，用户同意更新，未明确拒绝,high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C06,pass,,无明显重复,medium,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C07,fail,,"T13出现""好的"" → 违规",high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C08,pass,,"T1""必须明天晚上12点前更新完，不然没法接单""含强制+截止时间",high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C09,pass,,"T3""看一眼现在版本是多少""询问版本号",high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C10,pass,,"T5""去手机应用商店搜美团骑手下新版""",high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C11,pass,,"T15/T17""下载完登录试一下能不能接单/登录接单都正常吧""确认更新成功",high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C14,pass,,覆盖通知更新+版本核对+引导商店+截止+确认登录，用户完成更新,high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C15,fail,,"T11助手已""挂了啊""，之后T13/15/17仍多次追问""登录接单正常吧""(规范2.4.3原型案例)",high,,human_v6_reviewed
+V2_cooperative_1779195497_001,V2_C16,pass,,"T6 WiFi/流量→T7""连WiFi安装包不大""；T8数据丢失→T9""不会丢联网同步""，准确一致",high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C01,fail,,T1=69字(豁免); 非首轮超35字: T3=49字 T5=44字 T7=40字 T9=39字; 违规率4/6=67%,high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C02,na,,用户问流程/新功能/重新登录等更新相关，无越界,medium,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C03,pass,,口语词:哦(T11) | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C04,pass,,措辞各异,medium,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C05,na,,用户同意更新，未拒绝,high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C06,pass,,无明显重复,medium,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C07,fail,,"T13出现""好的"" → 违规",high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C08,pass,,"T1含""必须明天晚上12点前更新完""强制+截止",high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C09,pass,,"T3""现在手机里APP的版本号是多少""",high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C10,pass,,"T3""应用商店搜索美团骑手下载新版""",high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C11,pass,,"T7/T9""更新后确认能正常接单""",high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C14,pass,,通知+版本+商店+截止+确认接单齐全，用户同意,high,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C15,pass,,"T13""祝顺利更新！再见！""自然收尾，未反复追问",medium,,human_v6_reviewed
+V2_cooperative_1779200835_000,V2_C16,pass,,"T2流程→T3""不复杂""；T4新功能→T5""派单优化""，准确一致",high,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C01,pass,,T1=69字(豁免); 非首轮超35字: T9=48字; 违规率1/4=25%,medium,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C02,na,,用户问流量报销/内存等更新相关，无明确越界(外平台/个人),medium,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C03,pass,,口语词:行/啊 | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C04,pass,,无明显重复,medium,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C05,na,,"用户T10""行行行知道了，晚上回去再说，挂了""为敷衍，非明确拒绝更新",high,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C06,pass,,无明显重复,medium,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C08,pass,,"T1强制+T3""强制更新不更新接不了单""+截止",high,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C09,pass,,"T3""现在版本号多少""",high,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C10,pass,,"T5""应用商店搜美团骑手点更新""",high,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C11,na,,用户敷衍挂断，对话未走到确认更新成功阶段,medium,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C14,pass,,通知更新+商店引导+截止说明，用户敷衍挂断前核心已覆盖,medium,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C15,pass,,用户T10主动挂断，助手全程简短未拖沓追问,medium,,human_v6_reviewed
+V2_interruption_1779196169_000,V2_C16,pass,,"T8流量报销→T9""流量不报销""准确",high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C01,fail,,T1=57字(豁免); 非首轮超35字: T3=38字 T7=41字 T11=40字 T15=44字; 违规率4/8=50%,high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C02,pass,,"T8""更新后能换班吗""职责外，助手T9""换班不归我管，先更新""做了职责外切割",medium,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C03,pass,,口语词:行/啊 | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C04,pass,,"""明晚12点前""等为必要重申，措辞各异",medium,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C05,na,,"用户T16""行行行知道了，现在就去弄""为敷衍配合，非拒绝",high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C06,pass,,无8+字照搬,medium,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C08,pass,,T1强制+明晚12点截止,high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C09,pass,,"T3""现在版本号是多少""",high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C10,pass,,"T5""手机应用商店搜美团骑手点更新""",high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C11,pass,,"T13/T17""更新完试下能不能登录接单""",high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C14,pass,,通知+版本+商店+截止+确认接单齐全,high,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C15,pass,,用户T18主动挂断，助手T17简短，未反复追问,medium,,human_v6_reviewed
+V2_interruption_1779196266_001,V2_C16,pass,,"T6流量/要钱→T7""更新免费""准确",high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C01,pass,,T1=69字(豁免); 非首轮超35字: T21=36字; 违规率1/14=7%,high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C02,pass,,"T4""功能多少钱""/T6""跳过培训""/T28""培训资料""越界，助手T5/7/29""不在我职责范围内，帮您记录回头跟进""用规定话术",medium,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C03,pass,,"口语词:哦(T3""尽快更新哦"") | 书面词:无 | 列点:无",medium,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C04,fail,,"""快去更新吧/你还是赶紧更新/你得尽快更新哦""在十余轮反复堆砌；越界话术亦多次照搬",medium,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C05,na,,用户全程追问，未拒绝更新,high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C06,fail,,同C04，催更话术与越界话术多轮重复,medium,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C08,pass,,"T1强制+T9""明天晚上12点前完成""截止",high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C09,fail,,全程未询问骑手当前APP版本号(S2缺失),high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C10,pass,,"T25""手机应用商店搜索美团骑手""",high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C11,pass,,"T11/T15""更新后必须能正常接单/确认一切正常""",medium,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C14,pass,,通知+商店+截止+确认接单已覆盖(缺版本核对)，核心意图达成,medium,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C15,fail,,30轮被截断，用户持续追问，助手反复催更未自然收尾,high,,human_v6_reviewed
+V2_interruption_1779201383_000,V2_C16,na,,用户多为功能性追问被职责外切割，未问可核验FAQ(流量/数据),low,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C01,fail,,T1=69字(豁免); 非首轮超35字: T3=49字 T5=56字 T7=45字 T9=43字 T11=47字 T13=36字 T15=43字 T17=44字 T19=52字 T27=43字 T29=38字; 违规率11/14=79%,high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C02,pass,,"T4/T8/T14越界(功能细节/教程)，助手T5/9/15/27""不在我职责范围内，帮您记录回头跟进""",medium,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C03,pass,,口语词:吧/哦 | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C04,fail,,"""你还是赶紧更新吧，明天晚上12点前必须完成""在T9/15/19/27逐字照搬",high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C05,na,,用户持续追问未拒绝更新,high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C06,fail,,同C04，催更整句多轮照搬,high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C08,pass,,T1强制+明晚12点截止,high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C09,pass,,"T3""现在手机里APP的版本号是多少""",high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C10,pass,,"T5/T23""应用商店搜索美团骑手""",high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C11,na,,用户全程拖延未更新，对话未真正走到确认更新成功,medium,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C14,pass,,通知+版本+商店+截止齐全，核心意图覆盖,medium,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C15,fail,,30轮被截断，用户反复追问，助手反复催更未收尾,high,,human_v6_reviewed
+V2_interruption_1779201531_001,V2_C16,pass,,"T12数据丢失/费用→T13""不会丢失，更新免费""准确",high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C01,fail,,T1=75字(豁免); 非首轮超35字: T3=50字 T5=47字 T9=54字 T11=42字; 违规率4/5=80%,high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C02,fail,,"T4""你家那口子住院好点没""(私人)、T6""招不招人""越界，助手T5""老毛病好多了""、T7""站点不招人""直接作答，未统一用规定话术",medium,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C03,pass,,口语词:啊/嗯/哦 | 书面词:无 | 列点:无,medium,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C04,pass,,无明显照搬,medium,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C05,na,,用户配合更新，未拒绝,high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C06,pass,,无重复,medium,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C08,pass,,"T1强制+明晚12点；T3""中午前来得及，不更新强制下线""",high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C09,pass,,"T3""APP现在显示版本号是多少""",high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C10,pass,,"T5""应用商店搜美团骑手下载新版""",high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C11,pass,,"T9/T11""更新完确认能不能正常登录接单""",high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C14,pass,,通知+版本+商店+确认登录齐全，用户更新成功,high,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C15,pass,,"用户T12更新成功后主动""挂了哈""，助手前文简短，自然结束",medium,,human_v6_reviewed
+V2_out_of_scope_1779195816_000,V2_C16,pass,,"T2""明天中午前完成不""→T3""完全来得及""准确",high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C01,fail,,T1=69字(豁免); 非首轮超35字: T5=50字 T7=38字 T9=39字 T11=39字; 违规率4/5=80%,high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C02,pass,,"T2天气/T4股票/T6其他业务/T8联系方式/T10培训推荐越界，助手T3/5/7/9/11全用""不在我职责范围内，帮您记录回头跟进""",medium,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C03,fail,,"全文助手用语规范书面，无任何口语词(咱们/嗯/啊/吧/哦等)，触发""完全无口语词""",medium,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C04,fail,,"""这个不在我职责范围内，我帮您记录回头跟进""在T3/5/7/9/11逐字照搬5次",medium,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C05,na,,用户配合更新，未拒绝,high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C06,fail,,同C04整句多轮照搬,medium,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C08,pass,,T1强制+明晚12点截止,high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C09,pass,,"T3""现在的APP版本号是多少""",high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C10,pass,,"T5""应用商店搜索美团骑手""",high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C11,pass,,"T7/9/11""更新好后确认能否正常登录接单""",high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C14,pass,,通知+版本+商店+确认接单齐全,high,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C15,pass,,用户持续越界闲聊，助手始终拉回任务未拖沓追问，非过度追问型,medium,,human_v6_reviewed
+V2_out_of_scope_1779201136_000,V2_C16,na,,用户只问越界闲聊，未问可核验FAQ,low,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C01,pass,,T1=69字(豁免); 非首轮超35字: 无超限; 违规率0/3=0%,high,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C02,na,,用户仅就身体/请假沟通，无越界,high,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C03,pass,,口语词:啥(T5)/那行 等口语 | 书面词:无 | 列点:无,low,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C04,pass,,无明显重复,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C05,pass,,"用户T6/T8明确""没法配合/挂了""，助手T7""那行，不更新12点后无法接单，你考虑好""告知后果并收尾",medium,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C06,pass,,无重复,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C08,pass,,T1强制+明晚12点,high,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C09,pass,,"T3""哪个版本，更新了吗""",high,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C10,na,,用户坚持拒绝，对话未走到引导应用商店(S3),medium,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C11,na,,未走到确认更新成功阶段,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C14,pass,,通知+截止+后果已告知，用户坚拒下属合理处理,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C15,pass,,"用户T8""挂了啊""结束，助手前已告知后果，未拖沓",medium,,human_v6_reviewed
+V2_refuse_persistent_1779195668_000,V2_C16,na,,用户未问FAQ问题,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C01,pass,,T1=69字(豁免); 非首轮超35字: 无超限; 违规率0/2=0%,high,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C02,na,,无越界问题,high,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C03,pass,,口语词:哪个/先 偏口语 | 书面词:无 | 列点:无,low,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C04,pass,,无重复,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C05,pass,,"用户T4/T6""改天吧/挂了""坚拒，助手T5告知""强制，不更新第二天没法接单""后用户挂断",medium,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C06,pass,,无重复,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C08,pass,,"T5""这个版本是强制的，明天晚上12点前必须更新""",high,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C09,pass,,"T3""哪个版本，更新了吗""",high,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C10,na,,用户坚拒，未走到引导应用商店,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C11,na,,未走到确认更新成功,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C14,pass,,通知+截止+后果告知，拒绝场景合理,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C15,pass,,用户T6挂断，助手前已简短告知后果,medium,,human_v6_reviewed
+V2_refuse_persistent_1779195756_001,V2_C16,na,,用户未问FAQ,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C01,fail,,T1=69字(豁免); 非首轮超35字: T3=40字 T5=38字; 违规率2/2=100%,high,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C02,na,,无越界问题,high,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C03,pass,,口语词:这可不行(口语) | 书面词:无 | 列点:无,low,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C04,pass,,无重复,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C05,pass,,"用户T4/T6""改天吧/挂了""坚拒，助手T5""改天不行，不更新明天没法接单""告知后果",medium,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C06,pass,,无重复,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C08,pass,,"T1强制+T3""明天晚上12点前完成更新""",high,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C09,fail,,全程未询问当前APP版本号(S2缺失),high,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C10,na,,用户坚拒，未走到引导应用商店,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C11,na,,未走到确认更新成功,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C14,pass,,通知+截止+后果告知,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C15,pass,,短对话，用户T6挂断，助手已告知后果,low,,human_v6_reviewed
+V2_refuse_persistent_1779201049_000,V2_C16,na,,用户未问FAQ,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C01,pass,,T1=71字(豁免); 非首轮超35字: 无超限; 违规率0/2=0%,high,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C02,na,,无越界问题,high,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C03,pass,,"口语词:哦(T3""得更新哦"") | 书面词:无 | 列点:无",medium,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C04,pass,,两轮告知后果措辞略同但简短，可接受,low,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C05,pass,,"用户T4/T6""改天吧/挂了""坚拒，助手T3/T5""不更新明天无法接单""告知后果",medium,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C06,pass,,无明显重复,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C08,pass,,"T1""必须明天晚上12点前更新完，不然没法接单""含强制义务+截止",high,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C09,fail,,全程未询问当前APP版本号(S2缺失),high,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C10,na,,用户坚拒，未走到引导应用商店,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C11,na,,未走到确认更新成功,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C12,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C13,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C14,pass,,通知+截止+后果告知,medium,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C15,pass,,短对话用户T6挂断，助手已告知后果,low,,human_v6_reviewed
+V2_refuse_persistent_1779201097_001,V2_C16,na,,用户未问FAQ,medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C01,fail,,T1=64字(豁免); 非首轮超25字: T3=30字 T7=36字 T9=31字; 违规率3/5=60%,high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C02,pass,,"口语自然(""收到""""想问问您""""那这个单子"")，无列点/书面文言堆砌",medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C03,pass,,T3/T5主动提问让商家发言，未连续自说,medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C04,pass,,"T3""出餐慢什么原因呢""、T5""还需多久能出餐呢""给商家应答机会(≥2处)",medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C05,na,,无明显被打断需过渡的场景,medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C06,pass,,"核心后商家T8问补偿，助手T9简短答""超出权限可后台报备申诉""",medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C07,fail,,"T11出现""好的"" → 违规",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C08,pass,,"商家T8问补偿，助手T9""补偿超出权限""未承诺任何折扣/补贴/赔付",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C09,pass,,"T8补偿(职责外)→T9""超出我的权限，可商家后台报备申诉""做职责切割",medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C10,na,,"商家说后厨忙(出餐原因)，非""没空通话""，C10未触发",medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C11,na,,商家未提开车,high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C12,pass,,"T1""我是美团客服…请问是老王炸鸡店的负责人吗""自我介绍+问负责人",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C13,pass,,"T1/T3""尾号8234订单…超时25分钟""",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C14,pass,,"T3""出餐慢是什么原因呢""询问原因",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C15,pass,,"商家T4""顾客多忙不过来""(高峰)→助手T5进入""还需多久能出餐""(Step4)",medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C16,na,,商家未提食材缺货,high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C17,na,,商家未提系统未接单,high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C18,pass,,"T5""还需多久能出餐呢""",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C19,pass,,"T7""会把情况转告骑手和用户""+""感谢配合""",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C20,na,,高峰场景不涉及取消订单,medium,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C21,pass,,"T11""感谢您的配合，再见""礼貌道谢结束",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C24,pass,,核实超时+问原因+协调出餐时长，商家明确配合,high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C25,pass,,"T10商家""先不耽误您了""→T11""感谢配合，再见""1轮收尾",high,,human_v6_reviewed
+V4_cooperative_1779196436_000,V4_C26,na,,无可核验FAQ被问，补偿问题已职责切割,low,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C01,fail,,T1=66字(豁免); 非首轮超25字: T3=29字 T5=28字 T7=33字 T9=41字; 违规率4/5=80%,high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C02,pass,,口语自然，无列点/书面词堆砌,medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C03,pass,,T3/T5提问给商家发言,medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C04,pass,,T3/T5多处提问暂停,medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C05,na,,无被打断需过渡场景,medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C06,pass,,"核心后商家T8问折扣券，助手T9简短答""超出职责帮您记录""",medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C08,pass,,"T8折扣券→T9""超出职责范围帮您记录""，未承诺",high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C09,pass,,"T8折扣券(职责外)→T9规定话术""超出职责范围帮您记录""",medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C10,na,,商家说后厨忙(出餐原因)非拒绝通话,medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C14,pass,,"T3""是什么原因呢""问原因",high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C15,pass,,"商家T4""高峰忙不过来""→T5""还需多久能出餐""(Step4)",medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C16,na,,未提缺货,high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C17,na,,未提系统未接单,high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C18,pass,,"T5""还需多久能出餐呢""",high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C19,pass,,"T7""跟骑手和用户说等15分钟""+T11""记录加急配合""",high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C20,na,,高峰场景不涉取消,medium,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C21,pass,,"T11""感谢您的配合…再见""",high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C24,pass,,核实+问原因+协调时长，商家配合,high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C25,pass,,"T10商家收尾→T11""感谢配合再见""",high,,human_v6_reviewed
+V4_cooperative_1779196534_001,V4_C26,na,,无FAQ被问,low,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C01,fail,,T1=60字(豁免); 非首轮超25字: T3=37字 T7=45字 T9=31字; 违规率3/4=75%,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C02,pass,,口语自然,medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C03,pass,,T3/T5/T7提问给商家发言,medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C04,pass,,"T3""是忙不过来吗""T5""还需多久""T7""还有其他需要吗""多处暂停",medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C05,na,,无被打断场景,medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C06,na,,"商家T8表示""没其他问题""，未追加问题",medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C07,fail,,"T9出现""好的"" → 违规",high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C08,pass,,全文未承诺折扣/补贴/赔付,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C09,na,,商家未问越界问题,medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C10,na,,商家说客流大(原因)非拒绝通话,medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C14,pass,,"T3""了解一下出餐慢的原因，您这边是忙不过来吗""",high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C15,pass,,"商家T4""客流大忙""→T5""还需多久能出餐""(Step4)",medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C16,na,,未提缺货,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C17,na,,未提系统未接单,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C18,pass,,"T5""还需多久能出餐呢""",high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C19,pass,,"T7""帮您转达给骑手和用户，让他们等一下""",high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C20,na,,高峰场景不涉取消,medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C21,pass,,"T9""非常感谢您的配合！祝您生意兴隆…再见""",high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C24,pass,,核实+问原因+协调时长，商家配合,high,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C25,pass,,"T7问""还有其他需要""一次→T8无→T9收尾，未过度追问",medium,,human_v6_reviewed
+V4_cooperative_1779201688_000,V4_C26,na,,无FAQ被问,low,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C01,fail,,T1=60字(豁免); 非首轮超25字: T3=32字 T5=31字 T7=43字 T9=42字 T11=49字 T13=30字; 违规率6/6=100%,high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C02,pass,,口语自然,medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C03,pass,,每轮提问拉回核心,medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C04,pass,,"多处""这单现在能出吗，还得多久""提问暂停",medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C05,pass,,"用户T8突然改口""这单不接了取消吧""，助手T9顺势衔接处理取消，话题过渡自然",medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C06,pass,,核心外问题简短作答,medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C08,pass,,"T4""扣不扣钱赔多少""→助手未承诺任何补偿",high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C09,pass,,"T4""扣不扣钱/处罚""(职责外)→T5""超出职责范围帮您记录""",medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C10,pass,,"商家T2""忙得很""T8""忙得快炸了""→助手T3""就1分钟，保证简短""",high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C14,pass,,"T5""您先说说这单咋超时了""问原因",medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C15,na,,商家未明确说高峰忙(直接要取消),medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C16,na,,商家要取消但原因非食材缺货,medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C17,na,,未提系统问题,high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C18,pass,,"T7""这单现在能出吗，预计还得多久""",medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C19,na,,流程转向取消，未走到S5协调转达,medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C20,pass,,"T9/T11""商家版APP，8234订单详情页右上角取消选项""引导自行取消",high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C21,fail,,"末轮T13仅给取消位置说明，用户T14""先挂了""，助手未礼貌道谢结束",medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C24,pass,,核实超时+问原因+引导自行取消，核心达成,medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C25,pass,,"用户T14""先挂了吧""主动结束，助手前文虽三次解释取消位置但因用户找不到，非过度追问",medium,,human_v6_reviewed
+V4_interruption_1779197000_000,V4_C26,na,,扣款问题已职责切割，无FAQ误答,low,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C01,fail,,T1=66字(豁免); 非首轮超25字: T3=46字 T5=38字 T7=57字 T9=52字 T11=43字 T13=44字; 违规率6/6=100%,high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C02,pass,,口语自然,medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C03,pass,,每轮提问,medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C04,pass,,"T5""还需多久能出""等暂停",medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C05,pass,,"用户T10""等等！取消到底扣不扣钱""打断，助手T11先回答该点再推进",medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C06,pass,,核心外问题简短作答,medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C08,pass,,"商家T6""平台帮想办法""T8""扣钱""→助手解释规则未承诺补偿",high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C09,na,,问题均围绕缺货/取消(职责内)，无明确越界,medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C10,pass,,"商家T2""忙得很，快点说重点""→助手T3""就1分钟，保证简短""",high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C14,pass,,"T3""单子太多忙不过来，还是缺食材了""问原因",medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C15,na,,原因为缺货非高峰忙,medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C16,pass,,"商家T6""缺鸡翅断货了""→T7""只能在商家版APP取消订单""，进入取消处理",high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C17,na,,未提系统未接单,high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C18,pass,,"T5""这个单大概还需要多久能出""",medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C19,pass,,"T13""会帮您和骑手、顾客解释清楚""",high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C20,pass,,"T9/T11""商家版APP订单详情页点右上角选取消订单""",high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C21,pass,,"T13""感谢配合，再见""",high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C24,pass,,核实+问原因+缺货取消引导，核心达成,high,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C25,pass,,"T12商家""赶紧去弄""→T13""快去取消，感谢配合，再见""1轮收尾",medium,,human_v6_reviewed
+V4_interruption_1779197143_001,V4_C26,pass,,"商家问""取消扣不扣钱""→T11""跟信用分挂钩，不直接扣钱，偶尔一次没事""作答一致",medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C01,fail,,T1=60字(豁免); 非首轮超25字: T3=33字 T5=67字 T7=45字 T9=63字 T11=49字 T13=58字 T15=61字 T17=57字 T19=47字 T21=54字 T23=52字 T25=61字 T27=47字 T29=45字; 违规率14/14=100%,high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C02,pass,,"口语化(""我理解您的着急""等)，无列点/书面词堆砌",medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C03,pass,,每轮提问让商家应答,medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C04,pass,,"反复""预计还需多久""提问",medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C05,pass,,"用户每轮跳到新话题(外卖费/折扣/补偿)，助手T5/T9""您刚才提到…""用过渡语",high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C06,pass,,核心外问题简短拒答,medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C07,fail,,"T3出现""好的"" → 违规",high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C08,pass,,"商家反复要折扣/补偿，助手T9/T15/T19/T25""无法做出承诺/无法承诺任何补偿""",high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C09,pass,,"外卖费/折扣(职责外)→T5""超出我职责范围帮您记录回头跟进""",medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C10,na,,商家说等得不耐烦，非拒绝通话,medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C14,pass,,"T3""出餐慢的原因是什么呢，是高峰期忙不过来吗""",high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C15,na,,商家始终未确认出餐慢原因，高峰分支未真正触发,medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C16,na,,未提缺货,high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C17,na,,未提系统未接单,high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C18,pass,,"T7/T11反复""还需要多久能出餐/给我一个出餐时间""",high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C19,pass,,"多轮""反馈给骑手和用户/帮您协调沟通""",medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C20,na,,商家问取消后果但未要取消，且非缺货场景,medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C21,fail,,30轮被截断，无礼貌道谢结束,high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C24,fail,,反复索要出餐时间十余次商家从未给出，未拿到关键信息、无明确配合，核心未真正完成,medium,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C25,fail,,"30轮被截断，助手反复追问""给个出餐时间""十余次，对话从未收尾",high,,human_v6_reviewed
+V4_interruption_1779202116_000,V4_C26,na,,取消后果属合理说明，无明确FAQ误答,low,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C01,fail,,T1=60字(豁免); 非首轮超25字: T3=31字 T5=29字 T7=61字 T9=46字 T11=48字 T13=47字 T15=27字 T17=38字 T19=31字 T21=39字 T23=36字 T25=30字 T27=33字 T29=53字; 违规率14/14=100%,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C02,pass,,口语化,medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C03,pass,,每轮提问,medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C04,pass,,"反复""需要我协助取消吗""提问",medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C05,na,,用户多为连续提问而非中途打断，无需过渡语场景,medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C06,pass,,核心外问题简短作答,medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C08,pass,,全文未承诺折扣/补贴/赔付,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C09,pass,,"T10""APP有优惠活动""/T20""发邮箱""(职责外)→T11/T21""超出职责范围帮您记录""",medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C10,na,,商家未表示忙/拒绝通话,medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C14,pass,,"T3""出餐慢的原因是什么呢""",high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C15,na,,商家未说高峰忙,medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C16,na,,商家问退款但未明确说食材缺货,medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C17,na,,未提系统未接单,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C18,na,,"流程围绕取消/退款，未询问""还需多久出餐""",medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C19,na,,"未出现""转达骑手/用户""的S5协调",medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C20,pass,,"T7/T9""商家版APP订单详情页点右上角选择取消订单""",high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C21,fail,,30轮被截断，无礼貌道谢结束,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C24,fail,,"反复""需要我协助取消吗""十余次商家从不确认，无明确配合反馈，核心未完成",medium,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C25,fail,,30轮被截断，助手反复同一追问从未收尾,high,,human_v6_reviewed
+V4_interruption_1779202280_001,V4_C26,na,,出餐时长调整等为合理说明，无FAQ误答,low,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C01,fail,,T1=66字(豁免); 非首轮超25字: T3=31字 T7=52字 T9=35字 T11=54字 T13=42字; 违规率5/6=83%,high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C02,pass,,"口语化(""咱们先说正事"")",medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C03,pass,,提问拉回核心,medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C04,pass,,T3/T5提问暂停,medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C05,na,,无被打断需过渡场景,medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C06,pass,,核心(出餐时间)后商家OOS问题，助手简短记录+拉回,medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C07,fail,,"T9出现""好的"" → 违规",high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C08,pass,,全文未承诺折扣/补贴,high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C09,pass,,"股票/加盟/配送费政策/七夕(越界)→T7/9/11/13""超出我职责范围帮您记录回头跟进""",high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C10,na,,商家未拒绝通话,medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C14,pass,,"T3""是店里太忙还是有什么特殊情况""问原因",high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C15,pass,,"商家T4""忙得够呛人手不够""(高峰)→T5""这单还要多久能出餐""(Step4)",medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C16,na,,未提缺货,high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C17,na,,未提系统未接单,high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C18,pass,,"T5""这单大概还要多久能出餐""",high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C19,pass,,"T7/T11""帮您转达给骑手和用户""",high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C20,na,,非取消场景,medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C21,pass,,"T13""确认8234十分钟出餐，转达骑手。感谢配合，再见""",high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C24,pass,,核实+问原因+协调时长，商家配合(十分钟内出餐),high,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C25,pass,,"商家持续OOS闲聊，助手多次拉回并最终""再见""收尾",medium,,human_v6_reviewed
+V4_out_of_scope_1779196755_000,V4_C26,na,,越界问题均切割，无FAQ误答,low,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C01,fail,,T1=60字(豁免); 非首轮超25字: T3=34字 T5=33字 T7=61字 T9=43字 T11=48字 T13=49字 T15=47字 T17=49字 T19=47字 T21=49字 T23=47字; 违规率11/11=100%,high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C02,pass,,口语化,medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C03,pass,,提问拉回,medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C04,pass,,T3/T5提问暂停,medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C05,na,,无被打断需过渡场景,medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C06,pass,,核心后OOS问题简短记录+拉回,medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C07,fail,,"T5出现""好的"" → 违规",high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C08,pass,,全文未承诺折扣/补贴,high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C09,pass,,"股票/其他业务/联系方式/餐厅/音乐电影旅行书(越界)→T7-T23""超出我职责范围帮您记录回头跟进""",high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C10,na,,商家未拒绝通话,medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C14,pass,,"T3""出餐慢原因，是高峰期忙不过来吗""",high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C15,pass,,"商家T4""高峰期订单量大延迟""→T5""还需多久能出餐""(Step4)",medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C16,na,,未提缺货,high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C17,na,,未提系统未接单,high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C18,pass,,"T5""还需多久能出餐呢""",high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C19,pass,,"T7""十分钟左右转达给骑手和用户""",high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C20,na,,非取消场景,medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C21,pass,,"多轮含""如果没有其他问题我就结束通话了""礼貌结束语",medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C24,pass,,核实+问原因+协调时长，商家配合(十分钟),high,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C25,fail,,"商家持续OOS闲聊(书/音乐/电影/旅行)，助手反复""就结束通话了""却始终未真正挂断，24轮被截断",medium,,human_v6_reviewed
+V4_out_of_scope_1779201993_001,V4_C26,na,,越界问题均切割,low,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C01,fail,,T1=64字(豁免); 非首轮超25字: T3=39字 T5=31字; 违规率2/2=100%,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C02,pass,,"口语化(""身体要紧"")",medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C03,pass,,T3给商家应答,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C04,pass,,"T3""方便的话快速核实下8234""留出应答",low,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C05,na,,无被打断场景,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C06,na,,无核心后追加问题,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C08,pass,,未承诺折扣/补贴,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C09,na,,无越界问题,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C10,na,,"商家说身体不舒服，非""忙""",medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C14,na,,商家秒拒，未走到询问出餐慢原因,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C15,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C16,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C17,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C18,na,,未走到S4,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C19,na,,未走到S5,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C20,na,,非取消场景,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C21,pass,,"T5""理解，身体最重要，回头再联系，先好好休息""礼貌收尾",high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C24,pass,,拒绝场景：助手安抚+改约回访，处理合理,medium,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C25,pass,,用户T4坚拒→T5 1轮礼貌收尾,high,,human_v6_reviewed
+V4_refuse_persistent_1779196709_001,V4_C26,na,,无FAQ,low,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C01,fail,,T1=60字(豁免); 非首轮超25字: T3=36字 T5=40字; 违规率2/2=100%,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C02,pass,,口语化,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C03,pass,,T3提问,low,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C04,pass,,T3提问留应答,low,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C05,na,,无被打断场景,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C06,na,,无核心后追加问题,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C08,pass,,未承诺折扣/补贴,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C09,na,,无越界问题,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C10,na,,商家说身体不舒服非忙,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C14,pass,,"T3""出餐延迟的原因是什么呢""问原因",medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C15,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C16,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C17,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C18,na,,未走到S4,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C19,na,,未走到S5,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C20,na,,非取消场景,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C21,fail,,"用户T6""我就挂了""，助手T5仍追问原因，未礼貌道谢结束",medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C24,fail,,商家坚拒，助手仍反复追问原因未顺势安抚收尾，拒绝场景处理不当,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C25,fail,,"用户T4""改天吧""坚拒，助手T5仍追问，用户T6挂断，未及时收尾",medium,,human_v6_reviewed
+V4_refuse_persistent_1779201782_000,V4_C26,na,,无FAQ,low,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C01,fail,,T1=60字(豁免); 非首轮超25字: T3=39字 T5=49字; 违规率2/2=100%,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C02,pass,,口语化,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C03,pass,,T3提问,low,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C04,pass,,T3提问留应答,low,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C05,na,,无被打断场景,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C06,na,,无核心后追加问题,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C07,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C08,pass,,未承诺折扣/补贴,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C09,na,,无越界问题,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C10,na,,商家说身体不舒服非忙,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C11,na,,未提开车,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C13,pass,,"T1""尾号8234…超时25分钟""",high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C14,pass,,"T3""这笔订单出餐慢的原因""问原因",medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C15,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C16,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C17,na,,分支未触发,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C18,na,,未走到S4,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C19,na,,未走到S5,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C20,na,,商家未要取消(坚拒)，T5仅提及可指导取消,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C21,fail,,"用户T6""挂了""，助手T5仍推进(取消引导)，未礼貌道谢结束",medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C22,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C23,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C24,fail,,商家坚拒，助手T5仍推进取消未顺势收尾,medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C25,fail,,"用户T4""改天吧""坚拒，助手T5未及时收尾继续推进，用户挂断",medium,,human_v6_reviewed
+V4_refuse_persistent_1779201819_001,V4_C26,na,,无FAQ,low,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C01,fail,,T1=27字(豁免); 非首轮超25字: T3=41字 T5=67字 T7=40字 T9=50字 T11=60字 T13=64字 T15=41字 T17=30字; 违规率8/8=100%,high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C02,pass,,"口语+同理(""这些差评确实让人难受""T5,""理解您忙起来容易疏忽""T7)",medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C03,pass,,"每轮""还有其他问题/困难吗""给商家发言",medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C04,pass,,多处提问后等商家应答,medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C05,na,,合作型无被打断场景,medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C07,pass,,"未谈申诉成功率，无""申诉一定成功""承诺",medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C08,pass,,未承诺差评补贴/赔付,high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C09,na,,商家情绪平和，未激动,medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C10,na,,商家未提开车/忙,high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C11,pass,,"T12扣点调整(越界)→T13""超出我的职责范围帮您记录回头跟进""",medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C12,pass,,"T1""我是美团商家关怀客服""+问负责人",high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C13,pass,,"T3""近7天3个差评，主要是出餐慢和漏放餐具""含数量+细节",high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C14,pass,,"T7""是否需要对这些差评申诉""",high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C15,na,,商家选择改进而非申诉,medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C16,pass,,"商家T8""还是改进吧""→T9给改进建议(Step5)",medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C17,na,,商家未选申诉,medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C18,pass,,"T9""最近经营上还有其他难处吗""",high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C19,fail,,"全文未出现""偶尔差评不影响整体评级""类安抚",medium,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C20,pass,,"T17""能帮到您就好，祝生意兴隆，再见""",high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C21,fail,,T1缺少必要变量: 差评数量,high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C23,pass,,告知差评+改进建议+经营协助，商家配合,high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C24,pass,,"T16商家""暂时没其他问题""→T17""祝生意兴隆，再见""1轮收尾",high,,human_v6_reviewed
+V5_cooperative_1779197281_000,V5_C25,na,,商家问模板/包装指向经营宝典，无FAQ误答,low,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=38字 T5=42字 T7=52字 T9=36字 T11=41字 T13=58字 T15=51字; 违规率7/7=100%,high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C02,pass,,"口语+同理(""我看您心情肯定不好""T5,""您先别急""T7)",medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C03,pass,,每轮给商家发言,medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C04,pass,,多处提问暂停,medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C05,na,,合作型无被打断,medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C07,pass,,"T7""证据足成功率不低""未承诺""一定成功""",medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C09,na,,"商家""有点着急""轻微，未达激动",medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C11,pass,,"T14""新店铺升级服务""(越界)→T15""超出我的职责范围帮您记录回头跟进""",medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C13,pass,,"T1""近7天3个差评""+T3""出餐慢和漏菜""含数量+细节",high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C14,pass,,"T3""需要了解申诉流程吗""",high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C15,pass,,商家T6想申诉(问材料)→T7介绍申诉流程(Step4),medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C16,na,,商家选申诉,medium,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C17,pass,,"T7""商家版APP评价管理点差评申诉，上传出餐监控/备餐记录""",high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C18,pass,,"T9""最近经营上还有什么其他困难吗""",high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C19,pass,,"T15""偶尔的差评不影响整体""",high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C20,pass,,"T15""感谢接听，再见""",high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C23,pass,,告知差评+申诉流程+经营协助+安抚齐全,high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C24,pass,,"T14问升级服务→T15切割+安抚+""感谢接听，再见""收尾",high,,human_v6_reviewed
+V5_cooperative_1779197454_001,V5_C25,pass,,商家问申诉材料→T7准确，一致,high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=44字 T5=50字 T7=59字 T9=52字 T11=68字 T13=56字 T15=68字 T17=69字 T19=54字 T21=73字 T23=68字 T25=70字 T27=38字; 违规率13/13=100%,high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C02,pass,,"语气平和有基本体谅(""可能影响经营"")，无书面文言堆砌",medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C03,pass,,"每轮""您觉得呢/还有其他问题吗""给发言",medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C04,pass,,多处提问暂停,medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C05,na,,合作型无被打断,medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C06,fail,,"T5出现""好的""; T11出现""好的""; T17出现""好的"" → 违规",high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C07,pass,,"未承诺""申诉一定成功""",medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C09,na,,商家情绪平和,medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C11,na,,商家问题均属经营改善，无越界外部话题,medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C13,pass,,"T1""近7天3个差评""+T3""送餐慢和菜品口味""含数量+细节",high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C14,pass,,"T5""您是否需要申诉这些差评呢""",high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C15,pass,,商家T6想了解申诉→T7介绍(Step4),medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C16,na,,商家选申诉,medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C17,pass,,"T7""商家版APP评价管理找到差评点击申诉提交证据""",high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C18,fail,,"全程仅给经营改善建议，未询问""经营有什么困难/需要平台协助""",medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C19,pass,,"T13""偶尔的差评不会影响整体评级""",high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C20,pass,,"T27""祝川香小厨生意兴隆…再见""",high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C23,pass,,告知差评+申诉流程+大量改善建议,high,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C24,pass,,"商家T26""没其他问题""→T27收尾，结束前未在用户示意结束后过度追问",medium,,human_v6_reviewed
+V5_cooperative_1779202511_001,V5_C25,pass,,"商家问申诉处理时间→T9""1-3个工作日""合理一致",medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C01,fail,,T1=59字(豁免); 非首轮超25字: T3=48字 T5=72字 T7=62字 T9=72字 T11=65字 T13=46字 T15=81字 T17=124字 T19=73字 T21=112字 T23=55字 T25=49字; 违规率12/12=100%,high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C02,pass,,"强同理(""您先消消气""T5,""我特能理解长篇大论最烦人""T17)+口语",medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C03,pass,,每轮提问让商家参与,medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C04,pass,,多处提问暂停,medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C05,pass,,"用户每轮跳新话题，助手T7/T9/T11""说回刚才那单""、T17""您刚才说的配送照片这些事""用过渡语",high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C06,fail,,"T19出现""好的"" → 违规",high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C07,pass,,"未承诺""申诉一定成功""",medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C08,pass,,"未承诺差评补贴(反提醒""要钱删差评千万别给"")",high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C09,pass,,"商家明显激动质问，助手T5""您先消消气""、T11""您别上火""先安抚",high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C10,na,,"未提开车/忙(T24""忙着出菜""为收尾理由非通话中段)",medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C11,na,,商家问题(评分规则/照片审核/恶意差评)均平台业务，非越界外部,medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C12,pass,,T1自我介绍+T3工号+问负责人,high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C13,pass,,"T1""近7天3个差评""，后续T5/T7讨论具体单",medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C14,pass,,T5/T7引导对差评/配送提交证据申诉,medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C15,pass,,"商家T18""先办配送投诉""→T19介绍申诉操作(Step4)",medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C16,na,,商家选择申诉/投诉,medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C17,pass,,"T19""APP找到那笔单点申诉，选配送问题，描述提交""",high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C18,fail,,"聚焦差评/申诉处理，未询问""经营有什么困难/平台协助""",medium,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C19,pass,,"T11""偶尔一两个差评影响有限""、T17""掉一点点别慌""安抚",high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C20,pass,,"T25""那您先忙…祝您出餐顺利，生意兴隆""",high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C23,pass,,告知差评+处理配送/照片/恶意评价申诉+安抚，核心达成,high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C24,pass,,"T24商家""没别的事了吧，忙着出菜""→T25""那您先忙…回聊""1轮收尾",high,,human_v6_reviewed
+V5_interruption_1779198161_000,V5_C25,pass,,"商家问评分规则→T11/T17""近期评价综合计算，偶尔差评影响有限""一致",medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C01,fail,,T1=59字(豁免); 非首轮超25字: T3=38字 T5=49字 T7=55字 T9=52字 T11=55字 T13=55字; 违规率6/6=100%,high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C02,pass,,"同理(""我特别理解您的委屈""T5)+口语",medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C03,pass,,每轮提问,medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C04,pass,,提问暂停,medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C05,pass,,"用户多次插话，助手""您说得对""等承接，话题衔接",medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C07,pass,,"T7""申诉不能直接删除需审核""如实说明，无""一定成功""承诺",high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C08,pass,,"商家T8""帮做新客优惠券活动""→T9""促销超出职责范围帮您记录""，未承诺补贴",high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C09,pass,,"商家委屈激动，助手T5""我特别理解您的委屈""先安抚",medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C11,pass,,"T8""新客优惠券活动""(促销越界)→T9""超出我的职责范围帮您记录""",medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C13,pass,,"T1""3个差评""+T3""送餐慢、菜品凉、口味偏咸""含数量+细节",high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C14,pass,,"T5""可以提交证据申诉，您要了解一下吗""",high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C15,pass,,"商家T6想申诉(问多久能删)→T7介绍申诉(审核/证据,Step4)",medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C16,na,,商家选申诉,medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C17,pass,,T7介绍申诉要素(出餐监控/沟通截图证据+审核时长),medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C18,fail,,聚焦申诉/公开回复，未询问经营困难/平台协助,medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C19,fail,,"未出现""偶尔差评不影响整体""类安抚",medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C20,fail,,"用户T14""没事我挂了""，助手末轮T13为提问，无礼貌道谢结束",medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C23,pass,,告知差评+申诉信息+公开回复模板，核心覆盖,medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C24,pass,,用户T14主动结束，助手前文未过度追问,medium,,human_v6_reviewed
+V5_interruption_1779198414_001,V5_C25,pass,,"商家问申诉时长→T7""几个工作日""一致",medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=49字 T5=70字 T7=66字 T9=89字 T11=76字 T13=80字 T15=87字 T17=80字 T19=91字 T21=97字 T23=95字 T25=86字 T27=96字 T29=90字; 违规率14/14=100%,high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C02,pass,,"有基本体谅(""我理解会让您担忧"")，口语化尚可",medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C03,pass,,"每轮""您觉得呢/还有其他想法吗""给发言",medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C04,pass,,多处提问暂停,medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C05,na,,用户为连续追问而非中途打断，无需过渡语,medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C07,pass,,"未谈申诉，无""一定成功""承诺",medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C09,na,,商家情绪平和(询问式),medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C11,na,,营销/调料/网红等属经营咨询，非明确越界外部话题,medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C13,pass,,"T1""3个差评""+T3""出餐速度和菜品口味，等待时间长味道不如预期""",high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C14,fail,,"全程未询问""是否需要申诉""(S3缺失)",high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C15,na,,未涉及申诉分支,medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C16,na,,商家未明确不申诉，直接进入建议,medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C17,na,,未引导申诉流程,medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C18,fail,,仅给改善建议，未询问经营困难/平台协助,medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C19,fail,,"未出现""偶尔差评不影响整体""安抚",medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C20,fail,,30轮被截断，无礼貌道谢结束,high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C23,fail,,缺申诉引导与情绪安抚，话题偏离为营销咨询，核心覆盖<70%,medium,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C24,fail,,"30轮被截断，每轮""还有其他想法吗""邀请继续，从未收尾",high,,human_v6_reviewed
+V5_interruption_1779202919_000,V5_C25,na,,无可核验FAQ被问,low,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=37字 T5=50字 T7=90字 T9=55字 T11=72字 T13=55字 T15=64字 T17=77字 T19=76字 T21=51字 T23=65字 T25=63字 T27=57字 T29=52字; 违规率14/14=100%,high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C02,pass,,"有基本体谅(""您说得很对"")，无书面文言堆砌",medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C03,pass,,"每轮""您觉得呢""给发言",medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C04,pass,,多处提问暂停,medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C05,na,,用户连续追问而非中途打断,medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C07,pass,,"T5""申诉成功率挺高，尤其有证据""为概率陈述，非""一定成功""承诺",medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C09,na,,商家情绪平和,medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C11,na,,流程优化/评估指标属经营咨询，非越界,medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C13,pass,,"T1""3个差评""+T3""出餐速度和服务态度""",high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C14,pass,,"T3""是否需要对这些差评进行申诉呢""",high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C15,pass,,商家T4问申诉→T5/T7介绍申诉(成功率/证据/APP评价管理),medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C16,na,,商家倾向申诉,medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C17,pass,,"T7""商家版APP评价管理点击差评申诉，上传出餐监控或记录""",high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C18,fail,,仅给流程优化建议，未询问经营困难/平台协助,medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C19,fail,,"未出现""偶尔差评不影响整体""安抚",medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C20,fail,,30轮被截断，无礼貌道谢结束,high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C23,pass,,告知差评+申诉引导+改善建议已覆盖核心,medium,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C24,fail,,30轮被截断，每轮邀请继续，从未收尾,high,,human_v6_reviewed
+V5_interruption_1779203124_001,V5_C25,na,,无可核验FAQ被问,low,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C01,fail,,T1=59字(豁免); 非首轮超25字: T3=34字 T5=46字 T7=54字 T9=47字 T11=53字 T13=47字 T15=45字 T17=45字 T19=51字; 违规率9/9=100%,high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C02,pass,,"同理(""您辛苦了"")+口语",medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C03,pass,,每轮提问,medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C04,pass,,提问暂停,medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C05,na,,无被打断需过渡场景,medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C07,pass,,"无""申诉一定成功""承诺",medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C09,na,,商家情绪平和,medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C11,pass,,"总部/经理电话/股票待遇(越界)→T5/T9/T11""超出我的职责范围帮您记录回头跟进""(差评率/限流为业务内FAQ)",medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C13,pass,,"T1""3个差评""+T3""配送慢和菜品凉""",high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C14,pass,,"T13""这些差评需要申诉吗""、T15""打算申诉吗""",high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C15,na,,商家倾向自己处理，未明确选申诉,medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C16,pass,,商家不主动申诉→助手聊改善(预订单/运力，Step5),medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C17,na,,商家未选申诉,medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C18,pass,,"T7""招人困难吗""T9""人手不够有什么影响环节""T11""平台能帮缓解吗""问经营困难",high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C19,pass,,"T7""偶尔一两个差评会影响排名但不马上限流""类安抚",medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C20,fail,,"用户T20""我得忙了拜拜""，助手末轮T19为提问，无礼貌道谢结束",medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C23,pass,,告知差评+问申诉+经营协助+安抚，核心达成,high,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C24,pass,,用户T20主动结束，助手前文聚焦任务未过度追问,medium,,human_v6_reviewed
+V5_out_of_scope_1779197726_000,V5_C25,pass,,"商家问""差评与流量/限流""→T7""看差评率，偶尔影响排名不马上限流""一致",medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C01,fail,,T1=57字(豁免); 非首轮超25字: T3=44字 T5=52字 T7=49字 T9=54字 T11=42字 T13=55字 T15=50字 T17=39字 T19=67字 T21=50字; 违规率10/10=100%,high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C02,pass,,"同理(""您这里受委屈了，特别理解""T5)+口语",medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C03,pass,,每轮提问,medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C04,pass,,提问暂停,medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C05,na,,无被打断需过渡场景,medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C07,pass,,"无""申诉一定成功""承诺",medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C08,pass,,"未承诺差评补贴(反提醒""要钱删差评保留截图申诉"")",high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C09,na,,商家郁闷但平和，未达激动阈值,medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C11,pass,,"股票/经理电话/请假/订单数据(越界)→T7/T13""超出我的职责范围帮您记录""，经理电话以""我专门对接，您先跟我说""妥处",medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C13,pass,,"T1""3个差评""+T3""出餐慢和口味偏咸""",high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C14,pass,,"T3""您这边需要申诉吗""、T5""您要是不想申诉""",high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C15,na,,商家认了不申诉,medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C16,pass,,"商家T8""差评的事我认""→助手聊改善(午市秒杀分摊，Step5)",medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C17,na,,商家未选申诉,medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C18,pass,,"T9""出餐流程需要平台协助改善吗""T13""哪个环节需要平台帮一把""",high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C19,fail,,"未出现""偶尔差评不影响整体""类安抚",medium,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C20,pass,,"T21""我这边先挂电话，祝您改善顺利""",high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C23,pass,,告知差评+问申诉+经营协助，核心达成,high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C24,pass,,"用户T20""没了，谢谢""→T21""祝您改善顺利，先挂电话""收尾",high,,human_v6_reviewed
+V5_out_of_scope_1779197944_001,V5_C25,na,,无可核验FAQ被问,low,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=33字 T5=37字 T7=44字 T9=46字 T11=40字 T13=47字 T15=45字 T17=45字 T19=46字 T21=44字 T23=48字; 违规率11/11=100%,high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C02,pass,,"有体谅(""我们很重视商家的感受"")",medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C03,pass,,每轮提问,medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C04,pass,,提问暂停,medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C05,na,,无被打断需过渡场景,medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C07,pass,,"无""申诉一定成功""承诺",medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C09,na,,商家情绪平和,medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C11,pass,,"天气/股票/其他业务/联系方式/电视剧/新菜品/餐厅等(越界)→T7-T23系统性""超出我的职责范围帮您记录回头跟进""",medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C13,fail,,"仅T1提""3个差评""数量，全程未告知差评具体细节(出餐慢/口味等)",medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C14,fail,,"全程未询问""是否需要申诉""(S3缺失)",high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C15,na,,未涉申诉分支,medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C16,na,,商家未明确不申诉,medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C17,na,,未引导申诉流程,medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C18,fail,,"仅反复问""有哪些问题需要改善""，未询问经营困难/平台协助",medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C19,fail,,"未出现""偶尔差评不影响整体""安抚",medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C20,fail,,24轮被截断，无礼貌道谢结束,high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C23,fail,,对话以越界切割与重复改善问句为主，差评细节/申诉/安抚均缺，核心覆盖<70%,medium,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C24,fail,,"24轮被截断，助手反复同一问句""您觉得有哪些问题需要改善呢""十余次，从未收尾",high,,human_v6_reviewed
+V5_out_of_scope_1779202733_000,V5_C25,na,,无可核验FAQ被问,low,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=43字 T5=40字 T7=46字 T9=45字 T11=31字; 违规率5/5=100%,high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C02,pass,,语气礼貌，无书面文言堆砌,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C03,pass,,每轮提问,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C04,pass,,提问暂停,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C05,na,,无被打断需过渡场景,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C07,pass,,"无""申诉一定成功""承诺",medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C09,na,,商家情绪平和,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C11,pass,,"股票/其他业务/朋友联系方式(越界)→T7/T9""超出我的职责范围帮您记录""，T11""抱歉这个我无法提供""",medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C13,pass,,"T1""3个差评""+T3""服务和菜品口味方面""含数量+细节",high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C14,pass,,"T5""您是否需要对差评进行申诉呢""",high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C15,na,,"商家""申诉我再考虑""，未明确选申诉",medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C16,na,,商家未明确不申诉,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C17,na,,仅T7提议介绍流程，商家未确认，未实际展开申诉流程,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C18,fail,,"仅问""有哪些需要改善""，未询问经营困难/平台协助",medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C19,fail,,"未出现""偶尔差评不影响整体""安抚",medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C20,fail,,11轮被截断，末轮T11为提问，无礼貌道谢结束,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C23,fail,,用户持续越界且未明确反馈，差评细节后续未展开、未安抚，核心覆盖不足,medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C24,fail,,"11轮被截断，助手反复""您刚才提到申诉""拉回，未收尾",medium,,human_v6_reviewed
+V5_out_of_scope_1779202862_001,V5_C25,na,,无可核验FAQ被问,low,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C01,fail,,T1=57字(豁免); 非首轮超25字: T3=46字 T5=34字; 违规率2/3=67%,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C02,pass,,"同理(""您先好好休息，身体要紧""T5)",medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C03,pass,,T3提问给发言,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C04,pass,,提问暂停,low,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C05,na,,无被打断场景,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C06,fail,,"T3出现""好的"" → 违规",high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C07,pass,,无申诉成功承诺,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C09,na,,商家身体不适非情绪激动,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C11,na,,无越界问题,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C13,fail,,"仅T3提""出餐慢和漏菜""内容，未告知差评数量",medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C14,na,,商家秒拒，未走到询问是否申诉,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C15,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C16,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C17,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C18,na,,未走到S5(商家拒绝),medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C19,na,,未走到S6,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C20,pass,,"T7""理解，先休息，稍后再联系，祝早日康复""礼貌收尾",high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C23,pass,,拒绝场景：安抚+改约回访，处理合理,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C24,pass,,用户T6坚拒→T7 1轮礼貌收尾,high,,human_v6_reviewed
+V5_refuse_persistent_1779197604_000,V5_C25,na,,无FAQ,low,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=30字; 违规率1/2=50%,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C02,pass,,"同理(""理解您的心情""T3,""保重身体""T5)",medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C03,pass,,T3提问,low,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C04,pass,,提问暂停,low,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C05,na,,无被打断场景,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C07,pass,,无申诉成功承诺,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C09,na,,商家身体不适非激动,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C11,na,,无越界问题,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C13,na,,"T1已给""3个差评""数量，因商家秒拒未及展开细节",medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C14,na,,商家秒拒，未走到询问是否申诉,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C15,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C16,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C17,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C18,na,,未走到S5,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C19,na,,未走到S6,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C20,pass,,"T5""先好好休息，过两天再联系，保重身体""",high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C23,pass,,拒绝场景：安抚+改约，处理合理,medium,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C24,pass,,用户T4坚拒→T5 1轮收尾,high,,human_v6_reviewed
+V5_refuse_persistent_1779197677_001,V5_C25,na,,无FAQ,low,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=51字 T5=30字; 违规率2/2=100%,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C02,pass,,"同理(""没关系，您先照顾好自己，希望早日康复""T5)",medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C03,pass,,T3提问,low,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C04,pass,,提问暂停,low,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C05,na,,无被打断场景,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C06,pass,,"全文assistant未出现""好的/哈哈/嘿嘿/嘻嘻""",high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C07,pass,,无申诉成功承诺,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C09,na,,商家身体不适非激动,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C11,na,,无越界问题,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C13,pass,,"T1""3个差评""+T3""食品口味和配送时间上""含数量+细节",high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C14,na,,商家秒拒(T3问看法即被拒)，未走到询问是否申诉,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C15,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C16,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C17,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C18,na,,未走到S5,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C19,na,,未走到S6,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C20,pass,,"T5""先照顾好自己，稍后再联系，希望早日康复""",high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C23,pass,,拒绝场景：安抚+改约，处理合理,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C24,pass,,用户T4坚拒→T5 1轮收尾,high,,human_v6_reviewed
+V5_refuse_persistent_1779202662_000,V5_C25,na,,无FAQ,low,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C01,fail,,T1=53字(豁免); 非首轮超25字: T3=48字 T5=39字; 违规率2/3=67%,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C02,pass,,"同理(""我很理解您，身体健康最重要""T5)",medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C03,pass,,T3提问,low,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C04,pass,,提问暂停,low,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C05,na,,无被打断场景,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C06,fail,,"T7出现""好的"" → 违规",high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C07,pass,,无申诉成功承诺,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C08,pass,,未承诺差评补贴,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C09,na,,商家身体不适非激动,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C10,na,,未提开车/忙,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C11,na,,无越界问题,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C12,pass,,T1自我介绍+问负责人,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C13,pass,,"T1""3个差评""+T3""食物口味和配送速度""含数量+细节",high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C14,na,,商家秒拒，未走到询问是否申诉,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C15,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C16,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C17,na,,分支未触发,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C18,na,,未走到S5,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C19,na,,未走到S6,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C20,pass,,"T7""您多休息，祝您早日康复！改天再联系""礼貌收尾(注:本轮含""好的""由V5_C06另判)",high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C21,pass,,T1开场白已含全部必要变量,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C22,pass,,全文无 ${} 模板残留,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C23,pass,,拒绝场景：安抚+改约，处理合理,medium,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C24,pass,,用户T6坚拒→T7 1轮收尾,high,,human_v6_reviewed
+V5_refuse_persistent_1779202695_001,V5_C25,na,,无FAQ,low,,human_v6_reviewed

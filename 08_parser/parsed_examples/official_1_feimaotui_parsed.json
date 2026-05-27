@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "instruction_id": "official_1_feimaotui",
+    "instruction_name": "official_1_feimaotui",
+    "role": "你是美团外卖骑手的站长。",
+    "task": "致电\"飞毛腿\"骑手，通知他们今天合同已成功签署，并提醒他们完成配送任务。",
+    "opening_line": "",
+    "variables": [
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "rider_name"
+    ]
+  },
+  "atomic_constraints": [
+    {
+      "id": "official_1_feimaotui_C01",
+      "name": "遵循对话流程和常见问题解答。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_judge",
+      "source_text": "遵循对话流程和常见问题解答。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "official_1_feimaotui_C02",
+      "name": "如被问及超出职责范围的问题，回复：\"我向同事确认后再回电给你。我现在能回答...",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "如被问及超出职责范围的问题，回复：\"我向同事确认后再回电给你。我现在能回答的先回答。\"",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "official_1_feimaotui_C03",
+      "name": "保持语气随意，像打电话一样自然。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "保持语气随意，像打电话一样自然。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "official_1_feimaotui_C04",
+      "name": "每次回复控制在约 30 个字以内。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_judge",
+      "source_text": "每次回复控制在约 30 个字以内。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "official_1_feimaotui_C05",
+      "name": "避免重复回复；如需重申，请换种方式礼貌表达。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "避免重复回复；如需重申，请换种方式礼貌表达。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "official_1_feimaotui_C06",
+      "name": "如果骑手坚持确实无法配送，安慰他们后挂断电话。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "如果骑手坚持确实无法配送，安慰他们后挂断电话。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "official_1_feimaotui_C07",
+      "name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "official_1_feimaotui_C08",
+      "name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "official_1_feimaotui_C09",
+      "name": "S3 尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "official_1_feimaotui_C10",
+      "name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天气下工作、订单量更高，有助于保住飞毛腿资格。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "official_1_feimaotui_C11",
+      "name": "[META] 开场白含必要变量",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "rule_pattern",
+      "source_text": "首轮(Opening Line)应包含: ${W}, ${X}, ${Y}, ${Z}, ${rider_name}",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "official_1_feimaotui_C12",
+      "name": "[META] 所有变量正确替换无残留 ${}",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "对话中不能出现未替换的 ${{var}} 占位符",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "official_1_feimaotui_C13",
+      "name": "[META] 任务核心意图完成",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "llm_judge",
+      "source_text": "任务目标: 致电\"飞毛腿\"骑手，通知他们今天合同已成功签署，并提醒他们完成配送任务。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "official_1_feimaotui_C14",
+      "name": "[META] 适时终结对话",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "对话应在任务完成后自然结束,不冗长拖沓",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "official_1_feimaotui_C15",
+      "name": "[META] FAQ知识正确",
+      "scoring_dimension": "D4_knowledge_accuracy",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "对FAQ问题的回答应准确,关键事实: (无)",
+      "is_critical": false,
+      "weight": 2
+    }
+  ],
+  "faq_items": [
+    {
+      "id": "official_1_feimaotui_FAQ01",
+      "question_intent": "目前，许多骑手正在申请飞毛腿。如果你无法连续配送 ${Y} ...",
+      "answer_template": "目前，许多骑手正在申请飞毛腿。如果你无法连续配送 ${Y} 天，你的名额可能会被他人占用。",
+      "key_facts": []
+    },
+    {
+      "id": "official_1_feimaotui_FAQ02",
+      "question_intent": "单日合同",
+      "answer_template": "在生效当天必须完成 ${X} 单，否则合同及派单可能受到影响。",
+      "key_facts": []
+    },
+    {
+      "id": "official_1_feimaotui_FAQ03",
+      "question_intent": "多日合同",
+      "answer_template": "每天必须完成 ${Y} 单，否则后续合同及派单可能受到影响。",
+      "key_facts": []
+    },
+    {
+      "id": "official_1_feimaotui_FAQ04",
+      "question_intent": "如需退出飞毛腿，必须在前一天 ${Z} 点之前在 App 的...",
+      "answer_template": "如需退出飞毛腿，必须在前一天 ${Z} 点之前在 App 的\"飞毛腿报名\"中取消；次日生效。",
+      "key_facts": []
+    },
+    {
+      "id": "official_1_feimaotui_FAQ05",
+      "question_intent": "连续完成 ${W} 天多日合同，且每天完成 ${Y} 单，将...",
+      "answer_template": "连续完成 ${W} 天多日合同，且每天完成 ${Y} 单，将获得额外奖励（例如，与单日合同相比每单多 +$ 元）。",
+      "key_facts": []
+    }
+  ],
+  "flow_steps": [
+    {
+      "step_id": "S1",
+      "label": "告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
+      "purpose": "告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S2",
+      "label": "说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
+      "purpose": "说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S3",
+      "label": "尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
+      "purpose": "尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S4",
+      "label": "说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
+      "purpose": "说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天气下工作、订单量更高，有助于保住飞毛腿资格。",
+      "is_branch": false
+    }
+  ]
+}

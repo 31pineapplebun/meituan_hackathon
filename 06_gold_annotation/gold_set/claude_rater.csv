@@ -1,0 +1,990 @@
+﻿dialogue_id,constraint_id,verdict,evidence_turn,evidence_text,confidence,notes,rater
+V1_cooperative_1779193967_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_cooperative_1779193967_000,V1_C02,na,,,high,用户未拒绝参加,claude
+V1_cooperative_1779193967_000,V1_C03,pass,5,好。出席的话有30块补贴。来的时候记得带上头盔、工牌和身份证。,high,,claude
+V1_cooperative_1779193967_000,V1_C04,pass,7,必须携带头盔才能参加。别忘了还要带工牌和身份证。这培训很重要，不参加会直接影响你接单评级。,high,,claude
+V1_cooperative_1779193967_000,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_cooperative_1779193967_000,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_cooperative_1779193967_000,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_cooperative_1779193967_000,V1_C08,fail,7,(45字) 必须携带头盔才能参加。别忘了还要带工牌和身份证。这培训很重要，不参加会直接影响你接单评级。,high,3处超长,claude
+V1_cooperative_1779193967_000,V1_C09,na,,,high,未出现越界提问,claude
+V1_cooperative_1779193967_000,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_cooperative_1779193967_000,V1_C11,fail,11,好的，我稍后确认地址就通知你。记得带齐装备，培训对评级很关键。,high,"含禁用词""好的""",claude
+V1_cooperative_1779193967_000,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_cooperative_1779193967_000,V1_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V1_cooperative_1779193967_000,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_cooperative_1779193967_000,V1_C15,fail,29,行，我向同事确认地址后马上打给你。保持电话畅通，培训对评级很关键。,high,对话被截断未自然结束,claude
+V1_cooperative_1779193967_000,V1_C16,pass,全文,问了:['时长'],medium,,claude
+V1_cooperative_1779199886_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_cooperative_1779199886_000,V1_C02,fail,全文,判定依据见全文(V1_C02),medium,拒绝但未询问原因/记录,claude
+V1_cooperative_1779199886_000,V1_C03,pass,3,培训大概持续2小时左右。记得带上头盔、工牌和身份证哦！,high,,claude
+V1_cooperative_1779199886_000,V1_C04,pass,5,没有其他材料了，带好头盔、工牌和身份证就可以了。安全培训很重要，未参加会影响接单评级哦。,high,,claude
+V1_cooperative_1779199886_000,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_cooperative_1779199886_000,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_cooperative_1779199886_000,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_cooperative_1779199886_000,V1_C08,fail,5,(44字) 没有其他材料了，带好头盔、工牌和身份证就可以了。安全培训很重要，未参加会影响接单评级哦。,high,1处超长,claude
+V1_cooperative_1779199886_000,V1_C09,na,,,high,未出现越界提问,claude
+V1_cooperative_1779199886_000,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_cooperative_1779199886_000,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_cooperative_1779199886_000,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_cooperative_1779199886_000,V1_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V1_cooperative_1779199886_000,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_cooperative_1779199886_000,V1_C15,pass,13,培训见！谢谢你的配合，保持安全哦！,low,结束未明显标志但未截断,claude
+V1_cooperative_1779199886_000,V1_C16,pass,全文,问了:['时长'],medium,,claude
+V1_cooperative_1779199977_001,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_cooperative_1779199977_001,V1_C02,na,,,high,用户未拒绝参加,claude
+V1_cooperative_1779199977_001,V1_C03,pass,3,培训大概持续两个小时左右。记得带上头盔、工牌和身份证哦。,high,,claude
+V1_cooperative_1779199977_001,V1_C04,pass,7,安全培训很重要，如果没参加会直接影响接单评级，请务必到场。,high,,claude
+V1_cooperative_1779199977_001,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_cooperative_1779199977_001,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_cooperative_1779199977_001,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_cooperative_1779199977_001,V1_C08,pass,7,最长turn=29字: 安全培训很重要，如果没参加会直接影响接单评级，请务必到场。,high,,claude
+V1_cooperative_1779199977_001,V1_C09,na,,,high,未出现越界提问,claude
+V1_cooperative_1779199977_001,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_cooperative_1779199977_001,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_cooperative_1779199977_001,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_cooperative_1779199977_001,V1_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V1_cooperative_1779199977_001,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_cooperative_1779199977_001,V1_C15,pass,11,不客气，期待见到你！如果有其他问题随时联系我。,medium,,claude
+V1_cooperative_1779199977_001,V1_C16,pass,全文,问了:['时长'],medium,,claude
+V1_interruption_1779195182_001,V1_C01,pass,1,喂，是王强吗？我是咱们美团骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来吗？,high,,claude
+V1_interruption_1779195182_001,V1_C02,pass,7,具体什么事能说下吗？我记录一下原因。,medium,,claude
+V1_interruption_1779195182_001,V1_C03,fail,全文,判定依据见全文(V1_C03),medium,缺少: 头盔/工牌/身份证,claude
+V1_interruption_1779195182_001,V1_C04,pass,9,这次必须线下参加。错过的话只能找下一批次，但不参加会影响接单评级。需要我帮你联系下一批吗？,high,,claude
+V1_interruption_1779195182_001,V1_C05,pass,1,喂，是王强吗？我是咱们美团骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来吗？,high,,claude
+V1_interruption_1779195182_001,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_interruption_1779195182_001,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团骑手站长。通知你一下，10月15号下午2点在望京培训中...,medium,,claude
+V1_interruption_1779195182_001,V1_C08,fail,9,(45字) 这次必须线下参加。错过的话只能找下一批次，但不参加会影响接单评级。需要我帮你联系下一批吗？,high,4处超长,claude
+V1_interruption_1779195182_001,V1_C09,pass,11,下次时间我得向同事确认后回电。这次不参加不影响评级，放心。,high,使用了越界话术,claude
+V1_interruption_1779195182_001,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_interruption_1779195182_001,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_interruption_1779195182_001,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_interruption_1779195182_001,V1_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V1_interruption_1779195182_001,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_interruption_1779195182_001,V1_C15,pass,17,系统维修时间我得问同事后回电。通知我尽量协调，确认后一并发你。还有别的事吗？,low,结束未明显标志但未截断,claude
+V1_interruption_1779195182_001,V1_C16,fail,全文,判定依据见全文(V1_C16),medium,答错: 时长,claude
+V1_interruption_1779200483_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_interruption_1779200483_000,V1_C02,na,,,high,用户未拒绝参加,claude
+V1_interruption_1779200483_000,V1_C03,pass,9,具体内容我向同事确认后再回电。别忘了带头盔、工牌和身份证哦。,high,,claude
+V1_interruption_1779200483_000,V1_C04,pass,11,这些是培训的必需品，没带可能无法参加。安全培训很重要哦，未参加会影响接单评级。你能确认参加吗？,high,,claude
+V1_interruption_1779200483_000,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_interruption_1779200483_000,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_interruption_1779200483_000,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_interruption_1779200483_000,V1_C08,fail,11,(47字) 这些是培训的必需品，没带可能无法参加。安全培训很重要哦，未参加会影响接单评级。你能确认参加吗？,high,4处超长,claude
+V1_interruption_1779200483_000,V1_C09,na,,,high,未出现越界提问,claude
+V1_interruption_1779200483_000,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_interruption_1779200483_000,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_interruption_1779200483_000,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_interruption_1779200483_000,V1_C13,fail,"15,25","重复片段: ""，得联系我安排下一批次。你能确""",medium,,claude
+V1_interruption_1779200483_000,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_interruption_1779200483_000,V1_C15,fail,29,请假后需要联系我安排下一批次，可能会影响接单评级。你还是确认参加这次吧！,high,对话被截断未自然结束,claude
+V1_interruption_1779200483_000,V1_C16,pass,全文,"问了:['时长', '补救']",medium,,claude
+V1_interruption_1779200667_001,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_interruption_1779200667_001,V1_C02,na,,,high,用户未拒绝参加,claude
+V1_interruption_1779200667_001,V1_C03,pass,5,培训大概会持续2个小时。记得带上头盔、工牌和身份证哦！,high,,claude
+V1_interruption_1779200667_001,V1_C04,pass,7,理解你的情况，不过这次培训很重要，没参加会影响接单评级。如果确实不能来，能告诉我原因吗？,high,,claude
+V1_interruption_1779200667_001,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_interruption_1779200667_001,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_interruption_1779200667_001,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_interruption_1779200667_001,V1_C08,fail,7,(44字) 理解你的情况，不过这次培训很重要，没参加会影响接单评级。如果确实不能来，能告诉我原因吗？,high,2处超长,claude
+V1_interruption_1779200667_001,V1_C09,na,,,high,未出现越界提问,claude
+V1_interruption_1779200667_001,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_interruption_1779200667_001,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_interruption_1779200667_001,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_interruption_1779200667_001,V1_C13,fail,"9,25","重复片段: ""向同事确认后再回电。你能否确认""",medium,,claude
+V1_interruption_1779200667_001,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_interruption_1779200667_001,V1_C15,fail,29,我向同事确认后再回电。你能确认参加培训吗？,high,对话被截断未自然结束,claude
+V1_interruption_1779200667_001,V1_C16,pass,全文,"问了:['时长', '补救']",medium,,claude
+V1_out_of_scope_1779194673_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_out_of_scope_1779194673_000,V1_C02,na,,,high,用户未拒绝参加,claude
+V1_out_of_scope_1779194673_000,V1_C03,pass,3,好的，那记得带上头盔、工牌和身份证。这次培训很重要，不参加会直接影响接单评级。,high,,claude
+V1_out_of_scope_1779194673_000,V1_C04,pass,3,好的，那记得带上头盔、工牌和身份证。这次培训很重要，不参加会直接影响接单评级。,high,,claude
+V1_out_of_scope_1779194673_000,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_out_of_scope_1779194673_000,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_out_of_scope_1779194673_000,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_out_of_scope_1779194673_000,V1_C08,fail,3,(39字) 好的，那记得带上头盔、工牌和身份证。这次培训很重要，不参加会直接影响接单评级。,high,4处超长,claude
+V1_out_of_scope_1779194673_000,V1_C09,pass,7,这我确实不太清楚，我向同事确认后再回电。咱先把培训定下来，到时候见。,high,使用了越界话术,claude
+V1_out_of_scope_1779194673_000,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_out_of_scope_1779194673_000,V1_C11,fail,3,好的，那记得带上头盔、工牌和身份证。这次培训很重要，不参加会直接影响接单评级。,high,"含禁用词""好的""",claude
+V1_out_of_scope_1779194673_000,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_out_of_scope_1779194673_000,V1_C13,fail,"9,11","重复片段: ""向同事确认后再回电。那培训的事""",medium,,claude
+V1_out_of_scope_1779194673_000,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_out_of_scope_1779194673_000,V1_C15,pass,15,这我不太方便聊。咱们培训的事就这样定了，别忘了带东西，先挂了。,medium,,claude
+V1_out_of_scope_1779194673_000,V1_C16,pass,全文,问了:['补贴'],medium,,claude
+V1_out_of_scope_1779194856_001,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_out_of_scope_1779194856_001,V1_C02,na,,,high,用户未拒绝参加,claude
+V1_out_of_scope_1779194856_001,V1_C03,pass,7,老李的电话我手头没有，我帮你问问其他同事再回你。对了，你确定能来就带上头盔、工牌和身份证，这培训很重要，不来会影响接单评级。,high,,claude
+V1_out_of_scope_1779194856_001,V1_C04,pass,7,老李的电话我手头没有，我帮你问问其他同事再回你。对了，你确定能来就带上头盔、工牌和身份证，这培训很重要，不来会影响接单评级。,high,,claude
+V1_out_of_scope_1779194856_001,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_out_of_scope_1779194856_001,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_out_of_scope_1779194856_001,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_out_of_scope_1779194856_001,V1_C08,fail,3,(37字) 在望京SOHO T3的B1层，大门进去就能看到。那这个时间地点你确定能来吗？,high,7处超长,claude
+V1_out_of_scope_1779194856_001,V1_C09,pass,11,这个我不清楚，我问问同事再回电给你。那15号下午2点望京SOHO T3，你会准时到吧？,high,使用了越界话术,claude
+V1_out_of_scope_1779194856_001,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_out_of_scope_1779194856_001,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_out_of_scope_1779194856_001,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_out_of_scope_1779194856_001,V1_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V1_out_of_scope_1779194856_001,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_out_of_scope_1779194856_001,V1_C15,pass,17,行，我尽快安排同事回你。你15号到了直接签到，评级的事儿可别耽误。那先这样，谢谢配合。,low,结束未明显标志但未截断,claude
+V1_out_of_scope_1779194856_001,V1_C16,fail,全文,判定依据见全文(V1_C16),medium,答错: 时长,claude
+V1_out_of_scope_1779200168_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_out_of_scope_1779200168_000,V1_C02,na,,,high,用户未拒绝参加,claude
+V1_out_of_scope_1779200168_000,V1_C03,pass,5,天气不错，适合外出。参加培训时记得带上头盔、工牌和身份证哦！,high,,claude
+V1_out_of_scope_1779200168_000,V1_C04,pass,7,我向同事确认后再回电。安全培训很重要，未参加会影响接单评级哦！,high,,claude
+V1_out_of_scope_1779200168_000,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_out_of_scope_1779200168_000,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_out_of_scope_1779200168_000,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_out_of_scope_1779200168_000,V1_C08,fail,13,(39字) 我向同事确认后再回电。培训的时间和地点都记好了吧？10月15号在望京培训中心。,high,1处超长,claude
+V1_out_of_scope_1779200168_000,V1_C09,pass,3,我向同事确认后再回电。你能参加吗？,high,使用了越界话术,claude
+V1_out_of_scope_1779200168_000,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_out_of_scope_1779200168_000,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_out_of_scope_1779200168_000,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_out_of_scope_1779200168_000,V1_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V1_out_of_scope_1779200168_000,V1_C14,na,,,high,用户未持续拒绝,claude
+V1_out_of_scope_1779200168_000,V1_C15,pass,23,我向同事确认后再回电。培训的重要性不容小觑，务必参加！,low,结束未明显标志但未截断,claude
+V1_out_of_scope_1779200168_000,V1_C16,na,,,high,用户未询问FAQ,claude
+V1_refuse_persistent_1779194514_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_refuse_persistent_1779194514_000,V1_C02,pass,3,知道了，不舒服就好好休息。但这次培训不参加会直接影响接单评级，我先帮你记录请假，需要我帮你报下一批补上吗？,medium,,claude
+V1_refuse_persistent_1779194514_000,V1_C03,fail,全文,判定依据见全文(V1_C03),medium,缺少: 头盔/工牌/身份证,claude
+V1_refuse_persistent_1779194514_000,V1_C04,fail,全文,判定依据见全文(V1_C04),medium,未强调重要性或影响评级,claude
+V1_refuse_persistent_1779194514_000,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_refuse_persistent_1779194514_000,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_refuse_persistent_1779194514_000,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_refuse_persistent_1779194514_000,V1_C08,fail,3,(53字) 知道了，不舒服就好好休息。但这次培训不参加会直接影响接单评级，我先帮你记录请假，需要我帮你报下一批补上吗？,high,2处超长,claude
+V1_refuse_persistent_1779194514_000,V1_C09,na,,,high,未出现越界提问,claude
+V1_refuse_persistent_1779194514_000,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_refuse_persistent_1779194514_000,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_refuse_persistent_1779194514_000,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_refuse_persistent_1779194514_000,V1_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V1_refuse_persistent_1779194514_000,V1_C14,pass,5,行，那你先休息。我帮你记上发烧请假，今天的班有人顶吗？补训的时间我回头发你，到时候你直接联系我。,medium,安慰+结束,claude
+V1_refuse_persistent_1779194514_000,V1_C15,pass,5,行，那你先休息。我帮你记上发烧请假，今天的班有人顶吗？补训的时间我回头发你，到时候你直接联系我。,low,结束未明显标志但未截断,claude
+V1_refuse_persistent_1779194514_000,V1_C16,na,,,high,用户未询问FAQ,claude
+V1_refuse_persistent_1779200071_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_refuse_persistent_1779200071_000,V1_C02,fail,全文,判定依据见全文(V1_C02),medium,拒绝但未询问原因/记录,claude
+V1_refuse_persistent_1779200071_000,V1_C03,na,,,medium,用户未确认参加,claude
+V1_refuse_persistent_1779200071_000,V1_C04,fail,全文,判定依据见全文(V1_C04),medium,未强调重要性或影响评级,claude
+V1_refuse_persistent_1779200071_000,V1_C05,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，你到时候能过来参加吗？,high,,claude
+V1_refuse_persistent_1779200071_000,V1_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V1_refuse_persistent_1779200071_000,V1_C07,pass,1,通知培训+确认到场: 喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训...,medium,,claude
+V1_refuse_persistent_1779200071_000,V1_C08,fail,3,(42字) 明白了，王强。你身体不舒服，没问题。请你多休息，注意身体。下次培训再联系你吧。再见！,high,1处超长,claude
+V1_refuse_persistent_1779200071_000,V1_C09,na,,,high,未出现越界提问,claude
+V1_refuse_persistent_1779200071_000,V1_C10,pass,全文,全文未发现额外补贴承诺,high,,claude
+V1_refuse_persistent_1779200071_000,V1_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V1_refuse_persistent_1779200071_000,V1_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V1_refuse_persistent_1779200071_000,V1_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V1_refuse_persistent_1779200071_000,V1_C14,pass,5,了解了，王强。你先好好休息，改天再说吧。再见！,medium,安慰+结束,claude
+V1_refuse_persistent_1779200071_000,V1_C15,pass,5,了解了，王强。你先好好休息，改天再说吧。再见！,medium,,claude
+V1_refuse_persistent_1779200071_000,V1_C16,na,,,high,用户未询问FAQ,claude
+V2_cooperative_1779195497_001,V2_C01,pass,1,喂，是 李建军 吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在 明天晚上12点 前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_cooperative_1779195497_001,V2_C02,pass,3,行，那你先跑着。看一眼你手机里现在的版本是多少，我核对一下，别是旧版。,high,,claude
+V2_cooperative_1779195497_001,V2_C03,pass,5,嗯，2.3.5 是旧版，得升。待会儿去手机应用商店搜“美团骑手”，直接下新版 2.4.0 就行。,high,,claude
+V2_cooperative_1779195497_001,V2_C04,pass,15,行，下载完立刻登录试一下，看看能不能接单，有问题赶紧说。,high,,claude
+V2_cooperative_1779195497_001,V2_C05,pass,1,喂，是 李建军 吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在 明天晚上12点 前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_cooperative_1779195497_001,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_cooperative_1779195497_001,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_cooperative_1779195497_001,V2_C08,fail,5,(45字) 嗯，2.3.5 是旧版，得升。待会儿去手机应用商店搜“美团骑手”，直接下新版 2.4.0 就行。,high,1处超长,claude
+V2_cooperative_1779195497_001,V2_C09,na,,,high,未出现越界提问,claude
+V2_cooperative_1779195497_001,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_cooperative_1779195497_001,V2_C11,fail,13,行，找个信号好的地方下，别下载一半失败了。,high,"含禁用词""好的""",claude
+V2_cooperative_1779195497_001,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_cooperative_1779195497_001,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_cooperative_1779195497_001,V2_C14,na,,,high,用户未拒绝,claude
+V2_cooperative_1779195497_001,V2_C15,pass,19,行，那就好好跑单吧。,low,结束未明显标志但未截断,claude
+V2_cooperative_1779195497_001,V2_C16,pass,全文,问了:['流量'],medium,,claude
+V2_cooperative_1779200835_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_cooperative_1779200835_000,V2_C02,pass,3,更新流程不复杂，直接在手机应用商店搜索“美团骑手”下载新版就行。你现在手机里APP的版本号是多少？,high,,claude
+V2_cooperative_1779200835_000,V2_C03,pass,3,更新流程不复杂，直接在手机应用商店搜索“美团骑手”下载新版就行。你现在手机里APP的版本号是多少？,high,,claude
+V2_cooperative_1779200835_000,V2_C04,pass,7,更新后可能需要重新登录，注意保存好你的账号信息。更新完成后，记得确认能正常接单！,high,,claude
+V2_cooperative_1779200835_000,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_cooperative_1779200835_000,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_cooperative_1779200835_000,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_cooperative_1779200835_000,V2_C08,fail,3,(49字) 更新流程不复杂，直接在手机应用商店搜索“美团骑手”下载新版就行。你现在手机里APP的版本号是多少？,high,4处超长,claude
+V2_cooperative_1779200835_000,V2_C09,na,,,high,未出现越界提问,claude
+V2_cooperative_1779200835_000,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_cooperative_1779200835_000,V2_C11,fail,13,好的，祝顺利更新！有问题随时联系。再见！,high,"含禁用词""好的""",claude
+V2_cooperative_1779200835_000,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_cooperative_1779200835_000,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_cooperative_1779200835_000,V2_C14,na,,,high,用户未拒绝,claude
+V2_cooperative_1779200835_000,V2_C15,pass,13,好的，祝顺利更新！有问题随时联系。再见！,medium,,claude
+V2_cooperative_1779200835_000,V2_C16,pass,全文,问了:['新版改动'],medium,,claude
+V2_interruption_1779196169_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_interruption_1779196169_000,V2_C02,pass,3,对，强制更新，不更新明天过后就接不了单。你手机里现在版本号多少？,high,,claude
+V2_interruption_1779196169_000,V2_C03,pass,5,行，直接去应用商店搜美团骑手，点更新就行了。,high,,claude
+V2_interruption_1779196169_000,V2_C04,fail,全文,判定依据见全文(V2_C04),medium,未问登录或接单,claude
+V2_interruption_1779196169_000,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_interruption_1779196169_000,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_interruption_1779196169_000,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_interruption_1779196169_000,V2_C08,fail,9,(48字) 流量不报销，新版是优化接单的，正常更新不会有问题。你到底更不更？明天12点前没弄好就接不了单了。,high,1处超长,claude
+V2_interruption_1779196169_000,V2_C09,na,,,high,未出现越界提问,claude
+V2_interruption_1779196169_000,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_interruption_1779196169_000,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_interruption_1779196169_000,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_interruption_1779196169_000,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_interruption_1779196169_000,V2_C14,pass,9,流量不报销，新版是优化接单的，正常更新不会有问题。你到底更不更？明天12点前没弄好就接不了单了。,medium,告知后果且结束,claude
+V2_interruption_1779196169_000,V2_C15,pass,9,流量不报销，新版是优化接单的，正常更新不会有问题。你到底更不更？明天12点前没弄好就接不了单了。,low,结束未明显标志但未截断,claude
+V2_interruption_1779196169_000,V2_C16,pass,全文,问了:['流量'],medium,,claude
+V2_interruption_1779196266_001,V2_C01,pass,1,喂，李建军吗？我是站长。通知你，骑手APP出新版了，明天晚上12点前必须更新完，不然系统没法接单。你现在更新了吗？,high,,claude
+V2_interruption_1779196266_001,V2_C02,pass,3,理解你忙，但这是强制要求。趁休息时更新，几分钟就好。你手机现在版本号是多少？,high,,claude
+V2_interruption_1779196266_001,V2_C03,pass,5,行，直接去手机应用商店，搜“美团骑手”，点更新。连WiFi下载更快。,high,,claude
+V2_interruption_1779196266_001,V2_C04,pass,11,不更新就接不了单，损失更大。更新后如果卡，可以清缓存或重启手机试试。赶紧去弄吧。,high,,claude
+V2_interruption_1779196266_001,V2_C05,pass,1,喂，李建军吗？我是站长。通知你，骑手APP出新版了，明天晚上12点前必须更新完，不然系统没法接单。你现在更新了吗？,high,,claude
+V2_interruption_1779196266_001,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_interruption_1779196266_001,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_interruption_1779196266_001,V2_C08,fail,3,(38字) 理解你忙，但这是强制要求。趁休息时更新，几分钟就好。你手机现在版本号是多少？,high,4处超长,claude
+V2_interruption_1779196266_001,V2_C09,na,,,high,未出现越界提问,claude
+V2_interruption_1779196266_001,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_interruption_1779196266_001,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_interruption_1779196266_001,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_interruption_1779196266_001,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_interruption_1779196266_001,V2_C14,na,,,high,用户未拒绝,claude
+V2_interruption_1779196266_001,V2_C15,pass,17,行，更新完了试下能不能接单，告诉我一声。,low,结束未明显标志但未截断,claude
+V2_interruption_1779196266_001,V2_C16,pass,全文,"问了:['新版改动', '流量']",medium,,claude
+V2_interruption_1779201383_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_interruption_1779201383_000,V2_C02,fail,全文,判定依据见全文(V2_C02),medium,未询问版本号,claude
+V2_interruption_1779201383_000,V2_C03,pass,23,更新日志我这边没法提供，你可以在应用商店里找到相关信息。先更新吧！,high,,claude
+V2_interruption_1779201383_000,V2_C04,pass,15,发现问题可以反馈给我们，但更新后你必须能正常接单。赶紧更新吧！,high,,claude
+V2_interruption_1779201383_000,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_interruption_1779201383_000,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_interruption_1779201383_000,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_interruption_1779201383_000,V2_C08,fail,21,(36字) 新版本更新后，功能是自动启用的，不能选择不使用。你得尽快更新，确认一下。,high,1处超长,claude
+V2_interruption_1779201383_000,V2_C09,na,,,high,未出现越界提问,claude
+V2_interruption_1779201383_000,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_interruption_1779201383_000,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_interruption_1779201383_000,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_interruption_1779201383_000,V2_C13,fail,"5,7","重复片段: ""这个不在我职责范围内，我帮您记""",medium,,claude
+V2_interruption_1779201383_000,V2_C14,na,,,high,用户未拒绝,claude
+V2_interruption_1779201383_000,V2_C15,fail,29,这个不在我职责范围内，我帮您记录回头跟进。你最好先更新！,high,对话被截断未自然结束,claude
+V2_interruption_1779201383_000,V2_C16,pass,全文,问了:['新版改动'],medium,,claude
+V2_interruption_1779201531_001,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_interruption_1779201531_001,V2_C02,pass,3,主要是优化了派单系统和实时距离派单，接单会更顺畅。你赶紧去更新吧！现在手机里APP的版本号是多少？,high,,claude
+V2_interruption_1779201531_001,V2_C03,pass,5,这个不在我职责范围内，我帮您记录回头跟进。版本2.0需要更新，不能跳过。快去手机应用商店搜索“美团骑手”更新吧！,high,,claude
+V2_interruption_1779201531_001,V2_C04,pass,17,反馈时间我不太清楚，具体安排我帮您记录。更新之前不能试用，必须更新才能接单！快去更新吧！,medium,即使未更新仍问,claude
+V2_interruption_1779201531_001,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_interruption_1779201531_001,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_interruption_1779201531_001,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_interruption_1779201531_001,V2_C08,fail,3,(49字) 主要是优化了派单系统和实时距离派单，接单会更顺畅。你赶紧去更新吧！现在手机里APP的版本号是多少？,high,11处超长,claude
+V2_interruption_1779201531_001,V2_C09,na,,,high,未出现越界提问,claude
+V2_interruption_1779201531_001,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_interruption_1779201531_001,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_interruption_1779201531_001,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_interruption_1779201531_001,V2_C13,fail,"5,9","重复片段: ""这个不在我职责范围内，我帮您记""",medium,,claude
+V2_interruption_1779201531_001,V2_C14,na,,,high,用户未拒绝,claude
+V2_interruption_1779201531_001,V2_C15,fail,29,主要是优化了派单系统，接单会更顺畅。具体使用感受更新后会更明显！快去更新吧！,high,对话被截断未自然结束,claude
+V2_interruption_1779201531_001,V2_C16,pass,全文,问了:['新版改动'],medium,,claude
+V2_out_of_scope_1779195816_000,V2_C01,pass,1,喂，是 李建军 吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在 明天晚上12点 前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_out_of_scope_1779195816_000,V2_C02,pass,3,明天中午前更新完全来得及。不更新的话，系统确实会强制下线，接不了单。你那APP现在显示版本号是多少？,high,,claude
+V2_out_of_scope_1779195816_000,V2_C03,pass,5,谢了，老毛病，好多了。2.3.8确实太旧了。你赶紧去手机应用商店搜“美团骑手”直接下载新版吧。,high,,claude
+V2_out_of_scope_1779195816_000,V2_C04,pass,9,记下了。天气这事儿我可没法判断，你自己看手机上的天气预报吧。记住，更新完APP，再确认下能不能正常登录接单。,high,,claude
+V2_out_of_scope_1779195816_000,V2_C05,pass,1,喂，是 李建军 吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在 明天晚上12点 前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_out_of_scope_1779195816_000,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_out_of_scope_1779195816_000,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_out_of_scope_1779195816_000,V2_C08,fail,3,(50字) 明天中午前更新完全来得及。不更新的话，系统确实会强制下线，接不了单。你那APP现在显示版本号是多少？,high,4处超长,claude
+V2_out_of_scope_1779195816_000,V2_C09,pass,11,其他站点的事不在我职责范围，我帮你记录回头问问。更新好了没？赶紧登录试试能不能接单。,high,使用了越界话术,claude
+V2_out_of_scope_1779195816_000,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_out_of_scope_1779195816_000,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_out_of_scope_1779195816_000,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_out_of_scope_1779195816_000,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_out_of_scope_1779195816_000,V2_C14,na,,,high,用户未拒绝,claude
+V2_out_of_scope_1779195816_000,V2_C15,pass,11,其他站点的事不在我职责范围，我帮你记录回头问问。更新好了没？赶紧登录试试能不能接单。,low,结束未明显标志但未截断,claude
+V2_out_of_scope_1779195816_000,V2_C16,na,,,high,未询问FAQ,claude
+V2_out_of_scope_1779201136_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_out_of_scope_1779201136_000,V2_C02,pass,3,这个不在我职责范围内，我帮您记录回头跟进。你现在的APP版本号是多少？,high,,claude
+V2_out_of_scope_1779201136_000,V2_C03,pass,5,这个不在我职责范围内，我帮您记录回头跟进。你确认一下是不是最新版本，去应用商店搜索“美团骑手”看看。,high,,claude
+V2_out_of_scope_1779201136_000,V2_C04,pass,7,这个不在我职责范围内，我帮您记录回头跟进。先把APP更新了，确保能正常接单。,high,,claude
+V2_out_of_scope_1779201136_000,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_out_of_scope_1779201136_000,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_out_of_scope_1779201136_000,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_out_of_scope_1779201136_000,V2_C08,fail,5,(50字) 这个不在我职责范围内，我帮您记录回头跟进。你确认一下是不是最新版本，去应用商店搜索“美团骑手”看看。,high,4处超长,claude
+V2_out_of_scope_1779201136_000,V2_C09,pass,3,这个不在我职责范围内，我帮您记录回头跟进。你现在的APP版本号是多少？,high,使用了越界话术,claude
+V2_out_of_scope_1779201136_000,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_out_of_scope_1779201136_000,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_out_of_scope_1779201136_000,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_out_of_scope_1779201136_000,V2_C13,fail,"3,5","重复片段: ""这个不在我职责范围内，我帮您记""",medium,,claude
+V2_out_of_scope_1779201136_000,V2_C14,na,,,high,用户未拒绝,claude
+V2_out_of_scope_1779201136_000,V2_C15,pass,11,这个不在我职责范围内，我帮您记录回头跟进。更新完APP后，确认能接单再联系我。,low,结束未明显标志但未截断,claude
+V2_out_of_scope_1779201136_000,V2_C16,na,,,high,未询问FAQ,claude
+V2_refuse_persistent_1779195668_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_refuse_persistent_1779195668_000,V2_C02,fail,全文,判定依据见全文(V2_C02),medium,未询问版本号,claude
+V2_refuse_persistent_1779195668_000,V2_C03,fail,全文,判定依据见全文(V2_C03),medium,未引导应用商店下载,claude
+V2_refuse_persistent_1779195668_000,V2_C04,na,,,high,用户拒绝更新,claude
+V2_refuse_persistent_1779195668_000,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_refuse_persistent_1779195668_000,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_refuse_persistent_1779195668_000,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_refuse_persistent_1779195668_000,V2_C08,pass,3,最长turn=35字: 身体不舒服得注意休息。但系统明天晚上强制切换，不更新就真的没法接单了。,high,,claude
+V2_refuse_persistent_1779195668_000,V2_C09,na,,,high,未出现越界提问,claude
+V2_refuse_persistent_1779195668_000,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_refuse_persistent_1779195668_000,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_refuse_persistent_1779195668_000,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_refuse_persistent_1779195668_000,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_refuse_persistent_1779195668_000,V2_C14,pass,7,那行，不更新明天晚上12点后就无法接单了，你考虑好。,medium,告知后果且结束,claude
+V2_refuse_persistent_1779195668_000,V2_C15,pass,7,那行，不更新明天晚上12点后就无法接单了，你考虑好。,low,结束未明显标志但未截断,claude
+V2_refuse_persistent_1779195668_000,V2_C16,na,,,high,未询问FAQ,claude
+V2_refuse_persistent_1779195756_001,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_refuse_persistent_1779195756_001,V2_C02,pass,5,这个版本是强制的，明天晚上12点前必须更新，不然第二天没法接单。,high,,claude
+V2_refuse_persistent_1779195756_001,V2_C03,fail,全文,判定依据见全文(V2_C03),medium,未引导应用商店下载,claude
+V2_refuse_persistent_1779195756_001,V2_C04,na,,,high,用户拒绝更新,claude
+V2_refuse_persistent_1779195756_001,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_refuse_persistent_1779195756_001,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_refuse_persistent_1779195756_001,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_refuse_persistent_1779195756_001,V2_C08,pass,5,最长turn=32字: 这个版本是强制的，明天晚上12点前必须更新，不然第二天没法接单。,high,,claude
+V2_refuse_persistent_1779195756_001,V2_C09,na,,,high,未出现越界提问,claude
+V2_refuse_persistent_1779195756_001,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_refuse_persistent_1779195756_001,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_refuse_persistent_1779195756_001,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_refuse_persistent_1779195756_001,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_refuse_persistent_1779195756_001,V2_C14,pass,5,这个版本是强制的，明天晚上12点前必须更新，不然第二天没法接单。,medium,告知后果且结束,claude
+V2_refuse_persistent_1779195756_001,V2_C15,pass,5,这个版本是强制的，明天晚上12点前必须更新，不然第二天没法接单。,low,结束未明显标志但未截断,claude
+V2_refuse_persistent_1779195756_001,V2_C16,na,,,high,未询问FAQ,claude
+V2_refuse_persistent_1779201049_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_refuse_persistent_1779201049_000,V2_C02,fail,全文,判定依据见全文(V2_C02),medium,未询问版本号,claude
+V2_refuse_persistent_1779201049_000,V2_C03,fail,全文,判定依据见全文(V2_C03),medium,未引导应用商店下载,claude
+V2_refuse_persistent_1779201049_000,V2_C04,na,,,high,用户拒绝更新,claude
+V2_refuse_persistent_1779201049_000,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_refuse_persistent_1779201049_000,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_refuse_persistent_1779201049_000,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_refuse_persistent_1779201049_000,V2_C08,fail,3,(40字) 这可不行，不更新就无法接单。你得在明天晚上12点前完成更新。希望你能尽快调整好！,high,2处超长,claude
+V2_refuse_persistent_1779201049_000,V2_C09,na,,,high,未出现越界提问,claude
+V2_refuse_persistent_1779201049_000,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_refuse_persistent_1779201049_000,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_refuse_persistent_1779201049_000,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_refuse_persistent_1779201049_000,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_refuse_persistent_1779201049_000,V2_C14,pass,5,很抱歉，改天不行。如果不更新，明天就没法接单了。希望你能理解，保持身体健康！,medium,告知后果且结束,claude
+V2_refuse_persistent_1779201049_000,V2_C15,pass,5,很抱歉，改天不行。如果不更新，明天就没法接单了。希望你能理解，保持身体健康！,low,结束未明显标志但未截断,claude
+V2_refuse_persistent_1779201049_000,V2_C16,na,,,high,未询问FAQ,claude
+V2_refuse_persistent_1779201097_001,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_refuse_persistent_1779201097_001,V2_C02,fail,全文,判定依据见全文(V2_C02),medium,未询问版本号,claude
+V2_refuse_persistent_1779201097_001,V2_C03,fail,全文,判定依据见全文(V2_C03),medium,未引导应用商店下载,claude
+V2_refuse_persistent_1779201097_001,V2_C04,na,,,high,用户拒绝更新,claude
+V2_refuse_persistent_1779201097_001,V2_C05,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在明天晚上12点前更新完，不然到时候就没法接单了。你现在更新了吗？,high,,claude
+V2_refuse_persistent_1779201097_001,V2_C06,pass,全文,所有assistant文本无${}残留,high,,claude
+V2_refuse_persistent_1779201097_001,V2_C07,pass,全文,通知更新+后果/确认,medium,,claude
+V2_refuse_persistent_1779201097_001,V2_C08,pass,3,最长turn=29字: 你要是没更新，明天就无法接单了。这个很重要，还是得更新哦。,high,,claude
+V2_refuse_persistent_1779201097_001,V2_C09,na,,,high,未出现越界提问,claude
+V2_refuse_persistent_1779201097_001,V2_C10,pass,全文,判定依据见全文(V2_C10),high,,claude
+V2_refuse_persistent_1779201097_001,V2_C11,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V2_refuse_persistent_1779201097_001,V2_C12,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V2_refuse_persistent_1779201097_001,V2_C13,pass,全文,未发现明显重复长片段,medium,,claude
+V2_refuse_persistent_1779201097_001,V2_C14,pass,5,如果不更新，明天就无法接单了。你考虑清楚了？,medium,告知后果且结束,claude
+V2_refuse_persistent_1779201097_001,V2_C15,pass,5,如果不更新，明天就无法接单了。你考虑清楚了？,low,结束未明显标志但未截断,claude
+V2_refuse_persistent_1779201097_001,V2_C16,na,,,high,未询问FAQ,claude
+V4_cooperative_1779196436_000,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779196436_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779196436_000,V4_C03,pass,3,是的，这个订单超时25分钟了。想问问您，出餐慢是什么原因呢？,high,,claude
+V4_cooperative_1779196436_000,V4_C04,pass,全文,高峰场景已问出餐时间,medium,,claude
+V4_cooperative_1779196436_000,V4_C05,pass,5,理解您这边忙。那这个单子大概还需多久能出餐呢？,high,,claude
+V4_cooperative_1779196436_000,V4_C06,pass,7,收到，就是15分钟。我会把情况转告骑手和用户，让他们稍等。感谢您的配合。,medium,,claude
+V4_cooperative_1779196436_000,V4_C07,na,,,high,非缺货/取消场景,claude
+V4_cooperative_1779196436_000,V4_C08,pass,11,好的，感谢您的配合，再见。,high,,claude
+V4_cooperative_1779196436_000,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779196436_000,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_cooperative_1779196436_000,V4_C11,pass,全文,核实+协调,medium,,claude
+V4_cooperative_1779196436_000,V4_C12,fail,3,(30字) 是的，这个订单超时25分钟了。想问问您，出餐慢是什么原因呢？,high,3处超出10-25字范围,claude
+V4_cooperative_1779196436_000,V4_C13,na,,,high,未出现越界提问,claude
+V4_cooperative_1779196436_000,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_cooperative_1779196436_000,V4_C15,na,,,high,"用户未表达""在忙""",claude
+V4_cooperative_1779196436_000,V4_C16,na,,,high,用户未说开车,claude
+V4_cooperative_1779196436_000,V4_C17,fail,11,好的，感谢您的配合，再见。,high,"含禁用词""好的""",claude
+V4_cooperative_1779196436_000,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_cooperative_1779196436_000,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_cooperative_1779196436_000,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,3/6个turn邀请回应,claude
+V4_cooperative_1779196436_000,V4_C21,na,,,high,非interruption场景,claude
+V4_cooperative_1779196436_000,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_cooperative_1779196436_000,V4_C23,na,,,high,未问FAQ,claude
+V4_cooperative_1779196534_001,V4_C01,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779196534_001,V4_C02,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779196534_001,V4_C03,pass,3,系统显示这个订单超时25分钟了，想跟您确认下是什么原因呢？,high,,claude
+V4_cooperative_1779196534_001,V4_C04,pass,全文,高峰场景已问出餐时间,medium,,claude
+V4_cooperative_1779196534_001,V4_C05,pass,5,明白了，高峰期确实忙。那这个订单大概还需要多久能出餐呢？,high,,claude
+V4_cooperative_1779196534_001,V4_C06,pass,7,行，您这边配合加急，我这就跟骑手和用户说一声，让他们再等15分钟。,medium,,claude
+V4_cooperative_1779196534_001,V4_C07,na,,,high,非缺货/取消场景,claude
+V4_cooperative_1779196534_001,V4_C08,pass,11,感谢您的配合，这边会记录您加急处理的情况。再见。,high,,claude
+V4_cooperative_1779196534_001,V4_C09,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779196534_001,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_cooperative_1779196534_001,V4_C11,pass,全文,核实+协调,medium,,claude
+V4_cooperative_1779196534_001,V4_C12,fail,3,(29字) 系统显示这个订单超时25分钟了，想跟您确认下是什么原因呢？,high,4处超出10-25字范围,claude
+V4_cooperative_1779196534_001,V4_C13,na,,,high,未出现越界提问,claude
+V4_cooperative_1779196534_001,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_cooperative_1779196534_001,V4_C15,na,,,high,"用户未表达""在忙""",claude
+V4_cooperative_1779196534_001,V4_C16,na,,,high,用户未说开车,claude
+V4_cooperative_1779196534_001,V4_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V4_cooperative_1779196534_001,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_cooperative_1779196534_001,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_cooperative_1779196534_001,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,3/6个turn邀请回应,claude
+V4_cooperative_1779196534_001,V4_C21,na,,,high,非interruption场景,claude
+V4_cooperative_1779196534_001,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_cooperative_1779196534_001,V4_C23,na,,,high,未问FAQ,claude
+V4_cooperative_1779201688_000,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779201688_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779201688_000,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_cooperative_1779201688_000,V4_C04,pass,全文,高峰场景已问出餐时间,medium,,claude
+V4_cooperative_1779201688_000,V4_C05,pass,5,明白了，那请问您预计这个订单还需要多久能出餐呢？,high,,claude
+V4_cooperative_1779201688_000,V4_C06,pass,7,谢谢您的配合，我会帮您转达给骑手和用户，让他们等一下。请您再加油！还有其他需要我帮忙的吗？,medium,,claude
+V4_cooperative_1779201688_000,V4_C07,na,,,high,非缺货/取消场景,claude
+V4_cooperative_1779201688_000,V4_C08,pass,9,好的，非常感谢您的配合！祝您生意兴隆，有问题随时联系我。再见！,high,,claude
+V4_cooperative_1779201688_000,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_cooperative_1779201688_000,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_cooperative_1779201688_000,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_cooperative_1779201688_000,V4_C12,fail,3,(37字) 这个订单已经超时25分钟了，我想了解一下出餐慢的原因，您这边是忙不过来吗？,high,3处超出10-25字范围,claude
+V4_cooperative_1779201688_000,V4_C13,na,,,high,未出现越界提问,claude
+V4_cooperative_1779201688_000,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_cooperative_1779201688_000,V4_C15,na,,,high,"用户未表达""在忙""",claude
+V4_cooperative_1779201688_000,V4_C16,na,,,high,用户未说开车,claude
+V4_cooperative_1779201688_000,V4_C17,fail,9,好的，非常感谢您的配合！祝您生意兴隆，有问题随时联系我。再见！,high,"含禁用词""好的""",claude
+V4_cooperative_1779201688_000,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_cooperative_1779201688_000,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_cooperative_1779201688_000,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,4/5个turn邀请回应,claude
+V4_cooperative_1779201688_000,V4_C21,na,,,high,非interruption场景,claude
+V4_cooperative_1779201688_000,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_cooperative_1779201688_000,V4_C23,na,,,high,未问FAQ,claude
+V4_interruption_1779197000_000,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779197000_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779197000_000,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_interruption_1779197000_000,V4_C04,fail,全文,判定依据见全文(V4_C04),medium,分支处理不正确,claude
+V4_interruption_1779197000_000,V4_C05,fail,全文,判定依据见全文(V4_C05),medium,未询问出餐时间,claude
+V4_interruption_1779197000_000,V4_C06,fail,全文,判定依据见全文(V4_C06),medium,未转达骑手/用户,claude
+V4_interruption_1779197000_000,V4_C07,pass,9,理解。那请您在商家版APP，点进8234订单的详情页，右上角有取消选项，您操作一下？,high,,claude
+V4_interruption_1779197000_000,V4_C08,fail,13,您打开商家版APP，找到8234那个单，点进去就是详情页了。,low,未明显道谢,claude
+V4_interruption_1779197000_000,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779197000_000,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_interruption_1779197000_000,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_interruption_1779197000_000,V4_C12,fail,3,(32字) 就1分钟，保证简短。我是美团客服，就是您那个8234订单超时了。,high,6处超出10-25字范围,claude
+V4_interruption_1779197000_000,V4_C13,na,,,high,未出现越界提问,claude
+V4_interruption_1779197000_000,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_interruption_1779197000_000,V4_C15,pass,3,就1分钟，保证简短。我是美团客服，就是您那个8234订单超时了。,high,,claude
+V4_interruption_1779197000_000,V4_C16,na,,,high,用户未说开车,claude
+V4_interruption_1779197000_000,V4_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V4_interruption_1779197000_000,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_interruption_1779197000_000,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_interruption_1779197000_000,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,4/7个turn邀请回应,claude
+V4_interruption_1779197000_000,V4_C21,fail,全文,判定依据见全文(V4_C21),medium,interruption场景但未用过渡语,claude
+V4_interruption_1779197000_000,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_interruption_1779197000_000,V4_C23,na,,,high,未问FAQ,claude
+V4_interruption_1779197143_001,V4_C01,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779197143_001,V4_C02,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779197143_001,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_interruption_1779197143_001,V4_C04,pass,全文,高峰场景已问出餐时间,medium,,claude
+V4_interruption_1779197143_001,V4_C05,pass,5,顾客那边催了，但还没正式投诉。您别急，就是想问下，这个单大概还需要多久能出？,high,,claude
+V4_interruption_1779197143_001,V4_C06,fail,全文,判定依据见全文(V4_C06),medium,未转达骑手/用户,claude
+V4_interruption_1779197143_001,V4_C07,pass,7,这个超出我职责范围了。缺鸡翅的话，要么您跟客人沟通能不能换个菜，要么就只能在商家版APP上取消订单了。您看怎么办？,high,,claude
+V4_interruption_1779197143_001,V4_C08,pass,13,抱歉，是我表达不准。我这边会帮您和骑手、顾客解释清楚，您快去取消订单吧。感谢配合，再见。,high,,claude
+V4_interruption_1779197143_001,V4_C09,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779197143_001,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_interruption_1779197143_001,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_interruption_1779197143_001,V4_C12,fail,3,(44字) 就 1 分钟，保证简短。这个订单超时了，主要想跟您核实下，是单子太多忙不过来，还是缺食材了？,high,6处超出10-25字范围,claude
+V4_interruption_1779197143_001,V4_C13,na,,,high,未出现越界提问,claude
+V4_interruption_1779197143_001,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_interruption_1779197143_001,V4_C15,pass,3,就 1 分钟，保证简短。这个订单超时了，主要想跟您核实下，是单子太多忙不过来，还是缺食材了？,high,,claude
+V4_interruption_1779197143_001,V4_C16,na,,,high,用户未说开车,claude
+V4_interruption_1779197143_001,V4_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V4_interruption_1779197143_001,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_interruption_1779197143_001,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_interruption_1779197143_001,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,4/7个turn邀请回应,claude
+V4_interruption_1779197143_001,V4_C21,fail,全文,判定依据见全文(V4_C21),medium,interruption场景但未用过渡语,claude
+V4_interruption_1779197143_001,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_interruption_1779197143_001,V4_C23,na,,,high,未问FAQ,claude
+V4_interruption_1779202116_000,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779202116_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779202116_000,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_interruption_1779202116_000,V4_C04,pass,全文,高峰场景已问出餐时间,medium,,claude
+V4_interruption_1779202116_000,V4_C05,pass,5,您刚才提到高峰期，这样的情况我理解。关于外卖费的问题，抱歉，这超出我职责范围，我帮您记录回头跟进。请问这个订单大概还需要多久能出餐呢？,high,,claude
+V4_interruption_1779202116_000,V4_C06,fail,全文,判定依据见全文(V4_C06),medium,未转达骑手/用户,claude
+V4_interruption_1779202116_000,V4_C07,fail,全文,判定依据见全文(V4_C07),medium,未引导APP取消,claude
+V4_interruption_1779202116_000,V4_C08,fail,29,我明白您的焦急，但我这边无法直接联系厨房。请您给我一个大概的出餐时间，我会尽力帮助您协调。,medium,截断未结束,claude
+V4_interruption_1779202116_000,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779202116_000,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_interruption_1779202116_000,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_interruption_1779202116_000,V4_C12,fail,3,(33字) 好的，感谢您的配合。请问出餐慢的原因是什么呢？是高峰期忙不过来吗？,high,14处超出10-25字范围,claude
+V4_interruption_1779202116_000,V4_C13,na,,,high,未出现越界提问,claude
+V4_interruption_1779202116_000,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_interruption_1779202116_000,V4_C15,fail,2,用户:我是！订单怎么还没送到？快点说！,medium,"未用""就1分钟""约定话术",claude
+V4_interruption_1779202116_000,V4_C16,na,,,high,用户未说开车,claude
+V4_interruption_1779202116_000,V4_C17,fail,3,好的，感谢您的配合。请问出餐慢的原因是什么呢？是高峰期忙不过来吗？,high,"含禁用词""好的""",claude
+V4_interruption_1779202116_000,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_interruption_1779202116_000,V4_C19,fail,5,(67字) 您刚才提到高峰期，这样的情况我理解。关于外卖费的问题，抱歉，这超出我职责范围，我帮您记录回头跟进。请问这个订单大概还需要多久能出餐呢？,medium,4个过长turn,claude
+V4_interruption_1779202116_000,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,9/15个turn邀请回应,claude
+V4_interruption_1779202116_000,V4_C21,pass,5,您刚才提到高峰期，这样的情况我理解。关于外卖费的问题，抱歉，这超出我职责范围，我帮您记录回头跟进。请问这个订单大概还需要多久能出餐呢？,medium,,claude
+V4_interruption_1779202116_000,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_interruption_1779202116_000,V4_C23,pass,全文,问了:['评级'],medium,,claude
+V4_interruption_1779202280_001,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779202280_001,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779202280_001,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_interruption_1779202280_001,V4_C04,na,,,medium,未识别明确原因分支,claude
+V4_interruption_1779202280_001,V4_C05,fail,全文,判定依据见全文(V4_C05),medium,未询问出餐时间,claude
+V4_interruption_1779202280_001,V4_C06,fail,全文,判定依据见全文(V4_C06),medium,未转达骑手/用户,claude
+V4_interruption_1779202280_001,V4_C07,pass,7,可以的，您可以重新下单。要取消当前订单的话，您需要在商家版APP的订单详情页，点击右上角选择取消订单。您这边需要我协助吗？,high,,claude
+V4_interruption_1779202280_001,V4_C08,fail,29,当然可以。在商家后台，找到接单设置，然后调整默认出餐时长即可。现在我们先处理这个订单的取消，您觉得怎么样？,medium,截断未结束,claude
+V4_interruption_1779202280_001,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_interruption_1779202280_001,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_interruption_1779202280_001,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_interruption_1779202280_001,V4_C12,fail,3,(31字) 这个订单是大约25分钟前下的。请问您这边出餐慢的原因是什么呢？,high,14处超出10-25字范围,claude
+V4_interruption_1779202280_001,V4_C13,na,,,high,未出现越界提问,claude
+V4_interruption_1779202280_001,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_interruption_1779202280_001,V4_C15,na,,,high,"用户未表达""在忙""",claude
+V4_interruption_1779202280_001,V4_C16,na,,,high,用户未说开车,claude
+V4_interruption_1779202280_001,V4_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V4_interruption_1779202280_001,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_interruption_1779202280_001,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_interruption_1779202280_001,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,15/15个turn邀请回应,claude
+V4_interruption_1779202280_001,V4_C21,fail,全文,判定依据见全文(V4_C21),medium,interruption场景但未用过渡语,claude
+V4_interruption_1779202280_001,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_interruption_1779202280_001,V4_C23,pass,全文,"问了:['换货', '延时']",medium,,claude
+V4_out_of_scope_1779196755_000,V4_C01,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_out_of_scope_1779196755_000,V4_C02,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_out_of_scope_1779196755_000,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_out_of_scope_1779196755_000,V4_C04,pass,全文,高峰场景已问出餐时间,medium,,claude
+V4_out_of_scope_1779196755_000,V4_C05,pass,5,是挺忙的。咱们先说正事，这单大概还要多久能出餐？,high,,claude
+V4_out_of_scope_1779196755_000,V4_C06,pass,7,收到，十分钟内出餐。我先记下来，帮您转达给骑手和用户。股票的事，这超出我职责范围了，我帮您记录回头跟进。,medium,,claude
+V4_out_of_scope_1779196755_000,V4_C07,na,,,high,非缺货/取消场景,claude
+V4_out_of_scope_1779196755_000,V4_C08,pass,13,七夕活动超出我范围，会记录。确认尾号8234十分钟出餐，我转达骑手。感谢配合，再见。,high,,claude
+V4_out_of_scope_1779196755_000,V4_C09,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_out_of_scope_1779196755_000,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_out_of_scope_1779196755_000,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_out_of_scope_1779196755_000,V4_C12,fail,3,(31字) 对，系统显示这单出餐超时。请问是店里太忙，还是有什么特殊情况？,high,5处超出10-25字范围,claude
+V4_out_of_scope_1779196755_000,V4_C13,pass,7,收到，十分钟内出餐。我先记下来，帮您转达给骑手和用户。股票的事，这超出我职责范围了，我帮您记录回头跟进。,high,使用了越界话术,claude
+V4_out_of_scope_1779196755_000,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_out_of_scope_1779196755_000,V4_C15,fail,4,用户:唉，今天确实忙得够呛，厨房那边人手不够。不过说到忙，今天天气倒是挺好的，你那边天气怎么样啊？,medium,"未用""就1分钟""约定话术",claude
+V4_out_of_scope_1779196755_000,V4_C16,na,,,high,用户未说开车,claude
+V4_out_of_scope_1779196755_000,V4_C17,fail,9,好的，十分钟我记下了。加盟的事也超出我这边范围，回头一并帮您记录跟进。,high,"含禁用词""好的""",claude
+V4_out_of_scope_1779196755_000,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_out_of_scope_1779196755_000,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_out_of_scope_1779196755_000,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,3/7个turn邀请回应,claude
+V4_out_of_scope_1779196755_000,V4_C21,na,,,high,非interruption场景,claude
+V4_out_of_scope_1779196755_000,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_out_of_scope_1779196755_000,V4_C23,na,,,high,未问FAQ,claude
+V4_out_of_scope_1779201993_001,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_out_of_scope_1779201993_001,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_out_of_scope_1779201993_001,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_out_of_scope_1779201993_001,V4_C04,pass,全文,高峰场景已问出餐时间,medium,,claude
+V4_out_of_scope_1779201993_001,V4_C05,pass,5,我这边也挺好的，谢谢关心！那请问您预计这个订单还需要多久能出餐呢？,high,,claude
+V4_out_of_scope_1779201993_001,V4_C06,pass,7,感谢您的回复！十分钟左右我会转达给骑手和用户。关于股票的事，超出我职责范围，我帮您记录回头跟进。请问还有其他需要的帮助吗？,medium,,claude
+V4_out_of_scope_1779201993_001,V4_C07,na,,,high,非缺货/取消场景,claude
+V4_out_of_scope_1779201993_001,V4_C08,pass,23,抱歉，这个超出我职责范围，我帮您记录回头跟进。感谢您的理解！如果没有其他问题，我就结束通话了。,high,,claude
+V4_out_of_scope_1779201993_001,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_out_of_scope_1779201993_001,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_out_of_scope_1779201993_001,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_out_of_scope_1779201993_001,V4_C12,fail,3,(34字) 谢谢您接听！我想确认一下，出餐慢的原因是什么呢？是高峰期忙不过来吗？,high,11处超出10-25字范围,claude
+V4_out_of_scope_1779201993_001,V4_C13,pass,7,感谢您的回复！十分钟左右我会转达给骑手和用户。关于股票的事，超出我职责范围，我帮您记录回头跟进。请问还有其他需要的帮助吗？,high,使用了越界话术,claude
+V4_out_of_scope_1779201993_001,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_out_of_scope_1779201993_001,V4_C15,na,,,high,"用户未表达""在忙""",claude
+V4_out_of_scope_1779201993_001,V4_C16,na,,,high,用户未说开车,claude
+V4_out_of_scope_1779201993_001,V4_C17,fail,5,我这边也挺好的，谢谢关心！那请问您预计这个订单还需要多久能出餐呢？,high,"含禁用词""好的""",claude
+V4_out_of_scope_1779201993_001,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_out_of_scope_1779201993_001,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_out_of_scope_1779201993_001,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,4/12个turn邀请回应,claude
+V4_out_of_scope_1779201993_001,V4_C21,na,,,high,非interruption场景,claude
+V4_out_of_scope_1779201993_001,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_out_of_scope_1779201993_001,V4_C23,na,,,high,未问FAQ,claude
+V4_refuse_persistent_1779196709_001,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779196709_001,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779196709_001,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_refuse_persistent_1779196709_001,V4_C04,na,,,medium,未识别明确原因分支,claude
+V4_refuse_persistent_1779196709_001,V4_C05,fail,全文,判定依据见全文(V4_C05),medium,未询问出餐时间,claude
+V4_refuse_persistent_1779196709_001,V4_C06,fail,全文,判定依据见全文(V4_C06),medium,未转达骑手/用户,claude
+V4_refuse_persistent_1779196709_001,V4_C07,na,,,high,非缺货/取消场景,claude
+V4_refuse_persistent_1779196709_001,V4_C08,fail,5,理解，身体最重要。那我回头再联系您确认这个订单，您先好好休息。,low,未明显道谢,claude
+V4_refuse_persistent_1779196709_001,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25 分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779196709_001,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_refuse_persistent_1779196709_001,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_refuse_persistent_1779196709_001,V4_C12,fail,3,(37字) 身体要紧，您需要先休息下吗？方便的话，我们快速核实下 8234 这个订单就好。,high,2处超出10-25字范围,claude
+V4_refuse_persistent_1779196709_001,V4_C13,na,,,high,未出现越界提问,claude
+V4_refuse_persistent_1779196709_001,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_refuse_persistent_1779196709_001,V4_C15,na,,,high,"用户未表达""在忙""",claude
+V4_refuse_persistent_1779196709_001,V4_C16,na,,,high,用户未说开车,claude
+V4_refuse_persistent_1779196709_001,V4_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V4_refuse_persistent_1779196709_001,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_refuse_persistent_1779196709_001,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_refuse_persistent_1779196709_001,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,2/3个turn邀请回应,claude
+V4_refuse_persistent_1779196709_001,V4_C21,na,,,high,非interruption场景,claude
+V4_refuse_persistent_1779196709_001,V4_C22,na,,,medium,对话过短,claude
+V4_refuse_persistent_1779196709_001,V4_C23,na,,,high,未问FAQ,claude
+V4_refuse_persistent_1779201782_000,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779201782_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779201782_000,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_refuse_persistent_1779201782_000,V4_C04,na,,,medium,未识别明确原因分支,claude
+V4_refuse_persistent_1779201782_000,V4_C05,fail,全文,判定依据见全文(V4_C05),medium,未询问出餐时间,claude
+V4_refuse_persistent_1779201782_000,V4_C06,fail,全文,判定依据见全文(V4_C06),medium,未转达骑手/用户,claude
+V4_refuse_persistent_1779201782_000,V4_C07,na,,,high,非缺货/取消场景,claude
+V4_refuse_persistent_1779201782_000,V4_C08,fail,5,我理解您的情况，不过这个订单需要尽快处理。请您稍微告诉我出餐延迟的原因，可以吗？,low,未明显道谢,claude
+V4_refuse_persistent_1779201782_000,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779201782_000,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_refuse_persistent_1779201782_000,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_refuse_persistent_1779201782_000,V4_C12,fail,3,(36字) 您刚才提到身体不舒服，那我尽量简短帮您处理。请问出餐延迟的原因是什么呢？,high,2处超出10-25字范围,claude
+V4_refuse_persistent_1779201782_000,V4_C13,na,,,high,未出现越界提问,claude
+V4_refuse_persistent_1779201782_000,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_refuse_persistent_1779201782_000,V4_C15,na,,,high,"用户未表达""在忙""",claude
+V4_refuse_persistent_1779201782_000,V4_C16,na,,,high,用户未说开车,claude
+V4_refuse_persistent_1779201782_000,V4_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V4_refuse_persistent_1779201782_000,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_refuse_persistent_1779201782_000,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_refuse_persistent_1779201782_000,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,3/3个turn邀请回应,claude
+V4_refuse_persistent_1779201782_000,V4_C21,na,,,high,非interruption场景,claude
+V4_refuse_persistent_1779201782_000,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_refuse_persistent_1779201782_000,V4_C23,na,,,high,未问FAQ,claude
+V4_refuse_persistent_1779201819_001,V4_C01,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779201819_001,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779201819_001,V4_C03,fail,全文,判定依据见全文(V4_C03),medium,未询问原因,claude
+V4_refuse_persistent_1779201819_001,V4_C04,na,,,medium,未识别明确原因分支,claude
+V4_refuse_persistent_1779201819_001,V4_C05,fail,全文,判定依据见全文(V4_C05),medium,未询问出餐时间,claude
+V4_refuse_persistent_1779201819_001,V4_C06,fail,全文,判定依据见全文(V4_C06),medium,未转达骑手/用户,claude
+V4_refuse_persistent_1779201819_001,V4_C07,na,,,high,非缺货/取消场景,claude
+V4_refuse_persistent_1779201819_001,V4_C08,fail,5,您刚才提到今天身体不舒服，明天再处理没问题。不过这笔订单如果要取消，我可以指导您操作。您看怎么样？,low,未明显道谢,claude
+V4_refuse_persistent_1779201819_001,V4_C09,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了，想跟您核实下情况。,high,,claude
+V4_refuse_persistent_1779201819_001,V4_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V4_refuse_persistent_1779201819_001,V4_C11,fail,全文,判定依据见全文(V4_C11),medium,未完成核实/协调,claude
+V4_refuse_persistent_1779201819_001,V4_C12,fail,3,(39字) 我理解您的情况，您能简单告诉我这笔订单出餐慢的原因吗？这样我可以帮您协调一下。,high,2处超出10-25字范围,claude
+V4_refuse_persistent_1779201819_001,V4_C13,na,,,high,未出现越界提问,claude
+V4_refuse_persistent_1779201819_001,V4_C14,pass,全文,判定依据见全文(V4_C14),high,,claude
+V4_refuse_persistent_1779201819_001,V4_C15,na,,,high,"用户未表达""在忙""",claude
+V4_refuse_persistent_1779201819_001,V4_C16,na,,,high,用户未说开车,claude
+V4_refuse_persistent_1779201819_001,V4_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V4_refuse_persistent_1779201819_001,V4_C18,pass,全文,未发现列表/项目符号/书面化用词,medium,,claude
+V4_refuse_persistent_1779201819_001,V4_C19,pass,全文,判定依据见全文(V4_C19),medium,,claude
+V4_refuse_persistent_1779201819_001,V4_C20,pass,全文,判定依据见全文(V4_C20),medium,3/3个turn邀请回应,claude
+V4_refuse_persistent_1779201819_001,V4_C21,na,,,high,非interruption场景,claude
+V4_refuse_persistent_1779201819_001,V4_C22,pass,全文,判定依据见全文(V4_C22),low,对话进行到合理阶段,claude
+V4_refuse_persistent_1779201819_001,V4_C23,na,,,high,未问FAQ,claude
+V5_cooperative_1779197281_000,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。,high,,claude
+V5_cooperative_1779197281_000,V5_C02,pass,3,我们看到您近7天有3个差评，主要是出餐慢和漏放餐具的问题。您这边现在方便聊两句吗？,high,,claude
+V5_cooperative_1779197281_000,V5_C03,pass,7,理解您，忙起来确实容易疏忽。您看是否需要对这些差评申诉，还是我们先聊聊怎么改进？,medium,,claude
+V5_cooperative_1779197281_000,V5_C04,pass,全文,改善分支正确,medium,,claude
+V5_cooperative_1779197281_000,V5_C05,na,,,medium,用户未要求申诉,claude
+V5_cooperative_1779197281_000,V5_C06,pass,7,理解您，忙起来确实容易疏忽。您看是否需要对这些差评申诉，还是我们先聊聊怎么改进？,medium,,claude
+V5_cooperative_1779197281_000,V5_C07,pass,全文,判定依据见全文(V5_C07),low,,claude
+V5_cooperative_1779197281_000,V5_C08,pass,17,不客气，能帮到您就好。后续多关注评价趋势，祝生意兴隆，再见。,high,,claude
+V5_cooperative_1779197281_000,V5_C09,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。,high,缺: review_count_last_7days(3),claude
+V5_cooperative_1779197281_000,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_cooperative_1779197281_000,V5_C11,pass,全文,安抚+申诉/收集,medium,,claude
+V5_cooperative_1779197281_000,V5_C12,fail,3,(41字) 我们看到您近7天有3个差评，主要是出餐慢和漏放餐具的问题。您这边现在方便聊两句吗？,high,8处超出10-25字范围,claude
+V5_cooperative_1779197281_000,V5_C13,pass,13,这个超出我的职责范围，我帮您记录回头跟进。不过包装改良后，顾客体验好了评分也稳，长远看对利润有帮助。还有其他问题需要马上协助吗？,high,使用了越界话术,claude
+V5_cooperative_1779197281_000,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_cooperative_1779197281_000,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_cooperative_1779197281_000,V5_C16,na,,,high,未触发,claude
+V5_cooperative_1779197281_000,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_cooperative_1779197281_000,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_cooperative_1779197281_000,V5_C19,fail,5,(67字) 别着急，这些差评确实让人难受。主要是说等餐太久，还有少放筷子、纸巾这类问题。您方便时打开商家版APP，在评价管理里就能看到具体订单了。,medium,2个过长turn,claude
+V5_cooperative_1779197281_000,V5_C20,na,,,high,非interruption场景,claude
+V5_cooperative_1779197281_000,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_cooperative_1779197281_000,V5_C22,na,,,medium,用户未明显激动,claude
+V5_cooperative_1779197281_000,V5_C23,na,,,high,未问FAQ,claude
+V5_cooperative_1779197454_001,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_cooperative_1779197454_001,V5_C02,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_cooperative_1779197454_001,V5_C03,pass,3,感谢您接听。这3个差评主要反映的是出餐慢和漏菜问题呢。您需要了解申诉流程吗？,medium,,claude
+V5_cooperative_1779197454_001,V5_C04,pass,全文,申诉分支正确,medium,,claude
+V5_cooperative_1779197454_001,V5_C05,pass,7,您先别急。在商家版APP里，找到评价管理，点击差评申诉，上传出餐监控或备餐记录就行。证据足，成功率不低。,medium,,claude
+V5_cooperative_1779197454_001,V5_C06,pass,11,人手不足确实头疼。咱平台有延时出餐设置，可帮您缓冲时间。您觉得在哪方面改善最紧迫？,medium,,claude
+V5_cooperative_1779197454_001,V5_C07,pass,5,一位顾客等了快一小时，另一位说少给了份米饭。我看您心情肯定不好，咱先看看是否要申诉？,medium,,claude
+V5_cooperative_1779197454_001,V5_C08,pass,15,这个超出我的职责范围，我帮您记录回头跟进。偶尔的差评不影响整体，您多费心关注趋势就好。感谢接听，再见。,high,,claude
+V5_cooperative_1779197454_001,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_cooperative_1779197454_001,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_cooperative_1779197454_001,V5_C11,pass,全文,安抚+申诉/收集,medium,,claude
+V5_cooperative_1779197454_001,V5_C12,fail,3,(38字) 感谢您接听。这3个差评主要反映的是出餐慢和漏菜问题呢。您需要了解申诉流程吗？,high,7处超出10-25字范围,claude
+V5_cooperative_1779197454_001,V5_C13,na,,,high,未出现越界提问,claude
+V5_cooperative_1779197454_001,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_cooperative_1779197454_001,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_cooperative_1779197454_001,V5_C16,na,,,high,未触发,claude
+V5_cooperative_1779197454_001,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_cooperative_1779197454_001,V5_C18,fail,全文,判定依据见全文(V5_C18),medium,缺同理心表达,claude
+V5_cooperative_1779197454_001,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_cooperative_1779197454_001,V5_C20,na,,,high,非interruption场景,claude
+V5_cooperative_1779197454_001,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_cooperative_1779197454_001,V5_C22,na,,,medium,用户未明显激动,claude
+V5_cooperative_1779197454_001,V5_C23,na,,,high,未问FAQ,claude
+V5_cooperative_1779202511_001,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_cooperative_1779202511_001,V5_C02,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_cooperative_1779202511_001,V5_C03,pass,5,您提到的调整是很好的方向。可以考虑加强与配送方的沟通，确保送餐效率。另外，您是否需要申诉这些差评呢？,medium,,claude
+V5_cooperative_1779202511_001,V5_C04,pass,全文,申诉分支正确,medium,,claude
+V5_cooperative_1779202511_001,V5_C05,pass,7,当然可以。您只需在商家版APP的评价管理中找到差评，点击申诉并提交相关证据。这样就能开始申诉流程了。您还有其他问题吗？,medium,,claude
+V5_cooperative_1779202511_001,V5_C06,pass,11,除了加强送餐效率，您可以定期收集顾客反馈，优化菜品和服务。建立良好的沟通渠道，及时回应顾客意见也是很重要的。您觉得这些建议对您有帮助吗？,medium,,claude
+V5_cooperative_1779202511_001,V5_C07,fail,全文,判定依据见全文(V5_C07),medium,未安抚情绪,claude
+V5_cooperative_1779202511_001,V5_C08,pass,27,不客气！很高兴能帮到您。祝川香小厨生意兴隆，有任何问题随时欢迎联系我！再见！,high,,claude
+V5_cooperative_1779202511_001,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_cooperative_1779202511_001,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_cooperative_1779202511_001,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_cooperative_1779202511_001,V5_C12,fail,3,(44字) 当然可以。最近的差评主要集中在送餐慢和菜品口味上。这可能影响到您的经营，您觉得情况如何？,high,13处超出10-25字范围,claude
+V5_cooperative_1779202511_001,V5_C13,fail,14,用户越界提问: 了解了，感谢您的提醒！请问有没有推荐的工具或方法来收集顾客反馈呢？,medium,出现越界但未用约定话术,claude
+V5_cooperative_1779202511_001,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_cooperative_1779202511_001,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_cooperative_1779202511_001,V5_C16,na,,,high,未触发,claude
+V5_cooperative_1779202511_001,V5_C17,fail,5,您提到的调整是很好的方向。可以考虑加强与配送方的沟通，确保送餐效率。另外，您是否需要申诉这些差评呢？,high,"含禁用词""好的""",claude
+V5_cooperative_1779202511_001,V5_C18,fail,全文,判定依据见全文(V5_C18),medium,缺同理心表达,claude
+V5_cooperative_1779202511_001,V5_C19,fail,11,(68字) 除了加强送餐效率，您可以定期收集顾客反馈，优化菜品和服务。建立良好的沟通渠道，及时回应顾客意见也是很重要的。您觉得这些建议对您有帮助吗？,medium,6个过长turn,claude
+V5_cooperative_1779202511_001,V5_C20,na,,,high,非interruption场景,claude
+V5_cooperative_1779202511_001,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_cooperative_1779202511_001,V5_C22,na,,,medium,用户未明显激动,claude
+V5_cooperative_1779202511_001,V5_C23,pass,全文,问了:['反馈'],medium,,claude
+V5_interruption_1779198161_000,V5_C01,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779198161_000,V5_C02,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779198161_000,V5_C03,pass,7,您别着急，我理解。申请入口在商家版APP的评价管理里。那个夫妻肺片的单，您如果不认可，也可以申诉。这单您后厨有留样或监控吗？,medium,,claude
+V5_interruption_1779198161_000,V5_C04,pass,全文,申诉分支正确,medium,,claude
+V5_interruption_1779198161_000,V5_C05,pass,5,您先消消气，遇到这种情况确实让人着急。平台对恶意评价有专门投诉入口，您可以在后台提交证据，核实后会直接剔除。您提到的这几个差评，有怀疑是同行吗？,medium,,claude
+V5_interruption_1779198161_000,V5_C06,pass,9,照片的事我理解，反复被拒确实恼火。建议您先对照格式要求上传。说回刚才那单，虽然没有监控，但如果有出餐记录也可以。需要我陪您走一遍那个申诉流程吗？,medium,,claude
+V5_interruption_1779198161_000,V5_C07,pass,5,您先消消气，遇到这种情况确实让人着急。平台对恶意评价有专门投诉入口，您可以在后台提交证据，核实后会直接剔除。您提到的这几个差评，有怀疑是同行吗？,medium,,claude
+V5_interruption_1779198161_000,V5_C08,pass,25,理解，生意要紧。那您先忙，记得优先处理疑似敲诈和配送问题的申诉。咱们回聊，祝您出餐顺利，生意兴隆！,high,,claude
+V5_interruption_1779198161_000,V5_C09,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779198161_000,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_interruption_1779198161_000,V5_C11,pass,全文,安抚+申诉/收集,medium,,claude
+V5_interruption_1779198161_000,V5_C12,fail,3,(47字) 我是商家关怀部门的，工号 5812。这次来电主要是因为看到您近期有几个差评，想和您聊聊具体情况。,high,12处超出10-25字范围,claude
+V5_interruption_1779198161_000,V5_C13,fail,6,用户越界提问: 那怎么申请？你说清楚点。还有个事，昨天有个客人点了个夫妻肺片，一口没吃就说咸，这合理吗？,medium,出现越界但未用约定话术,claude
+V5_interruption_1779198161_000,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_interruption_1779198161_000,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_interruption_1779198161_000,V5_C16,fail,全文,判定依据见全文(V5_C16),medium,在忙未用就1分钟,claude
+V5_interruption_1779198161_000,V5_C17,fail,19,好的，您先在APP找到那笔单子，点“申诉”，选“配送问题”。描述就写“因配送超时导致餐品变味”，然后提交。遇到要钱才删差评的，千万别给，保留截图。,high,"含禁用词""好的""",claude
+V5_interruption_1779198161_000,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_interruption_1779198161_000,V5_C19,fail,5,(72字) 您先消消气，遇到这种情况确实让人着急。平台对恶意评价有专门投诉入口，您可以在后台提交证据，核实后会直接剔除。您提到的这几个差评，有怀疑是同行吗？,medium,8个过长turn,claude
+V5_interruption_1779198161_000,V5_C20,pass,17,哎，我特能理解，长篇大论最烦人。规则我给您一句话讲清楚：分数是看近期所有评价共同算的，掉一点点别慌张。您刚才说的配送、照片这些事，我建议您先申诉，再投诉恶意评价...,medium,,claude
+V5_interruption_1779198161_000,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_interruption_1779198161_000,V5_C22,pass,5,您先消消气，遇到这种情况确实让人着急。平台对恶意评价有专门投诉入口，您可以在后台提交证据，核实后会直接剔除。您提到的这几个差评，有怀疑是同行吗？,medium,,claude
+V5_interruption_1779198161_000,V5_C23,pass,全文,问了:['恶意'],medium,,claude
+V5_interruption_1779198414_001,V5_C01,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779198414_001,V5_C02,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779198414_001,V5_C03,pass,5,我特别理解您的委屈。这样，像骑手接单慢这种非您责任的情况，是可以提交证据来申诉的，您要了解一下吗？,medium,,claude
+V5_interruption_1779198414_001,V5_C04,pass,全文,申诉分支正确,medium,,claude
+V5_interruption_1779198414_001,V5_C05,pass,5,我特别理解您的委屈。这样，像骑手接单慢这种非您责任的情况，是可以提交证据来申诉的，您要了解一下吗？,medium,,claude
+V5_interruption_1779198414_001,V5_C06,fail,全文,判定依据见全文(V5_C06),medium,未收集改善意见,claude
+V5_interruption_1779198414_001,V5_C07,pass,7,我理解您的心情，申诉不能直接删除差评，需要审核。通常几个工作日出结果，您可以先准备出餐监控或沟通截图作为证据。,medium,,claude
+V5_interruption_1779198414_001,V5_C08,pass,13,感谢您的反馈，我们已优化出餐流程，欢迎您下次再监督体验。您把具体原因比如骑手接单慢加进去就行，需要我再细化吗？,high,,claude
+V5_interruption_1779198414_001,V5_C09,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779198414_001,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_interruption_1779198414_001,V5_C11,pass,全文,安抚+申诉/收集,medium,,claude
+V5_interruption_1779198414_001,V5_C12,fail,3,(38字) 系统显示主要是送餐慢、菜品凉了，还有一位客人反馈口味偏咸。您这边情况了解吗？,high,6处超出10-25字范围,claude
+V5_interruption_1779198414_001,V5_C13,na,,,high,未出现越界提问,claude
+V5_interruption_1779198414_001,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_interruption_1779198414_001,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_interruption_1779198414_001,V5_C16,na,,,high,未触发,claude
+V5_interruption_1779198414_001,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_interruption_1779198414_001,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_interruption_1779198414_001,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_interruption_1779198414_001,V5_C20,fail,全文,判定依据见全文(V5_C20),medium,interruption场景但未用过渡语,claude
+V5_interruption_1779198414_001,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_interruption_1779198414_001,V5_C22,pass,5,我特别理解您的委屈。这样，像骑手接单慢这种非您责任的情况，是可以提交证据来申诉的，您要了解一下吗？,medium,,claude
+V5_interruption_1779198414_001,V5_C23,na,,,high,未问FAQ,claude
+V5_interruption_1779202919_000,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779202919_000,V5_C02,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779202919_000,V5_C03,fail,全文,判定依据见全文(V5_C03),medium,未询问申诉,claude
+V5_interruption_1779202919_000,V5_C04,pass,全文,改善分支正确,medium,,claude
+V5_interruption_1779202919_000,V5_C05,na,,,medium,用户未要求申诉,claude
+V5_interruption_1779202919_000,V5_C06,pass,5,我理解这个问题会让您感到担忧。建议您可以检查一下厨房的工作流程，是否有可以优化的地方，或者增加人手来提高效率。您觉得还有哪些方面可以改善呢？,medium,,claude
+V5_interruption_1779202919_000,V5_C07,pass,全文,判定依据见全文(V5_C07),low,,claude
+V5_interruption_1779202919_000,V5_C08,fail,29,几百到几千的预算可以在小范围内测试效果，若表现良好再增加投入。其他广告投放建议包括利用美团的推广工具，或在本地社区群、论坛发布信息，增加曝光。您觉得这些方案可行...,medium,截断未结束,claude
+V5_interruption_1779202919_000,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779202919_000,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_interruption_1779202919_000,V5_C11,pass,全文,安抚+申诉/收集,medium,,claude
+V5_interruption_1779202919_000,V5_C12,fail,3,(49字) 最近的差评主要集中在出餐速度和菜品口味上，顾客反映等待时间较长，味道不如预期。您对此有什么想法吗？,high,14处超出10-25字范围,claude
+V5_interruption_1779202919_000,V5_C13,fail,8,用户越界提问: 提前准备菜品？这个能做到吗？另外，菜品口味上有什么改进建议吗？,medium,出现越界但未用约定话术,claude
+V5_interruption_1779202919_000,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_interruption_1779202919_000,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_interruption_1779202919_000,V5_C16,na,,,high,未触发,claude
+V5_interruption_1779202919_000,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_interruption_1779202919_000,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_interruption_1779202919_000,V5_C19,fail,5,(70字) 我理解这个问题会让您感到担忧。建议您可以检查一下厨房的工作流程，是否有可以优化的地方，或者增加人手来提高效率。您觉得还有哪些方面可以改善呢？,medium,13个过长turn,claude
+V5_interruption_1779202919_000,V5_C20,fail,全文,判定依据见全文(V5_C20),medium,interruption场景但未用过渡语,claude
+V5_interruption_1779202919_000,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_interruption_1779202919_000,V5_C22,na,,,medium,用户未明显激动,claude
+V5_interruption_1779202919_000,V5_C23,pass,全文,问了:['反馈'],medium,,claude
+V5_interruption_1779203124_001,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779203124_001,V5_C02,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779203124_001,V5_C03,pass,3,最近的差评主要集中在出餐速度和服务态度上。您是否需要对这些差评进行申诉呢？,medium,,claude
+V5_interruption_1779203124_001,V5_C04,pass,全文,申诉分支正确,medium,,claude
+V5_interruption_1779203124_001,V5_C05,pass,5,申诉成功率还是挺高的，尤其是有证据的情况下。出餐速度慢可能是因为高峰时段或者厨房人手不足，您觉得呢？,medium,,claude
+V5_interruption_1779203124_001,V5_C06,pass,7,如果人手不足，加班确实是个解决办法。关于申诉证据，您可以在商家版APP的评价管理中点击差评申诉，上传相关的出餐监控或记录。这样能帮助提高申诉成功率。您觉得还有什...,medium,,claude
+V5_interruption_1779203124_001,V5_C07,fail,全文,判定依据见全文(V5_C07),medium,未安抚情绪,claude
+V5_interruption_1779203124_001,V5_C08,fail,29,用出餐量来衡量工作效率是个简洁有效的方法，这样能直观反映员工的表现。您觉得这样能帮助团队找到提升空间吗？,medium,截断未结束,claude
+V5_interruption_1779203124_001,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_interruption_1779203124_001,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_interruption_1779203124_001,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_interruption_1779203124_001,V5_C12,fail,3,(37字) 最近的差评主要集中在出餐速度和服务态度上。您是否需要对这些差评进行申诉呢？,high,14处超出10-25字范围,claude
+V5_interruption_1779203124_001,V5_C13,na,,,high,未出现越界提问,claude
+V5_interruption_1779203124_001,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_interruption_1779203124_001,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_interruption_1779203124_001,V5_C16,na,,,high,未触发,claude
+V5_interruption_1779203124_001,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_interruption_1779203124_001,V5_C18,fail,全文,判定依据见全文(V5_C18),medium,缺同理心表达,claude
+V5_interruption_1779203124_001,V5_C19,fail,7,(90字) 如果人手不足，加班确实是个解决办法。关于申诉证据，您可以在商家版APP的评价管理中点击差评申诉，上传相关的出餐监控或记录。这样能帮助提高申诉成功率。您觉得还有什...,medium,7个过长turn,claude
+V5_interruption_1779203124_001,V5_C20,fail,全文,判定依据见全文(V5_C20),medium,interruption场景但未用过渡语,claude
+V5_interruption_1779203124_001,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_interruption_1779203124_001,V5_C22,fail,全文,判定依据见全文(V5_C22),medium,未先安抚,claude
+V5_interruption_1779203124_001,V5_C23,na,,,high,未问FAQ,claude
+V5_out_of_scope_1779197726_000,V5_C01,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779197726_000,V5_C02,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779197726_000,V5_C03,pass,13,老板，系统确实刚更新过，菜单在左侧导航栏。您如果找不到，我教您。另外，咱们这些差评需要申诉吗？,medium,,claude
+V5_out_of_scope_1779197726_000,V5_C04,fail,全文,判定依据见全文(V5_C04),medium,分支处理不正确,claude
+V5_out_of_scope_1779197726_000,V5_C05,fail,全文,判定依据见全文(V5_C05),medium,未介绍申诉流程,claude
+V5_out_of_scope_1779197726_000,V5_C06,fail,全文,判定依据见全文(V5_C06),medium,未收集改善意见,claude
+V5_out_of_scope_1779197726_000,V5_C07,fail,全文,判定依据见全文(V5_C07),medium,未安抚情绪,claude
+V5_out_of_scope_1779197726_000,V5_C08,pass,19,确实，大雨天单子少很正常，您辛苦了。这个超出我职责范围，就不多聊了。老板，那这三个差评，您是想申诉吗？,high,,claude
+V5_out_of_scope_1779197726_000,V5_C09,pass,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779197726_000,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_out_of_scope_1779197726_000,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_out_of_scope_1779197726_000,V5_C12,fail,3,(34字) 老板您好，主要是反馈配送慢和菜品凉了。您这边方便说说具体怎么回事吗？,high,9处超出10-25字范围,claude
+V5_out_of_scope_1779197726_000,V5_C13,pass,5,这个超出我的职责范围，我帮您记录回头跟进。咱们还是先说说配送超时的事吧，您这边有什么困难吗？,high,使用了越界话术,claude
+V5_out_of_scope_1779197726_000,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_out_of_scope_1779197726_000,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_out_of_scope_1779197726_000,V5_C16,na,,,high,未触发,claude
+V5_out_of_scope_1779197726_000,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_out_of_scope_1779197726_000,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_out_of_scope_1779197726_000,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_out_of_scope_1779197726_000,V5_C20,na,,,high,非interruption场景,claude
+V5_out_of_scope_1779197726_000,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_out_of_scope_1779197726_000,V5_C22,fail,全文,判定依据见全文(V5_C22),medium,未先安抚,claude
+V5_out_of_scope_1779197726_000,V5_C23,na,,,high,未问FAQ,claude
+V5_out_of_scope_1779197944_001,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779197944_001,V5_C02,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779197944_001,V5_C03,pass,3,我是商家关怀客服，专门跟进差评情况。三个差评主要反映出餐慢和口味偏咸，您这边需要申诉吗？,medium,,claude
+V5_out_of_scope_1779197944_001,V5_C04,pass,全文,改善分支正确,medium,,claude
+V5_out_of_scope_1779197944_001,V5_C05,fail,全文,判定依据见全文(V5_C05),medium,未介绍申诉流程,claude
+V5_out_of_scope_1779197944_001,V5_C06,pass,5,您这里受委屈了，特别理解。差评的事咱先聊聊？您要是不想申诉，也可以说说有什么改善困难。申诉通道我先记着。,medium,,claude
+V5_out_of_scope_1779197944_001,V5_C07,pass,全文,判定依据见全文(V5_C07),low,,claude
+V5_out_of_scope_1779197944_001,V5_C08,pass,21,您太客气了。后续若用户要求给钱删差评，记得保留截图申诉。明天商量方案，我这边先挂电话，祝您改善顺利。,high,,claude
+V5_out_of_scope_1779197944_001,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779197944_001,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_out_of_scope_1779197944_001,V5_C11,pass,全文,安抚+申诉/收集,medium,,claude
+V5_out_of_scope_1779197944_001,V5_C12,fail,3,(44字) 我是商家关怀客服，专门跟进差评情况。三个差评主要反映出餐慢和口味偏咸，您这边需要申诉吗？,high,10处超出10-25字范围,claude
+V5_out_of_scope_1779197944_001,V5_C13,pass,7,这个超出我的职责范围，我帮您记录回头跟进。咱还是看差评吧，您这边是打算申诉，还是需要平台协助改善？,high,使用了越界话术,claude
+V5_out_of_scope_1779197944_001,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_out_of_scope_1779197944_001,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_out_of_scope_1779197944_001,V5_C16,na,,,high,未触发,claude
+V5_out_of_scope_1779197944_001,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_out_of_scope_1779197944_001,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_out_of_scope_1779197944_001,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_out_of_scope_1779197944_001,V5_C20,na,,,high,非interruption场景,claude
+V5_out_of_scope_1779197944_001,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_out_of_scope_1779197944_001,V5_C22,pass,5,您这里受委屈了，特别理解。差评的事咱先聊聊？您要是不想申诉，也可以说说有什么改善困难。申诉通道我先记着。,medium,,claude
+V5_out_of_scope_1779197944_001,V5_C23,na,,,high,未问FAQ,claude
+V5_out_of_scope_1779202733_000,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779202733_000,V5_C02,fail,全文,判定依据见全文(V5_C02),medium,只告知数量未述原因,claude
+V5_out_of_scope_1779202733_000,V5_C03,fail,全文,判定依据见全文(V5_C03),medium,未询问申诉,claude
+V5_out_of_scope_1779202733_000,V5_C04,pass,全文,改善分支正确,medium,,claude
+V5_out_of_scope_1779202733_000,V5_C05,na,,,medium,用户未要求申诉,claude
+V5_out_of_scope_1779202733_000,V5_C06,pass,5,我这边也不错，谢谢关心！不过我们先聊聊差评吧，您觉得有哪些问题需要改善呢？,medium,,claude
+V5_out_of_scope_1779202733_000,V5_C07,fail,全文,判定依据见全文(V5_C07),medium,未安抚情绪,claude
+V5_out_of_scope_1779202733_000,V5_C08,fail,23,这个超出我的职责范围，我帮您记录回头跟进。我们还是先聊聊差评吧，您觉得有哪些具体问题需要改善呢？,low,未明显结束语,claude
+V5_out_of_scope_1779202733_000,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779202733_000,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_out_of_scope_1779202733_000,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_out_of_scope_1779202733_000,V5_C12,fail,3,(33字) 我们很重视商家的感受，感谢您愿意分享。您对这3个差评有什么想法吗？,high,11处超出10-25字范围,claude
+V5_out_of_scope_1779202733_000,V5_C13,pass,7,这个超出我的职责范围，我帮您记录回头跟进。我们先来谈谈差评，您觉得有哪些问题需要改善呢？,high,使用了越界话术,claude
+V5_out_of_scope_1779202733_000,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_out_of_scope_1779202733_000,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_out_of_scope_1779202733_000,V5_C16,na,,,high,未触发,claude
+V5_out_of_scope_1779202733_000,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_out_of_scope_1779202733_000,V5_C18,fail,全文,判定依据见全文(V5_C18),medium,缺同理心表达,claude
+V5_out_of_scope_1779202733_000,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_out_of_scope_1779202733_000,V5_C20,na,,,high,非interruption场景,claude
+V5_out_of_scope_1779202733_000,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_out_of_scope_1779202733_000,V5_C22,fail,全文,判定依据见全文(V5_C22),medium,未先安抚,claude
+V5_out_of_scope_1779202733_000,V5_C23,na,,,high,未问FAQ,claude
+V5_out_of_scope_1779202862_001,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779202862_001,V5_C02,fail,全文,判定依据见全文(V5_C02),medium,只告知数量未述原因,claude
+V5_out_of_scope_1779202862_001,V5_C03,pass,5,谢谢您关心！这边也不错。您刚才提到考虑反馈，想问一下您是否需要对差评进行申诉呢？,medium,,claude
+V5_out_of_scope_1779202862_001,V5_C04,fail,全文,判定依据见全文(V5_C04),medium,分支处理不正确,claude
+V5_out_of_scope_1779202862_001,V5_C05,fail,全文,判定依据见全文(V5_C05),medium,未介绍申诉流程,claude
+V5_out_of_scope_1779202862_001,V5_C06,pass,3,感谢您的回复！这3个差评主要集中在服务和菜品口味方面。您觉得有没有什么需要改善的地方？,medium,,claude
+V5_out_of_scope_1779202862_001,V5_C07,fail,全文,判定依据见全文(V5_C07),medium,未安抚情绪,claude
+V5_out_of_scope_1779202862_001,V5_C08,fail,11,抱歉，这个我无法提供。您刚才提到申诉，有考虑好之后再联系我吗？,low,未明显结束语,claude
+V5_out_of_scope_1779202862_001,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_out_of_scope_1779202862_001,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_out_of_scope_1779202862_001,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_out_of_scope_1779202862_001,V5_C12,fail,3,(43字) 感谢您的回复！这3个差评主要集中在服务和菜品口味方面。您觉得有没有什么需要改善的地方？,high,5处超出10-25字范围,claude
+V5_out_of_scope_1779202862_001,V5_C13,pass,7,这个超出我的职责范围，我帮您记录回头跟进。您刚才提到申诉，想问下是否有需要我帮您介绍流程呢？,high,使用了越界话术,claude
+V5_out_of_scope_1779202862_001,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_out_of_scope_1779202862_001,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_out_of_scope_1779202862_001,V5_C16,na,,,high,未触发,claude
+V5_out_of_scope_1779202862_001,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_out_of_scope_1779202862_001,V5_C18,fail,全文,判定依据见全文(V5_C18),medium,缺同理心表达,claude
+V5_out_of_scope_1779202862_001,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_out_of_scope_1779202862_001,V5_C20,na,,,high,非interruption场景,claude
+V5_out_of_scope_1779202862_001,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_out_of_scope_1779202862_001,V5_C22,fail,全文,判定依据见全文(V5_C22),medium,未先安抚,claude
+V5_out_of_scope_1779202862_001,V5_C23,na,,,high,未问FAQ,claude
+V5_refuse_persistent_1779197604_000,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779197604_000,V5_C02,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779197604_000,V5_C03,fail,全文,判定依据见全文(V5_C03),medium,未询问申诉,claude
+V5_refuse_persistent_1779197604_000,V5_C04,na,,,medium,未识别用户意图,claude
+V5_refuse_persistent_1779197604_000,V5_C05,na,,,medium,用户未要求申诉,claude
+V5_refuse_persistent_1779197604_000,V5_C06,fail,全文,判定依据见全文(V5_C06),medium,未收集改善意见,claude
+V5_refuse_persistent_1779197604_000,V5_C07,pass,全文,判定依据见全文(V5_C07),low,,claude
+V5_refuse_persistent_1779197604_000,V5_C08,pass,7,理解，那您先休息。我稍后再联系您，祝您早日康复。,high,,claude
+V5_refuse_persistent_1779197604_000,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779197604_000,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_refuse_persistent_1779197604_000,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_refuse_persistent_1779197604_000,V5_C12,fail,3,(46字) 好的，主要是反映近期出餐慢和漏菜的问题。您这边最近是不是订单量增长太快，后厨有些忙不过来了？,high,2处超出10-25字范围,claude
+V5_refuse_persistent_1779197604_000,V5_C13,na,,,high,未出现越界提问,claude
+V5_refuse_persistent_1779197604_000,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_refuse_persistent_1779197604_000,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_refuse_persistent_1779197604_000,V5_C16,na,,,high,未触发,claude
+V5_refuse_persistent_1779197604_000,V5_C17,fail,3,好的，主要是反映近期出餐慢和漏菜的问题。您这边最近是不是订单量增长太快，后厨有些忙不过来了？,high,"含禁用词""好的""",claude
+V5_refuse_persistent_1779197604_000,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_refuse_persistent_1779197604_000,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_refuse_persistent_1779197604_000,V5_C20,na,,,high,非interruption场景,claude
+V5_refuse_persistent_1779197604_000,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_refuse_persistent_1779197604_000,V5_C22,pass,5,那您先好好休息，身体要紧。等您方便了，我们再简单聊两句，就不打扰了。,medium,,claude
+V5_refuse_persistent_1779197604_000,V5_C23,na,,,high,未问FAQ,claude
+V5_refuse_persistent_1779197677_001,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779197677_001,V5_C02,fail,全文,判定依据见全文(V5_C02),medium,只告知数量未述原因,claude
+V5_refuse_persistent_1779197677_001,V5_C03,fail,全文,判定依据见全文(V5_C03),medium,未询问申诉,claude
+V5_refuse_persistent_1779197677_001,V5_C04,na,,,medium,未识别用户意图,claude
+V5_refuse_persistent_1779197677_001,V5_C05,na,,,medium,用户未要求申诉,claude
+V5_refuse_persistent_1779197677_001,V5_C06,fail,全文,判定依据见全文(V5_C06),medium,未收集改善意见,claude
+V5_refuse_persistent_1779197677_001,V5_C07,pass,3,理解您的心情。咱们长话短说，您方便了解下具体是哪几个差评吗？,medium,,claude
+V5_refuse_persistent_1779197677_001,V5_C08,fail,5,那您先好好休息。我过两天再联系您，保重身体。,low,未明显结束语,claude
+V5_refuse_persistent_1779197677_001,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779197677_001,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_refuse_persistent_1779197677_001,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_refuse_persistent_1779197677_001,V5_C12,fail,3,(30字) 理解您的心情。咱们长话短说，您方便了解下具体是哪几个差评吗？,high,1处超出10-25字范围,claude
+V5_refuse_persistent_1779197677_001,V5_C13,na,,,high,未出现越界提问,claude
+V5_refuse_persistent_1779197677_001,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_refuse_persistent_1779197677_001,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_refuse_persistent_1779197677_001,V5_C16,na,,,high,未触发,claude
+V5_refuse_persistent_1779197677_001,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_refuse_persistent_1779197677_001,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_refuse_persistent_1779197677_001,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_refuse_persistent_1779197677_001,V5_C20,na,,,high,非interruption场景,claude
+V5_refuse_persistent_1779197677_001,V5_C21,na,,,medium,对话过短,claude
+V5_refuse_persistent_1779197677_001,V5_C22,na,,,medium,用户未明显激动,claude
+V5_refuse_persistent_1779197677_001,V5_C23,na,,,high,未问FAQ,claude
+V5_refuse_persistent_1779202662_000,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779202662_000,V5_C02,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779202662_000,V5_C03,fail,全文,判定依据见全文(V5_C03),medium,未询问申诉,claude
+V5_refuse_persistent_1779202662_000,V5_C04,na,,,medium,未识别用户意图,claude
+V5_refuse_persistent_1779202662_000,V5_C05,na,,,medium,用户未要求申诉,claude
+V5_refuse_persistent_1779202662_000,V5_C06,fail,全文,判定依据见全文(V5_C06),medium,未收集改善意见,claude
+V5_refuse_persistent_1779202662_000,V5_C07,fail,全文,判定依据见全文(V5_C07),medium,未安抚情绪,claude
+V5_refuse_persistent_1779202662_000,V5_C08,fail,5,没关系，您先照顾好自己。要不我们稍后再联系？希望您早日康复。,low,未明显结束语,claude
+V5_refuse_persistent_1779202662_000,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779202662_000,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_refuse_persistent_1779202662_000,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_refuse_persistent_1779202662_000,V5_C12,fail,3,(51字) 感谢您接听电话。我们注意到您店最近的差评主要集中在食品口味和配送时间上，想了解一下您对此有什么看法吗？,high,2处超出10-25字范围,claude
+V5_refuse_persistent_1779202662_000,V5_C13,na,,,high,未出现越界提问,claude
+V5_refuse_persistent_1779202662_000,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_refuse_persistent_1779202662_000,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_refuse_persistent_1779202662_000,V5_C16,na,,,high,未触发,claude
+V5_refuse_persistent_1779202662_000,V5_C17,pass,全文,"全文检查未发现""好的/哈哈/嘿嘿/嘻嘻""",high,,claude
+V5_refuse_persistent_1779202662_000,V5_C18,fail,全文,判定依据见全文(V5_C18),medium,缺同理心表达,claude
+V5_refuse_persistent_1779202662_000,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_refuse_persistent_1779202662_000,V5_C20,na,,,high,非interruption场景,claude
+V5_refuse_persistent_1779202662_000,V5_C21,na,,,medium,对话过短,claude
+V5_refuse_persistent_1779202662_000,V5_C22,na,,,medium,用户未明显激动,claude
+V5_refuse_persistent_1779202662_000,V5_C23,na,,,high,未问FAQ,claude
+V5_refuse_persistent_1779202695_001,V5_C01,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779202695_001,V5_C02,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779202695_001,V5_C03,fail,全文,判定依据见全文(V5_C03),medium,未询问申诉,claude
+V5_refuse_persistent_1779202695_001,V5_C04,na,,,medium,未识别用户意图,claude
+V5_refuse_persistent_1779202695_001,V5_C05,na,,,medium,用户未要求申诉,claude
+V5_refuse_persistent_1779202695_001,V5_C06,fail,全文,判定依据见全文(V5_C06),medium,未收集改善意见,claude
+V5_refuse_persistent_1779202695_001,V5_C07,pass,全文,判定依据见全文(V5_C07),low,,claude
+V5_refuse_persistent_1779202695_001,V5_C08,pass,7,好的，您多休息，祝您早日康复！改天再联系。,high,,claude
+V5_refuse_persistent_1779202695_001,V5_C09,pass,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看情况。,high,,claude
+V5_refuse_persistent_1779202695_001,V5_C10,pass,全文,所有assistant文本无${}残留,high,,claude
+V5_refuse_persistent_1779202695_001,V5_C11,fail,全文,判定依据见全文(V5_C11),medium,任务意图缺失,claude
+V5_refuse_persistent_1779202695_001,V5_C12,fail,3,(48字) 谢谢您接听电话！我想和您聊聊最近的差评情况，主要是反映了食物口味和配送速度的问题。您觉得如何呢？,high,2处超出10-25字范围,claude
+V5_refuse_persistent_1779202695_001,V5_C13,na,,,high,未出现越界提问,claude
+V5_refuse_persistent_1779202695_001,V5_C14,pass,全文,判定依据见全文(V5_C14),high,,claude
+V5_refuse_persistent_1779202695_001,V5_C15,pass,全文,判定依据见全文(V5_C15),high,,claude
+V5_refuse_persistent_1779202695_001,V5_C16,na,,,high,未触发,claude
+V5_refuse_persistent_1779202695_001,V5_C17,fail,7,好的，您多休息，祝您早日康复！改天再联系。,high,"含禁用词""好的""",claude
+V5_refuse_persistent_1779202695_001,V5_C18,pass,全文,判定依据见全文(V5_C18),medium,有同理心+口语化,claude
+V5_refuse_persistent_1779202695_001,V5_C19,pass,全文,判定依据见全文(V5_C19),medium,,claude
+V5_refuse_persistent_1779202695_001,V5_C20,na,,,high,非interruption场景,claude
+V5_refuse_persistent_1779202695_001,V5_C21,pass,全文,判定依据见全文(V5_C21),low,对话进行到合理阶段,claude
+V5_refuse_persistent_1779202695_001,V5_C22,pass,5,我很理解您，身体健康最重要。如果您需要，稍后我可以再打个电话。希望您早日恢复！,medium,,claude
+V5_refuse_persistent_1779202695_001,V5_C23,na,,,high,未问FAQ,claude

@@ -1,0 +1,286 @@
+{
+  "dialogue_id": "official_2_cooperative_demo",
+  "instruction_id": "official_2_kecheng",
+  "score_report": {
+    "final_score": 45,
+    "raw_score": 72.2,
+    "ceiling": 45,
+    "ceiling_reason": "Critical通过率60% → 上限45",
+    "dim_scores": {
+      "D1_flow_compliance": 33.33,
+      "D2_task_completion": 100.0,
+      "D3_constraint_compliance": 81.82,
+      "D4_knowledge_accuracy": 100.0,
+      "D5_dialogue_quality": 50.0
+    },
+    "critical_pass_rate": 0.6,
+    "red_line_violations": [],
+    "suggestions": [
+      {
+        "priority": "P0_CRITICAL",
+        "msg": "2 条关键约束失败",
+        "constraint_ids": [
+          "official_2_kecheng_C13",
+          "official_2_kecheng_C17"
+        ]
+      },
+      {
+        "priority": "P1_DIM",
+        "msg": "维度【流程遵循度】得分 33.3/100 最低",
+        "constraint_ids": [
+          "official_2_kecheng_C13",
+          "official_2_kecheng_C17"
+        ]
+      }
+    ]
+  },
+  "detailed_suggestions": [
+    {
+      "constraint_id": "official_2_kecheng_C13",
+      "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
+      "priority": "P0_CRITICAL",
+      "severity": "严重",
+      "category": "流程步骤 S2",
+      "problem": "缺失流程步骤 S2 的核心动作",
+      "evidence": "缺失关键词: ['询问', '说明', '临时']",
+      "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S2 要做的是「**确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S2→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+      "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+      "example": "S2 核心动作示例: '**确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低'"
+    },
+    {
+      "constraint_id": "official_2_kecheng_C17",
+      "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+      "priority": "P0_CRITICAL",
+      "severity": "严重",
+      "category": "流程步骤 S6",
+      "problem": "缺失流程步骤 S6 的核心动作",
+      "evidence": "缺失关键词: ['告知', '请通过验证']",
+      "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S6 要做的是「**企业微信添加** - 告知稍后通过企业微信添加，请通过验证。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S6→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+      "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+      "example": "S6 核心动作示例: '**企业微信添加** - 告知稍后通过企业微信添加，请通过验证。'"
+    },
+    {
+      "constraint_id": "official_2_kecheng_C02",
+      "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+      "priority": "P2_MEDIUM",
+      "severity": "中等",
+      "category": "语言风格",
+      "problem": "语气不够口语化（偏书面/列点/文言）",
+      "evidence": "口语词:[] 书面词:['便'] 均长:15",
+      "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+      "expected_impact": "修复后 D5 对话质量 +5-8 分",
+      "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+    },
+    {
+      "constraint_id": "official_2_kecheng_C07",
+      "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+      "priority": "P2_MEDIUM",
+      "severity": "中等",
+      "category": "语言风格",
+      "problem": "语气不够口语化（偏书面/列点/文言）",
+      "evidence": "口语词:[] 书面词:['便'] 均长:15",
+      "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+      "expected_impact": "修复后 D5 对话质量 +5-8 分",
+      "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+    }
+  ],
+  "verdict_details": [
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "official_2_kecheng_C01",
+      "constraint_name": "每次回复极简——最多 15-20 个字。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "口语词:[] 书面词:['便'] 均长:15",
+      "confidence": 0.4,
+      "reason": "口语化: 失败 (书面词1/均长15/口语词0)",
+      "constraint_id": "official_2_kecheng_C02",
+      "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'give_floor' 暂未支持 mock",
+      "constraint_id": "official_2_kecheng_C03",
+      "constraint_name": "频繁给商家发言和提问的机会。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'transition' 暂未支持 mock",
+      "constraint_id": "official_2_kecheng_C04",
+      "constraint_name": "若对话被打断，使用简短过渡语，如\"您刚才提到……\"或\"我刚说到……\"。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'give_floor' 暂未支持 mock",
+      "constraint_id": "official_2_kecheng_C05",
+      "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "对话 6 轮, assistant 总字数 97",
+      "confidence": 0.8,
+      "reason": "任务完整性的简单 mock 判定",
+      "constraint_id": "official_2_kecheng_C06",
+      "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "口语词:[] 书面词:['便'] 均长:15",
+      "confidence": 0.4,
+      "reason": "口语化: 失败 (书面词1/均长15/口语词0)",
+      "constraint_id": "official_2_kecheng_C07",
+      "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "全程未出现禁用词",
+      "constraint_id": "official_2_kecheng_C08",
+      "constraint_name": "不说\"好的\"、\"哈哈\"、\"嘿嘿\"、\"嘻嘻\"等语气词。",
+      "verifier_type": "rule_pattern"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "",
+      "confidence": 0.9,
+      "reason": "助手全程未承诺禁止内容",
+      "constraint_id": "official_2_kecheng_C09",
+      "constraint_name": "不能承诺给商家折扣券或优惠券。",
+      "verifier_type": "llm_extract_then_rule"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "official_2_kecheng_C10",
+      "constraint_name": "若老板说忙，说\"就1分钟，保证简短\"后继续简短说明。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "official_2_kecheng_C11",
+      "constraint_name": "若商家说在开车，礼貌说\"那我稍后再打\"后挂断。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S1 **身份确认** - 确认对方是负责人；若不是请其转达。给出参考话术：\"我'",
+      "constraint_id": "official_2_kecheng_C12",
+      "constraint_name": "S1 **身份确认** - 确认对方是负责人；若不是请其转达。给出参考话术：\"我们对直",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "缺失关键词: ['询问', '说明', '临时']",
+      "confidence": 0.6,
+      "reason": "只匹配 1/4 (25%, 不足 2 个)",
+      "constraint_id": "official_2_kecheng_C13",
+      "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "turn9 含 ['费用']",
+      "confidence": 0.85,
+      "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+      "constraint_id": "official_2_kecheng_C14",
+      "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/Sa'",
+      "constraint_id": "official_2_kecheng_C15",
+      "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费'",
+      "constraint_id": "official_2_kecheng_C16",
+      "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "缺失关键词: ['告知', '请通过验证']",
+      "confidence": 0.6,
+      "reason": "只匹配 0/2 (0%, 不足 1 个)",
+      "constraint_id": "official_2_kecheng_C17",
+      "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满'",
+      "constraint_id": "official_2_kecheng_C18",
+      "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "对话 6 轮, assistant 总字数 97",
+      "confidence": 0.8,
+      "reason": "任务完整性的简单 mock 判定",
+      "constraint_id": "official_2_kecheng_C21",
+      "constraint_name": "[META] 任务核心意图完成",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "最后回复: 那我稍后再打，再见。",
+      "confidence": 0.8,
+      "reason": "助手礼貌结束对话",
+      "constraint_id": "official_2_kecheng_C22",
+      "constraint_name": "[META] 适时终结对话",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "未检测到明显矛盾",
+      "confidence": 0.6,
+      "reason": "FAQ 知识准确性 mock 判定",
+      "constraint_id": "official_2_kecheng_C23",
+      "constraint_name": "[META] FAQ知识正确",
+      "verifier_type": "llm_extract_then_rule"
+    }
+  ],
+  "stats": {
+    "total_constraints": 21,
+    "pass": 7,
+    "fail": 4,
+    "na": 0,
+    "not_implemented": 10,
+    "error": 0
+  }
+}

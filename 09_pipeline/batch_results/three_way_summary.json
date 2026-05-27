@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "n_dialogues": 10,
+    "total_verdicts_per_model": 180
+  },
+  "flash": {
+    "time_seconds": 521
+  },
+  "pro": {
+    "time_seconds": 765
+  },
+  "gpt": {
+    "time_seconds": 1044
+  },
+  "comparisons": [
+    {
+      "label_a": "flash",
+      "label_b": "pro",
+      "n_valid": 164,
+      "n_agree": 151,
+      "po": 0.921,
+      "kappa": 0.8348,
+      "disagree": {
+        "flash_pass_pro_fail": 5,
+        "flash_fail_pro_na": 4,
+        "flash_fail_pro_pass": 3
+      }
+    },
+    {
+      "label_a": "flash",
+      "label_b": "gpt",
+      "n_valid": 160,
+      "n_agree": 143,
+      "po": 0.894,
+      "kappa": 0.7759,
+      "disagree": {
+        "flash_fail_gpt_pass": 5,
+        "flash_fail_gpt_na": 5,
+        "flash_pass_gpt_fail": 4
+      }
+    },
+    {
+      "label_a": "pro",
+      "label_b": "gpt",
+      "n_valid": 160,
+      "n_agree": 147,
+      "po": 0.919,
+      "kappa": 0.8327,
+      "disagree": {
+        "pro_fail_gpt_pass": 5,
+        "pro_fail_gpt_na": 3,
+        "pro_pass_gpt_fail": 3
+      }
+    }
+  ]
+}

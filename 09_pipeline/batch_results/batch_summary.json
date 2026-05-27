@@ -1,0 +1,1154 @@
+{
+  "total_dialogues": 50,
+  "successful_dialogues": 50,
+  "total_verdicts": 1055,
+  "mode": "mock",
+  "summaries": [
+    {
+      "dialogue_id": "V1_cooperative_1779199977_001",
+      "instruction": "V1",
+      "persona": "cooperative",
+      "sample_source": "GPT",
+      "final_score": 91.67,
+      "raw_score": 91.67,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 44.44
+      },
+      "verdict_dist": {
+        "pass": 12,
+        "na": 1,
+        "fail": 2,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200483_000",
+      "instruction": "V1",
+      "persona": "interruption",
+      "sample_source": "GPT",
+      "final_score": 65,
+      "raw_score": 82.08,
+      "ceiling": 65,
+      "critical_pass_rate": 0.857,
+      "dim_scores": {
+        "D1_flow_compliance": 75.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 22.22
+      },
+      "verdict_dist": {
+        "pass": 10,
+        "na": 1,
+        "fail": 4,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779200168_000",
+      "instruction": "V1",
+      "persona": "out_of_scope",
+      "sample_source": "GPT",
+      "final_score": 65,
+      "raw_score": 82.08,
+      "ceiling": 65,
+      "critical_pass_rate": 0.857,
+      "dim_scores": {
+        "D1_flow_compliance": 75.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 22.22
+      },
+      "verdict_dist": {
+        "pass": 10,
+        "na": 1,
+        "fail": 4,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779200071_000",
+      "instruction": "V1",
+      "persona": "refuse_persistent",
+      "sample_source": "GPT",
+      "final_score": 65,
+      "raw_score": 89.13,
+      "ceiling": 65,
+      "critical_pass_rate": 0.857,
+      "dim_scores": {
+        "D1_flow_compliance": 75.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "na": 1,
+        "pass": 12,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V2_cooperative_1779200835_000",
+      "instruction": "V2",
+      "persona": "cooperative",
+      "sample_source": "GPT",
+      "final_score": 90.77,
+      "raw_score": 90.77,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 53.85,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "na": 1,
+        "pass": 11,
+        "not_implemented": 2
+      }
+    },
+    {
+      "dialogue_id": "V2_interruption_1779201383_000",
+      "instruction": "V2",
+      "persona": "interruption",
+      "sample_source": "GPT",
+      "final_score": 95.0,
+      "raw_score": 95.0,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "pass": 12,
+        "na": 1,
+        "not_implemented": 2,
+        "fail": 1
+      }
+    },
+    {
+      "dialogue_id": "V2_out_of_scope_1779201136_000",
+      "instruction": "V2",
+      "persona": "out_of_scope",
+      "sample_source": "GPT",
+      "final_score": 90.38,
+      "raw_score": 90.38,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "na": 1,
+        "pass": 11,
+        "not_implemented": 2
+      }
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779201049_000",
+      "instruction": "V2",
+      "persona": "refuse_persistent",
+      "sample_source": "GPT",
+      "final_score": 90.38,
+      "raw_score": 90.38,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "na": 1,
+        "pass": 11,
+        "not_implemented": 2
+      }
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779201688_000",
+      "instruction": "V4",
+      "persona": "cooperative",
+      "sample_source": "GPT",
+      "final_score": 85,
+      "raw_score": 88.43,
+      "ceiling": 85,
+      "critical_pass_rate": 0.9,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 60.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 13,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202116_000",
+      "instruction": "V4",
+      "persona": "interruption",
+      "sample_source": "GPT",
+      "final_score": 84.5,
+      "raw_score": 84.5,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 60.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 13,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779201993_001",
+      "instruction": "V4",
+      "persona": "out_of_scope",
+      "sample_source": "GPT",
+      "final_score": 85,
+      "raw_score": 88.43,
+      "ceiling": 85,
+      "critical_pass_rate": 0.9,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 60.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 13,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779201782_000",
+      "instruction": "V4",
+      "persona": "refuse_persistent",
+      "sample_source": "GPT",
+      "final_score": 65,
+      "raw_score": 81.36,
+      "ceiling": 65,
+      "critical_pass_rate": 0.8,
+      "dim_scores": {
+        "D1_flow_compliance": 71.43,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 80.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 4,
+        "pass": 12,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779202511_001",
+      "instruction": "V5",
+      "persona": "cooperative",
+      "sample_source": "GPT",
+      "final_score": 85,
+      "raw_score": 90.11,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 68.42,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 14,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_interruption_1779202919_000",
+      "instruction": "V5",
+      "persona": "interruption",
+      "sample_source": "GPT",
+      "final_score": 65,
+      "raw_score": 69.85,
+      "ceiling": 65,
+      "critical_pass_rate": 0.727,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 42.11,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 0.0
+      },
+      "verdict_dist": {
+        "fail": 6,
+        "not_implemented": 7,
+        "pass": 11,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202862_001",
+      "instruction": "V5",
+      "persona": "out_of_scope",
+      "sample_source": "GPT",
+      "final_score": 85,
+      "raw_score": 85.77,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 14,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779202662_000",
+      "instruction": "V5",
+      "persona": "refuse_persistent",
+      "sample_source": "GPT",
+      "final_score": 85,
+      "raw_score": 85.77,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 14,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_interruption_1779203124_001",
+      "instruction": "V5",
+      "persona": "interruption",
+      "sample_source": "GPT",
+      "final_score": 89.34,
+      "raw_score": 89.34,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 15,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779201819_001",
+      "instruction": "V4",
+      "persona": "refuse_persistent",
+      "sample_source": "GPT",
+      "final_score": 77.43,
+      "raw_score": 77.43,
+      "ceiling": 85,
+      "critical_pass_rate": 0.9,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 80.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 0.0
+      },
+      "verdict_dist": {
+        "fail": 4,
+        "not_implemented": 9,
+        "pass": 12,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V2_interruption_1779201531_001",
+      "instruction": "V2",
+      "persona": "interruption",
+      "sample_source": "GPT",
+      "final_score": 80.38,
+      "raw_score": 80.38,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 0.0
+      },
+      "verdict_dist": {
+        "fail": 4,
+        "na": 1,
+        "pass": 9,
+        "not_implemented": 2
+      }
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200667_001",
+      "instruction": "V1",
+      "persona": "interruption",
+      "sample_source": "GPT",
+      "final_score": 88.33,
+      "raw_score": 88.33,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 22.22
+      },
+      "verdict_dist": {
+        "pass": 11,
+        "na": 1,
+        "fail": 3,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202733_000",
+      "instruction": "V5",
+      "persona": "out_of_scope",
+      "sample_source": "GPT",
+      "final_score": 85,
+      "raw_score": 85.77,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 14,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202280_001",
+      "instruction": "V4",
+      "persona": "interruption",
+      "sample_source": "GPT",
+      "final_score": 88.5,
+      "raw_score": 88.5,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 80.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 14,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779202695_001",
+      "instruction": "V5",
+      "persona": "refuse_persistent",
+      "sample_source": "GPT",
+      "final_score": 85,
+      "raw_score": 90.11,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 68.42,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 14,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_cooperative_1779199886_000",
+      "instruction": "V1",
+      "persona": "cooperative",
+      "sample_source": "GPT",
+      "final_score": 100.0,
+      "raw_score": 100.0,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "pass": 14,
+        "na": 1,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779201097_001",
+      "instruction": "V2",
+      "persona": "refuse_persistent",
+      "sample_source": "GPT",
+      "final_score": 95.0,
+      "raw_score": 95.0,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "pass": 12,
+        "na": 1,
+        "not_implemented": 2,
+        "fail": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_cooperative_1779193967_000",
+      "instruction": "V1",
+      "persona": "cooperative",
+      "sample_source": "DeepSeek",
+      "final_score": 65,
+      "raw_score": 77.47,
+      "ceiling": 65,
+      "critical_pass_rate": 0.857,
+      "dim_scores": {
+        "D1_flow_compliance": 75.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 22.22
+      },
+      "verdict_dist": {
+        "pass": 9,
+        "na": 1,
+        "fail": 5,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "instruction": "V1",
+      "persona": "interruption",
+      "sample_source": "DeepSeek",
+      "final_score": 72.05,
+      "raw_score": 72.05,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 0.0,
+        "D5_dialogue_quality": 44.44
+      },
+      "verdict_dist": {
+        "fail": 4,
+        "na": 1,
+        "pass": 10,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194673_000",
+      "instruction": "V1",
+      "persona": "out_of_scope",
+      "sample_source": "DeepSeek",
+      "final_score": 80.83,
+      "raw_score": 80.83,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 62.5,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 22.22
+      },
+      "verdict_dist": {
+        "fail": 5,
+        "pass": 10,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "instruction": "V1",
+      "persona": "refuse_persistent",
+      "sample_source": "DeepSeek",
+      "final_score": 65,
+      "raw_score": 80.8,
+      "ceiling": 65,
+      "critical_pass_rate": 0.857,
+      "dim_scores": {
+        "D1_flow_compliance": 75.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 44.44
+      },
+      "verdict_dist": {
+        "fail": 4,
+        "na": 1,
+        "pass": 10,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V2_cooperative_1779195497_001",
+      "instruction": "V2",
+      "persona": "cooperative",
+      "sample_source": "DeepSeek",
+      "final_score": 90.38,
+      "raw_score": 90.38,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "pass": 11,
+        "na": 1,
+        "not_implemented": 2,
+        "fail": 2
+      }
+    },
+    {
+      "dialogue_id": "V2_interruption_1779196169_000",
+      "instruction": "V2",
+      "persona": "interruption",
+      "sample_source": "DeepSeek",
+      "final_score": 95.0,
+      "raw_score": 95.0,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "pass": 12,
+        "na": 1,
+        "not_implemented": 2,
+        "fail": 1
+      }
+    },
+    {
+      "dialogue_id": "V2_out_of_scope_1779195816_000",
+      "instruction": "V2",
+      "persona": "out_of_scope",
+      "sample_source": "DeepSeek",
+      "final_score": 90.38,
+      "raw_score": 90.38,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "na": 1,
+        "pass": 11,
+        "not_implemented": 2
+      }
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779195668_000",
+      "instruction": "V2",
+      "persona": "refuse_persistent",
+      "sample_source": "DeepSeek",
+      "final_score": 95.0,
+      "raw_score": 95.0,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "pass": 12,
+        "na": 1,
+        "not_implemented": 2,
+        "fail": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779196534_001",
+      "instruction": "V4",
+      "persona": "cooperative",
+      "sample_source": "DeepSeek",
+      "final_score": 85,
+      "raw_score": 92.43,
+      "ceiling": 85,
+      "critical_pass_rate": 0.9,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 80.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 14,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_interruption_1779197143_001",
+      "instruction": "V4",
+      "persona": "interruption",
+      "sample_source": "DeepSeek",
+      "final_score": 85,
+      "raw_score": 92.43,
+      "ceiling": 85,
+      "critical_pass_rate": 0.9,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 80.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 14,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779196755_000",
+      "instruction": "V4",
+      "persona": "out_of_scope",
+      "sample_source": "DeepSeek",
+      "final_score": 85,
+      "raw_score": 88.43,
+      "ceiling": 85,
+      "critical_pass_rate": 0.9,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 60.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 13,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779196709_001",
+      "instruction": "V4",
+      "persona": "refuse_persistent",
+      "sample_source": "DeepSeek",
+      "final_score": 65,
+      "raw_score": 70.28,
+      "ceiling": 65,
+      "critical_pass_rate": 0.7,
+      "dim_scores": {
+        "D1_flow_compliance": 57.14,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 80.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 0.0
+      },
+      "verdict_dist": {
+        "fail": 6,
+        "not_implemented": 9,
+        "pass": 10,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779197454_001",
+      "instruction": "V5",
+      "persona": "cooperative",
+      "sample_source": "DeepSeek",
+      "final_score": 96.84,
+      "raw_score": 96.84,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 1,
+        "pass": 16,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198161_000",
+      "instruction": "V5",
+      "persona": "interruption",
+      "sample_source": "DeepSeek",
+      "final_score": 86.18,
+      "raw_score": 86.18,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 68.42,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "not_implemented": 7,
+        "pass": 14,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197726_000",
+      "instruction": "V5",
+      "persona": "out_of_scope",
+      "sample_source": "DeepSeek",
+      "final_score": 85,
+      "raw_score": 93.7,
+      "ceiling": 85,
+      "critical_pass_rate": 0.917,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 86.36,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 16,
+        "not_implemented": 7
+      }
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779197677_001",
+      "instruction": "V5",
+      "persona": "refuse_persistent",
+      "sample_source": "DeepSeek",
+      "final_score": 85,
+      "raw_score": 93.27,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 15,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V2_interruption_1779196266_001",
+      "instruction": "V2",
+      "persona": "interruption",
+      "sample_source": "DeepSeek",
+      "final_score": 90.38,
+      "raw_score": 90.38,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 76.92,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "na": 1,
+        "pass": 11,
+        "not_implemented": 2
+      }
+    },
+    {
+      "dialogue_id": "V4_interruption_1779197000_000",
+      "instruction": "V4",
+      "persona": "interruption",
+      "sample_source": "DeepSeek",
+      "final_score": 84.93,
+      "raw_score": 84.93,
+      "ceiling": 85,
+      "critical_pass_rate": 0.9,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 80.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 13,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779196436_000",
+      "instruction": "V4",
+      "persona": "cooperative",
+      "sample_source": "DeepSeek",
+      "final_score": 92.0,
+      "raw_score": 92.0,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 60.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 14,
+        "not_implemented": 9,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194856_001",
+      "instruction": "V1",
+      "persona": "out_of_scope",
+      "sample_source": "DeepSeek",
+      "final_score": 65,
+      "raw_score": 92.5,
+      "ceiling": 65,
+      "critical_pass_rate": 0.875,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 62.5,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 13,
+        "not_implemented": 1
+      }
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779195756_001",
+      "instruction": "V2",
+      "persona": "refuse_persistent",
+      "sample_source": "DeepSeek",
+      "final_score": 95.0,
+      "raw_score": 95.0,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 100.0,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 66.67
+      },
+      "verdict_dist": {
+        "pass": 12,
+        "na": 1,
+        "not_implemented": 2,
+        "fail": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779197281_000",
+      "instruction": "V5",
+      "persona": "cooperative",
+      "sample_source": "DeepSeek",
+      "final_score": 85,
+      "raw_score": 85.77,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 50.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "not_implemented": 7,
+        "pass": 14,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779197604_000",
+      "instruction": "V5",
+      "persona": "refuse_persistent",
+      "sample_source": "DeepSeek",
+      "final_score": 85,
+      "raw_score": 90.11,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 68.42,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 3,
+        "pass": 14,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197944_001",
+      "instruction": "V5",
+      "persona": "out_of_scope",
+      "sample_source": "DeepSeek",
+      "final_score": 85,
+      "raw_score": 93.27,
+      "ceiling": 85,
+      "critical_pass_rate": 0.909,
+      "dim_scores": {
+        "D1_flow_compliance": 85.71,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 2,
+        "pass": 15,
+        "not_implemented": 7,
+        "na": 1
+      }
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198414_001",
+      "instruction": "V5",
+      "persona": "interruption",
+      "sample_source": "DeepSeek",
+      "final_score": 96.84,
+      "raw_score": 96.84,
+      "ceiling": 100,
+      "critical_pass_rate": 1.0,
+      "dim_scores": {
+        "D1_flow_compliance": 100.0,
+        "D2_task_completion": 100.0,
+        "D3_constraint_compliance": 84.21,
+        "D4_knowledge_accuracy": 100.0,
+        "D5_dialogue_quality": 100.0
+      },
+      "verdict_dist": {
+        "fail": 1,
+        "pass": 16,
+        "not_implemented": 7,
+        "na": 1
+      }
+    }
+  ]
+}

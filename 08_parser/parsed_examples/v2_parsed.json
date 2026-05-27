@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "instruction_id": "V2",
+    "instruction_name": "V2",
+    "role": "美团骑手站长",
+    "task": "通知骑手在 24 小时内更新新版骑手 APP，并确认更新后能正常接单。",
+    "variables": [
+      "deadline",
+      "new_feature",
+      "rider_name"
+    ]
+  },
+  "atomic_constraints": [
+    {
+      "id": "V2_C01",
+      "name": "每次回复控制在 30 字以内，简短干脆。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "每次回复控制在 30 字以内，简短干脆。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V2_C02",
+      "name": "被问及 APP 开发计划等任务范围外的问题，统一回复\"这个不在我职责范围内...",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "被问及 APP 开发计划等任务范围外的问题，统一回复\"这个不在我职责范围内，我帮您记录回头跟进\"。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V2_C03",
+      "name": "保持口语化，就像平常打电话一样沟通。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "保持口语化，就像平常打电话一样沟通。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V2_C04",
+      "name": "绝不能向骑手承诺任何更新补贴或因更新导致的赔付。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "绝不能向骑手承诺任何更新补贴或因更新导致的赔付。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V2_C05",
+      "name": "若骑手明确拒绝更新，告知其不更新将无法接单的后果后挂断电话。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "若骑手明确拒绝更新，告知其不更新将无法接单的后果后挂断电话。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V2_C06",
+      "name": "避免重复相同的句子，对话要自然。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "避免重复相同的句子，对话要自然。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V2_C07",
+      "name": "对话中坚决不说“好的”等语气词。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule_pattern",
+      "source_text": "对话中坚决不说“好的”等语气词。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V2_C08",
+      "name": "S1 告知 APP 有强制更新要求，并明确必须在 ${deadline} 前完成更新。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "告知 APP 有强制更新要求，并明确必须在 ${deadline} 前完成更新。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V2_C09",
+      "name": "S2 询问骑手当前手机里 APP 的版本号是多少。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "询问骑手当前手机里 APP 的版本号是多少。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V2_C10",
+      "name": "S3 引导骑手进行更新，提示在手机应用商店搜索“美团骑手”去下载新版。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "引导骑手进行更新，提示在手机应用商店搜索“美团骑手”去下载新版。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V2_C11",
+      "name": "S4 确认骑手更新成功后，询问是否能正常登录和接单。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "确认骑手更新成功后，询问是否能正常登录和接单。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V2_C12",
+      "name": "[META] 开场白含必要变量",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "rule_pattern",
+      "source_text": "首轮(Opening Line)应包含: ${deadline}, ${new_feature}, ${rider_name}",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V2_C13",
+      "name": "[META] 所有变量正确替换无残留 ${}",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "对话中不能出现未替换的 ${{var}} 占位符",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V2_C14",
+      "name": "[META] 任务核心意图完成",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "llm_judge",
+      "source_text": "任务目标: 通知骑手在 24 小时内更新新版骑手 APP，并确认更新后能正常接单。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V2_C15",
+      "name": "[META] 适时终结对话",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "对话应在任务完成后自然结束,不冗长拖沓",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V2_C16",
+      "name": "[META] FAQ知识正确",
+      "scoring_dimension": "D4_knowledge_accuracy",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "对FAQ问题的回答应准确,关键事实: (无)",
+      "is_critical": false,
+      "weight": 2
+    }
+  ],
+  "faq_items": [
+    {
+      "id": "V2_FAQ01",
+      "question_intent": "更新失败怎么办？",
+      "answer_template": "可以尝试卸载旧版后重新下载，或者检查一下手机存储空间。",
+      "key_facts": []
+    },
+    {
+      "id": "V2_FAQ02",
+      "question_intent": "新版主要改了什么？",
+      "answer_template": "主要是优化了派单系统和 ${new_feature}，接单会更顺畅。",
+      "key_facts": []
+    },
+    {
+      "id": "V2_FAQ03",
+      "question_intent": "流量消耗大不大？",
+      "answer_template": "安装包不大，不过还是建议你连着 WiFi 下载。",
+      "key_facts": []
+    }
+  ],
+  "flow_steps": [
+    {
+      "step_id": "S1",
+      "label": "告知 APP 有强制更新要求，并明确必须在 ${deadline} 前完成更新。",
+      "purpose": "告知 APP 有强制更新要求，并明确必须在 ${deadline} 前完成更新。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S2",
+      "label": "询问骑手当前手机里 APP 的版本号是多少。",
+      "purpose": "询问骑手当前手机里 APP 的版本号是多少。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S3",
+      "label": "引导骑手进行更新，提示在手机应用商店搜索“美团骑手”去下载新版。",
+      "purpose": "引导骑手进行更新，提示在手机应用商店搜索“美团骑手”去下载新版。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S4",
+      "label": "确认骑手更新成功后，询问是否能正常登录和接单。",
+      "purpose": "确认骑手更新成功后，询问是否能正常登录和接单。",
+      "is_branch": false
+    }
+  ]
+}

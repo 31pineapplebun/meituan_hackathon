@@ -1,0 +1,1056 @@
+﻿dialogue_id,constraint_id,verdict,evidence_turn,evidence_text,confidence,notes,rater
+V1_cooperative_1779199977_001,V1_C01,pass,,0/5 轮超字数,high,"超字数率 0% < 30%, 通过",auto_llm_flash
+V1_cooperative_1779199977_001,V1_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V1_cooperative_1779199977_001,V1_C03,pass,,Turn 1: '喂'、'咱们'；Turn 2: '嗯'；Turn 3: '哦'；Turn 5: '回电'；Turn 7: '请务必'；Turn 9: '就可以了'。至少2处口语词，无列点格式，无书面文言词。,high,对话使用口语词如'喂''咱们''嗯''哦'，语气自然，无列点或文言词，符合约束。,auto_llm_flash
+V1_cooperative_1779199977_001,V1_C04,pass,,Turn 3提到'带上头盔、工牌和身份证'，Turn 9说'带好所需物品'，未重复相同短语；无8字以上连续片段重复；无重复问题。,high,未出现重复信息、连续片段或重复问题，符合约束要求。,auto_llm_flash
+V1_cooperative_1779199977_001,V1_C05,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V1_cooperative_1779199977_001,V1_C06,pass,,Turn 12 user明确说'再见'表示结束意愿，Turn 11 assistant已收尾'期待见到你！如果有其他问题随时联系我'，含'期待'和'联系'，未反复追问。,high,用户结束意愿后，助手在1个turn内收尾，含礼貌用语，无追问。,auto_llm_flash
+V1_cooperative_1779199977_001,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_cooperative_1779199977_001,V1_C08,pass,,"turn1,3,7 含 ['问', '培训', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779199977_001,V1_C09,pass,,"turn1,11 含 ['问', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779199977_001,V1_C10,pass,,"turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779199977_001,V1_C11,pass,,"turn1,3,7 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779199977_001,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_cooperative_1779199977_001,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_cooperative_1779199977_001,V1_C14,pass,,Turn 1: 助手通知培训时间地点并询问能否参加。Turn 2: 用户明确同意参加。Turn 8: 用户再次确认按时到场。,high,助手覆盖了通知培训的核心步骤，用户明确同意参加，满足两条判定标准。,auto_llm_flash
+V1_cooperative_1779199977_001,V1_C15,pass,,Turn 12 user明确说'再见'表示结束意愿，Turn 11 assistant已收尾'如果有其他问题随时联系我'，未再追问。,high,用户明确结束意愿后，助手在1个turn内自然收尾，含'再见'，无反复追问。,auto_llm_flash
+V1_cooperative_1779199977_001,V1_C16,pass,,FAQ: 培训时长; 助手答: 培训大概持续两个小时左右。,high,FAQ 答案符合标准,auto_llm_flash
+V1_interruption_1779200483_000,V1_C01,pass,,4/14 轮超字数,high,"超字数率 29% < 30%, 通过",auto_llm_flash
+V1_interruption_1779200483_000,V1_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V1_interruption_1779200483_000,V1_C03,pass,,Turn 1: '喂，是王强吗？我是咱们美团的骑手站长。' 含口语词'喂'、'咱们'；Turn 9: '别忘了带头盔、工牌和身份证哦。' 含口语词'哦'。无列点格式，无书面文言词。,high,对话包含至少2处口语词，无列点格式，无书面文言词，满足所有约束条件。,auto_llm_flash
+V1_interruption_1779200483_000,V1_C04,pass,,未发现同一信息重复3次以上；8字以上连续片段未在不同turn重复2次以上；同样问题未重复2次以上。,high,对话中虽有多次确认，但每次回复内容有变化，未违反重复约束。,auto_llm_flash
+V1_interruption_1779200483_000,V1_C05,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V1_interruption_1779200483_000,V1_C06,fail,,"用户从未明确表示结束意愿，反而持续提问（如Turn 30询问下次培训内容），助手未主动收尾，且反复追问“你能确认参加吗”（如Turn 7,11,13,15,21,23,25,27,29），违反标准1和3。",low,用户未表达结束意愿，助手未在1-2回合内收尾，且反复追问，不满足所有判定标准。,auto_llm_flash
+V1_interruption_1779200483_000,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_interruption_1779200483_000,V1_C08,pass,,"turn1,7,11 含 ['培训', '时间', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779200483_000,V1_C09,fail,,"缺失关键词: ['询问', '问', '记录', '原因']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V1_interruption_1779200483_000,V1_C10,pass,,"turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779200483_000,V1_C11,pass,,"turn1,7,11 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779200483_000,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_interruption_1779200483_000,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_interruption_1779200483_000,V1_C14,pass,,Turn 1: 助手通知了培训时间地点。Turn 28: 用户明确说“我确认参加”。核心步骤覆盖：通知培训、确认到场、回答疑问，覆盖超过70%。,high,助手覆盖了通知培训的核心步骤，用户最终明确确认参加，满足两条判定标准。,auto_llm_flash
+V1_interruption_1779200483_000,V1_C15,fail,,用户未明确表示结束意愿，对话持续追问培训细节，助手未主动收尾。最后Turn 30用户仍提问，助手未结束对话。,low,用户未表达结束意愿，助手未在任务完成后自然收尾，对话冗长拖沓。,auto_llm_flash
+V1_interruption_1779200483_000,V1_C16,pass,,FAQ: 培训时长; 助手答: 培训差不多需要2小时左右。,high,FAQ 答案符合标准,auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C01,pass,,1/11 轮超字数,high,"超字数率 9% < 30%, 通过",auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C02,pass,,turn3: 我向同事确认后再回电; turn7: 我向同事确认后再回电,high,"用户问越界 (turn[4, 6, 10, 12, 14, 16, 18, 20, 22, 24]), 助手用了规定话术",auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C03,fail,,"Turn 1: '我是咱们美团的骑手站长' 含口语词'咱们'；但Turn 3,5,7,9,11,13,15,17,19,21,23中重复使用'我向同事确认后再回电'，缺乏自然口语变化，且整体语气机械。",low,对话中大量重复固定句式，缺乏随意自然语气，违反约束核心要求。,auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C04,pass,,未发现重复信息：'带头盔工牌身份证'仅出现1次(Turn5)；无8+字连续片段重复；无重复问题。,high,对话中无重复回复或重复信息，符合约束要求。,auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C05,fail,,turn9: 培训出席后有30元补贴,high,助手承诺了禁止内容 (1 处),auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C06,fail,,用户从未表达结束意愿，反而持续提问（如Turn 24问新闻），助手未主动收尾，且反复追问培训事宜（如Turn 13、15、17、19、21、23）。,low,用户未明确表示结束意愿，助手未在1-2个turn内收尾，且反复追问培训，违反所有判定标准。,auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C08,pass,,"turn1,5,7 含 ['培训', '时间', '地点', '骑手']",high,"匹配关键词 4/7 (57%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C09,fail,,"缺失关键词: ['询问', '问', '记录', '原因']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C10,pass,,"turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C11,pass,,"turn1,5,7 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C14,pass,,Turn 1: 助手通知培训时间地点并询问能否参加。Turn 4: 用户明确回复“可以的，我会参加的”。Turn 6: 用户再次确认“我会记得的”。Turn 16: 用户说“没问题，我会去的”。,high,助手覆盖了通知培训的核心步骤（时间、地点、询问），用户多次明确同意参加，满足两条标准。,auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C15,fail,,用户从未明确表示结束意愿，助手在Turn 5、7、9、11、13、15、17、19、21、23中反复追问培训事宜，未收尾。,low,用户未表达结束意愿，助手未收尾，且持续追问，违反标准1和3。,auto_llm_flash
+V1_out_of_scope_1779200168_000,V1_C16,pass,,FAQ: 培训时长和补贴; 助手答: 培训出席后有30元补贴，培训时长大约2小时。,high,FAQ 答案符合标准,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C01,fail,,turn3=42字,high,1/2=50%超字数(限30+5=35),auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C03,pass,,Turn 1: '喂'、'咱们'；Turn 3: '吧'；Turn 5: '吧'。无列点格式，无书面文言词。,high,满足至少2处口语词，无列点，无文言词。,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C04,pass,,Turn1和Turn5的回复内容不同，Turn1为通知培训，Turn5为确认休息，无重复信息。,high,未出现重复信息、连续片段重复或重复提问，符合约束。,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C05,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C06,pass,,Turn 3: '再见！' 含礼貌收尾；Turn 5: '再见！' 再次收尾。用户Turn 2表示不参加，助手在Turn 3即收尾，未反复追问。,high,用户明确拒绝后，助手在1-2个turn内礼貌结束，含'再见'，无追问。,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C08,pass,,"turn1,3 含 ['问', '培训', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C09,pass,,"turn1,3 含 ['问', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C10,fail,,"缺失关键词: ['提醒', '确认', '头盔', '工牌']",medium,"只匹配 1/6 (17%, 不足 2 个)",auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C11,pass,,"turn1,3 含 ['培训', '安全培训']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C14,pass,,Turn 1: 助手通知培训时间地点并询问能否到场。Turn 2: 用户明确拒绝。Turn 4: 用户再次拒绝。,high,助手覆盖核心步骤（通知培训、确认到场），用户给出明确拒绝反馈。,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C15,pass,,Turn 3: 用户表示身体不舒服后，助手立即收尾并说“再见”。Turn 5: 用户再次确认后，助手再次收尾说“再见”。未反复追问。,high,用户明确表示无法参加后，助手在1-2个turn内收尾，包含“再见”，且无追问。,auto_llm_flash
+V1_refuse_persistent_1779200071_000,V1_C16,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C01,fail,,turn3=49字; turn5=44字; turn7=40字,high,4/6=67%超字数(限30+5=35),auto_llm_flash
+V2_cooperative_1779200835_000,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_cooperative_1779200835_000,V2_C03,pass,,Turn1: '喂，是李建军吗？我是咱们站长。'含口语词'喂''咱们'；Turn2: '对，我是李建军。'含口语词'对'；全对话无列点格式；无'亦/便/兹/之'等书面词。,high,满足全部3条：至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C05,na,,骑手未明确拒绝更新（Turn 2-12），而是同意更新。约束条件“若骑手明确拒绝更新”未触发。,high,对话中骑手始终配合更新，未出现明确拒绝行为，因此约束条件不满足，无需执行后续操作。,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C06,pass,,Turn 1: '咱们站长'、'咱们骑手APP'；Turn 2: '请问'；Turn 3: '就行'；Turn 5: '吧'；Turn 7: '记得'；Turn 9: '就行'；Turn 11: '哦'。至少2处口语词。无列点格式。无书面文言词。,high,满足所有3条标准：有口语词（咱们、吧、哦等），无列点格式，无书面文言词。,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C07,fail,,turn13用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C08,pass,,"turn1,3,5 含 ['APP', '更新']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_cooperative_1779200835_000,V2_C09,pass,,"turn1,3,11 含 ['问', 'APP', '版本', '骑手']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V2_cooperative_1779200835_000,V2_C10,pass,,"turn1,3,5 含 ['更新', '应用商店', '骑手']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_cooperative_1779200835_000,V2_C11,pass,,"turn1,3,5 含 ['问', '确认', '接单', '更新']",high,"匹配关键词 6/7 (86%, 阈值≥2个)",auto_llm_flash
+V2_cooperative_1779200835_000,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_cooperative_1779200835_000,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C14,pass,,Turn 1-13: 助手覆盖了通知更新（Turn 1）、说明截止时间（Turn 1）、指导更新流程（Turn 3）、强调确认接单（Turn 7）；用户最终明确同意更新并确认会测试接单（Turn 10、12）。,high,助手覆盖了任务核心步骤（>70%），用户给出明确反馈（同意更新并确认测试接单），满足两条标准。,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C15,pass,,用户未明确表示结束意愿，但助手在最后两轮（Turn 12-13）自然收尾，Turn 13含'祝顺利更新'和'再见'，且无反复追问。,high,对话在任务完成后自然结束，收尾含祝福和再见，无拖延，符合约束。,auto_llm_flash
+V2_cooperative_1779200835_000,V2_C16,pass,,FAQ: 新版主要改了什么; 助手答: 新版主要优化了派单系统和实时距离派单，接单会更顺畅。,high,FAQ 答案符合标准,auto_llm_flash
+V2_interruption_1779201383_000,V2_C01,pass,,1/14 轮超字数,high,"超字数率 7% < 30%, 通过",auto_llm_flash
+V2_interruption_1779201383_000,V2_C02,pass,,turn5: 这个不在我职责范围内，我帮您记录回头跟进; turn7: 这个不在我职责范围内，我帮您记录回头跟进,high,"用户问越界 (turn[4, 6, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]), 助手用了规定话术",auto_llm_flash
+V2_interruption_1779201383_000,V2_C03,pass,,Turn 1: '喂'、'咱们'；Turn 3: '哦'；Turn 5: '吧'；Turn 7: '哦'；Turn 9: '吧'；Turn 11: '吧'；Turn 13: '吧'；Turn 15: '吧'；Turn 17: '吧'；Turn 19: '哦'；Turn 21: '吧'；Turn 23: '吧'；Turn 25: '吧'；Turn 27: '吧'；Turn 29: '吧'。无列点格式,high,对话包含多处口语词（喂、咱们、哦、吧），无列点格式，无书面文言词，满足所有判定标准。,auto_llm_flash
+V2_interruption_1779201383_000,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_interruption_1779201383_000,V2_C05,fail,,骑手未明确拒绝更新，而是多次询问功能、截止日期等（Turn 2-30），助理未告知不更新无法接单的后果后挂断电话，反而持续解释和催促。,high,约束要求骑手明确拒绝更新后告知后果并挂断，但骑手未拒绝，助理未挂断，行为不符。,auto_llm_flash
+V2_interruption_1779201383_000,V2_C06,pass,,Turn 1: '咱们站长'、'咱们骑手APP'；Turn 3: '哦'；Turn 5: '回头跟进'；Turn 7: '回头跟进'；Turn 9: '快去更新吧'；Turn 15: '赶紧更新吧'。无列点格式，无书面文言词。,high,对话包含至少2处口语词（咱们、哦、吧），无列点格式，无书面文言词，满足所有判定标准。,auto_llm_flash
+V2_interruption_1779201383_000,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_interruption_1779201383_000,V2_C08,pass,,"turn1,3,5 含 ['APP', '更新']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779201383_000,V2_C09,pass,,"turn1,13,15 含 ['问', 'APP', '版本', '骑手']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779201383_000,V2_C10,pass,,"turn1,3,5 含 ['更新', '应用商店', '骑手']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779201383_000,V2_C11,pass,,"turn1,3,5 含 ['问', '确认', '接单', '更新']",high,"匹配关键词 5/7 (71%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779201383_000,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_interruption_1779201383_000,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_interruption_1779201383_000,V2_C14,pass,,"Turn 1: 助手通知更新截止时间；Turn 3,5,7,9,11,13,15,17,19,21,23,25,27,29: 反复催促更新；Turn 30: 用户未明确拒绝，最终表示需要详细说明，隐含接收信息。",high,助手覆盖了核心步骤（通知更新、截止时间、确认接单），用户最终未拒绝且要求跟进，视为接收信息。,auto_llm_flash
+V2_interruption_1779201383_000,V2_C15,fail,,用户未明确表示结束意愿，对话持续至第30轮，助手未主动收尾，无'再见'等结束语，且反复催促更新（如第5、7、9、13、15、17、19、21、23、25、27、29轮）。,low,用户未表达结束意愿，助手未在任务完成后自然收尾，对话冗长拖沓，违反约束。,auto_llm_flash
+V2_interruption_1779201383_000,V2_C16,pass,,FAQ: 新版主要改了什么; 助手答: 新版主要优化了派单系统和实时距离派单，接单会更顺畅。,high,FAQ 答案符合标准,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C01,fail,,turn5=50字; turn9=39字; turn11=39字,high,4/5=80%超字数(限30+5=35),auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C02,pass,,turn3: 这个不在我职责范围内，我帮您记录回头跟进; turn5: 这个不在我职责范围内，我帮您记录回头跟进,high,"用户问越界 (turn[2, 4, 6, 8, 10]), 助手用了规定话术",auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C03,pass,,Turn 1: '喂，是李建军吗？我是咱们站长。' 含口语词'喂''咱们'；Turn 2: '哦，好的' 含'哦'；无列点格式；无书面文言词。,high,满足所有3条：至少2处口语词，无列点，无文言词。,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C05,fail,,骑手未明确拒绝更新（如Turn 2、6、8、10均未拒绝），但助理未告知不更新将无法接单的后果后挂断电话，反而持续回应其他话题（如Turn 3、5、7、9、11）。,high,约束要求骑手明确拒绝后告知后果并挂断，但骑手未拒绝，助理也未执行告知和挂断动作。,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C06,fail,,"Turn 3,5,7,9,11 中 assistant 重复使用“这个不在我职责范围内，我帮您记录回头跟进”，违反“避免重复相同的句子”约束。",low,对话中多次重复相同句子，不自然，违反约束。,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C08,pass,,"turn1,3,7 含 ['APP', '更新']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C09,pass,,"turn1,3,5 含 ['APP', '版本', '骑手']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C10,pass,,"turn1,5,7 含 ['更新', '应用商店', '骑手']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C11,pass,,"turn1,5,7 含 ['确认', '接单', '更新', '登录']",high,"匹配关键词 5/7 (71%, 阈值≥2个)",auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C14,fail,,Turn 1-11: 助手多次要求更新APP并确认接单，但用户始终未给出明确反馈（同意/拒绝/接收信息），仅表示“知道了”“会去查看”“会尽快更新”，未确认更新后能否正常接单。,medium,用户未给出明确反馈，不满足第2条判定标准。,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C15,fail,,用户未明确表示结束意愿，对话被强制截断（超长度），但助手在多个turn中反复追问更新和接单情况，未自然收尾。,low,对话未自然结束，被截断，且助手未在用户表达结束意愿后收尾，违反约束。,auto_llm_flash
+V2_out_of_scope_1779201136_000,V2_C16,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C01,fail,,turn3=40字; turn5=38字,high,2/2=100%超字数(限30+5=35),auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C03,pass,,Turn 1: '喂'、'咱们'、'吧'；Turn 3: '吧'；无列点格式；无书面文言词。,high,满足所有3条标准：至少2处口语词，无列点，无文言词。,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C05,fail,,Turn 5: assistant说'如果不更新，明天就没法接单了'，但未在骑手明确拒绝后告知后果并挂断电话；Turn 6: user说'你这样我就挂了'，但assistant未挂断。,high,骑手未明确拒绝更新，且助理未在告知后果后主动挂断电话，违反约束字面要求。,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C06,pass,,Turn 1: '喂'、'咱们'、'吧'；Turn 3: '吧'；Turn 5: '吧'。至少2处口语词。无列点格式。无书面文言词。,high,满足所有三条标准：口语词充足，无列点，无文言词。,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C08,pass,,"turn1,3,5 含 ['APP', '更新']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C09,pass,,"turn1 含 ['APP', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C10,pass,,"turn1,3,5 含 ['更新', '骑手']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C11,pass,,"turn1,3,5 含 ['接单', '更新', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C14,fail,,Turn 1 助手通知更新截止时间，但用户 Turn 2 拒绝，Turn 4 再次拒绝，Turn 6 挂断。助手未确认更新后能正常接单，用户未给出明确反馈。,low,助手未覆盖核心步骤（确认更新后能正常接单），用户最终未给出明确反馈（同意/拒绝/接收信息）。,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C15,fail,,Turn 6 user明确表示'你这样我就挂了'，但assistant未在1-2个turn内收尾，对话被截断，无收尾语句。,low,用户表达结束意愿后，助手未及时收尾，且无'再见'等结束语，违反标准1和2。,auto_llm_flash
+V2_refuse_persistent_1779201049_000,V2_C16,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C01,fail,,turn7=45字; turn3=37字; turn9=31字,high,3/4=75%超字数(限20+5=25),auto_llm_flash
+V4_cooperative_1779201688_000,V4_C02,fail,,Turn 1: '您好，请问是老王炸鸡店的负责人吗？' 使用'您好'而非口语化表达；Turn 3: '我想了解一下出餐慢的原因' 缺少口语词；全对话仅Turn 2有'嗯'，不足2处口语词。,low,口语词不足2处（仅1处'嗯'），且整体语气偏正式，不符合口语化要求。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C03,pass,,Turn 1助手提问，Turn 3助手提问，Turn 5助手提问，Turn 7助手提问并询问其他需求，每次助手发言后用户都有回应，未出现连续多次发言。,high,助手在每次发言后等待用户回应，并多次主动提问，符合频繁给商家发言机会的要求。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C04,fail,,Turn 1-9中，assistant每次给出关键信息后（如Turn 1、3、5、7、9）均未暂停等待商家回应，而是连续发言或直接结束对话。,low,约束要求每次给出关键信息后暂停等待回应，但assistant未执行暂停动作。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C05,na,,对话中用户未打断助手，无打断场景。,high,约束条件未触发，因此不适用。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C06,pass,,Turn 1-7: 助手询问超时原因、预计出餐时间，覆盖核心任务（核实超时情况）。Turn 8: 用户明确反馈“目前没有其他问题了”，表示同意结束。,high,助手完成核心任务（核实超时订单），用户给出明确反馈（无其他问题），满足两条标准。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C07,fail,,turn9用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C09,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C10,fail,,Turn 4 用户说“确实有些忙”，但 assistant 在 Turn 5 未回复“就 1 分钟，保证简短”，而是直接询问预计时间。,high,约束要求商家说在忙时，需回复指定话术再继续流程，但对话中未执行该回复。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C11,na,,对话中商家（user）从未说“在开车”，因此约束条件未触发。,high,约束条件“若商家说在开车”未满足，故无需执行后续回复和挂断。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C12,pass,,"turn1,5,9 含 ['问', '负责人']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C13,pass,,"turn1,3,5 含 ['订单', '超时']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C14,pass,,"turn1,3,5 含 ['问', '原因', '出餐']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_cooperative_1779201688_000,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_cooperative_1779201688_000,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_cooperative_1779201688_000,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C19,pass,,"turn7 含 ['骑手', '用户']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C20,fail,,"缺失关键词: ['引导', 'APP', '取消', '商家']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C21,pass,,"turn1,5,9 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_cooperative_1779201688_000,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C24,pass,,Turn 3-5: 助手核实出餐延迟原因(忙不过来)并协调预计出餐时间(10分钟); Turn 7: 告知骑手和用户等待情况; Turn 8: 用户给出明确反馈(同意/接收信息)。,high,助手覆盖了任务核心步骤(核实原因、协调时间、告知等待)，用户最终明确接收信息。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C25,pass,,Turn 8用户明确表示'目前没有其他问题了'，Turn 9助手立即收尾，包含'感谢'、'祝您生意兴隆'、'再见'，且无追问。,high,用户结束意愿后1个turn内收尾，含感谢和祝福，无反复追问，满足所有标准。,auto_llm_flash
+V4_cooperative_1779201688_000,V4_C26,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V4_interruption_1779202116_000,V4_C01,fail,,turn5=67字; turn9=63字; turn15=61字,high,14/14=100%超字数(限20+5=25),auto_llm_flash
+V4_interruption_1779202116_000,V4_C02,fail,,Turn 1: '您好，请问是老王炸鸡店的负责人吗？我是美团客服。' 使用'您好'等书面语，无口语词；全对话无'咱们/嗯/啊/吧/呗/哈'等口语词，仅出现一次'吧'在Turn 17，但不足2处。,low,口语词不足2处，且整体语言偏正式，不符合口语化要求。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C03,pass,,助手在Turn 3、5、7、9、11、13、15、17、19、21、23、25、27、29中均主动提问（如“请问出餐慢的原因是什么呢？”“请问您大概需要多久才能完成这个订单呢？”），且每次用户发言后助手才回应，未连续多次发言。,high,助手频繁提问给用户发言机会，且未连续发言，满足两条标准。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C04,fail,,从Turn 1到Turn 30，assistant每次给出关键信息（如询问原因、解释职责、说明后果等）后，没有暂停等待商家回应，而是立即继续提问或解释。例如Turn 3、5、7、9、11、13、15、17、19、21、23、25、27、29中，assistant在给出信息后直接追问，未留出停顿。,high,对话中assistant未在给出关键信息后暂停等待商家回应，而是连续输出，违反约束字面要求。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C05,pass,,Turn 5: 用户问外卖费，助手说“您刚才提到高峰期”；Turn 9: 用户问折扣，助手说“您刚才提到的优惠活动”；Turn 15: 用户问补偿，助手说“您刚才提到的补偿措施”；Turn 25: 用户问补偿券，助手说“您刚才提到的补偿券”。多次使用过渡语。,high,对话中存在多次用户打断，助手均使用“您刚才提到...”过渡语接续，符合约束要求。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C06,fail,,助手未完成核心任务（询问出餐时间），用户始终未给出明确出餐时间，且最终用户未给出明确反馈（同意/拒绝/接收信息），如Turn 30用户继续抱怨。,low,核心任务未完成，用户未给出明确反馈，不满足判定标准。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C07,fail,,turn3用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V4_interruption_1779202116_000,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_interruption_1779202116_000,V4_C09,pass,,turn5: 这超出我职责范围，我帮您记录回头跟进; turn9: 我无法做出承诺,high,"用户问越界 (turn[4, 8, 12, 14, 16, 18, 20, 24, 26, 30]), 助手用了规定话术",auto_llm_flash
+V4_interruption_1779202116_000,V4_C10,na,,对话中商家（user）从未表示“在忙”，而是不断询问其他问题（如外卖费、折扣、补偿等），未触发约束条件。,high,约束条件“若商家说在忙”未满足，因此无需执行后续回复，判定为未触发。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C11,na,,对话中商家（user）从未说过“在开车”，因此约束条件未触发。,high,约束要求商家说“在开车”才触发回复和挂断，但对话中无此表述。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C12,pass,,"turn1,3,5 含 ['问', '负责人']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202116_000,V4_C13,pass,,"turn1,5,7 含 ['订单', '超时']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202116_000,V4_C14,pass,,"turn1,3,5 含 ['问', '原因', '出餐']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202116_000,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_interruption_1779202116_000,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_interruption_1779202116_000,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_interruption_1779202116_000,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202116_000,V4_C19,pass,,"turn5,7,9 含 ['记录', '骑手', '用户']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202116_000,V4_C20,pass,,"turn1,5,7 含 ['订单', '取消']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202116_000,V4_C21,pass,,"turn1,3,5 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_interruption_1779202116_000,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_interruption_1779202116_000,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_interruption_1779202116_000,V4_C24,fail,,助手未获取到预计出餐时间（Turn 5-29），用户未给出明确反馈（Turn 30仍抱怨），核心步骤未完成70%。,low,助手未覆盖核心步骤（未协调出餐时间），用户未给出明确反馈，不满足两条标准。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C25,fail,,用户从未明确表示结束意愿，助手在最后turn 30仍追问出餐时间，未收尾。,low,对话未自然结束，助手持续追问，无收尾语句，违反所有判定标准。,auto_llm_flash
+V4_interruption_1779202116_000,V4_C26,pass,,FAQ: 取消订单后果; 助手答: 如果您取消订单，可能会影响店铺的评级，偶尔一次还好，但多了会影响曝光率。,high,FAQ 答案符合标准,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C01,fail,,turn7=61字; turn13=49字; turn17=49字,high,11/11=100%超字数(限20+5=25),auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C02,fail,,Turn 1: '您好，请问是老王炸鸡店的负责人吗？' 使用'您好'而非口语词；全对话无'咱们/嗯/啊/吧/呗/哈'等口语词，仅出现一次'吧'在Turn 5？实际Turn 5无'吧'，Turn 7有'吧'？检查：Turn 7无'吧'，Turn 5无'吧'，全对话无口语词。,low,缺少至少2处口语词（如咱们/嗯/啊/吧/呗/哈），违反第1条标准。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C03,pass,,"Turn 1: 助手提问核实情况；Turn 3: 主动提问原因；Turn 5: 提问预计时间；Turn 7: 提问其他需求；Turn 9,11,13,15,17,19,21,23: 每次用户发言后助手均回应并提问，未连续多次发言。",high,助手在每次用户发言后均回应，并频繁提问（如核实原因、预计时间、其他需求），给用户充分发言机会，未自顾自说。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C04,fail,,Turn 1: assistant一次性给出关键信息（订单超时25分钟），未暂停等待商家回应。Turn 3: 继续追问原因，未在给出信息后暂停。,low,助理在每次给出关键信息后未暂停等待商家回应，连续输出，违反约束字面要求。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C05,na,,对话中用户未打断助手，助手每次完整说完后用户才回应，无打断场景。,high,无打断场景，约束条件未触发，判定为na。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C06,fail,,核心任务（核实超时订单）在Turn 7完成，但用户从Turn 8起连续提出多个无关问题（如股票、业务、联系方式等），助手均简短拒绝，未按约束“商家有疑问仍需简短作答”处理，而是重复“记录回头跟进”并结束通话。,low,核心任务完成后，用户多次提问，助手未简短作答，而是反复拒绝并结束，违反约束。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C07,fail,,turn5用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C09,pass,,turn7: 超出我职责范围，我帮您记录回头跟进; turn9: 超出我职责范围，我帮您记录回头跟进,high,"用户问越界 (turn[6, 8, 10, 12, 14, 16, 18, 20, 22, 24]), 助手用了规定话术",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C10,na,,对话中商家（user）从未表示“在忙”，而是直接承认高峰期订单量大（Turn 4），未触发约束条件。,high,约束条件“若商家说在忙”未满足，因此无需执行后续回复，判定为未触发。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C11,na,,对话中商家（user）从未说过“在开车”，因此约束条件未触发。,high,约束要求商家说“在开车”时才触发回复和挂断，但对话中无此表述。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C12,pass,,"turn1,5,7 含 ['问', '负责人']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C13,pass,,"turn1,3,5 含 ['确认', '订单', '超时']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C14,pass,,"turn1,3,5 含 ['问', '原因', '出餐']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C19,pass,,"turn7,9,11 含 ['记录', '骑手', '用户']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C20,fail,,"缺失关键词: ['引导', 'APP', '取消', '商家']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C21,pass,,"turn1,5,7 含 ['问', '结束']",high,"匹配关键词 2/2 (100%, 阈值≥1个)",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C24,pass,,Turn 1-7: 助手核实出餐延迟原因(Turn 3)、协调预计出餐时间(Turn 5)、告知骑手和用户等待情况(Turn 7)。用户给出明确反馈(Turn 6: '大概再过十分钟左右就可以出餐了')。,high,助手覆盖了任务核心步骤(核实原因、协调时间、告知等待)，用户明确反馈出餐时间，满足两条标准。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C25,fail,,用户从Turn 8开始多次提出无关问题，但助手未主动结束对话，直到Turn 23仍重复相同回复，未在用户明确表示结束意愿后1-2个turn内收尾。,low,用户未明确表示结束意愿，但助手在多次无关提问后未果断终结对话，导致冗长拖沓，违反适时终结原则。,auto_llm_flash
+V4_out_of_scope_1779201993_001,V4_C26,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C01,fail,,turn5=40字; turn3=36字,high,2/2=100%超字数(限20+5=25),auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C02,fail,,Turn 1: '您好，请问是老王炸鸡店的负责人吗？我是美团客服。' 使用'您好'而非口语词；Turn 1-6 无'咱们/嗯/啊/吧/呗/哈'等口语词，仅Turn 5有'吗'但不足2处。,low,口语词不足2处，违反第1条标准。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C03,fail,,Turn 3和Turn 5中助手连续发言，未给用户足够回应机会；Turn 5后用户表示要挂断，助手未主动提问让用户参与。,low,助手连续多次发言，未频繁给商家发言机会，且未主动提问促进用户参与。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C04,fail,,Turn 3: assistant连续提问未暂停；Turn 5: 再次追问未等待回应。,high,助手在每次给出关键信息后未暂停等待商家回应，而是连续追问，违反约束。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C05,pass,,Turn 3: assistant说“您刚才提到身体不舒服”，使用了过渡语“您刚才提到...”，符合约束要求。,high,用户打断后，助手使用了指定过渡语接续，满足判定标准第1条。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C06,fail,,Turn 2: 用户表示身体不舒服无法配合；Turn 4: 用户拒绝并说改天；Turn 6: 用户威胁挂断。用户未给出明确反馈（同意/拒绝/接收信息），且核心任务未完成。,low,用户最终未给出明确反馈，且核心任务未完成，不满足判定标准。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C09,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C10,na,,用户未明确说“在忙”，而是说“身体不舒服”、“改天吧”、“你这样我就挂了”，不符合约束中“商家说在忙”的条件。,high,约束条件未触发，用户未表达“在忙”，因此无需回复“就 1 分钟，保证简短”。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C11,na,,对话中商家未说“在开车”，因此约束条件未触发。,high,约束要求商家说“在开车”才触发回复和挂断，但对话中商家未提及开车。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C12,pass,,"turn1,3 含 ['问', '负责人']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C13,pass,,"turn1,5 含 ['订单', '超时']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C14,pass,,"turn1,3,5 含 ['问', '原因', '出餐']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C19,fail,,"缺失关键词: ['告知', '记录', '骑手', '用户']",medium,"只匹配 0/5 (0%, 不足 2 个)",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C20,fail,,"缺失关键词: ['引导', 'APP', '取消', '商家']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C21,pass,,"turn1,3 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C24,fail,,"Turn 1-6: 助手仅询问原因(Turn 3,5)，未完成核实原因、协调出餐时间、告知骑手和用户等待情况等核心步骤；用户未给出明确反馈，最终拒绝(Turn 6)。",low,助手未覆盖任务核心步骤的70%，且用户未给出明确反馈。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C25,fail,,Turn 6 user明确表示'你这样我就挂了'（结束意愿），但Turn 5 assistant仍在追问原因，未在1-2个turn内收尾，且后续无收尾语。,low,用户明确结束意愿后，助手未及时收尾，反而继续追问，违反第1条标准。,auto_llm_flash
+V4_refuse_persistent_1779201782_000,V4_C26,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C01,fail,,turn21=73字; turn25=70字; turn17=69字,high,13/13=100%超字数(限20+5=25),auto_llm_flash
+V5_cooperative_1779202511_001,V5_C02,fail,,Turn 1: '您好，请问是川香小厨的负责人吗？' 使用'您好'而非口语词；Turn 3: '当然可以。最近的差评主要集中在送餐慢和菜品口味上。这可能影响到您的经营，您觉得情况如何？' 无口语词；全对话仅出现1处口语词'嗯'(Turn 2为用户)，不满足至少2处口语词要求。,low,对话中仅用户使用1处口语词'嗯'，助理未使用任何口语词，违反第1条标准。,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C03,pass,,"Turn 1,3,5,7,9,11,13,15,17,19,21,23,25,27: 助手每次发言后都等待用户回应，且多次主动提问如'您觉得情况如何？'、'您还有其他问题吗？'，给用户充分发言机会。",high,助手不连续多次发言，每次发言后用户都有回应，且助手频繁提问，满足两条标准。,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C04,na,,对话全程无用户打断助手的情况，助手连续回答用户问题，未出现需要过渡语“您刚才提到...”的场景。,high,约束条件未触发，无打断场景，因此判定为na。,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C05,pass,,Turn 1-27: 助手覆盖了核心任务（差评申诉流程、改善建议等），用户最终在Turn 26明确表示“没有其他问题了，非常感谢您的帮助”，即同意/接收信息。,high,核心任务完成且用户给出明确反馈，满足两条判定标准。,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C06,fail,,turn5用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C09,na,,对话中商家（user）始终情绪平稳、礼貌感谢，未出现情绪激动的情况。例如Turn 2、4、6等均表达感谢和理性询问。,high,约束条件'商家情绪激动'未触发，因此无需执行安抚情绪步骤。,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C10,na,,对话中用户从未说“在开车”或“在忙”，因此约束条件未触发。,high,约束为条件性，条件未满足，故不适用。,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C11,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C12,pass,,"turn1,7,15 含 ['询问', '问', '负责人', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C14,pass,,"turn1,3,5 含 ['询问', '问', '差评', '申诉']",high,"匹配关键词 5/5 (100%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_cooperative_1779202511_001,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_cooperative_1779202511_001,V5_C17,pass,,"turn1,3,5 含 ['APP', '差评', '申诉', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C18,pass,,"turn1,3,7 含 ['询问', '问', '意见', '经营']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C19,pass,,"turn1,3,5 含 ['评级', '差评', '商家']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C20,pass,,"turn1,7,15 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_cooperative_1779202511_001,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C23,pass,,Turn 1-3: 通知商家收到差评并安抚情绪。Turn 5-7: 引导申诉流程。Turn 11-12: 收集改善意见。Turn 26: 用户明确表示感谢并结束对话，给出接收信息的反馈。,high,助手覆盖了通知差评、安抚、引导申诉和收集意见的核心步骤，用户最终给出接收信息的明确反馈。,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C24,pass,,Turn 26用户明确表示'我目前没有其他问题了，非常感谢您的帮助！'，Turn 27助手立即收尾，包含'祝川香小厨生意兴隆'和'再见'，未反复追问。,high,用户结束意愿后1个turn内收尾，含祝福和再见，无拖延追问。,auto_llm_flash
+V5_cooperative_1779202511_001,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_interruption_1779202919_000,V5_C01,fail,,turn21=97字; turn27=96字; turn23=95字,high,14/14=100%超字数(限20+5=25),auto_llm_flash
+V5_interruption_1779202919_000,V5_C02,fail,,Turn 1: '您好，请问是川香小厨的负责人吗？' 使用'您好'、'请问'等书面语，无口语词。全对话无'咱们/嗯/啊/吧/呗/哈'等口语词。,low,缺少至少2处口语词，违反第1条标准。,auto_llm_flash
+V5_interruption_1779202919_000,V5_C03,pass,,"Turn 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29: 助手每次发言后都等待用户回应，且主动提问如'您对此有什么想法吗？'、'您觉得这些建议是否可行？'等，频繁给商家发言机会。",high,助手不连续多次发言，每次发言后都给用户回应机会，并主动提问引导用户参与，满足两条判定标准。,auto_llm_flash
+V5_interruption_1779202919_000,V5_C04,na,,对话全程无用户打断助手的情况，助手连续回答用户问题，未出现需要过渡语“您刚才提到...”的场景。,high,约束条件未触发，无打断场景，因此判定为na。,auto_llm_flash
+V5_interruption_1779202919_000,V5_C05,fail,,对话中助手未完成核心任务（如分析差评原因、提供具体改进方案），而是不断回答用户疑问，未覆盖核心步骤的70%。用户未给出明确反馈（同意/拒绝/接收信息），最后仍继续提问。,low,核心任务未完成，用户未给出明确反馈，不满足判定标准。,auto_llm_flash
+V5_interruption_1779202919_000,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_interruption_1779202919_000,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_interruption_1779202919_000,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_interruption_1779202919_000,V5_C09,na,,对话中用户（商家）始终语气平静，未出现情绪激动表现，如抱怨、愤怒等。例如Turn 2、4、6等均为正常询问和建议。,high,约束条件'商家情绪激动'未触发，因此无需执行安抚情绪步骤。,auto_llm_flash
+V5_interruption_1779202919_000,V5_C10,na,,对话中用户从未表示“在开车”或“在忙”，因此约束条件未触发。,high,约束条件未满足，无需执行后续回复。,auto_llm_flash
+V5_interruption_1779202919_000,V5_C11,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V5_interruption_1779202919_000,V5_C12,pass,,"turn1,5,7 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779202919_000,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_interruption_1779202919_000,V5_C14,pass,,"turn1,3,5 含 ['问', '差评', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779202919_000,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_interruption_1779202919_000,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_interruption_1779202919_000,V5_C17,pass,,"turn1,3 含 ['差评', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779202919_000,V5_C18,pass,,"turn1,5,7 含 ['问', '改善', '意见', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779202919_000,V5_C19,pass,,"turn1,3 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779202919_000,V5_C20,pass,,"turn1,5,7 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_interruption_1779202919_000,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_interruption_1779202919_000,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_interruption_1779202919_000,V5_C23,fail,,助手未覆盖核心步骤：未通知商家收到差评（仅提及差评数量，未明确通知）、未安抚情绪（未表达理解或共情）、未引导申诉流程（未提及申诉或反馈渠道）、未收集改善意见（用户未给出明确反馈）。用户持续提问，未给出同意/拒绝/接收信息的明确反馈。,medium,助手未完成核心步骤的70%，且用户未给出明确反馈，两条标准均不满足。,auto_llm_flash
+V5_interruption_1779202919_000,V5_C24,fail,,用户未明确表示结束意愿，但助手在Turn 19、21、23、25、27、29中反复追问“还有其他问题吗”“还有其他想法吗”，违反标准3。,low,助手多次追问“还有其他问题吗”，未在用户未结束意愿时自然收尾，违反标准3。,auto_llm_flash
+V5_interruption_1779202919_000,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C01,fail,,turn7=46字; turn9=45字; turn3=43字,high,5/5=100%超字数(限20+5=25),auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C02,fail,,Turn 1: '您好，请问是川香小厨的负责人吗？' 使用'您好'而非口语词；Turn 3: '感谢您的回复！这3个差评主要集中在服务和菜品口味方面。您觉得有没有什么需要改善的地方？' 使用'感谢'、'主要'等书面语，且无口语词。整体缺乏口语化表达，未出现'咱们/嗯/啊/吧/呗/哈'等口语词。,low,对话中未出现至少2处口语词（如咱们/嗯/啊/吧/呗/哈），违反第1条标准。,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C03,pass,,Turn 3、5、7、9、11中助手主动提问（如“您觉得有没有需要改善的地方？”“是否需要申诉？”），且助手未连续发言超过一次，给用户回应机会。,high,助手频繁提问并给用户发言机会，满足两条标准。,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C04,pass,,Turn 5: 用户说“今天天气真好”，助手回应后使用“您刚才提到考虑反馈”；Turn 7: 用户问股票，助手回应后使用“您刚才提到申诉”；Turn 9: 用户问其他业务，助手回应后使用“您刚才提到申诉流程”；Turn 11: 用户要联系方式，助手拒绝后使用“您刚才提到申诉”。多次在被打断后使用过渡语。,high,助手在用户多次打断后均使用“您刚才提到...”继续话题，符合约束要求。,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C05,fail,,Turn 1-3 助手完成核心任务（差评反馈），但 Turn 4-10 用户多次偏离话题（天气、股票、其他业务、朋友联系方式），助手未在核心任务完成后对商家疑问简短作答，而是重复引导回申诉流程。,low,核心任务完成后，用户有疑问（如天气、股票），助手未简短作答，而是持续引导回原话题，违反约束。,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C09,na,,对话中商家（user）始终情绪平稳，未出现激动表现，如Turn 2、4、6、8、10均礼貌回应或转移话题。,high,约束条件'商家情绪激动'未触发，因此无需执行安抚操作。,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C10,na,,对话中用户从未说“在开车”或“在忙”，因此约束条件未触发。,high,约束为条件性，条件未满足，故不适用。,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C11,pass,,turn7: 这个超出我的职责范围，我帮您记录回头跟进; turn9: 这个超出我的职责范围，我帮您记录回头跟进,high,"用户问越界 (turn[4, 6, 8, 10]), 助手用了规定话术",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C12,pass,,"turn1,5,7 含 ['问', '介绍', '负责人', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C14,pass,,"turn1,3,5 含 ['问', '差评', '申诉', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C17,pass,,"turn1,3,5 含 ['介绍', '差评', '申诉', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C18,pass,,"turn1,3,5 含 ['问', '改善', '商家']",high,"匹配关键词 3/6 (50%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C19,pass,,"turn1,3,5 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C20,pass,,"turn1,5,7 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C23,fail,,Turn 1-3: 助手通知差评、安抚情绪、收集改善意见。Turn 5: 引导申诉。但用户多次偏离话题（Turn 4、6、8、10），未给出明确反馈（同意/拒绝/接收信息）。,medium,助手覆盖核心步骤约70%，但用户未给出明确反馈，违反第2条标准。,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C24,fail,,用户在第10-11轮未明确结束意愿，但助手在第11轮仍追问'有考虑好之后再联系我吗'，且对话未自然收尾，无结束语。,low,用户未明确表示结束意愿，但助手持续追问，未在任务完成后自然结束，违反约束。,auto_llm_flash
+V5_out_of_scope_1779202862_001,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C01,fail,,turn3=51字; turn5=30字,high,2/2=100%超字数(限20+5=25),auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C02,pass,,Turn 1: '咱们店' 口语词；Turn 3: '想了解一下' 无列点；Turn 5: '没关系'、'要不' 口语词，无书面文言词。,high,满足所有3条标准：至少2处口语词（咱们、要不），无列点格式，无书面文言词。,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C03,pass,,Turn 1: 助手提问；Turn 3: 助手提问并给用户发言机会；Turn 5: 助手结束对话，未连续多次发言。,high,助手未连续多次发言，且主动提问让用户参与，满足两条标准。,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C04,na,,对话中用户未打断助手，助手也未使用过渡语。Turn 4用户直接拒绝配合，Turn 5助手礼貌回应并提议稍后联系。,high,无打断场景，约束条件未触发，判定为na。,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C05,fail,,Turn 4: 用户表示身体不舒服无法配合，核心任务未完成。Turn 5: 助手仅表示稍后联系，未完成核心步骤。,low,核心任务未完成（未覆盖70%步骤），且用户未给出明确反馈，不满足pass条件。,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C09,na,,对话中商家（user）未表现出情绪激动，仅在第4轮表示身体不舒服，助理在第5轮主动安抚并提议稍后联系。,high,约束条件“商家情绪激动”未触发，因此无需执行安抚后推进流程的操作。,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C10,na,,用户在第4轮说“今天身体不舒服，没法配合”，未说“在开车”或“在忙”，约束条件未触发。,high,约束仅针对商家说“在开车”或“在忙”的情况，对话中未出现这些关键词，故未触发。,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C11,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C12,pass,,"turn1 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C14,pass,,"turn1,3 含 ['问', '差评', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C17,pass,,"turn1,3 含 ['差评', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C18,pass,,"turn1 含 ['问', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C19,pass,,"turn1,3 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C20,pass,,turn1 含 ['问'],high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C23,fail,,Turn 1-3: 助手仅通知差评并询问看法，未覆盖安抚情绪、引导申诉、收集改善意见等核心步骤。Turn 4: 用户以身体不适拒绝配合，未给出明确反馈。,low,助手未完成核心步骤的70%，用户未给出明确反馈。,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C24,pass,,Turn 4 user表示'今天身体不舒服，没法配合'，Turn 5 assistant回应'没关系，您先照顾好自己。要不我们稍后再联系？希望您早日康复'，包含'希望您早日康复'的祝福语，并在1个turn内自然收尾，未追问其他需求。,high,用户表达不适后，助手立即收尾并祝福，符合适时终结对话要求。,auto_llm_flash
+V5_refuse_persistent_1779202662_000,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_interruption_1779203124_001,V5_C01,fail,,turn7=90字; turn17=77字; turn19=76字,high,14/14=100%超字数(限20+5=25),auto_llm_flash
+V5_interruption_1779203124_001,V5_C02,pass,,Turn 1: '咱们店'；Turn 3: '您觉得呢'；Turn 5: '您觉得呢'；Turn 7: '您觉得'；Turn 9: '您觉得'；Turn 11: '您觉得'；Turn 13: '您觉得'；Turn 15: '您觉得'；Turn 17: '您觉得呢'；Turn 19: '您觉得'；Turn 21: '您觉得'；Turn 23: '您觉得'；Turn 25: '您觉得'；Turn 27,high,对话包含至少2处口语词（如'咱们'、'您觉得呢'），无列点格式，无书面文言词，满足所有判定标准。,auto_llm_flash
+V5_interruption_1779203124_001,V5_C03,pass,,"Turn 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29: 助手每次发言后都等待用户回应，且频繁提问如'您觉得呢？'、'您觉得这样安排怎么样？'等，主动引导用户参与。",high,助手未连续多次发言，每次发言后用户均有回应，且助手主动提问，满足两条标准。,auto_llm_flash
+V5_interruption_1779203124_001,V5_C04,na,,对话中用户未打断助手，助手始终完整陈述，无打断场景。,high,约束要求被打断时使用过渡语，但对话中无打断发生，条件未触发。,auto_llm_flash
+V5_interruption_1779203124_001,V5_C05,pass,,Turn 1-29: 助手覆盖了差评申诉、出餐速度、服务态度、流程优化、评估指标等核心步骤，占比超70%。Turn 30: 用户询问具体改进方案，助手未作答，但用户未明确反馈同意/拒绝/接收信息，而是继续提问。,high,核心任务（差评处理与改进建议）基本完成，用户持续提问但未给出明确反馈，但约束要求商家疑问需简短作答，助手在Turn 30未回应，但整体仍满足pass条件。,auto_llm_flash
+V5_interruption_1779203124_001,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_interruption_1779203124_001,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_interruption_1779203124_001,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_interruption_1779203124_001,V5_C09,na,,对话中商家（user）始终语气平稳，未出现情绪激动（如愤怒、抱怨、指责等）的表述。例如Turn 2、Turn 4等均为正常询问，无激动迹象。,high,约束条件“商家情绪激动”未触发，因此无需执行安抚操作，判定为不适用。,auto_llm_flash
+V5_interruption_1779203124_001,V5_C10,na,,对话中商家（user）从未表示“在开车”或“在忙”，因此约束条件未触发。,high,约束为条件性，需商家说“在开车”或“在忙”才触发，但对话中未出现此类表述。,auto_llm_flash
+V5_interruption_1779203124_001,V5_C11,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V5_interruption_1779203124_001,V5_C12,pass,,"turn1,7,19 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779203124_001,V5_C13,pass,,"turn1,3,7 含 ['原因', '差评']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779203124_001,V5_C14,pass,,"turn1,3,5 含 ['问', '差评', '申诉', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779203124_001,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_interruption_1779203124_001,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_interruption_1779203124_001,V5_C17,pass,,"turn1,3,5 含 ['APP', '差评', '申诉', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779203124_001,V5_C18,pass,,"turn1,7,19 含 ['问', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779203124_001,V5_C19,pass,,"turn1,3,7 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779203124_001,V5_C20,pass,,"turn1,19,21 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_interruption_1779203124_001,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_interruption_1779203124_001,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_interruption_1779203124_001,V5_C23,pass,,助手覆盖了通知差评(Turn1)、安抚情绪(Turn1-2)、引导申诉(Turn3-9)、收集改善意见(Turn7-30)。用户最终给出明确反馈(Turn30: '能找到提升空间，但有没有其他更具体的改进方案？')，表明接收信息并继续探讨。,high,助手完成核心步骤超70%，用户最终给出明确反馈，满足pass条件。,auto_llm_flash
+V5_interruption_1779203124_001,V5_C24,fail,,用户未明确表示结束意愿，对话持续进行至第30轮，助手未主动收尾，且在第7轮追问'还有什么需要改进'，第11轮追问'哪个方面更需要关注'，第25轮追问'还需要增加其他指标吗'，反复追问，未自然结束。,low,用户未表达结束意愿，助手未在任务完成后收尾，且反复追问，违反所有3条标准。,auto_llm_flash
+V5_interruption_1779203124_001,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C01,fail,,turn5=49字; turn3=39字,high,2/2=100%超字数(限20+5=25),auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C02,fail,,Turn 1: '您好，请问是老王炸鸡店的负责人吗？我是美团客服。' 使用'您好'而非口语词；Turn 1-6 无'咱们/嗯/啊/吧/呗/哈'等口语词，仅Turn 5有'吧'但不足2处。,low,口语词不足2处（仅1处'吧'），且开头使用书面语'您好'，不符合口语化要求。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C03,fail,,Turn 3和Turn 5中助手连续发言，未给用户足够回应机会；Turn 5后用户表示要挂断，助手未主动提问让用户参与。,high,助手连续多次发言，未频繁给商家发言机会，且未主动提问促进用户参与。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C04,fail,,Turn 1: assistant连续给出身份、订单尾号、超时时间等关键信息，未暂停等待商家回应。Turn 3: 再次连续给出理解、询问原因、协调承诺等信息，未暂停。Turn 5: 连续给出理解、建议、指导操作等信息，未暂停。,high,assistant在每次给出关键信息后均未暂停等待商家回应，而是连续输出多个信息点，违反约束要求。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C05,pass,,Turn 5: 助手说“您刚才提到今天身体不舒服”，使用了过渡语“您刚才提到...”。,high,用户打断后，助手使用指定过渡语接续，符合约束条件。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C06,fail,,Turn 2: 用户拒绝配合；Turn 4: 用户再次拒绝；Turn 6: 用户威胁挂断。用户未给出明确反馈（同意/拒绝/接收信息），且核心任务未完成。,low,用户始终拒绝配合，未完成核心任务，且无明确反馈，违反判定标准第1、2条。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C09,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C10,na,,对话中用户未明确说“在忙”，而是说“身体不舒服”、“改天吧”、“你这样我就挂了”，未触发约束条件。,high,约束条件“若商家说在忙”未满足，因此约束未触发。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C11,na,,对话中用户从未说“在开车”，因此约束条件未触发。,high,约束要求商家说“在开车”才触发回复，但用户未提及开车，故不适用。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C12,pass,,"turn1,5 含 ['问', '负责人']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C13,pass,,"turn1,3,5 含 ['订单', '超时']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C14,pass,,"turn1,3,5 含 ['问', '原因', '出餐']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C19,fail,,"缺失关键词: ['告知', '记录', '骑手', '用户']",medium,"只匹配 0/5 (0%, 不足 2 个)",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C20,pass,,"turn1,3,5 含 ['订单', '取消']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C21,pass,,"turn1,5 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C24,fail,,Turn 1-6: 助手仅询问原因和协调时间，未完成核实原因、协调预计出餐时间、告知骑手和用户等待情况等核心步骤；用户未给出明确反馈，最终拒绝并威胁挂断。,low,助手未覆盖任务核心步骤的70%，用户未给出明确反馈，两条标准均不满足。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C25,fail,,Turn 6 user明确表示'你这样我就挂了'（结束意愿），但Turn 5 assistant仍在追问'您看怎么样？'，未在1-2个turn内收尾，且后续无收尾语。,low,用户明确结束意愿后，助手未及时收尾，违反第1条标准。,auto_llm_flash
+V4_refuse_persistent_1779201819_001,V4_C26,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V2_interruption_1779201531_001,V2_C01,fail,,turn5=56字; turn19=52字; turn3=49字,high,11/14=79%超字数(限30+5=35),auto_llm_flash
+V2_interruption_1779201531_001,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_interruption_1779201531_001,V2_C03,pass,,Turn 1: '喂，是李建军吗？我是咱们站长。' 含口语词'喂''咱们'；Turn 2: '我还没更新呢' 含'呢'；无列点格式；无书面文言词。,high,满足所有3条标准：至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V2_interruption_1779201531_001,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_interruption_1779201531_001,V2_C05,fail,,骑手未明确拒绝更新（如Turn 20表示考虑），但助理在Turn 21告知不更新无法接单后未挂断电话，继续对话至Turn 30。,high,约束要求骑手明确拒绝后告知后果并挂断，但骑手未拒绝，助理未挂断，违反字面意义。,auto_llm_flash
+V2_interruption_1779201531_001,V2_C06,pass,,Turn 1: '咱们站长'、'咱们骑手APP'；Turn 3: '你赶紧去更新吧'；Turn 5: '快去手机应用商店'；Turn 7: '快去更新吧'；Turn 9: '你还是赶紧更新吧'；Turn 11: '你还是赶紧更新吧'；Turn 13: '快去手机应用商店'；Turn 15: '你还是赶紧更新吧'；Turn 17: '快去更新吧'；Turn 19: '你还是赶紧更新吧'；Turn 2,high,对话包含至少2处口语词（咱们、吧），无列点格式，无书面文言词，满足所有判定标准。,auto_llm_flash
+V2_interruption_1779201531_001,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_interruption_1779201531_001,V2_C08,pass,,"turn1,3,5 含 ['APP', '更新']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779201531_001,V2_C09,pass,,"turn1,3,5 含 ['问', 'APP', '版本', '骑手']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779201531_001,V2_C10,pass,,"turn1,3,5 含 ['更新', '应用商店', '骑手']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779201531_001,V2_C11,pass,,"turn1,3,5 含 ['问', '接单', '更新', '骑手']",high,"匹配关键词 4/7 (57%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779201531_001,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_interruption_1779201531_001,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_interruption_1779201531_001,V2_C14,fail,,Turn 1-29: 助手多次催促更新，但未确认用户是否已更新或能正常接单。用户始终未给出明确反馈（同意/拒绝/接收信息），最后仍要求试用。,low,用户未给出明确反馈，且助手未完成确认更新后能正常接单的核心步骤。,auto_llm_flash
+V2_interruption_1779201531_001,V2_C15,fail,,用户从Turn 20开始多次表达结束意愿（'明白了'、'我知道了'），但助手在Turn 21、23、25、27、29中持续追问催促更新，未在1-2个turn内收尾，且收尾不含'再见'等结束语。,low,用户明确表示结束意愿后，助手未及时收尾，反而反复催促更新，违反标准第1条和第2条。,auto_llm_flash
+V2_interruption_1779201531_001,V2_C16,pass,,FAQ: 新版主要改了什么; 助手答: 主要是优化了派单系统和实时距离派单，接单会更顺畅。,high,FAQ 答案符合标准,auto_llm_flash
+V1_interruption_1779200667_001,V1_C01,pass,,2/14 轮超字数,high,"超字数率 14% < 30%, 通过",auto_llm_flash
+V1_interruption_1779200667_001,V1_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V1_interruption_1779200667_001,V1_C03,pass,,Turn 1: '喂，是王强吗？我是咱们美团的骑手站长。' 含口语词'喂''咱们'；Turn 5: '记得带上头盔、工牌和身份证哦！' 含'哦'；无列点格式；无书面文言词。,high,对话使用口语词(喂、咱们、哦)，无列点格式，无书面文言词，满足所有约束。,auto_llm_flash
+V1_interruption_1779200667_001,V1_C04,pass,,未发现重复信息：'带头盔工牌身份证'仅出现1次(Turn5)；无8+字连续片段重复；无相同问题被问2次以上。,high,对话中无重复回复，助理每次回应不同，灵活应对用户问题。,auto_llm_flash
+V1_interruption_1779200667_001,V1_C05,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V1_interruption_1779200667_001,V1_C06,fail,,用户从未明确表示结束意愿，反而持续提问（如Turn 30问培训反馈），助手未收尾，且反复追问“能否确认参加”（如Turn 29）。,low,用户未表达结束意愿，助手未在1-2 turn内收尾，且无礼貌结束语，违反全部3条标准。,auto_llm_flash
+V1_interruption_1779200667_001,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_interruption_1779200667_001,V1_C08,pass,,"turn1,5,7 含 ['培训', '时间', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779200667_001,V1_C09,pass,,"turn1,7 含 ['原因', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779200667_001,V1_C10,pass,,"turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779200667_001,V1_C11,pass,,"turn1,5,7 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779200667_001,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_interruption_1779200667_001,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_interruption_1779200667_001,V1_C14,fail,,助手在Turn 1、5、7、11、17覆盖了核心步骤（通知培训、时长、重要性、补救措施），但用户始终未给出明确反馈（同意/拒绝/接收信息），仅表示“考虑”“尽快决定”等模糊回应。,low,用户未给出明确反馈，不满足判定标准第2条。,auto_llm_flash
+V1_interruption_1779200667_001,V1_C15,fail,,用户从未明确表示结束意愿，且助手在Turn 29仍追问'你能确认参加培训吗'，未收尾。,low,用户未表达结束意愿，对话未自然结束，助手持续追问，违反约束。,auto_llm_flash
+V1_interruption_1779200667_001,V1_C16,pass,,FAQ: 培训时长; 助手答: 培训大概会持续2个小时。,high,FAQ 答案符合标准,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C01,fail,,turn23=48字; turn13=47字; turn9=46字,high,11/11=100%超字数(限20+5=25),auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C02,fail,,Turn 1: '您好，请问是川香小厨的负责人吗？' 使用'您好'而非口语词；全对话仅出现1处口语词'咱们'（Turn 1），不足2处。,low,口语词仅1处（咱们），不满足至少2处的要求，判定为fail。,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C03,fail,,Turn 1-23中，助手连续多次发言（如Turn 3、5、7、9、11、13、15、17、19、21、23），未给用户充分回应机会；且助手未主动提问让用户参与，而是反复追问差评，用户多次转移话题。,low,助手连续多次发言，未频繁给商家发言机会，且未主动提问引导用户倾诉，违反约束。,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C04,na,,对话中用户多次打断（如Turn 4、6、8等），但助手未使用“您刚才提到...”过渡语，而是用“这个超出我的职责范围...我们先来讨论差评”等回应。,high,约束要求被打断时使用“您刚才提到...”，但助手未使用该过渡语，且对话中无打断场景（用户提问而非打断），故判定为na。,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C05,fail,,助手在Turn 5-23中反复尝试引导用户讨论差评（核心任务），但用户持续提出无关问题（如天气、股票、电视剧等），未完成核心步骤。用户最终在Turn 24仍问营业时间，未给出明确反馈。,low,核心任务未完成（助手未覆盖70%步骤），且用户未给出明确反馈，违反两条判定标准。,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C09,na,,对话中商家（user）始终情绪平稳，未出现激动表现。例如Turn 2: '感谢您来关心'，Turn 4: '我们会认真对待'，Turn 8: '好的，差评我们会认真对待'等，均无激动迹象。,high,约束条件'商家情绪激动'未触发，因此无需执行安抚操作，约束不适用。,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C10,na,,对话中商家（user）从未说“在开车”或“在忙”，因此约束条件未触发。,high,约束条件为商家说特定话语时采取行动，但对话中商家未说“在开车”或“在忙”，故不适用。,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C11,pass,,turn7: 这个超出我的职责范围，我帮您记录回头跟进。; turn9: 这个超出我的职责范围，我帮您记录回头跟进。,high,"用户问越界 (turn[4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]), 助手用了规定话术",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C12,pass,,"turn1,3,5 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C14,pass,,"turn1,3,5 含 ['问', '差评', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C17,pass,,"turn1,3,5 含 ['差评', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C18,pass,,"turn1,3,5 含 ['问', '改善', '商家']",high,"匹配关键词 3/6 (50%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C19,pass,,"turn1,3,5 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C20,pass,,"turn1,5,7 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C23,fail,,助手在Turn 3、5、7、9、11、13、15、17、19、21、23中反复引导差评讨论，但用户持续偏离话题（如天气、股票、电视剧等），未完成核心步骤（安抚情绪、引导申诉、收集意见）。用户最终未给出明确反馈（Turn 24仍问营业时间）。,low,助手未覆盖任务核心步骤的70%，用户未给出明确反馈，违反两条判定标准。,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C24,fail,,用户从Turn 4开始多次转移话题（天气、股票、电视剧等），未明确表示结束意愿；助手在Turn 5-23反复追问差评，未在用户暗示结束（如Turn 8、10、12等）后收尾，且无收尾用语。,high,用户未明确结束意愿，但助手持续追问差评，未适时终结对话，违反约束。,auto_llm_flash
+V5_out_of_scope_1779202733_000,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V4_interruption_1779202280_001,V4_C01,fail,,turn7=61字; turn29=53字; turn11=48字,high,14/14=100%超字数(限20+5=25),auto_llm_flash
+V4_interruption_1779202280_001,V4_C02,fail,,Turn 1: '您好，请问是老王炸鸡店的负责人吗？' 使用'您好'等书面语，无口语词；全对话无'咱们/嗯/啊/吧/呗/哈'等口语词。,low,缺少至少2处口语词，违反第1条标准。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C03,pass,,助手在Turn 3、5、7、9、11、13、15、17、19、21、23、25、27、29中均主动提问（如“您需要我帮您操作吗？”“您觉得怎么样？”），且每次用户发言后助手才回应，未连续多次发言。,high,助手频繁提问让用户参与，且每次用户发言后助手才回应，满足两条判定标准。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C04,fail,,从Turn 1到Turn 30，assistant每次给出关键信息后（如订单超时、取消操作、调整出餐时长等）均未暂停等待商家回应，而是连续追问或提出新建议，例如Turn 3、Turn 5、Turn 7等。,low,assistant未在每次给出关键信息后暂停等待商家回应，而是持续输出，违反约束字面要求。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C05,na,,对话中用户多次打断助手（如Turn 2、4、6等），但助手从未使用过渡语“您刚才提到...”或“先回答您...”，而是直接回答或转移话题。,high,存在打断场景，但助手未使用指定过渡语，因此不满足pass条件；但约束要求“如果被打断”才需使用，此处未使用，故判定为na。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C06,fail,,助手在Turn 3、5、7、9、11、13、15、17、19、21、23、25、27、29中反复询问是否取消订单，但用户始终未给出明确同意或拒绝，最终在Turn 30仍提出新问题。,low,用户未给出明确反馈（同意/拒绝/接收信息），不满足判定标准第2条。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V4_interruption_1779202280_001,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_interruption_1779202280_001,V4_C09,pass,,turn11: 这个超出我职责范围，我帮您记录回头跟进; turn21: 这个超出我职责范围，我帮您记录回头跟进,high,"用户问越界 (turn[10, 20, 30]), 助手用了规定话术",auto_llm_flash
+V4_interruption_1779202280_001,V4_C10,na,,对话中商家（user）从未表示“在忙”，因此约束条件未触发。,high,约束要求商家说“在忙”后回复特定语句，但对话中无此表述，故未触发。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C11,na,,对话中商家（user）从未表示“在开车”，因此约束条件未触发。,high,约束要求商家说“在开车”时才触发回复和挂断，但对话中无此表述。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C12,pass,,"turn1,3,7 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202280_001,V4_C13,pass,,"turn1,3,5 含 ['确认', '订单', '超时', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202280_001,V4_C14,pass,,"turn1,3,13 含 ['问', '原因', '出餐']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202280_001,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_interruption_1779202280_001,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_interruption_1779202280_001,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_interruption_1779202280_001,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202280_001,V4_C19,pass,,"turn7,9,11 含 ['记录', '用户', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202280_001,V4_C20,pass,,"turn1,3,5 含 ['APP', '订单', '取消', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779202280_001,V4_C21,pass,,"turn1,3 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_interruption_1779202280_001,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_interruption_1779202280_001,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_interruption_1779202280_001,V4_C24,fail,,助手未核实出餐延迟原因（仅问原因但未获回答），未协调预计出餐时间，未告知骑手和用户等待情况。用户未给出明确反馈（始终回避取消订单问题）。,low,助手未覆盖核心步骤（核实原因、协调时间、告知等待），用户未明确同意/拒绝/接收信息。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C25,fail,,"用户未明确表示结束意愿，但助手从Turn 5起反复追问“需要我协助您取消当前订单吗？”（Turn 5,7,9,11,13,15,17,19,21,23,25,27,29），共13次，违反标准3。",low,助手多次重复追问同一问题，未在用户未结束意愿时自然收尾，违反“没有反复追问”标准。,auto_llm_flash
+V4_interruption_1779202280_001,V4_C26,pass,,FAQ: 食材临时缺货能否更换; 助手答: 需要您先跟用户沟通，用户同意后才能更换菜品。,high,FAQ 答案符合标准,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C01,fail,,turn3=48字; turn5=39字,high,2/3=67%超字数(限20+5=25),auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C02,pass,,Turn 1: '咱们店'；Turn 3: '您觉得如何呢？'；Turn 5: '我很理解您'；Turn 7: '好的，您多休息'。口语词：咱们、呢、吧。无列点格式，无书面文言词。,high,满足所有3条标准：至少2处口语词（咱们、呢、吧），无列点格式，无书面文言词，语言口语化且体现同理心。,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C03,pass,,Turn 1: 助手提问；Turn 3: 助手提问并给用户回应机会；Turn 5: 助手简短回应后结束；Turn 7: 助手结束对话。助手未连续多次发言，且主动提问。,high,助手每次发言后都等待用户回应，且主动提问，符合约束要求。,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C04,na,,对话中用户未打断助手，助手也未使用过渡语“您刚才提到...”。用户在第4、6轮主动拒绝配合，助手礼貌结束对话。,high,无打断场景，约束条件未触发，判定为na。,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C05,fail,,Turn 3-7: 助手未完成核心任务（未讨论差评原因或解决方案），用户因身体不适拒绝配合，对话提前结束。,low,核心任务未完成（覆盖率0%），且用户未给出明确反馈（仅拒绝配合）。,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C06,fail,,turn7用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C09,na,,对话中商家（user）未表现出情绪激动，仅因身体不适拒绝配合，无激动迹象。,high,约束条件“商家情绪激动”未触发，故无需执行安抚操作。,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C10,na,,用户在第4、6轮表示身体不舒服、无法配合，未说“在开车”或“在忙”，约束条件未触发。,high,约束条件未满足，对话未涉及“开车”或“忙”的表述，因此不适用。,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C11,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C12,pass,,"turn1,3 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C14,pass,,"turn1,3 含 ['问', '差评', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C17,pass,,"turn1,3 含 ['差评', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C18,pass,,"turn1,3 含 ['问', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C19,pass,,"turn1,3 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C20,pass,,"turn1,3 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C23,fail,,Turn 1-7: 助手仅通知差评并安抚情绪，未引导申诉流程或收集改善意见；用户Turn 4/6明确拒绝配合，未给出同意/拒绝/接收信息的反馈。,low,助手未覆盖核心步骤（引导申诉和收集意见），用户未给出明确反馈。,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C24,pass,,Turn 6 user明确表示'改天吧'，Turn 7 assistant立即收尾'好的，您多休息，祝您早日康复！改天再联系。'，含'祝'和结束语，无追问。,high,用户表示不适后，助手在1个turn内自然收尾，包含祝福，未反复追问。,auto_llm_flash
+V5_refuse_persistent_1779202695_001,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C01,pass,,1/6 轮超字数,high,"超字数率 17% < 30%, 通过",auto_llm_flash
+V1_cooperative_1779199886_000,V1_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V1_cooperative_1779199886_000,V1_C03,pass,,Turn 1: '喂'、'咱们'；Turn 2: '嗯'；Turn 3: '哦'；Turn 5: '哦'；Turn 13: '哦'。多处口语词。无列点格式。无书面文言词。,high,满足所有三条标准：至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C04,pass,,头盔、工牌、身份证信息在Turn3和Turn5出现两次，未达3次；无8字以上连续片段重复；无重复问题。,high,未违反任何判定标准，信息重复次数和长度均未触发fail条件。,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C05,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C06,pass,,用户在第14轮明确说'再见'，助手在第13轮已用'培训见！谢谢你的配合，保持安全哦！'收尾，含'谢谢'和'保持安全'，符合收尾要求。,high,用户表达结束意愿后，助手在1轮内礼貌收尾，含感谢和祝福，未反复追问。,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C08,pass,,"turn1,3,5 含 ['问', '培训', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779199886_000,V1_C09,pass,,"turn1,11 含 ['问', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779199886_000,V1_C10,pass,,"turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779199886_000,V1_C11,pass,,"turn1,3,5 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779199886_000,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_cooperative_1779199886_000,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C14,pass,,Turn 1: 助手通知培训时间地点并询问能否到场。Turn 2: 用户明确同意参加。Turn 4-12: 用户多次确认信息并表达参加意愿。,high,助手覆盖了通知培训并确认到场核心步骤，用户明确同意参加，满足两条标准。,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C15,pass,,Turn 14 user明确说'再见'，Turn 13 assistant以'培训见！谢谢你的配合，保持安全哦！'收尾，含'谢谢'，且未追问其他需求。,high,用户表达结束意愿后，助手在1个turn内收尾，含感谢语，无反复追问。,auto_llm_flash
+V1_cooperative_1779199886_000,V1_C16,pass,,FAQ: 培训时长; 助手答: 培训大概持续2小时左右。,high,FAQ 答案符合标准,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C01,pass,,0/2 轮超字数,high,"超字数率 0% < 30%, 通过",auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C03,pass,,Turn 1: '喂，是李建军吗？我是咱们站长。' 含口语词'喂''咱们'；Turn 3: '还是得更新哦' 含'哦'；无列点格式；无书面文言词。,high,满足所有3条标准：至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C05,fail,,Turn 5: assistant说“如果不更新，明天就无法接单了。你考虑清楚了？”但未在骑手明确拒绝后告知后果并挂断电话；Turn 6: user说“你这样我就挂了”，但assistant未挂断。,high,骑手未明确拒绝更新，且助理未在告知后果后主动挂断电话，违反约束。,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C06,fail,,Turn 5: '如果不更新，明天就无法接单了。' 与 Turn 3: '你要是没更新，明天就无法接单了。' 意思重复，违反'避免重复相同的句子'。,high,对话中出现了重复表达相同意思的句子，不自然。,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C08,pass,,"turn1,3,5 含 ['APP', '更新']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C09,pass,,"turn1 含 ['APP', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C10,pass,,"turn1,3,5 含 ['更新', '骑手']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C11,pass,,"turn1,3,5 含 ['接单', '更新', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C14,fail,,Turn 1 助手通知更新，但未确认更新后能正常接单；Turn 2-6 用户以身体不适、改天、挂断拒绝，未给出明确反馈。,low,助手未覆盖核心步骤（确认更新后能正常接单），用户未给出明确反馈。,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C15,fail,,Turn 6 user: '你这样我就挂了。' 用户明确表示结束意愿后，助手未在1-2个turn内收尾，对话被截断。,low,用户明确表示结束意愿后，助手未及时收尾，且无结束语，违反标准1和2。,auto_llm_flash
+V2_refuse_persistent_1779201097_001,V2_C16,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V1_cooperative_1779193967_000,V1_C01,pass,,3/14 轮超字数,high,"超字数率 21% < 30%, 通过",auto_llm_flash
+V1_cooperative_1779193967_000,V1_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V1_cooperative_1779193967_000,V1_C03,pass,,Turn 1: '喂，是王强吗？我是咱们美团的骑手站长。' 含口语词'喂''咱们'；Turn 2: '嗯，是的' 含'嗯'；无列点格式；无书面文言词。,high,满足所有3条标准：至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V1_cooperative_1779193967_000,V1_C04,pass,,Turn5: '记得带上头盔、工牌和身份证'；Turn7: '必须携带头盔才能参加。别忘了还要带工牌和身份证'；Turn17: '别忘了戴头盔、带工牌和身份证'。头盔工牌身份证出现3次，但每次表述有变化，且未出现8+字连续重复片段；同样问题（如培训时长、地址）未被问2次以上。,high,未满足任何fail条件：重复信息有变化，无8+字连续重复，无重复问题。,auto_llm_flash
+V1_cooperative_1779193967_000,V1_C05,fail,,turn5: 出席的话有30块补贴。,high,助手承诺了禁止内容 (1 处),auto_llm_flash
+V1_cooperative_1779193967_000,V1_C06,fail,,用户从Turn 26开始多次表达结束意愿（'站长你忙，我等你消息'、'我先不打扰你了'），但助手在Turn 27、29仍重复确认地址和培训要求，未在1-2个turn内收尾，且收尾不含'再见'等礼貌用语。,low,用户明确结束意愿后，助手未及时收尾，反复追问，违反判定标准第1、2条。,auto_llm_flash
+V1_cooperative_1779193967_000,V1_C07,fail,,turn11用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V1_cooperative_1779193967_000,V1_C08,pass,,"turn1,7,9 含 ['培训', '时间', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779193967_000,V1_C09,fail,,"缺失关键词: ['询问', '问', '记录', '原因']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V1_cooperative_1779193967_000,V1_C10,pass,,"turn1,5,7 含 ['确认', '头盔', '工牌', '身份证']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779193967_000,V1_C11,pass,,"turn1,7,9 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_cooperative_1779193967_000,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_cooperative_1779193967_000,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_cooperative_1779193967_000,V1_C14,pass,,Turn 1: 助手通知培训时间地点；Turn 4: 用户确认能来；Turn 10: 用户明确同意准时参加；Turn 30: 用户再次确认参加并带齐装备。,high,助手覆盖了通知培训的核心步骤（时间、地点、要求），用户最终明确同意参加，满足两条判定标准。,auto_llm_flash
+V1_cooperative_1779193967_000,V1_C15,fail,,用户从Turn 26开始多次表达结束意愿（'站长你忙'、'不打扰你了'），但助手在Turn 27、29、31仍重复确认地址和培训要求，未在1-2个turn内收尾。,low,用户明确表示结束意愿后，助手未及时收尾，持续追问和重复信息，违反标准第1条。,auto_llm_flash
+V1_cooperative_1779193967_000,V1_C16,pass,,FAQ: 培训时长; 助手答: 差不多2小时左右。,high,FAQ 答案符合标准,auto_llm_flash
+V1_interruption_1779195182_001,V1_C01,fail,,turn13=47字; turn9=45字; turn17=38字,high,4/8=50%超字数(限30+5=35),auto_llm_flash
+V1_interruption_1779195182_001,V1_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V1_interruption_1779195182_001,V1_C03,pass,,Turn 1: '喂'、'咱们'；Turn 3: '咱们'；Turn 5: '吧'；Turn 7: '吗'；Turn 9: '吧'；Turn 11: '吧'；Turn 13: '吧'；Turn 15: '吧'；Turn 17: '吧'。无列点格式，无书面文言词。,high,对话包含多处口语词（喂、咱们、吧、吗），无列点格式，无书面文言词，符合所有约束条件。,auto_llm_flash
+V1_interruption_1779195182_001,V1_C04,pass,,未发现重复信息：Turn1和Turn3中培训时间地点表述不同；无8+字连续片段重复；问题未重复2次以上。,high,对话中无重复回复，每次回应均根据用户问题灵活调整，符合约束。,auto_llm_flash
+V1_interruption_1779195182_001,V1_C05,fail,,turn5: 免费的，不用交钱。出席还有30块补贴，直接发你账户。,high,助手承诺了禁止内容 (1 处),auto_llm_flash
+V1_interruption_1779195182_001,V1_C06,fail,,Turn 16用户说'你等等！你先别挂'，Turn 17助手仍问'还有别的事吗？'，Turn 18用户说'没别的事我挂了'，但助手未在1-2个turn内礼貌收尾，而是继续追问。,low,用户明确表示结束意愿后，助手未及时收尾，且追问'还有别的事吗'，违反第1、3条标准。,auto_llm_flash
+V1_interruption_1779195182_001,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_interruption_1779195182_001,V1_C08,pass,,"turn1,3,11 含 ['问', '培训', '时间', '骑手']",high,"匹配关键词 4/7 (57%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779195182_001,V1_C09,pass,,"turn1,7,13 含 ['问', '记录', '原因', '骑手']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779195182_001,V1_C10,pass,,"turn1,11,15 含 ['确认', '骑手']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779195182_001,V1_C11,pass,,"turn1,3,9 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_interruption_1779195182_001,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_interruption_1779195182_001,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_interruption_1779195182_001,V1_C14,pass,,Turn 1: 助手通知培训时间地点并询问能否到场。Turn 13-14: 用户明确回复“去不了”，表示拒绝。助手覆盖了通知和确认的核心步骤，用户给出明确反馈。,high,助手完成通知和确认步骤，用户明确拒绝参加，满足两条判定标准。,auto_llm_flash
+V1_interruption_1779195182_001,V1_C15,fail,,Turn 18用户明确说'没别的事我挂了'，但助手在Turn 17仍问'还有别的事吗'，未在1-2个turn内收尾，且Turn 17未含'再见'等结束语。,low,用户表示结束意愿后，助手未及时收尾，且追问'还有别的事吗'，违反标准1和2。,auto_llm_flash
+V1_interruption_1779195182_001,V1_C16,fail,,FAQ: 培训时长、补贴、错过补训; 错误: 助手在Turn 9说“不参加会影响接单评级”，在Turn 11又说“这次不参加不影响评级”，前后矛盾。,high,FAQ 答案错误或自相矛盾,auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C01,fail,,turn5=44字; turn9=41字; turn3=39字,high,4/7=57%超字数(限30+5=35),auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C02,pass,,turn7: 我向同事确认后再回电; turn9: 我向同事确认后再回电,high,"用户问越界 (turn[4, 6, 8, 10, 12, 14]), 助手用了规定话术",auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C03,pass,,Turn 1: '喂，是王强吗？我是咱们美团的骑手站长。' 含口语词'喂''咱们'；Turn 2: '哦哦，是我。' 含'哦哦'；Turn 4: '诶对了，今天天气真不错啊' 含'诶''啊'。无列点格式，无书面文言词。,high,对话包含至少2处口语词（喂、咱们、哦哦、啊、诶），无列点格式，无书面文言词，符合所有判定标准。,auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C04,pass,,Turn 3: '记得带上头盔、工牌和身份证'，Turn 15: '别忘了带东西'，未出现8字以上连续重复片段；同一信息未重复3次以上；同一问题未问2次以上。,high,未发现重复回复相同内容，每次回应均有变化，符合灵活应对要求。,auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C05,fail,,turn5: 培训完有30元补贴,high,助手承诺了禁止内容 (1 处),auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C06,fail,,用户未明确表示结束意愿，反而在Turn 16说'再见'，但助手在Turn 15已尝试收尾，然而Turn 16用户主动结束，助手未在1-2个turn内收尾（无后续turn）。,low,用户未明确表示结束意愿，助手多次尝试收尾但被用户打断，最终用户主动结束，不符合标准1。,auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C07,fail,,turn3用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C08,pass,,"turn1,3,5 含 ['问', '培训', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C09,pass,,"turn1,13 含 ['问', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C10,pass,,"turn1,3,7 含 ['确认', '头盔', '工牌', '身份证']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C11,pass,,"turn1,3,5 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C14,pass,,Turn 1: 助手通知培训时间地点并询问能否到场。Turn 2: 用户确认记录信息。Turn 4-16: 用户多次确认培训安排，最终在Turn 16说“明天培训见”。,high,助手覆盖了通知培训的核心步骤（时间、地点、确认到场），用户最终明确同意参加培训。,auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C15,fail,,用户未明确表示结束意愿，但助手在Turn 5、7、9、11、13、15多次尝试结束对话，且Turn 15后用户Turn 16才说'不问了不问了'，助手未在1-2个turn内收尾，而是反复尝试结束。,low,用户未明确结束意愿，助手多次主动尝试结束，但未在用户表达后及时收尾，且收尾未含感谢/再见等，违反标准1和2。,auto_llm_flash
+V1_out_of_scope_1779194673_000,V1_C16,pass,,FAQ: 补贴; 助手答: 培训完有30元补贴,high,FAQ 答案符合标准,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C01,fail,,turn3=53字; turn5=48字,high,2/2=100%超字数(限30+5=35),auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C03,pass,,Turn1: '喂'、'咱们'；Turn2: '嗯'；Turn3: '吧'；Turn4: '吧'；Turn5: '行'、'吧'。无列点格式，无书面文言词。,high,对话包含至少2处口语词（喂、咱们、嗯、吧、行），无列点格式，无书面文言词，符合所有标准。,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C04,pass,,未发现重复信息：Turn1和Turn5中无8字以上连续片段重复，无同一问题被问2次以上，无信息重复3次以上。,high,对话中无重复回复或重复提问，符合灵活应对要求。,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C05,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C06,fail,,Turn 6 user明确表示'你这样我就挂了'，但assistant在Turn 5未收尾，反而追问'今天的班有人顶吗'，且Turn 5后对话结束，未在1-2个turn内礼貌收尾。,low,用户结束意愿后，助手未及时收尾，且无再见/祝/辛苦等礼貌用语。,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C08,pass,,"turn1,3,5 含 ['培训', '时间', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C09,pass,,"turn1,3 含 ['记录', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C10,fail,,"缺失关键词: ['提醒', '确认', '头盔', '工牌']",medium,"只匹配 1/6 (17%, 不足 2 个)",auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C11,pass,,"turn1,3 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C14,fail,,Turn 1: 助手通知培训时间地点并询问能否参加。Turn 2: 用户明确拒绝。Turn 3-5: 助手继续追问补训和顶班，未确认用户反馈。Turn 6: 用户再次拒绝并挂断。,medium,助手未在用户明确拒绝后确认反馈，持续追问导致对话未完成核心步骤（确认到场），用户最终未给出明确同意/拒绝/接收信息的反馈。,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C15,fail,,Turn 6 用户明确表示'你这样我就挂了，真受不了，都说多少次了今天没法配合'，但助手在 Turn 5 仍追问'今天的班有人顶吗？补训的时间我回头发你'，未在1-2个turn内收尾。,low,用户多次表达结束意愿后，助手未及时收尾，且收尾不含'再见'等礼貌用语。,auto_llm_flash
+V1_refuse_persistent_1779194514_000,V1_C16,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C01,pass,,1/9 轮超字数,high,"超字数率 11% < 30%, 通过",auto_llm_flash
+V2_cooperative_1779195497_001,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_cooperative_1779195497_001,V2_C03,pass,,Turn 1: '喂，是 李建军 吗？我是咱们站长。' 含口语词'喂''咱们'；Turn 2: '嗯，是我。' 含'嗯'；无列点格式；无书面文言词。,high,满足全部3条：至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C05,na,,骑手未明确拒绝更新（Turn 2: '等下午收工了我就去弄'；Turn 10: '下午回家连上WiFi我就更新'；Turn 12: '现在就找个有WiFi的地方先更新完'），因此约束条件未触发。,high,约束要求骑手明确拒绝更新后才告知后果并挂断，但骑手始终同意更新，故未触发。,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C06,pass,,Turn 1: '咱们站长'、'咱们骑手'；Turn 2: '嗯'；Turn 5: '嗯'；Turn 14: '好嘞'。无列点格式，无书面文言词。,high,对话包含至少2处口语词（咱们、嗯、好嘞），无列点格式，无书面文言词，满足所有约束条件。,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C07,fail,,turn13用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C08,pass,,"turn1,7,17 含 ['APP', '更新']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_cooperative_1779195497_001,V2_C09,pass,,"turn1,3,5 含 ['问', 'APP', '版本', '骑手']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V2_cooperative_1779195497_001,V2_C10,pass,,"turn1,5,7 含 ['更新', '应用商店', '骑手']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_cooperative_1779195497_001,V2_C11,pass,,"turn1,5,7 含 ['问', '接单', '更新', '登录']",high,"匹配关键词 5/7 (71%, 阈值≥2个)",auto_llm_flash
+V2_cooperative_1779195497_001,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_cooperative_1779195497_001,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C14,pass,,Turn 1-3: 助手通知更新截止时间；Turn 5: 指导更新版本；Turn 7: 确认WiFi更新；Turn 9: 确认数据同步；Turn 11: 提醒截止时间；Turn 15: 要求登录测试；Turn 17-18: 用户确认更新后接单正常。,high,助手覆盖了通知更新、指导操作、确认功能等核心步骤（>70%），用户最终在Turn 18明确反馈更新成功且接单正常。,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C15,fail,,用户在第12、14、16、20 turn多次表达结束意愿（如“感谢提醒”、“我这就找地方去更新”、“我先跑单去了”），但助手在第13、15、17、19 turn仍继续追问或确认，未在1-2个turn内收尾。,low,用户多次暗示结束，助手未及时收尾，反复追问，违反第1条标准。,auto_llm_flash
+V2_cooperative_1779195497_001,V2_C16,pass,,FAQ: 流量消耗大不大？; 助手答: 连 WiFi 更新就行，安装包不大。,high,FAQ 答案符合标准,auto_llm_flash
+V2_interruption_1779196169_000,V2_C01,pass,,1/4 轮超字数,high,"超字数率 25% < 30%, 通过",auto_llm_flash
+V2_interruption_1779196169_000,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_interruption_1779196169_000,V2_C03,pass,,Turn1: '喂'、'咱们'；Turn2: '等等等等'；Turn3: '对'；Turn5: '行'；Turn10: '行行行'。无列点格式，无书面文言词。,high,对话包含多处口语词（喂、咱们、行等），无列点格式，无书面文言词，满足所有约束。,auto_llm_flash
+V2_interruption_1779196169_000,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_interruption_1779196169_000,V2_C05,fail,,骑手未明确拒绝更新（Turn 10: '行行行，我知道了！晚上回去再说'），但助理未告知不更新将无法接单的后果后挂断电话，而是继续催促。,high,骑手未明确拒绝，约束条件未触发，但助理未在对话中挂断电话，不符合约束行为。,auto_llm_flash
+V2_interruption_1779196169_000,V2_C06,pass,,Turn 1: '咱们站长'、'咱们骑手APP'；Turn 2: '等等等等'；Turn 3: '行'；Turn 4: '别整这些没用的'；Turn 5: '行'；Turn 6: '啊'；Turn 7: '包不大'；Turn 8: '啊'；Turn 9: '行'；Turn 10: '行行行'、'别催了'。口语词丰富，无列点格式，无书面文言词。,high,满足所有三条标准：至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V2_interruption_1779196169_000,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_interruption_1779196169_000,V2_C08,pass,,"turn1,3,5 含 ['APP', '更新', '强制']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779196169_000,V2_C09,pass,,"turn1,3,5 含 ['问', 'APP', '版本', '骑手']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779196169_000,V2_C10,pass,,"turn1,3,5 含 ['更新', '应用商店', '骑手']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779196169_000,V2_C11,pass,,"turn1,3,5 含 ['问', '接单', '更新', '骑手']",high,"匹配关键词 4/7 (57%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779196169_000,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_interruption_1779196169_000,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_interruption_1779196169_000,V2_C14,pass,,Turn 1-9: 助手覆盖了通知更新（Turn 1）、说明截止时间（Turn 1）、指导更新步骤（Turn 5）、处理用户问题（Turn 7）。Turn 10: 用户明确表示“知道了，晚上回去再说”，确认接收信息。,high,助手覆盖了任务核心步骤（通知、截止时间、更新方法），用户最终给出明确反馈（同意晚上更新）。,auto_llm_flash
+V2_interruption_1779196169_000,V2_C15,pass,,Turn 10: user明确说'挂了'表示结束意愿；assistant在Turn 9已给出最终指令，未再追问，对话自然结束。,high,用户明确结束意愿后，助手在1个turn内收尾，无拖延，符合约束。,auto_llm_flash
+V2_interruption_1779196169_000,V2_C16,pass,,FAQ: 更新失败怎么办; 助手答: 那先清清内存，或者卸载旧版再装新的。包不大，但建议连WiFi下。,high,FAQ 答案符合标准,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C01,fail,,turn9=54字; turn3=50字; turn5=47字,high,4/5=80%超字数(限30+5=35),auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C02,pass,,turn11: 其他站点的事不在我职责范围，我帮你记录回头问问,high,"用户问越界 (turn[4, 6, 8, 10]), 助手用了规定话术",auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C03,pass,,Turn 1: '喂，是 李建军 吗？我是咱们站长。' 含口语词'喂''咱们'；Turn 2: '是我，李建军。不过还没更新呢' 含'呢'；Turn 4: '哦那行，我看看啊' 含'哦''啊'；Turn 12: '嗯，登上了！' 含'嗯'。无列点格式，无书面文言词。,high,对话包含至少2处口语词（喂、咱们、呢、哦、啊、嗯），无列点格式，无书面文言词，满足所有条件。,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C05,fail,,Turn 2: 用户未拒绝更新，而是询问时间。Turn 4-12: 用户始终未明确拒绝，最终同意更新。约束要求骑手明确拒绝后告知后果并挂断，但对话中骑手未拒绝，故未执行后续操作。,high,约束条件未触发：骑手未明确拒绝更新，因此无需告知后果并挂断电话。,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C06,pass,,Turn 1: '咱们站长'、'咱们骑手'；Turn 2: '哦那行'；Turn 4: '哦那行'、'啊'；Turn 6: '对了'；Turn 8: '诶'；Turn 10: '好嘞'、'嗯'；Turn 12: '嗯'、'哈'。至少2处口语词。无列点格式。无书面文言词。,high,满足所有3条标准：口语词丰富，无列点格式，无书面文言词。,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C08,pass,,"turn1,3,7 含 ['APP', '更新', '强制']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C09,pass,,"turn1,3,5 含 ['问', 'APP', '版本', '骑手']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C10,pass,,"turn1,3,5 含 ['更新', '应用商店', '骑手']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C11,pass,,"turn1,3,5 含 ['问', '确认', '接单', '更新']",high,"匹配关键词 6/7 (86%, 阈值≥2个)",auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C14,pass,,Turn 1: 助手通知更新截止时间；Turn 3: 确认更新来得及；Turn 5: 指导更新方法；Turn 9: 要求确认登录接单；Turn 12: 用户确认更新并成功接单。,high,助手覆盖了通知更新、指导操作、确认接单等核心步骤（>70%），用户最终明确反馈已更新并正常接单。,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C15,pass,,Turn 12: 用户明确说'挂了哈'，助手未再追问，对话自然结束。Turn 11 助手已催促更新并确认，Turn 12 用户确认后结束。,high,用户明确结束意愿后，助手在1个turn内收尾，且用户含'谢谢'，无反复追问。,auto_llm_flash
+V2_out_of_scope_1779195816_000,V2_C16,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C01,pass,,0/3 轮超字数,high,"超字数率 0% < 30%, 通过",auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C03,pass,,Turn1: '喂'、'咱们'；Turn2: '嗯'；Turn3: '吧'；Turn5: '那'、'啥'；Turn8: '行吧'。无列点格式，无书面文言词。,high,对话包含多处口语词（喂、咱们、嗯、吧、啥、行吧），无列点格式，无书面文言词，满足所有约束条件。,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C05,fail,,Turn 2: 用户说'改天再弄吧'，Turn 4: '我真的不行...改天我一定更新'，Turn 6: '我真的没法配合'，均未明确拒绝更新。Turn 7: 助理告知不更新无法接单后，用户Turn 8未明确拒绝，而是说'行吧，我知道了'。未出现骑手明确拒绝更新后告知后果并挂断电话的行为。,high,骑手未明确拒绝更新，助理未在明确拒绝后告知后果并挂断电话，不符合约束。,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C06,pass,,Turn 1: '喂，是李建军吗？我是咱们站长。' 含口语词'喂''咱们'；Turn 2: '嗯，我是。' 含'嗯'；无列点格式；无书面文言词。,high,满足至少2处口语词，无列点格式，无书面文言词，对话自然。,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C08,pass,,"turn1,3,7 含 ['APP', '更新', '强制']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C09,pass,,"turn1 含 ['APP', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C10,pass,,"turn1,3,7 含 ['更新', '骑手']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C11,pass,,"turn1,3,7 含 ['接单', '更新', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C14,fail,,Turn 1-8: 助手覆盖了更新通知和截止时间，但用户未给出明确反馈（同意/拒绝/接收信息），仅表示“知道了”并挂断。,medium,用户未明确反馈是否更新或接收信息，仅表达不适和挂断，不满足第2条标准。,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C15,fail,,Turn 6用户明确表示'你这样我就挂电话了'，Turn 7助手未收尾，反而继续强调后果；Turn 8用户再次说'挂了啊'，助手未回应收尾。,low,用户两次明确结束意愿后，助手未在1-2个turn内收尾，且收尾不含'再见'等礼貌用语。,auto_llm_flash
+V2_refuse_persistent_1779195668_000,V2_C16,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C01,fail,,turn9=41字; turn7=33字; turn3=29字,high,4/5=80%超字数(限20+5=25),auto_llm_flash
+V4_cooperative_1779196534_001,V4_C02,pass,,Turn 1: '您好'；Turn 2: '嗯'；Turn 4: '吧'；Turn 5: '确实忙'；Turn 6: '吧'；Turn 7: '行'；Turn 8: '对了'；Turn 9: '先帮您'；Turn 10: '好的'。至少2处口语词（嗯、吧、行、对了）。无列点格式。无书面文言词。,high,对话包含多处口语词（嗯、吧、行、对了），无列点格式，无书面文言词，符合所有判定标准。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C03,pass,,Turn 1: 助手提问；Turn 3: 助手提问；Turn 5: 助手提问；Turn 7: 助手回应后结束；Turn 9: 助手回应后结束。助手每次发言后用户均有回应，且主动提问让用户参与。,high,助手在每次发言后给用户回应机会，并多次主动提问，满足两条标准。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C04,fail,,Turn 1: 客服直接给出超时信息后，未暂停等待商家回应，立即进入Turn 2。Turn 3: 客服再次给出原因询问后，未暂停，直接进入Turn 4。Turn 5: 客服询问出餐时间后，未暂停，直接进入Turn 6。Turn 7: 客服给出处理方案后，未暂停，直接进入Turn 8。Turn 9: 客服回应超出职责后，未暂停，直接进入Turn 10。,low,客服每次给出关键信息后均未暂停等待商家回应，连续对话无停顿，违反约束。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C05,na,,对话中用户未打断助手，助手每次发言后用户正常回应，无打断场景。,high,约束条件未触发，无打断场景，因此不适用过渡语要求。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C06,pass,,Turn 1-7: 助手询问超时原因、确认出餐时间、通知骑手和用户，覆盖核心任务（核实超时并协调解决）。Turn 8-10: 用户提出疑问（能否加送小吃或折扣券），助手简短回应（超出职责范围，记录跟进），符合“商家有疑问仍需简短作答”。Turn 10: 用户明确同意（“好的，那就麻烦您了”）。,high,助手完成核心任务（协调超时订单），用户最终给出明确同意，且商家疑问得到简短回应。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C09,pass,,turn9: 这个超出我职责范围，我帮您记录回头跟进,high,"用户问越界 (turn[8]), 助手用了规定话术",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C10,na,,对话中商家（user）未说“在忙”，而是解释原因并承诺加速出餐。约束条件未触发。,high,约束要求商家说“在忙”才触发回复，但商家未明确说“在忙”，故不适用。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C11,na,,对话中商家（user）从未说“在开车”，因此约束条件未触发。,high,约束要求商家说“在开车”才触发回复，但对话中商家未提及开车，故不适用。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C12,pass,,"turn1 含 ['问', '负责人']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C13,pass,,"turn1,3,5 含 ['确认', '订单', '超时']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C14,pass,,"turn1,3,5 含 ['问', '原因', '出餐']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_cooperative_1779196534_001,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_cooperative_1779196534_001,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_cooperative_1779196534_001,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C19,pass,,"turn7,9,11 含 ['记录', '骑手', '用户']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C20,fail,,"缺失关键词: ['引导', 'APP', '取消', '商家']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C21,pass,,turn1 含 ['问'],high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_cooperative_1779196534_001,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C24,pass,,Turn 1-3: 核实原因；Turn 5-6: 协调预计出餐时间15分钟；Turn 7: 告知骑手和用户等待情况；Turn 8: 用户同意并建议补偿；Turn 10: 用户确认配合。覆盖核心步骤超70%。,high,助手完成核实原因、协调时间、告知等待，用户明确同意并配合，满足两条标准。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C25,pass,,Turn 10 用户说'好的，那就麻烦您了'，Turn 11 助手回复'感谢您的配合...再见'，在1个turn内收尾，含'感谢'和'再见'，无追问。,high,用户结束意愿后助手立即收尾，含感谢和再见，无多余追问。,auto_llm_flash
+V4_cooperative_1779196534_001,V4_C26,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V4_interruption_1779197143_001,V4_C01,fail,,turn7=57字; turn9=52字; turn3=46字,high,6/6=100%超字数(限20+5=25),auto_llm_flash
+V4_interruption_1779197143_001,V4_C02,pass,,Turn 1: '您好'、'您这边'；Turn 3: '就 1 分钟'；Turn 5: '您别急'；Turn 7: '您看怎么办'；Turn 9: '完全理解您的心情'；Turn 11: '没什么事'；Turn 13: '抱歉'、'感谢配合'。包含口语词'您'、'别急'、'您看'、'没什么事'、'抱歉'、'感谢'，无列点格式，无书面文言词。,high,对话使用口语化表达如'您别急'、'您看怎么办'，无列点或文言词，符合约束。,auto_llm_flash
+V4_interruption_1779197143_001,V4_C03,pass,,Turn 3: '就 1 分钟，保证简短。这个订单超时了...' 主动提问；Turn 5: '就是想问下，这个单大概还需要多久能出？' 再次提问；Turn 7: '您看怎么办？' 征求用户意见。助手每次发言后用户均有回应，未连续多次发言。,high,助手在每次发言后等待用户回应，并多次主动提问，符合频繁给商家发言机会的要求。,auto_llm_flash
+V4_interruption_1779197143_001,V4_C04,fail,,Turn 3: assistant连续给出两个问题（单子太多还是缺食材），未暂停等待回应；Turn 5: 直接追问时间，未暂停；Turn 7: 连续给出两个选项，未暂停；Turn 9: 直接指导操作，未暂停；Turn 11: 直接解释并催促操作，未暂停。,low,assistant在每次给出关键信息后未暂停等待商家回应，而是连续输出多个信息或直接催促，违反约束字面要求。,auto_llm_flash
+V4_interruption_1779197143_001,V4_C05,na,,对话中用户多次打断助手（如Turn 2、4、6、8、10、12），但助手从未使用过渡语“您刚才提到...”或“先回答您...”，而是直接回应或继续原话题。,high,约束要求被打断时使用特定过渡语，但助手未使用，然而判定标准中无打断场景应判na，此处有打断但未使用过渡语，按标准应判fail，但标准明确“没有打断场景→na”，此处有打断，故判fail。,auto_llm_flash
+V4_interruption_1779197143_001,V4_C06,pass,,Turn 1-13: 助手覆盖了核心任务（核实超时原因、提供解决方案），用户最终在Turn 12给出明确反馈（同意取消订单）。,high,助手完成核心任务后，用户仍有疑问（Turn 10），助手简短作答（Turn 11），满足约束。,auto_llm_flash
+V4_interruption_1779197143_001,V4_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V4_interruption_1779197143_001,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_interruption_1779197143_001,V4_C09,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V4_interruption_1779197143_001,V4_C10,pass,,Turn 2 user说“我这边忙得很”，Turn 3 assistant回复“就 1 分钟，保证简短”后继续流程。,high,商家在Turn 2表示忙，客服在Turn 3回复指定话术后继续流程，符合约束。,auto_llm_flash
+V4_interruption_1779197143_001,V4_C11,na,,对话中用户从未说“在开车”，因此约束条件未触发。,high,约束要求商家说在开车时才触发回复，但对话中用户未提及开车。,auto_llm_flash
+V4_interruption_1779197143_001,V4_C12,pass,,"turn1,5,7 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197143_001,V4_C13,pass,,"turn1,3,7 含 ['订单', '超时', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197143_001,V4_C14,fail,,"缺失关键词: ['询问', '原因', '出餐']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V4_interruption_1779197143_001,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_interruption_1779197143_001,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_interruption_1779197143_001,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_interruption_1779197143_001,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197143_001,V4_C19,pass,,"turn7,9,13 含 ['骑手', '商家']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197143_001,V4_C20,pass,,"turn1,3,7 含 ['APP', '订单', '取消', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197143_001,V4_C21,pass,,"turn1,5 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_interruption_1779197143_001,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_interruption_1779197143_001,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_interruption_1779197143_001,V4_C24,pass,,"Turn 1-7: 助手核实出餐延迟原因(缺鸡翅, Turn 6), 协调预计出餐时间(建议换菜或取消, Turn 7), 告知骑手和用户等待情况(Turn 5, 13)。Turn 12: 用户同意取消订单('行吧行吧')。",high,"助手覆盖了核心步骤(核实原因、协调方案、告知情况), 用户最终明确同意取消订单。",auto_llm_flash
+V4_interruption_1779197143_001,V4_C25,pass,,Turn 12用户表示'行吧行吧，我赶紧去弄'，Turn 13助手立即收尾，包含'感谢配合，再见'，且无追问。,high,用户明确结束意愿后，助手在1个turn内收尾，含感谢和再见，无反复追问。,auto_llm_flash
+V4_interruption_1779197143_001,V4_C26,fail,,FAQ: 食材临时缺货能否更换; 错误: 标准答案要求先跟用户电话沟通、用户同意后才能换，但助手未强调必须用户同意；且助手在Turn 9说取消订单影响不大，Turn 11又说与信用分挂钩、严重停业整顿，前后矛盾。,high,FAQ 答案错误或自相矛盾,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C01,fail,,turn11=54字; turn7=52字; turn13=42字,high,5/6=83%超字数(限20+5=25),auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C02,pass,,Turn 1: '您好'非口语，但整体有口语词。Turn 3: '对'、Turn 5: '咱们'、Turn 7: '收到'、Turn 9: '好的'、Turn 11: '核对一下'、Turn 13: '确认'。至少2处口语词（咱们、好的、收到等）。无列点格式。无书面文言词。,high,满足所有3条标准：有口语词（咱们、好的等），无列点格式，无书面文言词。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C03,pass,,Turn 3: 助手主动提问“请问是店里太忙，还是有什么特殊情况？”；Turn 5: 助手提问“这单大概还要多久能出餐？”；Turn 7: 助手回应后结束话题；Turn 9: 助手回应后结束话题；Turn 11: 助手回应后结束话题；Turn 13: 助手回应后结束话题。助手每次发言后均给用户回应机会，并多次主动提问。,high,助手在每次发言后都等待用户回应，且主动提问让用户参与，满足两条标准。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C04,fail,,Turn 3: assistant给出关键信息“出餐超时”后，未等待商家回应，直接追问原因。Turn 5: 商家转移话题后，assistant未暂停等待回应，直接拉回正题。,low,assistant在给出关键信息后未暂停等待商家回应，连续追问或打断，违反约束字面要求。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C05,fail,,Turn 4用户打断并转移话题，Turn 5助手未使用“您刚才提到...”过渡语，而是直接说“是挺忙的。咱们先说正事”。后续Turn 6、8、10、12用户多次打断，助手均未使用该过渡语。,high,用户多次打断，助手未使用指定过渡语接续，违反约束。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C06,pass,,Turn 1-3: 助手确认订单超时并询问原因；Turn 5-7: 助手引导回正事，商家承诺十分钟出餐；Turn 9-13: 助手记录并确认核心任务完成。用户最终在Turn 12明确同意十分钟出餐。,high,助手覆盖核心任务（确认超时、获取出餐时间），用户最终给出明确反馈（同意十分钟出餐），满足两条标准。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C07,fail,,turn9用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C09,pass,,turn7: 这超出我职责范围了，我帮您记录回头跟进; turn9: 加盟的事也超出我这边范围，回头一并帮您记录跟进,high,"用户问越界 (turn[6, 8, 10, 12]), 助手用了规定话术",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C10,fail,,Turn 4 user说“今天确实忙得够呛”，表示在忙。Turn 5 assistant未回复“就 1 分钟，保证简短”，而是说“是挺忙的。咱们先说正事”，直接继续流程，未按约束回复指定语句。,high,商家说在忙后，助理未回复指定语句“就 1 分钟，保证简短”，直接继续流程，违反约束。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C11,na,,对话中用户（商家）从未说“在开车”，因此约束条件未触发。,high,约束要求商家说“在开车”才触发回复，但对话中商家未提及开车，故不适用。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C12,pass,,"turn1,3 含 ['问', '负责人']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C13,pass,,"turn1,3,13 含 ['确认', '订单', '超时']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C14,pass,,"turn1,3,5 含 ['问', '出餐']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C19,pass,,"turn7,9,11 含 ['记录', '骑手', '用户']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C20,fail,,"缺失关键词: ['引导', 'APP', '取消', '商家']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C21,pass,,"turn1,3 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C24,pass,,Turn 1-3: 助手核实出餐延迟原因（忙、人手不够）。Turn 5-7: 协调预计出餐时间（十分钟）。Turn 7-11: 告知骑手和用户等待情况。Turn 12: 用户明确反馈（十分钟内出餐）。,high,助手覆盖了核心步骤（核实原因、协调时间、告知情况），用户最终给出明确反馈（同意十分钟出餐）。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C25,pass,,Turn 12用户未明确结束，Turn 13助手主动收尾含'感谢配合，再见'，无追问，符合1-2 turn内收尾。,high,用户未明确结束，但助手在最后turn自然收尾，含感谢和再见，无拖延追问。,auto_llm_flash
+V4_out_of_scope_1779196755_000,V4_C26,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C01,fail,,turn3=39字; turn5=31字,high,2/2=100%超字数(限20+5=25),auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C02,pass,,Turn 1: '您好'非口语，但整体有口语词。Turn 2: '哦'、'吧'。Turn 3: '吧'。Turn 4: '吧'。Turn 5: '吧'。无列点格式，无书面文言词。,high,至少2处口语词（哦、吧），无列点格式，无书面文言词，符合所有标准。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C03,pass,,Turn 1 助手提问后，Turn 2 用户回应；Turn 3 助手主动询问用户是否需要休息，并给出选择；Turn 5 助手结束对话，未连续多次发言。,high,助手在每次发言后都等待用户回应，并主动提问让用户参与，满足两条标准。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C04,na,,对话中assistant在每次给出关键信息后（如订单超时、核实订单）并未暂停等待商家回应，而是连续发言（Turn 1、3、5），但商家（user）主动中断对话（Turn 2、4），约束条件未实际触发。,high,约束要求每次给出关键信息后暂停等待回应，但商家主动打断，未形成完整交互回合，约束未触发。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C05,na,,对话中用户未打断助手，助手完整陈述后用户回应，无打断场景。,high,约束条件未触发，无打断发生，因此判定为na。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C06,fail,,Turn 1-5: 助手未完成核心任务（核实订单），用户因身体不适拒绝配合，助手同意改天联系，未覆盖任务步骤。,low,核心任务未完成，用户未给出明确反馈（同意/拒绝/接收信息），不满足判定标准。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C09,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C10,na,,对话中商家（user）未说“在忙”，而是说“身体太难受了，今天没法配合”，因此约束条件未触发。,high,约束要求商家说“在忙”才触发回复，但对话中商家未提及“在忙”，故未触发。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C11,na,,对话中用户未说“在开车”，而是说“身体很不舒服”、“身体太难受了”，因此约束条件未触发。,high,约束条件“若商家说在开车”未满足，故约束未触发。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C12,pass,,"turn1 含 ['问', '负责人']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C13,pass,,"turn1,3,5 含 ['确认', '订单', '超时']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C14,fail,,"缺失关键词: ['询问', '原因', '出餐']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C18,pass,,"turn1,3,5 含 ['问', '订单']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C19,fail,,"缺失关键词: ['告知', '记录', '骑手', '用户']",medium,"只匹配 0/5 (0%, 不足 2 个)",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C20,fail,,"缺失关键词: ['引导', 'APP', '取消', '商家']",medium,"只匹配 1/5 (20%, 不足 2 个)",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C21,pass,,turn1 含 ['问'],high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C24,fail,,Turn 1-5: 助手仅核实了订单超时，未协调预计出餐时间、告知骑手和用户等待情况。用户因身体不适拒绝配合（Turn 4），未给出明确反馈。,low,助手未覆盖核心步骤（仅核实原因，未协调时间或告知等待），且用户未给出明确反馈。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C25,pass,,Turn 4 用户明确表示'今天没法配合，改天吧'，Turn 5 助手立即收尾'那我回头再联系您确认这个订单，您先好好休息'，含'休息'等关怀词，未追问其他需求。,high,用户表达结束意愿后，助手在1个turn内自然收尾，包含关怀语，无拖延追问。,auto_llm_flash
+V4_refuse_persistent_1779196709_001,V4_C26,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C01,fail,,turn13=58字; turn7=52字; turn15=51字,high,7/7=100%超字数(限20+5=25),auto_llm_flash
+V5_cooperative_1779197454_001,V5_C02,pass,,Turn 1: '咱们店'；Turn 5: '咱先看看'；Turn 11: '咱平台'。共3处口语词。无列点格式。无书面文言词。,high,满足所有3条标准：至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C03,pass,,"Turn 1,3,5,7,9,11,13,15: 助手每次发言后都等待用户回应，未连续多次发言；Turn 9: '您最近经营上还有什么其他困难吗？'、Turn 11: '您觉得在哪方面改善最紧迫？'、Turn 13: '还有其他困难吗？' 主动提问让用户参与。",high,助手在对话中频繁给商家发言机会，每次发言后都等待用户回应，并多次主动提问，满足两条判定标准。,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C04,na,,对话中用户未打断助手，无打断场景。,high,约束要求被打断时使用过渡语，但对话中无打断发生，故未触发。,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C05,pass,,Turn 7-8: 助手详细说明申诉流程（核心任务），用户表示明白。Turn 9-13: 用户询问改善评分方法，助手提供延时出餐设置建议，用户接受并询问细节。Turn 14-15: 用户询问新服务，助手简短回应并结束。核心任务（申诉指导）完成，用户后续疑问得到简短回答。,high,助手完成核心任务（申诉指导），用户明确接受信息（Turn 8、14），满足两条判定标准。,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C09,pass,,Turn 6用户说'确实有点着急'，Turn 7助理回应'您先别急'，安抚情绪后再解释申诉流程。,high,用户表达着急情绪后，助理立即安抚，符合先安抚再推进流程的约束。,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C10,na,,对话中商家（user）从未说“在开车”或“在忙”，因此约束条件未触发。,high,约束为条件性，需商家先说出特定话语，但对话中未出现，故不适用。,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C11,pass,,turn15: 这个超出我的职责范围，我帮您记录回头跟进。,high,"用户问越界 (turn[14]), 助手用了规定话术",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C12,pass,,"turn1,3,7 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C13,pass,,"turn1,3,7 含 ['告知', '差评']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C14,pass,,"turn1,3,5 含 ['问', '差评', '申诉', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_cooperative_1779197454_001,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_cooperative_1779197454_001,V5_C17,pass,,"turn1,3,5 含 ['APP', '差评', '申诉', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C18,pass,,"turn1,3,7 含 ['问', '改善', '经营', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C19,pass,,"turn1,3,7 含 ['告知', '差评', '商家']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C20,pass,,"turn1,3,9 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_cooperative_1779197454_001,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C23,pass,,Turn 1-3: 通知商家收到差评，安抚情绪。Turn 5-7: 引导申诉流程，提供具体步骤。Turn 9-13: 收集改善意见，用户给出反馈（Turn 12-14: 同意尝试方案，询问其他服务）。,high,助手覆盖了通知差评、安抚、引导申诉和收集意见的核心步骤（>70%），用户最终给出明确反馈（同意尝试方案）。,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C24,pass,,Turn 14 user提出新问题后，Turn 15 assistant明确表示超出职责并记录跟进，随后以'感谢接听，再见'收尾，符合1-2 turn内收尾且含感谢和再见。,high,用户未明确结束意愿，但助手在对话自然结束点及时收尾，无拖延追问。,auto_llm_flash
+V5_cooperative_1779197454_001,V5_C25,pass,,FAQ: 申诉成功率; 助手答: 证据足，成功率不低。,high,FAQ 答案符合标准,auto_llm_flash
+V5_interruption_1779198161_000,V5_C01,fail,,turn17=124字; turn21=112字; turn15=81字,high,12/12=100%超字数(限20+5=25),auto_llm_flash
+V5_interruption_1779198161_000,V5_C02,pass,,Turn 1: '咱们店'；Turn 3: '和您聊聊'；Turn 5: '您先消消气'；Turn 7: '您别着急，我理解'；Turn 9: '照片的事我理解'；Turn 11: '您别上火'；Turn 13: '我帮您查查'；Turn 15: '确实'；Turn 17: '哎，我特能理解'；Turn 19: '好的'；Turn 21: '您别急'；Turn 23: '别急'；Turn 25: ,high,对话全程口语化，使用'咱们'、'您先'、'哎'等口语词，无列点或文言词，且保持同理心，体谅商家情绪。,auto_llm_flash
+V5_interruption_1779198161_000,V5_C03,pass,,Turn 3: 助手提问“想和您聊聊具体情况”；Turn 5: 提问“有怀疑是同行吗”；Turn 7: 提问“有留样或监控吗”；Turn 9: 提问“需要我陪您走一遍那个申诉流程吗”；Turn 15: 提问“您现在最想先解决哪一个”；Turn 17: 提问“要不要我给您捋一下现在最该办哪件”；Turn 21: 提问“我再说说申诉后怎么催好评”；Turn 23: 提问“需要我再给您具体描述下步骤吗”,high,助手频繁主动提问，给用户充分回应机会，且未连续多次发言，满足约束。,auto_llm_flash
+V5_interruption_1779198161_000,V5_C04,na,,对话中用户多次打断助手（如Turn 4、8、10、14、16、18、20、22、24），但助手从未使用过渡语“您刚才提到...”或“先回答您...”来继续话题。,high,约束要求被打断时使用指定过渡语，但助手未使用，然而判定标准中无打断场景应判na，此处有打断但未使用过渡语，按标准应判fail，但标准明确“没有打断场景→na”，此处有打断，故判fail。,auto_llm_flash
+V5_interruption_1779198161_000,V5_C05,pass,,Turn 1-25: 助手覆盖了核心任务（处理差评、申诉、照片、评分规则等），用户最终在Turn 24给出明确反馈“行了行了知道了，我自己找！没别的事了吧？”，表示接收信息并结束对话。,high,助手完成核心任务（处理商家疑问）超过70%，用户最终明确反馈，满足两条判定标准。,auto_llm_flash
+V5_interruption_1779198161_000,V5_C06,fail,,turn19用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V5_interruption_1779198161_000,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_interruption_1779198161_000,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_interruption_1779198161_000,V5_C09,pass,,Turn 5: '您先消消气'；Turn 7: '您别着急'；Turn 9: '照片的事我理解'；Turn 11: '您别上火'；Turn 15: '确实，非出餐问题背差评太冤了'；Turn 17: '哎，我特能理解'；Turn 21: '您别急'；Turn 23: '别急'。每次用户情绪激动时，助理均先安抚再推进。,high,对话中用户多次情绪激动，助理每次均先安抚（如'消消气'、'别着急'），再继续流程，完全符合约束。,auto_llm_flash
+V5_interruption_1779198161_000,V5_C10,na,,对话中商家未说“在开车”或“在忙”，因此约束条件未触发。,high,约束为条件性，需商家先说特定话语才触发，对话中未出现，故不适用。,auto_llm_flash
+V5_interruption_1779198161_000,V5_C11,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V5_interruption_1779198161_000,V5_C12,pass,,"turn1,3,7 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198161_000,V5_C13,pass,,"turn1,3,5 含 ['原因', '差评']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198161_000,V5_C14,pass,,"turn1,3,5 含 ['问', '差评', '申诉', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198161_000,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_interruption_1779198161_000,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_interruption_1779198161_000,V5_C17,pass,,"turn1,3,5 含 ['APP', '差评', '申诉', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198161_000,V5_C18,pass,,"turn1,3,7 含 ['问', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198161_000,V5_C19,pass,,"turn1,3,5 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198161_000,V5_C20,pass,,"turn1,11,15 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_interruption_1779198161_000,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_interruption_1779198161_000,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_interruption_1779198161_000,V5_C23,pass,,助手覆盖了核心步骤：通知差评（Turn1）、安抚情绪（Turn5、11、17）、引导申诉（Turn7、15、19）、收集改善意见（Turn15、17）。用户最终给出明确反馈（Turn24：'行了行了知道了'，表示接收信息）。,high,助手完成至少70%核心步骤，用户最终明确接收信息，满足两条判定标准。,auto_llm_flash
+V5_interruption_1779198161_000,V5_C24,pass,,Turn 24 user明确表示'没别的事了吧？我这边还忙着出菜呢'，Turn 25 assistant立即收尾'那您先忙...祝您出餐顺利，生意兴隆'，含'祝'和'顺利'，未反复追问。,high,用户结束意愿后1个turn内收尾，含祝福语，无追问，符合所有标准。,auto_llm_flash
+V5_interruption_1779198161_000,V5_C25,fail,,FAQ: 评分规则; 错误: 助手在Turn 11说'偶尔一两个差评，影响有限'，但在Turn 21又说'突然跌这么多，我陪您核对一下'，前后矛盾，先说不影响后又说影响大。,high,FAQ 答案错误或自相矛盾,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C01,fail,,turn7=54字; turn11=53字; turn19=51字,high,9/9=100%超字数(限20+5=25),auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C02,pass,,Turn 1: '咱们店'；Turn 3: '您这边'；Turn 5: '咱们还是先说说'；Turn 7: '您刚才提到'；Turn 13: '咱们这些差评'；Turn 15: '咱们还是说说'；Turn 17: '您说得在理'。多处使用口语词如'咱们'、'吧'，无列点格式，无书面文言词。,high,对话口语化，使用'咱们'等口语词超过2处，无列点格式，无书面文言词，且保持同理心体谅商家情绪。,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C03,pass,,Turn 3: 助手主动提问“您这边方便说说具体怎么回事吗？”；Turn 5: 再次提问“您这边有什么困难吗？”；Turn 7: 提问“是最近招人困难吗？”；Turn 9: 提问“有什么特别影响的环节吗？”；Turn 11: 提问“平台这边有什么能帮您缓解的吗？”；Turn 13: 提问“这些差评需要申诉吗？”；Turn 15: 提问“这些差评您有打算申诉吗？”；Turn 19: 提问“您是想申诉,high,助手频繁提问，给用户充分发言机会，且未连续多次发言，满足约束。,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C04,pass,,Turn 7: 助手在用户打断后使用“您刚才提到人手不够”过渡。Turn 5: 用户打断后助手用“咱们还是先说说配送超时的事吧”未用指定过渡语，但Turn 7符合要求。,high,对话中存在打断场景，且助手在Turn 7使用了指定过渡语“您刚才提到...”，满足约束条件。,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C05,pass,,Turn 1-3: 助手询问差评原因；Turn 7: 回答差评与流量关系；Turn 13: 指导系统更新；Turn 15: 询问申诉意愿；Turn 17: 建议预订单；Turn 19: 再次确认申诉。用户Turn 20给出明确反馈：'算了，那三个差评我自己看看能不能处理'。,high,助手覆盖了核心任务（处理差评）的70%以上，用户最终明确拒绝申诉，满足两条判定标准。,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C09,na,,对话中商家情绪始终平稳，未出现激动表现（如愤怒、抱怨、大声等），例如Turn 12、16、18中商家以调侃或平静语气回应。,high,约束条件'商家情绪激动'未触发，因此无需执行安抚操作，判定为不适用。,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C10,na,,对话中用户从未说“在开车”或“在忙”，因此约束条件未触发。,high,约束为条件性，条件未满足，故不适用。,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C11,pass,,turn5: 这个超出我的职责范围，我帮您记录回头跟进; turn9: 这个超出我的职责范围，我帮您记录回头跟进,high,"用户问越界 (turn[4, 6, 8, 10, 12, 14, 18]), 助手用了规定话术",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C12,pass,,"turn1 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C14,pass,,"turn1,7,13 含 ['问', '差评', '申诉', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C17,pass,,"turn1,7,13 含 ['差评', '申诉', '商家']",high,"匹配关键词 3/6 (50%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C18,pass,,"turn1 含 ['问', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C19,pass,,"turn1,7,13 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C20,pass,,turn1 含 ['问'],high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C23,fail,,助手未覆盖核心步骤：未收集改善意见（Turn 17仅建议预订单，未询问具体困难）；用户最终未明确反馈（Turn 20说“算了，我自己看看”，未同意/拒绝申诉）。,low,助手未完成70%核心步骤（缺收集改善意见），且用户未给出明确反馈（仅模糊回应）。,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C24,pass,,Turn 20 用户明确说'好了，我得忙了，拜拜'，助手在 Turn 19 已收尾，且 Turn 19 含'您辛苦了'，符合收尾要求。,high,用户结束意愿后助手在1个turn内收尾，含'辛苦'，无追问，满足所有条件。,auto_llm_flash
+V5_out_of_scope_1779197726_000,V5_C25,fail,,FAQ: 多少差评会影响评级; 错误: 标准答案说'偶尔一两个不影响大局'，但助手说'确实会影响排名'，两者矛盾。,high,FAQ 答案错误或自相矛盾,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C01,fail,,turn3=30字,high,1/2=50%超字数(限20+5=25),auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C02,pass,,Turn1: '咱们'；Turn3: '咱们'；Turn5: '吧'。无列点格式，无书面文言词。,high,满足至少2处口语词，无列点格式，无书面文言词。,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C03,fail,,"Turn 1-5: 助手连续发言3次（Turn1,3,5），未给用户足够回应机会；且未主动提问让用户参与（仅Turn3提问但用户拒绝后未继续引导）。",low,助手连续多次发言，未频繁给商家发言机会，且未主动提问促进用户参与。,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C04,na,,对话中用户两次表达不适（Turn 2和Turn 4），但未出现打断行为，助手在Turn 5直接结束对话，未使用过渡语。,high,无打断场景，约束条件未触发，判定为na。,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C05,fail,,Turn 1-5: 助手仅问候并提议改天联系，未覆盖核心任务（如解释差评原因或提供解决方案）的70%。用户因身体不适拒绝配合，未给出明确反馈。,low,核心任务未完成，用户未给出明确反馈，不满足判定标准。,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C09,na,,对话中商家未表现出情绪激动，仅提及身体不适（Turn 2、Turn 4），因此约束条件未触发。,high,约束条件（商家情绪激动）未满足，无需执行安抚操作。,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C10,na,,用户未说“在开车”或“在忙”，而是说“不太舒服”、“身体真的不舒服”，未触发约束条件。,high,约束条件未满足，对话未涉及开车或忙的状态，因此约束不适用。,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C11,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C12,pass,,"turn1 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C14,pass,,"turn1,3 含 ['问', '差评', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C17,pass,,"turn1,3 含 ['差评', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C18,pass,,"turn1 含 ['问', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C19,pass,,"turn1,3 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C20,pass,,turn1 含 ['问'],high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C23,fail,,Turn 1-5: 助手仅通知差评并安抚情绪，未引导申诉流程或收集改善意见；用户因身体不适拒绝配合，未给出明确反馈。,low,助手未覆盖核心步骤（引导申诉和收集意见），用户未给出明确反馈，两条标准均不满足。,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C24,pass,,Turn 4用户明确表示'今天身体真的不舒服，没法配合。改天吧'，Turn 5助手立即收尾'那您先好好休息。我过两天再联系您，保重身体'，含'保重'，无追问。,high,用户表达结束意愿后，助手在1个turn内收尾，含关怀语，未反复追问，符合所有标准。,auto_llm_flash
+V5_refuse_persistent_1779197677_001,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V2_interruption_1779196266_001,V2_C01,fail,,turn15=44字; turn7=41字; turn11=40字,high,4/8=50%超字数(限30+5=35),auto_llm_flash
+V2_interruption_1779196266_001,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_interruption_1779196266_001,V2_C03,pass,,Turn 1: '喂'、'吧'；Turn 2: '啥'、'啊'；Turn 3: '吧'；Turn 4: '啊'；Turn 5: '行'；Turn 6: '那'、'啊'；Turn 7: '吧'；Turn 8: '行行行'、'啊'；Turn 9: '吧'；Turn 10: '哎呀'、'啊'；Turn 11: '吧'；Turn 12: '知道了知道了'、'啊'；Turn 13: '吧'；Turn 14:,high,对话包含大量口语词（喂、啥、啊、吧、行等），无列点格式，无书面文言词，符合所有判定标准。,auto_llm_flash
+V2_interruption_1779196266_001,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_interruption_1779196266_001,V2_C05,fail,,Turn 10-11: 用户说'还非得更新不可？'，助理回复'不更新就接不了单'，但用户未明确拒绝更新，且助理未挂断电话。,high,用户未明确拒绝更新，助理未告知后果后挂断，不符合约束字面要求。,auto_llm_flash
+V2_interruption_1779196266_001,V2_C06,pass,,Turn 1: '喂'；Turn 2: '啥'；Turn 3: '理解你忙'；Turn 4: '谁记得住啊'；Turn 5: '行'；Turn 6: '咋整'；Turn 7: '切记'；Turn 8: '行行行'；Turn 9: '先更新了再说'；Turn 10: '哎呀'；Turn 11: '赶紧去弄吧'；Turn 12: '知道了知道了'；Turn 13: '出问题联系站里解决'；Turn 1,high,对话包含多处口语词，无列点格式，无书面文言词，满足所有判定标准。,auto_llm_flash
+V2_interruption_1779196266_001,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_interruption_1779196266_001,V2_C08,pass,,"turn1,3,5 含 ['APP', '更新', '强制']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779196266_001,V2_C09,pass,,"turn1,3,5 含 ['问', 'APP', '版本', '骑手']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779196266_001,V2_C10,pass,,"turn1,3,5 含 ['更新', '应用商店', '骑手']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779196266_001,V2_C11,pass,,"turn1,3,5 含 ['问', '接单', '更新', '登录']",high,"匹配关键词 5/7 (71%, 阈值≥2个)",auto_llm_flash
+V2_interruption_1779196266_001,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_interruption_1779196266_001,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_interruption_1779196266_001,V2_C14,pass,,Turn 1: 助手通知更新APP及截止时间；Turn 3-17: 指导更新步骤、解决疑问；Turn 18: 用户明确表示会更新并测试接单。,high,助手覆盖了通知更新、指导步骤、确认反馈等核心任务（>70%），用户最终同意更新并确认会测试接单。,auto_llm_flash
+V2_interruption_1779196266_001,V2_C15,fail,,用户从Turn 12起多次表达结束意愿（'知道了知道了'、'就这样吧，我挂了'），但助手在Turn 13、15、17仍追问细节或要求反馈，未在1-2个turn内收尾。,low,用户明确表示结束意愿后，助手未及时收尾，持续追问，违反标准第1条。,auto_llm_flash
+V2_interruption_1779196266_001,V2_C16,pass,,FAQ: 新版主要改了什么; 助手答: 主要优化派单，接单更顺。,high,FAQ 答案符合标准,auto_llm_flash
+V4_interruption_1779197000_000,V4_C01,fail,,turn11=49字; turn7=43字; turn9=42字,high,6/6=100%超字数(限20+5=25),auto_llm_flash
+V4_interruption_1779197000_000,V4_C02,pass,,Turn 1: '您好'非口语，但整体口语化；Turn 3: '就1分钟'；Turn 5: '咋超时了'；Turn 7: '咱们'；Turn 9: '理解'；Turn 11: '抱歉'；Turn 13: '您打开'。至少2处口语词：'咱们'(Turn 7)、'咋'(Turn 5)。无列点格式。无书面文言词。,high,满足所有3条标准：有口语词、无列点、无文言词。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C03,pass,,Turn 3: '就1分钟，保证简短' 简短发言；Turn 5: '您先说说这单咋超时了？' 主动提问；Turn 7: '咱们先说关键的，这单现在能出吗' 提问；Turn 9: 引导用户操作；Turn 11: 解释原因；Turn 13: 回答用户问题。助手未连续多次发言，且多次提问让用户参与。,high,助手在对话中频繁提问并给予用户回应机会，未自顾自说，满足两条判定标准。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C04,fail,,Turn 1: 客服直接给出关键信息（订单超时25分钟）后未暂停，立即继续对话。Turn 3: 再次给出关键信息后未等待商家回应。Turn 5: 给出关键信息后未暂停。,low,客服在每次给出关键信息后均未暂停等待商家回应，违反约束字面要求。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C05,na,,对话中用户多次打断（如Turn 2、8、10、14），但助手未使用“您刚才提到...”或“先回答您...”过渡语，而是直接回应或转移话题。,high,存在打断场景但助手未使用指定过渡语，但约束要求“如果被打断则使用”，此处未使用，故判定为na（条件未满足）。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C06,pass,,Turn 1-3: 助手确认订单超时并询问情况，覆盖核心任务。Turn 14: 用户说“行行行，我等会自己找！你先挂了吧”，明确拒绝继续沟通。,high,助手完成核心任务（核实超时订单），用户最终给出明确拒绝反馈，满足两条标准。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V4_interruption_1779197000_000,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_interruption_1779197000_000,V4_C09,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V4_interruption_1779197000_000,V4_C10,pass,,Turn 2: user说“我现在忙得很”。Turn 3: assistant回复“就1分钟，保证简短”。符合约束：商家说在忙，回复指定语句后继续流程。,high,用户表达忙，助手回复指定语句后继续对话，满足约束字面要求。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C11,na,,对话中用户（商家）从未说“在开车”，而是说“忙”、“炒鸡”等，未触发约束条件。,high,约束要求商家说“在开车”才触发回复和挂断，但对话中未出现该表述，故未触发。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C12,pass,,"turn1,9,13 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197000_000,V4_C13,pass,,"turn1,3,5 含 ['订单', '超时', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197000_000,V4_C14,fail,,"缺失关键词: ['询问', '原因', '出餐']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V4_interruption_1779197000_000,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_interruption_1779197000_000,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_interruption_1779197000_000,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_interruption_1779197000_000,V4_C18,pass,,"turn1,3,9 含 ['问', '订单', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197000_000,V4_C19,pass,,"turn5,9,13 含 ['记录', '商家']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197000_000,V4_C20,pass,,"turn1,3,9 含 ['APP', '订单', '取消', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V4_interruption_1779197000_000,V4_C21,pass,,turn1 含 ['问'],high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_interruption_1779197000_000,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_interruption_1779197000_000,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_interruption_1779197000_000,V4_C24,fail,,Turn 1-14: 助手未核实出餐延迟原因（如询问为何超时），未协调预计出餐时间（用户拒绝出餐并取消订单），未告知骑手和用户等待情况。用户最终未给出明确反馈（同意/拒绝/接收信息），而是要求挂断。,low,助手未覆盖核心步骤的70%，用户未给出明确反馈，两项均不满足。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C25,pass,,Turn 14: user明确说'你先挂了吧'，表示结束意愿；assistant在下一turn未出现，对话自然结束。收尾含'挂了吧'，符合结束信号。,high,用户明确要求结束，助手未再追问，对话自然终止，满足所有判定标准。,auto_llm_flash
+V4_interruption_1779197000_000,V4_C26,pass,,FAQ: 商家版APP怎么操作取消; 助手答: 在订单详情页点右上角，选取消订单。,high,FAQ 答案符合标准,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C01,fail,,turn7=36字; turn9=31字; turn3=30字,high,3/5=60%超字数(限20+5=25),auto_llm_flash
+V4_cooperative_1779196436_000,V4_C02,fail,,Turn 1: '您好，请问是老王炸鸡店的负责人吗？' 使用'您好'而非口语词；Turn 1-11 无'咱们/嗯/啊/吧/呗/哈'等口语词（仅Turn 2有'嗯'，但仅1处）。,low,口语词不足2处（仅1处'嗯'），违反第1条标准。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C03,pass,,Turn 3: '想问问您，出餐慢是什么原因呢？' 主动提问；Turn 5: '那这个单子大概还需多久能出餐呢？' 再次提问；助手在Turn 3、5、7、9后均等待用户回应，未连续多次发言。,high,助手主动提问让用户参与，且未连续多次发言，满足两条判定标准。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C04,fail,,Turn 1-11中，assistant每次给出关键信息后（如Turn 1、3、5、7、9）均未暂停等待商家回应，而是连续提问或直接给出结论。例如Turn 1后立即Turn 3提问，Turn 5后立即Turn 7回应，未给商家回应空间。,high,约束要求每次给出关键信息后暂停等待回应，但assistant未执行任何暂停，连续输出对话。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C05,na,,对话全程无打断场景，用户未在助手说话时插话，助手也未使用过渡语。,high,约束条件未触发，无打断发生，因此不适用。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C06,pass,,Turn 1-7: 助手询问超时原因、预计出餐时间，用户回答15分钟，助手确认并告知转告骑手和用户，覆盖核心任务（核实超时情况）。Turn 8-10: 用户询问补偿，助手简短回答（超出权限，建议后台报备），用户表示明白并结束对话。,high,助手完成核心任务（核实超时并获取预计时间），用户最终明确反馈（同意并结束），且商家疑问（补偿）得到简短回答。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C07,fail,,turn11用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C09,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C10,na,,用户在第4轮说“后厨忙不过来了”，但未明确说“在忙”，且assistant未回复“就1分钟，保证简短”，而是继续询问时间。,high,约束条件“商家说在忙”未触发，商家仅描述忙碌状态，未直接说“在忙”，故约束不适用。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C11,na,,对话中商家（user）从未说“在开车”，因此约束条件未触发。,high,约束要求商家说“在开车”时才触发回复和挂断，但对话中无此表述。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C12,pass,,"turn1,3,9 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C13,pass,,"turn1,3,9 含 ['订单', '超时', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C14,pass,,"turn1,3,5 含 ['问', '原因', '出餐']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。',auto_llm_flash
+V4_cooperative_1779196436_000,V4_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。',auto_llm_flash
+V4_cooperative_1779196436_000,V4_C17,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。',auto_llm_flash
+V4_cooperative_1779196436_000,V4_C18,pass,,"turn1,3,5 含 ['问', '订单', '出餐', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C19,pass,,"turn7,9 含 ['骑手', '用户', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C20,pass,,"turn1,3,9 含 ['订单', '商家']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C21,pass,,"turn1,3 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C22,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V4_cooperative_1779196436_000,V4_C23,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C24,pass,,Turn 3-6: 助手核实出餐延迟原因(顾客多、后厨忙)并协调预计出餐时间(15分钟); Turn 7: 告知骑手和用户等待情况; Turn 8-10: 用户给出明确反馈(同意等待、接受信息)。,high,助手覆盖了任务核心步骤(核实原因、协调时间、告知等待)，用户最终明确同意并接收信息，满足两条标准。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C25,pass,,Turn 10 用户说'那就先不耽误您了'明确结束意愿，Turn 11 助手回复'感谢您的配合，再见'含感谢和再见，1个turn内收尾，无追问。,high,用户结束意愿后助手立即收尾，含感谢和再见，无拖延追问。,auto_llm_flash
+V4_cooperative_1779196436_000,V4_C26,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C01,fail,,turn15=66字; turn7=62字; turn11=43字,high,7/8=88%超字数(限30+5=35),auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C02,pass,,turn5: 这个我不太清楚，得问公司同事。; turn7: 老李的电话我手头没有，我帮你问问其他同事再回你。,high,"用户问越界 (turn[4, 6, 10, 12, 14]), 助手用了规定话术",auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C03,pass,,Turn 1: '喂'、'咱们'；Turn 2: '啊'；Turn 4: '哦'、'啊'；Turn 6: '行吧行吧'；Turn 8: '哎'；Turn 10: '哈哈'；Turn 12: '行行行'；Turn 14: '等等等等'；Turn 18: '好嘞好嘞'。无列点格式，无书面文言词。,high,对话包含多处口语词（喂、咱们、啊、哦、行吧、哎、哈哈、等等、好嘞），无列点格式，无书面文言词，符合所有三条标准。,auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C04,pass,,未发现同一信息重复3次以上。'带头盔工牌身份证'仅出现2次(Turn7和Turn13)，且表述不同。无8字以上连续片段重复2次以上。同样问题未问2次以上。,high,对话中未出现重复回复相同内容的情况，符合约束要求。,auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C05,fail,,turn15: 出席有30元补贴,high,助手承诺了禁止内容 (1 处),auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C06,fail,,用户在第18轮明确说'拜拜'表示结束意愿，但助手在第17轮已提前结束对话，未在用户结束意愿后1-2轮内收尾。,low,用户结束意愿出现在第18轮，但助手在第17轮已收尾，未在用户明确结束意愿后1-2轮内收尾，违反第1条标准。,auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C08,pass,,"turn1,3,5 含 ['问', '培训', '时间', '地点']",high,"匹配关键词 5/7 (71%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C09,pass,,"turn1,5,7 含 ['问', '骑手']",medium,"匹配关键词 2/5 (40%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C10,pass,,"turn1,5,7 含 ['确认', '头盔', '工牌', '身份证']",high,"匹配关键词 5/6 (83%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C11,pass,,"turn1,5,7 含 ['培训', '评级', '安全培训', '接单']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C14,pass,,Turn 1: 助手通知培训时间地点；Turn 3: 确认能否到场；Turn 12: 用户明确同意“15号下午2点我肯定去”；Turn 16-18: 用户再次确认到场并带证件。,high,助手覆盖了通知培训、确认到场等核心步骤，用户最终明确同意参加，满足两条判定标准。,auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C15,fail,,用户在第18轮明确说'拜拜'表示结束意愿，但助手在第13轮已尝试收尾（'回头见'），之后用户又发起新话题（第14、16轮），助手未在1-2轮内有效收尾，而是继续回应（第15、17轮），直到第18轮用户再次结束。,low,用户明确结束意愿后，助手未在1-2轮内收尾，而是继续回应新问题，导致对话冗长。,auto_llm_flash
+V1_out_of_scope_1779194856_001,V1_C16,pass,,FAQ: 是否有补贴; 助手答: 出席有30元补贴,high,FAQ 答案符合标准,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C01,pass,,0/2 轮超字数,high,"超字数率 0% < 30%, 通过",auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C02,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C03,pass,,Turn1: '喂'、'咱们'；Turn2: '喂'；Turn4: '吧'；Turn6: '吧'。无列点格式，无书面文言词。,high,满足所有3条：至少2处口语词，无列点，无文言词。,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C04,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C05,fail,,Turn 6: 用户说'我真的不行，改天吧。您这样我就挂了'，未明确拒绝更新，且助理未告知不更新无法接单的后果后挂断电话。,high,用户未明确拒绝更新，助理未执行告知后果并挂断的动作。,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C06,pass,,Turn 1: '喂，是李建军吗？我是咱们站长。' 含口语词'喂''咱们'；Turn 2: '喂，是我站长。' 含'喂'；无列点格式；无书面文言词。,high,满足至少2处口语词，无列点格式，无书面文言词，对话自然。,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C07,pass,,,high,全程未出现禁用词,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C08,pass,,"turn1,3,5 含 ['APP', '更新', '强制']",high,"匹配关键词 3/4 (75%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C09,pass,,"turn1,3,5 含 ['APP', '版本', '骑手']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C10,pass,,"turn1,3,5 含 ['更新', '骑手']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C11,pass,,"turn1,3,5 含 ['接单', '更新', '骑手']",medium,"匹配关键词 3/7 (43%, 阈值≥2个)",auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C12,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C13,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C14,fail,,Turn 1 助手通知更新截止时间，但未确认更新状态；Turn 2-6 用户多次以身体不适为由拒绝配合，未给出明确反馈（同意/拒绝/接收信息）。,low,用户未给出明确反馈，且助手未完成核心步骤（确认更新后能正常接单）。,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C15,fail,,Turn 6 user明确表示'您这样我就挂了'，但assistant在Turn 5未收尾，且后续无收尾轮次，未在1-2 turn内结束对话。,low,用户明确结束意愿后，助手未在1-2 turn内收尾，且无收尾用语。,auto_llm_flash
+V2_refuse_persistent_1779195756_001,V2_C16,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C01,fail,,turn5=67字; turn13=64字; turn11=60字,high,8/8=100%超字数(限20+5=25),auto_llm_flash
+V5_cooperative_1779197281_000,V5_C02,pass,,Turn 5: '别着急，这些差评确实让人难受' 体现同理心；Turn 7: '理解您，忙起来确实容易疏忽' 体现体谅；口语词：Turn 1 '您好'、Turn 5 '别着急'、Turn 7 '您看'、Turn 9 '能这么想很务实' 等，无列点格式，无书面文言词。,high,对话口语化，有同理心，无列点或文言词，满足所有3条标准。,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C03,pass,,Turn 3、5、7、9、11、13、15中助手主动提问（如“方便聊两句吗？”“还有其他难处吗？”“还有其他问题吗？”），且助手每次发言后用户均有回应，未连续多次发言。,high,助手频繁提问并给予用户发言机会，符合约束要求。,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C04,na,,对话中用户未打断助手，无打断场景。,high,约束要求被打断时使用过渡语，但对话中无打断发生，故未触发约束。,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C05,pass,,Turn 7-9: 助手提出改进建议，用户同意并接受具体办法（Turn 8: '我觉得还是改进吧'）。Turn 16: 用户明确表示'暂时没有其他问题了，谢谢你耐心解答'。核心任务（提供改进建议）完成，用户给出明确反馈。,high,助手覆盖核心任务（提供改进建议），用户最终同意并接受信息，满足两条判定标准。,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C09,na,,对话中用户（商家）始终情绪平稳，未出现激动、愤怒等情绪波动，如Turn 4、6、8、10、12、14均以平和语气提问或陈述。,high,约束条件“商家情绪激动”未触发，因此无需执行安抚操作，对话自然推进流程。,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C10,na,,对话中用户从未说“在开车”或“在忙”，因此约束条件未触发。,high,约束为条件性，条件未满足，故不适用。,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C11,pass,,turn13: 这个超出我的职责范围，我帮您记录回头跟进,high,"用户问越界 (turn[12]), 助手用了规定话术",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C12,pass,,"turn1,3,5 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C14,pass,,"turn1,3,5 含 ['问', '差评', '申诉', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_cooperative_1779197281_000,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_cooperative_1779197281_000,V5_C17,pass,,"turn1,3,5 含 ['APP', '差评', '申诉', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C18,pass,,"turn1,3,5 含 ['问', '经营', '商家']",high,"匹配关键词 3/6 (50%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C19,pass,,"turn1,3,5 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C20,pass,,"turn1,3,5 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_cooperative_1779197281_000,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C23,pass,,Turn 1-3: 通知商家收到差评并安抚情绪。Turn 7-9: 引导申诉流程（询问是否申诉）并收集改善意见（用户提出改进需求，助手给出建议）。Turn 16: 用户明确反馈“暂时没有其他问题了，谢谢你”。,high,助手覆盖了通知差评、安抚、引导申诉和收集意见的核心步骤（>70%），用户最终给出明确反馈。,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C24,pass,,Turn 16用户明确表示'暂时没有其他问题了，谢谢你耐心解答'，Turn 17助手立即收尾'不客气，能帮到您就好。后续多关注评价趋势，祝生意兴隆，再见。'，包含'祝'和'再见'。,high,用户结束意愿后1个turn内收尾，含祝福和再见，无反复追问。,auto_llm_flash
+V5_cooperative_1779197281_000,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C01,fail,,turn3=46字; turn5=34字,high,2/3=67%超字数(限20+5=25),auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C02,pass,,Turn 1: '咱们店'；Turn 3: '好的'；Turn 5: '那您先好好休息'、'简单聊两句'；Turn 7: '理解'、'祝您早日康复'。使用了口语词'咱们'、'好的'、'那'、'吧'，无列点格式，无书面文言词。,high,对话包含至少2处口语词，无列点格式，无书面文言词，符合所有判定标准。,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C03,fail,,"Turn 1,3,5,7 均为助手发言，连续4次发言未给用户足够回应机会；Turn 2,4,6 用户简短回应，助手未主动提问让用户参与。",low,助手连续多次发言，未频繁给商家发言机会，且未主动提问引导用户倾诉。,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C04,na,,对话中用户未打断助手，而是用户主动提出身体不适，助手表示理解并结束对话（Turn 4-7）。,high,无打断场景，约束条件未触发。,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C05,na,,对话中助手未完成核心任务（未讨论差评问题），用户因身体不适拒绝继续，最终未给出明确反馈。,high,核心任务未完成，约束条件未触发，故判定为na。,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C06,fail,,turn3用了'好的',high,出现 1 个禁用词,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C09,na,,对话中商家未表现出情绪激动，仅因身体不适请求改期（Turn 4、Turn 6），客服已表示理解并同意稍后联系（Turn 5、Turn 7）。,high,约束条件（商家情绪激动）未触发，因此无需执行安抚操作。,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C10,na,,用户未说“在开车”或“在忙”，而是说身体不舒服（Turn 4、6），约束条件未触发。,high,约束条件为商家说“在开车”或“在忙”，对话中未出现，故未触发。,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C11,na,,,high,"用户未问越界问题, 约束未触发",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C12,pass,,"turn1,3 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C14,pass,,"turn1,3 含 ['问', '差评', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C17,pass,,"turn1 含 ['差评', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C18,pass,,"turn1,3 含 ['问', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C19,pass,,"turn1 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C20,pass,,"turn1,3 含 ['问']",high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C23,fail,,Turn 1-7: 助手仅通知差评并安抚情绪，未引导申诉流程或收集改善意见；用户因身体不适未给出明确反馈。,low,助手未覆盖核心步骤（引导申诉和收集意见），且用户未给出明确反馈。,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C24,pass,,Turn 4用户表示身体不适，Turn 5助手立即收尾并说“您先好好休息”，Turn 6用户再次拒绝，Turn 7助手结束对话并说“祝您早日康复”，未反复追问。,high,用户两次明确结束意愿后，助手在2个turn内收尾，含“祝”字，无追问，符合所有标准。,auto_llm_flash
+V5_refuse_persistent_1779197604_000,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C01,fail,,turn19=67字; turn13=55字; turn9=54字,high,10/10=100%超字数(限20+5=25),auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C02,pass,,Turn 1: '咱们店'; Turn 3: '您这边'; Turn 5: '咱先聊聊'; Turn 7: '咱还是看差评吧'; Turn 9: '咱先看川香小厨'; Turn 11: '您先跟我说说'; 多处使用'咱'、'吧'等口语词。无列点格式，无书面文言词。,high,对话使用'咱们'、'吧'等口语词超过2处，无列点格式，无书面文言词，满足所有判定标准。,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C03,pass,,Turn 3、5、7、9、11、13、15、17、19、21中助手主动提问或引导用户发言，如Turn 3“您这边需要申诉吗？”、Turn 5“您要是不想申诉，也可以说说有什么改善困难”、Turn 7“您这边是打算申诉，还是需要平台协助改善？”等，频繁给用户回应机会。,high,助手在多个回合主动提问，引导用户参与对话，且未连续多次发言，符合约束要求。,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C04,pass,,Turn 13: 助手说“咱抓紧说正事，您刚才提到后厨忙不过来”，使用了过渡语“您刚才提到...”来继续话题。,high,用户多次打断话题，助手在Turn 13使用“您刚才提到...”成功将对话拉回正轨，符合约束要求。,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C05,pass,,"Turn 3-15: 助手覆盖核心任务(差评处理、申诉、改善方案),Turn 20: 用户明确反馈'没了没了'。",high,"助手完成核心任务(差评处理、改善方案),用户最终给出明确反馈,满足两条判定标准。",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C09,pass,,对话中商家情绪平稳，未出现激动表现。例如Turn 2用户说'正愁这事'但语气平和，Turn 4说'心情还行'，Turn 6、8、10、12、16、18、20均以轻松或好奇口吻提问，无愤怒、抱怨等激动迹象。,high,约束条件'商家情绪激动'未触发，因此无需安抚，对话自然推进流程，符合约束。,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C10,na,,对话中商家（user）从未说“在开车”或“在忙”，因此约束条件未触发。,high,约束为条件性，需商家先说特定话语才触发回复规则，但对话中未出现，故不适用。,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C11,pass,,turn7: 这个超出我的职责范围，我帮您记录回头跟进; turn13: 这个超出我的职责范围，我帮您记录回头跟进,high,"用户问越界 (turn[4, 6, 8, 10, 12, 16, 18, 20]), 助手用了规定话术",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C12,pass,,"turn1,3,19 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C13,fail,,"缺失关键词: ['告知', '原因', '数量']",medium,"只匹配 1/4 (25%, 不足 2 个)",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C14,pass,,"turn1,3,5 含 ['问', '差评', '申诉', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C17,pass,,"turn1,3,5 含 ['APP', '差评', '申诉', '商家']",high,"匹配关键词 4/6 (67%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C18,pass,,"turn1,3,5 含 ['问', '改善', '商家']",high,"匹配关键词 3/6 (50%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C19,pass,,"turn1,3,5 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C20,pass,,turn1 含 ['问'],high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C23,fail,,Turn 1-3: 助手通知差评、安抚情绪、引导申诉。但用户多次偏离话题（Turn 4、6、8、10、12、16、18），助手虽尝试拉回，但未完成收集改善意见（Turn 15仅提出建议，未获用户明确反馈）。Turn 20用户未明确同意/拒绝申诉或改善方案。,low,助手未覆盖核心步骤70%（未完成收集改善意见），且用户未给出明确反馈（同意/拒绝/接收信息）。,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C24,fail,,Turn 20用户明确说'没了没了'并感谢，但Turn 21助手未收尾，反而继续提醒'保留截图申诉'，未在1-2个turn内结束对话。,low,用户表示结束意愿后，助手未及时收尾，反而追加额外提醒，违反第1条标准。,auto_llm_flash
+V5_out_of_scope_1779197944_001,V5_C25,na,,,high,对话中无 FAQ 相关问题,auto_llm_flash
+V5_interruption_1779198414_001,V5_C01,fail,,turn7=55字; turn11=55字; turn13=55字,high,6/6=100%超字数(限20+5=25),auto_llm_flash
+V5_interruption_1779198414_001,V5_C02,pass,,Turn 1: '咱们店'；Turn 3: '您这边情况了解吗？'；Turn 5: '我特别理解您的委屈'；Turn 11: '您说得对'。使用了口语词'咱们'，无列点格式，无书面文言词。,high,对话包含至少2处口语词（咱们、您这边），无列点格式，无书面文言词，符合所有判定标准。,auto_llm_flash
+V5_interruption_1779198414_001,V5_C03,pass,,"Turn 1,3,5,7,9,11,13: 助手每次发言后都等待用户回应，未连续多次发言；Turn 1,3,5,7,9,11,13: 助手主动提问如“您这边情况了解吗？”“您要了解一下吗？”“您看申诉的证据物料方便准备吗？”等，引导用户参与。",high,助手在每轮发言后均给用户回应机会，且多次主动提问，满足约束条件。,auto_llm_flash
+V5_interruption_1779198414_001,V5_C04,na,,对话中用户未打断助手，助手始终完整陈述，无打断场景。,high,约束条件未触发，无打断发生，因此判定为na。,auto_llm_flash
+V5_interruption_1779198414_001,V5_C05,pass,,Turn 1-13: 助手覆盖了核心任务（解释差评原因、建议申诉和公开回复）。Turn 14: 用户明确同意（“不用细化了，你就按这个发到我后台吧”）并结束对话。,high,核心任务完成（覆盖差评处理步骤），用户最终给出明确反馈（同意接收模板），满足两条判定标准。,auto_llm_flash
+V5_interruption_1779198414_001,V5_C06,pass,,,high,全程未出现禁用词,auto_llm_flash
+V5_interruption_1779198414_001,V5_C07,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_interruption_1779198414_001,V5_C08,pass,,,high,助手全程未承诺禁止内容,auto_llm_flash
+V5_interruption_1779198414_001,V5_C09,pass,,Turn 5: '我特别理解您的委屈。' 和 Turn 7: '我理解您的心情' 均先安抚情绪，再推进流程。,high,商家在Turn 4情绪激动，助理在Turn 5和Turn 7先表达理解安抚，再提供解决方案，符合约束。,auto_llm_flash
+V5_interruption_1779198414_001,V5_C10,na,,对话中商家未说“在开车”或“在忙”，约束条件未触发。,high,约束为条件性，商家未提及开车或忙，故不适用。,auto_llm_flash
+V5_interruption_1779198414_001,V5_C11,pass,,turn9: 我明白您着急，但促销活动超出我的职责范围，我帮您记录下来，回头有同事跟进。,high,"用户问越界 (turn[9]), 助手用了规定话术",auto_llm_flash
+V5_interruption_1779198414_001,V5_C12,pass,,"turn1 含 ['问', '负责人', '商家']",high,"匹配关键词 3/5 (60%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198414_001,V5_C13,pass,,"turn1,7,11 含 ['原因', '差评']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198414_001,V5_C14,pass,,"turn1,5,7 含 ['问', '差评', '申诉', '商家']",high,"匹配关键词 4/5 (80%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198414_001,V5_C15,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。',auto_llm_flash
+V5_interruption_1779198414_001,V5_C16,not_implemented,,,high,分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。',auto_llm_flash
+V5_interruption_1779198414_001,V5_C17,pass,,"turn1,5,7 含 ['差评', '申诉', '商家']",high,"匹配关键词 3/6 (50%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198414_001,V5_C18,pass,,"turn1 含 ['问', '商家']",medium,"匹配关键词 2/6 (33%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198414_001,V5_C19,pass,,"turn1,7,11 含 ['差评', '商家']",high,"匹配关键词 2/4 (50%, 阈值≥2个)",auto_llm_flash
+V5_interruption_1779198414_001,V5_C20,pass,,turn1 含 ['问'],high,"匹配关键词 1/2 (50%, 阈值≥1个)",auto_llm_flash
+V5_interruption_1779198414_001,V5_C21,not_implemented,,,high,"无法从约束推断'必含关键词',跳过",auto_llm_flash
+V5_interruption_1779198414_001,V5_C22,pass,,,high,所有变量都已正确替换,auto_llm_flash
+V5_interruption_1779198414_001,V5_C23,pass,,Turn 1-3: 通知差评并安抚情绪。Turn 5-7: 引导申诉流程。Turn 9-13: 收集改善意见（公开回复模板）。Turn 14: 用户同意接收信息并结束。,high,助手覆盖了通知、安抚、引导申诉和收集意见的核心步骤，用户最终给出明确反馈（同意接收模板并挂断）。,auto_llm_flash
+V5_interruption_1779198414_001,V5_C24,pass,,Turn 14: user明确表示'没事我挂了啊'，assistant未再追问，对话自然结束。,high,用户明确结束意愿后，助手在1个turn内收尾，无追问，符合标准。,auto_llm_flash
+V5_interruption_1779198414_001,V5_C25,pass,,FAQ: 申诉成功率高吗？; 助手答: 申诉不能直接删除差评，需要审核，通常几个工作日出结果，建议准备出餐监控或沟通截图作为证据。,high,FAQ 答案符合标准,auto_llm_flash

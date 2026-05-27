@@ -1,0 +1,70 @@
+{
+  "instruction_id": "example_2_live_streaming_upgrade",
+  "instruction_name": "直播课程升级告知",
+  "version": "v2.0 (Day 2)",
+  "changelog": [
+    "v2.0 (Day 2): 新增C34/C35/C36；C18/C19降级为non-critical且权重调整；C22保持critical（Q2=B决策）；C08保持non-critical（Q1=B决策）；C24描述细化；加scoring_dimension字段(5维度映射)"
+  ],
+  "role": "Customer Support Specialist for Course Publishing Platform",
+  "task": "告知机构客户课程发布页将新增'标准直播'和'低延迟直播'两个独立选项；需要实时互动时鼓励选择低延迟直播",
+  "variables": [],
+  "opening_line": {
+    "template": "您好，请问您是贵培训机构/校区的负责人吗？",
+    "must_contain_keywords": ["负责人", "培训机构"],
+    "must_have_variables_filled": []
+  },
+  "scoring_dimensions_definition": {
+    "D1_flow_compliance": {"name": "流程遵循度", "weight": 0.25, "description": "Call Flow 各 step 是否被覆盖、顺序是否合理、分支是否走对"},
+    "D2_task_completion": {"name": "任务完成度", "weight": 0.25, "description": "整通对话是否达成核心意图 + 必传信息点是否说到 + 关键动作是否执行"},
+    "D3_constraint_compliance": {"name": "约束遵循度", "weight": 0.20, "description": "格式/长度/禁忌词/触发应对类的硬约束"},
+    "D4_knowledge_accuracy": {"name": "知识准确性", "weight": 0.15, "description": "FAQ 触发时回答是否与标准答案一致"},
+    "D5_dialogue_quality": {"name": "对话质量", "weight": 0.15, "description": "语气自然度、节奏感、互动性、避免重复、适时结束"}
+  },
+  "atomic_constraints": [
+    {"id": "EX2_C01", "scoring_dimension": "D3_constraint_compliance", "name": "每次回复长度15-20字", "verifier": "rule", "is_critical": false, "weight": 2, "source_text": "每次回复极简——最多15-20个字"},
+    {"id": "EX2_C02", "scoring_dimension": "D5_dialogue_quality", "name": "口语化自然表达", "verifier": "llm_judge", "is_critical": false, "weight": 2, "source_text": "使用简短、自然的口语化表达"},
+    {"id": "EX2_C03", "scoring_dimension": "D5_dialogue_quality", "name": "不使用正式或冗长解释", "verifier": "llm_judge", "is_critical": false, "weight": 2, "source_text": "不使用正式或冗长的解释"},
+    {"id": "EX2_C04", "scoring_dimension": "D5_dialogue_quality", "name": "频繁给商家发言和提问的机会", "verifier": "llm_judge", "is_critical": false, "weight": 2, "source_text": "频繁给商家发言和提问的机会"},
+    {"id": "EX2_C05", "scoring_dimension": "D5_dialogue_quality", "name": "给出信息后暂停等回应", "verifier": "llm_judge", "is_critical": false, "weight": 2, "source_text": "给出信息后，暂停等待商家回应再继续"},
+    {"id": "EX2_C06", "scoring_dimension": "D5_dialogue_quality", "name": "被打断时使用过渡语", "verifier": "llm_extract_then_rule", "is_critical": false, "weight": 3, "source_text": "若对话被打断，使用简短过渡语"},
+    {"id": "EX2_C07", "scoring_dimension": "D5_dialogue_quality", "name": "任务完成后仍简短作答", "verifier": "llm_judge", "is_critical": false, "weight": 2, "source_text": "即使任务完成，若商家有疑问，继续简短作答"},
+    {"id": "EX2_C08", "scoring_dimension": "D3_constraint_compliance", "name": "禁用语气词", "verifier": "rule_pattern", "is_critical": false, "weight": 3, "source_text": "不说'好的'、'哈哈'、'嘿嘿'、'嘻嘻'", "_decision_note": "保持is_critical=false (Q1=B): 违反不会让任务失败"},
+    {"id": "EX2_C09", "scoring_dimension": "D3_constraint_compliance", "name": "禁止承诺折扣或优惠券", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 5, "source_text": "不能承诺给商家折扣券或优惠券"},
+    {"id": "EX2_C10", "scoring_dimension": "D3_constraint_compliance", "name": "用户说忙时的处理", "verifier": "rule_pattern", "is_critical": false, "weight": 3, "source_text": "若老板说忙，说'就1分钟，保证简短'"},
+    {"id": "EX2_C11", "scoring_dimension": "D3_constraint_compliance", "name": "用户说开车时礼貌挂断", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 4, "source_text": "若商家说在开车，礼貌说'那我稍后再打'后挂断"},
+    {"id": "EX2_C12", "scoring_dimension": "D2_task_completion", "name": "开场白合规性", "verifier": "rule_pattern", "is_critical": true, "weight": 3, "source_text": "Opening Line: 您好，请问您是贵培训机构/校区的负责人吗？"},
+    {"id": "EX2_C13", "scoring_dimension": "D1_flow_compliance", "name": "Step 1 身份确认完整性", "verifier": "state_tracker", "is_critical": true, "weight": 3, "source_text": "Step 1: 身份确认"},
+    {"id": "EX2_C14", "scoring_dimension": "D1_flow_compliance", "name": "Step 1 分支正确性（是否负责人）", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 3, "source_text": "Step 1: 若是负责人→S2; 若不是→请其转达→S2"},
+    {"id": "EX2_C15", "scoring_dimension": "D1_flow_compliance", "name": "Step 2 知情确认覆盖", "verifier": "state_tracker", "is_critical": true, "weight": 3, "source_text": "Step 2: 询问是否知情走低延迟线路"},
+    {"id": "EX2_C16", "scoring_dimension": "D1_flow_compliance", "name": "Step 2 分支正确性", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 3, "source_text": "Step 2: 若不知情→说明前端原因→S3; 若已知情→S3"},
+    {"id": "EX2_C17", "scoring_dimension": "D1_flow_compliance", "name": "Step 3 传达升级内容（流程位置）", "verifier": "state_tracker", "is_critical": true, "weight": 4, "source_text": "Step 3: 之后发布页会分开显示两个选项", "_decision_note": "侧重'Step 3是否被执行'，与C35(信息内容传达)互补"},
+    {"id": "EX2_C18", "scoring_dimension": "D1_flow_compliance", "name": "Step 3.1 区别说明（子step覆盖）", "verifier": "llm_extract_then_rule", "is_critical": false, "weight": 3, "source_text": "Step 3.1 区别", "_decision_note": "降级non-critical: 只判子step是否覆盖，准确性由C29/C30兜底"},
+    {"id": "EX2_C19", "scoring_dimension": "D1_flow_compliance", "name": "Step 3.2 价格说明（子step覆盖）", "verifier": "llm_extract_then_rule", "is_critical": false, "weight": 3, "source_text": "Step 3.2 价格", "_decision_note": "降级non-critical: 准确性由C31兜底"},
+    {"id": "EX2_C20", "scoring_dimension": "D1_flow_compliance", "name": "Step 4 询问发布方式", "verifier": "state_tracker", "is_critical": true, "weight": 4, "source_text": "Step 4.1: 询问发布方式"},
+    {"id": "EX2_C21", "scoring_dimension": "D1_flow_compliance", "name": "Step 4 分支正确性", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 4, "source_text": "Step 4 Web/第三方系统的四种处理"},
+    {"id": "EX2_C22", "scoring_dimension": "D3_constraint_compliance", "name": "子流程缓慢引导开通：分步发送+暂停", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 4, "source_text": "Step 4子流程: 缓慢引导开通（每步暂停3秒）", "_decision_note": "保持critical (Q2=B): 一轮说完4步=任务失败"},
+    {"id": "EX2_C23", "scoring_dimension": "D1_flow_compliance", "name": "Step 5 检查学员端费用", "verifier": "state_tracker", "is_critical": true, "weight": 3, "source_text": "Step 5: 检查学员端费用"},
+    {"id": "EX2_C24", "scoring_dimension": "D1_flow_compliance", "name": "Step 5 双层分支正确性", "verifier": "llm_extract_then_rule", "is_critical": false, "weight": 2, "source_text": "Step 5双层分支(详见verifier_config)", "verifier_config": {"layer_1": "未设置费用→S6 / 已设置费用→提醒适用低延迟", "layer_2": "已设置且无法自行配置→触发SF_GUIDE_FEE"}, "_decision_note": "review改动: 描述细化为双层分支"},
+    {"id": "EX2_C25", "scoring_dimension": "D3_constraint_compliance", "name": "子流程缓慢引导设置费用：分步发送", "verifier": "llm_extract_then_rule", "is_critical": false, "weight": 3, "source_text": "Step 5子流程: 缓慢引导设置（每步暂停3秒）"},
+    {"id": "EX2_C26", "scoring_dimension": "D1_flow_compliance", "name": "Step 6 企业微信添加", "verifier": "state_tracker", "is_critical": false, "weight": 2, "source_text": "Step 6: 企业微信添加"},
+    {"id": "EX2_C27", "scoring_dimension": "D1_flow_compliance", "name": "Step 6 分支正确性", "verifier": "llm_extract_then_rule", "is_critical": false, "weight": 2, "source_text": "Step 6: 若可添加→请通过验证; 若不可→请提供新号"},
+    {"id": "EX2_C28", "scoring_dimension": "D2_task_completion", "name": "结束语祝福", "verifier": "rule_pattern", "is_critical": false, "weight": 1, "source_text": "Step 7: 祝其课程顺利、招生满满"},
+    {"id": "EX2_C29", "scoring_dimension": "D4_knowledge_accuracy", "name": "FAQ-标准直播特点正确", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 3, "source_text": "Step 3.1 标准直播说明"},
+    {"id": "EX2_C30", "scoring_dimension": "D4_knowledge_accuracy", "name": "FAQ-低延迟直播特点正确", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 3, "source_text": "Step 3.1 低延迟直播说明"},
+    {"id": "EX2_C31", "scoring_dimension": "D4_knowledge_accuracy", "name": "FAQ-价格关系正确", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 3, "source_text": "Step 3.2 价格"},
+    {"id": "EX2_C32", "scoring_dimension": "D4_knowledge_accuracy", "name": "FAQ-临时低延迟原因", "verifier": "llm_extract_then_rule", "is_critical": false, "weight": 2, "source_text": "Step 2不知情时的说明"},
+    {"id": "EX2_C33", "scoring_dimension": "D2_task_completion", "name": "任务核心意图完成", "verifier": "llm_judge", "is_critical": true, "weight": 5, "source_text": "Task描述"},
+    {"id": "EX2_C34", "scoring_dimension": "D2_task_completion", "name": "实时互动场景倾向性推荐低延迟", "verifier": "llm_extract_then_rule", "is_critical": false, "weight": 3, "source_text": "Task: 当需要实时互动时,鼓励选择低延迟直播", "_decision_note": "review新增"},
+    {"id": "EX2_C35", "scoring_dimension": "D2_task_completion", "name": "核心升级信息传达", "verifier": "llm_extract_then_rule", "is_critical": true, "weight": 4, "source_text": "Step 1参考话术: 产品做了升级,新增独立的低延迟选项,其他流程不变", "_decision_note": "review新增: 整通最核心的信息传达点。与C17互补：C17判流程位置，C35判信息内容"},
+    {"id": "EX2_C36", "scoring_dimension": "D5_dialogue_quality", "name": "对话适时终结", "verifier": "llm_judge", "is_critical": false, "weight": 2, "source_text": "Step 7: 若无问题,结束通话", "_decision_note": "review新增"}
+  ],
+  "statistics": {
+    "total_atomic_constraints": 36,
+    "by_dimension": {"D1_flow_compliance": 13, "D2_task_completion": 5, "D3_constraint_compliance": 7, "D4_knowledge_accuracy": 4, "D5_dialogue_quality": 7},
+    "critical_count": 15,
+    "critical_ratio": "41.7%",
+    "total_weight": 104,
+    "critical_weight": 56,
+    "critical_weight_ratio": "53.8%"
+  }
+}

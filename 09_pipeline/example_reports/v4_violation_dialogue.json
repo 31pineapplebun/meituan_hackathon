@@ -1,0 +1,280 @@
+{
+  "dialogue_id": "V4_cooperative_1779201688_000",
+  "instruction_id": "V4",
+  "score_report": {
+    "final_score": 85,
+    "raw_score": 86.39,
+    "ceiling": 85,
+    "ceiling_reason": "Critical通过率90% → 上限85",
+    "dim_scores": {
+      "D1_flow_compliance": 85.71,
+      "D2_task_completion": 100.0,
+      "D3_constraint_compliance": 60.0,
+      "D4_knowledge_accuracy": null,
+      "D5_dialogue_quality": 100.0
+    },
+    "critical_pass_rate": 0.9,
+    "red_line_violations": [],
+    "suggestions": [
+      {
+        "priority": "P0_CRITICAL",
+        "msg": "1 条关键约束失败",
+        "constraint_ids": [
+          "V4_C20"
+        ]
+      },
+      {
+        "priority": "P1_DIM",
+        "msg": "维度【约束遵循度】得分 60.0/100 最低",
+        "constraint_ids": [
+          "V4_C01",
+          "V4_C07"
+        ]
+      }
+    ]
+  },
+  "verdict_details": [
+    {
+      "verdict": "fail",
+      "evidence": "turn7=45字; turn3=37字; turn9=31字",
+      "confidence": 0.95,
+      "reason": "3/4=75%超字数(限20+5=25)",
+      "constraint_id": "V4_C01",
+      "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+      "verifier_type": "rule"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "口语词:['呢'] 书面词:[] 均长:39",
+      "confidence": 0.8,
+      "reason": "口语化: 通过",
+      "constraint_id": "V4_C02",
+      "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'give_floor' 暂未支持 mock",
+      "constraint_id": "V4_C03",
+      "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "V4_C04",
+      "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'transition' 暂未支持 mock",
+      "constraint_id": "V4_C05",
+      "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "对话 5 轮, assistant 总字数 201",
+      "confidence": 0.8,
+      "reason": "任务完整性的简单 mock 判定",
+      "constraint_id": "V4_C06",
+      "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "turn9用了'好的'",
+      "confidence": 1.0,
+      "reason": "出现 1 个禁用词",
+      "constraint_id": "V4_C07",
+      "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+      "verifier_type": "rule_pattern"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "",
+      "confidence": 0.9,
+      "reason": "助手全程未承诺禁止内容",
+      "constraint_id": "V4_C08",
+      "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+      "verifier_type": "llm_extract_then_rule"
+    },
+    {
+      "verdict": "na",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "用户未问越界问题, 约束未触发",
+      "constraint_id": "V4_C09",
+      "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+      "verifier_type": "llm_extract_then_rule"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "V4_C10",
+      "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "llm_judge 子类型 'generic' 暂未支持 mock",
+      "constraint_id": "V4_C11",
+      "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "turn1,5,9 含 ['问', '负责人']",
+      "confidence": 0.82,
+      "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+      "constraint_id": "V4_C12",
+      "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "turn1,3,5 含 ['订单', '超时']",
+      "confidence": 0.82,
+      "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+      "constraint_id": "V4_C13",
+      "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "turn1,3,5 含 ['问', '原因', '出餐']",
+      "confidence": 0.9249999999999999,
+      "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+      "constraint_id": "V4_C14",
+      "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+      "constraint_id": "V4_C15",
+      "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+      "constraint_id": "V4_C16",
+      "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+      "constraint_id": "V4_C17",
+      "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "turn1,3,5 含 ['问', '订单', '出餐']",
+      "confidence": 0.8799999999999999,
+      "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+      "constraint_id": "V4_C18",
+      "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "turn7 含 ['骑手', '用户']",
+      "confidence": 0.82,
+      "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+      "constraint_id": "V4_C19",
+      "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "fail",
+      "evidence": "缺失关键词: ['引导', 'APP', '取消', '商家']",
+      "confidence": 0.6,
+      "reason": "只匹配 1/5 (20%, 不足 2 个)",
+      "constraint_id": "V4_C20",
+      "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "turn1,5,9 含 ['问']",
+      "confidence": 0.85,
+      "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+      "constraint_id": "V4_C21",
+      "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+      "verifier_type": "state_tracker"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "无法从约束推断'必含关键词',跳过",
+      "constraint_id": "V4_C22",
+      "constraint_name": "[META] 开场白含必要变量",
+      "verifier_type": "rule_pattern"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "所有变量都已正确替换",
+      "constraint_id": "V4_C23",
+      "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+      "verifier_type": "rule"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "对话 5 轮, assistant 总字数 201",
+      "confidence": 0.8,
+      "reason": "任务完整性的简单 mock 判定",
+      "constraint_id": "V4_C24",
+      "constraint_name": "[META] 任务核心意图完成",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "pass",
+      "evidence": "最后回复: 好的，非常感谢您的配合！祝您生意兴隆，有问题随时联系我。再见！",
+      "confidence": 0.8,
+      "reason": "助手礼貌结束对话",
+      "constraint_id": "V4_C25",
+      "constraint_name": "[META] 适时终结对话",
+      "verifier_type": "llm_judge"
+    },
+    {
+      "verdict": "not_implemented",
+      "evidence": "",
+      "confidence": 1.0,
+      "reason": "未识别的 llm_extract_then_rule 子类型: [META] FAQ知识正确",
+      "constraint_id": "V4_C26",
+      "constraint_name": "[META] FAQ知识正确",
+      "verifier_type": "llm_extract_then_rule"
+    }
+  ],
+  "stats": {
+    "total_constraints": 26,
+    "pass": 12,
+    "fail": 3,
+    "na": 1,
+    "not_implemented": 10,
+    "error": 0
+  }
+}

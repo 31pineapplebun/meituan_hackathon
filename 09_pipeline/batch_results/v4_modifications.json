@@ -1,0 +1,597 @@
+{
+  "total_modifications": 73,
+  "by_constraint": {
+    "V1_C08": 10,
+    "V2_C08": 9,
+    "V4_C01": 12,
+    "V4_C12": 12,
+    "V5_C01": 15,
+    "V5_C12": 15
+  },
+  "modifications": [
+    {
+      "dialogue_id": "V1_cooperative_1779193967_000",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T7=45字；T17=37字；T9=36字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_cooperative_1779199886_000",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T5=44字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T13=47字；T9=45字；T17=38字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200483_000",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T11=47字；T23=44字；T21=36字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200667_001",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T7=44字；T11=36字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194673_000",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T5=44字；T9=41字；T3=39字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194856_001",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T15=66字；T7=62字；T17=43字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779200168_000",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T13=39字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T3=53字；T5=48字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779200071_000",
+      "constraint_id": "V1_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T3=42字",
+      "reason": "S1是流程结构, 字数违规应归 V1_C01"
+    },
+    {
+      "dialogue_id": "V2_cooperative_1779195497_001",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T5=45字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V2_cooperative_1779200835_000",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T3=49字；T5=44字；T7=40字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V2_interruption_1779196169_000",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T9=48字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V2_interruption_1779196266_001",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T15=44字；T7=41字；T11=40字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V2_interruption_1779201383_000",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T21=36字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V2_interruption_1779201531_001",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T5=56字；T19=52字；T3=49字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V2_out_of_scope_1779195816_000",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T9=54字；T3=50字；T5=47字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V2_out_of_scope_1779201136_000",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T5=50字；T9=39字；T11=39字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779201049_000",
+      "constraint_id": "V2_C08",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值35字): T3=40字；T5=38字",
+      "reason": "S1是流程结构, 字数违规应归 V2_C01"
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779196436_000",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779196436_000",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=36字；T9=31字；T3=30字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779196534_001",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779196534_001",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T9=41字；T7=33字；T3=29字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779201688_000",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779201688_000",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=45字；T3=37字；T9=31字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779197000_000",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779197000_000",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T11=49字；T7=43字；T9=42字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779197143_001",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779197143_001",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=57字；T9=52字；T3=44字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202116_000",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202116_000",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T5=67字；T9=63字；T15=61字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202280_001",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202280_001",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=61字；T29=53字；T11=48字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779196755_000",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779196755_000",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T11=54字；T7=52字；T13=42字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779201993_001",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779201993_001",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=61字；T13=49字；T17=49字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779196709_001",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779196709_001",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T3=37字；T5=31字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779201782_000",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779201782_000",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T5=40字；T3=36字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779201819_001",
+      "constraint_id": "V4_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779201819_001",
+      "constraint_id": "V4_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T5=49字；T3=39字",
+      "reason": "S1是流程结构, 字数违规应归 V4_C01"
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779197281_000",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779197281_000",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T5=67字；T13=64字；T11=60字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779197454_001",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779197454_001",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T13=58字；T7=52字；T15=51字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779202511_001",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779202511_001",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T21=73字；T25=70字；T17=69字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198161_000",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198161_000",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T17=122字；T21=110字；T15=79字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198414_001",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198414_001",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=55字；T11=55字；T13=55字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779202919_000",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779202919_000",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T21=97字；T27=96字；T23=95字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779203124_001",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779203124_001",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=90字；T17=77字；T19=76字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197726_000",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197726_000",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=54字；T11=53字；T19=51字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197944_001",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197944_001",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T19=67字；T13=55字；T9=54字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202733_000",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202733_000",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T23=48字；T13=47字；T9=46字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202862_001",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202862_001",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T7=46字；T9=45字；T3=43字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779197604_000",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779197604_000",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T3=46字；T5=34字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779197677_001",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779197677_001",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T3=30字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779202662_000",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779202662_000",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T3=51字；T5=30字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779202695_001",
+      "constraint_id": "V5_C01",
+      "old_verdict": "pass",
+      "new_verdict": "fail",
+      "old_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+      "reason": "evidence用开场白, 但非首轮turn全部超20字"
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779202695_001",
+      "constraint_id": "V5_C12",
+      "old_verdict": "fail",
+      "new_verdict": "pass",
+      "old_evidence": "超长(阈值25字): T3=48字；T5=39字",
+      "reason": "S1是流程结构, 字数违规应归 V5_C01"
+    }
+  ]
+}

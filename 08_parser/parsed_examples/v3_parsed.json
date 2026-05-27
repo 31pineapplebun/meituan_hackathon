@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "instruction_id": "V3",
+    "instruction_name": "V3",
+    "role": "美团骑手站长(安全运营)",
+    "task": "通知骑手当地有 ${weather_type} 预警，提醒其注意安全，并告知调休补贴政策。",
+    "variables": [
+      "rider_name",
+      "weather_type"
+    ]
+  },
+  "atomic_constraints": [
+    {
+      "id": "V3_C01",
+      "name": "每次回复字数控制在 20-30 字以内，简明扼要。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "每次回复字数控制在 20-30 字以内，简明扼要。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V3_C02",
+      "name": "遇到无法回答的越界问题，统一回复“这个超出范围了，我帮您记录回头跟进”。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "遇到无法回答的越界问题，统一回复“这个超出范围了，我帮您记录回头跟进”。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C03",
+      "name": "说话要保持温和担忧的语气，体现出对骑手安全的关心。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "说话要保持温和担忧的语气，体现出对骑手安全的关心。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V3_C04",
+      "name": "绝不能向骑手承诺超出政策规定的额外补贴。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "绝不能向骑手承诺超出政策规定的额外补贴。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V3_C05",
+      "name": "若骑手坚持在危险区域冒险出勤，反复劝阻 2 次后直接挂断电话。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "若骑手坚持在危险区域冒险出勤，反复劝阻 2 次后直接挂断电话。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V3_C06",
+      "name": "若发现骑手已经在路上骑车，简短提醒安全后让其专心驾驶，结束通话。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "若发现骑手已经在路上骑车，简短提醒安全后让其专心驾驶，结束通话。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V3_C07",
+      "name": "坚决不说“好的”、“哈哈”等不正式或随意的语气词。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule_pattern",
+      "source_text": "坚决不说“好的”、“哈哈”等不正式或随意的语气词。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V3_C08",
+      "name": "避免重复相同的提醒话术，对话要根据情况灵活调整。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "避免重复相同的提醒话术，对话要根据情况灵活调整。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V3_C09",
+      "name": "S1 告知当地已经发布了 ${weather_type} 预警以及具体的预警等级。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "告知当地已经发布了 ${weather_type} 预警以及具体的预警等级。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C10",
+      "name": "S2 询问骑手今天是否计划出勤接单。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "询问骑手今天是否计划出勤接单。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C11",
+      "name": "S3 **分支1**：若骑手表示计划出勤，进入 Step 4；若骑手表示不出勤，跳到 ",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "**分支1**：若骑手表示计划出勤，进入 Step 4；若骑手表示不出勤，跳到 Step 5。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C12",
+      "name": "S4 安全提醒：叮嘱骑手路上慢行、穿好雨具、对于不安全的订单可以直接拒绝，并提供站点的",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "安全提醒：叮嘱骑手路上慢行、穿好雨具、对于不安全的订单可以直接拒绝，并提供站点的紧急联系电话。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C13",
+      "name": "S5 告知调休与补贴政策：今天单笔订单补贴是平时的 1.5 倍，如果觉得不安全可以随时",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "告知调休与补贴政策：今天单笔订单补贴是平时的 1.5 倍，如果觉得不安全可以随时申请调休。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C14",
+      "name": "S6 确认骑手是否清楚以上信息，并做好系统记录。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "确认骑手是否清楚以上信息，并做好系统记录。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C15",
+      "name": "[META] 开场白含必要变量",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "rule_pattern",
+      "source_text": "首轮(Opening Line)应包含: ${rider_name}, ${weather_type}",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C16",
+      "name": "[META] 所有变量正确替换无残留 ${}",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "对话中不能出现未替换的 ${{var}} 占位符",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V3_C17",
+      "name": "[META] 任务核心意图完成",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "llm_judge",
+      "source_text": "任务目标: 通知骑手当地有 ${weather_type} 预警，提醒其注意安全，并告知调休补贴政策。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V3_C18",
+      "name": "[META] 适时终结对话",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "对话应在任务完成后自然结束,不冗长拖沓",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V3_C19",
+      "name": "[META] FAQ知识正确",
+      "scoring_dimension": "D4_knowledge_accuracy",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "对FAQ问题的回答应准确,关键事实: 1, 5, 110",
+      "is_critical": false,
+      "weight": 2
+    }
+  ],
+  "faq_items": [
+    {
+      "id": "V3_FAQ01",
+      "question_intent": "出勤补贴标准？",
+      "answer_template": "今天的单笔订单补贴会按照 1.5 倍发放。",
+      "key_facts": [
+        "1",
+        "5"
+      ]
+    },
+    {
+      "id": "V3_FAQ02",
+      "question_intent": "如何申请调休不扣绩效？",
+      "answer_template": "在系统里直接点恶劣天气调休就行，不扣绩效。",
+      "key_facts": []
+    },
+    {
+      "id": "V3_FAQ03",
+      "question_intent": "极端天气如何拒单不被处罚？",
+      "answer_template": "遇到危险路段，可以拍照片申诉拒单，系统会免责。",
+      "key_facts": []
+    },
+    {
+      "id": "V3_FAQ04",
+      "question_intent": "中途遇险如何呼救？",
+      "answer_template": "赶紧打站点的紧急电话，或者直接拨打 110。",
+      "key_facts": [
+        "110"
+      ]
+    },
+    {
+      "id": "V3_FAQ05",
+      "question_intent": "车辆坏了怎么办？",
+      "answer_template": "先找安全的地方躲避，然后再联系站长处理。",
+      "key_facts": []
+    }
+  ],
+  "flow_steps": [
+    {
+      "step_id": "S1",
+      "label": "告知当地已经发布了 ${weather_type} 预警以及具体的预警等级。",
+      "purpose": "告知当地已经发布了 ${weather_type} 预警以及具体的预警等级。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S2",
+      "label": "询问骑手今天是否计划出勤接单。",
+      "purpose": "询问骑手今天是否计划出勤接单。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S3",
+      "label": "**分支1**：若骑手表示计划出勤，进入 Step 4；若骑手表示不出勤，跳到 ",
+      "purpose": "**分支1**：若骑手表示计划出勤，进入 Step 4；若骑手表示不出勤，跳到 Step 5。",
+      "is_branch": true
+    },
+    {
+      "step_id": "S4",
+      "label": "安全提醒：叮嘱骑手路上慢行、穿好雨具、对于不安全的订单可以直接拒绝，并提供站点的",
+      "purpose": "安全提醒：叮嘱骑手路上慢行、穿好雨具、对于不安全的订单可以直接拒绝，并提供站点的紧急联系电话。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S5",
+      "label": "告知调休与补贴政策：今天单笔订单补贴是平时的 1.5 倍，如果觉得不安全可以随时",
+      "purpose": "告知调休与补贴政策：今天单笔订单补贴是平时的 1.5 倍，如果觉得不安全可以随时申请调休。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S6",
+      "label": "确认骑手是否清楚以上信息，并做好系统记录。",
+      "purpose": "确认骑手是否清楚以上信息，并做好系统记录。",
+      "is_branch": false
+    }
+  ]
+}

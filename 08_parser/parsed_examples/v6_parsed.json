@@ -1,0 +1,503 @@
+{
+  "meta": {
+    "instruction_id": "V6",
+    "instruction_name": "V6",
+    "role": "美团商家运营客服",
+    "task": "核实商家的关店申请是临时还是永久，确认操作意愿，并告知后续流程及影响。",
+    "variables": [
+      "close_request_type",
+      "merchant_name"
+    ]
+  },
+  "atomic_constraints": [
+    {
+      "id": "V6_C01",
+      "name": "每次回复控制在 15-20 字，保持干练。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "每次回复控制在 15-20 字，保持干练。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V6_C02",
+      "name": "语气要口语化，就像面对面打电话一样自然。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "语气要口语化，就像面对面打电话一样自然。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V6_C03",
+      "name": "沟通时频繁给商家发言机会，多倾听他们的需求。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "沟通时频繁给商家发言机会，多倾听他们的需求。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V6_C04",
+      "name": "如果被打断，使用过渡语“您刚才提到...”接续。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "如果被打断，使用过渡语“您刚才提到...”接续。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V6_C05",
+      "name": "核心任务完成后，若商家还有疑问仍需简短作答。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_judge",
+      "source_text": "核心任务完成后，若商家还有疑问仍需简短作答。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V6_C06",
+      "name": "对话中绝不说“好的”、“哈哈”等不专业的语气词。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule_pattern",
+      "source_text": "对话中绝不说“好的”、“哈哈”等不专业的语气词。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V6_C07",
+      "name": "绝不能承诺帮商家加快关店流程或免除 30 天等待期。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "绝不能承诺帮商家加快关店流程或免除 30 天等待期。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V6_C08",
+      "name": "绝不能承诺给商家任何形式的折扣或补贴挽留。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "绝不能承诺给商家任何形式的折扣或补贴挽留。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V6_C09",
+      "name": "引导操作时必须分步发送，每步暂停等商家操作，对话中分轮发。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "引导操作时必须分步发送，每步暂停等商家操作，对话中分轮发。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V6_C10",
+      "name": "当商家选择永久关店时，表达适度的遗憾，但不要强行劝留。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_judge",
+      "source_text": "当商家选择永久关店时，表达适度的遗憾，但不要强行劝留。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V6_C11",
+      "name": "若商家说在开车，礼貌回复“那稍后再打”并结束挂断。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "若商家说在开车，礼貌回复“那稍后再打”并结束挂断。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V6_C12",
+      "name": "若商家说在忙，回复“就1分钟”后继续走流程。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_judge",
+      "source_text": "若商家说在忙，回复“就1分钟”后继续走流程。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V6_C13",
+      "name": "被问及关店流程之外的其他范围外问题（如平台战略、其他商家信息等），统一回复...",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "被问及关店流程之外的其他范围外问题（如平台战略、其他商家信息等），统一回复\"这个超出我职责范围，我帮您记录回头跟进\"。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C14",
+      "name": "S1 自我介绍，并询问接电话的是否为商家负责人。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "自我介绍，并询问接电话的是否为商家负责人。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C15",
+      "name": "S2 告知系统收到关店申请，询问是否是本人操作。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "告知系统收到关店申请，询问是否是本人操作。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C16",
+      "name": "S3 **分支**：确认关店类型：",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "**分支**：确认关店类型：",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C17",
+      "name": "S3.1 临时关店（如节假日、装修、缺人等），进入 Step 4。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "临时关店（如节假日、装修、缺人等），进入 Step 4。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C18",
+      "name": "S3.2 永久关店（如经营不善、转让等），进入 Step 5。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "永久关店（如经营不善、转让等），进入 Step 5。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C19",
+      "name": "S3.3 误操作，进入 Step 6。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "误操作，进入 Step 6。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C20",
+      "name": "S4 临时流程：",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "临时流程：",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C21",
+      "name": "S4.1 询问预计重开时间。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "询问预计重开时间。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C22",
+      "name": "S4.2 分步引导临时关店的后台操作步骤。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "分步引导临时关店的后台操作步骤。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C23",
+      "name": "S4.3 提醒影响：期间会暂停接单，排名也会暂时下降。完成进入 Step 7。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "提醒影响：期间会暂停接单，排名也会暂时下降。完成进入 Step 7。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C24",
+      "name": "S5 永久流程：",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "永久流程：",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C25",
+      "name": "S5.1 询问关店原因（用于平台改善产品流程）。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "询问关店原因（用于平台改善产品流程）。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C26",
+      "name": "S5.2 告知永久关店流程：有 30 天等待期，之后可提现保证金，并处理解约条款。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "告知永久关店流程：有 30 天等待期，之后可提现保证金，并处理解约条款。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C27",
+      "name": "S5.3 询问是否考虑挂靠其他经营方式。完成进入 Step 7。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "询问是否考虑挂靠其他经营方式。完成进入 Step 7。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C28",
+      "name": "S6 撤销流程：",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "撤销流程：",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C29",
+      "name": "S6.1 分步引导商家在后台撤销关店操作。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "分步引导商家在后台撤销关店操作。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C30",
+      "name": "S6.2 确认撤销成功。完成进入 Step 7。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "确认撤销成功。完成进入 Step 7。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C31",
+      "name": "S7 问题处理完毕，礼貌道谢并结束通话。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "问题处理完毕，礼貌道谢并结束通话。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C32",
+      "name": "[META] 开场白含必要变量",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "rule_pattern",
+      "source_text": "首轮(Opening Line)应包含: ${close_request_type}, ${merchant_name}",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C33",
+      "name": "[META] 所有变量正确替换无残留 ${}",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "对话中不能出现未替换的 ${{var}} 占位符",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V6_C34",
+      "name": "[META] 任务核心意图完成",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "llm_judge",
+      "source_text": "任务目标: 核实商家的关店申请是临时还是永久，确认操作意愿，并告知后续流程及影响。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V6_C35",
+      "name": "[META] 适时终结对话",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "对话应在任务完成后自然结束,不冗长拖沓",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V6_C36",
+      "name": "[META] FAQ知识正确",
+      "scoring_dimension": "D4_knowledge_accuracy",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "对FAQ问题的回答应准确,关键事实: 30, 7, 15",
+      "is_critical": false,
+      "weight": 2
+    }
+  ],
+  "faq_items": [
+    {
+      "id": "V6_FAQ01",
+      "question_intent": "临时关店多久必须重开？",
+      "answer_template": "最长可以申请 30 天，超过需要重新提交。",
+      "key_facts": [
+        "30"
+      ]
+    },
+    {
+      "id": "V6_FAQ02",
+      "question_intent": "永久关店保证金返还时间？",
+      "answer_template": "关店流程走完后，预计 7-15 个工作日退还。",
+      "key_facts": [
+        "7",
+        "15"
+      ]
+    },
+    {
+      "id": "V6_FAQ03",
+      "question_intent": "暂停接单期间未完成订单怎么处理？",
+      "answer_template": "需要您把已接订单全部出餐配送完毕。",
+      "key_facts": []
+    },
+    {
+      "id": "V6_FAQ04",
+      "question_intent": "关店期间客户咨询如何回复？",
+      "answer_template": "可以设置自动回复，告知客户店铺暂歇。",
+      "key_facts": []
+    },
+    {
+      "id": "V6_FAQ05",
+      "question_intent": "重开后排名如何恢复？",
+      "answer_template": "刚重开会受影响，后续正常营业积累单量可恢复。",
+      "key_facts": []
+    },
+    {
+      "id": "V6_FAQ06",
+      "question_intent": "关店是否影响其他平台？",
+      "answer_template": "我们平台关店不影响您在其他平台的经营。",
+      "key_facts": []
+    },
+    {
+      "id": "V6_FAQ07",
+      "question_intent": "永久关店后能否重新开店？",
+      "answer_template": "可以的，之后想开可以重新提交资质审核。",
+      "key_facts": []
+    },
+    {
+      "id": "V6_FAQ08",
+      "question_intent": "店铺转让经营权流程是什么？",
+      "answer_template": "需要新老板提供资质，在后台走转让审批。",
+      "key_facts": []
+    }
+  ],
+  "flow_steps": [
+    {
+      "step_id": "S1",
+      "label": "自我介绍，并询问接电话的是否为商家负责人。",
+      "purpose": "自我介绍，并询问接电话的是否为商家负责人。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S2",
+      "label": "告知系统收到关店申请，询问是否是本人操作。",
+      "purpose": "告知系统收到关店申请，询问是否是本人操作。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S3",
+      "label": "**分支**：确认关店类型：",
+      "purpose": "**分支**：确认关店类型：",
+      "is_branch": true
+    },
+    {
+      "step_id": "S3.1",
+      "label": "临时关店（如节假日、装修、缺人等），进入 Step 4。",
+      "purpose": "临时关店（如节假日、装修、缺人等），进入 Step 4。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S3.2",
+      "label": "永久关店（如经营不善、转让等），进入 Step 5。",
+      "purpose": "永久关店（如经营不善、转让等），进入 Step 5。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S3.3",
+      "label": "误操作，进入 Step 6。",
+      "purpose": "误操作，进入 Step 6。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S4",
+      "label": "临时流程：",
+      "purpose": "临时流程：",
+      "is_branch": false
+    },
+    {
+      "step_id": "S4.1",
+      "label": "询问预计重开时间。",
+      "purpose": "询问预计重开时间。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S4.2",
+      "label": "分步引导临时关店的后台操作步骤。",
+      "purpose": "分步引导临时关店的后台操作步骤。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S4.3",
+      "label": "提醒影响：期间会暂停接单，排名也会暂时下降。完成进入 Step 7。",
+      "purpose": "提醒影响：期间会暂停接单，排名也会暂时下降。完成进入 Step 7。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S5",
+      "label": "永久流程：",
+      "purpose": "永久流程：",
+      "is_branch": false
+    },
+    {
+      "step_id": "S5.1",
+      "label": "询问关店原因（用于平台改善产品流程）。",
+      "purpose": "询问关店原因（用于平台改善产品流程）。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S5.2",
+      "label": "告知永久关店流程：有 30 天等待期，之后可提现保证金，并处理解约条款。",
+      "purpose": "告知永久关店流程：有 30 天等待期，之后可提现保证金，并处理解约条款。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S5.3",
+      "label": "询问是否考虑挂靠其他经营方式。完成进入 Step 7。",
+      "purpose": "询问是否考虑挂靠其他经营方式。完成进入 Step 7。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S6",
+      "label": "撤销流程：",
+      "purpose": "撤销流程：",
+      "is_branch": false
+    },
+    {
+      "step_id": "S6.1",
+      "label": "分步引导商家在后台撤销关店操作。",
+      "purpose": "分步引导商家在后台撤销关店操作。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S6.2",
+      "label": "确认撤销成功。完成进入 Step 7。",
+      "purpose": "确认撤销成功。完成进入 Step 7。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S7",
+      "label": "问题处理完毕，礼貌道谢并结束通话。",
+      "purpose": "问题处理完毕，礼貌道谢并结束通话。",
+      "is_branch": false
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "total_constraints_audited": 53,
+  "flagged_constraints": 11,
+  "findings": [
+    {
+      "constraint_id": "V5_C01",
+      "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+      "verifier": "rule",
+      "dimension": "D3_constraint_compliance",
+      "total": 15,
+      "agree": 0,
+      "disagree": 15,
+      "h_pass_a_fail": 15,
+      "h_fail_a_pass": 0,
+      "flags": [
+        "evidence_mismatch:15/15",
+        "systematic_h_pass_a_fail:15/15"
+      ],
+      "evidence_mismatch_count": 15,
+      "sample_evidence_mismatch": [
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "human_verdict": "pass",
+          "human_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+          "auto_verdict": "fail",
+          "auto_reason": "14/14=100%超字数(限20+5=25)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "human_verdict": "pass",
+          "human_evidence": "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+          "auto_verdict": "fail",
+          "auto_reason": "14/14=100%超字数(限20+5=25)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "human_verdict": "pass",
+          "human_evidence": "您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特…",
+          "auto_verdict": "fail",
+          "auto_reason": "6/6=100%超字数(限20+5=25)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        }
+      ],
+      "human_evidence_samples": [
+        "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+        "您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…",
+        "您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特…"
+      ],
+      "auto_reason_samples": [
+        "14/14=100%超字数(限20+5=25)",
+        "14/14=100%超字数(限20+5=25)",
+        "6/6=100%超字数(限20+5=25)"
+      ]
+    },
+    {
+      "constraint_id": "V5_C12",
+      "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+      "verifier": "state_tracker",
+      "dimension": "D1_flow_compliance",
+      "total": 15,
+      "agree": 0,
+      "disagree": 15,
+      "h_pass_a_fail": 0,
+      "h_fail_a_pass": 15,
+      "flags": [
+        "evidence_mismatch:15/15",
+        "systematic_h_fail_a_pass:15/15"
+      ],
+      "evidence_mismatch_count": 15,
+      "sample_evidence_mismatch": [
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值25字): T7=54字；T11=53字；T19=51字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值25字): T21=73字；T25=70字；T17=69字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值25字): T3=30字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        }
+      ],
+      "human_evidence_samples": [
+        "超长(阈值25字): T7=54字；T11=53字；T19=51字",
+        "超长(阈值25字): T21=73字；T25=70字；T17=69字",
+        "超长(阈值25字): T3=30字"
+      ],
+      "auto_reason_samples": [
+        "匹配关键词 3/5 (60%, 阈值≥2个)",
+        "匹配关键词 4/5 (80%, 阈值≥2个)",
+        "匹配关键词 3/5 (60%, 阈值≥2个)"
+      ]
+    },
+    {
+      "constraint_id": "V4_C12",
+      "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+      "verifier": "state_tracker",
+      "dimension": "D1_flow_compliance",
+      "total": 12,
+      "agree": 0,
+      "disagree": 12,
+      "h_pass_a_fail": 0,
+      "h_fail_a_pass": 12,
+      "flags": [
+        "evidence_mismatch:12/12",
+        "systematic_h_fail_a_pass:12/12"
+      ],
+      "evidence_mismatch_count": 12,
+      "sample_evidence_mismatch": [
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值25字): T7=57字；T9=52字；T3=44字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值25字): T7=61字；T29=53字；T11=48字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值25字): T7=61字；T13=49字；T17=49字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        }
+      ],
+      "human_evidence_samples": [
+        "超长(阈值25字): T7=57字；T9=52字；T3=44字",
+        "超长(阈值25字): T7=61字；T29=53字；T11=48字",
+        "超长(阈值25字): T7=61字；T13=49字；T17=49字"
+      ],
+      "auto_reason_samples": [
+        "匹配关键词 3/5 (60%, 阈值≥2个)",
+        "匹配关键词 3/5 (60%, 阈值≥2个)",
+        "匹配关键词 2/5 (40%, 阈值≥2个)"
+      ]
+    },
+    {
+      "constraint_id": "V4_C01",
+      "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+      "verifier": "rule",
+      "dimension": "D3_constraint_compliance",
+      "total": 12,
+      "agree": 0,
+      "disagree": 12,
+      "h_pass_a_fail": 12,
+      "h_fail_a_pass": 0,
+      "flags": [
+        "evidence_mismatch:12/12",
+        "systematic_h_pass_a_fail:12/12"
+      ],
+      "evidence_mismatch_count": 12,
+      "sample_evidence_mismatch": [
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "human_verdict": "pass",
+          "human_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25…",
+          "auto_verdict": "fail",
+          "auto_reason": "3/5=60%超字数(限20+5=25)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "human_verdict": "pass",
+          "human_evidence": "您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …",
+          "auto_verdict": "fail",
+          "auto_reason": "6/6=100%超字数(限20+5=25)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "human_verdict": "pass",
+          "human_evidence": "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…",
+          "auto_verdict": "fail",
+          "auto_reason": "14/14=100%超字数(限20+5=25)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        }
+      ],
+      "human_evidence_samples": [
+        "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25…",
+        "您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …",
+        "您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…"
+      ],
+      "auto_reason_samples": [
+        "3/5=60%超字数(限20+5=25)",
+        "6/6=100%超字数(限20+5=25)",
+        "14/14=100%超字数(限20+5=25)"
+      ]
+    },
+    {
+      "constraint_id": "V2_C15",
+      "constraint_name": "[META] 适时终结对话",
+      "verifier": "llm_judge",
+      "dimension": "D5_dialogue_quality",
+      "total": 12,
+      "agree": 1,
+      "disagree": 11,
+      "h_pass_a_fail": 11,
+      "h_fail_a_pass": 0,
+      "flags": [
+        "systematic_h_pass_a_fail:11/12"
+      ],
+      "evidence_mismatch_count": 0,
+      "sample_evidence_mismatch": [],
+      "human_evidence_samples": [
+        "告知后果后结束",
+        "循环至轮次上限，用户驱动",
+        "引导确认接单后用户致谢收尾"
+      ],
+      "auto_reason_samples": [
+        "未明显礼貌结束 或 过度追问",
+        "未明显礼貌结束 或 过度追问",
+        "未明显礼貌结束 或 过度追问"
+      ]
+    },
+    {
+      "constraint_id": "V1_C08",
+      "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+      "verifier": "state_tracker",
+      "dimension": "D1_flow_compliance",
+      "total": 11,
+      "agree": 1,
+      "disagree": 10,
+      "h_pass_a_fail": 0,
+      "h_fail_a_pass": 10,
+      "flags": [
+        "evidence_mismatch:10/11",
+        "systematic_h_fail_a_pass:10/11"
+      ],
+      "evidence_mismatch_count": 10,
+      "sample_evidence_mismatch": [
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值35字): T7=45字；T17=37字；T9=36字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值35字): T13=39字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 4/7 (57%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值35字): T5=44字；T9=41字；T3=39字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        }
+      ],
+      "human_evidence_samples": [
+        "超长(阈值35字): T7=45字；T17=37字；T9=36字",
+        "超长(阈值35字): T13=39字",
+        "超长(阈值35字): T5=44字；T9=41字；T3=39字"
+      ],
+      "auto_reason_samples": [
+        "匹配关键词 3/7 (43%, 阈值≥2个)",
+        "匹配关键词 4/7 (57%, 阈值≥2个)",
+        "匹配关键词 3/7 (43%, 阈值≥2个)"
+      ]
+    },
+    {
+      "constraint_id": "V2_C08",
+      "constraint_name": "S1 告知 APP 有强制更新要求，并明确必须在 ${deadline} 前完成更新。",
+      "verifier": "state_tracker",
+      "dimension": "D1_flow_compliance",
+      "total": 12,
+      "agree": 3,
+      "disagree": 9,
+      "h_pass_a_fail": 0,
+      "h_fail_a_pass": 9,
+      "flags": [
+        "evidence_mismatch:9/12",
+        "systematic_h_fail_a_pass:9/12"
+      ],
+      "evidence_mismatch_count": 9,
+      "sample_evidence_mismatch": [
+        {
+          "dialogue_id": "V2_interruption_1779196169_000",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值35字): T9=48字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        },
+        {
+          "dialogue_id": "V2_cooperative_1779200835_000",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值35字): T3=49字；T5=44字；T7=40字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        },
+        {
+          "dialogue_id": "V2_out_of_scope_1779195816_000",
+          "human_verdict": "fail",
+          "human_evidence": "超长(阈值35字): T9=54字；T3=50字；T5=47字",
+          "auto_verdict": "pass",
+          "auto_reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "mismatch_type": "length_evidence_on_flow_constraint"
+        }
+      ],
+      "human_evidence_samples": [
+        "超长(阈值35字): T9=48字",
+        "超长(阈值35字): T3=49字；T5=44字；T7=40字",
+        "超长(阈值35字): T9=54字；T3=50字；T5=47字"
+      ],
+      "auto_reason_samples": [
+        "匹配关键词 3/4 (75%, 阈值≥2个)",
+        "匹配关键词 2/4 (50%, 阈值≥2个)",
+        "匹配关键词 3/4 (75%, 阈值≥2个)"
+      ]
+    },
+    {
+      "constraint_id": "V1_C06",
+      "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+      "verifier": "llm_judge",
+      "dimension": "D5_dialogue_quality",
+      "total": 11,
+      "agree": 3,
+      "disagree": 8,
+      "h_pass_a_fail": 8,
+      "h_fail_a_pass": 0,
+      "flags": [
+        "systematic_h_pass_a_fail:8/11"
+      ],
+      "evidence_mismatch_count": 0,
+      "sample_evidence_mismatch": [],
+      "human_evidence_samples": [
+        "开场白及全程变量均已正确替换，无 ${} 残留",
+        "开场白及全程变量均已正确替换，无 ${} 残留",
+        "开场白及全程变量均已正确替换，无 ${} 残留"
+      ],
+      "auto_reason_samples": [
+        "助手礼貌结束对话",
+        "助手礼貌结束对话",
+        "未明显礼貌结束 或 过度追问"
+      ]
+    },
+    {
+      "constraint_id": "V2_C01",
+      "constraint_name": "每次回复控制在 30 字以内，简短干脆。",
+      "verifier": "rule",
+      "dimension": "D3_constraint_compliance",
+      "total": 12,
+      "agree": 6,
+      "disagree": 6,
+      "h_pass_a_fail": 6,
+      "h_fail_a_pass": 0,
+      "flags": [
+        "evidence_mismatch:6/12"
+      ],
+      "evidence_mismatch_count": 6,
+      "sample_evidence_mismatch": [
+        {
+          "dialogue_id": "V2_cooperative_1779200835_000",
+          "human_verdict": "pass",
+          "human_evidence": "喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…",
+          "auto_verdict": "fail",
+          "auto_reason": "4/6=67%超字数(限30+5=35)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        },
+        {
+          "dialogue_id": "V2_out_of_scope_1779195816_000",
+          "human_verdict": "pass",
+          "human_evidence": "喂，是 李建军 吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在 明天晚上12点 …",
+          "auto_verdict": "fail",
+          "auto_reason": "4/5=80%超字数(限30+5=35)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        },
+        {
+          "dialogue_id": "V2_out_of_scope_1779201136_000",
+          "human_verdict": "pass",
+          "human_evidence": "喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…",
+          "auto_verdict": "fail",
+          "auto_reason": "4/5=80%超字数(限30+5=35)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        }
+      ],
+      "human_evidence_samples": [
+        "喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…",
+        "喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…",
+        "喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…"
+      ],
+      "auto_reason_samples": [
+        "超字数率 25% < 30%, 通过",
+        "4/6=67%超字数(限30+5=35)",
+        "超字数率 0% < 30%, 通过"
+      ]
+    },
+    {
+      "constraint_id": "V1_C01",
+      "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+      "verifier": "rule",
+      "dimension": "D3_constraint_compliance",
+      "total": 11,
+      "agree": 6,
+      "disagree": 5,
+      "h_pass_a_fail": 5,
+      "h_fail_a_pass": 0,
+      "flags": [
+        "evidence_mismatch:5/11"
+      ],
+      "evidence_mismatch_count": 5,
+      "sample_evidence_mismatch": [
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "human_verdict": "pass",
+          "human_evidence": "喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…",
+          "auto_verdict": "fail",
+          "auto_reason": "2/2=100%超字数(限30+5=35)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "human_verdict": "pass",
+          "human_evidence": "喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…",
+          "auto_verdict": "fail",
+          "auto_reason": "4/7=57%超字数(限30+5=35)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "human_verdict": "pass",
+          "human_evidence": "喂，是王强吗？我是咱们美团骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，…",
+          "auto_verdict": "fail",
+          "auto_reason": "4/8=50%超字数(限30+5=35)",
+          "mismatch_type": "non_length_evidence_on_length_constraint"
+        }
+      ],
+      "human_evidence_samples": [
+        "喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…",
+        "喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…",
+        "喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…"
+      ],
+      "auto_reason_samples": [
+        "2/2=100%超字数(限30+5=35)",
+        "超字数率 14% < 30%, 通过",
+        "4/7=57%超字数(限30+5=35)"
+      ]
+    },
+    {
+      "constraint_id": "V5_C13",
+      "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+      "verifier": "state_tracker",
+      "dimension": "D1_flow_compliance",
+      "total": 7,
+      "agree": 2,
+      "disagree": 5,
+      "h_pass_a_fail": 5,
+      "h_fail_a_pass": 0,
+      "flags": [
+        "systematic_h_pass_a_fail:5/7"
+      ],
+      "evidence_mismatch_count": 0,
+      "sample_evidence_mismatch": [],
+      "human_evidence_samples": [
+        "总部地址/经理电话/股票等越界用标准话术",
+        "股票/其他业务越界用标准话术",
+        "越界(店铺升级服务)T15用标准话术"
+      ],
+      "auto_reason_samples": [
+        "只匹配 1/4 (25%, 不足 2 个)",
+        "只匹配 1/4 (25%, 不足 2 个)",
+        "匹配关键词 2/4 (50%, 阈值≥2个)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "total_modifications": 50,
+  "modifications": [
+    {
+      "dialogue_id": "V2_interruption_1779201383_000",
+      "constraint_id": "V2_C15",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程为用户循环追问驱动，模型未过早结束，更新任务未完成故持续在岗"
+    },
+    {
+      "dialogue_id": "V2_interruption_1779201531_001",
+      "constraint_id": "V2_C15",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "同上，用户反复提问、未挂断，模型保持在岗，无过早终结"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202280_001",
+      "constraint_id": "V4_C11",
+      "v3_verdict": "review",
+      "v4_verdict": "review",
+      "v5_verdict": "na",
+      "v5_evidence": "本通对话用户全程未提及“开车/在车上”，该约束未被触发"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202862_001",
+      "constraint_id": "V5_C11",
+      "v3_verdict": "review",
+      "v4_verdict": "review",
+      "v5_verdict": "pass",
+      "v5_evidence": "T7“超出我的职责范围，我帮您记录回头跟进”应对股票；T9同样应对其他业务；T11“抱歉，这个我无法提供”拒绝索要他人联系方式，越界问题均被妥善挡回"
+    },
+    {
+      "dialogue_id": "V1_cooperative_1779193967_000",
+      "constraint_id": "V1_C15",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T9起任务已基本完成，但用户持续追问地址/考试/距离等，模型逐一回应、未过早挂断"
+    },
+    {
+      "dialogue_id": "V1_cooperative_1779199977_001",
+      "constraint_id": "V1_C12",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”"
+    },
+    {
+      "dialogue_id": "V1_cooperative_1779199977_001",
+      "constraint_id": "V1_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "constraint_id": "V1_C12",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200483_000",
+      "constraint_id": "V1_C12",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200667_001",
+      "constraint_id": "V1_C12",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200667_001",
+      "constraint_id": "V1_C15",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "用户始终含糊未确认参加，模型持续争取确认属合理，未过早终结"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194673_000",
+      "constraint_id": "V1_C12",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194673_000",
+      "constraint_id": "V1_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194856_001",
+      "constraint_id": "V1_C12",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779200168_000",
+      "constraint_id": "V1_C12",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "constraint_id": "V1_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779200071_000",
+      "constraint_id": "V1_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V2_interruption_1779196169_000",
+      "constraint_id": "V2_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V2_interruption_1779196169_000",
+      "constraint_id": "V2_C15",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T10用户主动挂断结束，模型此前保持在岗、引导更新，无过早终结"
+    },
+    {
+      "dialogue_id": "V2_interruption_1779196266_001",
+      "constraint_id": "V2_C15",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "用户同意后挂断结束，模型保持在岗收束，无过早终结"
+    },
+    {
+      "dialogue_id": "V2_out_of_scope_1779195816_000",
+      "constraint_id": "V2_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779195668_000",
+      "constraint_id": "V2_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779195756_001",
+      "constraint_id": "V2_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779201049_000",
+      "constraint_id": "V2_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V2_refuse_persistent_1779201097_001",
+      "constraint_id": "V2_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779196436_000",
+      "constraint_id": "V4_C06",
+      "v3_verdict": "fail",
+      "v4_verdict": "fail",
+      "v5_verdict": "pass",
+      "v5_evidence": "T7完成核心转达后，用户T8追问“能否给顾客补偿”，模型T9简短作答“补偿超出我的权限，您可在商家后台报备申诉”"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197944_001",
+      "constraint_id": "V5_C04",
+      "v3_verdict": "fail",
+      "v4_verdict": "fail",
+      "v5_verdict": "pass",
+      "v5_evidence": "T13使用过渡语“您刚才提到后厨忙不过来，具体是哪个环节需要平台帮一把”，被越界打断后用过渡语拉回正题"
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202862_001",
+      "constraint_id": "V5_C18",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "na",
+      "v5_evidence": "对话在T11截断，全程被用户越界提问打断、停留在“是否申诉”阶段，未推进到 S5 收集经营困难/平台协助环节，该步骤未触发"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "constraint_id": "V1_C16",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "fail",
+      "v5_evidence": "T9称“不参加会影响接单评级”，T11却称“这次不参加不影响评级，放心”，前后矛盾且与FAQ（缺训影响评级）不符"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194856_001",
+      "constraint_id": "V1_C16",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T7/T13“缺勤影响接单评级”、T15“出席有30元补贴”均与FAQ一致，全程无错误FAQ陈述"
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202116_000",
+      "constraint_id": "V4_C19",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T7“协调一下让骑手和用户等候”、T13“及时跟骑手和用户沟通确保了解情况”、T15“帮您协调沟通”，多轮明确告知会向骑手和用户转达并请其等待"
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779201993_001",
+      "constraint_id": "V4_C11",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "na",
+      "v5_evidence": "本通对话用户全程未提及“开车/在车上”，该约束未被触发"
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779197281_000",
+      "constraint_id": "V5_C19",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "fail",
+      "v5_evidence": "T17仅“后续多关注评价趋势”，全程未做“偶尔差评不影响整体评级”的情绪安抚（缺核心安抚要件）"
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779202511_001",
+      "constraint_id": "V5_C19",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T13“偶尔的差评不会影响整体评级，但要多关注评价趋势，及时调整”，两要件齐备"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198161_000",
+      "constraint_id": "V5_C19",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "T11“偶尔一两个差评，影响有限。您先放宽心”，达成“差评影响有限”的情绪安抚核心"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779202919_000",
+      "constraint_id": "V5_C19",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "fail",
+      "v5_evidence": "全程30轮陷入营销/经营建议问答，从未对差评做情绪安抚，未提“不影响整体评级/影响有限/关注趋势”"
+    },
+    {
+      "dialogue_id": "V5_interruption_1779203124_001",
+      "constraint_id": "V5_C19",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "fail",
+      "v5_evidence": "全程30轮陷入流程优化问答，从未对差评做情绪安抚，未提“不影响整体评级/影响有限/关注趋势”"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "constraint_id": "V1_C09",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "用户T6/T8表示15号有事去不了，模型T7“具体什么事能说下吗？我记录一下原因”，询问原因并表示记录"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "constraint_id": "V1_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "constraint_id": "V1_C14",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "已送达培训通知（T1），并就骑手无法到场达成处理（T13/T15确认“缺席”、提示下一批次），核心意图（通知+确认出勤状态）达成"
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200483_000",
+      "constraint_id": "V1_C15",
+      "v3_verdict": "fail",
+      "v4_verdict": "fail",
+      "v5_verdict": "fail",
+      "v5_evidence": "T16骑手已明确“确认参加”，模型T17/19/21/23/25/27/29仍逐轮重复追问“能确认参加吗”，任务完成后未收尾"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194856_001",
+      "constraint_id": "V1_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779200168_000",
+      "constraint_id": "V1_C15",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "用户持续闲聊式越界，模型每轮以标准话术 deflect 并拉回培训，未过早终结"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "constraint_id": "V1_C04",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "仅T3、T5两条 assistant 回复，内容各异（T3记请假+问下一批，T5记发烧请假+问顶班+约回电），无重复"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "constraint_id": "V1_C07",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本未出现“好的/哈哈/嘿嘿/嘻嘻”等语气词"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "constraint_id": "V1_C14",
+      "v3_verdict": "fail",
+      "v4_verdict": "fail",
+      "v5_verdict": "pass",
+      "v5_evidence": "已送达培训通知（T1），骑手生病拒绝后模型记录请假并提出下一批次补训（T3/T5），通知+出勤处理的核心意图达成"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "constraint_id": "V1_C15",
+      "v3_verdict": "fail",
+      "v4_verdict": "fail",
+      "v5_verdict": "fail",
+      "v5_evidence": "用户T2/T4已两次明确拒绝（生病、改天），模型T5未安抚收尾反而追加新问题“今天的班有人顶吗”，致用户T6不悦挂断"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779200071_000",
+      "constraint_id": "V1_C04",
+      "v3_verdict": "fail",
+      "v4_verdict": "fail",
+      "v5_verdict": "pass",
+      "v5_evidence": "T3、T5均为简短收尾（“多休息/改天再说/再见”），措辞略有差异、非逐字重复，属用户二次拒绝后的自然再收束"
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779200071_000",
+      "constraint_id": "V1_C07",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本未出现“好的/哈哈/嘿嘿/嘻嘻”等语气词"
+    },
+    {
+      "dialogue_id": "V2_cooperative_1779200835_000",
+      "constraint_id": "V2_C13",
+      "v3_verdict": "pass",
+      "v4_verdict": "pass",
+      "v5_verdict": "pass",
+      "v5_evidence": "全程 assistant 文本无 ${} 占位符残留，变量均已正确替换"
+    }
+  ]
+}

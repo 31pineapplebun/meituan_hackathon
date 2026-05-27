@@ -1,0 +1,55 @@
+{
+  "_comment": "每条指令的变量值映射。simulator跑对话前会用这些值替换指令文本中的${xxx}占位符。多套scenarios可在W3-W4用来增加多样性,Day4暂用default。",
+  "V1": {
+    "default": {
+      "rider_name": "王强",
+      "training_date": "10月15号下午2点",
+      "training_location": "望京培训中心",
+      "subsidy_amount": "30"
+    }
+  },
+  "V2": {
+    "default": {
+      "rider_name": "李建军",
+      "deadline": "明天晚上12点",
+      "new_feature": "实时距离派单"
+    }
+  },
+  "V3": {
+    "default": {
+      "rider_name": "张师傅",
+      "weather_type": "暴雨"
+    }
+  },
+  "V4": {
+    "default": {
+      "merchant_name": "老王炸鸡店",
+      "order_id": "8234",
+      "current_delay_minutes": "25"
+    }
+  },
+  "V5": {
+    "default": {
+      "merchant_name": "川香小厨",
+      "review_count_last_7days": "3"
+    }
+  },
+  "V6": {
+    "default": {
+      "merchant_name": "新味轩兰州拉面",
+      "close_request_type": "临时"
+    }
+  },
+  "official_1_feimaotui": {
+    "default": {
+      "rider_name": "张三",
+      "X": "5",
+      "Y": "10",
+      "Z": "23",
+      "W": "5"
+    }
+  },
+  "official_2_kecheng": {
+    "default": {}
+  }
+}

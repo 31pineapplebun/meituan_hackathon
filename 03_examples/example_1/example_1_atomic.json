@@ -1,0 +1,203 @@
+{
+  "instruction_id": "example_1_rider_feimaotui",
+  "instruction_name": "外卖飞毛腿骑手通知",
+  "role": "美团外卖骑手站长",
+  "task": "致电飞毛腿骑手通知合同已生效并提醒配送任务",
+  "variables": ["${rider_name}", "${X}", "${Y}", "${Z}", "${W}"],
+
+  "opening_line": {
+    "template": "你好，请问是${rider_name}吗？我是站长。我看到你已报名飞毛腿。请记住，午餐和晚餐高峰期需要上线。单日合同每天至少完成 X 单；多日合同每天至少完成 Y 单。",
+    "must_contain_keywords": ["飞毛腿", "站长", "高峰期", "单日合同", "多日合同"],
+    "must_have_variables_filled": ["rider_name", "X", "Y"]
+  },
+
+  "atomic_constraints": [
+    {
+      "id": "EX1_C01",
+      "taxonomy_id": "L2_LEN_001",
+      "name": "每次回复长度≤30字",
+      "scope": "per_turn",
+      "exempt_turns": ["first_turn (开场白本身较长，豁免)"],
+      "verifier": "rule",
+      "verifier_config": {"max_chars": 30, "soft_margin": 5},
+      "source_text": "每次回复控制在约30个字以内",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "EX1_C02",
+      "taxonomy_id": "L1_GRAN_001",
+      "name": "开场白合规性",
+      "scope": "first_turn",
+      "verifier": "rule_pattern",
+      "verifier_config": {
+        "must_contain_keywords": ["飞毛腿", "高峰期", "单日", "多日"],
+        "must_have_variables_filled": ["${rider_name}"]
+      },
+      "source_text": "Opening Line: 你好，请问是${rider_name}吗？我是站长...",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "EX1_C03",
+      "taxonomy_id": "L2_VAR_001",
+      "name": "所有变量必须正确替换",
+      "scope": "across_turns",
+      "verifier": "rule",
+      "verifier_config": {
+        "forbidden_pattern": "\\$\\{[^}]+\\}",
+        "tracked_vars": ["rider_name", "X", "Y", "Z", "W"]
+      },
+      "source_text": "Opening Line 和 FAQ 中含 ${rider_name}, X, Y, Z, W 等占位符",
+      "is_critical": true,
+      "weight": 5
+    },
+    {
+      "id": "EX1_C04",
+      "taxonomy_id": "L2_FLOW_001",
+      "name": "越界问题用指定话术回复",
+      "scope": "trigger_based",
+      "verifier": "llm_extract_then_rule",
+      "verifier_config": {
+        "trigger_judge_prompt": "用户当前问题是否在Task/FAQ/Flow覆盖范围之外？",
+        "expected_pattern": "(向同事确认后再回电|稍后回复|我现在能回答的先回答)"
+      },
+      "source_text": "如被问及超出职责范围的问题，回复：'我向同事确认后再回电给你。我现在能回答的先回答。'",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "EX1_C05",
+      "taxonomy_id": "L3_TONE_001",
+      "name": "语气随意自然（像打电话）",
+      "scope": "across_turns",
+      "verifier": "llm_judge",
+      "judge_prompt": "评估对话语气是否随意、口语化，符合电话沟通风格。1)是否使用口语词 2)是否避免书面化 3)是否避免列点格式。输出: {verdict: yes/partial/no, confidence: 0-1, reason: ''}",
+      "source_text": "保持语气随意，像打电话一样自然",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "EX1_C06",
+      "taxonomy_id": "L3_REP_001",
+      "name": "避免重复回复",
+      "scope": "across_turns",
+      "verifier": "rule",
+      "verifier_config": {
+        "metric": "jaccard_char_similarity",
+        "threshold": 0.8
+      },
+      "source_text": "避免重复回复；如需重申，请换种方式礼貌表达",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "EX1_C07",
+      "taxonomy_id": "L1_STRUCT_001",
+      "name": "Call Flow 4个步骤完整覆盖",
+      "scope": "conversation_level",
+      "verifier": "state_tracker",
+      "steps_required": [
+        {"id": "S1", "desc": "告知合同已生效，询问是否可开始配送"},
+        {"id": "S2", "desc": "说明单日合同需连续Y天，否则受影响"},
+        {"id": "S3", "desc": "挽留不想配送者，鼓励能配送者，提醒安全"},
+        {"id": "S4", "desc": "说明飞毛腿按排名进行，减少拒单超时，恶劣天气也工作"}
+      ],
+      "source_text": "Call Flow 1-4 步骤",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "EX1_C08",
+      "taxonomy_id": "L1_STRUCT_002",
+      "name": "Call Flow 步骤顺序合理",
+      "scope": "conversation_level",
+      "verifier": "state_tracker",
+      "source_text": "Call Flow 顺序: 1→2→3→4",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "EX1_C09",
+      "taxonomy_id": "L2_FLOW_002",
+      "name": "骑手坚持拒绝则安慰后挂断",
+      "scope": "conversation_level",
+      "verifier": "llm_extract_then_rule",
+      "verifier_config": {
+        "trigger": "用户连续2轮或以上明确表达无法配送",
+        "expected_action": "给出安慰性话语后主动结束对话"
+      },
+      "source_text": "如果骑手坚持确实无法配送，安慰他们后挂断电话",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "EX1_C10",
+      "taxonomy_id": "L2_FAQ_001",
+      "name": "FAQ知识点正确性",
+      "scope": "trigger_based",
+      "verifier": "llm_extract_then_rule",
+      "faq_kb": [
+        {
+          "id": "FAQ01",
+          "question_intent": "名额是否会被占用",
+          "key_facts": ["如果无法连续配送Y天", "名额可能被他人占用"]
+        },
+        {
+          "id": "FAQ02",
+          "question_intent": "单日合同要求",
+          "key_facts": ["生效当天必须完成X单", "否则合同及派单受影响"]
+        },
+        {
+          "id": "FAQ03",
+          "question_intent": "多日合同要求",
+          "key_facts": ["每天必须完成Y单", "否则后续合同及派单受影响"]
+        },
+        {
+          "id": "FAQ04",
+          "question_intent": "如何退出飞毛腿",
+          "key_facts": ["前一天Z点之前", "在App的飞毛腿报名中取消", "次日生效"]
+        },
+        {
+          "id": "FAQ05",
+          "question_intent": "多日合同奖励",
+          "key_facts": ["连续完成W天", "每天Y单", "额外奖励（与单日合同相比每单多+$元）"]
+        }
+      ],
+      "source_text": "Knowledge Points (FAQ) 5条",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "EX1_C11",
+      "taxonomy_id": "L1_INTENT_001",
+      "name": "任务核心意图完成",
+      "scope": "conversation_level",
+      "verifier": "llm_judge",
+      "judge_prompt": "对话是否完成了'通知骑手合同已生效，并提醒完成配送任务'的核心意图？",
+      "source_text": "Task 描述",
+      "is_critical": true,
+      "weight": 5
+    }
+  ],
+
+  "statistics": {
+    "total_atomic_constraints": 11,
+    "by_level": {"L1": 4, "L2": 5, "L3": 2},
+    "by_verifier": {
+      "rule": 2,
+      "rule_pattern": 1,
+      "llm_judge": 2,
+      "llm_extract_then_rule": 3,
+      "state_tracker": 2,
+      "rule_jaccard": 1
+    },
+    "critical_count": 7,
+    "total_weight": 38
+  },
+
+  "notes": [
+    "示例1为简单档基准。原文Constraints段只有6条，但拆解后含11个原子约束，因为：1)'遵循对话流程'隐含Call Flow覆盖+顺序两条 2)Opening Line隐含变量替换+关键词两条 3)Task层级隐含整体意图完成 4)FAQ自成知识点正确性约束",
+    "示例1是简单档，约束密度约为示例2的1/3，可作为难度对照基准"
+  ]
+}

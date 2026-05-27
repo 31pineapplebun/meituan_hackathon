@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "instruction_id": "V5",
+    "instruction_name": "V5",
+    "role": "美团商家关怀客服",
+    "task": "通知商家收到差评，安抚情绪，引导申诉流程并收集改善意见。",
+    "variables": [
+      "merchant_name",
+      "review_count_last_7days"
+    ]
+  },
+  "atomic_constraints": [
+    {
+      "id": "V5_C01",
+      "name": "每次回复保持在 15-20 字左右，简短清晰。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "每次回复保持在 15-20 字左右，简短清晰。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V5_C02",
+      "name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V5_C03",
+      "name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "对话中要频繁给商家发言机会，多听他们倾诉。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V5_C04",
+      "name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V5_C05",
+      "name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_judge",
+      "source_text": "核心任务完成后，若商家有疑问，仍需简短作答。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V5_C06",
+      "name": "坚决不说“好的”、“哈哈”等随意语气词。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule_pattern",
+      "source_text": "坚决不说“好的”、“哈哈”等随意语气词。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V5_C07",
+      "name": "不能向商家承诺申诉一定能成功。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "不能向商家承诺申诉一定能成功。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V5_C08",
+      "name": "绝不承诺给商家任何形式的差评补贴。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "绝不承诺给商家任何形式的差评补贴。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V5_C09",
+      "name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_judge",
+      "source_text": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V5_C10",
+      "name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”后继续。",
+      "is_critical": false,
+      "weight": 3
+    },
+    {
+      "id": "V5_C11",
+      "name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等），统一回复\"这个超出我的职责范围，我帮您记录回头跟进\"。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C12",
+      "name": "S1 自我介绍并询问对方是否为商家负责人。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "自我介绍并询问对方是否为商家负责人。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C13",
+      "name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "告知近 7 天的差评数量 ${review_count_last_7days}，并简述主要差评原因。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C14",
+      "name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "**分支**：询问商家是否需要对差评进行申诉：",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C15",
+      "name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "若想申诉，进入 Step 4（申诉流程）。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C16",
+      "name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C17",
+      "name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C18",
+      "name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C19",
+      "name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C20",
+      "name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "state_tracker",
+      "source_text": "问题沟通完毕后，礼貌道谢并结束通话。",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C21",
+      "name": "[META] 开场白含必要变量",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "rule_pattern",
+      "source_text": "首轮(Opening Line)应包含: ${merchant_name}, ${review_count_last_7days}",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C22",
+      "name": "[META] 所有变量正确替换无残留 ${}",
+      "scoring_dimension": "D3_constraint_compliance",
+      "verifier": "rule",
+      "source_text": "对话中不能出现未替换的 ${{var}} 占位符",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "V5_C23",
+      "name": "[META] 任务核心意图完成",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "llm_judge",
+      "source_text": "任务目标: 通知商家收到差评，安抚情绪，引导申诉流程并收集改善意见。",
+      "is_critical": true,
+      "weight": 4
+    },
+    {
+      "id": "V5_C24",
+      "name": "[META] 适时终结对话",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "source_text": "对话应在任务完成后自然结束,不冗长拖沓",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "V5_C25",
+      "name": "[META] FAQ知识正确",
+      "scoring_dimension": "D4_knowledge_accuracy",
+      "verifier": "llm_extract_then_rule",
+      "source_text": "对FAQ问题的回答应准确,关键事实: (无)",
+      "is_critical": false,
+      "weight": 2
+    }
+  ],
+  "faq_items": [
+    {
+      "id": "V5_FAQ01",
+      "question_intent": "申诉成功率高吗？",
+      "answer_template": "只要证据充足，比如有出餐监控，成功率挺高的。",
+      "key_facts": []
+    },
+    {
+      "id": "V5_FAQ02",
+      "question_intent": "多少差评会影响评级？",
+      "answer_template": "主要是看差评率，偶尔一两个不影响大局。",
+      "key_facts": []
+    },
+    {
+      "id": "V5_FAQ03",
+      "question_intent": "商家投诉恶意用户怎么处理？",
+      "answer_template": "您可以在后台直接投诉，核实后会剔除该评价。",
+      "key_facts": []
+    },
+    {
+      "id": "V5_FAQ04",
+      "question_intent": "差评赔付金额范围是多少？",
+      "answer_template": "主要是根据订单实付金额退款，平台有相应规则。",
+      "key_facts": []
+    },
+    {
+      "id": "V5_FAQ05",
+      "question_intent": "改善建议反馈渠道在哪？",
+      "answer_template": "除了跟我说，您也可以在商家版 APP 的客服中心反馈。",
+      "key_facts": []
+    },
+    {
+      "id": "V5_FAQ06",
+      "question_intent": "如果用户要求给钱才删差评怎么办？",
+      "answer_template": "遇到这种敲诈勒索，您千万别给钱，直接保留截图找我们申诉。",
+      "key_facts": []
+    }
+  ],
+  "flow_steps": [
+    {
+      "step_id": "S1",
+      "label": "自我介绍并询问对方是否为商家负责人。",
+      "purpose": "自我介绍并询问对方是否为商家负责人。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S2",
+      "label": "告知近 7 天的差评数量 ${review_count_last_7days}，",
+      "purpose": "告知近 7 天的差评数量 ${review_count_last_7days}，并简述主要差评原因。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S3",
+      "label": "**分支**：询问商家是否需要对差评进行申诉：",
+      "purpose": "**分支**：询问商家是否需要对差评进行申诉：",
+      "is_branch": true
+    },
+    {
+      "step_id": "S3.1",
+      "label": "若想申诉，进入 Step 4（申诉流程）。",
+      "purpose": "若想申诉，进入 Step 4（申诉流程）。",
+      "is_branch": true
+    },
+    {
+      "step_id": "S3.2",
+      "label": "若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+      "purpose": "若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+      "is_branch": true
+    },
+    {
+      "step_id": "S4",
+      "label": "介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+      "purpose": "介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S5",
+      "label": "收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+      "purpose": "收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S6",
+      "label": "安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+      "purpose": "安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+      "is_branch": false
+    },
+    {
+      "step_id": "S7",
+      "label": "问题沟通完毕后，礼貌道谢并结束通话。",
+      "purpose": "问题沟通完毕后，礼貌道谢并结束通话。",
+      "is_branch": false
+    }
+  ]
+}

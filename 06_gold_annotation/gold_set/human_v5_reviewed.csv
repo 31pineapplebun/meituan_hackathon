@@ -1,0 +1,990 @@
+﻿dialogue_id,constraint_id,verdict,evidence_turn,evidence_text,confidence,notes,rater
+V1_cooperative_1779193967_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C02,na,,用户未表示不能参加，本约束未触发,high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C03,pass,5,提醒带齐头盔/工牌/身份证: 好。出席的话有30块补贴。来的时候记得带上头盔、工牌和身份证。,high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C04,pass,7,必须携带头盔才能参加。别忘了还要带工牌和身份证。这培训很重要，不参加会直接影响你接单评级。,high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C07,pass,"1,4",通知培训并确认骑手可参加(T4“能来”),high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C08,pass,"7,17,9",超长(阈值35字): T7=45字；T17=37字；T9=36字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C09,pass,"9,13",越界问题(具体地址/考试)用“得和同事确认，稍后回电”,medium,话术为变体非逐字,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C10,pass,5,T5仅提及标准30元补贴，未承诺额外补贴,high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C11,fail,11,T11出现“好的”,high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C12,pass,5,语气随意自然(“好。”“行，”口语),high,,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C13,pass,"21,25",尾部多轮重申“确认后通知/保持畅通”但每次均换措辞,medium,语义重复较多但非逐字,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C14,na,,,high,骑手配合参加，未坚持拒绝,human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C15,pass,全程,T9起任务已基本完成，但用户持续追问地址/考试/距离等，模型逐一回应、未过早挂断,low,拖至轮次上限但属用户驱动 [Day9复核],human_v5_reviewed
+V1_cooperative_1779193967_000,V1_C16,pass,"3,5",2小时(T3)、30元补贴(T5)均正确,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C02,na,,用户未表示不能参加，本约束未触发,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C03,pass,3,提醒带齐头盔/工牌/身份证: 培训大概持续2小时左右。记得带上头盔、工牌和身份证哦！,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C04,pass,5,没有其他材料了，带好头盔、工牌和身份证就可以了。安全培训很重要，未参加会影响接单评级哦。,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C07,pass,"1,2",通知并确认参加(T2“会去参加”),high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C08,pass,5,超长(阈值35字): T5=44字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C09,pass,9,T9越界(培训内容)用“我向同事确认后再回电”,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C10,pass,全程,全程未承诺额外补贴,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C12,pass,13,语气自然(“培训见！”),high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C13,pass,全程,无明显重复,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C14,na,,,high,骑手配合,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C15,pass,13,T13“培训见！谢谢配合”自然收尾,high,,human_v5_reviewed
+V1_cooperative_1779199886_000,V1_C16,pass,"3,7",2小时(T3)、补救“安排下一批次”(T7)正确,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C02,na,,用户未表示不能参加，本约束未触发,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C03,pass,3,提醒带齐头盔/工牌/身份证: 培训大概持续两个小时左右。记得带上头盔、工牌和身份证哦。,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C04,pass,7,安全培训很重要，如果没参加会直接影响接单评级，请务必到场。,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C07,pass,"1,2",通知并确认参加,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C08,pass,全程,所有非开场白回复均≤35字,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C09,pass,5,T5越界(培训内容)用“我向同事确认后再回电”,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C10,pass,全程,全程未承诺额外补贴,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C12,pass,全程,T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”,high, [Day9复核],human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C14,na,,,high,骑手配合,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C15,pass,11,T11自然收尾,high,,human_v5_reviewed
+V1_cooperative_1779199977_001,V1_C16,pass,3,T3“两个小时左右”正确,high,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C01,pass,1,喂，是王强吗？我是咱们美团骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训，…,high,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C02,pass,7,追问原因/记录: 具体什么事能说下吗？我记录一下原因。,high,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C03,fail,1,用户参加但助手未提醒带头盔/工牌/身份证,medium,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C04,pass,9,说明影响评级: 这次必须线下参加。错过的话只能找下一批次，但不参加会影响接单评级。需要我帮你联系…,medium,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C07,pass,"1,13",通知培训并确认其无法到场(T13/T15“算缺席”),medium,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C08,pass,"13,9,17",超长(阈值35字): T13=47字；T9=45字；T17=38字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_interruption_1779195182_001,V1_C09,pass,"11,13",用户T6/T8表示15号有事去不了，模型T7“具体什么事能说下吗？我记录一下原因”，询问原因并表示记录,low,系统问题用“上报反馈”而非标准话术 [Day9复核],human_v5_reviewed
+V1_interruption_1779195182_001,V1_C10,pass,5,T5仅标准30元补贴,high,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C12,pass,全程,T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”,high, [Day9复核],human_v5_reviewed
+V1_interruption_1779195182_001,V1_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,medium, [Day9复核],human_v5_reviewed
+V1_interruption_1779195182_001,V1_C14,pass,15,已送达培训通知（T1），并就骑手无法到场达成处理（T13/T15确认“缺席”、提示下一批次），核心意图（通知+确认出勤状态）达成,low,非典型拒绝(是时间冲突) [Day9复核],human_v5_reviewed
+V1_interruption_1779195182_001,V1_C15,pass,"15,17",T15尝试“先挂了”，被打断后T17再收束,medium,,human_v5_reviewed
+V1_interruption_1779195182_001,V1_C16,fail,"5,9",T9称“不参加会影响接单评级”，T11却称“这次不参加不影响评级，放心”，前后矛盾且与FAQ（缺训影响评级）不符,high, [Day9复核],human_v5_reviewed
+V1_interruption_1779200483_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C02,na,,用户未表示不能参加，本约束未触发,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C03,pass,9,提醒带齐头盔/工牌/身份证: 具体内容我向同事确认后再回电。别忘了带头盔、工牌和身份证哦。,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C04,pass,11,这些是培训的必需品，没带可能无法参加。安全培训很重要哦，未参加会影响接单评级。你能确认参加吗？,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C07,pass,"1,16",通知并于T16取得“确认参加”,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C08,pass,"11,23,21",超长(阈值35字): T11=47字；T23=44字；T21=36字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_interruption_1779200483_000,V1_C09,pass,"3,5,19",越界问题(内容/费用/通知方式)用标准话术,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C10,pass,全程,未承诺额外补贴,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C12,pass,全程,T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”,high, [Day9复核],human_v5_reviewed
+V1_interruption_1779200483_000,V1_C13,fail,"19,21,23,25",T16已确认参加后，仍多轮近乎逐字重复“我向同事确认后再回电+你能确认参加吗”,medium,,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C14,na,,,high,骑手确认参加,human_v5_reviewed
+V1_interruption_1779200483_000,V1_C15,fail,"19,21,23",T16骑手已明确“确认参加”，模型T17/19/21/23/25/27/29仍逐轮重复追问“能确认参加吗”，任务完成后未收尾,low, [Day9复核],human_v5_reviewed
+V1_interruption_1779200483_000,V1_C16,pass,"7,15",2小时/下一批次补救正确,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C02,na,,用户未表示不能参加，本约束未触发,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C03,pass,5,提醒带齐头盔/工牌/身份证: 培训大概会持续2个小时。记得带上头盔、工牌和身份证哦！,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C04,pass,7,理解你的情况，不过这次培训很重要，没参加会影响接单评级。如果确实不能来，能告诉我原因吗？,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C07,pass,1,已通知；骑手始终含糊未明确确认，模型持续争取,medium,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C08,pass,"7,11",超长(阈值35字): T7=44字；T11=36字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_interruption_1779200667_001,V1_C09,pass,"9,13,19",大量越界问题均用“我向同事确认后再回电”,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C10,pass,全程,未承诺额外补贴,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C12,pass,全程,T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”,high, [Day9复核],human_v5_reviewed
+V1_interruption_1779200667_001,V1_C13,fail,"19,21,23,25",连续多轮近乎逐字重复“我向同事确认后再回电+确认能否参加”,medium,,human_v5_reviewed
+V1_interruption_1779200667_001,V1_C14,na,,,high,骑手未坚持拒绝(含糊配合),human_v5_reviewed
+V1_interruption_1779200667_001,V1_C15,pass,全程,用户始终含糊未确认参加，模型持续争取确认属合理，未过早终结,low, [Day9复核],human_v5_reviewed
+V1_interruption_1779200667_001,V1_C16,pass,"5,11",2小时/下一批次补救正确,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C02,na,,用户未表示不能参加，本约束未触发,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C03,pass,3,提醒带齐头盔/工牌/身份证: 好的，那记得带上头盔、工牌和身份证。这次培训很重要，不参加会直接影响接单评级。,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C04,pass,3,好的，那记得带上头盔、工牌和身份证。这次培训很重要，不参加会直接影响接单评级。,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C07,pass,"1,2",通知并确认到场,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C08,pass,"5,9,3",超长(阈值35字): T5=44字；T9=41字；T3=39字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C09,pass,"7,9,11",股价/闪购账号/他人电话等越界均用“我向同事确认后再回电”,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C10,pass,5,T5仅标准30元补贴,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C11,fail,3,T3出现“好的”,high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C12,pass,全程,T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”,high, [Day9复核],human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,medium, [Day9复核],human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C14,na,,,high,骑手配合,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C15,pass,"9,11,15",多次主动尝试收尾(“先挂了”),high,,human_v5_reviewed
+V1_out_of_scope_1779194673_000,V1_C16,pass,5,30元补贴正确,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C02,na,,用户未表示不能参加，本约束未触发,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C03,pass,7,提醒带齐头盔/工牌/身份证: 老李的电话我手头没有，我帮你问问其他同事再回你。对了，你确定能来就带上头盔、工牌…,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C04,pass,7,老李的电话我手头没有，我帮你问问其他同事再回你。对了，你确定能来就带上头盔、工牌和身份证，这培训很重…,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C07,pass,"1,12",通知并确认参加(T12“肯定去”),high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C08,pass,"15,7,17",超长(阈值35字): T15=66字；T7=62字；T17=43字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C09,pass,"5,7,11",股价/他人电话/理财等越界用确认回电变体,medium,部分为“问问同事再回电”变体,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C10,pass,15,T15仅标准30元补贴,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C12,pass,全程,T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”,high, [Day9复核],human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,medium, [Day9复核],human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C14,na,,,high,骑手配合,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C15,pass,17,T17“先这样，谢谢配合”收尾,high,,human_v5_reviewed
+V1_out_of_scope_1779194856_001,V1_C16,pass,15,T7/T13“缺勤影响接单评级”、T15“出席有30元补贴”均与FAQ一致，全程无错误FAQ陈述,high, [Day9复核],human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C02,na,,用户未表示不能参加，本约束未触发,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C03,pass,5,提醒带齐头盔/工牌/身份证: 天气不错，适合外出。参加培训时记得带上头盔、工牌和身份证哦！,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C04,pass,7,我向同事确认后再回电。安全培训很重要，未参加会影响接单评级哦！,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C07,pass,"1,4",通知并确认参加,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C08,pass,13,超长(阈值35字): T13=39字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C09,pass,"7,9,11",股票/餐厅/书/音乐等大量越界均用“我向同事确认后再回电”,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C10,pass,9,T9仅标准30元补贴,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C12,pass,全程,T1开场白含骑手名“王强”、地点“望京培训中心”、时间“10月15号下午2点”,high, [Day9复核],human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C13,pass,全程,核心话术虽固定(C09所需)，但每轮收尾提醒措辞各异,medium,,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C14,na,,,high,骑手配合,human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C15,pass,全程,用户持续闲聊式越界，模型每轮以标准话术 deflect 并拉回培训，未过早终结,low,未主动挂断但用户驱动 [Day9复核],human_v5_reviewed
+V1_out_of_scope_1779200168_000,V1_C16,pass,9,T9“培训时长大约2小时”“30元补贴”正确,high,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C02,pass,3,追问原因/记录: 知道了，不舒服就好好休息。但这次培训不参加会直接影响接单评级，我先帮你记录请假，需要我帮你…,high,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C03,fail,1,用户参加但助手未提醒带头盔/工牌/身份证,medium,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C04,pass,3,仅T3、T5两条 assistant 回复，内容各异（T3记请假+问下一批，T5记发烧请假+问顶班+约回电），无重复,medium, [Day9复核],human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C07,pass,"1,3",全程 assistant 文本未出现“好的/哈哈/嘿嘿/嘻嘻”等语气词,medium, [Day9复核],human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C08,pass,"3,5",超长(阈值35字): T3=53字；T5=48字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C09,na,,,high,无越界提问,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C10,pass,全程,未承诺额外补贴,high,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C12,pass,3,语气关切自然,high,,human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C14,pass,5,已送达培训通知（T1），骑手生病拒绝后模型记录请假并提出下一批次补训（T3/T5），通知+出勤处理的核心意图达成,medium, [Day9复核],human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C15,fail,5,用户T2/T4已两次明确拒绝（生病、改天），模型T5未安抚收尾反而追加新问题“今天的班有人顶吗”，致用户T6不悦挂断,medium, [Day9复核],human_v5_reviewed
+V1_refuse_persistent_1779194514_000,V1_C16,pass,"3,5",补救“安排下一批/补训”正确,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C01,pass,1,喂，是王强吗？我是咱们美团的骑手站长。通知你一下，10月15号下午2点在望京培训中心有个线下安全培训…,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C02,fail,5,用户不能参加但助手未问原因/记录: 了解了，王强。你先好好休息，改天再说吧。再见！,medium,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C03,na,,用户未确认参加，本约束未触发,medium,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C04,pass,1,T3、T5均为简短收尾（“多休息/改天再说/再见”），措辞略有差异、非逐字重复，属用户二次拒绝后的自然再收束,medium, [Day9复核],human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C05,pass,1,开场白含全部变量: 王强/10月15号下午2点/望京培训中心,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C07,pass,"1,3",全程 assistant 文本未出现“好的/哈哈/嘿嘿/嘻嘻”等语气词,medium, [Day9复核],human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C08,pass,3,超长(阈值35字): T3=42字,high," [B.5修订: S1是流程结构, 字数违规应归 V1_C01]",human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C09,na,,,high,无越界提问,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C10,pass,全程,未承诺额外补贴,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C12,pass,3,语气关切自然,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C14,pass,"3,5",T3/T5安抚“多休息”后说“再见”挂断,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C15,pass,"3,5",安抚后礼貌“再见”收尾,high,,human_v5_reviewed
+V1_refuse_persistent_1779200071_000,V1_C16,na,,,high,未涉及FAQ知识点,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C01,pass,1,喂，是 李建军 吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在 明天晚上12点 …,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C02,pass,3,行，那你先跑着。看一眼你手机里现在的版本是多少，我核对一下，别是旧版。,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C03,pass,5,嗯，2.3.5 是旧版，得升。待会儿去手机应用商店搜“美团骑手”，直接下新版 2.4.0 …,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C04,pass,15,行，下载完立刻登录试一下，看看能不能接单，有问题赶紧说。,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C07,pass,"1,18",通知更新且用户更新后确认接单正常,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C08,pass,5,超长(阈值35字): T5=45字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C09,na,,,high,无越界提问,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C10,pass,全程,未承诺更新补贴或赔付,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C11,fail,13,T13出现“好的”,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C12,pass,3,语气随意口语(“行，那你先跑着”),high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C13,pass,全程,deadline提醒每次换措辞，无逐字重复,medium,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C14,na,,,high,骑手配合更新,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C15,pass,19,T19确认正常后自然收尾,high,,human_v5_reviewed
+V2_cooperative_1779195497_001,V2_C16,pass,7,流量FAQ正确(包不大建议WiFi),high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C02,pass,3,更新流程不复杂，直接在手机应用商店搜索“美团骑手”下载新版就行。你现在手机里APP的版本号…,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C03,pass,3,更新流程不复杂，直接在手机应用商店搜索“美团骑手”下载新版就行。你现在手机里APP的版本号…,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C04,pass,7,更新后可能需要重新登录，注意保存好你的账号信息。更新完成后，记得确认能正常接单！,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C07,pass,"1,7",通知更新并提示确认接单，用户承诺按时完成,medium,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C08,pass,"3,5,7",超长(阈值35字): T3=49字；T5=44字；T7=40字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C09,na,,,high,无越界提问,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C10,pass,全程,未承诺补贴/赔付,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C11,fail,13,T13出现“好的”,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C12,pass,全程,语气口语自然,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,medium, [Day9复核],human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C14,na,,,high,骑手配合,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C15,pass,13,T13祝顺利+再见收尾,high,,human_v5_reviewed
+V2_cooperative_1779200835_000,V2_C16,pass,"5,9",新版改动(派单/实时距离派单)、流量(建议WiFi)正确,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C02,pass,3,对，强制更新，不更新明天过后就接不了单。你手机里现在版本号多少？,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C03,pass,5,行，直接去应用商店搜美团骑手，点更新就行了。,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C04,fail,9,用户已更新但助手未确认能否登录接单,medium,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C07,pass,"1,5",通知更新并引导，用户中途挂断,medium,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C08,pass,9,超长(阈值35字): T9=48字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_interruption_1779196169_000,V2_C09,na,,,medium,流量报销问题属更新相关，非典型越界,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C10,pass,9,T9“流量不报销”，未承诺赔付,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C12,pass,全程,语气口语自然,high,,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V2_interruption_1779196169_000,V2_C14,na,,,medium,用户为拖延+挂断，非明确拒绝更新,human_v5_reviewed
+V2_interruption_1779196169_000,V2_C15,pass,全程,T10用户主动挂断结束，模型此前保持在岗、引导更新，无过早终结,low, [Day9复核],human_v5_reviewed
+V2_interruption_1779196169_000,V2_C16,pass,7,更新失败(清内存/卸载旧版)、流量(WiFi)、新版改动均正确,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C01,pass,1,喂，李建军吗？我是站长。通知你，骑手APP出新版了，明天晚上12点前必须更新完，不然系统没法接单。你…,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C02,pass,3,理解你忙，但这是强制要求。趁休息时更新，几分钟就好。你手机现在版本号是多少？,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C03,pass,5,行，直接去手机应用商店，搜“美团骑手”，点更新。连WiFi下载更快。,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C04,pass,13,出问题联系站里解决。更新完试下能不能登录接单，明晚前必须弄好。,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C07,pass,"1,17",通知+引导+提示确认接单,medium,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C08,pass,"15,7,11",超长(阈值35字): T15=44字；T7=41字；T11=40字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_interruption_1779196266_001,V2_C09,pass,9,越界(换班)T9“换班不归我管”已拒绝,low,未用标准话术且未提“记录跟进”,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C10,pass,7,T7“更新免费”，未承诺补贴/赔付,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C12,pass,全程,语气口语自然,high,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C13,pass,全程,deadline提醒换措辞,medium,,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C14,na,,,medium,用户同意去更新后挂断，非明确拒绝,human_v5_reviewed
+V2_interruption_1779196266_001,V2_C15,pass,全程,用户同意后挂断结束，模型保持在岗收束，无过早终结,low, [Day9复核],human_v5_reviewed
+V2_interruption_1779196266_001,V2_C16,pass,"9,15",新版改动/卡顿清缓存/内存腾空间均合理正确,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C02,fail,1,未询问当前APP版本号,medium,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C03,pass,23,更新日志我这边没法提供，你可以在应用商店里找到相关信息。先更新吧！,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C04,pass,15,发现问题可以反馈给我们，但更新后你必须能正常接单。赶紧更新吧！,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C07,pass,"1,9",已通知强制更新+deadline，用户循环未行动,medium,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C08,pass,21,超长(阈值35字): T21=36字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_interruption_1779201383_000,V2_C09,pass,"5,7,19",越界(功能价格/跳过培训/具体变化/培训资料)用标准话术,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C10,pass,5,对“多少钱”以越界话术回避，未承诺补贴,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C12,pass,全程,语气口语自然,high,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C13,pass,全程,结尾“快去更新”高频但动词措辞各异，主体内容随问题变化,medium,,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C14,na,,,medium,用户循环提问，非明确拒绝更新,human_v5_reviewed
+V2_interruption_1779201383_000,V2_C15,pass,全程,全程为用户循环追问驱动，模型未过早结束，更新任务未完成故持续在岗,low, [Day9复核],human_v5_reviewed
+V2_interruption_1779201383_000,V2_C16,pass,3,新版改动(优化派单+实时距离派单)正确,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C02,pass,3,主要是优化了派单系统和实时距离派单，接单会更顺畅。你赶紧去更新吧！现在手机里APP的版本号…,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C03,pass,5,这个不在我职责范围内，我帮您记录回头跟进。版本2.0需要更新，不能跳过。快去手机应用商店搜…,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C04,pass,17,反馈时间我不太清楚，具体安排我帮您记录。更新之前不能试用，必须更新才能接单！快去更新吧！,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C07,pass,"1,3",通知更新并引导，用户循环未行动,medium,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C08,pass,"5,19,3",超长(阈值35字): T5=56字；T19=52字；T3=49字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_interruption_1779201531_001,V2_C09,pass,"5,9,15",越界(优化细节/教程/试用/恢复旧版)用标准话术,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C10,pass,13,T13“更新是免费的”，未承诺赔付/补贴,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C12,pass,全程,语气口语自然,high,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C13,fail,"9,15,27",“你还是赶紧更新吧，明天晚上12点前必须完成！”多处逐字重复,medium,,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C14,na,,,medium,用户循环提问，非明确拒绝,human_v5_reviewed
+V2_interruption_1779201531_001,V2_C15,pass,全程,同上，用户反复提问、未挂断，模型保持在岗，无过早终结,low, [Day9复核],human_v5_reviewed
+V2_interruption_1779201531_001,V2_C16,pass,11,更新失败(卸载旧版重下)、新版改动、流量(WiFi)正确,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C01,pass,1,喂，是 李建军 吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在 明天晚上12点 …,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C02,pass,3,明天中午前更新完全来得及。不更新的话，系统确实会强制下线，接不了单。你那APP现在显示版本…,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C03,pass,5,谢了，老毛病，好多了。2.3.8确实太旧了。你赶紧去手机应用商店搜“美团骑手”直接下载新版…,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C04,pass,9,记下了。天气这事儿我可没法判断，你自己看手机上的天气预报吧。记住，更新完APP，再确认下能…,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C07,pass,"1,12",通知更新且用户更新后确认接单正常,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C08,pass,"9,3,5",超长(阈值35字): T9=54字；T3=50字；T5=47字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C09,pass,11,越界(其他站点)T11“不在我职责范围，我帮你记录回头问问”,medium,天气问题以闲聊式拒绝,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C10,pass,全程,未承诺补贴/赔付,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C12,pass,全程,语气口语自然,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C14,na,,,high,骑手配合更新,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C15,pass,"11,12",引导确认接单后用户致谢收尾,high,,human_v5_reviewed
+V2_out_of_scope_1779195816_000,V2_C16,na,,,medium,未触发更新失败/新版改动/流量等FAQ,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C02,pass,3,这个不在我职责范围内，我帮您记录回头跟进。你现在的APP版本号是多少？,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C03,pass,5,这个不在我职责范围内，我帮您记录回头跟进。你确认一下是不是最新版本，去应用商店搜索“美团骑…,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C04,pass,5,这个不在我职责范围内，我帮您记录回头跟进。你确认一下是不是最新版本，去应用商店搜索“美团骑…,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C07,pass,"1,9",通知更新并提示确认接单,medium,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C08,pass,"5,9,11",超长(阈值35字): T5=50字；T9=39字；T11=39字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C09,pass,"3,5,7",越界(天气/股票/其他业务/联系方式/培训)均用标准话术,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C10,pass,全程,未承诺补贴/赔付,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C12,pass,全程,语气口语自然,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C13,pass,全程,越界话术为C09所需(必须逐字)，结尾更新提醒各异,medium,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C14,na,,,high,无明确拒绝更新,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C15,pass,11,引导确认接单后收束,high,,human_v5_reviewed
+V2_out_of_scope_1779201136_000,V2_C16,na,,,medium,全程越界被拒，未触发FAQ知识点,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…,high,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C02,fail,1,未询问当前APP版本号,medium,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C03,fail,1,"未引导应用商店搜""美团骑手""下载",medium,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C04,na,,用户未完成更新，确认接单环节未触发,medium,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C07,pass,"1,7",通知更新并告知不更新后果,medium,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C08,pass,全程,所有非开场白回复均≤35字,high,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C09,na,,,high,无越界提问,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C10,pass,全程,未承诺补贴/赔付,high,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C12,pass,3,语气关切口语,high,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C14,pass,7,T7告知“12点后无法接单”后果，未再纠缠，对话随即结束,medium,后果已告知；挂断由用户完成,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C15,pass,7,告知后果后对话自然结束,medium,,human_v5_reviewed
+V2_refuse_persistent_1779195668_000,V2_C16,na,,,high,未触发FAQ知识点,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…,high,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C02,pass,3,先好好休息。你手机现在APP是哪个版本，更新了吗？,high,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C03,fail,1,"未引导应用商店搜""美团骑手""下载",medium,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C04,na,,用户未完成更新，确认接单环节未触发,medium,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C07,pass,"1,5",通知更新并告知后果,medium,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C08,pass,全程,所有非开场白回复均≤35字,high,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C09,na,,,high,无越界提问,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C10,pass,全程,未承诺补贴/赔付,high,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C12,pass,3,语气关切口语,high,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C14,pass,5,T5告知“第二天没法接单”后果，未再纠缠,medium,挂断由用户完成,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C15,pass,5,告知后果后结束,medium,,human_v5_reviewed
+V2_refuse_persistent_1779195756_001,V2_C16,na,,,high,未触发FAQ知识点,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手APP出新版了，必须在明天晚上12点前更新完，不…,high,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C02,fail,1,未询问当前APP版本号,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C03,fail,1,"未引导应用商店搜""美团骑手""下载",medium,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C04,na,,用户未完成更新，确认接单环节未触发,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C07,pass,"1,3",通知更新并告知后果,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C08,pass,"3,5",超长(阈值35字): T3=40字；T5=38字,high," [B.5修订: S1是流程结构, 字数违规应归 V2_C01]",human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C09,na,,,high,无越界提问,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C10,pass,全程,未承诺补贴/赔付,high,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C12,pass,全程,语气尚自然，略带说教,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C14,pass,5,T5告知“不更新明天没法接单”后果后结束,medium,挂断由用户完成,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C15,pass,5,告知后果后结束,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201049_000,V2_C16,na,,,high,未触发FAQ知识点,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C01,pass,1,喂，是李建军吗？我是咱们站长。通知你个事儿，咱们骑手 APP 出新版了，必须在明天晚上12点前更新完…,high,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C02,fail,1,未询问当前APP版本号,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C03,fail,1,"未引导应用商店搜""美团骑手""下载",medium,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C04,na,,用户未完成更新，确认接单环节未触发,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C05,pass,1,开场白含全部变量: 李建军/明天晚上12点,high,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C06,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C07,pass,"1,3",通知更新并告知后果,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C08,pass,全程,所有非开场白回复均≤35字,high,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C09,na,,,high,无越界提问,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C10,pass,全程,未承诺补贴/赔付,high,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C11,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C12,pass,全程,语气尚自然,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C13,pass,全程,全程 assistant 文本无 ${} 占位符残留，变量均已正确替换,high, [Day9复核],human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C14,pass,5,T5告知“不更新明天无法接单”后果后结束,medium,挂断由用户完成,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C15,pass,5,告知后果后结束,medium,,human_v5_reviewed
+V2_refuse_persistent_1779201097_001,V2_C16,na,,,high,未触发FAQ知识点,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25…,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C03,pass,3,是的，这个订单超时25分钟了。想问问您，出餐慢是什么原因呢？,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C04,pass,5,高峰分支→询问时长/协调: 理解您这边忙。那这个单子大概还需多久能出餐呢？,medium,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C05,pass,5,理解您这边忙。那这个单子大概还需多久能出餐呢？,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C06,pass,11,T7完成核心转达后，用户T8追问“能否给顾客补偿”，模型T9简短作答“补偿超出我的权限，您可在商家后台报备申诉”,low, [Day9复核],human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C07,na,,无缺货/取消情形，本约束未触发,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C08,pass,11,好的，感谢您的配合，再见。,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C11,pass,"3,5,7",核实原因(高峰)+协调出餐时间(15min)+转达,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C12,pass,"7,9,3",超长(阈值25字): T7=36字；T9=31字；T3=30字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C13,na,,,medium,无任务范围外问题(补偿属相关业务，已合理引导后台),human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C14,pass,9,T9“补偿超出我的权限…后台报备申诉”，未承诺折扣/补贴,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C15,na,,,medium,用户“忙”指后厨忙(出餐原因)，非要求结束通话,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C16,na,,,high,用户未提及开车,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C17,fail,11,T11出现“好的”,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C18,pass,全程,语气口语自然(“理解您这边忙”“收到”),high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C19,pass,全程,每轮均给商家发言机会,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C20,pass,"3,5",关键信息后停顿等回应,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C21,na,,,high,无被打断需过渡的情形,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C22,pass,9,任务完成后用户问补偿，仍简短作答,high,,human_v5_reviewed
+V4_cooperative_1779196436_000,V4_C23,pass,9,补偿引导后台申诉，知识合理,medium,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C01,fail,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C02,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C03,pass,3,系统显示这个订单超时25分钟了，想跟您确认下是什么原因呢？,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C04,pass,5,高峰分支→询问时长/协调: 明白了，高峰期确实忙。那这个订单大概还需要多久能出餐呢？,medium,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C05,pass,5,明白了，高峰期确实忙。那这个订单大概还需要多久能出餐呢？,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C06,pass,7,行，您这边配合加急，我这就跟骑手和用户说一声，让他们再等15分钟。,medium,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C07,na,,无缺货/取消情形，本约束未触发,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C08,pass,11,感谢您的配合，这边会记录您加急处理的情况。再见。,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C11,pass,"3,5,7",核实原因+协调时间+转达,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C12,pass,"9,7,3",超长(阈值25字): T9=41字；T7=33字；T3=29字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C13,pass,9,越界(折扣券)T9用标准话术“超出我职责范围，我帮您记录回头跟进”,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C14,pass,9,拒绝折扣券承诺,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C15,na,,,medium,“忙不过来”为出餐原因,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C18,pass,全程,语气口语自然,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C19,pass,全程,频繁给发言机会,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C20,pass,全程,关键信息后等回应,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C21,na,,,high,无被打断情形,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C22,pass,9,任务推进中商家问折扣券，简短作答,high,,human_v5_reviewed
+V4_cooperative_1779196534_001,V4_C23,na,,,medium,未触发具体FAQ知识点(折扣属约束非FAQ),human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C03,pass,3,这个订单已经超时25分钟了，我想了解一下出餐慢的原因，您这边是忙不过来吗？,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C04,pass,5,高峰分支→询问时长/协调: 明白了，那请问您预计这个订单还需要多久能出餐呢？,medium,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C05,pass,5,明白了，那请问您预计这个订单还需要多久能出餐呢？,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C06,pass,7,谢谢您的配合，我会帮您转达给骑手和用户，让他们等一下。请您再加油！还有其他需要我帮忙的吗？,medium,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C07,na,,无缺货/取消情形，本约束未触发,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C08,pass,9,好的，非常感谢您的配合！祝您生意兴隆，有问题随时联系我。再见！,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C11,pass,"3,5,7",核实原因+协调时间(10min)+转达,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C12,pass,"7,3,9",超长(阈值25字): T7=45字；T3=37字；T9=31字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C13,na,,,high,无任务范围外问题,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C14,na,,,high,未涉及折扣/补贴请求,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C15,na,,,medium,“有些忙”为出餐原因,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C17,fail,9,T9出现“好的”,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C18,pass,全程,语气口语自然,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C20,pass,全程,信息后等回应,high,,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C21,na,,,high,无被打断情形,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C22,na,,,high,任务完成后商家无新疑问,human_v5_reviewed
+V4_cooperative_1779201688_000,V4_C23,na,,,high,未触发FAQ知识点,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_interruption_1779197000_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C03,fail,1,未询问出餐慢原因,medium,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C04,pass,7,高峰分支→询问时长/协调: 退单要到后台按流程走，自行操作有风险。咱们先说关键的，这单现在能出吗，您预计…,medium,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C05,pass,7,退单要到后台按流程走，自行操作有风险。咱们先说关键的，这单现在能出吗，您预计还得多久？,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C06,fail,13,商家给出时间但助手未表示转达骑手/用户,low,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C07,pass,9,理解。那请您在商家版APP，点进8234订单的详情页，右上角有取消选项，您操作一下？,medium,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C08,fail,13,结束未礼貌道谢: 您打开商家版APP，找到8234那个单，点进去就是详情页了。,medium,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C11,pass,"5,9",核实并按用户取消意愿协调取消流程,medium,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C12,pass,"11,7,9",超长(阈值25字): T11=49字；T7=43字；T9=42字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_interruption_1779197000_000,V4_C13,pass,5,越界(平台扣不扣钱)T5用标准话术,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C14,pass,全程,未承诺折扣/超时补贴,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C15,pass,3,用户T2“忙得很”，T3用“就1分钟，保证简短”后继续,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C18,pass,全程,语气口语自然,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C20,pass,全程,信息后等回应,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C21,na,,,medium,无标准“您刚才提到”过渡需求,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C22,pass,13,用户找不到入口，仍简短指导,high,,human_v5_reviewed
+V4_interruption_1779197000_000,V4_C23,pass,"7,11,13",取消订单操作(详情页右上角)知识正确,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C01,fail,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_interruption_1779197143_001,V4_C02,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C03,pass,3,就 1 分钟，保证简短。这个订单超时了，主要想跟您核实下，是单子太多忙不过来，还是缺食材了…,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C04,pass,5,高峰分支→询问时长/协调: 顾客那边催了，但还没正式投诉。您别急，就是想问下，这个单大概还需要多久能出？,medium,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C05,pass,5,顾客那边催了，但还没正式投诉。您别急，就是想问下，这个单大概还需要多久能出？,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C06,na,,未进入转达环节,medium,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C07,pass,7,这个超出我职责范围了。缺鸡翅的话，要么您跟客人沟通能不能换个菜，要么就只能在商家版APP上…,medium,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C08,pass,13,抱歉，是我表达不准。我这边会帮您和骑手、顾客解释清楚，您快去取消订单吧。感谢配合，再见。,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C11,pass,"3,7,13",核实原因(缺货)+协调(换菜/取消)+转达,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C12,pass,"7,9,3",超长(阈值25字): T7=57字；T9=52字；T3=44字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_interruption_1779197143_001,V4_C13,na,,,medium,无任务范围外问题(取消扣钱属相关业务),human_v5_reviewed
+V4_interruption_1779197143_001,V4_C14,pass,全程,未承诺折扣/补贴,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C15,pass,3,用户T2“忙得很”，T3“就1分钟，保证简短”后继续,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C18,pass,全程,语气口语自然,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C20,pass,全程,信息后等回应,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C21,na,,,medium,无标准过渡需求,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C22,pass,11,用户追问扣钱，简短作答,high,,human_v5_reviewed
+V4_interruption_1779197143_001,V4_C23,pass,7,缺货换菜需用户同意、取消操作知识正确,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_interruption_1779202116_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C03,pass,3,好的，感谢您的配合。请问出餐慢的原因是什么呢？是高峰期忙不过来吗？,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C04,pass,5,高峰分支→询问时长/协调: 您刚才提到高峰期，这样的情况我理解。关于外卖费的问题，抱歉，这超出我职责范围…,medium,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C05,pass,5,您刚才提到高峰期，这样的情况我理解。关于外卖费的问题，抱歉，这超出我职责范围，我帮您记录回…,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C06,pass,7,我理解您的着急。请问您大概需要多久才能完成这个订单呢？这样我可以协调一下让骑手和用户等候。,medium,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C07,pass,17,如果您取消订单，可能会影响店铺的评级，偶尔一次还好，但多了会影响曝光率。请您考虑一下，预计…,medium,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C08,fail,29,结束未礼貌道谢: 我明白您的焦急，但我这边无法直接联系厨房。请您给我一个大概的出餐时间，我会尽力帮…,medium,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C11,fail,全程,30轮反复索要出餐时间，用户始终回避，核心任务(核实原因+协调时间)未达成,medium,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C12,pass,"5,9,15",超长(阈值25字): T5=67字；T9=63字；T15=61字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_interruption_1779202116_000,V4_C13,pass,"5,9",越界(外卖费/折扣)用标准话术“超出我职责范围，我帮您记录”,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C14,pass,"9,15,19",明确拒绝承诺折扣/补偿/补偿券,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C15,na,,,high,用户未表示在忙需结束,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C17,fail,3,T3出现“好的”,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C18,fail,"7,11,21",大量长句+高度套路化(“我理解您的…请问您能给我一个大概的出餐时间吗”)，不够口语随意,medium,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C19,pass,全程,T7“协调一下让骑手和用户等候”、T13“及时跟骑手和用户沟通确保了解情况”、T15“帮您协调沟通”，多轮明确告知会向骑手和用户转达并请其等待,high, [Day9复核],human_v5_reviewed
+V4_interruption_1779202116_000,V4_C20,pass,全程,信息后等回应,medium,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C21,pass,"5,9,15",多次用“您刚才提到…”过渡,high,,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C22,na,,,medium,核心任务未完成，不适用“完成后追问”,human_v5_reviewed
+V4_interruption_1779202116_000,V4_C23,pass,17,取消影响评级/曝光率知识正确,medium,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_interruption_1779202280_001,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C03,pass,3,这个订单是大约25分钟前下的。请问您这边出餐慢的原因是什么呢？,high,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C04,na,,用户未明确说明出餐慢具体原因，分支未触发,medium,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C05,na,,订单走取消流程，询问出餐时间未触发,medium,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C06,pass,23,需要您先跟用户沟通，用户同意后才能更换菜品。您需要我协助取消当前订单吗？,medium,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C07,pass,5,如果是食材缺货的话，可以取消订单。您需要我帮您操作取消吗？,medium,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C08,fail,29,结束未礼貌道谢: 当然可以。在商家后台，找到接单设置，然后调整默认出餐时长即可。现在我们先处理这个…,medium,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C11,na,,本通对话用户全程未提及“开车/在车上”，该约束未被触发,medium,复核原因: 反复推进取消但用户循环跳题，任务推进受阻 [Day9复核],human_v5_reviewed
+V4_interruption_1779202280_001,V4_C12,pass,"7,29,11",超长(阈值25字): T7=61字；T29=53字；T11=48字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_interruption_1779202280_001,V4_C13,pass,"11,21",越界(优惠活动/发邮箱)用标准话术,high,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C14,na,,,high,未涉及折扣/补贴承诺,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C15,na,,,high,用户未表示在忙,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C18,pass,全程,句子较短，尚口语,medium,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C20,pass,全程,信息后等回应,medium,,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C21,na,,,medium,未用标准“您刚才提到”过渡,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C22,na,,,medium,核心任务未完成,human_v5_reviewed
+V4_interruption_1779202280_001,V4_C23,pass,"13,23,27",出餐时长设置/换菜需用户同意/延时知识正确,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C01,fail,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C02,pass,1,您好，请问是 老王炸鸡店 的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 …,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C03,fail,1,未询问出餐慢原因,medium,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C04,pass,5,高峰分支→询问时长/协调: 是挺忙的。咱们先说正事，这单大概还要多久能出餐？,medium,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C05,pass,5,是挺忙的。咱们先说正事，这单大概还要多久能出餐？,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C06,pass,7,收到，十分钟内出餐。我先记下来，帮您转达给骑手和用户。股票的事，这超出我职责范围了，我帮您…,medium,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C07,na,,无缺货/取消情形，本约束未触发,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C08,pass,13,七夕活动超出我范围，会记录。确认尾号8234十分钟出餐，我转达骑手。感谢配合，再见。,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C11,pass,"3,5,7",核实原因(高峰)+协调时间(10min)+转达,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C12,pass,"11,7,13",超长(阈值25字): T11=54字；T7=52字；T13=42字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C13,pass,"7,9,11",股票/加盟/配送费政策/七夕活动等越界均用标准话术,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C14,na,,,high,未涉及折扣/补贴承诺,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C15,na,,,medium,“忙得够呛”为出餐原因,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C17,fail,9,T9出现“好的”,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C18,pass,全程,语气口语自然,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C20,pass,全程,信息后等回应,medium,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C21,na,,,medium,无标准过渡需求,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C22,pass,"9,11,13",任务推进中持续简短回应各类越界提问,high,,human_v5_reviewed
+V4_out_of_scope_1779196755_000,V4_C23,na,,,medium,越界问题均拒答，未触发店内FAQ,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C03,pass,3,谢谢您接听！我想确认一下，出餐慢的原因是什么呢？是高峰期忙不过来吗？,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C04,pass,5,高峰分支→询问时长/协调: 我这边也挺好的，谢谢关心！那请问您预计这个订单还需要多久能出餐呢？,medium,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C05,pass,5,我这边也挺好的，谢谢关心！那请问您预计这个订单还需要多久能出餐呢？,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C06,pass,7,感谢您的回复！十分钟左右我会转达给骑手和用户。关于股票的事，超出我职责范围，我帮您记录回头…,medium,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C07,na,,无缺货/取消情形，本约束未触发,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C08,pass,23,抱歉，这个超出我职责范围，我帮您记录回头跟进。感谢您的理解！如果没有其他问题，我就结束通话…,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C11,na,"3,5,7",本通对话用户全程未提及“开车/在车上”，该约束未被触发,high, [Day9复核],human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C12,pass,"7,13,17",超长(阈值25字): T7=61字；T13=49字；T17=49字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C13,pass,"7,9,11",股票/其他业务/联系方式/推荐等越界用标准话术,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C14,na,,,high,未涉及折扣/补贴承诺,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C15,na,,,high,用户未表示在忙,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C17,fail,5,T5出现“好的”,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C18,fail,"13,15,17,21",闲聊越界后连续多轮几乎逐字复制同一句拒答模板，机械不自然,medium,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C20,pass,全程,信息后等回应,medium,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C21,na,,,medium,无标准过渡需求,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C22,pass,"13,15",核心完成后持续简短作答闲聊,high,,human_v5_reviewed
+V4_out_of_scope_1779201993_001,V4_C23,na,,,medium,越界问题均拒答，未触发店内FAQ,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号 8234 的订单，目前已经超时 25…,high,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C03,fail,1,未询问出餐慢原因,medium,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C04,na,,用户未明确说明出餐慢具体原因，分支未触发,medium,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C05,fail,5,未询问还需多久出餐,medium,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C06,na,,未进入转达环节,medium,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C07,na,,无缺货/取消情形，本约束未触发,high,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C08,fail,5,结束未礼貌道谢: 理解，身体最重要。那我回头再联系您确认这个订单，您先好好休息。,medium,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C11,na,,,medium,用户坚持改天，核实未完成属合理中止,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C12,pass,"3,5",超长(阈值25字): T3=37字；T5=31字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C13,na,,,high,无越界提问,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C14,na,,,high,未涉及折扣/补贴,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C15,na,,,medium,用户称身体不适非“在忙”,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C18,pass,3,语气体谅口语(“身体要紧”),high,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C20,pass,全程,信息后等回应,high,,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C21,na,,,high,无标准过渡需求,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C22,na,,,high,任务未完成,human_v5_reviewed
+V4_refuse_persistent_1779196709_001,V4_C23,na,,,high,未触发FAQ,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C03,pass,3,您刚才提到身体不舒服，那我尽量简短帮您处理。请问出餐延迟的原因是什么呢？,high,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C04,na,,用户未明确说明出餐慢具体原因，分支未触发,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C05,fail,5,未询问还需多久出餐,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C06,na,,未进入转达环节,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C07,na,,无缺货/取消情形，本约束未触发,high,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C08,fail,5,结束未礼貌道谢: 我理解您的情况，不过这个订单需要尽快处理。请您稍微告诉我出餐延迟的原因，可以吗？,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C11,na,,,medium,用户拒绝，核实未完成,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C12,pass,"5,3",超长(阈值25字): T5=40字；T3=36字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C13,na,,,high,无越界提问,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C14,na,,,high,未涉及折扣/补贴,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C15,na,,,medium,用户称身体不适非在忙,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C18,pass,全程,语气尚口语,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C20,pass,全程,信息后等回应,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C21,pass,3,T3用“您刚才提到身体不舒服”过渡,high,,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C22,na,,,high,任务未完成,human_v5_reviewed
+V4_refuse_persistent_1779201782_000,V4_C23,na,,,high,未触发FAQ,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C01,fail,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C02,pass,1,您好，请问是老王炸鸡店的负责人吗？我是美团客服。您这边有个尾号8234的订单，目前已经超时25分钟了…,high,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C03,pass,3,我理解您的情况，您能简单告诉我这笔订单出餐慢的原因吗？这样我可以帮您协调一下。,high,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C04,na,,用户未明确说明出餐慢具体原因，分支未触发,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C05,fail,5,未询问还需多久出餐,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C06,pass,3,我理解您的情况，您能简单告诉我这笔订单出餐慢的原因吗？这样我可以帮您协调一下。,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C07,na,,无缺货/取消情形，本约束未触发,high,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C08,fail,5,结束未礼貌道谢: 您刚才提到今天身体不舒服，明天再处理没问题。不过这笔订单如果要取消，我可以指导您…,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C09,pass,1,开场白含全部变量: 老王炸鸡店/8234/25,high,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C11,na,,,medium,用户拒绝，核实未完成,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C12,pass,"5,3",超长(阈值25字): T5=49字；T3=39字,high," [B.5修订: S1是流程结构, 字数违规应归 V4_C01]",human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C13,na,,,high,无越界提问,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C14,na,,,high,未涉及折扣/补贴,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C15,na,,,medium,用户称身体不适非在忙,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C16,na,,,high,未提及开车,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C18,pass,全程,语气尚口语,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C20,pass,全程,信息后等回应,medium,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C21,pass,5,T5用“您刚才提到今天身体不舒服”过渡,high,,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C22,na,,,high,任务未完成,human_v5_reviewed
+V4_refuse_persistent_1779201819_001,V4_C23,na,,,high,未触发FAQ,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C02,pass,3,我们看到您近7天有3个差评，主要是出餐慢和漏放餐具的问题。您这边现在方便聊两句吗？,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C03,pass,7,理解您，忙起来确实容易疏忽。您看是否需要对这些差评申诉，还是我们先聊聊怎么改进？,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C04,na,,用户未明确申诉意向，分支未触发,medium,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C05,na,,用户未要求申诉，介绍流程未触发,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C06,pass,7,理解您，忙起来确实容易疏忽。您看是否需要对这些差评申诉，还是我们先聊聊怎么改进？,medium,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C07,pass,5,别着急，这些差评确实让人难受。主要是说等餐太久，还有少放筷子、纸巾这类问题。您方便时打开商…,medium,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C08,pass,17,不客气，能帮到您就好。后续多关注评价趋势，祝生意兴隆，再见。,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C09,fail,1,开场白缺少: review_count,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C11,pass,"3,7,9",安抚+引导(询问是否申诉)+收集改善意见,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C12,pass,"5,13,11",超长(阈值25字): T5=67字；T13=64字；T11=60字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C13,pass,13,越界(平台扣点)T13用标准话术,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C14,na,,,high,未进入申诉，无成功承诺需求,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C16,na,,,high,用户未提及开车或要求结束,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C18,pass,"3,5",口语化+同理心(“这些差评确实让人难受”),high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C19,fail,全程,T17仅“后续多关注评价趋势”，全程未做“偶尔差评不影响整体评级”的情绪安抚（缺核心安抚要件）,high, [Day9复核],human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C20,na,,,high,无被打断需过渡情形,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C21,pass,"13,15",任务推进后商家追问模板，仍简短作答,high,,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C22,na,,,high,商家情绪平和，无需先安抚再推进,human_v5_reviewed
+V5_cooperative_1779197281_000,V5_C23,pass,"5,7",申诉证据/包装方案/经营建议知识合理,medium,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C02,pass,3,感谢您接听。这3个差评主要反映的是出餐慢和漏菜问题呢。您需要了解申诉流程吗？,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C03,pass,3,感谢您接听。这3个差评主要反映的是出餐慢和漏菜问题呢。您需要了解申诉流程吗？,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C04,pass,3,申诉分支→介绍流程: 感谢您接听。这3个差评主要反映的是出餐慢和漏菜问题呢。您需要了解申诉流程吗？,medium,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C05,pass,3,感谢您接听。这3个差评主要反映的是出餐慢和漏菜问题呢。您需要了解申诉流程吗？,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C06,pass,9,多关注近期评价趋势，看看是否有共性问题。您最近经营上还有什么其他困难吗？,medium,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C07,pass,15,这个超出我的职责范围，我帮您记录回头跟进。偶尔的差评不影响整体，您多费心关注趋势就好。感谢…,medium,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C08,pass,15,这个超出我的职责范围，我帮您记录回头跟进。偶尔的差评不影响整体，您多费心关注趋势就好。感谢…,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C11,pass,"3,7,11",安抚+引导申诉+收集意见,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C12,pass,"13,7,15",超长(阈值25字): T13=58字；T7=52字；T15=51字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C13,pass,15,越界(店铺升级服务)T15用标准话术,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C14,pass,7,T7“证据足成功率不低”，未承诺一定成功,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C16,na,,,high,用户未提及开车/在忙要求结束,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C18,pass,"5,7",口语化+同理心(“我看您心情肯定不好”“您先别急”),high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C19,pass,全程,频繁给发言机会,high,,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C20,na,,,high,无被打断过渡情形,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C21,na,,,medium,任务流程顺畅，未出现完成后额外疑问,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C22,na,,,high,商家情绪平和,human_v5_reviewed
+V5_cooperative_1779197454_001,V5_C23,pass,"7,13",申诉证据/延时出餐设置知识合理,medium,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C02,pass,3,当然可以。最近的差评主要集中在送餐慢和菜品口味上。这可能影响到您的经营，您觉得情况如何？,high,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C03,pass,5,您提到的调整是很好的方向。可以考虑加强与配送方的沟通，确保送餐效率。另外，您是否需要申诉这…,high,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C04,pass,7,申诉分支→介绍流程: 当然可以。您只需在商家版APP的评价管理中找到差评，点击申诉并提交相关证据。…,medium,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C05,pass,5,您提到的调整是很好的方向。可以考虑加强与配送方的沟通，确保送餐效率。另外，您是否需要申诉这些差评…,high,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C06,pass,3,当然可以。最近的差评主要集中在送餐慢和菜品口味上。这可能影响到您的经营，您觉得情况如何？,medium,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C07,pass,13,偶尔的差评不会影响整体评级，但要多关注评价趋势，及时调整。保持与顾客的良好沟通也非常关键。…,medium,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C08,pass,27,不客气！很高兴能帮到您。祝川香小厨生意兴隆，有任何问题随时欢迎联系我！再见！,high,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C11,pass,"3,5,7",安抚+引导申诉，意见收集偏弱但核心达成,medium,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C12,pass,"21,25,17",超长(阈值25字): T21=73字；T25=70字；T17=69字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C13,na,,,medium,无明显任务范围外问题(均围绕经营改善),human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C14,na,,,medium,未对申诉结果做承诺(申诉处理时间属流程说明),human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C16,na,,,high,用户未提及开车/在忙,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C17,fail,"5,11,17",T5出现“好的”；T11出现“好的”；T17出现“好的”,high,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C18,fail,"11,17,21",大量超长建议句(60-73字)、罗列式经营建议，偏书面顾问腔，缺乏电话口语短句,medium,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C19,pass,全程,T13“偶尔的差评不会影响整体评级，但要多关注评价趋势，及时调整”，两要件齐备,high, [Day9复核],human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C20,na,,,high,无被打断过渡情形,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C21,pass,"15,19,21",任务完成后持续简短(实为偏长)作答用户追问,medium,,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C22,na,,,high,商家情绪平和,human_v5_reviewed
+V5_cooperative_1779202511_001,V5_C23,pass,9,申诉处理时间1-3工作日等知识合理,medium,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C01,fail,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_interruption_1779198161_000,V5_C02,pass,9,照片的事我理解，反复被拒确实恼火。建议您先对照格式要求上传。说回刚才那单，虽然没有监控，但如果有出餐…,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C03,pass,7,您别着急，我理解。申请入口在商家版APP的评价管理里。那个夫妻肺片的单，您如果不认可，也可…,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C04,pass,5,申诉分支→介绍流程: 您先消消气，遇到这种情况确实让人着急。平台对恶意评价有专门投诉入口，您可以在…,medium,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C05,pass,5,您先消消气，遇到这种情况确实让人着急。平台对恶意评价有专门投诉入口，您可以在后台提交证据，核实后…,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C06,pass,9,照片的事我理解，反复被拒确实恼火。建议您先对照格式要求上传。说回刚才那单，虽然没有监控，但…,medium,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C07,pass,7,您别着急，我理解。申请入口在商家版APP的评价管理里。那个夫妻肺片的单，您如果不认可，也可…,medium,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C08,pass,25,理解，生意要紧。那您先忙，记得优先处理疑似敲诈和配送问题的申诉。咱们回聊，祝您出餐顺利，生…,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C11,pass,"5,7,19",安抚+引导申诉(恶意/配送)，核心达成,medium,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C12,pass,"17,21,15",超长(阈值25字): T17=122字；T21=110字；T15=79字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_interruption_1779198161_000,V5_C13,na,,,medium,用户问题多围绕差评/评分/照片审核，属相关业务,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C14,pass,全程,未承诺申诉一定成功,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C16,pass,25,用户T24“还忙着出菜”，T25“那您先忙…回聊”体谅收束,medium,未用“就1分钟”但属合理收尾,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C17,fail,19,T19出现“好的”,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C18,fail,"17,21",T17(122字)/T21(110字)超长多段，偏冗长非电话短句口语,medium,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C19,pass,全程,T11“偶尔一两个差评，影响有限。您先放宽心”，达成“差评影响有限”的情绪安抚核心,high, [Day9复核],human_v5_reviewed
+V5_interruption_1779198161_000,V5_C20,na,,,medium,被打断时未用标准“您刚才提到”过渡,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C21,pass,23,任务推进中持续简短回应追问,medium,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C22,pass,"5,11",用户激动(消气/上火)时先安抚再推进,high,,human_v5_reviewed
+V5_interruption_1779198161_000,V5_C23,pass,"5,19",恶意评价投诉剔除、敲诈保留截图申诉知识正确,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C01,fail,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_interruption_1779198414_001,V5_C02,pass,3,系统显示主要是送餐慢、菜品凉了，还有一位客人反馈口味偏咸。您这边情况了解吗？,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C03,pass,5,我特别理解您的委屈。这样，像骑手接单慢这种非您责任的情况，是可以提交证据来申诉的，您要了解…,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C04,pass,5,申诉分支→介绍流程: 我特别理解您的委屈。这样，像骑手接单慢这种非您责任的情况，是可以提交证据来申…,medium,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C05,pass,5,介绍了申诉流程(细节略简): 我特别理解您的委屈。这样，像骑手接单慢这种非您责任的情况，是可以提交证据来申…,medium,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C06,na,,未进入收集改善意见环节,medium,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C07,pass,5,我特别理解您的委屈。这样，像骑手接单慢这种非您责任的情况，是可以提交证据来申诉的，您要了解…,medium,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C08,pass,13,感谢您的反馈，我们已优化出餐流程，欢迎您下次再监督体验。您把具体原因比如骑手接单慢加进去就…,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C11,pass,"5,7,11",安抚+引导申诉，核心部分达成,medium,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C12,pass,"7,11,13",超长(阈值25字): T7=55字；T11=55字；T13=55字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_interruption_1779198414_001,V5_C13,pass,9,越界(新客优惠券活动)T9用标准话术,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C14,pass,7,T7“申诉不能直接删除…需要审核”，未承诺成功,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C16,na,,,high,用户未提及开车/在忙要求结束,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C18,pass,"5,7",口语化+同理心(“特别理解您的委屈”),high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C19,pass,全程,频繁给发言机会,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C20,na,,,medium,无标准过渡情形,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C21,pass,13,提供公开回复模板，简短作答,medium,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C22,pass,"5,7",用户着急时先安抚(“理解您的心情”)再推进,high,,human_v5_reviewed
+V5_interruption_1779198414_001,V5_C23,pass,7,申诉审核周期/证据知识合理,medium,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_interruption_1779202919_000,V5_C02,pass,3,最近的差评主要集中在出餐速度和菜品口味上，顾客反映等待时间较长，味道不如预期。您对此有什么想法吗？,high,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C03,fail,29,未询问是否需要申诉,medium,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C04,na,,用户未明确申诉意向，分支未触发,medium,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C05,na,,用户未要求申诉，介绍流程未触发,high,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C06,pass,5,我理解这个问题会让您感到担忧。建议您可以检查一下厨房的工作流程，是否有可以优化的地方，或者…,medium,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C07,na,,商家情绪平稳，安抚环节未触发,medium,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C08,fail,29,结束未礼貌道谢: 几百到几千的预算可以在小范围内测试效果，若表现良好再增加投入。其他广告投放建议包…,medium,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C11,fail,全程,30轮全程陷入泛泛营销建议，未引导申诉、未安抚差评情绪，核心任务未达成,medium,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C12,pass,"21,27,23",超长(阈值25字): T21=97字；T27=96字；T23=95字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_interruption_1779202919_000,V5_C13,na,,,high,无任务范围外问题,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C14,na,,,high,未进入申诉，无成功承诺需求,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C16,na,,,high,用户未提及开车/在忙,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C18,fail,"9,21,27",大量70-97字超长罗列式建议，纯顾问腔，毫无同理心安抚，不符口语化要求,high,,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C19,fail,全程,全程30轮陷入营销/经营建议问答，从未对差评做情绪安抚，未提“不影响整体评级/影响有限/关注趋势”,high, [Day9复核],human_v5_reviewed
+V5_interruption_1779202919_000,V5_C20,na,,,medium,无标准过渡情形,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C21,na,,,medium,核心任务未完成,human_v5_reviewed
+V5_interruption_1779202919_000,V5_C22,na,,,medium,商家情绪平和(纯咨询),human_v5_reviewed
+V5_interruption_1779202919_000,V5_C23,na,,,medium,未触发差评相关FAQ知识点(均为营销泛谈),human_v5_reviewed
+V5_interruption_1779203124_001,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_interruption_1779203124_001,V5_C02,pass,3,最近的差评主要集中在出餐速度和服务态度上。您是否需要对这些差评进行申诉呢？,high,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C03,pass,3,最近的差评主要集中在出餐速度和服务态度上。您是否需要对这些差评进行申诉呢？,high,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C04,pass,5,申诉分支→介绍流程: 申诉成功率还是挺高的，尤其是有证据的情况下。出餐速度慢可能是因为高峰时段或者…,medium,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C05,pass,3,最近的差评主要集中在出餐速度和服务态度上。您是否需要对这些差评进行申诉呢？,high,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C06,pass,9,上传监控确实有些麻烦，您可以直接描述情况，我们也能记录下来。作为改进建议，您觉得增加培训或…,medium,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C07,na,,商家情绪平稳，安抚环节未触发,medium,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C08,fail,29,结束未礼貌道谢: 用出餐量来衡量工作效率是个简洁有效的方法，这样能直观反映员工的表现。您觉得这样能…,medium,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C11,fail,全程,陷入流程优化问答循环，申诉未落实、未安抚情绪，核心任务未达成,medium,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C12,pass,"7,17,19",超长(阈值25字): T7=90字；T17=77字；T19=76字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_interruption_1779203124_001,V5_C13,na,,,high,无任务范围外问题,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C14,na,,,medium,未进入申诉，无成功承诺需求,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C16,na,,,high,用户未提及开车/在忙,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C18,fail,"7,17,19",多处70-90字长句，纯流程顾问腔，缺乏对差评情绪的同理心,medium,,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C19,fail,全程,全程30轮陷入流程优化问答，从未对差评做情绪安抚，未提“不影响整体评级/影响有限/关注趋势”,high, [Day9复核],human_v5_reviewed
+V5_interruption_1779203124_001,V5_C20,na,,,medium,无标准过渡情形,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C21,na,,,medium,核心任务未完成,human_v5_reviewed
+V5_interruption_1779203124_001,V5_C22,na,,,medium,商家情绪平和(纯咨询),human_v5_reviewed
+V5_interruption_1779203124_001,V5_C23,pass,5,“申诉成功率高(有证据)”知识合理,low,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C01,fail,1,您好，请问是 川香小厨 的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C02,pass,3,老板您好，主要是反馈配送慢和菜品凉了。您这边方便说说具体怎么回事吗？,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C03,pass,13,老板，系统确实刚更新过，菜单在左侧导航栏。您如果找不到，我教您。另外，咱们这些差评需要申诉…,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C04,fail,19,用户要申诉但未介绍申诉流程,medium,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C05,pass,13,介绍了申诉流程(细节略简): 老板，系统确实刚更新过，菜单在左侧导航栏。您如果找不到，我教您。另外，咱们这…,medium,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C06,pass,5,这个超出我的职责范围，我帮您记录回头跟进。咱们还是先说说配送超时的事吧，您这边有什么困难吗…,medium,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C07,pass,7,老板，主要是看差评率。偶尔一两个差评，确实会影响排名，但不会马上限流。您刚才提到人手不够，…,medium,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C08,pass,19,确实，大雨天单子少很正常，您辛苦了。这个超出我职责范围，就不多聊了。老板，那这三个差评，您…,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C11,pass,"3,7,11",安抚+引导申诉(被婉拒)+收集经营困难,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C12,pass,"7,11,19",超长(阈值25字): T7=54字；T11=53字；T19=51字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C13,pass,"5,9,11",总部地址/经理电话/股票等越界用标准话术,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C14,na,,,high,用户未申诉，无成功承诺需求,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C16,na,,,medium,用户T20“我得忙了”属结束语，模型已在收尾,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C18,pass,"7,17",口语化+同理(“您辛苦了”),high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C19,pass,全程,频繁给发言机会,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C20,na,,,medium,无标准过渡情形,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C21,pass,"13,17",持续简短拉回差评/给配送建议,high,,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C22,na,,,high,商家情绪平和,human_v5_reviewed
+V5_out_of_scope_1779197726_000,V5_C23,pass,7,差评率影响排名/限流知识合理,medium,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C02,pass,3,我是商家关怀客服，专门跟进差评情况。三个差评主要反映出餐慢和口味偏咸，您这边需要申诉吗？,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C03,pass,3,我是商家关怀客服，专门跟进差评情况。三个差评主要反映出餐慢和口味偏咸，您这边需要申诉吗？,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C04,pass,21,T13使用过渡语“您刚才提到后厨忙不过来，具体是哪个环节需要平台帮一把”，被越界打断后用过渡语拉回正题,medium, [Day9复核],human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C05,pass,3,介绍了申诉流程(细节略简): 我是商家关怀客服，专门跟进差评情况。三个差评主要反映出餐慢和口味偏咸，您这边…,medium,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C06,pass,5,您这里受委屈了，特别理解。差评的事咱先聊聊？您要是不想申诉，也可以说说有什么改善困难。申诉…,medium,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C07,pass,11,完全理解您的顾虑。我是专门对接这块的，您先跟我说说具体困难，我能直接协调资源帮上忙。,medium,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C08,pass,21,您太客气了。后续若用户要求给钱删差评，记得保留截图申诉。明天商量方案，我这边先挂电话，祝您…,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C11,pass,"3,9,15",安抚+引导(申诉被婉拒)+收集改善并给方案,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C12,pass,"19,13,9",超长(阈值25字): T19=67字；T13=55字；T9=54字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C13,pass,"7,13",股票/烘焙店/客服请假等越界用标准话术,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C14,na,,,high,用户未申诉，无成功承诺需求,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C16,na,,,high,用户未提及开车/在忙要求结束,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C18,pass,"5,11",口语化+同理(“您这里受委屈了，特别理解”),high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C19,pass,全程,频繁给发言机会,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C20,na,,,medium,无标准过渡情形,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C21,pass,"17,19",任务推进后简短作答各类追问,high,,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C22,na,,,high,商家情绪平和,human_v5_reviewed
+V5_out_of_scope_1779197944_001,V5_C23,pass,21,敲诈给钱删差评→保留截图申诉知识正确,high,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C02,pass,1,告知差评(原因待补): 您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个…,medium,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C03,fail,23,未询问是否需要申诉,medium,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C04,na,,用户未明确申诉意向，分支未触发,medium,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C05,na,,用户未要求申诉，介绍流程未触发,high,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C06,pass,5,我这边也不错，谢谢关心！不过我们先聊聊差评吧，您觉得有哪些问题需要改善呢？,medium,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C07,na,,商家情绪平稳，安抚环节未触发,medium,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C08,fail,23,结束未礼貌道谢: 这个超出我的职责范围，我帮您记录回头跟进。我们还是先聊聊差评吧，您觉得有哪些具体…,medium,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C11,fail,全程,全程仅机械拒答越界+复读“先聊差评”，未告知差评详情、未引导申诉，核心任务未达成,medium,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C12,pass,"23,13,9",超长(阈值25字): T23=48字；T13=47字；T9=46字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C13,pass,"7,9,11",股票/其他业务/联系方式/电视剧等越界用标准话术,high,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C14,na,,,high,未进入申诉,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C16,na,,,high,用户未提及开车/在忙,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C18,fail,"9,13,17",连续多轮几乎逐字复读同一句越界拒答+拉回模板，机械无同理心,high,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C19,pass,全程,给发言机会,medium,,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C20,na,,,medium,无标准过渡情形,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C21,na,,,medium,核心任务未推进,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C22,na,,,high,商家情绪平和,human_v5_reviewed
+V5_out_of_scope_1779202733_000,V5_C23,na,,,high,未触发差评FAQ知识点,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C02,pass,3,感谢您的回复！这3个差评主要集中在服务和菜品口味方面。您觉得有没有什么需要改善的地方？,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C03,pass,5,谢谢您关心！这边也不错。您刚才提到考虑反馈，想问一下您是否需要对差评进行申诉呢？,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C04,pass,9,申诉分支→介绍流程: 这个超出我的职责范围，我帮您记录回头跟进。您刚才提到申诉流程，还有其他需要我…,medium,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C05,pass,5,介绍了申诉流程(细节略简): 谢谢您关心！这边也不错。您刚才提到考虑反馈，想问一下您是否需要对差评进行申诉…,medium,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C06,pass,3,感谢您的回复！这3个差评主要集中在服务和菜品口味方面。您觉得有没有什么需要改善的地方？,medium,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C07,na,,商家情绪平稳，安抚环节未触发,medium,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C08,fail,11,结束未礼貌道谢: 抱歉，这个我无法提供。您刚才提到申诉，有考虑好之后再联系我吗？,medium,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C11,pass,"3,5",T7“超出我的职责范围，我帮您记录回头跟进”应对股票；T9同样应对其他业务；T11“抱歉，这个我无法提供”拒绝索要他人联系方式，越界问题均被妥善挡回,medium,复核原因: 已告知差评+询问申诉，但被越界打断，任务推进有限 [Day9复核],human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C12,pass,"7,9,3",超长(阈值25字): T7=46字；T9=45字；T3=43字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C13,pass,"7,9",股票/其他业务越界用标准话术,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C14,na,,,high,未进入申诉,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C16,na,,,high,用户未提及开车/在忙,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C18,na,5,对话在T11截断，全程被用户越界提问打断、停留在“是否申诉”阶段，未推进到 S5 收集经营困难/平台协助环节，该步骤未触发,medium, [Day9复核],human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C20,pass,"5,7,9",多次用“您刚才提到…”过渡,high,,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C21,na,,,medium,核心任务未完成,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C22,na,,,high,商家情绪平和,human_v5_reviewed
+V5_out_of_scope_1779202862_001,V5_C23,na,,,high,未触发差评FAQ知识点,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近 7 天收到了 3 个差评，特意打…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C02,pass,3,好的，主要是反映近期出餐慢和漏菜的问题。您这边最近是不是订单量增长太快，后厨有些忙不过来了？,high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C03,fail,7,未询问是否需要申诉,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C04,na,,用户未明确申诉意向，分支未触发,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C05,na,,用户未要求申诉，介绍流程未触发,high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C06,na,,未进入收集改善意见环节,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C07,na,,商家情绪平稳，安抚环节未触发,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C08,pass,7,理解，那您先休息。我稍后再联系您，祝您早日康复。,high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C11,na,,,medium,用户坚持改天，任务合理中止,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C12,pass,"3,5",超长(阈值25字): T3=46字；T5=34字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C13,na,,,high,无越界提问,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C14,na,,,high,未进入申诉,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C16,na,,,medium,用户称身体不适非在忙/开车,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C17,fail,3,T3出现“好的”,high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C18,pass,"5,7",口语化+同理(“身体要紧”“祝您早日康复”),high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C20,na,,,high,无标准过渡情形,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C21,na,,,high,任务未完成,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C22,na,,,high,用户为身体不适非情绪激动,human_v5_reviewed
+V5_refuse_persistent_1779197604_000,V5_C23,na,,,high,未触发FAQ知识点,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C02,pass,1,告知差评(原因待补): 您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个…,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C03,fail,5,未询问是否需要申诉,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C04,na,,用户未明确申诉意向，分支未触发,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C05,na,,用户未要求申诉，介绍流程未触发,high,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C06,na,,未进入收集改善意见环节,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C07,pass,3,理解您的心情。咱们长话短说，您方便了解下具体是哪几个差评吗？,medium,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C08,pass,5,那您先好好休息。我过两天再联系您，保重身体。,high,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C11,na,,,medium,用户坚持改天，任务合理中止,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C12,pass,3,超长(阈值25字): T3=30字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C13,na,,,high,无越界提问,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C14,na,,,high,未进入申诉,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C16,na,,,medium,用户称身体不适非在忙/开车,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C18,pass,"3,5",口语化+同理(“理解您的心情”“保重身体”),high,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C20,na,,,high,无标准过渡情形,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C21,na,,,high,任务未完成,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C22,na,,,high,用户为身体不适非情绪激动,human_v5_reviewed
+V5_refuse_persistent_1779197677_001,V5_C23,na,,,high,未触发FAQ知识点,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C02,pass,3,感谢您接听电话。我们注意到您店最近的差评主要集中在食品口味和配送时间上，想了解一下您对此有什么看法吗…,high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C03,fail,5,未询问是否需要申诉,medium,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C04,na,,用户未明确申诉意向，分支未触发,medium,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C05,na,,用户未要求申诉，介绍流程未触发,high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C06,na,,未进入收集改善意见环节,medium,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C07,na,,商家情绪平稳，安抚环节未触发,medium,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C08,pass,5,没关系，您先照顾好自己。要不我们稍后再联系？希望您早日康复。,high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C11,na,,,medium,用户拒绝，任务合理中止,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C12,pass,"3,5",超长(阈值25字): T3=51字；T5=30字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C13,na,,,high,无越界提问,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C14,na,,,high,未进入申诉,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C16,na,,,medium,用户称身体不适非在忙/开车,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C17,pass,全程,全程未出现“好的/哈哈/嘿嘿/嘻嘻”,high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C18,pass,5,口语化+同理(“没关系，您先照顾好自己”),high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C20,na,,,high,无标准过渡情形,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C21,na,,,high,任务未完成,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C22,na,,,high,用户为身体不适非情绪激动,human_v5_reviewed
+V5_refuse_persistent_1779202662_000,V5_C23,na,,,high,未触发FAQ知识点,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C01,fail,1,您好，请问是川香小厨的负责人吗？我是美团商家关怀客服。看到咱们店近7天收到了3个差评，特意打过来看看…,high," [B.5修订: evidence用开场白, 但非首轮turn全部超20字]",human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C02,pass,3,谢谢您接听电话！我想和您聊聊最近的差评情况，主要是反映了食物口味和配送速度的问题。您觉得如何呢？,high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C03,fail,7,未询问是否需要申诉,medium,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C04,na,,用户未明确申诉意向，分支未触发,medium,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C05,na,,用户未要求申诉，介绍流程未触发,high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C06,na,,未进入收集改善意见环节,medium,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C07,pass,5,我很理解您，身体健康最重要。如果您需要，稍后我可以再打个电话。希望您早日恢复！,medium,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C08,pass,7,好的，您多休息，祝您早日康复！改天再联系。,high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C09,pass,1,开场白含全部变量: 川香小厨/3,high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C10,pass,1,开场白及全程变量均已正确替换，无 ${} 残留,high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C11,na,,,medium,用户拒绝，任务合理中止,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C12,pass,"3,5",超长(阈值25字): T3=48字；T5=39字,high," [B.5修订: S1是流程结构, 字数违规应归 V5_C01]",human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C13,na,,,high,无越界提问,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C14,na,,,high,未进入申诉,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C15,pass,全程,未承诺差评补贴,high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C16,na,,,medium,用户称身体不适非在忙/开车,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C17,fail,7,T7出现“好的”,high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C18,pass,"5,7",口语化+同理(“身体健康最重要”),high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C19,pass,全程,给发言机会,high,,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C20,na,,,high,无标准过渡情形,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C21,na,,,high,任务未完成,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C22,na,,,high,用户为身体不适非情绪激动,human_v5_reviewed
+V5_refuse_persistent_1779202695_001,V5_C23,na,,,high,未触发FAQ知识点,human_v5_reviewed

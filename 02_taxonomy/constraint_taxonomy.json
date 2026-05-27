@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "name": "外呼任务对话指令遵循约束分类体系",
+  "description": "基于Meeseeks三级评测框架，结合外呼数字人场景定制。每条约束含: id/level/category/type/verifier_type/judge_strategy/示例",
+  "level_definitions": {
+    "L1": "任务核心意图与结构 - 整通对话级别，回答整体是否覆盖任务意图与必要结构",
+    "L2": "具体约束类型 - turn或对话级别，内容/格式约束的执行情况",
+    "L3": "细粒度规则 - 字符/句式级别，最精细的语言/格式约束"
+  },
+  "verifier_types": {
+    "rule": "确定性规则，纯Python函数判定，0%幻觉风险",
+    "rule_pattern": "正则或字符串匹配规则",
+    "llm_judge": "LLM打分判定，适合语义/语用判断",
+    "llm_extract_then_rule": "先LLM提取结构化信息，再规则判定（混合，最可靠）",
+    "state_tracker": "流程状态机判定，专用于跨turn的flow约束"
+  },
+  "scope_definitions": {
+    "per_turn": "每一轮回复独立判定",
+    "first_turn": "仅判定首轮回复（开场白）",
+    "last_turn": "仅判定末轮回复（结束语）",
+    "across_turns": "跨多轮检查（如重复检测）",
+    "conversation_level": "整通对话作为整体判定",
+    "trigger_based": "仅在用户行为触发条件时判定"
+  },
+
+  "constraints": [
+    {
+      "id": "L1_INTENT_001",
+      "level": "L1",
+      "category": "intent_recognition",
+      "type": "task_completion",
+      "name": "任务核心意图完成度",
+      "description": "整通对话是否完成了Task字段描述的核心任务",
+      "scope": "conversation_level",
+      "verifier_type": "llm_judge",
+      "judge_prompt_template": "任务目标: {task_description}\n对话内容: {dialogue}\n问题: 该任务的核心意图是否在对话中被表达和推进? 输出JSON: {verdict: yes/partial/no, evidence_turns: [], reason: ''}",
+      "example_in_data": "示例1: 通知合同生效 + 提醒配送; 示例2: 告知发布页新增低延迟直播选项",
+      "weight": 5.0,
+      "is_critical": true
+    },
+    {
+      "id": "L1_STRUCT_001",
+      "level": "L1",
+      "category": "output_structure",
+      "type": "flow_step_coverage",
+      "name": "Call Flow 步骤覆盖率",
+      "description": "Call Flow 中定义的所有步骤是否都被对话覆盖",
+      "scope": "conversation_level",
+      "verifier_type": "state_tracker",
+      "judge_strategy": "用独立的tracker LLM对每个turn标注'当前在哪个step'，最终检查是否所有step都被命中",
+      "example_in_data": "示例1有4个step; 示例2有7个step",
+      "weight": 4.0,
+      "is_critical": true
+    },
+    {
+      "id": "L1_STRUCT_002",
+      "level": "L1",
+      "category": "output_structure",
+      "type": "flow_step_order",
+      "name": "Call Flow 步骤顺序",
+      "description": "步骤之间的推进顺序是否符合DAG定义",
+      "scope": "conversation_level",
+      "verifier_type": "state_tracker",
+      "weight": 2.0,
+      "is_critical": false,
+      "note": "顺序违反可能是合理跳转（如FAQ插入），需结合DAG的允许跳转判定"
+    },
+    {
+      "id": "L1_STRUCT_003",
+      "level": "L1",
+      "category": "output_structure",
+      "type": "branch_correctness",
+      "name": "分支条件正确性",
+      "description": "Call Flow中的if/else分支是否被正确执行",
+      "scope": "trigger_based",
+      "verifier_type": "llm_extract_then_rule",
+      "example_in_data": "示例2 Step1: 若是负责人→进Step2; 若不是→请其转达再进Step2",
+      "weight": 3.0,
+      "is_critical": true
+    },
+    {
+      "id": "L1_GRAN_001",
+      "level": "L1",
+      "category": "granular_content",
+      "type": "opening_line_compliance",
+      "name": "开场白合规性",
+      "description": "首轮回复是否包含Opening Line指定的关键要素和变量",
+      "scope": "first_turn",
+      "verifier_type": "rule_pattern",
+      "verifier_config": {
+        "must_contain_keywords": "从Opening Line抽取的核心词",
+        "must_have_variables_filled": "${rider_name}等占位符必须替换"
+      },
+      "example_in_data": "示例1: 必含'飞毛腿'+'高峰期'+'单日'+'多日'; 示例2: 必含'负责人'询问",
+      "weight": 4.0,
+      "is_critical": true
+    },
+
+    {
+      "id": "L2_LEN_001",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "length_per_turn",
+      "name": "单轮回复长度",
+      "description": "每轮回复字符数不超过指定上限",
+      "scope": "per_turn",
+      "verifier_type": "rule",
+      "verifier_config": {
+        "max_chars": "从指令中抽取，如30/20",
+        "soft_margin": 5,
+        "exempt_turns": ["first_turn (开场白)"]
+      },
+      "example_in_data": "示例1: ≤30字; 示例2: 15-20字",
+      "weight": 2.0,
+      "is_critical": false
+    },
+    {
+      "id": "L2_LEN_002",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "length_range",
+      "name": "回复长度范围",
+      "description": "回复字符数在 [min, max] 区间内",
+      "scope": "per_turn",
+      "verifier_type": "rule",
+      "example_in_data": "示例2: 15-20字",
+      "weight": 2.0,
+      "is_critical": false
+    },
+    {
+      "id": "L2_KW_001",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "must_contain_keywords",
+      "name": "必含关键词",
+      "description": "特定turn或场景下必须包含的关键词",
+      "scope": "trigger_based",
+      "verifier_type": "rule_pattern",
+      "example_in_data": "示例1: 越界回复必含'向同事确认'+'回电'",
+      "weight": 3.0,
+      "is_critical": true
+    },
+    {
+      "id": "L2_KW_002",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "forbidden_keywords",
+      "name": "禁用关键词",
+      "description": "整通对话不得出现的词",
+      "scope": "across_turns",
+      "verifier_type": "rule_pattern",
+      "example_in_data": "示例2: 不说'好的'/'哈哈'/'嘻嘻'/'嘿嘿'",
+      "weight": 2.0,
+      "is_critical": false
+    },
+    {
+      "id": "L2_KW_003",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "no_commitment",
+      "name": "禁止承诺",
+      "description": "不得对用户做出指令禁止的承诺",
+      "scope": "across_turns",
+      "verifier_type": "llm_extract_then_rule",
+      "example_in_data": "示例2: 不能承诺给折扣券/优惠券",
+      "weight": 4.0,
+      "is_critical": true,
+      "note": "需LLM判定是否为'承诺'语义，再规则判定承诺内容是否在禁止清单"
+    },
+    {
+      "id": "L2_FAQ_001",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "faq_knowledge_correctness",
+      "name": "FAQ知识点正确性",
+      "description": "被问及FAQ问题时，回复是否包含知识库中的关键事实",
+      "scope": "trigger_based",
+      "verifier_type": "llm_extract_then_rule",
+      "judge_strategy": "1) LLM判断当前用户问题对应哪个FAQ; 2) LLM提取assistant回复中的关键事实; 3) 与FAQ中的key_facts做对照",
+      "example_in_data": "示例1有5个FAQ; 示例2 FAQ在Step 3.1/3.2",
+      "weight": 4.0,
+      "is_critical": true
+    },
+    {
+      "id": "L2_FLOW_001",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "out_of_scope_response",
+      "name": "越界问题处理",
+      "description": "用户提出任务范围外问题时，使用指定话术",
+      "scope": "trigger_based",
+      "verifier_type": "llm_extract_then_rule",
+      "judge_strategy": "1) LLM判断用户问题是否越界（不在task/FAQ/flow覆盖范围）; 2) regex检查下一轮assistant回复是否含指定话术",
+      "example_in_data": "示例1: '向同事确认后再回电'话术",
+      "weight": 4.0,
+      "is_critical": true
+    },
+    {
+      "id": "L2_FLOW_002",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "early_termination",
+      "name": "条件触发的提前结束",
+      "description": "满足特定条件时主动结束对话",
+      "scope": "conversation_level",
+      "verifier_type": "llm_extract_then_rule",
+      "example_in_data": "示例1: 骑手坚持无法配送→安慰后挂断; 示例2: 商家说在开车→礼貌说稍后再打后挂断",
+      "weight": 4.0,
+      "is_critical": true
+    },
+    {
+      "id": "L2_FLOW_003",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "interruption_handling",
+      "name": "打断处理",
+      "description": "对话被打断时使用过渡语回到主线",
+      "scope": "trigger_based",
+      "verifier_type": "llm_judge",
+      "example_in_data": "示例2: '您刚才提到...'或'我刚说到...'",
+      "weight": 3.0,
+      "is_critical": false
+    },
+    {
+      "id": "L2_FLOW_004",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "busy_user_handling",
+      "name": "用户繁忙处理",
+      "description": "用户表示忙时的指定处理方式",
+      "scope": "trigger_based",
+      "verifier_type": "rule_pattern",
+      "example_in_data": "示例2: '就1分钟，保证简短'后继续简短说明",
+      "weight": 3.0,
+      "is_critical": false
+    },
+    {
+      "id": "L2_VAR_001",
+      "level": "L2",
+      "category": "content_constraint",
+      "type": "variable_substitution",
+      "name": "变量正确替换",
+      "description": "${var}占位符必须被实际值替换，不得原样输出",
+      "scope": "across_turns",
+      "verifier_type": "rule_pattern",
+      "verifier_config": {
+        "forbidden_pattern": "\\$\\{[^}]+\\}",
+        "must_replace_with": "运行时变量值"
+      },
+      "example_in_data": "示例1: ${rider_name}、X、Y、Z、W",
+      "weight": 5.0,
+      "is_critical": true,
+      "note": "这是低级错误，模型不应该把原始占位符吐给用户"
+    },
+
+    {
+      "id": "L3_TONE_001",
+      "level": "L3",
+      "category": "fine_grained",
+      "type": "tone_casual",
+      "name": "语气随意自然",
+      "description": "保持口语化、像打电话一样自然的语气",
+      "scope": "across_turns",
+      "verifier_type": "llm_judge",
+      "judge_prompt_template": "下面是一通电话对话:\n{dialogue}\n问题: 助手的语气是否随意自然、符合电话沟通?(评判维度: 1)是否用口语词 2)是否避免书面化长句 3)是否避免列点格式) 输出JSON: {verdict: yes/partial/no, confidence: 0-1, reason: ''}",
+      "example_in_data": "示例1+2均要求",
+      "weight": 2.0,
+      "is_critical": false
+    },
+    {
+      "id": "L3_TONE_002",
+      "level": "L3",
+      "category": "fine_grained",
+      "type": "no_formal_explanation",
+      "name": "不使用正式或冗长解释",
+      "scope": "per_turn",
+      "verifier_type": "llm_judge",
+      "example_in_data": "示例2: 不使用正式或冗长的解释——保持随意直接",
+      "weight": 2.0,
+      "is_critical": false
+    },
+    {
+      "id": "L3_REP_001",
+      "level": "L3",
+      "category": "fine_grained",
+      "type": "no_repetition",
+      "name": "避免重复回复",
+      "description": "跨轮回复不得高度重复",
+      "scope": "across_turns",
+      "verifier_type": "rule",
+      "verifier_config": {
+        "metric": "jaccard_char_similarity",
+        "threshold": 0.8
+      },
+      "example_in_data": "示例1: '避免重复回复，如需重申请换种方式礼貌表达'",
+      "weight": 2.0,
+      "is_critical": false
+    },
+    {
+      "id": "L3_PAUSE_001",
+      "level": "L3",
+      "category": "fine_grained",
+      "type": "step_by_step_pause",
+      "name": "分步引导带暂停",
+      "description": "复杂操作引导时必须分步、每步等待用户响应",
+      "scope": "trigger_based",
+      "verifier_type": "llm_judge",
+      "example_in_data": "示例2: 缓慢引导设置（每步暂停3秒）",
+      "weight": 3.0,
+      "is_critical": false,
+      "note": "在文本对话中体现为：不能一轮把多步骤全说完"
+    },
+    {
+      "id": "L3_GREET_001",
+      "level": "L3",
+      "category": "fine_grained",
+      "type": "closing_greeting",
+      "name": "结束语祝福",
+      "description": "结束通话时的特定祝福语",
+      "scope": "last_turn",
+      "verifier_type": "llm_judge",
+      "example_in_data": "示例2: 祝其课程顺利、招生满满",
+      "weight": 1.0,
+      "is_critical": false
+    },
+    {
+      "id": "L3_TURN_001",
+      "level": "L3",
+      "category": "fine_grained",
+      "type": "give_user_chance_to_speak",
+      "name": "频繁给用户发言机会",
+      "description": "不能连续多轮独白，需给用户回应空间",
+      "scope": "across_turns",
+      "verifier_type": "llm_judge",
+      "example_in_data": "示例2: 频繁给商家发言和提问的机会",
+      "weight": 2.0,
+      "is_critical": false
+    },
+    {
+      "id": "L3_TURN_002",
+      "level": "L3",
+      "category": "fine_grained",
+      "type": "pause_for_response",
+      "name": "信息后暂停等待回应",
+      "scope": "across_turns",
+      "verifier_type": "llm_judge",
+      "example_in_data": "示例2: 给出信息后暂停等待商家回应再继续",
+      "weight": 2.0,
+      "is_critical": false
+    }
+  ],
+
+  "constraint_extraction_hints": {
+    "from_instruction_sections": {
+      "Role": "提取assistant身份，用于评估身份保持(可选L1约束)",
+      "Task": "提取L1_INTENT_001的task_description",
+      "Opening Line": "提取L1_GRAN_001的关键词和变量",
+      "Call Flow": "构建Flow DAG，每个step映射到L1_STRUCT_001/002/003",
+      "Knowledge Points / FAQ": "构建FAQ知识库，映射到L2_FAQ_001",
+      "Constraints": "逐条解析为L2/L3约束，常见模式: ('每次回复≤X字' → L2_LEN_001), ('如被问及超出职责' → L2_FLOW_001), ('避免重复' → L3_REP_001), ('保持X语气' → L3_TONE_001), ('如果用户X，做Y' → L2_FLOW_002/003/004)"
+    },
+    "common_atomic_patterns": [
+      {"pattern": "每次回复.*?(\\d+).*?字", "constraint_id": "L2_LEN_001"},
+      {"pattern": "(\\d+)-(\\d+)\\s*字", "constraint_id": "L2_LEN_002"},
+      {"pattern": "不(说|使用|能).*?[\"'].*?[\"']", "constraint_id": "L2_KW_002"},
+      {"pattern": "不(能|得)承诺", "constraint_id": "L2_KW_003"},
+      {"pattern": "(被|如)问.*?(超出|范围外)", "constraint_id": "L2_FLOW_001"},
+      {"pattern": "(如果|若).*?(坚持|不想|拒绝)", "constraint_id": "L2_FLOW_002"},
+      {"pattern": "若.*?(打断|插话)", "constraint_id": "L2_FLOW_003"},
+      {"pattern": "(如果|若).*?(忙|开车)", "constraint_id": "L2_FLOW_004"},
+      {"pattern": "避免重复", "constraint_id": "L3_REP_001"},
+      {"pattern": "(随意|自然|口语)", "constraint_id": "L3_TONE_001"}
+    ]
+  },
+
+  "weight_scheme_note": "weight字段用于最终评分的加权汇总。is_critical=true的约束在任何一通对话中违反则该通对话得分上限降低。具体加权方案可在评测脚本中配置。"
+}

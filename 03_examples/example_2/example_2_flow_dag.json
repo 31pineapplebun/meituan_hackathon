@@ -1,0 +1,327 @@
+{
+  "dag_id": "example_2_live_streaming_upgrade",
+  "instruction_name": "直播课程升级告知",
+  "entry_node": "S1",
+  "exit_nodes": ["S7", "EARLY_END_DRIVING"],
+
+  "nodes": [
+    {
+      "id": "S1",
+      "type": "step",
+      "label": "身份确认",
+      "purpose": "确认电话另一端的是否为负责人，决定后续传达方式",
+      "expected_assistant_action": [
+        "首轮使用Opening Line: '您好，请问您是贵培训机构/校区的负责人吗？'"
+      ],
+      "is_branch_point": true,
+      "branch_conditions": [
+        {
+          "condition_id": "S1_B1",
+          "trigger": "若是负责人",
+          "next_node": "S2",
+          "action_before_jump": "直接进入第2步"
+        },
+        {
+          "condition_id": "S1_B2",
+          "trigger": "若不是负责人",
+          "next_node": "S2",
+          "action_before_jump": "请其转达"
+        }
+      ],
+      "reference_utterances": [
+        "我们对直播产品做了升级，新增了独立的低延迟直播选项。发课时选低延迟直播即可，其他流程不变。"
+      ]
+    },
+    {
+      "id": "S2",
+      "type": "step",
+      "label": "确认是否知情",
+      "purpose": "了解客户是否已知后台已为其走低延迟线路，从而决定是否需要额外说明",
+      "expected_assistant_action": [
+        "询问：'您之前选的是标准直播，但我们后台其实已为您走低延迟线路以保障质量，您知道吗？'"
+      ],
+      "is_branch_point": true,
+      "branch_conditions": [
+        {
+          "condition_id": "S2_B1",
+          "trigger": "若不知情",
+          "next_node": "S3",
+          "action_before_jump": "说明前端当时未开放，临时开启低延迟是为保障音视频与白板同步"
+        },
+        {
+          "condition_id": "S2_B2",
+          "trigger": "若已知情",
+          "next_node": "S3",
+          "action_before_jump": "无"
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "type": "step",
+      "label": "传达升级内容",
+      "purpose": "向客户传达发布页将分开显示两个选项的核心变更",
+      "expected_assistant_action": [
+        "传达：'之后发布页会分开显示两个选项，根据课程类型自行选择即可。'",
+        "依次进入子节点S3.1, S3.2, S3.3"
+      ],
+      "reference_utterances": [
+        "之后发布页会分开显示两个选项，根据课程类型自行选择即可。"
+      ]
+    },
+    {
+      "id": "S3.1",
+      "parent_id": "S3",
+      "type": "sub_step",
+      "label": "区别说明",
+      "purpose": "说明标准直播与低延迟直播的特点差异",
+      "expected_assistant_action": [
+        "说明标准直播: 费用较低；延迟约5-10秒；适合大班课",
+        "说明低延迟直播: 延迟约1-2秒；互动更流畅；适合小班课/实操课"
+      ],
+      "knowledge_points_referenced": ["KP_STD_DIFF", "KP_LOW_DIFF"]
+    },
+    {
+      "id": "S3.2",
+      "parent_id": "S3",
+      "type": "sub_step",
+      "label": "价格说明",
+      "purpose": "说明价格差异",
+      "expected_assistant_action": [
+        "说明: 标准直播更便宜",
+        "说明: 低延迟直播带宽和节点保障更强，费用略高"
+      ],
+      "knowledge_points_referenced": ["KP_PRICE"]
+    },
+    {
+      "id": "S3.3",
+      "parent_id": "S3",
+      "type": "sub_step",
+      "label": "其他问题FAQ",
+      "purpose": "处理客户可能提出的其他疑问",
+      "expected_assistant_action": [
+        "按知识库作答",
+        "完成后进入第4步"
+      ]
+    },
+    {
+      "id": "S4",
+      "type": "step",
+      "label": "确认前端是否可见",
+      "purpose": "通过询问发布方式来判断客户实际操作环境，决定后续处理路径",
+      "expected_assistant_action": [
+        "进入S4.1询问发布方式"
+      ]
+    },
+    {
+      "id": "S4.1",
+      "parent_id": "S4",
+      "type": "sub_step",
+      "label": "询问发布方式",
+      "purpose": "判断客户使用的发课系统类型",
+      "expected_assistant_action": [
+        "询问：'您是通过Web控制台、校务系统A，还是SaaS系统B发课？'"
+      ],
+      "is_branch_point": true,
+      "branch_conditions": [
+        {
+          "condition_id": "S4_B1",
+          "trigger": "Web控制台",
+          "next_node": "S4.1.WEB",
+          "action_before_jump": "无"
+        },
+        {
+          "condition_id": "S4_B2",
+          "trigger": "校务系统A或SaaS系统B（第三方系统）",
+          "next_node": "S4.1.THIRD_PARTY",
+          "action_before_jump": "无"
+        }
+      ]
+    },
+    {
+      "id": "S4.1.WEB",
+      "parent_id": "S4.1",
+      "type": "branch",
+      "label": "Web控制台分支",
+      "is_branch_point": true,
+      "branch_conditions": [
+        {
+          "condition_id": "S4_WEB_B1",
+          "trigger": "若低延迟直播已显示",
+          "next_node": "S5",
+          "action_before_jump": "告知直接使用"
+        },
+        {
+          "condition_id": "S4_WEB_B2",
+          "trigger": "若未显示",
+          "next_node": "S5",
+          "action_before_jump": "告知后台为其配置，请其明天再查看"
+        }
+      ]
+    },
+    {
+      "id": "S4.1.THIRD_PARTY",
+      "parent_id": "S4.1",
+      "type": "branch",
+      "label": "第三方系统分支",
+      "is_branch_point": true,
+      "branch_conditions": [
+        {
+          "condition_id": "S4_TP_B1",
+          "trigger": "若已显示",
+          "next_node": "S5",
+          "action_before_jump": "告知按需选择即可"
+        },
+        {
+          "condition_id": "S4_TP_B2",
+          "trigger": "若未显示",
+          "next_node": "S5",
+          "action_before_jump": "触发子流程SF_GUIDE_OPEN（缓慢引导开通）"
+        }
+      ],
+      "sub_flow": {
+        "sub_flow_id": "SF_GUIDE_OPEN",
+        "trigger_condition": "若未显示低延迟直播选项",
+        "steps": [
+          {"order": 1, "instruction": "进入【我的】"},
+          {"order": 2, "instruction": "点击【服务商/直播平台管理】"},
+          {"order": 3, "instruction": "选择【直播平台】"},
+          {"order": 4, "instruction": "在【服务产品】下勾选低延迟直播，保存"}
+        ],
+        "constraints": [
+          "缓慢引导：每步暂停3秒",
+          "文本对话中表现为：每步骤独立成轮，不能一轮把4步全说完",
+          "等待用户确认或回应后再说下一步"
+        ]
+      }
+    },
+    {
+      "id": "S5",
+      "type": "step",
+      "label": "检查学员端费用/加速线路费",
+      "purpose": "确认低延迟直播相关的学员端费用配置",
+      "expected_assistant_action": [
+        "询问/判断: 客户是否已设置学员端费用"
+      ],
+      "is_branch_point": true,
+      "branch_conditions": [
+        {
+          "condition_id": "S5_B1",
+          "trigger": "未设置费用",
+          "next_node": "S6",
+          "action_before_jump": "直接进入Step6,不涉及费用配置展开"
+        },
+        {
+          "condition_id": "S5_B2",
+          "trigger": "已设置费用",
+          "next_node": "S5.SUB_CHECK",
+          "action_before_jump": "提醒确认低延迟直播也已适用该费用"
+        }
+      ]
+    },
+    {
+      "id": "S5.SUB_CHECK",
+      "parent_id": "S5",
+      "type": "branch",
+      "label": "已设置费用情况下的子分支",
+      "is_branch_point": true,
+      "branch_conditions": [
+        {
+          "condition_id": "S5_SUB_B1",
+          "trigger": "客户可自行配置",
+          "next_node": "S6",
+          "action_before_jump": "无"
+        },
+        {
+          "condition_id": "S5_SUB_B2",
+          "trigger": "若无法自行配置",
+          "next_node": "S6",
+          "action_before_jump": "触发子流程SF_GUIDE_FEE（缓慢引导设置）"
+        }
+      ],
+      "sub_flow": {
+        "sub_flow_id": "SF_GUIDE_FEE",
+        "trigger_condition": "若无法自行配置费用",
+        "steps": [
+          {"order": 1, "instruction": "【我的】→【教务/财务设置】"},
+          {"order": 2, "instruction": "→【收费规则】"},
+          {"order": 3, "instruction": "→编辑直播线路附加费，为低延迟直播启用"},
+          {"order": 4, "instruction": "保存"}
+        ],
+        "constraints": [
+          "缓慢引导：每步暂停3秒",
+          "文本对话中表现为：每步骤独立成轮，不能一轮把4步全说完"
+        ]
+      }
+    },
+    {
+      "id": "S6",
+      "type": "step",
+      "label": "企业微信添加",
+      "purpose": "建立后续沟通渠道",
+      "is_branch_point": true,
+      "branch_conditions": [
+        {
+          "condition_id": "S6_B1",
+          "trigger": "若当前号码可添加",
+          "next_node": "S7",
+          "action_before_jump": "告知稍后通过企业微信添加，请通过验证"
+        },
+        {
+          "condition_id": "S6_B2",
+          "trigger": "若不可添加",
+          "next_node": "S7",
+          "action_before_jump": "请提供可添加的手机号，再发送同样的验证提示"
+        }
+      ]
+    },
+    {
+      "id": "S7",
+      "type": "terminal",
+      "label": "结束通话",
+      "purpose": "结束对话",
+      "expected_assistant_action": [
+        "按知识库解答剩余问题",
+        "若无问题，祝其课程顺利、招生满满，结束通话"
+      ]
+    },
+    {
+      "id": "EARLY_END_DRIVING",
+      "type": "terminal",
+      "label": "提前结束（开车）",
+      "purpose": "用户表示在开车时礼貌挂断",
+      "expected_assistant_action": [
+        "礼貌说'那我稍后再打'后挂断"
+      ]
+    }
+  ],
+
+  "edges": [
+    {"from": "S1", "to": "S2", "condition": "after_identity_confirmed", "edge_type": "sequential"},
+    {"from": "S2", "to": "S3", "condition": "after_awareness_check", "edge_type": "sequential"},
+    {"from": "S3", "to": "S3.1", "condition": "always", "edge_type": "sequential"},
+    {"from": "S3.1", "to": "S3.2", "condition": "always", "edge_type": "sequential"},
+    {"from": "S3.2", "to": "S3.3", "condition": "always", "edge_type": "sequential"},
+    {"from": "S3.3", "to": "S4", "condition": "after_faq_answered", "edge_type": "sequential"},
+    {"from": "S4", "to": "S4.1", "condition": "always", "edge_type": "sequential"},
+    {"from": "S4.1", "to": "S4.1.WEB", "condition": "user_uses_web_console", "edge_type": "branch"},
+    {"from": "S4.1", "to": "S4.1.THIRD_PARTY", "condition": "user_uses_third_party", "edge_type": "branch"},
+    {"from": "S4.1.WEB", "to": "S5", "condition": "always", "edge_type": "sequential"},
+    {"from": "S4.1.THIRD_PARTY", "to": "S5", "condition": "always", "edge_type": "sequential"},
+    {"from": "S5", "to": "S6", "condition": "no_fee_set", "edge_type": "branch"},
+    {"from": "S5", "to": "S5.SUB_CHECK", "condition": "fee_already_set", "edge_type": "branch"},
+    {"from": "S5.SUB_CHECK", "to": "S6", "condition": "always", "edge_type": "sequential"},
+    {"from": "S6", "to": "S7", "condition": "always", "edge_type": "sequential"},
+    {"from": "ANY", "to": "EARLY_END_DRIVING", "condition": "user_says_driving", "edge_type": "interrupt"}
+  ],
+
+  "statistics": {
+    "total_nodes": 16,
+    "main_steps": 7,
+    "sub_steps": 5,
+    "branch_points": 7,
+    "sub_flows": 2,
+    "terminal_nodes": 2,
+    "max_nesting_depth": 3
+  }
+}
