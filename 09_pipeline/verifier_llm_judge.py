@@ -188,6 +188,58 @@ def _mock_judge_core_intent(dialogue: dict, instruction: dict) -> dict:
 # 主 verifier
 # ============================================================
 
+def _vote_judge(prompt: str, n: int = 3) -> dict:
+    """自一致性投票: 用不同 seed 判 n 次, 取多数 verdict
+
+    关键约束用这个抹平单次 LLM 判定的偶发抖动, 提升可靠性。
+    用不同 seed 保证 n 次有独立性 (否则同 seed+temp=0 结果完全一样)。
+    """
+    from llm_client import call_llm, DEFAULT_SEED
+    from collections import Counter
+    from concurrent.futures import ThreadPoolExecutor
+
+    model = os.getenv("VERIFIER_LLM_MODEL", "deepseek-v4-flash")
+
+    def _one_vote(i):
+        try:
+            return call_llm(prompt, model=model,
+                            system="你是精确的判定助手. 只输出 JSON, 不要任何额外文字.",
+                            seed=DEFAULT_SEED + i * 1000)
+        except Exception:
+            return None
+
+    # 3 次投票并发 (而非串行, 不增加额外延迟)
+    with ThreadPoolExecutor(max_workers=n) as ex:
+        raw = list(ex.map(_one_vote, range(n)))
+
+    votes = []
+    details = []
+    for facts in raw:
+        if facts is None:
+            continue
+        v = facts.get("verdict", "error")
+        if v in ("pass", "fail", "na"):
+            votes.append(v)
+            details.append(facts)
+
+    if not votes:
+        # 投票全失败时, 降级到单次普通调用 (而非直接报错)
+        return call_llm(prompt, model=model,
+                        system="你是精确的判定助手. 只输出 JSON, 不要任何额外文字.")
+
+    # 多数票
+    winner, count = Counter(votes).most_common(1)[0]
+    # 返回获胜 verdict 对应的某个 facts (带上投票信息)
+    winner_facts = next((d for d in details if d.get("verdict") == winner), details[0])
+    winner_facts = dict(winner_facts)
+    agreement = count / len(votes)
+    winner_facts["reason"] = (winner_facts.get("reason", "") +
+                              f" [自一致性: {count}/{len(votes)} 票, 一致度 {agreement*100:.0f}%]")[:200]
+    # 投票分歧大时降低置信度
+    winner_facts["score"] = winner_facts.get("score", 0.7) * agreement
+    return winner_facts
+
+
 @register("llm_judge")
 def verify_llm_judge(constraint: dict, dialogue: dict, instruction: dict) -> VerdictResult:
     """LLM Judge: 主观约束判定"""
@@ -211,8 +263,13 @@ def verify_llm_judge(constraint: dict, dialogue: dict, instruction: dict) -> Ver
     else:
         # 真实 LLM
         prompt = _build_judge_prompt(constraint, dialogue, subtype, instruction)
+        is_critical = constraint.get("is_critical", False)
         try:
-            facts = call_llm_for_extraction(prompt)
+            if is_critical and os.getenv("LLM_SELF_CONSISTENCY", "1") == "1":
+                # 关键约束: 自一致性投票 (判 3 次取多数, 抹平单次抖动)
+                facts = _vote_judge(prompt, n=3)
+            else:
+                facts = call_llm_for_extraction(prompt)
         except Exception as e:
             return VerdictResult(verdict="error", reason=f"LLM 失败: {e}")
     

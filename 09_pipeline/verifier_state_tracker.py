@@ -38,6 +38,39 @@ STOPWORDS = {
 }
 
 
+# 同义词组: 解决"约束说告知, 模型说通知/跟您说"的字面匹配冤案
+# 每组内任一词出现, 都算命中该组里的任意关键词
+SYNONYM_GROUPS = [
+    {"告知", "通知", "告诉", "跟您说", "跟你说", "和您说", "说一下", "看到您", "提到", "讲"},
+    {"询问", "问", "请问", "想问", "了解一下", "您看"},
+    {"提醒", "提示", "记得", "别忘", "注意", "务必"},
+    {"确认", "核实", "对一下", "确定", "是不是", "对吗"},
+    {"说明", "解释", "介绍", "讲解", "阐述", "我们的"},
+    {"引导", "带您", "帮您", "协助", "您可以", "操作"},
+    {"记录", "登记", "记下", "标记", "备注"},
+    {"取消", "撤销", "退掉", "关闭"},
+    {"结束", "再见", "挂了", "祝您", "辛苦了", "就这样"},
+    {"差评", "评价", "评分", "不好的评价"},
+    {"超时", "慢", "晚", "延迟", "迟"},
+]
+
+
+def _kw_in_text(kw: str, text: str) -> bool:
+    """关键词是否命中文本 — 支持同义词
+
+    1. 字面直接命中
+    2. 若 kw 属于某同义词组, 该组任一词命中也算
+    """
+    if kw in text:
+        return True
+    for group in SYNONYM_GROUPS:
+        if kw in group:
+            # kw 在这组里, 看这组其他词是否出现在文本
+            if any(syn in text for syn in group):
+                return True
+    return False
+
+
 def extract_step_keywords(constraint: dict) -> list:
     """从约束名称和源文本提取关键词
     
@@ -165,14 +198,15 @@ def verify_state_tracker(constraint: dict, dialogue: dict, instruction: dict) ->
         return VerdictResult(verdict="na", reason="无 assistant 输出")
     
     # 4. 判定逻辑: 至少匹配 2 个关键词 或 40% 匹配率
+    #    支持同义词: 约束说"告知", 模型说"通知/跟您说"也算匹配 (解决字面匹配冤案)
     matched = []
     missed = []
     for kw in keywords:
-        if kw in asst_text:
+        if _kw_in_text(kw, asst_text):
             matched.append(kw)
         else:
             missed.append(kw)
-    
+
     match_rate = len(matched) / len(keywords) if keywords else 0
     
     # 找匹配的 turn 作为证据

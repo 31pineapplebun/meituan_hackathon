@@ -17,6 +17,7 @@
 """
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 from dataclasses import asdict
@@ -70,20 +71,45 @@ def load_dialogue(path: str, dialogue_id: str = None) -> dict:
 # Pipeline 主体
 # ============================================================
 
-def run_pipeline(instruction: dict, dialogue: dict) -> dict:
-    """跑完整 pipeline, 返回结构化结果"""
-    
+def run_pipeline(instruction: dict, dialogue: dict, max_workers: int = None) -> dict:
+    """跑完整 pipeline, 返回结构化结果
+
+    max_workers: verifier 并发数。None 时自动 (LLM 调用走并发提速)。
+                 设 1 则串行 (调试用)。
+    """
+
     constraints = instruction.get("atomic_constraints", [])
     if not constraints:
         return {"error": "指令无约束"}
-    
-    # 1. 跑所有 verifier
-    results = []
-    for c in constraints:
-        verdict_result = dispatch(c, dialogue, instruction)
-        results.append(verdict_result)
-    
-    # 2. P3 评分（先简化版: 不依赖 scoring_validation.py, 直接复刻逻辑）
+
+    # 1. 跑所有 verifier —— 并发执行 (LLM 调用是 IO 密集型, 并发提速 5-10x)
+    if max_workers is None:
+        max_workers = int(os.getenv("PIPELINE_MAX_WORKERS", "8"))
+
+    def _safe_dispatch(c):
+        """单条 verifier, 失败不拖垮整体"""
+        try:
+            return dispatch(c, dialogue, instruction)
+        except Exception as e:
+            from verifier_base import VerdictResult
+            return VerdictResult(
+                verdict="error",
+                constraint_id=c.get("id", "?"),
+                constraint_name=c.get("name", ""),
+                verifier_type=c.get("verifier", "?"),
+                reason=f"verifier 执行异常: {e}",
+            )
+
+    if max_workers <= 1:
+        # 串行 (调试)
+        results = [_safe_dispatch(c) for c in constraints]
+    else:
+        # 并发 (ThreadPoolExecutor.map 保证结果顺序 = 输入顺序)
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            results = list(executor.map(_safe_dispatch, constraints))
+
+    # 2. P3 评分
     score_report = compute_p3_score(results, constraints)
     
     # 2.5 生成详细优化建议 (B2 新增)
@@ -152,14 +178,15 @@ def compute_p3_score(results: list, constraints: list) -> dict:
     
     if not counted_results:
         return {
-            "final_score": 0,
-            "raw_score": 0,
-            "ceiling": 0,
-            "ceiling_reason": "无可计分的约束",
+            "final_score": None,          # None 表示"无法评测", 区别于真实的 0 分
+            "evaluable": False,           # 明确标记: 这通对话无法评测
+            "raw_score": None,
+            "ceiling": None,
+            "ceiling_reason": "无可计分的约束(对话可能为空或所有约束都未触发)",
             "dim_scores": {k: None for k in DIM_WEIGHTS},
             "critical_pass_rate": None,
             "red_line_violations": [],
-            "suggestions": ["pipeline 无有效结果，建议检查 verifier 实现"]
+            "suggestions": ["对话无有效内容可评测。请确认: (1) 对话非空 (2) 模型有实际输出 (3) API 调用成功"]
         }
     
     # === Step 1-2: D方案 维度加权 ===
@@ -268,6 +295,7 @@ def compute_p3_score(results: list, constraints: list) -> dict:
     
     return {
         "final_score": final_score,
+        "evaluable": True,
         "raw_score": raw_score,
         "ceiling": ceiling,
         "ceiling_reason": ceiling_reason,

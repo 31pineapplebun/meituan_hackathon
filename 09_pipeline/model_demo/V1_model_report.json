@@ -1,0 +1,2343 @@
+{
+  "report_type": "model_level",
+  "instruction_name": "V1",
+  "model_name": "deepseek-v4-flash",
+  "generated_at": "2026-06-01 08:16",
+  "summary": {
+    "avg_score": 69.8,
+    "min_score": 48.0,
+    "max_score": 100.0,
+    "n_dialogues": 11,
+    "grade": "需改进",
+    "diagnosis": "模型存在明显短板,在多个场景未达标,需重点优化流程遵循与约束执行。"
+  },
+  "dim_avg": {
+    "D1_flow_compliance": 88.6,
+    "D2_task_completion": 81.8,
+    "D3_constraint_compliance": 74.1,
+    "D4_knowledge_accuracy": 88.9,
+    "D5_dialogue_quality": 57.6
+  },
+  "persona_breakdown": [
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "final_score": 48.0,
+      "critical_pass_rate": 0.714,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V1_cooperative_1779193967_000",
+      "final_score": 65,
+      "critical_pass_rate": 0.714,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "final_score": 65,
+      "critical_pass_rate": 0.857,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V1_interruption_1779200483_000",
+      "final_score": 65,
+      "critical_pass_rate": 0.857,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V1_interruption_1779200667_001",
+      "final_score": 65,
+      "critical_pass_rate": 0.857,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V1_out_of_scope_1779194673_000",
+      "final_score": 65,
+      "critical_pass_rate": 0.875,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V1_out_of_scope_1779194856_001",
+      "final_score": 65,
+      "critical_pass_rate": 0.875,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V1_out_of_scope_1779200168_000",
+      "final_score": 65,
+      "critical_pass_rate": 0.75,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V1_refuse_persistent_1779200071_000",
+      "final_score": 65,
+      "critical_pass_rate": 0.857,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V1_cooperative_1779199886_000",
+      "final_score": 100.0,
+      "critical_pass_rate": 1.0,
+      "ceiling": 100,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V1_cooperative_1779199977_001",
+      "final_score": 100.0,
+      "critical_pass_rate": 1.0,
+      "ceiling": 100,
+      "n_turns": 0
+    }
+  ],
+  "weak_constraints": [
+    {
+      "constraint_id": "V1_C06",
+      "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+      "fail_count": 8,
+      "total_count": 11,
+      "fail_rate": 73.0
+    },
+    {
+      "constraint_id": "V1_C15",
+      "constraint_name": "[META] 适时终结对话",
+      "fail_count": 8,
+      "total_count": 11,
+      "fail_rate": 73.0
+    },
+    {
+      "constraint_id": "V1_C01",
+      "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+      "fail_count": 5,
+      "total_count": 11,
+      "fail_rate": 45.0
+    },
+    {
+      "constraint_id": "V1_C05",
+      "constraint_name": "绝不能承诺额外的补贴。",
+      "fail_count": 5,
+      "total_count": 11,
+      "fail_rate": 45.0
+    },
+    {
+      "constraint_id": "V1_C09",
+      "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+      "fail_count": 3,
+      "total_count": 11,
+      "fail_rate": 27.0
+    },
+    {
+      "constraint_id": "V1_C07",
+      "constraint_name": "沟通过程中不说“好的”等语气词。",
+      "fail_count": 2,
+      "total_count": 11,
+      "fail_rate": 18.0
+    },
+    {
+      "constraint_id": "V1_C10",
+      "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+      "fail_count": 2,
+      "total_count": 11,
+      "fail_rate": 18.0
+    },
+    {
+      "constraint_id": "V1_C14",
+      "constraint_name": "[META] 任务核心意图完成",
+      "fail_count": 2,
+      "total_count": 11,
+      "fail_rate": 18.0
+    },
+    {
+      "constraint_id": "V1_C16",
+      "constraint_name": "[META] FAQ知识正确",
+      "fail_count": 1,
+      "total_count": 9,
+      "fail_rate": 11.0
+    },
+    {
+      "constraint_id": "V1_C03",
+      "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+      "fail_count": 1,
+      "total_count": 11,
+      "fail_rate": 9.0
+    }
+  ],
+  "per_dialogue_results": [
+    {
+      "dialogue_id": "V1_cooperative_1779193967_000",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 65,
+        "raw_score": 74.65,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率71% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 75.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 46.15,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 44.44
+        },
+        "critical_pass_rate": 0.714,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V1_C05",
+              "V1_C09"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 44.4/100 最低",
+            "constraint_ids": [
+              "V1_C06",
+              "V1_C15"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "3/14 轮超字数",
+          "reason": "超字数率 21% < 30%, 通过",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂，是王强吗？我是咱们美团的骑手站长。' 含口语词'喂''咱们'；Turn 2: '嗯，是的' 含'嗯'；无列点格式；无书面文言词。",
+          "reason": "满足所有3条标准：至少2处口语词，无列点格式，无书面文言词。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn5: '记得带上头盔、工牌和身份证'；Turn7: '必须携带头盔才能参加。别忘了还要带工牌和身份证'；Turn17: '别忘了戴头盔、带工牌和身份证'。头盔工牌身份证出现3次，但每次表述有变化，且未出现8+字连续重复片段；同样问题（如培训时长、地址）未被问2次以上。",
+          "reason": "未满足任何fail条件：重复信息有变化，无8+字连续重复，无重复问题。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "turn5: 出席的话有30块补贴。",
+          "reason": "助手承诺了禁止内容 (1 处)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从Turn 26开始多次表达结束意愿（'站长你忙，我等你消息'、'我先不打扰你了'），但助手在Turn 27、29仍重复确认地址和培训要求，未在1-2个turn内收尾，且收尾不含'再见'等礼貌用语。",
+          "reason": "用户明确结束意愿后，助手未及时收尾，反复追问，违反判定标准第1、2条。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn11用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,9 含 ['培训', '时间', '骑手']",
+          "reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "confidence": 0.8285714285714285
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['询问', '问', '记录', '原因']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['确认', '头盔', '工牌', '身份证']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,9 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知培训时间地点；Turn 4: 用户确认能来；Turn 10: 用户明确同意准时参加；Turn 30: 用户再次确认参加并带齐装备。",
+          "reason": "助手覆盖了通知培训的核心步骤（时间、地点、要求），用户最终明确同意参加，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从Turn 26开始多次表达结束意愿（'站长你忙'、'不打扰你了'），但助手在Turn 27、29、31仍重复确认地址和培训要求，未在1-2个turn内收尾。",
+          "reason": "用户明确表示结束意愿后，助手未及时收尾，持续追问和重复信息，违反标准第1条。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779193967_000",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 培训时长; 助手答: 差不多2小时左右。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_cooperative_1779199886_000",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 100.0,
+        "raw_score": 100.0,
+        "ceiling": 100,
+        "ceiling_reason": "无钳制",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 100.0,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 1.0,
+        "red_line_violations": [],
+        "suggestions": []
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "1/6 轮超字数",
+          "reason": "超字数率 17% < 30%, 通过",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂'、'咱们'；Turn 2: '嗯'；Turn 3: '哦'；Turn 5: '哦'；Turn 13: '哦'。多处口语词。无列点格式。无书面文言词。",
+          "reason": "满足所有三条标准：至少2处口语词，无列点格式，无书面文言词。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "头盔、工牌、身份证信息在Turn3和Turn5出现两次，未达3次；无8字以上连续片段重复；无重复问题。",
+          "reason": "未违反任何判定标准，信息重复次数和长度均未触发fail条件。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "用户在第14轮明确说'再见'，助手在第13轮已用'培训见！谢谢你的配合，保持安全哦！'收尾，含'谢谢'和'保持安全'，符合收尾要求。",
+          "reason": "用户表达结束意愿后，助手在1轮内礼貌收尾，含感谢和祝福，未反复追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '培训', '骑手']",
+          "reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "confidence": 0.8285714285714285
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,11 含 ['问', '骑手']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知培训时间地点并询问能否到场。Turn 2: 用户明确同意参加。Turn 4-12: 用户多次确认信息并表达参加意愿。",
+          "reason": "助手覆盖了通知培训并确认到场核心步骤，用户明确同意参加，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 14 user明确说'再见'，Turn 13 assistant以'培训见！谢谢你的配合，保持安全哦！'收尾，含'谢谢'，且未追问其他需求。",
+          "reason": "用户表达结束意愿后，助手在1个turn内收尾，含感谢语，无反复追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199886_000",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 培训时长; 助手答: 培训大概持续2小时左右。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_cooperative_1779199977_001",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 100.0,
+        "raw_score": 100.0,
+        "ceiling": 100,
+        "ceiling_reason": "无钳制",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 100.0,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 1.0,
+        "red_line_violations": [],
+        "suggestions": []
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "0/5 轮超字数",
+          "reason": "超字数率 0% < 30%, 通过",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂'、'咱们'；Turn 2: '嗯'；Turn 3: '哦'；Turn 5: '回电'；Turn 7: '请务必'；Turn 9: '就可以了'。至少2处口语词，无列点格式，无书面文言词。",
+          "reason": "对话使用口语词如'喂''咱们''嗯''哦'，语气自然，无列点或文言词，符合约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3提到'带上头盔、工牌和身份证'，Turn 9说'带好所需物品'，未重复相同短语；无8字以上连续片段重复；无重复问题。",
+          "reason": "未出现重复信息、连续片段或重复问题，符合约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 12 user明确说'再见'表示结束意愿，Turn 11 assistant已收尾'期待见到你！如果有其他问题随时联系我'，含'期待'和'联系'，未反复追问。",
+          "reason": "用户结束意愿后，助手在1个turn内收尾，含礼貌用语，无追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['问', '培训', '骑手']",
+          "reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "confidence": 0.8285714285714285
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,11 含 ['问', '骑手']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知培训时间地点并询问能否参加。Turn 2: 用户明确同意参加。Turn 8: 用户再次确认按时到场。",
+          "reason": "助手覆盖了通知培训的核心步骤，用户明确同意参加，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 12 user明确说'再见'表示结束意愿，Turn 11 assistant已收尾'如果有其他问题随时联系我'，未再追问。",
+          "reason": "用户明确结束意愿后，助手在1个turn内自然收尾，含'再见'，无反复追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_cooperative_1779199977_001",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 培训时长; 助手答: 培训大概持续两个小时左右。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_interruption_1779195182_001",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 65,
+        "raw_score": 65.9,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率86% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 46.15,
+          "D4_knowledge_accuracy": 0.0,
+          "D5_dialogue_quality": 44.44
+        },
+        "critical_pass_rate": 0.857,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V1_C05"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【知识准确性】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V1_C16"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn13=47字; turn9=45字; turn17=38字",
+          "reason": "4/8=50%超字数(限30+5=35)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂'、'咱们'；Turn 3: '咱们'；Turn 5: '吧'；Turn 7: '吗'；Turn 9: '吧'；Turn 11: '吧'；Turn 13: '吧'；Turn 15: '吧'；Turn 17: '吧'。无列点格式，无书面文言词。",
+          "reason": "对话包含多处口语词（喂、咱们、吧、吗），无列点格式，无书面文言词，符合所有约束条件。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "未发现重复信息：Turn1和Turn3中培训时间地点表述不同；无8+字连续片段重复；问题未重复2次以上。",
+          "reason": "对话中无重复回复，每次回应均根据用户问题灵活调整，符合约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "turn5: 免费的，不用交钱。出席还有30块补贴，直接发你账户。",
+          "reason": "助手承诺了禁止内容 (1 处)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 16用户说'你等等！你先别挂'，Turn 17助手仍问'还有别的事吗？'，Turn 18用户说'没别的事我挂了'，但助手未在1-2个turn内礼貌收尾，而是继续追问。",
+          "reason": "用户明确表示结束意愿后，助手未及时收尾，且追问'还有别的事吗'，违反第1、3条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,11 含 ['问', '培训', '时间', '骑手']",
+          "reason": "匹配关键词 4/7 (57%, 阈值≥2个)",
+          "confidence": 0.8714285714285713
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,13 含 ['问', '记录', '原因', '骑手']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,11,15 含 ['确认', '骑手']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,9 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知培训时间地点并询问能否到场。Turn 13-14: 用户明确回复“去不了”，表示拒绝。助手覆盖了通知和确认的核心步骤，用户给出明确反馈。",
+          "reason": "助手完成通知和确认步骤，用户明确拒绝参加，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 18用户明确说'没别的事我挂了'，但助手在Turn 17仍问'还有别的事吗'，未在1-2个turn内收尾，且Turn 17未含'再见'等结束语。",
+          "reason": "用户表示结束意愿后，助手未及时收尾，且追问'还有别的事吗'，违反标准1和2。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779195182_001",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "FAQ: 培训时长、补贴、错过补训; 错误: 助手在Turn 9说“不参加会影响接单评级”，在Turn 11又说“这次不参加不影响评级”，前后矛盾。",
+          "reason": "FAQ 答案错误或自相矛盾",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200483_000",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 65,
+        "raw_score": 85.42,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率86% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 75.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 100.0,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 44.44
+        },
+        "critical_pass_rate": 0.857,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V1_C09"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 44.4/100 最低",
+            "constraint_ids": [
+              "V1_C06",
+              "V1_C15"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "4/14 轮超字数",
+          "reason": "超字数率 29% < 30%, 通过",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂，是王强吗？我是咱们美团的骑手站长。' 含口语词'喂'、'咱们'；Turn 9: '别忘了带头盔、工牌和身份证哦。' 含口语词'哦'。无列点格式，无书面文言词。",
+          "reason": "对话包含至少2处口语词，无列点格式，无书面文言词，满足所有约束条件。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "未发现同一信息重复3次以上；8字以上连续片段未在不同turn重复2次以上；同样问题未重复2次以上。",
+          "reason": "对话中虽有多次确认，但每次回复内容有变化，未违反重复约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从未明确表示结束意愿，反而持续提问（如Turn 30询问下次培训内容），助手未主动收尾，且反复追问“你能确认参加吗”（如Turn 7,11,13,15,21,23,25,27,29），违反标准1和3。",
+          "reason": "用户未表达结束意愿，助手未在1-2回合内收尾，且反复追问，不满足所有判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,11 含 ['培训', '时间', '骑手']",
+          "reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "confidence": 0.8285714285714285
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['询问', '问', '记录', '原因']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,11 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知了培训时间地点。Turn 28: 用户明确说“我确认参加”。核心步骤覆盖：通知培训、确认到场、回答疑问，覆盖超过70%。",
+          "reason": "助手覆盖了通知培训的核心步骤，用户最终明确确认参加，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户未明确表示结束意愿，对话持续追问培训细节，助手未主动收尾。最后Turn 30用户仍提问，助手未结束对话。",
+          "reason": "用户未表达结束意愿，助手未在任务完成后自然收尾，对话冗长拖沓。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200483_000",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 培训时长; 助手答: 培训差不多需要2小时左右。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_interruption_1779200667_001",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 65,
+        "raw_score": 66.67,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率86% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 100.0,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 44.44
+        },
+        "critical_pass_rate": 0.857,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V1_C14"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V1_C14"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "2/14 轮超字数",
+          "reason": "超字数率 14% < 30%, 通过",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂，是王强吗？我是咱们美团的骑手站长。' 含口语词'喂''咱们'；Turn 5: '记得带上头盔、工牌和身份证哦！' 含'哦'；无列点格式；无书面文言词。",
+          "reason": "对话使用口语词(喂、咱们、哦)，无列点格式，无书面文言词，满足所有约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "未发现重复信息：'带头盔工牌身份证'仅出现1次(Turn5)；无8+字连续片段重复；无相同问题被问2次以上。",
+          "reason": "对话中无重复回复，助理每次回应不同，灵活应对用户问题。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从未明确表示结束意愿，反而持续提问（如Turn 30问培训反馈），助手未收尾，且反复追问“能否确认参加”（如Turn 29）。",
+          "reason": "用户未表达结束意愿，助手未在1-2 turn内收尾，且无礼貌结束语，违反全部3条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['培训', '时间', '骑手']",
+          "reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "confidence": 0.8285714285714285
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7 含 ['原因', '骑手']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手在Turn 1、5、7、11、17覆盖了核心步骤（通知培训、时长、重要性、补救措施），但用户始终未给出明确反馈（同意/拒绝/接收信息），仅表示“考虑”“尽快决定”等模糊回应。",
+          "reason": "用户未给出明确反馈，不满足判定标准第2条。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从未明确表示结束意愿，且助手在Turn 29仍追问'你能确认参加培训吗'，未收尾。",
+          "reason": "用户未表达结束意愿，对话未自然结束，助手持续追问，违反约束。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_interruption_1779200667_001",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 培训时长; 助手答: 培训大概会持续2个小时。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194673_000",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 65,
+        "raw_score": 79.17,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率88% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 37.5,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 44.44
+        },
+        "critical_pass_rate": 0.875,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V1_C05"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【约束遵循度】得分 37.5/100 最低",
+            "constraint_ids": [
+              "V1_C01",
+              "V1_C05",
+              "V1_C07"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn5=44字; turn9=41字; turn3=39字",
+          "reason": "4/7=57%超字数(限30+5=35)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn7: 我向同事确认后再回电; turn9: 我向同事确认后再回电",
+          "reason": "用户问越界 (turn[4, 6, 8, 10, 12, 14]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂，是王强吗？我是咱们美团的骑手站长。' 含口语词'喂''咱们'；Turn 2: '哦哦，是我。' 含'哦哦'；Turn 4: '诶对了，今天天气真不错啊' 含'诶''啊'。无列点格式，无书面文言词。",
+          "reason": "对话包含至少2处口语词（喂、咱们、哦哦、啊、诶），无列点格式，无书面文言词，符合所有判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: '记得带上头盔、工牌和身份证'，Turn 15: '别忘了带东西'，未出现8字以上连续重复片段；同一信息未重复3次以上；同一问题未问2次以上。",
+          "reason": "未发现重复回复相同内容，每次回应均有变化，符合灵活应对要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "turn5: 培训完有30元补贴",
+          "reason": "助手承诺了禁止内容 (1 处)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户未明确表示结束意愿，反而在Turn 16说'再见'，但助手在Turn 15已尝试收尾，然而Turn 16用户主动结束，助手未在1-2个turn内收尾（无后续turn）。",
+          "reason": "用户未明确表示结束意愿，助手多次尝试收尾但被用户打断，最终用户主动结束，不符合标准1。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn3用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '培训', '骑手']",
+          "reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "confidence": 0.8285714285714285
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,13 含 ['问', '骑手']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['确认', '头盔', '工牌', '身份证']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知培训时间地点并询问能否到场。Turn 2: 用户确认记录信息。Turn 4-16: 用户多次确认培训安排，最终在Turn 16说“明天培训见”。",
+          "reason": "助手覆盖了通知培训的核心步骤（时间、地点、确认到场），用户最终明确同意参加培训。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户未明确表示结束意愿，但助手在Turn 5、7、9、11、13、15多次尝试结束对话，且Turn 15后用户Turn 16才说'不问了不问了'，助手未在1-2个turn内收尾，而是反复尝试结束。",
+          "reason": "用户未明确结束意愿，助手多次主动尝试结束，但未在用户表达后及时收尾，且收尾未含感谢/再见等，违反标准1和2。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194673_000",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 补贴; 助手答: 培训完有30元补贴",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779194856_001",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 65,
+        "raw_score": 82.92,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率88% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 56.25,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 44.44
+        },
+        "critical_pass_rate": 0.875,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V1_C05"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 44.4/100 最低",
+            "constraint_ids": [
+              "V1_C06",
+              "V1_C15"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn15=66字; turn7=62字; turn11=43字",
+          "reason": "7/8=88%超字数(限30+5=35)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn5: 这个我不太清楚，得问公司同事。; turn7: 老李的电话我手头没有，我帮你问问其他同事再回你。",
+          "reason": "用户问越界 (turn[4, 6, 10, 12, 14]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂'、'咱们'；Turn 2: '啊'；Turn 4: '哦'、'啊'；Turn 6: '行吧行吧'；Turn 8: '哎'；Turn 10: '哈哈'；Turn 12: '行行行'；Turn 14: '等等等等'；Turn 18: '好嘞好嘞'。无列点格式，无书面文言词。",
+          "reason": "对话包含多处口语词（喂、咱们、啊、哦、行吧、哎、哈哈、等等、好嘞），无列点格式，无书面文言词，符合所有三条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "未发现同一信息重复3次以上。'带头盔工牌身份证'仅出现2次(Turn7和Turn13)，且表述不同。无8字以上连续片段重复2次以上。同样问题未问2次以上。",
+          "reason": "对话中未出现重复回复相同内容的情况，符合约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "turn15: 出席有30元补贴",
+          "reason": "助手承诺了禁止内容 (1 处)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户在第18轮明确说'拜拜'表示结束意愿，但助手在第17轮已提前结束对话，未在用户结束意愿后1-2轮内收尾。",
+          "reason": "用户结束意愿出现在第18轮，但助手在第17轮已收尾，未在用户明确结束意愿后1-2轮内收尾，违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '培训', '时间', '地点']",
+          "reason": "匹配关键词 5/7 (71%, 阈值≥2个)",
+          "confidence": 0.9142857142857143
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问', '骑手']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['确认', '头盔', '工牌', '身份证']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知培训时间地点；Turn 3: 确认能否到场；Turn 12: 用户明确同意“15号下午2点我肯定去”；Turn 16-18: 用户再次确认到场并带证件。",
+          "reason": "助手覆盖了通知培训、确认到场等核心步骤，用户最终明确同意参加，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户在第18轮明确说'拜拜'表示结束意愿，但助手在第13轮已尝试收尾（'回头见'），之后用户又发起新话题（第14、16轮），助手未在1-2轮内有效收尾，而是继续回应（第15、17轮），直到第18轮用户再次结束。",
+          "reason": "用户明确结束意愿后，助手未在1-2轮内收尾，而是继续回应新问题，导致对话冗长。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779194856_001",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 是否有补贴; 助手答: 出席有30元补贴",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_out_of_scope_1779200168_000",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 65,
+        "raw_score": 77.08,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率75% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 75.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 75.0,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 22.22
+        },
+        "critical_pass_rate": 0.75,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V1_C05",
+              "V1_C09"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 22.2/100 最低",
+            "constraint_ids": [
+              "V1_C03",
+              "V1_C06",
+              "V1_C15"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "1/11 轮超字数",
+          "reason": "超字数率 9% < 30%, 通过",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn3: 我向同事确认后再回电; turn7: 我向同事确认后再回电",
+          "reason": "用户问越界 (turn[4, 6, 10, 12, 14, 16, 18, 20, 22, 24]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '我是咱们美团的骑手站长' 含口语词'咱们'；但Turn 3,5,7,9,11,13,15,17,19,21,23中重复使用'我向同事确认后再回电'，缺乏自然口语变化，且整体语气机械。",
+          "reason": "对话中大量重复固定句式，缺乏随意自然语气，违反约束核心要求。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "未发现重复信息：'带头盔工牌身份证'仅出现1次(Turn5)；无8+字连续片段重复；无重复问题。",
+          "reason": "对话中无重复回复或重复信息，符合约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "turn9: 培训出席后有30元补贴",
+          "reason": "助手承诺了禁止内容 (1 处)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从未表达结束意愿，反而持续提问（如Turn 24问新闻），助手未主动收尾，且反复追问培训事宜（如Turn 13、15、17、19、21、23）。",
+          "reason": "用户未明确表示结束意愿，助手未在1-2个turn内收尾，且反复追问培训，违反所有判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['培训', '时间', '地点', '骑手']",
+          "reason": "匹配关键词 4/7 (57%, 阈值≥2个)",
+          "confidence": 0.8714285714285713
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['询问', '问', '记录', '原因']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '头盔', '工牌', '身份证']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知培训时间地点并询问能否参加。Turn 4: 用户明确回复“可以的，我会参加的”。Turn 6: 用户再次确认“我会记得的”。Turn 16: 用户说“没问题，我会去的”。",
+          "reason": "助手覆盖了通知培训的核心步骤（时间、地点、询问），用户多次明确同意参加，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从未明确表示结束意愿，助手在Turn 5、7、9、11、13、15、17、19、21、23中反复追问培训事宜，未收尾。",
+          "reason": "用户未表达结束意愿，助手未收尾，且持续追问，违反标准1和3。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_out_of_scope_1779200168_000",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 培训时长和补贴; 助手答: 培训出席后有30元补贴，培训时长大约2小时。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779194514_000",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 48.0,
+        "raw_score": 48.0,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率71% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 75.0,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 76.92,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 44.44
+        },
+        "critical_pass_rate": 0.714,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V1_C10",
+              "V1_C14"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V1_C14"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn3=53字; turn5=48字",
+          "reason": "2/2=100%超字数(限30+5=35)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn1: '喂'、'咱们'；Turn2: '嗯'；Turn3: '吧'；Turn4: '吧'；Turn5: '行'、'吧'。无列点格式，无书面文言词。",
+          "reason": "对话包含至少2处口语词（喂、咱们、嗯、吧、行），无列点格式，无书面文言词，符合所有标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "未发现重复信息：Turn1和Turn5中无8字以上连续片段重复，无同一问题被问2次以上，无信息重复3次以上。",
+          "reason": "对话中无重复回复或重复提问，符合灵活应对要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 6 user明确表示'你这样我就挂了'，但assistant在Turn 5未收尾，反而追问'今天的班有人顶吗'，且Turn 5后对话结束，未在1-2个turn内礼貌收尾。",
+          "reason": "用户结束意愿后，助手未及时收尾，且无再见/祝/辛苦等礼貌用语。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['培训', '时间', '骑手']",
+          "reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "confidence": 0.8285714285714285
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['记录', '骑手']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['提醒', '确认', '头盔', '工牌']",
+          "reason": "只匹配 1/6 (17%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['培训', '评级', '安全培训', '接单']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: 助手通知培训时间地点并询问能否参加。Turn 2: 用户明确拒绝。Turn 3-5: 助手继续追问补训和顶班，未确认用户反馈。Turn 6: 用户再次拒绝并挂断。",
+          "reason": "助手未在用户明确拒绝后确认反馈，持续追问导致对话未完成核心步骤（确认到场），用户最终未给出明确同意/拒绝/接收信息的反馈。",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 6 用户明确表示'你这样我就挂了，真受不了，都说多少次了今天没法配合'，但助手在 Turn 5 仍追问'今天的班有人顶吗？补训的时间我回头发你'，未在1-2个turn内收尾。",
+          "reason": "用户多次表达结束意愿后，助手未及时收尾，且收尾不含'再见'等礼貌用语。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779194514_000",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V1_refuse_persistent_1779200071_000",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 65,
+        "raw_score": 87.22,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率86% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 75.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 76.92,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 0.857,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V1_C10"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【流程遵循度】得分 75.0/100 最低",
+            "constraint_ids": [
+              "V1_C10"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C01",
+          "constraint_name": "每次回复大约在 30 字以内，不要长篇大论。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn3=42字",
+          "reason": "1/2=50%超字数(限30+5=35)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C02",
+          "constraint_name": "被问到超出你职责的问题，统一回复“我向同事确认后再回电”。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C03",
+          "constraint_name": "保持随意自然语气，就像平常沟通一样。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '喂'、'咱们'；Turn 3: '吧'；Turn 5: '吧'。无列点格式，无书面文言词。",
+          "reason": "满足至少2处口语词，无列点，无文言词。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C04",
+          "constraint_name": "避免重复回复一样的内容，灵活应对。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn1和Turn5的回复内容不同，Turn1为通知培训，Turn5为确认休息，无重复信息。",
+          "reason": "未出现重复信息、连续片段重复或重复提问，符合约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C05",
+          "constraint_name": "绝不能承诺额外的补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C06",
+          "constraint_name": "若骑手坚持不参加，礼貌挂断通话。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: '再见！' 含礼貌收尾；Turn 5: '再见！' 再次收尾。用户Turn 2表示不参加，助手在Turn 3即收尾，未反复追问。",
+          "reason": "用户明确拒绝后，助手在1-2个turn内礼貌结束，含'再见'，无追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C07",
+          "constraint_name": "沟通过程中不说“好的”等语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C08",
+          "constraint_name": "S1 告知培训的具体时间地点，并询问骑手是否可以参加。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '培训', '骑手']",
+          "reason": "匹配关键词 3/7 (43%, 阈值≥2个)",
+          "confidence": 0.8285714285714285
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C09",
+          "constraint_name": "S2 如骑手表示不能参加，询问具体原因并进行记录。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '骑手']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C10",
+          "constraint_name": "S3 如骑手确认参加，提醒他必须携带头盔、工牌和身份证。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['提醒', '确认', '头盔', '工牌']",
+          "reason": "只匹配 1/6 (17%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C11",
+          "constraint_name": "S4 强调安全培训的重要性，说明如果未参加会直接影响接单评级。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['培训', '安全培训']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C12",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C13",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C14",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手通知培训时间地点并询问能否到场。Turn 2: 用户明确拒绝。Turn 4: 用户再次拒绝。",
+          "reason": "助手覆盖核心步骤（通知培训、确认到场），用户给出明确拒绝反馈。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C15",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: 用户表示身体不舒服后，助手立即收尾并说“再见”。Turn 5: 用户再次确认后，助手再次收尾说“再见”。未反复追问。",
+          "reason": "用户明确表示无法参加后，助手在1-2个turn内收尾，包含“再见”，且无追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V1_refuse_persistent_1779200071_000",
+          "constraint_id": "V1_C16",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    }
+  ]
+}

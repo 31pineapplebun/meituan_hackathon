@@ -1,0 +1,3775 @@
+{
+  "report_type": "model_level",
+  "instruction_name": "V4",
+  "model_name": "deepseek-v4-flash",
+  "generated_at": "2026-06-01 08:16",
+  "summary": {
+    "avg_score": 64.8,
+    "min_score": 40.23,
+    "max_score": 85,
+    "n_dialogues": 12,
+    "grade": "需改进",
+    "diagnosis": "模型存在明显短板,在多个场景未达标,需重点优化流程遵循与约束执行。"
+  },
+  "dim_avg": {
+    "D1_flow_compliance": 85.7,
+    "D2_task_completion": 50.0,
+    "D3_constraint_compliance": 67.0,
+    "D4_knowledge_accuracy": 75.0,
+    "D5_dialogue_quality": 51.2
+  },
+  "persona_breakdown": [
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V4_refuse_persistent_1779201782_000",
+      "final_score": 40.23,
+      "critical_pass_rate": 0.7,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V4_refuse_persistent_1779201819_001",
+      "final_score": 44.43,
+      "critical_pass_rate": 0.8,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V4_refuse_persistent_1779196709_001",
+      "final_score": 45,
+      "critical_pass_rate": 0.6,
+      "ceiling": 45,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V4_interruption_1779202116_000",
+      "final_score": 57.11,
+      "critical_pass_rate": 0.909,
+      "ceiling": 85,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V4_interruption_1779202280_001",
+      "final_score": 58.19,
+      "critical_pass_rate": 0.909,
+      "ceiling": 85,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V4_interruption_1779197000_000",
+      "final_score": 64.15,
+      "critical_pass_rate": 0.8,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V4_out_of_scope_1779201993_001",
+      "final_score": 72.11,
+      "critical_pass_rate": 0.909,
+      "ceiling": 85,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V4_interruption_1779197143_001",
+      "final_score": 74.15,
+      "critical_pass_rate": 0.9,
+      "ceiling": 85,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V4_cooperative_1779201688_000",
+      "final_score": 75.9,
+      "critical_pass_rate": 0.9,
+      "ceiling": 85,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V4_out_of_scope_1779196755_000",
+      "final_score": 79.33,
+      "critical_pass_rate": 0.909,
+      "ceiling": 85,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V4_cooperative_1779196436_000",
+      "final_score": 81.76,
+      "critical_pass_rate": 1.0,
+      "ceiling": 100,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V4_cooperative_1779196534_001",
+      "final_score": 85,
+      "critical_pass_rate": 0.909,
+      "ceiling": 85,
+      "n_turns": 0
+    }
+  ],
+  "weak_constraints": [
+    {
+      "constraint_id": "V4_C01",
+      "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+      "fail_count": 12,
+      "total_count": 12,
+      "fail_rate": 100.0
+    },
+    {
+      "constraint_id": "V4_C04",
+      "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+      "fail_count": 11,
+      "total_count": 11,
+      "fail_rate": 100.0
+    },
+    {
+      "constraint_id": "V4_C02",
+      "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+      "fail_count": 7,
+      "total_count": 12,
+      "fail_rate": 58.0
+    },
+    {
+      "constraint_id": "V4_C06",
+      "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+      "fail_count": 6,
+      "total_count": 12,
+      "fail_rate": 50.0
+    },
+    {
+      "constraint_id": "V4_C20",
+      "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+      "fail_count": 6,
+      "total_count": 12,
+      "fail_rate": 50.0
+    },
+    {
+      "constraint_id": "V4_C24",
+      "constraint_name": "[META] 任务核心意图完成",
+      "fail_count": 6,
+      "total_count": 12,
+      "fail_rate": 50.0
+    },
+    {
+      "constraint_id": "V4_C10",
+      "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+      "fail_count": 2,
+      "total_count": 4,
+      "fail_rate": 50.0
+    },
+    {
+      "constraint_id": "V4_C07",
+      "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+      "fail_count": 5,
+      "total_count": 12,
+      "fail_rate": 42.0
+    },
+    {
+      "constraint_id": "V4_C25",
+      "constraint_name": "[META] 适时终结对话",
+      "fail_count": 5,
+      "total_count": 12,
+      "fail_rate": 42.0
+    },
+    {
+      "constraint_id": "V4_C14",
+      "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+      "fail_count": 3,
+      "total_count": 12,
+      "fail_rate": 25.0
+    }
+  ],
+  "per_dialogue_results": [
+    {
+      "dialogue_id": "V4_cooperative_1779196436_000",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 81.76,
+        "raw_score": 81.76,
+        "ceiling": 100,
+        "ceiling_reason": "无钳制",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 60.0,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 50.0
+        },
+        "critical_pass_rate": 1.0,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 50.0/100 最低",
+            "constraint_ids": [
+              "V4_C02",
+              "V4_C04"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=36字; turn9=31字; turn3=30字",
+          "reason": "3/5=60%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是老王炸鸡店的负责人吗？' 使用'您好'而非口语词；Turn 1-11 无'咱们/嗯/啊/吧/呗/哈'等口语词（仅Turn 2有'嗯'，但仅1处）。",
+          "reason": "口语词不足2处（仅1处'嗯'），违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: '想问问您，出餐慢是什么原因呢？' 主动提问；Turn 5: '那这个单子大概还需多久能出餐呢？' 再次提问；助手在Turn 3、5、7、9后均等待用户回应，未连续多次发言。",
+          "reason": "助手主动提问让用户参与，且未连续多次发言，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-11中，assistant每次给出关键信息后（如Turn 1、3、5、7、9）均未暂停等待商家回应，而是连续提问或直接给出结论。例如Turn 1后立即Turn 3提问，Turn 5后立即Turn 7回应，未给商家回应空间。",
+          "reason": "约束要求每次给出关键信息后暂停等待回应，但assistant未执行任何暂停，连续输出对话。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话全程无打断场景，用户未在助手说话时插话，助手也未使用过渡语。",
+          "reason": "约束条件未触发，无打断发生，因此不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-7: 助手询问超时原因、预计出餐时间，用户回答15分钟，助手确认并告知转告骑手和用户，覆盖核心任务（核实超时情况）。Turn 8-10: 用户询问补偿，助手简短回答（超出权限，建议后台报备），用户表示明白并结束对话。",
+          "reason": "助手完成核心任务（核实超时并获取预计时间），用户最终明确反馈（同意并结束），且商家疑问（补偿）得到简短回答。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn11用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "用户在第4轮说“后厨忙不过来了”，但未明确说“在忙”，且assistant未回复“就1分钟，保证简短”，而是继续询问时间。",
+          "reason": "约束条件“商家说在忙”未触发，商家仅描述忙碌状态，未直接说“在忙”，故约束不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在开车”时才触发回复和挂断，但对话中无此表述。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,9 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,9 含 ['订单', '超时', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '原因', '出餐']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn7,9 含 ['骑手', '用户', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,9 含 ['订单', '商家']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3-6: 助手核实出餐延迟原因(顾客多、后厨忙)并协调预计出餐时间(15分钟); Turn 7: 告知骑手和用户等待情况; Turn 8-10: 用户给出明确反馈(同意等待、接受信息)。",
+          "reason": "助手覆盖了任务核心步骤(核实原因、协调时间、告知等待)，用户最终明确同意并接收信息，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 10 用户说'那就先不耽误您了'明确结束意愿，Turn 11 助手回复'感谢您的配合，再见'含感谢和再见，1个turn内收尾，无追问。",
+          "reason": "用户结束意愿后助手立即收尾，含感谢和再见，无拖延追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196436_000",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779196534_001",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 85,
+        "raw_score": 87.46,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率91% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 83.33,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 75.0
+        },
+        "critical_pass_rate": 0.909,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V4_C20"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 75.0/100 最低",
+            "constraint_ids": [
+              "V4_C04"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn9=41字; turn7=33字; turn3=29字",
+          "reason": "4/5=80%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '您好'；Turn 2: '嗯'；Turn 4: '吧'；Turn 5: '确实忙'；Turn 6: '吧'；Turn 7: '行'；Turn 8: '对了'；Turn 9: '先帮您'；Turn 10: '好的'。至少2处口语词（嗯、吧、行、对了）。无列点格式。无书面文言词。",
+          "reason": "对话包含多处口语词（嗯、吧、行、对了），无列点格式，无书面文言词，符合所有判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手提问；Turn 3: 助手提问；Turn 5: 助手提问；Turn 7: 助手回应后结束；Turn 9: 助手回应后结束。助手每次发言后用户均有回应，且主动提问让用户参与。",
+          "reason": "助手在每次发言后给用户回应机会，并多次主动提问，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: 客服直接给出超时信息后，未暂停等待商家回应，立即进入Turn 2。Turn 3: 客服再次给出原因询问后，未暂停，直接进入Turn 4。Turn 5: 客服询问出餐时间后，未暂停，直接进入Turn 6。Turn 7: 客服给出处理方案后，未暂停，直接进入Turn 8。Turn 9: 客服回应超出职责后，未暂停，直接进入Turn 10。",
+          "reason": "客服每次给出关键信息后均未暂停等待商家回应，连续对话无停顿，违反约束。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，助手每次发言后用户正常回应，无打断场景。",
+          "reason": "约束条件未触发，无打断场景，因此不适用过渡语要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-7: 助手询问超时原因、确认出餐时间、通知骑手和用户，覆盖核心任务（核实超时并协调解决）。Turn 8-10: 用户提出疑问（能否加送小吃或折扣券），助手简短回应（超出职责范围，记录跟进），符合“商家有疑问仍需简短作答”。Turn 10: 用户明确同意（“好的，那就麻烦您了”）。",
+          "reason": "助手完成核心任务（协调超时订单），用户最终给出明确同意，且商家疑问得到简短回应。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn9: 这个超出我职责范围，我帮您记录回头跟进",
+          "reason": "用户问越界 (turn[8]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）未说“在忙”，而是解释原因并承诺加速出餐。约束条件未触发。",
+          "reason": "约束要求商家说“在忙”才触发回复，但商家未明确说“在忙”，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在开车”才触发回复，但对话中商家未提及开车，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '负责人']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '订单', '超时']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '原因', '出餐']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn7,9,11 含 ['记录', '骑手', '用户']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['引导', 'APP', '取消', '商家']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 核实原因；Turn 5-6: 协调预计出餐时间15分钟；Turn 7: 告知骑手和用户等待情况；Turn 8: 用户同意并建议补偿；Turn 10: 用户确认配合。覆盖核心步骤超70%。",
+          "reason": "助手完成核实原因、协调时间、告知等待，用户明确同意并配合，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 10 用户说'好的，那就麻烦您了'，Turn 11 助手回复'感谢您的配合...再见'，在1个turn内收尾，含'感谢'和'再见'，无追问。",
+          "reason": "用户结束意愿后助手立即收尾，含感谢和再见，无多余追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779196534_001",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_cooperative_1779201688_000",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 75.9,
+        "raw_score": 75.9,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率90% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 52.94,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 50.0
+        },
+        "critical_pass_rate": 0.9,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V4_C20"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 50.0/100 最低",
+            "constraint_ids": [
+              "V4_C02",
+              "V4_C04"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=45字; turn3=37字; turn9=31字",
+          "reason": "3/4=75%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是老王炸鸡店的负责人吗？' 使用'您好'而非口语化表达；Turn 3: '我想了解一下出餐慢的原因' 缺少口语词；全对话仅Turn 2有'嗯'，不足2处口语词。",
+          "reason": "口语词不足2处（仅1处'嗯'），且整体语气偏正式，不符合口语化要求。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1助手提问，Turn 3助手提问，Turn 5助手提问，Turn 7助手提问并询问其他需求，每次助手发言后用户都有回应，未出现连续多次发言。",
+          "reason": "助手在每次发言后等待用户回应，并多次主动提问，符合频繁给商家发言机会的要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-9中，assistant每次给出关键信息后（如Turn 1、3、5、7、9）均未暂停等待商家回应，而是连续发言或直接结束对话。",
+          "reason": "约束要求每次给出关键信息后暂停等待回应，但assistant未执行暂停动作。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，无打断场景。",
+          "reason": "约束条件未触发，因此不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-7: 助手询问超时原因、预计出餐时间，覆盖核心任务（核实超时情况）。Turn 8: 用户明确反馈“目前没有其他问题了”，表示同意结束。",
+          "reason": "助手完成核心任务（核实超时订单），用户给出明确反馈（无其他问题），满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn9用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 4 用户说“确实有些忙”，但 assistant 在 Turn 5 未回复“就 1 分钟，保证简短”，而是直接询问预计时间。",
+          "reason": "约束要求商家说在忙时，需回复指定话术再继续流程，但对话中未执行该回复。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说“在开车”，因此约束条件未触发。",
+          "reason": "约束条件“若商家说在开车”未满足，故无需执行后续回复和挂断。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,9 含 ['问', '负责人']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['订单', '超时']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '原因', '出餐']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn7 含 ['骑手', '用户']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['引导', 'APP', '取消', '商家']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,9 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3-5: 助手核实出餐延迟原因(忙不过来)并协调预计出餐时间(10分钟); Turn 7: 告知骑手和用户等待情况; Turn 8: 用户给出明确反馈(同意/接收信息)。",
+          "reason": "助手覆盖了任务核心步骤(核实原因、协调时间、告知等待)，用户最终明确接收信息。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 8用户明确表示'目前没有其他问题了'，Turn 9助手立即收尾，包含'感谢'、'祝您生意兴隆'、'再见'，且无追问。",
+          "reason": "用户结束意愿后1个turn内收尾，含感谢和祝福，无反复追问，满足所有标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_cooperative_1779201688_000",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_interruption_1779197000_000",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 64.15,
+        "raw_score": 64.15,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率80% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 82.35,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 75.0
+        },
+        "critical_pass_rate": 0.8,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V4_C14",
+              "V4_C24"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V4_C24"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn11=49字; turn7=43字; turn9=42字",
+          "reason": "6/6=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '您好'非口语，但整体口语化；Turn 3: '就1分钟'；Turn 5: '咋超时了'；Turn 7: '咱们'；Turn 9: '理解'；Turn 11: '抱歉'；Turn 13: '您打开'。至少2处口语词：'咱们'(Turn 7)、'咋'(Turn 5)。无列点格式。无书面文言词。",
+          "reason": "满足所有3条标准：有口语词、无列点、无文言词。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: '就1分钟，保证简短' 简短发言；Turn 5: '您先说说这单咋超时了？' 主动提问；Turn 7: '咱们先说关键的，这单现在能出吗' 提问；Turn 9: 引导用户操作；Turn 11: 解释原因；Turn 13: 回答用户问题。助手未连续多次发言，且多次提问让用户参与。",
+          "reason": "助手在对话中频繁提问并给予用户回应机会，未自顾自说，满足两条判定标准。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: 客服直接给出关键信息（订单超时25分钟）后未暂停，立即继续对话。Turn 3: 再次给出关键信息后未等待商家回应。Turn 5: 给出关键信息后未暂停。",
+          "reason": "客服在每次给出关键信息后均未暂停等待商家回应，违反约束字面要求。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户多次打断（如Turn 2、8、10、14），但助手未使用“您刚才提到...”或“先回答您...”过渡语，而是直接回应或转移话题。",
+          "reason": "存在打断场景但助手未使用指定过渡语，但约束要求“如果被打断则使用”，此处未使用，故判定为na（条件未满足）。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 助手确认订单超时并询问情况，覆盖核心任务。Turn 14: 用户说“行行行，我等会自己找！你先挂了吧”，明确拒绝继续沟通。",
+          "reason": "助手完成核心任务（核实超时订单），用户最终给出明确拒绝反馈，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 2: user说“我现在忙得很”。Turn 3: assistant回复“就1分钟，保证简短”。符合约束：商家说在忙，回复指定语句后继续流程。",
+          "reason": "用户表达忙，助手回复指定语句后继续对话，满足约束字面要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户（商家）从未说“在开车”，而是说“忙”、“炒鸡”等，未触发约束条件。",
+          "reason": "约束要求商家说“在开车”才触发回复和挂断，但对话中未出现该表述，故未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,9,13 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['订单', '超时', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['询问', '原因', '出餐']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,9 含 ['问', '订单', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn5,9,13 含 ['记录', '商家']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,9 含 ['APP', '订单', '取消', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-14: 助手未核实出餐延迟原因（如询问为何超时），未协调预计出餐时间（用户拒绝出餐并取消订单），未告知骑手和用户等待情况。用户最终未给出明确反馈（同意/拒绝/接收信息），而是要求挂断。",
+          "reason": "助手未覆盖核心步骤的70%，用户未给出明确反馈，两项均不满足。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 14: user明确说'你先挂了吧'，表示结束意愿；assistant在下一turn未出现，对话自然结束。收尾含'挂了吧'，符合结束信号。",
+          "reason": "用户明确要求结束，助手未再追问，对话自然终止，满足所有判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197000_000",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 商家版APP怎么操作取消; 助手答: 在订单详情页点右上角，选取消订单。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_interruption_1779197143_001",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 74.15,
+        "raw_score": 74.15,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率90% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 82.35,
+          "D4_knowledge_accuracy": 0.0,
+          "D5_dialogue_quality": 75.0
+        },
+        "critical_pass_rate": 0.9,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V4_C14"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【知识准确性】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V4_C26"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=57字; turn9=52字; turn3=46字",
+          "reason": "6/6=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '您好'、'您这边'；Turn 3: '就 1 分钟'；Turn 5: '您别急'；Turn 7: '您看怎么办'；Turn 9: '完全理解您的心情'；Turn 11: '没什么事'；Turn 13: '抱歉'、'感谢配合'。包含口语词'您'、'别急'、'您看'、'没什么事'、'抱歉'、'感谢'，无列点格式，无书面文言词。",
+          "reason": "对话使用口语化表达如'您别急'、'您看怎么办'，无列点或文言词，符合约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: '就 1 分钟，保证简短。这个订单超时了...' 主动提问；Turn 5: '就是想问下，这个单大概还需要多久能出？' 再次提问；Turn 7: '您看怎么办？' 征求用户意见。助手每次发言后用户均有回应，未连续多次发言。",
+          "reason": "助手在每次发言后等待用户回应，并多次主动提问，符合频繁给商家发言机会的要求。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 3: assistant连续给出两个问题（单子太多还是缺食材），未暂停等待回应；Turn 5: 直接追问时间，未暂停；Turn 7: 连续给出两个选项，未暂停；Turn 9: 直接指导操作，未暂停；Turn 11: 直接解释并催促操作，未暂停。",
+          "reason": "assistant在每次给出关键信息后未暂停等待商家回应，而是连续输出多个信息或直接催促，违反约束字面要求。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户多次打断助手（如Turn 2、4、6、8、10、12），但助手从未使用过渡语“您刚才提到...”或“先回答您...”，而是直接回应或继续原话题。",
+          "reason": "约束要求被打断时使用特定过渡语，但助手未使用，然而判定标准中无打断场景应判na，此处有打断但未使用过渡语，按标准应判fail，但标准明确“没有打断场景→na”，此处有打断，故判fail。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-13: 助手覆盖了核心任务（核实超时原因、提供解决方案），用户最终在Turn 12给出明确反馈（同意取消订单）。",
+          "reason": "助手完成核心任务后，用户仍有疑问（Turn 10），助手简短作答（Turn 11），满足约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 2 user说“我这边忙得很”，Turn 3 assistant回复“就 1 分钟，保证简短”后继续流程。",
+          "reason": "商家在Turn 2表示忙，客服在Turn 3回复指定话术后继续流程，符合约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户从未说“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说在开车时才触发回复，但对话中用户未提及开车。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['订单', '超时', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['询问', '原因', '出餐']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn7,9,13 含 ['骑手', '商家']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['APP', '订单', '取消', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-7: 助手核实出餐延迟原因(缺鸡翅, Turn 6), 协调预计出餐时间(建议换菜或取消, Turn 7), 告知骑手和用户等待情况(Turn 5, 13)。Turn 12: 用户同意取消订单('行吧行吧')。",
+          "reason": "助手覆盖了核心步骤(核实原因、协调方案、告知情况), 用户最终明确同意取消订单。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 12用户表示'行吧行吧，我赶紧去弄'，Turn 13助手立即收尾，包含'感谢配合，再见'，且无追问。",
+          "reason": "用户明确结束意愿后，助手在1个turn内收尾，含感谢和再见，无反复追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779197143_001",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "FAQ: 食材临时缺货能否更换; 错误: 标准答案要求先跟用户电话沟通、用户同意后才能换，但助手未强调必须用户同意；且助手在Turn 9说取消订单影响不大，Turn 11又说与信用分挂钩、严重停业整顿，前后矛盾。",
+          "reason": "FAQ 答案错误或自相矛盾",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202116_000",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 57.11,
+        "raw_score": 57.11,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率91% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 55.56,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 40.0
+        },
+        "critical_pass_rate": 0.909,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V4_C24"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V4_C24"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn5=67字; turn9=63字; turn15=61字",
+          "reason": "14/14=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是老王炸鸡店的负责人吗？我是美团客服。' 使用'您好'等书面语，无口语词；全对话无'咱们/嗯/啊/吧/呗/哈'等口语词，仅出现一次'吧'在Turn 17，但不足2处。",
+          "reason": "口语词不足2处，且整体语言偏正式，不符合口语化要求。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23、25、27、29中均主动提问（如“请问出餐慢的原因是什么呢？”“请问您大概需要多久才能完成这个订单呢？”），且每次用户发言后助手才回应，未连续多次发言。",
+          "reason": "助手频繁提问给用户发言机会，且未连续发言，满足两条标准。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "从Turn 1到Turn 30，assistant每次给出关键信息（如询问原因、解释职责、说明后果等）后，没有暂停等待商家回应，而是立即继续提问或解释。例如Turn 3、5、7、9、11、13、15、17、19、21、23、25、27、29中，assistant在给出信息后直接追问，未留出停顿。",
+          "reason": "对话中assistant未在给出关键信息后暂停等待商家回应，而是连续输出，违反约束字面要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 5: 用户问外卖费，助手说“您刚才提到高峰期”；Turn 9: 用户问折扣，助手说“您刚才提到的优惠活动”；Turn 15: 用户问补偿，助手说“您刚才提到的补偿措施”；Turn 25: 用户问补偿券，助手说“您刚才提到的补偿券”。多次使用过渡语。",
+          "reason": "对话中存在多次用户打断，助手均使用“您刚才提到...”过渡语接续，符合约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手未完成核心任务（询问出餐时间），用户始终未给出明确出餐时间，且最终用户未给出明确反馈（同意/拒绝/接收信息），如Turn 30用户继续抱怨。",
+          "reason": "核心任务未完成，用户未给出明确反馈，不满足判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn3用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn5: 这超出我职责范围，我帮您记录回头跟进; turn9: 我无法做出承诺",
+          "reason": "用户问越界 (turn[4, 8, 12, 14, 16, 18, 20, 24, 26, 30]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未表示“在忙”，而是不断询问其他问题（如外卖费、折扣、补偿等），未触发约束条件。",
+          "reason": "约束条件“若商家说在忙”未满足，因此无需执行后续回复，判定为未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说过“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在开车”才触发回复和挂断，但对话中无此表述。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '负责人']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['订单', '超时']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '原因', '出餐']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn5,7,9 含 ['记录', '骑手', '用户']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['订单', '取消']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手未获取到预计出餐时间（Turn 5-29），用户未给出明确反馈（Turn 30仍抱怨），核心步骤未完成70%。",
+          "reason": "助手未覆盖核心步骤（未协调出餐时间），用户未给出明确反馈，不满足两条标准。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从未明确表示结束意愿，助手在最后turn 30仍追问出餐时间，未收尾。",
+          "reason": "对话未自然结束，助手持续追问，无收尾语句，违反所有判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202116_000",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 取消订单后果; 助手答: 如果您取消订单，可能会影响店铺的评级，偶尔一次还好，但多了会影响曝光率。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_interruption_1779202280_001",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 58.19,
+        "raw_score": 58.19,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率91% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 72.22,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 25.0
+        },
+        "critical_pass_rate": 0.909,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V4_C24"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V4_C24"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=61字; turn29=53字; turn11=48字",
+          "reason": "14/14=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是老王炸鸡店的负责人吗？' 使用'您好'等书面语，无口语词；全对话无'咱们/嗯/啊/吧/呗/哈'等口语词。",
+          "reason": "缺少至少2处口语词，违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23、25、27、29中均主动提问（如“您需要我帮您操作吗？”“您觉得怎么样？”），且每次用户发言后助手才回应，未连续多次发言。",
+          "reason": "助手频繁提问让用户参与，且每次用户发言后助手才回应，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "从Turn 1到Turn 30，assistant每次给出关键信息后（如订单超时、取消操作、调整出餐时长等）均未暂停等待商家回应，而是连续追问或提出新建议，例如Turn 3、Turn 5、Turn 7等。",
+          "reason": "assistant未在每次给出关键信息后暂停等待商家回应，而是持续输出，违反约束字面要求。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户多次打断助手（如Turn 2、4、6等），但助手从未使用过渡语“您刚才提到...”或“先回答您...”，而是直接回答或转移话题。",
+          "reason": "存在打断场景，但助手未使用指定过渡语，因此不满足pass条件；但约束要求“如果被打断”才需使用，此处未使用，故判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23、25、27、29中反复询问是否取消订单，但用户始终未给出明确同意或拒绝，最终在Turn 30仍提出新问题。",
+          "reason": "用户未给出明确反馈（同意/拒绝/接收信息），不满足判定标准第2条。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn11: 这个超出我职责范围，我帮您记录回头跟进; turn21: 这个超出我职责范围，我帮您记录回头跟进",
+          "reason": "用户问越界 (turn[10, 20, 30]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未表示“在忙”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在忙”后回复特定语句，但对话中无此表述，故未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未表示“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在开车”时才触发回复和挂断，但对话中无此表述。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '订单', '超时', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,13 含 ['问', '原因', '出餐']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn7,9,11 含 ['记录', '用户', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['APP', '订单', '取消', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手未核实出餐延迟原因（仅问原因但未获回答），未协调预计出餐时间，未告知骑手和用户等待情况。用户未给出明确反馈（始终回避取消订单问题）。",
+          "reason": "助手未覆盖核心步骤（核实原因、协调时间、告知等待），用户未明确同意/拒绝/接收信息。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户未明确表示结束意愿，但助手从Turn 5起反复追问“需要我协助您取消当前订单吗？”（Turn 5,7,9,11,13,15,17,19,21,23,25,27,29），共13次，违反标准3。",
+          "reason": "助手多次重复追问同一问题，未在用户未结束意愿时自然收尾，违反“没有反复追问”标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_interruption_1779202280_001",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 食材临时缺货能否更换; 助手答: 需要您先跟用户沟通，用户同意后才能更换菜品。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779196755_000",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 79.33,
+        "raw_score": 79.33,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率91% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 60.0,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 60.0
+        },
+        "critical_pass_rate": 0.909,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V4_C20"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【约束遵循度】得分 60.0/100 最低",
+            "constraint_ids": [
+              "V4_C01",
+              "V4_C07",
+              "V4_C10"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn11=54字; turn7=52字; turn13=42字",
+          "reason": "5/6=83%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '您好'非口语，但整体有口语词。Turn 3: '对'、Turn 5: '咱们'、Turn 7: '收到'、Turn 9: '好的'、Turn 11: '核对一下'、Turn 13: '确认'。至少2处口语词（咱们、好的、收到等）。无列点格式。无书面文言词。",
+          "reason": "满足所有3条标准：有口语词（咱们、好的等），无列点格式，无书面文言词。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: 助手主动提问“请问是店里太忙，还是有什么特殊情况？”；Turn 5: 助手提问“这单大概还要多久能出餐？”；Turn 7: 助手回应后结束话题；Turn 9: 助手回应后结束话题；Turn 11: 助手回应后结束话题；Turn 13: 助手回应后结束话题。助手每次发言后均给用户回应机会，并多次主动提问。",
+          "reason": "助手在每次发言后都等待用户回应，且主动提问让用户参与，满足两条标准。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 3: assistant给出关键信息“出餐超时”后，未等待商家回应，直接追问原因。Turn 5: 商家转移话题后，assistant未暂停等待回应，直接拉回正题。",
+          "reason": "assistant在给出关键信息后未暂停等待商家回应，连续追问或打断，违反约束字面要求。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 4用户打断并转移话题，Turn 5助手未使用“您刚才提到...”过渡语，而是直接说“是挺忙的。咱们先说正事”。后续Turn 6、8、10、12用户多次打断，助手均未使用该过渡语。",
+          "reason": "用户多次打断，助手未使用指定过渡语接续，违反约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 助手确认订单超时并询问原因；Turn 5-7: 助手引导回正事，商家承诺十分钟出餐；Turn 9-13: 助手记录并确认核心任务完成。用户最终在Turn 12明确同意十分钟出餐。",
+          "reason": "助手覆盖核心任务（确认超时、获取出餐时间），用户最终给出明确反馈（同意十分钟出餐），满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn9用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn7: 这超出我职责范围了，我帮您记录回头跟进; turn9: 加盟的事也超出我这边范围，回头一并帮您记录跟进",
+          "reason": "用户问越界 (turn[6, 8, 10, 12]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 4 user说“今天确实忙得够呛”，表示在忙。Turn 5 assistant未回复“就 1 分钟，保证简短”，而是说“是挺忙的。咱们先说正事”，直接继续流程，未按约束回复指定语句。",
+          "reason": "商家说在忙后，助理未回复指定语句“就 1 分钟，保证简短”，直接继续流程，违反约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户（商家）从未说“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在开车”才触发回复，但对话中商家未提及开车，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '负责人']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,13 含 ['确认', '订单', '超时']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '出餐']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn7,9,11 含 ['记录', '骑手', '用户']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['引导', 'APP', '取消', '商家']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 助手核实出餐延迟原因（忙、人手不够）。Turn 5-7: 协调预计出餐时间（十分钟）。Turn 7-11: 告知骑手和用户等待情况。Turn 12: 用户明确反馈（十分钟内出餐）。",
+          "reason": "助手覆盖了核心步骤（核实原因、协调时间、告知情况），用户最终给出明确反馈（同意十分钟出餐）。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 12用户未明确结束，Turn 13助手主动收尾含'感谢配合，再见'，无追问，符合1-2 turn内收尾。",
+          "reason": "用户未明确结束，但助手在最后turn自然收尾，含感谢和再见，无拖延追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779196755_000",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_out_of_scope_1779201993_001",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 72.11,
+        "raw_score": 72.11,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率91% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 55.56,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 25.0
+        },
+        "critical_pass_rate": 0.909,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V4_C20"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 25.0/100 最低",
+            "constraint_ids": [
+              "V4_C02",
+              "V4_C04",
+              "V4_C25"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=61字; turn13=49字; turn17=49字",
+          "reason": "11/11=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是老王炸鸡店的负责人吗？' 使用'您好'而非口语词；全对话无'咱们/嗯/啊/吧/呗/哈'等口语词，仅出现一次'吧'在Turn 5？实际Turn 5无'吧'，Turn 7有'吧'？检查：Turn 7无'吧'，Turn 5无'吧'，全对话无口语词。",
+          "reason": "缺少至少2处口语词（如咱们/嗯/啊/吧/呗/哈），违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手提问核实情况；Turn 3: 主动提问原因；Turn 5: 提问预计时间；Turn 7: 提问其他需求；Turn 9,11,13,15,17,19,21,23: 每次用户发言后助手均回应并提问，未连续多次发言。",
+          "reason": "助手在每次用户发言后均回应，并频繁提问（如核实原因、预计时间、其他需求），给用户充分发言机会，未自顾自说。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: assistant一次性给出关键信息（订单超时25分钟），未暂停等待商家回应。Turn 3: 继续追问原因，未在给出信息后暂停。",
+          "reason": "助理在每次给出关键信息后未暂停等待商家回应，连续输出，违反约束字面要求。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，助手每次完整说完后用户才回应，无打断场景。",
+          "reason": "无打断场景，约束条件未触发，判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "核心任务（核实超时订单）在Turn 7完成，但用户从Turn 8起连续提出多个无关问题（如股票、业务、联系方式等），助手均简短拒绝，未按约束“商家有疑问仍需简短作答”处理，而是重复“记录回头跟进”并结束通话。",
+          "reason": "核心任务完成后，用户多次提问，助手未简短作答，而是反复拒绝并结束，违反约束。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn5用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn7: 超出我职责范围，我帮您记录回头跟进; turn9: 超出我职责范围，我帮您记录回头跟进",
+          "reason": "用户问越界 (turn[6, 8, 10, 12, 14, 16, 18, 20, 22, 24]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未表示“在忙”，而是直接承认高峰期订单量大（Turn 4），未触发约束条件。",
+          "reason": "约束条件“若商家说在忙”未满足，因此无需执行后续回复，判定为未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说过“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在开车”时才触发回复和挂断，但对话中无此表述。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问', '负责人']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '订单', '超时']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '原因', '出餐']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn7,9,11 含 ['记录', '骑手', '用户']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['引导', 'APP', '取消', '商家']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问', '结束']",
+          "reason": "匹配关键词 2/2 (100%, 阈值≥1个)",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-7: 助手核实出餐延迟原因(Turn 3)、协调预计出餐时间(Turn 5)、告知骑手和用户等待情况(Turn 7)。用户给出明确反馈(Turn 6: '大概再过十分钟左右就可以出餐了')。",
+          "reason": "助手覆盖了任务核心步骤(核实原因、协调时间、告知等待)，用户明确反馈出餐时间，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从Turn 8开始多次提出无关问题，但助手未主动结束对话，直到Turn 23仍重复相同回复，未在用户明确表示结束意愿后1-2个turn内收尾。",
+          "reason": "用户未明确表示结束意愿，但助手在多次无关提问后未果断终结对话，导致冗长拖沓，违反适时终结原则。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_out_of_scope_1779201993_001",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779196709_001",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 45,
+        "raw_score": 50.14,
+        "ceiling": 45,
+        "ceiling_reason": "Critical通过率60% → 上限45",
+        "dim_scores": {
+          "D1_flow_compliance": 57.14,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 66.67,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 0.6,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "4 条关键约束失败",
+            "constraint_ids": [
+              "V4_C14",
+              "V4_C19",
+              "V4_C20",
+              "V4_C24"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V4_C24"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn3=39字; turn5=31字",
+          "reason": "2/2=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '您好'非口语，但整体有口语词。Turn 2: '哦'、'吧'。Turn 3: '吧'。Turn 4: '吧'。Turn 5: '吧'。无列点格式，无书面文言词。",
+          "reason": "至少2处口语词（哦、吧），无列点格式，无书面文言词，符合所有标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1 助手提问后，Turn 2 用户回应；Turn 3 助手主动询问用户是否需要休息，并给出选择；Turn 5 助手结束对话，未连续多次发言。",
+          "reason": "助手在每次发言后都等待用户回应，并主动提问让用户参与，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中assistant在每次给出关键信息后（如订单超时、核实订单）并未暂停等待商家回应，而是连续发言（Turn 1、3、5），但商家（user）主动中断对话（Turn 2、4），约束条件未实际触发。",
+          "reason": "约束要求每次给出关键信息后暂停等待回应，但商家主动打断，未形成完整交互回合，约束未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，助手完整陈述后用户回应，无打断场景。",
+          "reason": "约束条件未触发，无打断发生，因此判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-5: 助手未完成核心任务（核实订单），用户因身体不适拒绝配合，助手同意改天联系，未覆盖任务步骤。",
+          "reason": "核心任务未完成，用户未给出明确反馈（同意/拒绝/接收信息），不满足判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）未说“在忙”，而是说“身体太难受了，今天没法配合”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在忙”才触发回复，但对话中商家未提及“在忙”，故未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未说“在开车”，而是说“身体很不舒服”、“身体太难受了”，因此约束条件未触发。",
+          "reason": "约束条件“若商家说在开车”未满足，故约束未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '负责人']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['确认', '订单', '超时']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['询问', '原因', '出餐']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '记录', '骑手', '用户']",
+          "reason": "只匹配 0/5 (0%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['引导', 'APP', '取消', '商家']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-5: 助手仅核实了订单超时，未协调预计出餐时间、告知骑手和用户等待情况。用户因身体不适拒绝配合（Turn 4），未给出明确反馈。",
+          "reason": "助手未覆盖核心步骤（仅核实原因，未协调时间或告知等待），且用户未给出明确反馈。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 4 用户明确表示'今天没法配合，改天吧'，Turn 5 助手立即收尾'那我回头再联系您确认这个订单，您先好好休息'，含'休息'等关怀词，未追问其他需求。",
+          "reason": "用户表达结束意愿后，助手在1个turn内自然收尾，包含关怀语，无拖延追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779196709_001",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779201782_000",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 40.23,
+        "raw_score": 40.23,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率70% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 71.43,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 66.67,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 20.0
+        },
+        "critical_pass_rate": 0.7,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "3 条关键约束失败",
+            "constraint_ids": [
+              "V4_C19",
+              "V4_C20",
+              "V4_C24"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V4_C24"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn5=40字; turn3=36字",
+          "reason": "2/2=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是老王炸鸡店的负责人吗？我是美团客服。' 使用'您好'而非口语词；Turn 1-6 无'咱们/嗯/啊/吧/呗/哈'等口语词，仅Turn 5有'吗'但不足2处。",
+          "reason": "口语词不足2处，违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 3和Turn 5中助手连续发言，未给用户足够回应机会；Turn 5后用户表示要挂断，助手未主动提问让用户参与。",
+          "reason": "助手连续多次发言，未频繁给商家发言机会，且未主动提问促进用户参与。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 3: assistant连续提问未暂停；Turn 5: 再次追问未等待回应。",
+          "reason": "助手在每次给出关键信息后未暂停等待商家回应，而是连续追问，违反约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: assistant说“您刚才提到身体不舒服”，使用了过渡语“您刚才提到...”，符合约束要求。",
+          "reason": "用户打断后，助手使用了指定过渡语接续，满足判定标准第1条。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 2: 用户表示身体不舒服无法配合；Turn 4: 用户拒绝并说改天；Turn 6: 用户威胁挂断。用户未给出明确反馈（同意/拒绝/接收信息），且核心任务未完成。",
+          "reason": "用户最终未给出明确反馈，且核心任务未完成，不满足判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "用户未明确说“在忙”，而是说“身体不舒服”、“改天吧”、“你这样我就挂了”，不符合约束中“商家说在忙”的条件。",
+          "reason": "约束条件未触发，用户未表达“在忙”，因此无需回复“就 1 分钟，保证简短”。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家未说“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在开车”才触发回复和挂断，但对话中商家未提及开车。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '负责人']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5 含 ['订单', '超时']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '原因', '出餐']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '记录', '骑手', '用户']",
+          "reason": "只匹配 0/5 (0%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['引导', 'APP', '取消', '商家']",
+          "reason": "只匹配 1/5 (20%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-6: 助手仅询问原因(Turn 3,5)，未完成核实原因、协调出餐时间、告知骑手和用户等待情况等核心步骤；用户未给出明确反馈，最终拒绝(Turn 6)。",
+          "reason": "助手未覆盖任务核心步骤的70%，且用户未给出明确反馈。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 6 user明确表示'你这样我就挂了'（结束意愿），但Turn 5 assistant仍在追问原因，未在1-2个turn内收尾，且后续无收尾语。",
+          "reason": "用户明确结束意愿后，助手未及时收尾，反而继续追问，违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201782_000",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V4_refuse_persistent_1779201819_001",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 44.43,
+        "raw_score": 44.43,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率80% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 66.67,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 20.0
+        },
+        "critical_pass_rate": 0.8,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V4_C19",
+              "V4_C24"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V4_C24"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C01",
+          "constraint_name": "每次回复控制在 15-20 字左右，保持精简。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn5=49字; turn3=39字",
+          "reason": "2/2=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C02",
+          "constraint_name": "语言要口语化，就像平时的电话沟通一样自然。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是老王炸鸡店的负责人吗？我是美团客服。' 使用'您好'而非口语词；Turn 1-6 无'咱们/嗯/啊/吧/呗/哈'等口语词，仅Turn 5有'吧'但不足2处。",
+          "reason": "口语词不足2处（仅1处'吧'），且开头使用书面语'您好'，不符合口语化要求。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C03",
+          "constraint_name": "沟通中要频繁给商家发言机会，不要自顾自说。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 3和Turn 5中助手连续发言，未给用户足够回应机会；Turn 5后用户表示要挂断，助手未主动提问让用户参与。",
+          "reason": "助手连续多次发言，未频繁给商家发言机会，且未主动提问促进用户参与。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C04",
+          "constraint_name": "每次给出关键信息后要稍微暂停，等商家回应。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: assistant连续给出身份、订单尾号、超时时间等关键信息，未暂停等待商家回应。Turn 3: 再次连续给出理解、询问原因、协调承诺等信息，未暂停。Turn 5: 连续给出理解、建议、指导操作等信息，未暂停。",
+          "reason": "assistant在每次给出关键信息后均未暂停等待商家回应，而是连续输出多个信息点，违反约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C05",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来接续。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 5: 助手说“您刚才提到今天身体不舒服”，使用了过渡语“您刚才提到...”。",
+          "reason": "用户打断后，助手使用指定过渡语接续，符合约束条件。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C06",
+          "constraint_name": "核心任务完成后，如果商家有疑问仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 2: 用户拒绝配合；Turn 4: 用户再次拒绝；Turn 6: 用户威胁挂断。用户未给出明确反馈（同意/拒绝/接收信息），且核心任务未完成。",
+          "reason": "用户始终拒绝配合，未完成核心任务，且无明确反馈，违反判定标准第1、2条。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C07",
+          "constraint_name": "对话中绝对不说“好的”、“哈哈”等不专业的词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C08",
+          "constraint_name": "绝不向商家承诺任何形式的折扣或者超时补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C09",
+          "constraint_name": "被问及商家版APP之外的其他平台、个人投资等任务范围外的问题，统一回复\"这...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C10",
+          "constraint_name": "若商家说在忙，回复“就 1 分钟，保证简短”后继续流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未明确说“在忙”，而是说“身体不舒服”、“改天吧”、“你这样我就挂了”，未触发约束条件。",
+          "reason": "约束条件“若商家说在忙”未满足，因此约束未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C11",
+          "constraint_name": "若商家说在开车，礼貌回复“那我稍后再打”然后挂断结束。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户从未说“在开车”，因此约束条件未触发。",
+          "reason": "约束要求商家说“在开车”才触发回复，但用户未提及开车，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C12",
+          "constraint_name": "S1 自我介绍并询问接电话的是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5 含 ['问', '负责人']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C13",
+          "constraint_name": "S2 确认订单号 ${order_id}，向商家说明该订单目前已超时 ${curren",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['订单', '超时']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C14",
+          "constraint_name": "S3 **分支**：询问出餐慢的原因：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '原因', '出餐']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C15",
+          "constraint_name": "S3.1 若是高峰期忙不过来，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若是高峰期忙不过来，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C16",
+          "constraint_name": "S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若是食材缺货，询问是否需要取消订单，进入 Step 6。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C17",
+          "constraint_name": "S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.3 若是系统未接单，协助商家在后台确认接单后，进入 Step 4。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C18",
+          "constraint_name": "S4 询问商家目前这个订单大概还需要多久能出餐。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '订单', '出餐']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C19",
+          "constraint_name": "S5 协调沟通：告知会帮商家转达给骑手和用户让他们等待，同时记录商家的配合度。",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '记录', '骑手', '用户']",
+          "reason": "只匹配 0/5 (0%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C20",
+          "constraint_name": "S6 取消订单流程：引导商家在商家版 APP 操作取消订单。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['订单', '取消']",
+          "reason": "匹配关键词 2/5 (40%, 阈值≥2个)",
+          "confidence": 0.82
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C21",
+          "constraint_name": "S7 问题解决后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C22",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C23",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C24",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-6: 助手仅询问原因和协调时间，未完成核实原因、协调预计出餐时间、告知骑手和用户等待情况等核心步骤；用户未给出明确反馈，最终拒绝并威胁挂断。",
+          "reason": "助手未覆盖任务核心步骤的70%，用户未给出明确反馈，两条标准均不满足。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C25",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 6 user明确表示'你这样我就挂了'（结束意愿），但Turn 5 assistant仍在追问'您看怎么样？'，未在1-2个turn内收尾，且后续无收尾语。",
+          "reason": "用户明确结束意愿后，助手未及时收尾，违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V4_refuse_persistent_1779201819_001",
+          "constraint_id": "V4_C26",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    }
+  ]
+}
