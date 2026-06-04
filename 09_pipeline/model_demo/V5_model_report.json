@@ -1,0 +1,4488 @@
+{
+  "report_type": "model_level",
+  "instruction_name": "V5",
+  "model_name": "deepseek-v4-flash",
+  "generated_at": "2026-06-01 08:16",
+  "summary": {
+    "avg_score": 67.5,
+    "min_score": 43.39,
+    "max_score": 97.5,
+    "n_dialogues": 15,
+    "grade": "需改进",
+    "diagnosis": "模型存在明显短板,在多个场景未达标,需重点优化流程遵循与约束执行。"
+  },
+  "dim_avg": {
+    "D1_flow_compliance": 89.5,
+    "D2_task_completion": 40.0,
+    "D3_constraint_compliance": 77.2,
+    "D4_knowledge_accuracy": 50.0,
+    "D5_dialogue_quality": 75.0
+  },
+  "persona_breakdown": [
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V5_out_of_scope_1779202733_000",
+      "final_score": 43.39,
+      "critical_pass_rate": 0.833,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V5_interruption_1779202919_000",
+      "final_score": 48.43,
+      "critical_pass_rate": 0.818,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V5_refuse_persistent_1779197604_000",
+      "final_score": 52.2,
+      "critical_pass_rate": 0.818,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V5_out_of_scope_1779202862_001",
+      "final_score": 52.21,
+      "critical_pass_rate": 0.833,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V5_out_of_scope_1779197726_000",
+      "final_score": 53.7,
+      "critical_pass_rate": 0.833,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V5_refuse_persistent_1779197677_001",
+      "final_score": 54.31,
+      "critical_pass_rate": 0.818,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V5_refuse_persistent_1779202695_001",
+      "final_score": 56.48,
+      "critical_pass_rate": 0.818,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "V5_out_of_scope_1779197944_001",
+      "final_score": 59.03,
+      "critical_pass_rate": 0.833,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "V5_refuse_persistent_1779202662_000",
+      "final_score": 60.19,
+      "critical_pass_rate": 0.818,
+      "ceiling": 65,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V5_interruption_1779198161_000",
+      "final_score": 79.29,
+      "critical_pass_rate": 1.0,
+      "ceiling": 100,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V5_cooperative_1779202511_001",
+      "final_score": 82.48,
+      "critical_pass_rate": 0.909,
+      "ceiling": 85,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V5_cooperative_1779197281_000",
+      "final_score": 85,
+      "critical_pass_rate": 0.917,
+      "ceiling": 85,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V5_interruption_1779203124_001",
+      "final_score": 90.4,
+      "critical_pass_rate": 1.0,
+      "ceiling": 100,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "V5_cooperative_1779197454_001",
+      "final_score": 97.5,
+      "critical_pass_rate": 1.0,
+      "ceiling": 100,
+      "n_turns": 0
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "V5_interruption_1779198414_001",
+      "final_score": 97.5,
+      "critical_pass_rate": 1.0,
+      "ceiling": 100,
+      "n_turns": 0
+    }
+  ],
+  "weak_constraints": [
+    {
+      "constraint_id": "V5_C01",
+      "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+      "fail_count": 15,
+      "total_count": 15,
+      "fail_rate": 100.0
+    },
+    {
+      "constraint_id": "V5_C13",
+      "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+      "fail_count": 11,
+      "total_count": 15,
+      "fail_rate": 73.0
+    },
+    {
+      "constraint_id": "V5_C23",
+      "constraint_name": "[META] 任务核心意图完成",
+      "fail_count": 9,
+      "total_count": 15,
+      "fail_rate": 60.0
+    },
+    {
+      "constraint_id": "V5_C25",
+      "constraint_name": "[META] FAQ知识正确",
+      "fail_count": 2,
+      "total_count": 4,
+      "fail_rate": 50.0
+    },
+    {
+      "constraint_id": "V5_C05",
+      "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+      "fail_count": 6,
+      "total_count": 14,
+      "fail_rate": 43.0
+    },
+    {
+      "constraint_id": "V5_C24",
+      "constraint_name": "[META] 适时终结对话",
+      "fail_count": 5,
+      "total_count": 15,
+      "fail_rate": 33.0
+    },
+    {
+      "constraint_id": "V5_C02",
+      "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+      "fail_count": 4,
+      "total_count": 15,
+      "fail_rate": 27.0
+    },
+    {
+      "constraint_id": "V5_C06",
+      "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+      "fail_count": 4,
+      "total_count": 15,
+      "fail_rate": 27.0
+    },
+    {
+      "constraint_id": "V5_C03",
+      "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+      "fail_count": 3,
+      "total_count": 15,
+      "fail_rate": 20.0
+    }
+  ],
+  "per_dialogue_results": [
+    {
+      "dialogue_id": "V5_cooperative_1779197281_000",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 85,
+        "raw_score": 92.59,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率92% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 86.36,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 0.917,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn5=67字; turn13=64字; turn11=60字",
+          "reason": "8/8=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 5: '别着急，这些差评确实让人难受' 体现同理心；Turn 7: '理解您，忙起来确实容易疏忽' 体现体谅；口语词：Turn 1 '您好'、Turn 5 '别着急'、Turn 7 '您看'、Turn 9 '能这么想很务实' 等，无列点格式，无书面文言词。",
+          "reason": "对话口语化，有同理心，无列点或文言词，满足所有3条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3、5、7、9、11、13、15中助手主动提问（如“方便聊两句吗？”“还有其他难处吗？”“还有其他问题吗？”），且助手每次发言后用户均有回应，未连续多次发言。",
+          "reason": "助手频繁提问并给予用户发言机会，符合约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，无打断场景。",
+          "reason": "约束要求被打断时使用过渡语，但对话中无打断发生，故未触发约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 7-9: 助手提出改进建议，用户同意并接受具体办法（Turn 8: '我觉得还是改进吧'）。Turn 16: 用户明确表示'暂时没有其他问题了，谢谢你耐心解答'。核心任务（提供改进建议）完成，用户给出明确反馈。",
+          "reason": "助手覆盖核心任务（提供改进建议），用户最终同意并接受信息，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户（商家）始终情绪平稳，未出现激动、愤怒等情绪波动，如Turn 4、6、8、10、12、14均以平和语气提问或陈述。",
+          "reason": "约束条件“商家情绪激动”未触发，因此无需执行安抚操作，对话自然推进流程。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户从未说“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束为条件性，条件未满足，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn13: 这个超出我的职责范围，我帮您记录回头跟进",
+          "reason": "用户问越界 (turn[12]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['APP', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '经营', '商家']",
+          "reason": "匹配关键词 3/6 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 通知商家收到差评并安抚情绪。Turn 7-9: 引导申诉流程（询问是否申诉）并收集改善意见（用户提出改进需求，助手给出建议）。Turn 16: 用户明确反馈“暂时没有其他问题了，谢谢你”。",
+          "reason": "助手覆盖了通知差评、安抚、引导申诉和收集意见的核心步骤（>70%），用户最终给出明确反馈。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 16用户明确表示'暂时没有其他问题了，谢谢你耐心解答'，Turn 17助手立即收尾'不客气，能帮到您就好。后续多关注评价趋势，祝生意兴隆，再见。'，包含'祝'和'再见'。",
+          "reason": "用户结束意愿后1个turn内收尾，含祝福和再见，无反复追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197281_000",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779197454_001",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 97.5,
+        "raw_score": 97.5,
+        "ceiling": 100,
+        "ceiling_reason": "无钳制",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 87.5,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 1.0,
+        "red_line_violations": [],
+        "suggestions": []
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn13=58字; turn7=52字; turn15=51字",
+          "reason": "7/7=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店'；Turn 5: '咱先看看'；Turn 11: '咱平台'。共3处口语词。无列点格式。无书面文言词。",
+          "reason": "满足所有3条标准：至少2处口语词，无列点格式，无书面文言词。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1,3,5,7,9,11,13,15: 助手每次发言后都等待用户回应，未连续多次发言；Turn 9: '您最近经营上还有什么其他困难吗？'、Turn 11: '您觉得在哪方面改善最紧迫？'、Turn 13: '还有其他困难吗？' 主动提问让用户参与。",
+          "reason": "助手在对话中频繁给商家发言机会，每次发言后都等待用户回应，并多次主动提问，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，无打断场景。",
+          "reason": "约束要求被打断时使用过渡语，但对话中无打断发生，故未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 7-8: 助手详细说明申诉流程（核心任务），用户表示明白。Turn 9-13: 用户询问改善评分方法，助手提供延时出餐设置建议，用户接受并询问细节。Turn 14-15: 用户询问新服务，助手简短回应并结束。核心任务（申诉指导）完成，用户后续疑问得到简短回答。",
+          "reason": "助手完成核心任务（申诉指导），用户明确接受信息（Turn 8、14），满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 6用户说'确实有点着急'，Turn 7助理回应'您先别急'，安抚情绪后再解释申诉流程。",
+          "reason": "用户表达着急情绪后，助理立即安抚，符合先安抚再推进流程的约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束为条件性，需商家先说出特定话语，但对话中未出现，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn15: 这个超出我的职责范围，我帮您记录回头跟进。",
+          "reason": "用户问越界 (turn[14]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['告知', '差评']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['APP', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['问', '改善', '经营', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['告知', '差评', '商家']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,9 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 通知商家收到差评，安抚情绪。Turn 5-7: 引导申诉流程，提供具体步骤。Turn 9-13: 收集改善意见，用户给出反馈（Turn 12-14: 同意尝试方案，询问其他服务）。",
+          "reason": "助手覆盖了通知差评、安抚、引导申诉和收集意见的核心步骤（>70%），用户最终给出明确反馈（同意尝试方案）。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 14 user提出新问题后，Turn 15 assistant明确表示超出职责并记录跟进，随后以'感谢接听，再见'收尾，符合1-2 turn内收尾且含感谢和再见。",
+          "reason": "用户未明确结束意愿，但助手在对话自然结束点及时收尾，无拖延追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779197454_001",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 申诉成功率; 助手答: 证据足，成功率不低。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_cooperative_1779202511_001",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 82.48,
+        "raw_score": 82.48,
+        "ceiling": 85,
+        "ceiling_reason": "Critical通过率91% → 上限85",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 68.42,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 66.67
+        },
+        "critical_pass_rate": 0.909,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 66.7/100 最低",
+            "constraint_ids": [
+              "V5_C02"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn21=73字; turn25=70字; turn17=69字",
+          "reason": "13/13=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是川香小厨的负责人吗？' 使用'您好'而非口语词；Turn 3: '当然可以。最近的差评主要集中在送餐慢和菜品口味上。这可能影响到您的经营，您觉得情况如何？' 无口语词；全对话仅出现1处口语词'嗯'(Turn 2为用户)，不满足至少2处口语词要求。",
+          "reason": "对话中仅用户使用1处口语词'嗯'，助理未使用任何口语词，违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1,3,5,7,9,11,13,15,17,19,21,23,25,27: 助手每次发言后都等待用户回应，且多次主动提问如'您觉得情况如何？'、'您还有其他问题吗？'，给用户充分发言机会。",
+          "reason": "助手不连续多次发言，每次发言后用户都有回应，且助手频繁提问，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话全程无用户打断助手的情况，助手连续回答用户问题，未出现需要过渡语“您刚才提到...”的场景。",
+          "reason": "约束条件未触发，无打断场景，因此判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-27: 助手覆盖了核心任务（差评申诉流程、改善建议等），用户最终在Turn 26明确表示“没有其他问题了，非常感谢您的帮助”，即同意/接收信息。",
+          "reason": "核心任务完成且用户给出明确反馈，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn5用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）始终情绪平稳、礼貌感谢，未出现情绪激动的情况。例如Turn 2、4、6等均表达感谢和理性询问。",
+          "reason": "约束条件'商家情绪激动'未触发，因此无需执行安抚情绪步骤。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户从未说“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束为条件性，条件未满足，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,15 含 ['询问', '问', '负责人', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['询问', '问', '差评', '申诉']",
+          "reason": "匹配关键词 5/5 (100%, 阈值≥2个)",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['APP', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['询问', '问', '意见', '经营']",
+          "reason": "匹配关键词 5/6 (83%, 阈值≥2个)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['评级', '差评', '商家']",
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "confidence": 0.9249999999999999
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,15 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 通知商家收到差评并安抚情绪。Turn 5-7: 引导申诉流程。Turn 11-12: 收集改善意见。Turn 26: 用户明确表示感谢并结束对话，给出接收信息的反馈。",
+          "reason": "助手覆盖了通知差评、安抚、引导申诉和收集意见的核心步骤，用户最终给出接收信息的明确反馈。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 26用户明确表示'我目前没有其他问题了，非常感谢您的帮助！'，Turn 27助手立即收尾，包含'祝川香小厨生意兴隆'和'再见'，未反复追问。",
+          "reason": "用户结束意愿后1个turn内收尾，含祝福和再见，无拖延追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_cooperative_1779202511_001",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198161_000",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 79.29,
+        "raw_score": 79.29,
+        "ceiling": 100,
+        "ceiling_reason": "无钳制",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 71.43,
+          "D4_knowledge_accuracy": 0.0,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 1.0,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【知识准确性】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C25"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn17=124字; turn21=112字; turn15=81字",
+          "reason": "12/12=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店'；Turn 3: '和您聊聊'；Turn 5: '您先消消气'；Turn 7: '您别着急，我理解'；Turn 9: '照片的事我理解'；Turn 11: '您别上火'；Turn 13: '我帮您查查'；Turn 15: '确实'；Turn 17: '哎，我特能理解'；Turn 19: '好的'；Turn 21: '您别急'；Turn 23: '别急'；Turn 25: ",
+          "reason": "对话全程口语化，使用'咱们'、'您先'、'哎'等口语词，无列点或文言词，且保持同理心，体谅商家情绪。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: 助手提问“想和您聊聊具体情况”；Turn 5: 提问“有怀疑是同行吗”；Turn 7: 提问“有留样或监控吗”；Turn 9: 提问“需要我陪您走一遍那个申诉流程吗”；Turn 15: 提问“您现在最想先解决哪一个”；Turn 17: 提问“要不要我给您捋一下现在最该办哪件”；Turn 21: 提问“我再说说申诉后怎么催好评”；Turn 23: 提问“需要我再给您具体描述下步骤吗”",
+          "reason": "助手频繁主动提问，给用户充分回应机会，且未连续多次发言，满足约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户多次打断助手（如Turn 4、8、10、14、16、18、20、22、24），但助手从未使用过渡语“您刚才提到...”或“先回答您...”来继续话题。",
+          "reason": "约束要求被打断时使用指定过渡语，但助手未使用，然而判定标准中无打断场景应判na，此处有打断但未使用过渡语，按标准应判fail，但标准明确“没有打断场景→na”，此处有打断，故判fail。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-25: 助手覆盖了核心任务（处理差评、申诉、照片、评分规则等），用户最终在Turn 24给出明确反馈“行了行了知道了，我自己找！没别的事了吧？”，表示接收信息并结束对话。",
+          "reason": "助手完成核心任务（处理商家疑问）超过70%，用户最终明确反馈，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn19用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 5: '您先消消气'；Turn 7: '您别着急'；Turn 9: '照片的事我理解'；Turn 11: '您别上火'；Turn 15: '确实，非出餐问题背差评太冤了'；Turn 17: '哎，我特能理解'；Turn 21: '您别急'；Turn 23: '别急'。每次用户情绪激动时，助理均先安抚再推进。",
+          "reason": "对话中用户多次情绪激动，助理每次均先安抚（如'消消气'、'别着急'），再继续流程，完全符合约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家未说“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束为条件性，需商家先说特定话语才触发，对话中未出现，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['原因', '差评']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['APP', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['问', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,11,15 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "助手覆盖了核心步骤：通知差评（Turn1）、安抚情绪（Turn5、11、17）、引导申诉（Turn7、15、19）、收集改善意见（Turn15、17）。用户最终给出明确反馈（Turn24：'行了行了知道了'，表示接收信息）。",
+          "reason": "助手完成至少70%核心步骤，用户最终明确接收信息，满足两条判定标准。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 24 user明确表示'没别的事了吧？我这边还忙着出菜呢'，Turn 25 assistant立即收尾'那您先忙...祝您出餐顺利，生意兴隆'，含'祝'和'顺利'，未反复追问。",
+          "reason": "用户结束意愿后1个turn内收尾，含祝福语，无追问，符合所有标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198161_000",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "FAQ: 评分规则; 错误: 助手在Turn 11说'偶尔一两个差评，影响有限'，但在Turn 21又说'突然跌这么多，我陪您核对一下'，前后矛盾，先说不影响后又说影响大。",
+          "reason": "FAQ 答案错误或自相矛盾",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_interruption_1779198414_001",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 97.5,
+        "raw_score": 97.5,
+        "ceiling": 100,
+        "ceiling_reason": "无钳制",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 87.5,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 1.0,
+        "red_line_violations": [],
+        "suggestions": []
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=55字; turn11=55字; turn13=55字",
+          "reason": "6/6=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店'；Turn 3: '您这边情况了解吗？'；Turn 5: '我特别理解您的委屈'；Turn 11: '您说得对'。使用了口语词'咱们'，无列点格式，无书面文言词。",
+          "reason": "对话包含至少2处口语词（咱们、您这边），无列点格式，无书面文言词，符合所有判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1,3,5,7,9,11,13: 助手每次发言后都等待用户回应，未连续多次发言；Turn 1,3,5,7,9,11,13: 助手主动提问如“您这边情况了解吗？”“您要了解一下吗？”“您看申诉的证据物料方便准备吗？”等，引导用户参与。",
+          "reason": "助手在每轮发言后均给用户回应机会，且多次主动提问，满足约束条件。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，助手始终完整陈述，无打断场景。",
+          "reason": "约束条件未触发，无打断发生，因此判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-13: 助手覆盖了核心任务（解释差评原因、建议申诉和公开回复）。Turn 14: 用户明确同意（“不用细化了，你就按这个发到我后台吧”）并结束对话。",
+          "reason": "核心任务完成（覆盖差评处理步骤），用户最终给出明确反馈（同意接收模板），满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 5: '我特别理解您的委屈。' 和 Turn 7: '我理解您的心情' 均先安抚情绪，再推进流程。",
+          "reason": "商家在Turn 4情绪激动，助理在Turn 5和Turn 7先表达理解安抚，再提供解决方案，符合约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家未说“在开车”或“在忙”，约束条件未触发。",
+          "reason": "约束为条件性，商家未提及开车或忙，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn9: 我明白您着急，但促销活动超出我的职责范围，我帮您记录下来，回头有同事跟进。",
+          "reason": "用户问越界 (turn[9]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,11 含 ['原因', '差评']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['差评', '申诉', '商家']",
+          "reason": "匹配关键词 3/6 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,11 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 通知差评并安抚情绪。Turn 5-7: 引导申诉流程。Turn 9-13: 收集改善意见（公开回复模板）。Turn 14: 用户同意接收信息并结束。",
+          "reason": "助手覆盖了通知、安抚、引导申诉和收集意见的核心步骤，用户最终给出明确反馈（同意接收模板并挂断）。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 14: user明确表示'没事我挂了啊'，assistant未再追问，对话自然结束。",
+          "reason": "用户明确结束意愿后，助手在1个turn内收尾，无追问，符合标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779198414_001",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "FAQ: 申诉成功率高吗？; 助手答: 申诉不能直接删除差评，需要审核，通常几个工作日出结果，建议准备出餐监控或沟通截图作为证据。",
+          "reason": "FAQ 答案符合标准",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_interruption_1779202919_000",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 48.43,
+        "raw_score": 48.43,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率82% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 73.68,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 33.33
+        },
+        "critical_pass_rate": 0.818,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn21=97字; turn27=96字; turn23=95字",
+          "reason": "14/14=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是川香小厨的负责人吗？' 使用'您好'、'请问'等书面语，无口语词。全对话无'咱们/嗯/啊/吧/呗/哈'等口语词。",
+          "reason": "缺少至少2处口语词，违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29: 助手每次发言后都等待用户回应，且主动提问如'您对此有什么想法吗？'、'您觉得这些建议是否可行？'等，频繁给商家发言机会。",
+          "reason": "助手不连续多次发言，每次发言后都给用户回应机会，并主动提问引导用户参与，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话全程无用户打断助手的情况，助手连续回答用户问题，未出现需要过渡语“您刚才提到...”的场景。",
+          "reason": "约束条件未触发，无打断场景，因此判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "对话中助手未完成核心任务（如分析差评原因、提供具体改进方案），而是不断回答用户疑问，未覆盖核心步骤的70%。用户未给出明确反馈（同意/拒绝/接收信息），最后仍继续提问。",
+          "reason": "核心任务未完成，用户未给出明确反馈，不满足判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户（商家）始终语气平静，未出现情绪激动表现，如抱怨、愤怒等。例如Turn 2、4、6等均为正常询问和建议。",
+          "reason": "约束条件'商家情绪激动'未触发，因此无需执行安抚情绪步骤。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户从未表示“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束条件未满足，无需执行后续回复。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '差评', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问', '改善', '意见', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手未覆盖核心步骤：未通知商家收到差评（仅提及差评数量，未明确通知）、未安抚情绪（未表达理解或共情）、未引导申诉流程（未提及申诉或反馈渠道）、未收集改善意见（用户未给出明确反馈）。用户持续提问，未给出同意/拒绝/接收信息的明确反馈。",
+          "reason": "助手未完成核心步骤的70%，且用户未给出明确反馈，两条标准均不满足。",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户未明确表示结束意愿，但助手在Turn 19、21、23、25、27、29中反复追问“还有其他问题吗”“还有其他想法吗”，违反标准3。",
+          "reason": "助手多次追问“还有其他问题吗”，未在用户未结束意愿时自然收尾，违反标准3。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779202919_000",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_interruption_1779203124_001",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 90.4,
+        "raw_score": 90.4,
+        "ceiling": 100,
+        "ceiling_reason": "无钳制",
+        "dim_scores": {
+          "D1_flow_compliance": 100.0,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 84.21,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 66.67
+        },
+        "critical_pass_rate": 1.0,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【对话质量】得分 66.7/100 最低",
+            "constraint_ids": [
+              "V5_C24"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=90字; turn17=77字; turn19=76字",
+          "reason": "14/14=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店'；Turn 3: '您觉得呢'；Turn 5: '您觉得呢'；Turn 7: '您觉得'；Turn 9: '您觉得'；Turn 11: '您觉得'；Turn 13: '您觉得'；Turn 15: '您觉得'；Turn 17: '您觉得呢'；Turn 19: '您觉得'；Turn 21: '您觉得'；Turn 23: '您觉得'；Turn 25: '您觉得'；Turn 27",
+          "reason": "对话包含至少2处口语词（如'咱们'、'您觉得呢'），无列点格式，无书面文言词，满足所有判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29: 助手每次发言后都等待用户回应，且频繁提问如'您觉得呢？'、'您觉得这样安排怎么样？'等，主动引导用户参与。",
+          "reason": "助手未连续多次发言，每次发言后用户均有回应，且助手主动提问，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，助手始终完整陈述，无打断场景。",
+          "reason": "约束要求被打断时使用过渡语，但对话中无打断发生，条件未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-29: 助手覆盖了差评申诉、出餐速度、服务态度、流程优化、评估指标等核心步骤，占比超70%。Turn 30: 用户询问具体改进方案，助手未作答，但用户未明确反馈同意/拒绝/接收信息，而是继续提问。",
+          "reason": "核心任务（差评处理与改进建议）基本完成，用户持续提问但未给出明确反馈，但约束要求商家疑问需简短作答，助手在Turn 30未回应，但整体仍满足pass条件。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）始终语气平稳，未出现情绪激动（如愤怒、抱怨、指责等）的表述。例如Turn 2、Turn 4等均为正常询问，无激动迹象。",
+          "reason": "约束条件“商家情绪激动”未触发，因此无需执行安抚操作，判定为不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未表示“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束为条件性，需商家说“在开车”或“在忙”才触发，但对话中未出现此类表述。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,19 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['原因', '差评']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['APP', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,19 含 ['问', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,7 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,19,21 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "助手覆盖了通知差评(Turn1)、安抚情绪(Turn1-2)、引导申诉(Turn3-9)、收集改善意见(Turn7-30)。用户最终给出明确反馈(Turn30: '能找到提升空间，但有没有其他更具体的改进方案？')，表明接收信息并继续探讨。",
+          "reason": "助手完成核心步骤超70%，用户最终给出明确反馈，满足pass条件。",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户未明确表示结束意愿，对话持续进行至第30轮，助手未主动收尾，且在第7轮追问'还有什么需要改进'，第11轮追问'哪个方面更需要关注'，第25轮追问'还需要增加其他指标吗'，反复追问，未自然结束。",
+          "reason": "用户未表达结束意愿，助手未在任务完成后收尾，且反复追问，违反所有3条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_interruption_1779203124_001",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197726_000",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 53.7,
+        "raw_score": 53.7,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率83% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 86.36,
+          "D4_knowledge_accuracy": 0.0,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 0.833,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=54字; turn11=53字; turn19=51字",
+          "reason": "9/9=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店'；Turn 3: '您这边'；Turn 5: '咱们还是先说说'；Turn 7: '您刚才提到'；Turn 13: '咱们这些差评'；Turn 15: '咱们还是说说'；Turn 17: '您说得在理'。多处使用口语词如'咱们'、'吧'，无列点格式，无书面文言词。",
+          "reason": "对话口语化，使用'咱们'等口语词超过2处，无列点格式，无书面文言词，且保持同理心体谅商家情绪。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3: 助手主动提问“您这边方便说说具体怎么回事吗？”；Turn 5: 再次提问“您这边有什么困难吗？”；Turn 7: 提问“是最近招人困难吗？”；Turn 9: 提问“有什么特别影响的环节吗？”；Turn 11: 提问“平台这边有什么能帮您缓解的吗？”；Turn 13: 提问“这些差评需要申诉吗？”；Turn 15: 提问“这些差评您有打算申诉吗？”；Turn 19: 提问“您是想申诉",
+          "reason": "助手频繁提问，给用户充分发言机会，且未连续多次发言，满足约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 7: 助手在用户打断后使用“您刚才提到人手不够”过渡。Turn 5: 用户打断后助手用“咱们还是先说说配送超时的事吧”未用指定过渡语，但Turn 7符合要求。",
+          "reason": "对话中存在打断场景，且助手在Turn 7使用了指定过渡语“您刚才提到...”，满足约束条件。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1-3: 助手询问差评原因；Turn 7: 回答差评与流量关系；Turn 13: 指导系统更新；Turn 15: 询问申诉意愿；Turn 17: 建议预订单；Turn 19: 再次确认申诉。用户Turn 20给出明确反馈：'算了，那三个差评我自己看看能不能处理'。",
+          "reason": "助手覆盖了核心任务（处理差评）的70%以上，用户最终明确拒绝申诉，满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家情绪始终平稳，未出现激动表现（如愤怒、抱怨、大声等），例如Turn 12、16、18中商家以调侃或平静语气回应。",
+          "reason": "约束条件'商家情绪激动'未触发，因此无需执行安抚操作，判定为不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户从未说“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束为条件性，条件未满足，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn5: 这个超出我的职责范围，我帮您记录回头跟进; turn9: 这个超出我的职责范围，我帮您记录回头跟进",
+          "reason": "用户问越界 (turn[4, 6, 8, 10, 12, 14, 18]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,13 含 ['问', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,13 含 ['差评', '申诉', '商家']",
+          "reason": "匹配关键词 3/6 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,7,13 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手未覆盖核心步骤：未收集改善意见（Turn 17仅建议预订单，未询问具体困难）；用户最终未明确反馈（Turn 20说“算了，我自己看看”，未同意/拒绝申诉）。",
+          "reason": "助手未完成70%核心步骤（缺收集改善意见），且用户未给出明确反馈（仅模糊回应）。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 20 用户明确说'好了，我得忙了，拜拜'，助手在 Turn 19 已收尾，且 Turn 19 含'您辛苦了'，符合收尾要求。",
+          "reason": "用户结束意愿后助手在1个turn内收尾，含'辛苦'，无追问，满足所有条件。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197726_000",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "fail",
+          "evidence": "FAQ: 多少差评会影响评级; 错误: 标准答案说'偶尔一两个不影响大局'，但助手说'确实会影响排名'，两者矛盾。",
+          "reason": "FAQ 答案错误或自相矛盾",
+          "confidence": 0.85
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779197944_001",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 59.03,
+        "raw_score": 59.03,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率83% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 87.5,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 75.0
+        },
+        "critical_pass_rate": 0.833,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn19=67字; turn13=55字; turn9=54字",
+          "reason": "10/10=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店'; Turn 3: '您这边'; Turn 5: '咱先聊聊'; Turn 7: '咱还是看差评吧'; Turn 9: '咱先看川香小厨'; Turn 11: '您先跟我说说'; 多处使用'咱'、'吧'等口语词。无列点格式，无书面文言词。",
+          "reason": "对话使用'咱们'、'吧'等口语词超过2处，无列点格式，无书面文言词，满足所有判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3、5、7、9、11、13、15、17、19、21中助手主动提问或引导用户发言，如Turn 3“您这边需要申诉吗？”、Turn 5“您要是不想申诉，也可以说说有什么改善困难”、Turn 7“您这边是打算申诉，还是需要平台协助改善？”等，频繁给用户回应机会。",
+          "reason": "助手在多个回合主动提问，引导用户参与对话，且未连续多次发言，符合约束要求。",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 13: 助手说“咱抓紧说正事，您刚才提到后厨忙不过来”，使用了过渡语“您刚才提到...”来继续话题。",
+          "reason": "用户多次打断话题，助手在Turn 13使用“您刚才提到...”成功将对话拉回正轨，符合约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3-15: 助手覆盖核心任务(差评处理、申诉、改善方案),Turn 20: 用户明确反馈'没了没了'。",
+          "reason": "助手完成核心任务(差评处理、改善方案),用户最终给出明确反馈,满足两条判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "对话中商家情绪平稳，未出现激动表现。例如Turn 2用户说'正愁这事'但语气平和，Turn 4说'心情还行'，Turn 6、8、10、12、16、18、20均以轻松或好奇口吻提问，无愤怒、抱怨等激动迹象。",
+          "reason": "约束条件'商家情绪激动'未触发，因此无需安抚，对话自然推进流程，符合约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束为条件性，需商家先说特定话语才触发回复规则，但对话中未出现，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn7: 这个超出我的职责范围，我帮您记录回头跟进; turn13: 这个超出我的职责范围，我帮您记录回头跟进",
+          "reason": "用户问越界 (turn[4, 6, 8, 10, 12, 16, 18, 20]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,19 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['APP', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '改善', '商家']",
+          "reason": "匹配关键词 3/6 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-3: 助手通知差评、安抚情绪、引导申诉。但用户多次偏离话题（Turn 4、6、8、10、12、16、18），助手虽尝试拉回，但未完成收集改善意见（Turn 15仅提出建议，未获用户明确反馈）。Turn 20用户未明确同意/拒绝申诉或改善方案。",
+          "reason": "助手未覆盖核心步骤70%（未完成收集改善意见），且用户未给出明确反馈（同意/拒绝/接收信息）。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 20用户明确说'没了没了'并感谢，但Turn 21助手未收尾，反而继续提醒'保留截图申诉'，未在1-2个turn内结束对话。",
+          "reason": "用户表示结束意愿后，助手未及时收尾，反而追加额外提醒，违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779197944_001",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202733_000",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 43.39,
+        "raw_score": 43.39,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率83% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 77.27,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 0.0
+        },
+        "critical_pass_rate": 0.833,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn23=48字; turn13=47字; turn9=46字",
+          "reason": "11/11=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是川香小厨的负责人吗？' 使用'您好'而非口语词；全对话仅出现1处口语词'咱们'（Turn 1），不足2处。",
+          "reason": "口语词仅1处（咱们），不满足至少2处的要求，判定为fail。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-23中，助手连续多次发言（如Turn 3、5、7、9、11、13、15、17、19、21、23），未给用户充分回应机会；且助手未主动提问让用户参与，而是反复追问差评，用户多次转移话题。",
+          "reason": "助手连续多次发言，未频繁给商家发言机会，且未主动提问引导用户倾诉，违反约束。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户多次打断（如Turn 4、6、8等），但助手未使用“您刚才提到...”过渡语，而是用“这个超出我的职责范围...我们先来讨论差评”等回应。",
+          "reason": "约束要求被打断时使用“您刚才提到...”，但助手未使用该过渡语，且对话中无打断场景（用户提问而非打断），故判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手在Turn 5-23中反复尝试引导用户讨论差评（核心任务），但用户持续提出无关问题（如天气、股票、电视剧等），未完成核心步骤。用户最终在Turn 24仍问营业时间，未给出明确反馈。",
+          "reason": "核心任务未完成（助手未覆盖70%步骤），且用户未给出明确反馈，违反两条判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）始终情绪平稳，未出现激动表现。例如Turn 2: '感谢您来关心'，Turn 4: '我们会认真对待'，Turn 8: '好的，差评我们会认真对待'等，均无激动迹象。",
+          "reason": "约束条件'商家情绪激动'未触发，因此无需执行安抚操作，约束不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束条件为商家说特定话语时采取行动，但对话中商家未说“在开车”或“在忙”，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn7: 这个超出我的职责范围，我帮您记录回头跟进。; turn9: 这个超出我的职责范围，我帮您记录回头跟进。",
+          "reason": "用户问越界 (turn[4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '差评', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '改善', '商家']",
+          "reason": "匹配关键词 3/6 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23中反复引导差评讨论，但用户持续偏离话题（如天气、股票、电视剧等），未完成核心步骤（安抚情绪、引导申诉、收集意见）。用户最终未给出明确反馈（Turn 24仍问营业时间）。",
+          "reason": "助手未覆盖任务核心步骤的70%，用户未给出明确反馈，违反两条判定标准。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户从Turn 4开始多次转移话题（天气、股票、电视剧等），未明确表示结束意愿；助手在Turn 5-23反复追问差评，未在用户暗示结束（如Turn 8、10、12等）后收尾，且无收尾用语。",
+          "reason": "用户未明确结束意愿，但助手持续追问差评，未适时终结对话，违反约束。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202733_000",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_out_of_scope_1779202862_001",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 52.21,
+        "raw_score": 52.21,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率83% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 77.27,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 50.0
+        },
+        "critical_pass_rate": 0.833,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn7=46字; turn9=45字; turn3=43字",
+          "reason": "5/5=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问是川香小厨的负责人吗？' 使用'您好'而非口语词；Turn 3: '感谢您的回复！这3个差评主要集中在服务和菜品口味方面。您觉得有没有什么需要改善的地方？' 使用'感谢'、'主要'等书面语，且无口语词。整体缺乏口语化表达，未出现'咱们/嗯/啊/吧/呗/哈'等口语词。",
+          "reason": "对话中未出现至少2处口语词（如咱们/嗯/啊/吧/呗/哈），违反第1条标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 3、5、7、9、11中助手主动提问（如“您觉得有没有需要改善的地方？”“是否需要申诉？”），且助手未连续发言超过一次，给用户回应机会。",
+          "reason": "助手频繁提问并给用户发言机会，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 5: 用户说“今天天气真好”，助手回应后使用“您刚才提到考虑反馈”；Turn 7: 用户问股票，助手回应后使用“您刚才提到申诉”；Turn 9: 用户问其他业务，助手回应后使用“您刚才提到申诉流程”；Turn 11: 用户要联系方式，助手拒绝后使用“您刚才提到申诉”。多次在被打断后使用过渡语。",
+          "reason": "助手在用户多次打断后均使用“您刚才提到...”继续话题，符合约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-3 助手完成核心任务（差评反馈），但 Turn 4-10 用户多次偏离话题（天气、股票、其他业务、朋友联系方式），助手未在核心任务完成后对商家疑问简短作答，而是重复引导回申诉流程。",
+          "reason": "核心任务完成后，用户有疑问（如天气、股票），助手未简短作答，而是持续引导回原话题，违反约束。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）始终情绪平稳，未出现激动表现，如Turn 2、4、6、8、10均礼貌回应或转移话题。",
+          "reason": "约束条件'商家情绪激动'未触发，因此无需执行安抚操作。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户从未说“在开车”或“在忙”，因此约束条件未触发。",
+          "reason": "约束为条件性，条件未满足，故不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "turn7: 这个超出我的职责范围，我帮您记录回头跟进; turn9: 这个超出我的职责范围，我帮您记录回头跟进",
+          "reason": "用户问越界 (turn[4, 6, 8, 10]), 助手用了规定话术",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问', '介绍', '负责人', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/5 (80%, 阈值≥2个)",
+          "confidence": 0.94
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['介绍', '差评', '申诉', '商家']",
+          "reason": "匹配关键词 4/6 (67%, 阈值≥2个)",
+          "confidence": 0.8999999999999999
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['问', '改善', '商家']",
+          "reason": "匹配关键词 3/6 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3,5 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,5,7 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-3: 助手通知差评、安抚情绪、收集改善意见。Turn 5: 引导申诉。但用户多次偏离话题（Turn 4、6、8、10），未给出明确反馈（同意/拒绝/接收信息）。",
+          "reason": "助手覆盖核心步骤约70%，但用户未给出明确反馈，违反第2条标准。",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "用户在第10-11轮未明确结束意愿，但助手在第11轮仍追问'有考虑好之后再联系我吗'，且对话未自然收尾，无结束语。",
+          "reason": "用户未明确表示结束意愿，但助手持续追问，未在任务完成后自然结束，违反约束。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_out_of_scope_1779202862_001",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779197604_000",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 52.2,
+        "raw_score": 52.2,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率82% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 64.71,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 66.67
+        },
+        "critical_pass_rate": 0.818,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn3=46字; turn5=34字",
+          "reason": "2/3=67%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店'；Turn 3: '好的'；Turn 5: '那您先好好休息'、'简单聊两句'；Turn 7: '理解'、'祝您早日康复'。使用了口语词'咱们'、'好的'、'那'、'吧'，无列点格式，无书面文言词。",
+          "reason": "对话包含至少2处口语词，无列点格式，无书面文言词，符合所有判定标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1,3,5,7 均为助手发言，连续4次发言未给用户足够回应机会；Turn 2,4,6 用户简短回应，助手未主动提问让用户参与。",
+          "reason": "助手连续多次发言，未频繁给商家发言机会，且未主动提问引导用户倾诉。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，而是用户主动提出身体不适，助手表示理解并结束对话（Turn 4-7）。",
+          "reason": "无打断场景，约束条件未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中助手未完成核心任务（未讨论差评问题），用户因身体不适拒绝继续，最终未给出明确反馈。",
+          "reason": "核心任务未完成，约束条件未触发，故判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn3用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家未表现出情绪激动，仅因身体不适请求改期（Turn 4、Turn 6），客服已表示理解并同意稍后联系（Turn 5、Turn 7）。",
+          "reason": "约束条件（商家情绪激动）未触发，因此无需执行安抚操作。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "用户未说“在开车”或“在忙”，而是说身体不舒服（Turn 4、6），约束条件未触发。",
+          "reason": "约束条件为商家说“在开车”或“在忙”，对话中未出现，故未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '差评', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-7: 助手仅通知差评并安抚情绪，未引导申诉流程或收集改善意见；用户因身体不适未给出明确反馈。",
+          "reason": "助手未覆盖核心步骤（引导申诉和收集意见），且用户未给出明确反馈。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 4用户表示身体不适，Turn 5助手立即收尾并说“您先好好休息”，Turn 6用户再次拒绝，Turn 7助手结束对话并说“祝您早日康复”，未反复追问。",
+          "reason": "用户两次明确结束意愿后，助手在2个turn内收尾，含“祝”字，无追问，符合所有标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197604_000",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779197677_001",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 54.31,
+        "raw_score": 54.31,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率82% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 73.68,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 66.67
+        },
+        "critical_pass_rate": 0.818,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn3=30字",
+          "reason": "1/2=50%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn1: '咱们'；Turn3: '咱们'；Turn5: '吧'。无列点格式，无书面文言词。",
+          "reason": "满足至少2处口语词，无列点格式，无书面文言词。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-5: 助手连续发言3次（Turn1,3,5），未给用户足够回应机会；且未主动提问让用户参与（仅Turn3提问但用户拒绝后未继续引导）。",
+          "reason": "助手连续多次发言，未频繁给商家发言机会，且未主动提问促进用户参与。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户两次表达不适（Turn 2和Turn 4），但未出现打断行为，助手在Turn 5直接结束对话，未使用过渡语。",
+          "reason": "无打断场景，约束条件未触发，判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-5: 助手仅问候并提议改天联系，未覆盖核心任务（如解释差评原因或提供解决方案）的70%。用户因身体不适拒绝配合，未给出明确反馈。",
+          "reason": "核心任务未完成，用户未给出明确反馈，不满足判定标准。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家未表现出情绪激动，仅提及身体不适（Turn 2、Turn 4），因此约束条件未触发。",
+          "reason": "约束条件（商家情绪激动）未满足，无需执行安抚操作。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "用户未说“在开车”或“在忙”，而是说“不太舒服”、“身体真的不舒服”，未触发约束条件。",
+          "reason": "约束条件未满足，对话未涉及开车或忙的状态，因此约束不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '差评', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-5: 助手仅通知差评并安抚情绪，未引导申诉流程或收集改善意见；用户因身体不适拒绝配合，未给出明确反馈。",
+          "reason": "助手未覆盖核心步骤（引导申诉和收集意见），用户未给出明确反馈，两条标准均不满足。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 4用户明确表示'今天身体真的不舒服，没法配合。改天吧'，Turn 5助手立即收尾'那您先好好休息。我过两天再联系您，保重身体'，含'保重'，无追问。",
+          "reason": "用户表达结束意愿后，助手在1个turn内收尾，含关怀语，未反复追问，符合所有标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779197677_001",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779202662_000",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 60.19,
+        "raw_score": 60.19,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率82% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 73.68,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 0.818,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn3=51字; turn5=30字",
+          "reason": "2/2=100%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店' 口语词；Turn 3: '想了解一下' 无列点；Turn 5: '没关系'、'要不' 口语词，无书面文言词。",
+          "reason": "满足所有3条标准：至少2处口语词（咱们、要不），无列点格式，无书面文言词。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手提问；Turn 3: 助手提问并给用户发言机会；Turn 5: 助手结束对话，未连续多次发言。",
+          "reason": "助手未连续多次发言，且主动提问让用户参与，满足两条标准。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，助手也未使用过渡语。Turn 4用户直接拒绝配合，Turn 5助手礼貌回应并提议稍后联系。",
+          "reason": "无打断场景，约束条件未触发，判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 4: 用户表示身体不舒服无法配合，核心任务未完成。Turn 5: 助手仅表示稍后联系，未完成核心步骤。",
+          "reason": "核心任务未完成（未覆盖70%步骤），且用户未给出明确反馈，不满足pass条件。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "全程未出现禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）未表现出情绪激动，仅在第4轮表示身体不舒服，助理在第5轮主动安抚并提议稍后联系。",
+          "reason": "约束条件“商家情绪激动”未触发，因此无需执行安抚后推进流程的操作。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "用户在第4轮说“今天身体不舒服，没法配合”，未说“在开车”或“在忙”，约束条件未触发。",
+          "reason": "约束仅针对商家说“在开车”或“在忙”的情况，对话中未出现这些关键词，故未触发。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '差评', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-3: 助手仅通知差评并询问看法，未覆盖安抚情绪、引导申诉、收集改善意见等核心步骤。Turn 4: 用户以身体不适拒绝配合，未给出明确反馈。",
+          "reason": "助手未完成核心步骤的70%，用户未给出明确反馈。",
+          "confidence": 0.3
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 4 user表示'今天身体不舒服，没法配合'，Turn 5 assistant回应'没关系，您先照顾好自己。要不我们稍后再联系？希望您早日康复'，包含'希望您早日康复'的祝福语，并在1个turn内自然收尾，未追问其他需求。",
+          "reason": "用户表达不适后，助手立即收尾并祝福，符合适时终结对话要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202662_000",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    },
+    {
+      "dialogue_id": "V5_refuse_persistent_1779202695_001",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 56.48,
+        "raw_score": 56.48,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率82% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 57.89,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 0.818,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "2 条关键约束失败",
+            "constraint_ids": [
+              "V5_C13",
+              "V5_C23"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "V5_C23"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C01",
+          "constraint_name": "每次回复保持在 15-20 字左右，简短清晰。",
+          "verifier_type": "rule",
+          "verdict": "fail",
+          "evidence": "turn3=48字; turn5=39字",
+          "reason": "2/3=67%超字数(限20+5=25)",
+          "confidence": 0.95
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C02",
+          "constraint_name": "语言要口语化，并保持同理心，体谅商家收到差评的低落情绪。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: '咱们店'；Turn 3: '您觉得如何呢？'；Turn 5: '我很理解您'；Turn 7: '好的，您多休息'。口语词：咱们、呢、吧。无列点格式，无书面文言词。",
+          "reason": "满足所有3条标准：至少2处口语词（咱们、呢、吧），无列点格式，无书面文言词，语言口语化且体现同理心。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C03",
+          "constraint_name": "对话中要频繁给商家发言机会，多听他们倾诉。",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 1: 助手提问；Turn 3: 助手提问并给用户回应机会；Turn 5: 助手简短回应后结束；Turn 7: 助手结束对话。助手未连续多次发言，且主动提问。",
+          "reason": "助手每次发言后都等待用户回应，且主动提问，符合约束要求。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C04",
+          "constraint_name": "如果被打断，使用过渡语“您刚才提到...”来继续话题。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，助手也未使用过渡语“您刚才提到...”。用户在第4、6轮主动拒绝配合，助手礼貌结束对话。",
+          "reason": "无打断场景，约束条件未触发，判定为na。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C05",
+          "constraint_name": "核心任务完成后，若商家有疑问，仍需简短作答。",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 3-7: 助手未完成核心任务（未讨论差评原因或解决方案），用户因身体不适拒绝配合，对话提前结束。",
+          "reason": "核心任务未完成（覆盖率0%），且用户未给出明确反馈（仅拒绝配合）。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C06",
+          "constraint_name": "坚决不说“好的”、“哈哈”等随意语气词。",
+          "verifier_type": "rule_pattern",
+          "verdict": "fail",
+          "evidence": "turn7用了'好的'",
+          "reason": "出现 1 个禁用词",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C07",
+          "constraint_name": "不能向商家承诺申诉一定能成功。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C08",
+          "constraint_name": "绝不承诺给商家任何形式的差评补贴。",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "助手全程未承诺禁止内容",
+          "confidence": 0.9
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C09",
+          "constraint_name": "若商家情绪激动，务必先安抚情绪，然后再推进流程。",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "对话中商家（user）未表现出情绪激动，仅因身体不适拒绝配合，无激动迹象。",
+          "reason": "约束条件“商家情绪激动”未触发，故无需执行安抚操作。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C10",
+          "constraint_name": "若商家说在开车，礼貌回复“稍后再打”并挂断结束；若说在忙，回复“就1分钟”...",
+          "verifier_type": "llm_judge",
+          "verdict": "na",
+          "evidence": "用户在第4、6轮表示身体不舒服、无法配合，未说“在开车”或“在忙”，约束条件未触发。",
+          "reason": "约束条件未满足，对话未涉及“开车”或“忙”的表述，因此不适用。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C11",
+          "constraint_name": "被问及差评回访之外的其他业务范围外的问题（如其他平台合作、商家投资建议等）...",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "用户未问越界问题, 约束未触发",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C12",
+          "constraint_name": "S1 自我介绍并询问对方是否为商家负责人。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '负责人', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C13",
+          "constraint_name": "S2 告知近 7 天的差评数量 ${review_count_last_7days}，",
+          "verifier_type": "state_tracker",
+          "verdict": "fail",
+          "evidence": "缺失关键词: ['告知', '原因', '数量']",
+          "reason": "只匹配 1/4 (25%, 不足 2 个)",
+          "confidence": 0.6
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C14",
+          "constraint_name": "S3 **分支**：询问商家是否需要对差评进行申诉：",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '差评', '商家']",
+          "reason": "匹配关键词 3/5 (60%, 阈值≥2个)",
+          "confidence": 0.8799999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C15",
+          "constraint_name": "S3.1 若想申诉，进入 Step 4（申诉流程）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.1 若想申诉，进入 Step 4（申诉流程）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C16",
+          "constraint_name": "S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。",
+          "verifier_type": "state_tracker",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "分支判定类约束需 LLM 支持(Day 9 实现): 'S3.2 若不申诉或承认问题，进入 Step 5（收集改善意见）。'",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C17",
+          "constraint_name": "S4 介绍申诉流程：引导商家在商家版APP的评价管理中点击差评申诉，并提交相关证据。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C18",
+          "constraint_name": "S5 收集改善意见：询问商家近期经营有什么困难，是否需要平台协助。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问', '商家']",
+          "reason": "匹配关键词 2/6 (33%, 阈值≥2个)",
+          "confidence": 0.7999999999999999
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C19",
+          "constraint_name": "S6 安抚商家情绪：告知偶尔的差评不影响整体评级，但需要多关注评价趋势。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['差评', '商家']",
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C20",
+          "constraint_name": "S7 问题沟通完毕后，礼貌道谢并结束通话。",
+          "verifier_type": "state_tracker",
+          "verdict": "pass",
+          "evidence": "turn1,3 含 ['问']",
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "confidence": 0.85
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C21",
+          "constraint_name": "[META] 开场白含必要变量",
+          "verifier_type": "rule_pattern",
+          "verdict": "not_implemented",
+          "evidence": "",
+          "reason": "无法从约束推断'必含关键词',跳过",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C22",
+          "constraint_name": "[META] 所有变量正确替换无残留 ${}",
+          "verifier_type": "rule",
+          "verdict": "pass",
+          "evidence": "",
+          "reason": "所有变量都已正确替换",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C23",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge",
+          "verdict": "fail",
+          "evidence": "Turn 1-7: 助手仅通知差评并安抚情绪，未引导申诉流程或收集改善意见；用户Turn 4/6明确拒绝配合，未给出同意/拒绝/接收信息的反馈。",
+          "reason": "助手未覆盖核心步骤（引导申诉和收集意见），用户未给出明确反馈。",
+          "confidence": 0.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C24",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge",
+          "verdict": "pass",
+          "evidence": "Turn 6 user明确表示'改天吧'，Turn 7 assistant立即收尾'好的，您多休息，祝您早日康复！改天再联系。'，含'祝'和结束语，无追问。",
+          "reason": "用户表示不适后，助手在1个turn内自然收尾，包含祝福，未反复追问。",
+          "confidence": 1.0
+        },
+        {
+          "dialogue_id": "V5_refuse_persistent_1779202695_001",
+          "constraint_id": "V5_C25",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule",
+          "verdict": "na",
+          "evidence": "",
+          "reason": "对话中无 FAQ 相关问题",
+          "confidence": 1.0
+        }
+      ],
+      "n_turns": 0
+    }
+  ]
+}

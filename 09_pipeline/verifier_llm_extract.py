@@ -30,7 +30,14 @@ from verifier_base import register, VerdictResult, get_assistant_turns, all_assi
 # 全局配置: 用 mock 还是真实 LLM
 # ============================================================
 
-USE_MOCK = os.getenv("VERIFIER_LLM_MOCK", "1") == "1"  # 默认 mock
+def _use_mock():
+    """运行时读环境变量(不在 import 时固定,适配 streamlit 长驻进程)"""
+    return os.getenv("VERIFIER_LLM_MOCK", "1") == "1"
+
+# 兼容旧 import: 动态属性
+class _MockFlag:
+    def __bool__(self): return _use_mock()
+USE_MOCK = _MockFlag()
 LLM_MODEL = os.getenv("VERIFIER_LLM_MODEL", "deepseek-v4-flash")  # 默认 flash + 关thinking
 # DeepSeek thinking 模式开关 (默认关, verifier 任务不需要)
 LLM_THINKING = os.getenv("VERIFIER_LLM_THINKING", "0") == "1"
@@ -42,129 +49,25 @@ LLM_THINKING = os.getenv("VERIFIER_LLM_THINKING", "0") == "1"
 
 def call_llm_for_extraction(prompt: str, model: str = None) -> dict:
     """调用 LLM 做事实抽取, 返回解析后的 JSON dict
-    
-    要求 LLM 输出严格 JSON.
-    返回: dict (LLM 抽取的事实)
-    抛异常: 调用失败或解析失败
+
+    现在统一走 llm_client (带重试 / seed / 缓存 / 鲁棒解析)。
+    要求 LLM 输出严格 JSON. 抛异常: 重试耗尽仍失败。
     """
     if model is None:
         model = LLM_MODEL
-    
-    if model.startswith("claude"):
-        return _call_anthropic_for_extraction(prompt, model)
-    elif model.startswith("deepseek"):
-        return _call_openai_compat_for_extraction(prompt, model, 
-            base_url="https://api.deepseek.com", api_key_env="DEEPSEEK_API_KEY")
-    elif model.startswith("gpt"):
-        return _call_openai_compat_for_extraction(prompt, model, 
-            base_url=None, api_key_env="OPENAI_API_KEY")
-    else:
-        raise ValueError(f"不支持的模型: {model}")
-
-
-def _call_anthropic_for_extraction(prompt: str, model: str) -> dict:
-    """调 Anthropic API"""
-    try:
-        from anthropic import Anthropic
-    except ImportError:
-        raise ImportError("需要 pip install anthropic")
-    
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise RuntimeError("需要 ANTHROPIC_API_KEY 环境变量")
-    
-    client = Anthropic(api_key=api_key)
-    # 简化: 不暴露完整模型版本字符串
-    actual_model = "claude-opus-4-7" if "4-7" in model else model
-    
-    response = client.messages.create(
-        model=actual_model,
+    from llm_client import call_llm
+    return call_llm(
+        prompt=prompt,
+        model=model,
+        system="你是精确的事实抽取器. 只输出 JSON, 不要任何额外文字.",
         max_tokens=1000,
-        temperature=0.0,  # 抽取任务用 0 温度,要可复现
-        messages=[{"role": "user", "content": prompt}]
     )
-    text = response.content[0].text
-    return _parse_json_from_text(text)
-
-
-def _call_openai_compat_for_extraction(prompt: str, model: str, base_url, api_key_env) -> dict:
-    """调 OpenAI 兼容 API
-    
-    DeepSeek 特别: 默认关闭 thinking 模式(verifier 任务不需要深度思考).
-    用环境变量 VERIFIER_LLM_THINKING=1 可以重新打开.
-    """
-    try:
-        from openai import OpenAI
-    except ImportError:
-        raise ImportError("需要 pip install openai")
-    
-    api_key = os.getenv(api_key_env)
-    if not api_key:
-        raise RuntimeError(f"需要 {api_key_env} 环境变量")
-    
-    kwargs = {"api_key": api_key}
-    if base_url:
-        kwargs["base_url"] = base_url
-    client = OpenAI(**kwargs)
-    
-    # DeepSeek 特殊: 默认关 thinking
-    create_kwargs = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": "你是精确的事实抽取器. 只输出 JSON, 不要任何额外文字."},
-            {"role": "user", "content": prompt}
-        ],
-    }
-    
-    # GPT-5 系列 breaking change: 用 max_completion_tokens 而不是 max_tokens
-    # GPT-5 也不支持自定义 temperature (默认 1.0)
-    if model.startswith("gpt-5") or model.startswith("o1") or model.startswith("o3") or model.startswith("o4"):
-        create_kwargs["max_completion_tokens"] = 1500  # GPT-5 mini 会用思考 token, 给多点
-    else:
-        create_kwargs["max_tokens"] = 1000
-        create_kwargs["temperature"] = 0.0
-    
-    if model.startswith("deepseek"):
-        thinking_on = os.getenv("VERIFIER_LLM_THINKING", "0") == "1"
-        create_kwargs["extra_body"] = {
-            "thinking": {"type": "enabled" if thinking_on else "disabled"}
-        }
-        # thinking 关掉时 temperature 才能用; 开着时 temperature 会被忽略
-    
-    response = client.chat.completions.create(**create_kwargs)
-    text = response.choices[0].message.content
-    return _parse_json_from_text(text)
 
 
 def _parse_json_from_text(text: str) -> dict:
-    """从可能含 markdown 围栏的文本中解析 JSON"""
-    text = re.sub(r"^```(?:json)?\s*", "", text.strip())
-    text = re.sub(r"\s*```$", "", text)
-    start = text.find("{")
-    if start == -1:
-        raise ValueError(f"LLM 输出无 JSON: {text[:200]}")
-    # 简单大括号匹配
-    depth = 0
-    in_str = False
-    esc = False
-    for i, ch in enumerate(text[start:], start):
-        if esc:
-            esc = False
-            continue
-        if ch == "\\":
-            esc = True
-            continue
-        if ch == '"':
-            in_str = not in_str
-        if in_str:
-            continue
-        if ch == "{":
-            depth += 1
-        elif ch == "}":
-            depth -= 1
-            if depth == 0:
-                return json.loads(text[start:i+1])
-    raise ValueError("JSON 大括号不匹配")
+    """[兼容保留] 转调 llm_client 的鲁棒解析"""
+    from llm_client import parse_json_robust
+    return parse_json_robust(text)
 
 
 # ============================================================
