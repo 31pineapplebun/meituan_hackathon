@@ -532,6 +532,44 @@ def render_rough_sim_flow():
                                st.session_state.get("sd_dialogue", {}))
 
 
+def _parse_custom_instruction_for_modeleval():
+    """自定义→📋完整任务指令: 上传/粘贴指令 → 现场解析(mock 启发式) → 落临时文件 →
+    供下方"模型评测流程"使用(8 Persona 多场景模拟 + 逐约束评测 + 模型画像)。
+    返回 (parsed_dict, instr_name, has_demo) 或 (None, None, False)。复用后端 parser, 不改后端。"""
+    up = st.file_uploader("📤 上传任务指令 (.md / .txt)", type=["md", "txt"], key="mi_up")
+    pasted = st.text_area(
+        "✍️ 或直接粘贴任务指令 (Markdown)", height=240, key="mi_text",
+        placeholder="# Role ...\n# Task ...\n# Constraints ...\n# Knowledge Points (FAQ) ...\n# Call Flow ...",
+    )
+    md_text = up.getvalue().decode("utf-8", errors="replace") if up is not None else pasted
+    if up is not None:
+        st.caption(f"📎 已读取「{up.name}」({len(md_text)} 字符 / {md_text.count(chr(10)) + 1} 行)")
+    if not md_text.strip():
+        st.info("👆 粘贴任务指令或上传 .md 后, 系统会解析出约束清单, 再用 8 Persona 模拟多场景对话并评测该模型。")
+        return None, None, False
+    try:
+        parse_instruction = _load_parse_instruction()
+        with st.spinner("正在解析指令、拆解约束清单…"):
+            parsed_obj = parse_instruction(md_text, instruction_id="CUSTOM",
+                                           instruction_name="自定义指令", mock=True)
+            parsed = parsed_obj.to_dict()
+    except Exception as e:
+        st.error(f"❌ 指令解析失败: {e}")
+        return None, None, False
+    if not parsed.get("atomic_constraints"):
+        st.warning("⚠️ 没能从这段文本解析出约束, 请确认是结构化外呼指令(建议含 # Constraints / # Call Flow 段)。")
+        return None, None, False
+    tmp = Path(tempfile.gettempdir())
+    p_path = tmp / "custom_instruction_parsed.json"
+    m_path = tmp / "custom_instruction.md"
+    p_path.write_text(json.dumps(parsed, ensure_ascii=False, indent=2), encoding="utf-8")
+    m_path.write_text(md_text, encoding="utf-8")
+    st.session_state["me_instruction_parsed_path"] = str(p_path)
+    st.session_state["me_instruction_md_path"] = str(m_path)
+    st.session_state["me_instruction_name"] = "custom_instruction"
+    return parsed, "custom_instruction", False
+
+
 # ============================================================
 # 主流程
 # ============================================================
@@ -570,37 +608,49 @@ input_mode = st.radio(
     horizontal=True, label_visibility="collapsed",
 )
 
-# ===== 自定义输入: 两个子选项, 各自独立(评单通对话), 不进模型评测流程 =====
-if not input_mode.startswith("📚"):
+parsed = None
+instr_name = None
+has_demo = False
+
+if input_mode.startswith("📚"):
+    # ===== 预置指令 → 模型评测流程 =====
+    instr_label = st.selectbox("任务指令", list(INSTRUCTIONS.keys()), label_visibility="collapsed")
+    instr_cfg = INSTRUCTIONS[instr_label]
+    instr_name = instr_cfg["name"]
+    has_demo = instr_cfg["has_demo"]
+    parsed = load_parsed(instr_cfg)
+    if parsed:
+        st.session_state["me_instruction_parsed_path"] = str(instr_cfg["parsed"])
+        st.session_state["me_instruction_md_path"] = str(instr_cfg["md"])
+        st.session_state["me_instruction_name"] = instr_name
+    else:
+        st.warning(f"⚠️ 未找到预解析文件,请确认 {instr_cfg['parsed']}")
+else:
+    # ===== 自定义输入: 三个子选项 =====
     custom_mode = st.radio(
         "自定义方式",
-        ["💬 我直接给一通对话 (直接评测, 不生成对话)",
+        ["📋 我有完整任务指令 (解析 → 多场景模拟 → 评模型)",
+         "💬 我直接给一通对话 (直接评测, 不生成对话)",
          "✏️ 我给个大致描述 (据此模拟一通对话再评测)"],
         key="custom_mode",
     )
     st.markdown("---")
     if custom_mode.startswith("💬"):
+        # 单通: 给对话 → 通用质检, 独立流程
         render_custom_dialogue_flow()
-    else:
+        st.stop()
+    elif custom_mode.startswith("✏️"):
+        # 单通: 大致描述 → 模拟一通 → 通用质检, 独立流程
         render_rough_sim_flow()
-    st.stop()
-
-# ===== 预置指令: 模型评测流程(根据指令模拟多场景对话 → 评测 → 模型能力画像) =====
-parsed = None
-instr_name = None
-has_demo = False
-
-instr_label = st.selectbox("任务指令", list(INSTRUCTIONS.keys()), label_visibility="collapsed")
-instr_cfg = INSTRUCTIONS[instr_label]
-instr_name = instr_cfg["name"]
-has_demo = instr_cfg["has_demo"]
-parsed = load_parsed(instr_cfg)
-if parsed:
-    st.session_state["me_instruction_parsed_path"] = str(instr_cfg["parsed"])
-    st.session_state["me_instruction_md_path"] = str(instr_cfg["md"])
-    st.session_state["me_instruction_name"] = instr_name
-else:
-    st.warning(f"⚠️ 未找到预解析文件,请确认 {instr_cfg['parsed']}")
+        st.stop()
+    else:
+        # 📋 完整任务指令 → 解析 → 落入下方"模型评测流程"(不 st.stop, 与预置共用 Step2/3)
+        st.markdown("#### 📋 输入完整任务指令 → 评测模型")
+        st.caption("粘贴/上传你自己的外呼任务指令(像官方样本那样含 Role / Task / Constraints / FAQ / Call Flow), "
+                   "系统解析出约束清单, 再用 8 Persona 模拟多场景对话, 评测该模型对这份指令的遵循能力 → 模型画像。")
+        parsed, instr_name, has_demo = _parse_custom_instruction_for_modeleval()
+        if not parsed:
+            st.stop()
 
 # ---- 解析结果展示 (两种来源通用) ----
 constraints = []
