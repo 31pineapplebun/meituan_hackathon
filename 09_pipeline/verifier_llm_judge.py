@@ -43,6 +43,9 @@ def classify_judge_constraint(constraint: dict) -> str:
     # 适时结束 (优先检查, 因为 V*_C15 通常是"适时终结对话")
     if "适时" in name or "终结" in name or "结束通话" in name or "礼貌挂断" in name or "适时结束" in name or "对话结束" in name:
         return "timely_end"
+    # 关键信息后暂停等用户回应
+    if "暂停" in name or "发言机会" in name or "稍微暂停" in name:
+        return "pause_wait"
     # 口语化/自然
     if "口语" in name or "自然" in name or "随意" in name:
         return "oral_natural"
@@ -144,14 +147,23 @@ def _mock_judge_timely_end(dialogue: dict) -> dict:
     closing_words = ["再见", "拜拜", "谢谢", "祝", "辛苦", "感谢", "保重"]
     has_closing = any(w in last for w in closing_words)
     
-    # 还要看是否问"还有其他需要"导致拉长对话
-    overstay = "还有" in last and "其他" in last
-    
+    # 识别用户主动结束后是否被拖延
+    user_turns = [t for t in dialogue.get("turns", []) if t.get("role") == "user"]
+    user_end = any(any(k in t.get("content", "") for k in ["挂了", "先忙", "先走", "就这样", "不用了"]) for t in user_turns)
+    overstay = ("还有" in last and "其他" in last) or ("再确认" in last)
+
     if has_closing and not overstay:
         return {
             "verdict": "pass", "score": 0.8,
             "evidence": f"最后回复: {last[:60]}",
             "reason": "助手礼貌结束对话",
+            "_source": "mock"
+        }
+    if user_end and overstay:
+        return {
+            "verdict": "fail", "score": 0.35,
+            "evidence": f"用户已有结束意愿, 但最后回复继续追问: {last[:60]}",
+            "reason": "用户已明确结束, 助手仍拖延",
             "_source": "mock"
         }
     return {
@@ -181,6 +193,36 @@ def _mock_judge_core_intent(dialogue: dict, instruction: dict) -> dict:
         "evidence": f"对话 {n_turns} 轮, assistant 总字数 {len(all_text)}",
         "reason": "任务完整性的简单 mock 判定",
         "_source": "mock"
+    }
+
+
+def _mock_judge_pause_wait(dialogue: dict) -> dict:
+    turns = dialogue.get("turns", [])
+    if not turns:
+        return {"verdict": "na", "reason": "无对话", "_source": "mock"}
+
+    assistant_turns = [t for t in turns if t.get("role") == "assistant"]
+    user_turns = [t for t in turns if t.get("role") == "user"]
+    if not assistant_turns or not user_turns:
+        return {"verdict": "na", "reason": "无有效交互", "_source": "mock"}
+
+    pause_markers = ["吗", "呢", "您看", "对吗", "可以吗", "是否", "要不要", "行吗"]
+    has_pause_style = any(any(m in t.get("content", "") for m in pause_markers) for t in assistant_turns)
+
+    # 粗略判断是否有“助手说关键信息后用户紧跟回应”
+    has_user_follow = False
+    for idx in range(len(turns) - 1):
+        if turns[idx].get("role") == "assistant" and turns[idx + 1].get("role") == "user":
+            has_user_follow = True
+            break
+
+    passed = has_pause_style and has_user_follow
+    return {
+        "verdict": "pass" if passed else "fail",
+        "score": 0.8 if passed else 0.4,
+        "evidence": f"提问式暂停={has_pause_style}, 紧随用户回应={has_user_follow}",
+        "reason": "暂停让出话轮判定",
+        "_source": "mock_heuristic",
     }
 
 
@@ -253,6 +295,8 @@ def verify_llm_judge(constraint: dict, dialogue: dict, instruction: dict) -> Ver
             facts = _mock_judge_no_repeat(dialogue)
         elif subtype == "timely_end":
             facts = _mock_judge_timely_end(dialogue)
+        elif subtype == "pause_wait":
+            facts = _mock_judge_pause_wait(dialogue)
         elif subtype == "core_intent":
             facts = _mock_judge_core_intent(dialogue, instruction)
         else:
@@ -401,7 +445,13 @@ def _get_judge_criteria(subtype: str) -> str:
 2. 收尾含"再见"/"祝"/"辛苦"/"感谢"等
 3. 没有反复追问"还有其他需要吗"
 任何 1 条不满足→ fail
-如果对话被强制截断(超长度), 标 na""",
+若对话是用户主动中断/系统截断, 且助手最后一轮已表达收尾意图,可判 pass(截断免责)""",
+
+        "pause_wait": """
+满足以下 2 条算 pass:
+1. 助手在关键信息后有让出话轮行为(提问式暂停也算), 如"您看可以吗/对吗/您这边怎么安排"
+2. 对话中至少出现 1 次用户回应紧随关键说明之后
+任一条不满足→ fail""",
         
         "faq": """
 约束指向某个 FAQ. 检查:
