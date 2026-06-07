@@ -400,56 +400,57 @@ def render_single_dialogue(output, rubric_label, dialogue):
                        file_name="single_dialogue_eval.json", mime="application/json")
 
 
-def render_single_dialogue_flow():
-    """单通对话评测主流程: ①定评分标尺(任务指令/通用标准) → ②给一通对话 → ③评测"""
-    st.markdown("### 1️⃣ 评分标尺")
-    rubric_mode = st.radio(
-        "评分标尺来源",
-        ["📐 按某个任务指令评 (精确, 贴题眼, 推荐)", "🆓 用内置通用外呼质检标准评 (只给对话)"],
-        label_visibility="collapsed", key="sd_rubric_mode",
+def _simulate_dialogue_from_prompt(prompt_text, model="deepseek-v4-flash"):
+    """根据用户的大致描述, 调 LLM 现场生成一段多轮对话(供'大致描述'路径)。需 API key。"""
+    from llm_client import call_llm
+    gen_prompt = (
+        "根据下面的【描述】生成一段多轮中文对话(外呼/客服场景)。"
+        "客服方 role=assistant, 用户方 role=user, 双方交替发言, 6-12 轮, "
+        "贴合描述里的人物性格与场景, 自然口语化。\n\n"
+        f"【描述】{prompt_text}\n\n"
+        '只输出 JSON: {"turns":[{"turn":1,"role":"assistant","content":"..."},'
+        '{"turn":2,"role":"user","content":"..."}]}'
     )
-    instruction = None
-    rubric_label = ""
+    try:
+        facts = call_llm(gen_prompt, model=model, system="你是对话生成器, 只输出 JSON.", max_tokens=2000)
+    except Exception:
+        return None
+    turns = facts.get("turns") if isinstance(facts, dict) else None
+    if not turns:
+        return None
+    norm = _normalize_turns(turns)
+    return {"dialogue_id": "simulated_from_prompt", "turns": norm} if norm else None
 
-    if rubric_mode.startswith("📐"):
-        src = st.radio("指令来源", ["📚 预置指令", "✍️ 自定义 / 上传指令"],
-                       horizontal=True, key="sd_instr_src")
-        if src.startswith("📚"):
-            label = st.selectbox("任务指令", list(INSTRUCTIONS.keys()), key="sd_preset")
-            instruction = load_parsed(INSTRUCTIONS[label])
-            rubric_label = label
-        else:
-            up = st.file_uploader("上传指令 (.md/.txt)", type=["md", "txt"], key="sd_instr_up")
-            pasted = st.text_area("或粘贴任务指令 (Markdown)", height=160, key="sd_instr_text",
-                                  placeholder="# Task ...\n# Constraints ...\n# Call Flow ...")
-            md_text = up.getvalue().decode("utf-8", errors="replace") if up is not None else pasted
-            if md_text.strip():
-                try:
-                    parse_instruction = _load_parse_instruction()
-                    with st.spinner("解析指令、拆约束…"):
-                        instruction = parse_instruction(md_text, instruction_id="CUSTOM",
-                                                        instruction_name="自定义指令", mock=True).to_dict()
-                    rubric_label = "自定义指令"
-                except Exception as e:
-                    st.error(f"指令解析失败: {e}")
-                    instruction = None
-        if instruction and instruction.get("atomic_constraints"):
-            st.success(f"✓ 评分标尺: **{rubric_label}** · 共 {len(instruction['atomic_constraints'])} 条约束")
-        elif instruction is not None:
-            st.warning("该指令没解析出约束, 换一个或检查格式。")
-            instruction = None
-    else:
-        instruction = _load_generic_rubric()
-        rubric_label = "内置通用外呼质检标准"
-        st.info(f"将用**内置通用外呼质检标准**(共 {len(instruction['atomic_constraints'])} 条: "
-                "开场身份/礼貌/口语化/避免重复/准确回应/推进/让出话轮/适时收尾)评这通对话。\n\n"
-                "⚠️ 这评的是**通话本身质量**, 不是是否遵守某个具体任务指令 —— "
-                "评不出任务专属违规(字数限制/必经流程/任务禁用词)。多数约束需真实 LLM 判定(建议设 key)。")
 
-    st.markdown("### 2️⃣ 给一通对话")
-    up_d = st.file_uploader("上传对话 (.jsonl/.json, 系统原生格式)", type=["jsonl", "json", "txt"], key="sd_dlg_up")
+def _eval_single_dialogue(dialogue, instruction, rubric_label, status_box=None):
+    """对一通对话跑 run_pipeline 并存结果到 session(自定义对话/大致描述共用)。"""
+    has_key = bool(os.getenv("DEEPSEEK_API_KEY"))
+    os.environ["VERIFIER_LLM_MOCK"] = "0" if has_key else "1"
+    os.environ.setdefault("VERIFIER_LLM_MODEL", "deepseek-v4-flash")
+    if not has_key:
+        st.warning("未检测到 DEEPSEEK_API_KEY → mock 预览: 通用约束(llm_judge)多会显示“未判定”。"
+                   "设好 key 再重跑可拿到完整逐约束判定。")
+    try:
+        from pipeline import run_pipeline
+        t0 = time.time()
+        output = run_pipeline(instruction, dialogue)
+        st.session_state["sd_output"] = output
+        st.session_state["sd_rubric_label"] = rubric_label
+        st.session_state["sd_dialogue"] = dialogue
+        if status_box is not None:
+            status_box.update(label=f"✅ 完成 · 用时 {int(time.time() - t0)}s", state="complete", expanded=False)
+    except Exception as e:
+        if status_box is not None:
+            status_box.update(label="❌ 评测失败", state="error", expanded=True)
+        st.error(f"评测失败: {e}")
+        st.exception(e)
+
+
+def _render_dialogue_input(key_prefix):
+    """对话输入控件(上传 或 粘贴), 返回解析后的 dialogue dict 或 None。"""
+    up_d = st.file_uploader("上传对话 (.jsonl/.json)", type=["jsonl", "json", "txt"], key=f"{key_prefix}_up")
     pasted_d = st.text_area(
-        "或直接粘贴对话 (每行 “客服: …” / “用户: …”)", height=200, key="sd_dlg_text",
+        "或直接粘贴对话 (每行 “客服: …” / “用户: …”)", height=200, key=f"{key_prefix}_text",
         placeholder="客服: 喂您好，是张师傅吗？我是美团客服小王，跟您说个事…\n用户: 是的，啥事\n客服: 就是…",
     )
     dialogue = None
@@ -457,7 +458,6 @@ def render_single_dialogue_flow():
         dialogue = _load_dialogue_from_upload(up_d)
     elif pasted_d.strip():
         dialogue = _parse_dialogue_text(pasted_d)
-
     if dialogue and dialogue.get("turns"):
         n = len(dialogue["turns"])
         na = sum(1 for t in dialogue["turns"] if t["role"] == "assistant")
@@ -468,35 +468,53 @@ def render_single_dialogue_flow():
                 st.caption(f"{t['turn']}. {who}: {t['content'][:90]}")
     elif (up_d is not None) or pasted_d.strip():
         st.warning("没解析出对话轮次。粘贴请每行用“角色: 内容”; 上传请用含 turns 的 jsonl。")
+    return dialogue
 
-    st.markdown("### 3️⃣ 评测这通对话")
-    if st.button("🔍 评测这通对话", type="primary", use_container_width=True):
-        if not (instruction and instruction.get("atomic_constraints")):
-            st.error("请先确定评分标尺(选任务指令 或 用内置通用标准)。")
-            return
+
+def render_custom_dialogue_flow():
+    """自定义→💬自定义对话: 用户直接给一通对话 → 用内置通用质检标准直接评(不生成)。"""
+    st.markdown("#### 💬 直接给一通对话 → 评测")
+    st.caption("你已经有一通对话(真实通话转写/自己写的), 直接评它。用**内置通用外呼质检标准**"
+               "(开场身份/礼貌/口语化/避免重复/准确回应/推进/让出话轮/收尾)评通话质量, 不再生成对话。")
+    dialogue = _render_dialogue_input("cd")
+    st.markdown("##### 运行评测")
+    if st.button("🔍 评测这通对话", type="primary", use_container_width=True, key="cd_run"):
         if not (dialogue and dialogue.get("turns")):
             st.error("请先给一通可解析的对话。")
             return
-        has_key = bool(os.getenv("DEEPSEEK_API_KEY"))
-        os.environ["VERIFIER_LLM_MOCK"] = "0" if has_key else "1"
-        os.environ.setdefault("VERIFIER_LLM_MODEL", "deepseek-v4-flash")
-        if not has_key:
-            st.warning("未检测到 DEEPSEEK_API_KEY → mock 预览模式: 主观/通用约束(llm_judge)多会显示“未判定”。"
-                       "要拿到完整逐约束判定, 请在启动 streamlit 的终端设好 key 再重跑。")
         with st.status("正在逐约束评测这通对话…", expanded=True) as box:
-            try:
-                from pipeline import run_pipeline
-                t0 = time.time()
-                output = run_pipeline(instruction, dialogue)
-                box.update(label=f"✅ 评测完成 · 用时 {int(time.time() - t0)}s", state="complete", expanded=False)
-                st.session_state["sd_output"] = output
-                st.session_state["sd_rubric_label"] = rubric_label
-                st.session_state["sd_dialogue"] = dialogue
-            except Exception as e:
-                box.update(label="❌ 评测失败", state="error", expanded=True)
-                st.error(f"评测失败: {e}")
-                st.exception(e)
+            _eval_single_dialogue(dialogue, _load_generic_rubric(), "内置通用外呼质检标准", status_box=box)
+    if "sd_output" in st.session_state:
+        render_single_dialogue(st.session_state["sd_output"],
+                               st.session_state.get("sd_rubric_label", ""),
+                               st.session_state.get("sd_dialogue", {}))
 
+
+def render_rough_sim_flow():
+    """自定义→✏️大致描述: 用户给大概意思 → 据此模拟一通对话 → 用内置通用质检标准评。"""
+    st.markdown("#### ✏️ 给个大致描述 → 系统模拟对话 → 评测")
+    st.caption("用一句话描述你想要的对话, 系统据此**自动模拟生成一通对话**, 再用内置通用质检标准评。"
+               "例: 「生成一段易怒型用户和数字人客服关于外卖超时的对话」。需 DEEPSEEK_API_KEY。")
+    prompt_text = st.text_area("大致描述 / 场景 prompt", height=120, key="rs_text",
+                               placeholder="例: 生成一段易怒型用户和数字人客服关于外卖超时的对话")
+    if st.button("🎬 模拟对话并评测", type="primary", use_container_width=True, key="rs_run"):
+        if not prompt_text.strip():
+            st.error("请先输入大致描述。")
+            return
+        if not os.getenv("DEEPSEEK_API_KEY"):
+            st.error("模拟对话需调用 LLM, 但未检测到 DEEPSEEK_API_KEY。"
+                     "请在启动 streamlit 的终端设好 key 再重跑。")
+            return
+        os.environ["VERIFIER_LLM_MOCK"] = "0"
+        os.environ.setdefault("VERIFIER_LLM_MODEL", "deepseek-v4-flash")
+        with st.status("正在根据描述模拟对话…", expanded=True) as box:
+            dialogue = _simulate_dialogue_from_prompt(prompt_text)
+            if not (dialogue and dialogue.get("turns")):
+                box.update(label="❌ 模拟失败", state="error", expanded=True)
+                st.error("没能生成对话, 请换个描述或检查 key/网络。")
+                return
+            st.write(f"✓ 已模拟 {len(dialogue['turns'])} 轮对话, 开始逐约束评测…")
+            _eval_single_dialogue(dialogue, _load_generic_rubric(), "内置通用外呼质检标准", status_box=box)
     if "sd_output" in st.session_state:
         render_single_dialogue(st.session_state["sd_output"],
                                st.session_state.get("sd_rubric_label", ""),
@@ -507,95 +525,48 @@ def render_single_dialogue_flow():
 # 主流程
 # ============================================================
 st.title("🎯 对话外呼指令遵循自动评测系统")
-st.caption("评测一个模型(自动模拟多场景对话) · 或 评测一通已有对话(直接评你给的对话)")
-
-# ---- 顶层: 你要做什么 ----
-flow_mode = st.radio(
-    "你要做什么?",
-    ["🤖 评测一个模型 (给指令 → 系统自动生成多场景对话再评 → 模型能力画像)",
-     "📋 评测一通已有对话 (直接评你粘贴/上传的对话)"],
-    key="flow_mode",
-)
+st.caption("预置指令 → 自动模拟多场景对话评测出模型画像 · 或 自定义(直接给对话 / 给大致描述模拟)评单通")
 st.markdown("---")
 
-if flow_mode.startswith("📋"):
-    render_single_dialogue_flow()
-    st.stop()
-
-# ===== 以下为「评测一个模型」流程 =====
-# ---- 第 1 步: 选指令 (预置 / 自定义 二选一, 对齐赛题"用户输入任务指令") ----
+# ---- 第 1 步: 选择任务指令来源 ----
 st.markdown("### 1️⃣ 选择任务指令")
 input_mode = st.radio(
     "指令来源",
-    ["📚 从预置指令选择", "✍️ 自己输入 / 📤 上传指令"],
+    ["📚 从预置指令选择", "✍️ 自定义输入"],
     horizontal=True, label_visibility="collapsed",
 )
 
+# ===== 自定义输入: 两个子选项, 各自独立(评单通对话), 不进模型评测流程 =====
+if not input_mode.startswith("📚"):
+    custom_mode = st.radio(
+        "自定义方式",
+        ["💬 我直接给一通对话 (直接评测, 不生成对话)",
+         "✏️ 我给个大致描述 (据此模拟一通对话再评测)"],
+        key="custom_mode",
+    )
+    st.markdown("---")
+    if custom_mode.startswith("💬"):
+        render_custom_dialogue_flow()
+    else:
+        render_rough_sim_flow()
+    st.stop()
+
+# ===== 预置指令: 模型评测流程(根据指令模拟多场景对话 → 评测 → 模型能力画像) =====
 parsed = None
 instr_name = None
 has_demo = False
 
-if input_mode.startswith("📚"):
-    # 方式 A: 预置指令 (官方 sample / V1-V6)
-    instr_label = st.selectbox("任务指令", list(INSTRUCTIONS.keys()), label_visibility="collapsed")
-    instr_cfg = INSTRUCTIONS[instr_label]
-    instr_name = instr_cfg["name"]
-    has_demo = instr_cfg["has_demo"]
-    parsed = load_parsed(instr_cfg)
-    if parsed:
-        st.session_state["me_instruction_parsed_path"] = str(instr_cfg["parsed"])
-        st.session_state["me_instruction_md_path"] = str(instr_cfg["md"])
-        st.session_state["me_instruction_name"] = instr_name
-    else:
-        st.warning(f"⚠️ 未找到预解析文件,请确认 {instr_cfg['parsed']}")
+instr_label = st.selectbox("任务指令", list(INSTRUCTIONS.keys()), label_visibility="collapsed")
+instr_cfg = INSTRUCTIONS[instr_label]
+instr_name = instr_cfg["name"]
+has_demo = instr_cfg["has_demo"]
+parsed = load_parsed(instr_cfg)
+if parsed:
+    st.session_state["me_instruction_parsed_path"] = str(instr_cfg["parsed"])
+    st.session_state["me_instruction_md_path"] = str(instr_cfg["md"])
+    st.session_state["me_instruction_name"] = instr_name
 else:
-    # 方式 B: 用户自己输入 / 上传指令 → 调后端 parser 现场解析 (只暴露入口, 不改后端)
-    up = st.file_uploader("📤 上传指令 Markdown 文件 (.md / .txt)", type=["md", "txt"])
-    pasted = st.text_area(
-        "✍️ 或直接粘贴任务指令 (Markdown)", height=240,
-        placeholder="粘贴你的外呼任务指令...\n支持 # Role / # Task / # Constraints / # Knowledge Points (FAQ) / # Call Flow 等 Markdown 结构",
-    )
-    # 文件优先。两个 Streamlit 重跑语义下的坑必须规避:
-    #  1) 用 getvalue() 而非 read(): read() 依赖缓冲区读指针, 多次 rerun 可能读到空串;
-    #  2) 不把文件内容塞进 text_area 的 value=: text_area 首次渲染后会忽略变化的 value,
-    #     会导致上传的文件内容进不了输入框/被旧 widget 状态覆盖。故让文件内容直接作 md_text。
-    if up is not None:
-        md_text = up.getvalue().decode("utf-8", errors="replace")   # 容错非 UTF-8, 不崩
-        st.caption(f"📎 已读取上传文件「{up.name}」({len(md_text)} 字符 / {md_text.count(chr(10)) + 1} 行)"
-                   " · 如需改用粘贴文本请先移除该文件")
-    else:
-        md_text = pasted
-
-    if md_text.strip():
-        instr_name = "custom_instruction"
-        has_demo = False   # 自定义指令无预置数据, 只走完整模式真跑
-        try:
-            parse_instruction = _load_parse_instruction()
-            with st.spinner("正在解析指令、拆解约束清单…"):
-                parsed_obj = parse_instruction(
-                    md_text, instruction_id="CUSTOM",
-                    instruction_name="自定义指令", mock=True,   # 启发式分类: 即时、离线、无需额外 key
-                )
-                parsed = parsed_obj.to_dict()
-            if not parsed.get("atomic_constraints"):
-                st.warning("⚠️ 没能从这段文本解析出任何约束，请确认是结构化的外呼指令"
-                           "(建议含 # Constraints / # Call Flow 等 Markdown 段落)。")
-                parsed = None
-            else:
-                # 落临时文件: 完整模式 run_full_evaluation 按路径读取
-                tmp = Path(tempfile.gettempdir())
-                p_path = tmp / "custom_instruction_parsed.json"
-                m_path = tmp / "custom_instruction.md"
-                p_path.write_text(json.dumps(parsed, ensure_ascii=False, indent=2), encoding="utf-8")
-                m_path.write_text(md_text, encoding="utf-8")
-                st.session_state["me_instruction_parsed_path"] = str(p_path)
-                st.session_state["me_instruction_md_path"] = str(m_path)
-                st.session_state["me_instruction_name"] = instr_name
-        except Exception as e:
-            st.error(f"❌ 指令解析失败: {e}")
-            parsed = None
-    else:
-        st.info("👆 粘贴指令文本或上传 .md 文件后, 系统会用解析器自动拆出约束清单")
+    st.warning(f"⚠️ 未找到预解析文件,请确认 {instr_cfg['parsed']}")
 
 # ---- 解析结果展示 (两种来源通用) ----
 constraints = []
