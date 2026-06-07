@@ -44,32 +44,32 @@ THEME_CSS = """
 
 SIDEBAR_BRAND = """
 <div style="padding: 4px 2px;">
-  <div style="height:3px;width:40px;background:#b8860b;border-radius:2px;margin-bottom:16px;"></div>
-  <div style="font-size:17px;font-weight:700;color:#1a2233;line-height:1.35;">外呼指令遵循<br>评测系统</div>
-  <div style="font-size:10px;color:#9aa3b2;letter-spacing:1.8px;margin-top:7px;">INSTRUCTION-FOLLOWING&nbsp;EVAL</div>
+  <div style="height:3px;width:44px;background:#b8860b;border-radius:2px;margin-bottom:16px;"></div>
+  <div style="font-size:20px;font-weight:700;color:#1a2233;line-height:1.35;">外呼指令遵循<br>评测系统</div>
+  <div style="font-size:11.5px;color:#8a93a3;letter-spacing:1px;margin-top:8px;">INSTRUCTION-FOLLOWING&nbsp;EVAL</div>
 
-  <div style="margin-top:28px;font-size:11px;color:#9aa3b2;letter-spacing:2px;font-weight:600;">核心能力</div>
-  <div style="margin-top:10px;color:#3d4759;font-size:13px;line-height:2.05;">
+  <div style="margin-top:30px;font-size:13px;color:#7a8499;letter-spacing:1px;font-weight:700;">核心能力</div>
+  <div style="margin-top:12px;color:#3d4759;font-size:14.5px;line-height:2.0;">
     5 类 Verifier 分层判定<br>
     8 Persona 用户模拟<br>
     P3 三层评分 · 模型画像<br>
     23 类约束体系
   </div>
 
-  <div style="margin-top:28px;font-size:11px;color:#9aa3b2;letter-spacing:2px;font-weight:600;">评测可靠性</div>
-  <div style="margin-top:12px;display:flex;gap:24px;">
+  <div style="margin-top:30px;font-size:13px;color:#7a8499;letter-spacing:1px;font-weight:700;">评测可靠性</div>
+  <div style="margin-top:14px;display:flex;gap:26px;">
     <div>
-      <div style="font-size:24px;font-weight:800;color:#1a2233;line-height:1;">0.81</div>
-      <div style="font-size:11px;color:#9aa3b2;margin-top:4px;">三路 LLM&nbsp;κ</div>
+      <div style="font-size:28px;font-weight:800;color:#1a2233;line-height:1;">0.81</div>
+      <div style="font-size:13px;color:#8a93a3;margin-top:5px;">三路 LLM&nbsp;κ</div>
     </div>
     <div>
-      <div style="font-size:24px;font-weight:800;color:#1a2233;line-height:1;">81.8%</div>
-      <div style="font-size:11px;color:#9aa3b2;margin-top:4px;">人机一致率</div>
+      <div style="font-size:28px;font-weight:800;color:#1a2233;line-height:1;">81.8%</div>
+      <div style="font-size:13px;color:#8a93a3;margin-top:5px;">人机一致率</div>
     </div>
   </div>
 
-  <div style="margin-top:32px;padding-top:14px;border-top:1px solid #e8ebf0;
-              font-size:11px;color:#aab2c0;letter-spacing:0.3px;">美团黑客松 · 命题二</div>
+  <div style="margin-top:34px;padding-top:14px;border-top:1px solid #e8ebf0;
+              font-size:12.5px;color:#9aa3b2;letter-spacing:0.3px;">美团黑客松 · 命题二</div>
 </div>
 """
 
