@@ -47,7 +47,7 @@ with c1:
     - `llm_extract_then_rule` 事实抽取 — 1 次
     - `llm_judge` 主观判断 — 1 次
 
-    *价值: 客观约束不浪费 LLM 调用,省约 60% 成本*
+    *价值: 客观约束用规则零成本判定(更准更稳),LLM 预算集中花在主观约束上*
     """)
 with c2:
     st.markdown("""
