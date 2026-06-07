@@ -169,6 +169,49 @@ def is_branch_constraint(constraint: dict) -> bool:
     return False
 
 
+def _evidence_turns(dialogue: dict, matched: list, limit: int = 3) -> list:
+    """收集含命中词的 assistant turn 序号 (best-effort, 用于 evidence 展示)"""
+    out = []
+    for t in get_assistant_turns(dialogue):
+        if any(kw in t.get("content", "") for kw in matched):
+            out.append(t.get("turn"))
+            if len(out) >= limit:
+                break
+    return out
+
+
+def _branch_trigger_hint(constraint: dict, dialogue: dict) -> str:
+    """为分支型 step 生成"用户侧是否触发各分支条件"的线索, 供 LLM 兜底参考。
+
+    借鉴队友"用 user 文本判分支触发"的思路, 但修掉其实现缺陷:
+    - 多分支感知: 先按 ；/;/。 切句, 再逐句【非贪婪】提取, 不会像队友的 `若(.+?)…(.+)`
+      那样把第二个"若…"整段并进第一个分支的 action;
+    - 只作 LLM 的【辅助证据】, 绝不单独下 na/fail 终判 —— 规避"客观条件(如'订单已超时')
+      本就不出现在用户话里 → 被误判未触发洗成 na"的坑(这正是直接采用队友规则会
+      把 official_2 的 critical 静默洗成 na 的根因)。
+    """
+    text = constraint.get("source_text") or constraint.get("name", "")
+    user_text = " ".join(
+        t.get("content", "") for t in dialogue.get("turns", []) if t.get("role") == "user"
+    )
+    obs = []
+    for clause in re.split(r"[；;。]", text):
+        m = re.search(r"若(.+?)(?:则|，|,|进入|跳到|就)(.+)", clause)
+        if not m:
+            continue
+        cond = m.group(1).strip()
+        cond_tokens = [tok for tok in re.split(r"[，,、\s]+", cond) if len(tok) >= 2][:4]
+        if not cond_tokens:
+            continue
+        hit = [tok for tok in cond_tokens if tok in user_text]
+        status = f"用户话中出现 {hit}" if hit else "用户话中未见该条件词"
+        obs.append(f"- 分支条件「{cond[:20]}」: {status}")
+    if not obs:
+        return ""
+    return ("\n# 分支触发线索 (仅供参考; 条件也可能是不体现在用户话里的客观状态, 勿据此武断判 na)\n"
+            + "\n".join(obs[:4]))
+
+
 # ============================================================
 # LLM 语义兜底 (关键词退化为纯动作词时启用)
 # ============================================================
@@ -185,6 +228,7 @@ def _llm_step_covered(constraint: dict, dialogue: dict) -> dict:
         for t in dialogue.get("turns", [])
     )
     step_desc = constraint.get("source_text") or constraint.get("name", "")
+    branch_hint = _branch_trigger_hint(constraint, dialogue) if is_branch_constraint(constraint) else ""
     prompt = f"""# 任务: 判断助手是否在通话中真正"执行/覆盖"了下面这个流程步骤的语义内容
 
 # 流程步骤 (来自外呼任务指令)
@@ -199,7 +243,7 @@ def _llm_step_covered(constraint: dict, dialogue: dict) -> dict:
 
 # 对话内容
 {turns_text}
-
+{branch_hint}
 # 输出 JSON (不要任何其他文字)
 {{
   "verdict": "pass" 或 "fail" 或 "na",
@@ -243,6 +287,8 @@ def verify_state_tracker(constraint: dict, dialogue: dict, instruction: dict) ->
     keywords = extract_step_keywords(constraint)
     meta_only = bool(keywords) and all(kw in ACTION_VERBS for kw in keywords)
 
+    fallthrough_cause = None  # 真实模式下从路径 A 落到 LLM 兜底时记录原因
+
     # ---- 路径 A: 关键词可靠 (有内容关键词 + 非分支 + 非纯动作词) → 先做规则匹配 ----
     if keywords and not is_branch and not meta_only:
         if not asst_text:
@@ -252,33 +298,43 @@ def verify_state_tracker(constraint: dict, dialogue: dict, instruction: dict) ->
             (matched if _kw_in_text(kw, asst_text) else missed).append(kw)
         match_rate = len(matched) / len(keywords)
         threshold_count = min(2, max(1, len(keywords) // 2))
-        if len(matched) >= threshold_count or match_rate >= 0.4:
-            # 关键词命中 = 高精度信号, 直接信任 (不调 LLM, 省成本)
-            evidence_turns = []
-            for t in get_assistant_turns(dialogue):
-                if any(kw in t.get("content", "") for kw in matched):
-                    evidence_turns.append(t.get("turn"))
-                    if len(evidence_turns) >= 3:
-                        break
+
+        # [必要要素 AND 判定] 借鉴队友思路: 所有要素(同义词展开后)都覆盖 = 高置信,
+        # 直接 pass(不调 LLM, 省成本)。这是比旧"任意≥2个即 pass"更严的充分条件。
+        if not missed:
+            ev = _evidence_turns(dialogue, matched)
             return VerdictResult(
                 verdict="pass",
-                evidence=f"turn{','.join(map(str, evidence_turns))} 含 {matched[:4]}",
-                confidence=0.7 + match_rate * 0.3,
-                reason=f"匹配关键词 {len(matched)}/{len(keywords)} ({match_rate*100:.0f}%, 阈值≥{threshold_count}个)"
+                evidence=f"turn{','.join(map(str, ev))} 覆盖全部要素 {matched[:5]}",
+                confidence=0.9,
+                reason=f"必要要素全覆盖 {len(matched)}/{len(keywords)}"
             )
-        # 关键词未命中: 字面不匹配可能是模型换了说法(假阴性)。
-        # mock 模式无 LLM, 保留启发式 fail; 真实模式 → 落到下面的 LLM 语义兜底复核。
+
+        # 部分要素缺失(关键改进点): 不再用宽松阈值无条件 pass。
         if is_mock:
+            # mock 无 LLM: 保留旧的宽松阈值行为, 维持离线确定性与既有单测。
+            if len(matched) >= threshold_count or match_rate >= 0.4:
+                ev = _evidence_turns(dialogue, matched)
+                return VerdictResult(
+                    verdict="pass",
+                    evidence=f"turn{','.join(map(str, ev))} 含 {matched[:4]}",
+                    confidence=0.7 + match_rate * 0.3,
+                    reason=f"匹配关键词 {len(matched)}/{len(keywords)} ({match_rate*100:.0f}%, 阈值≥{threshold_count}个)"
+                )
             return VerdictResult(
                 verdict="fail",
                 evidence=f"缺失关键词: {missed[:4]}",
                 confidence=0.6,
                 reason=f"只匹配 {len(matched)}/{len(keywords)} ({match_rate*100:.0f}%, 不足 {threshold_count} 个)"
             )
-        # else: fall through to LLM 兜底
+        # 真实模式: 部分要素缺失 → 交 LLM 语义仲裁(可能是换说法的假阴性, 也可能真漏)。
+        # 把旧"宽松阈值自动 pass"的边界 case 收敛到一致性更高的 LLM 判定上。
+        fallthrough_cause = f"必要要素未全覆盖(缺{missed[:3]})"
 
-    # ---- 路径 B: LLM 语义兜底 (分支 / 纯动作词 / 无关键词 / 真实模式下关键词未命中) ----
-    if is_branch:
+    # ---- 路径 B: LLM 语义兜底 (分支 / 纯动作词 / 无关键词 / 真实模式要素未全覆盖) ----
+    if fallthrough_cause:
+        cause = fallthrough_cause
+    elif is_branch:
         cause = "分支型step"
     elif meta_only:
         cause = f"关键词退化为纯动作词{keywords}"
@@ -454,6 +510,27 @@ def _test():
         tests_passed += 1
     else:
         print(f"  ✗ 期望 only_action=True 且 not_implemented")
+
+    # Test 7: 必要要素全覆盖 → 高置信直接 pass (新增的 AND 充分条件, mock 确定性)
+    tests_total += 1
+    os.environ["VERIFIER_LLM_MOCK"] = "1"
+    full = {
+        "id": "TEST_AND",
+        "name": "S1 告知培训时间地点",
+        "verifier": "state_tracker",
+        "source_text": "告知培训时间地点",
+    }
+    r7 = verify_state_tracker(full, {"turns": [
+        {"role": "assistant", "turn": 1, "content": "您好，告知您培训的时间是周五下午两点，地点在望京中心。"},
+    ]}, {})
+    print(f"\nTest 7 (必要要素全覆盖 → 直接 pass):")
+    print(f"  关键词: {extract_step_keywords(full)}")
+    print(f"  verdict: {r7.verdict}  reason: {r7.reason}")
+    if r7.verdict == "pass" and "全覆盖" in (r7.reason or ""):
+        print(f"  ✓ Pass (全要素覆盖 → 高置信 pass, 不调 LLM)")
+        tests_passed += 1
+    else:
+        print(f"  ✗ 期望 pass + '全覆盖'")
 
     print()
     if tests_passed == tests_total:

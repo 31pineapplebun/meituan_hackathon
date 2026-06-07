@@ -2,10 +2,10 @@
   "report_type": "model_level",
   "instruction_name": "official_2_kecheng",
   "model_name": "deepseek-v4-flash",
-  "generated_at": "2026-06-06 22:53",
+  "generated_at": "2026-06-07 14:23",
   "summary": {
-    "avg_score": 45.5,
-    "min_score": 26.89,
+    "avg_score": 44.2,
+    "min_score": 21.99,
     "max_score": 65,
     "n_dialogues": 4,
     "n_unevaluable": 0,
@@ -14,7 +14,7 @@
     "diagnosis": "模型在「official_2_kecheng」任务上不合格,建议重新设计 prompt 或更换模型。"
   },
   "dim_avg": {
-    "D1_flow_compliance": 58.3,
+    "D1_flow_compliance": 54.2,
     "D2_task_completion": 25.0,
     "D3_constraint_compliance": 54.2,
     "D4_knowledge_accuracy": 100.0,
@@ -24,8 +24,8 @@
     {
       "persona_id": "refuse_persistent",
       "dialogue_id": "official_2_kecheng_refuse_persistent_live",
-      "final_score": 26.89,
-      "critical_pass_rate": 0.375,
+      "final_score": 21.99,
+      "critical_pass_rate": 0.25,
       "ceiling": 30,
       "n_turns": 5
     },
@@ -91,13 +91,6 @@
       "fail_rate": 75.0
     },
     {
-      "constraint_id": "official_2_kecheng_C18",
-      "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
-      "fail_count": 3,
-      "total_count": 4,
-      "fail_rate": 75.0
-    },
-    {
       "constraint_id": "official_2_kecheng_C21",
       "constraint_name": "[META] 任务核心意图完成",
       "fail_count": 3,
@@ -114,6 +107,13 @@
     {
       "constraint_id": "official_2_kecheng_C06",
       "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+      "fail_count": 2,
+      "total_count": 4,
+      "fail_rate": 50.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C13",
+      "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
       "fail_count": 2,
       "total_count": 4,
       "fail_rate": 50.0
@@ -202,9 +202,9 @@
         },
         {
           "verdict": "pass",
-          "evidence": "助手在Turn 5、7、9、11、13、15、17、19、21、23、25中均等待用户回应后再发言，且Turn 5、11、13、15主动提问让用户参与。",
+          "evidence": "Turn 5: '您之前知道吗？' 是提问式暂停；Turn 6: 用户回应紧随关键说明。",
           "confidence": 1.0,
-          "reason": "助手不连续多次发言，每次发言后等待用户回应，并主动提问引导用户参与，满足两条判定标准。",
+          "reason": "助手在关键信息后提问暂停，用户随后回应，满足两条判定标准。",
           "constraint_id": "official_2_kecheng_C05",
           "constraint_name": "给出信息后，暂停等待商家回应再继续。",
           "verifier_type": "llm_judge"
@@ -274,27 +274,27 @@
         },
         {
           "verdict": "pass",
-          "evidence": "turn1,23 含 ['询问', '问']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "evidence": "[LLM语义兜底] Turn 5: '您之前知道吗？' 询问用户是否知情，对应步骤中'您知道吗？'的核心询问。Turn 6: 用户回答'之前不太清楚'，助手后续未再追问，但已执行询问动作。",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['说明', '临时'])→LLM兜底] 助手在Turn 5明确询问用户是否知道低延迟直播，语义覆盖了步骤要求的'确认是否知情'。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C13",
           "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "turn7,9 含 ['费用']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "evidence": "[LLM语义兜底] Turn 5: '低延迟1-2秒，标准直播5-10秒。' Turn 7: '标准直播费用较低。' Turn 9: '标准直播延迟5-10秒，费用低；低延迟延迟1-2秒，费用稍高。'",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['说明'])→LLM兜底] 助手明确传达了两种直播的延迟和费用差异，并提及发布页选项，完整覆盖步骤核心信息。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C14",
           "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "[LLM语义兜底] Turn 13: '您现在登录Web后台，能看到新增选项吗？' 询问了登录方式（Web），并确认前端是否可见。Turn 14-15: 用户反馈可见后，助手引导操作步骤（进入【我的】→【服务商/直播平台管理】），符合'若已显示则直接使用'分支。",
+          "evidence": "[LLM语义兜底] Turn 13: '您现在登录Web后台，能看到新增选项吗？' 询问发布方式（Web端），Turn 14用户确认可见后，Turn 15-21引导开通操作（每步暂停3秒未体现但语义覆盖）。",
           "confidence": 1.0,
-          "reason": "[分支型step→LLM兜底] 助手询问了Web后台可见性，并在用户确认可见后直接引导操作，完整覆盖了步骤的核心语义。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[分支型step→LLM兜底] 助手询问了登录方式（Web），确认前端可见后，逐步引导开通低延迟直播选项，完整执行了步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C15",
           "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
           "verifier_type": "state_tracker"
@@ -312,7 +312,7 @@
           "verdict": "pass",
           "evidence": "[LLM语义兜底] Turn 23: '稍后企业微信加您，有问题随时问。' Turn 24: '那我等会通过企业微信好友申请'",
           "confidence": 1.0,
-          "reason": "[关键词字面未命中→LLM兜底] 助手明确告知将通过企业微信添加用户，用户确认会通过验证，完整覆盖了步骤要求。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[必要要素未全覆盖(缺['告知', '请通过验证'])→LLM兜底] 助手明确告知将通过企业微信添加用户，用户确认会通过验证，完整覆盖了步骤要求。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C17",
           "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
           "verifier_type": "state_tracker"
@@ -321,7 +321,7 @@
           "verdict": "pass",
           "evidence": "[LLM语义兜底] Turn 25: '好，祝您课程顺利、招生满满！' 直接对应步骤中'祝其课程顺利、招生满满'的语义。",
           "confidence": 1.0,
-          "reason": "[分支型step→LLM兜底] 助手在对话末尾明确表达了祝福，覆盖了步骤的核心要求。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[分支型step→LLM兜底] 助手在通话末尾明确表达了祝福语，覆盖了步骤要求的核心内容。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C18",
           "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
           "verifier_type": "state_tracker"
@@ -337,9 +337,9 @@
         },
         {
           "verdict": "pass",
-          "evidence": "Turn 24用户明确表示结束意愿('以后有问题就直接找您了')，Turn 25助手立即收尾并含'祝'字('祝您课程顺利、招生满满')，无追问。",
+          "evidence": "Turn 24用户明确感谢并结束对话，Turn 25助手以'祝您课程顺利、招生满满'收尾，含祝福语，未追问其他需求。",
           "confidence": 1.0,
-          "reason": "用户表达结束意向后，助手在1个turn内以祝福语收尾，符合所有3条标准。",
+          "reason": "用户表达结束意愿后，助手在1个turn内以祝福语自然收尾，无拖延，满足所有判定标准。",
           "constraint_id": "official_2_kecheng_C22",
           "constraint_name": "[META] 适时终结对话",
           "verifier_type": "llm_judge"
@@ -634,9 +634,9 @@
         },
         {
           "verdict": "fail",
-          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23连续发言，未给用户回应的机会；且未主动提问让用户参与（如Turn 13提问但被用户忽略）。",
-          "confidence": 0.0,
-          "reason": "助手连续多次发言，未暂停等待商家回应，且未有效引导用户参与对话。",
+          "evidence": "Turn 3 助手给出关键信息后，Turn 4 用户未回应关键信息而是转移话题；Turn 5 助手未暂停等待，直接继续；后续多次助手未在关键信息后让出话轮（如Turn 7、9、11、13、15、17、21、23），用户回应也非紧随关键说明。",
+          "confidence": 0.2,
+          "reason": "助手未在关键信息后让出话轮（无提问式暂停），且用户回应未紧随关键说明，违反两条判定标准。",
           "constraint_id": "official_2_kecheng_C05",
           "constraint_name": "给出信息后，暂停等待商家回应再继续。",
           "verifier_type": "llm_judge"
@@ -706,18 +706,18 @@
         },
         {
           "verdict": "pass",
-          "evidence": "turn1,7,15 含 ['询问', '问', '临时']",
-          "confidence": 0.9249999999999999,
-          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "evidence": "[LLM语义兜底] Turn 5: '您之前选标准直播，但我们后台其实已为您走低延迟线路，您知道吗？' 以及 Turn 7: '您之前可能没留意，我们后台一直临时用低延迟保障您课程质量。'",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['说明'])→LLM兜底] 助手明确询问用户是否知情，并说明后台已走低延迟线路，完全覆盖步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C13",
           "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "turn21,23 含 ['费用']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "evidence": "[LLM语义兜底] Turn 7: '现在发布页会分开显示两个选项'；Turn 9: '刚说到发布页会显示两个选项，按课程类型选就行'；Turn 11: '低延迟直播延迟低，适合互动，标准直播便宜点'；Turn 13: '之后发布页分开显示...标准直播便宜，低延迟互动强'；Turn 19: '标准直播和低延迟以后是独立选项'；Turn 21: '标准直播费用较低，低延迟略高'。",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['说明'])→LLM兜底] 助手多次传达发布页分开显示两个选项、按课程类型选择，并说明标准直播费用低、延迟5-10秒适合大班课，低延迟延迟1-2秒适合小班课/实操课，完整覆盖步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C14",
           "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
           "verifier_type": "state_tracker"
@@ -726,7 +726,7 @@
           "verdict": "pass",
           "evidence": "[LLM语义兜底] Turn 15: '请问您发布课程是走Web控制台、校务系统A还是SaaS系统B？我帮看选项是否显示。' Turn 17: 'Web控制台的话，您进后台看，发布页显示低延迟选项了吗？'",
           "confidence": 1.0,
-          "reason": "[分支型step→LLM兜底] 助手明确询问了发布方式（Web控制台/校务系统A/SaaS系统B），并引导用户确认前端是否显示选项，完整覆盖了步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[分支型step→LLM兜底] 助手明确询问了发布方式（Web控制台/校务系统A/SaaS系统B），并引导用户确认选项是否显示，完整覆盖了步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C15",
           "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
           "verifier_type": "state_tracker"
@@ -744,16 +744,16 @@
           "verdict": "fail",
           "evidence": "[LLM语义兜底] 整个对话中，助手未提及“企业微信添加”或“通过验证”等任何相关措辞，也未执行添加企业微信的步骤。",
           "confidence": 0.0,
-          "reason": "[关键词字面未命中→LLM兜底] 助手全程围绕直播功能讨论，未传达或执行企业微信添加的核心信息。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[必要要素未全覆盖(缺['告知', '请通过验证'])→LLM兜底] 助手全程围绕直播功能讨论，未传达或执行企业微信添加的核心信息。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C17",
           "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "fail",
-          "evidence": "[LLM语义兜底] 对话全程未出现“祝其课程顺利、招生满满”或类似祝福语，也未在用户表示结束（Turn 24）时执行结束通话的祝福动作。",
+          "evidence": "[LLM语义兜底] 对话全程助手未执行结束通话步骤：未按知识库解答剩余问题（用户多次问及物流、王老师、合作细节等均被拒绝），也未在用户表示“先这样吧”后主动祝其课程顺利、招生满满并结束通话。",
           "confidence": 0.0,
-          "reason": "[分支型step→LLM兜底] 助手未在通话末尾按步骤要求进行祝福，核心语义缺失。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[分支型step→LLM兜底] 助手未在对话末尾执行结束通话的核心动作，而是继续追问系统选择，未覆盖步骤语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C18",
           "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
           "verifier_type": "state_tracker"
@@ -769,9 +769,9 @@
         },
         {
           "verdict": "fail",
-          "evidence": "Turn 24用户明确表示'先这样吧'、'我现在还有事'，但助手未在1-2个turn内收尾，而是继续追问系统选择（Turn 23），且最终对话被截断，无收尾语。",
+          "evidence": "Turn 24用户说'先这样吧'，但助手未在1-2轮内收尾，反而继续追问系统选择（Turn 23），且对话被截断，助手未表达收尾意图。",
           "confidence": 0.0,
-          "reason": "用户多次表达结束意愿（Turn 20、24），助手未及时收尾，且无'再见'等结束语，违反标准1和2。",
+          "reason": "用户多次表示结束意愿（Turn 20、24），助手未及时收尾，反而持续追问，违反标准1和3。",
           "constraint_id": "official_2_kecheng_C22",
           "constraint_name": "[META] 适时终结对话",
           "verifier_type": "llm_judge"
@@ -818,7 +818,7 @@
           "severity": "严重",
           "category": "流程步骤 S7",
           "problem": "缺失流程步骤 S7 的核心动作",
-          "evidence": "[LLM语义兜底] 对话全程未出现“祝其课程顺利、招生满满”或类似祝福语，也未在用户表示结束（Turn 24）时执行结束通话的祝福动作。",
+          "evidence": "[LLM语义兜底] 对话全程助手未执行结束通话步骤：未按知识库解答剩余问题（用户多次问及物流、王老师、合作细节等均被拒绝），也未在用户表示“先这样吧”后主动祝其课程顺利、招生满满并结束通话。",
           "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S7 要做的是「**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S7→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
           "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
           "example": "S7 核心动作示例: '**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结'"
@@ -853,8 +853,8 @@
           "priority": "P2_MEDIUM",
           "severity": "中等",
           "category": "对话质量",
-          "problem": "助手连续多次发言，未暂停等待商家回应，且未有效引导用户参与对话。",
-          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23连续发言，未给用户回应的机会；且未主动提问让用户参与（如Turn 13提问但被用户忽略）。",
+          "problem": "助手未在关键信息后让出话轮（无提问式暂停），且用户回应未紧随关键说明，违反两条判定标准。",
+          "evidence": "Turn 3 助手给出关键信息后，Turn 4 用户未回应关键信息而是转移话题；Turn 5 助手未暂停等待，直接继续；后续多次助手未在关键信息后让出话轮（如Turn 7、9、11、13、15、17、21、23），用户回应也非紧随关键说明。",
           "how_to_fix": "参考约束原文,在 prompt 中明确预期",
           "expected_impact": "修复后该约束 pass",
           "example": null
@@ -902,7 +902,7 @@
           "severity": "中等",
           "category": "对话节奏",
           "problem": "对话拖沓,用户已表示结束后助手继续追问",
-          "evidence": "Turn 24用户明确表示'先这样吧'、'我现在还有事'，但助手未在1-2个turn内收尾，而是继续追问系统选择（Turn 23），且最终对话被截断，无收尾语。",
+          "evidence": "Turn 24用户说'先这样吧'，但助手未在1-2轮内收尾，反而继续追问系统选择（Turn 23），且对话被截断，助手未表达收尾意图。",
           "how_to_fix": "具体改进方法:\n  1. **识别结束信号**: 用户说'好的/挂了/我先去忙了' → 立即收尾\n  2. **1-2 轮内收尾**: 用'好的,辛苦您/再见/祝顺利'结束\n  3. **不要追问**: 任务完成后不要再问'还有其他需要吗'\n  4. **prompt 加 stop 条件**: 明确何时应该结束对话",
           "expected_impact": "修复后 D5 对话质量 +5 分",
           "example": "❌ '还有其他问题吗?...还有要确认的吗?...' → ✅ '好,那这样,再见'"
@@ -1071,25 +1071,26 @@
       "dialogue_id": "official_2_kecheng_refuse_persistent_live",
       "persona_id": "refuse_persistent",
       "score_report": {
-        "final_score": 26.89,
+        "final_score": 21.99,
         "evaluable": true,
-        "raw_score": 26.89,
+        "raw_score": 21.99,
         "ceiling": 30,
-        "ceiling_reason": "Critical通过率38% → 上限30",
+        "ceiling_reason": "Critical通过率25% → 上限30",
         "dim_scores": {
-          "D1_flow_compliance": 33.33,
+          "D1_flow_compliance": 16.67,
           "D2_task_completion": 0.0,
           "D3_constraint_compliance": 53.85,
           "D4_knowledge_accuracy": null,
           "D5_dialogue_quality": 25.0
         },
-        "critical_pass_rate": 0.375,
+        "critical_pass_rate": 0.25,
         "red_line_violations": [],
         "suggestions": [
           {
             "priority": "P0_CRITICAL",
-            "msg": "5 条关键约束失败",
+            "msg": "6 条关键约束失败",
             "constraint_ids": [
+              "official_2_kecheng_C13",
               "official_2_kecheng_C14",
               "official_2_kecheng_C16",
               "official_2_kecheng_C17",
@@ -1145,9 +1146,9 @@
         },
         {
           "verdict": "fail",
-          "evidence": "Turn 3 助手直接给出信息后，未等待用户回应，Turn 4 用户表示不适，Turn 5 助手直接结束对话，未给用户参与机会。",
-          "confidence": 1.0,
-          "reason": "助手未在给出信息后暂停等待商家回应，且未主动提问让用户参与。",
+          "evidence": "Turn 3 助手给出关键信息“直播产品升级了，新增独立的‘低延迟直播’选项”后，没有暂停等待商家回应（如提问式暂停），而是直接进入 Turn 4 用户回应，但用户回应并非针对该信息，而是表示身体不适。",
+          "confidence": 0.0,
+          "reason": "助手在关键信息后未让出话轮，且用户回应未紧随关键说明，不满足两条判定标准。",
           "constraint_id": "official_2_kecheng_C05",
           "constraint_name": "给出信息后，暂停等待商家回应再继续。",
           "verifier_type": "llm_judge"
@@ -1216,10 +1217,10 @@
           "verifier_type": "state_tracker"
         },
         {
-          "verdict": "pass",
-          "evidence": "turn1 含 ['询问', '问']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] Turn 3: '直播产品升级了，新增独立的“低延迟直播”选项。' 未询问用户是否知情，也未提及后台已走低延迟线路。",
+          "confidence": 0.0,
+          "reason": "[必要要素未全覆盖(缺['说明', '临时'])→LLM兜底] 助手未执行确认知情的核心询问，仅提及低延迟选项，未覆盖步骤语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C13",
           "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
           "verifier_type": "state_tracker"
@@ -1228,7 +1229,7 @@
           "verdict": "fail",
           "evidence": "[LLM语义兜底] Turn 3 仅提及“新增独立的低延迟直播选项”，未传达标准直播与低延迟直播的延迟差异、适用场景等核心信息。",
           "confidence": 0.0,
-          "reason": "[关键词字面未命中→LLM兜底] 未传达步骤要求的延迟对比和适用场景说明。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[必要要素未全覆盖(缺['说明', '费用'])→LLM兜底] 未传达步骤要求的延迟对比和适用场景说明。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C14",
           "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
           "verifier_type": "state_tracker"
@@ -1237,7 +1238,7 @@
           "verdict": "na",
           "evidence": "[LLM语义兜底] 对话中用户在第4轮表示身体不适，助手在第5轮结束通话，未进入询问发布方式的环节。",
           "confidence": 0.0,
-          "reason": "[分支型step→LLM兜底] 步骤的触发前提（用户愿意配合）未满足，对话提前终止，未执行该步骤。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[分支型step→LLM兜底] 用户提前中断通话，流程步骤的触发前提（进入确认前端可见环节）未出现。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C15",
           "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
           "verifier_type": "state_tracker"
@@ -1255,16 +1256,16 @@
           "verdict": "fail",
           "evidence": "[LLM语义兜底] 整个对话中，助手未提及企业微信添加、通过验证或任何相关措辞。",
           "confidence": 0.0,
-          "reason": "[关键词字面未命中→LLM兜底] 助手未执行步骤要求的核心信息（告知稍后通过企业微信添加并请通过验证）。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[必要要素未全覆盖(缺['告知', '请通过验证'])→LLM兜底] 助手未执行步骤要求的核心信息（告知稍后通过企业微信添加并请通过验证）。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C17",
           "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "fail",
-          "evidence": "[LLM语义兜底] Turn 5: '理解，祝您早日康复。后续再联系，先挂断。' 未按步骤要求解答剩余问题或祝课程顺利、招生满满。",
+          "evidence": "[LLM语义兜底] Turn 5: 助手说“理解，祝您早日康复。后续再联系，先挂断。”未按步骤要求解答剩余问题或祝其课程顺利、招生满满。",
           "confidence": 0.0,
-          "reason": "[分支型step→LLM兜底] 助手在用户表示不适后直接挂断，未执行步骤要求的解答问题或祝福内容。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[分支型step→LLM兜底] 助手未执行步骤核心内容：未解答问题，也未按无问题分支祝课程顺利、招生满满。 [自一致性: 2/3 票, 一致度 67%]",
           "constraint_id": "official_2_kecheng_C18",
           "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
           "verifier_type": "state_tracker"
@@ -1280,9 +1281,9 @@
         },
         {
           "verdict": "pass",
-          "evidence": "Turn 4: 用户表示'身体不舒服，没什么精力配合你'，明确结束意愿。Turn 5: 助手回复'祝您早日康复。后续再联系，先挂断'，含祝福语并自然收尾，无追问。",
+          "evidence": "Turn 4 用户明确表示身体不适、无精力配合，Turn 5 助手立即收尾，包含“祝您早日康复”和“先挂断”，符合1-2 turn内收尾、含祝福语、无追问。",
           "confidence": 1.0,
-          "reason": "用户表达不适后，助手在1个turn内以祝福和告别收尾，符合所有判定标准。",
+          "reason": "用户表达结束意愿后，助手在下一轮自然收尾，含祝福语，未拖延追问。",
           "constraint_id": "official_2_kecheng_C22",
           "constraint_name": "[META] 适时终结对话",
           "verifier_type": "llm_judge"
@@ -1298,6 +1299,18 @@
         }
       ],
       "detailed_suggestions": [
+        {
+          "constraint_id": "official_2_kecheng_C13",
+          "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S2",
+          "problem": "缺失流程步骤 S2 的核心动作",
+          "evidence": "[LLM语义兜底] Turn 3: '直播产品升级了，新增独立的“低延迟直播”选项。' 未询问用户是否知情，也未提及后台已走低延迟线路。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S2 要做的是「**确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S2→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S2 核心动作示例: '**确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低'"
+        },
         {
           "constraint_id": "official_2_kecheng_C14",
           "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
@@ -1341,7 +1354,7 @@
           "severity": "严重",
           "category": "流程步骤 S7",
           "problem": "缺失流程步骤 S7 的核心动作",
-          "evidence": "[LLM语义兜底] Turn 5: '理解，祝您早日康复。后续再联系，先挂断。' 未按步骤要求解答剩余问题或祝课程顺利、招生满满。",
+          "evidence": "[LLM语义兜底] Turn 5: 助手说“理解，祝您早日康复。后续再联系，先挂断。”未按步骤要求解答剩余问题或祝其课程顺利、招生满满。",
           "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S7 要做的是「**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S7→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
           "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
           "example": "S7 核心动作示例: '**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结'"
@@ -1388,8 +1401,8 @@
           "priority": "P2_MEDIUM",
           "severity": "中等",
           "category": "对话质量",
-          "problem": "助手未在给出信息后暂停等待商家回应，且未主动提问让用户参与。",
-          "evidence": "Turn 3 助手直接给出信息后，未等待用户回应，Turn 4 用户表示不适，Turn 5 助手直接结束对话，未给用户参与机会。",
+          "problem": "助手在关键信息后未让出话轮，且用户回应未紧随关键说明，不满足两条判定标准。",
+          "evidence": "Turn 3 助手给出关键信息“直播产品升级了，新增独立的‘低延迟直播’选项”后，没有暂停等待商家回应（如提问式暂停），而是直接进入 Turn 4 用户回应，但用户回应并非针对该信息，而是表示身体不适。",
           "how_to_fix": "参考约束原文,在 prompt 中明确预期",
           "expected_impact": "修复后该约束 pass",
           "example": null
@@ -1499,9 +1512,9 @@
             "priority": "P0_CRITICAL",
             "msg": "4 条关键约束失败",
             "constraint_ids": [
+              "official_2_kecheng_C13",
               "official_2_kecheng_C15",
               "official_2_kecheng_C16",
-              "official_2_kecheng_C18",
               "official_2_kecheng_C21"
             ]
           },
@@ -1553,9 +1566,9 @@
         },
         {
           "verdict": "fail",
-          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23连续发言，未给用户回应的机会；且未主动提问让用户参与（如Turn 3直接陈述，Turn 5建议，Turn 7建议，Turn 9反问但非主动提问）。",
+          "evidence": "Turn 3 助手给出关键信息后，未暂停等待回应，直接继续；Turn 5、7、9、11、13、15、17、19、21、23 均未出现让出话轮行为（如提问式暂停）。用户回应（如Turn 4、6、8）并非紧随关键说明之后，而是多次催促。",
           "confidence": 0.0,
-          "reason": "助手连续多次发言，未暂停等待商家回应，且未主动提问让用户参与，违反约束。",
+          "reason": "助手在关键信息后未让出话轮，且用户回应未紧随关键说明，违反两条判定标准。",
           "constraint_id": "official_2_kecheng_C05",
           "constraint_name": "给出信息后，暂停等待商家回应再继续。",
           "verifier_type": "llm_judge"
@@ -1624,26 +1637,26 @@
           "verifier_type": "state_tracker"
         },
         {
-          "verdict": "pass",
-          "evidence": "turn1 含 ['询问', '问']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 助手从未询问用户是否知情低延迟线路已后台开启，也未提及“您之前选的是标准直播，但我们后台其实已为您走低延迟线路”等核心信息。",
+          "confidence": 0.0,
+          "reason": "[必要要素未全覆盖(缺['说明', '临时'])→LLM兜底] 助手仅介绍低延迟直播选项，未执行步骤要求的确认知情动作。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C13",
           "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "turn5 含 ['费用']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "evidence": "[LLM语义兜底] Turn 11: '低延迟选项之后会显示两个'；Turn 13: '发布页会并排显示两个选项'。助手传达了发布页分开显示两个选项的核心信息。",
+          "confidence": 0.8,
+          "reason": "[必要要素未全覆盖(缺['说明'])→LLM兜底] 助手在对话中多次提及发布页将显示两个选项，覆盖了步骤中关于选项展示的语义内容。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C14",
           "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "fail",
-          "evidence": "[LLM语义兜底] 整个对话中，助手未询问发布方式（Web控制台/校务系统A/SaaS系统B），也未提及前端是否可见或引导开通。",
+          "evidence": "[LLM语义兜底] 全程未询问发布方式（Web控制台/校务系统A/SaaS系统B），也未确认前端是否可见或引导开通。",
           "confidence": 0.0,
           "reason": "[分支型step→LLM兜底] 助手未执行步骤要求的核心动作：询问发布方式或确认前端可见性。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C15",
@@ -1663,16 +1676,16 @@
           "verdict": "pass",
           "evidence": "[LLM语义兜底] Turn 17: '我让后台加您企业微信沟通'；Turn 19: '今天就让商务同事加您'；Turn 21: '稍后商务加您微信'。",
           "confidence": 1.0,
-          "reason": "[关键词字面未命中→LLM兜底] 助手明确告知将通过企业微信添加用户，并请求通过验证，完整覆盖步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[必要要素未全覆盖(缺['告知', '请通过验证'])→LLM兜底] 助手明确告知将通过企业微信添加用户，并请求通过验证，完整覆盖步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C17",
           "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
           "verifier_type": "state_tracker"
         },
         {
-          "verdict": "fail",
-          "evidence": "[LLM语义兜底] 对话全程未涉及按知识库解答剩余问题，也未在结尾祝其课程顺利、招生满满。第23轮仅说“祝您课程顺利”，缺少“招生满满”且未处理剩余问题（如价格、报价单）。",
-          "confidence": 0.0,
-          "reason": "[分支型step→LLM兜底] 步骤要求结束前按知识库解答剩余问题并包含完整祝福语，但助手未解答价格问题，祝福语不完整。 [自一致性: 3/3 票, 一致度 100%]",
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 23: '祝您课程顺利！' 对应步骤中'祝其课程顺利、招生满满'的核心祝福语义。",
+          "confidence": 1.0,
+          "reason": "[分支型step→LLM兜底] 助手在结束通话前明确表达了祝福，覆盖了步骤要求的核心信息。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_2_kecheng_C18",
           "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
           "verifier_type": "state_tracker"
@@ -1688,9 +1701,9 @@
         },
         {
           "verdict": "pass",
-          "evidence": "Turn 22 user明确表示结束意愿('行，记住今天')，Turn 23 assistant在1个turn内收尾，含'祝您课程顺利'，且无反复追问。",
+          "evidence": "Turn 22用户表示'行，记住今天'，Turn 23助手回复'明白，今天就安排。祝您课程顺利！'，包含'祝'字，且未再追问其他需求。",
           "confidence": 0.95,
-          "reason": "用户结束意愿后助手立即收尾，包含祝福语，未拖延。",
+          "reason": "用户未明确结束但已达成共识，助手在下一轮用祝福语收尾，无拖延追问。",
           "constraint_id": "official_2_kecheng_C22",
           "constraint_name": "[META] 适时终结对话",
           "verifier_type": "llm_judge"
@@ -1707,13 +1720,25 @@
       ],
       "detailed_suggestions": [
         {
+          "constraint_id": "official_2_kecheng_C13",
+          "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S2",
+          "problem": "缺失流程步骤 S2 的核心动作",
+          "evidence": "[LLM语义兜底] 助手从未询问用户是否知情低延迟线路已后台开启，也未提及“您之前选的是标准直播，但我们后台其实已为您走低延迟线路”等核心信息。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S2 要做的是「**确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S2→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S2 核心动作示例: '**确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低'"
+        },
+        {
           "constraint_id": "official_2_kecheng_C15",
           "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
           "priority": "P0_CRITICAL",
           "severity": "严重",
           "category": "流程步骤 S4",
           "problem": "缺失流程步骤 S4 的核心动作",
-          "evidence": "[LLM语义兜底] 整个对话中，助手未询问发布方式（Web控制台/校务系统A/SaaS系统B），也未提及前端是否可见或引导开通。",
+          "evidence": "[LLM语义兜底] 全程未询问发布方式（Web控制台/校务系统A/SaaS系统B），也未确认前端是否可见或引导开通。",
           "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S4 要做的是「**确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S4→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
           "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
           "example": "S4 核心动作示例: '**确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系'"
@@ -1729,18 +1754,6 @@
           "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S5 要做的是「**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S5→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
           "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
           "example": "S5 核心动作示例: '**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。'"
-        },
-        {
-          "constraint_id": "official_2_kecheng_C18",
-          "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
-          "priority": "P0_CRITICAL",
-          "severity": "严重",
-          "category": "流程步骤 S7",
-          "problem": "缺失流程步骤 S7 的核心动作",
-          "evidence": "[LLM语义兜底] 对话全程未涉及按知识库解答剩余问题，也未在结尾祝其课程顺利、招生满满。第23轮仅说“祝您课程顺利”，缺少“招生满满”且未处理剩余问题（如价格、报价单）。",
-          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S7 要做的是「**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S7→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
-          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
-          "example": "S7 核心动作示例: '**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结'"
         },
         {
           "constraint_id": "official_2_kecheng_C08",
@@ -1772,8 +1785,8 @@
           "priority": "P2_MEDIUM",
           "severity": "中等",
           "category": "对话质量",
-          "problem": "助手连续多次发言，未暂停等待商家回应，且未主动提问让用户参与，违反约束。",
-          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23连续发言，未给用户回应的机会；且未主动提问让用户参与（如Turn 3直接陈述，Turn 5建议，Turn 7建议，Turn 9反问但非主动提问）。",
+          "problem": "助手在关键信息后未让出话轮，且用户回应未紧随关键说明，违反两条判定标准。",
+          "evidence": "Turn 3 助手给出关键信息后，未暂停等待回应，直接继续；Turn 5、7、9、11、13、15、17、19、21、23 均未出现让出话轮行为（如提问式暂停）。用户回应（如Turn 4、6、8）并非紧随关键说明之后，而是多次催促。",
           "how_to_fix": "参考约束原文,在 prompt 中明确预期",
           "expected_impact": "修复后该约束 pass",
           "example": null

@@ -2,9 +2,9 @@
   "report_type": "model_level",
   "instruction_name": "official_1_feimaotui",
   "model_name": "deepseek-v4-flash",
-  "generated_at": "2026-06-06 21:59",
+  "generated_at": "2026-06-07 14:24",
   "summary": {
-    "avg_score": 68.6,
+    "avg_score": 63.6,
     "min_score": 45,
     "max_score": 79.29,
     "n_dialogues": 4,
@@ -14,36 +14,36 @@
     "diagnosis": "模型存在明显短板,在多个场景未达标,需重点优化流程遵循与约束执行。"
   },
   "dim_avg": {
-    "D1_flow_compliance": 81.2,
+    "D1_flow_compliance": 75.0,
     "D2_task_completion": 100.0,
     "D3_constraint_compliance": 73.6,
     "D4_knowledge_accuracy": 0.0,
-    "D5_dialogue_quality": 83.3
+    "D5_dialogue_quality": 91.7
   },
   "persona_breakdown": [
     {
       "persona_id": "refuse_persistent",
       "dialogue_id": "official_1_feimaotui_refuse_persistent_live",
       "final_score": 45,
-      "critical_pass_rate": 0.5,
+      "critical_pass_rate": 0.667,
       "ceiling": 45,
       "n_turns": 6
     },
     {
-      "persona_id": "out_of_scope",
-      "dialogue_id": "official_1_feimaotui_out_of_scope_live",
-      "final_score": 71.0,
-      "critical_pass_rate": 1.0,
-      "ceiling": 100,
-      "n_turns": 24
-    },
-    {
       "persona_id": "cooperative",
       "dialogue_id": "official_1_feimaotui_cooperative_live",
-      "final_score": 79.29,
-      "critical_pass_rate": 1.0,
-      "ceiling": 100,
+      "final_score": 65,
+      "critical_pass_rate": 0.833,
+      "ceiling": 65,
       "n_turns": 18
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "official_1_feimaotui_out_of_scope_live",
+      "final_score": 65,
+      "critical_pass_rate": 0.857,
+      "ceiling": 65,
+      "n_turns": 24
     },
     {
       "persona_id": "interruption",
@@ -70,15 +70,15 @@
       "fail_rate": 100.0
     },
     {
-      "constraint_id": "official_1_feimaotui_C03",
-      "constraint_name": "保持语气随意，像打电话一样自然。",
-      "fail_count": 1,
+      "constraint_id": "official_1_feimaotui_C10",
+      "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
+      "fail_count": 3,
       "total_count": 4,
-      "fail_rate": 25.0
+      "fail_rate": 75.0
     },
     {
-      "constraint_id": "official_1_feimaotui_C07",
-      "constraint_name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
+      "constraint_id": "official_1_feimaotui_C03",
+      "constraint_name": "保持语气随意，像打电话一样自然。",
       "fail_count": 1,
       "total_count": 4,
       "fail_rate": 25.0
@@ -89,20 +89,6 @@
       "fail_count": 1,
       "total_count": 4,
       "fail_rate": 25.0
-    },
-    {
-      "constraint_id": "official_1_feimaotui_C10",
-      "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
-      "fail_count": 1,
-      "total_count": 4,
-      "fail_rate": 25.0
-    },
-    {
-      "constraint_id": "official_1_feimaotui_C14",
-      "constraint_name": "[META] 适时终结对话",
-      "fail_count": 1,
-      "total_count": 4,
-      "fail_rate": 25.0
     }
   ],
   "per_dialogue_results": [
@@ -110,21 +96,28 @@
       "dialogue_id": "official_1_feimaotui_cooperative_live",
       "persona_id": "cooperative",
       "score_report": {
-        "final_score": 79.29,
+        "final_score": 65,
         "evaluable": true,
-        "raw_score": 79.29,
-        "ceiling": 100,
-        "ceiling_reason": "无钳制",
+        "raw_score": 73.04,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率83% → 上限65",
         "dim_scores": {
-          "D1_flow_compliance": 100.0,
+          "D1_flow_compliance": 75.0,
           "D2_task_completion": 100.0,
           "D3_constraint_compliance": 71.43,
           "D4_knowledge_accuracy": 0.0,
           "D5_dialogue_quality": 100.0
         },
-        "critical_pass_rate": 1.0,
+        "critical_pass_rate": 0.833,
         "red_line_violations": [],
         "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "official_1_feimaotui_C10"
+            ]
+          },
           {
             "priority": "P1_DIM",
             "msg": "维度【知识准确性】得分 0.0/100 最低",
@@ -191,9 +184,9 @@
         },
         {
           "verdict": "pass",
-          "evidence": "turn1,11,13 含 ['询问', '问']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "evidence": "[LLM语义兜底] Turn 1: '今天飞毛腿合同生效了，现在能开始配送吗？' 直接告知合同生效并询问能否开始配送。",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['告知', '骑手'])→LLM兜底] 助手在首轮即完整执行了步骤的核心语义：告知合同生效并询问配送意愿。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C07",
           "constraint_name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
           "verifier_type": "state_tracker"
@@ -202,25 +195,25 @@
           "verdict": "pass",
           "evidence": "[LLM语义兜底] Turn 5: '每天至少10单，还要连续跑10天。少一天都可能影响合同。' 明确传达了连续天数要求及合同影响。",
           "confidence": 1.0,
-          "reason": "[关键词退化→LLM兜底] 助手用具体数值替代占位符，完整传达了核心信息：连续天数要求和合同影响。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[关键词退化为纯动作词['说明']→LLM兜底] 助手用具体数值替代占位符，完整传达了核心信息：连续天数要求和合同影响。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C08",
           "constraint_name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "turn 含 ['提醒']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "evidence": "[LLM语义兜底] Turn 13: '注意安全，有问题随时找我。' 以及 Turn 11: '你今天就跑起来吧！' 鼓励配送；Turn 13 提醒安全。",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['骑手'])→LLM兜底] 助手在对话中鼓励骑手开始配送并提醒注意安全，覆盖了步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C09",
           "constraint_name": "S3 尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
           "verifier_type": "state_tracker"
         },
         {
-          "verdict": "pass",
-          "evidence": "turn1 含 ['超时', '站长']",
-          "confidence": 0.7857142857142857,
-          "reason": "匹配关键词 2/7 (29%, 阈值≥2个)",
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及飞毛腿报名按排名进行、站长无法干预、减少拒单取消超时、恶劣天气工作等核心信息。",
+          "confidence": 0.0,
+          "reason": "[必要要素未全覆盖(缺['说明', '天气', '订单'])→LLM兜底] 助手完全未传达步骤要求的任何语义内容，仅讨论了合同单数和奖励。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C10",
           "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
           "verifier_type": "state_tracker"
@@ -254,9 +247,9 @@
         },
         {
           "verdict": "pass",
-          "evidence": "Turn 17: '好，那就这样。今天好好跑，明天继续保持！我先挂了啊。' 用户Turn 18回应'好的，站长再见'，助手在用户明确结束意愿后1个turn内收尾，含'再见'。",
+          "evidence": "Turn 17: 助手说'好，那就这样。今天好好跑，明天继续保持！我先挂了啊。' 包含收尾意图；Turn 18: 用户回应'好的，站长再见，我这就出发。' 用户明确结束意愿后助手在1个turn内收尾，且含'再见'。",
           "confidence": 1.0,
-          "reason": "用户未明确表示结束，但助手主动收尾且用户同意，收尾含'再见'，无反复追问。",
+          "reason": "用户未明确表示结束意愿，但助手在Turn 17主动收尾，用户随后确认结束，符合适时终结要求。",
           "constraint_id": "official_1_feimaotui_C14",
           "constraint_name": "[META] 适时终结对话",
           "verifier_type": "llm_judge"
@@ -272,6 +265,18 @@
         }
       ],
       "detailed_suggestions": [
+        {
+          "constraint_id": "official_1_feimaotui_C10",
+          "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S4",
+          "problem": "缺失流程步骤 S4 的核心动作",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及飞毛腿报名按排名进行、站长无法干预、减少拒单取消超时、恶劣天气工作等核心信息。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S4 要做的是「说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S4→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S4 核心动作示例: '说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天'"
+        },
         {
           "constraint_id": "official_1_feimaotui_C15",
           "constraint_name": "[META] FAQ知识正确",
@@ -424,21 +429,28 @@
       "dialogue_id": "official_1_feimaotui_out_of_scope_live",
       "persona_id": "out_of_scope",
       "score_report": {
-        "final_score": 71.0,
+        "final_score": 65,
         "evaluable": true,
-        "raw_score": 71.0,
-        "ceiling": 100,
-        "ceiling_reason": "无钳制",
+        "raw_score": 69.75,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率86% → 上限65",
         "dim_scores": {
-          "D1_flow_compliance": 100.0,
+          "D1_flow_compliance": 75.0,
           "D2_task_completion": 100.0,
           "D3_constraint_compliance": 80.0,
           "D4_knowledge_accuracy": 0.0,
-          "D5_dialogue_quality": 33.33
+          "D5_dialogue_quality": 66.67
         },
-        "critical_pass_rate": 1.0,
+        "critical_pass_rate": 0.857,
         "red_line_violations": [],
         "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "official_1_feimaotui_C10"
+            ]
+          },
           {
             "priority": "P1_DIM",
             "msg": "维度【知识准确性】得分 0.0/100 最低",
@@ -505,36 +517,36 @@
         },
         {
           "verdict": "pass",
-          "evidence": "turn1,7,9 含 ['询问', '问']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "evidence": "[LLM语义兜底] Turn 3: '今天飞毛腿合同已经生效了。你今天能上线开始配送吗？'",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['告知', '骑手'])→LLM兜底] 助手明确告知合同已生效并询问能否开始配送，完全覆盖步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C07",
           "constraint_name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "[LLM语义兜底] Turn 5: '单日合同今天得跑够5单，连续10天不能断'；Turn 19: '连续跑满10天，资格就稳了'。",
+          "evidence": "[LLM语义兜底] Turn 5: '单日合同今天得跑够5单，连续10天不能断'；Turn 19: '你连续跑满10天，资格就稳了'。助手明确传达了单日飞毛腿合同需连续10天完成配送的核心信息。",
           "confidence": 1.0,
-          "reason": "[关键词退化→LLM兜底] 助手明确传达了单日飞毛腿合同需连续10天完成配送的核心信息，覆盖了步骤语义。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[关键词退化为纯动作词['说明']→LLM兜底] 助手用'连续10天不能断'等措辞实质性地覆盖了步骤中'连续Y天完成配送'的语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C08",
           "constraint_name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "turn 含 ['提醒']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "evidence": "[LLM语义兜底] Turn 23: '注意安全，路上小心！' 直接提醒安全；Turn 3-23 全程鼓励配送（如'加油''抓紧跑'），未出现骑手不想配送的情况，故挽留分支未触发。",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['骑手'])→LLM兜底] 助手在对话中实质性地执行了鼓励配送和提醒安全的语义，挽留分支因条件未出现而无需执行。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C09",
           "constraint_name": "S3 尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
           "verifier_type": "state_tracker"
         },
         {
-          "verdict": "pass",
-          "evidence": "turn1,5,17 含 ['天气', '超时', '取消', '站长']",
-          "confidence": 0.8714285714285713,
-          "reason": "匹配关键词 4/7 (57%, 阈值≥2个)",
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及“飞毛腿报名按排名进行、非站长干预”，也未说明“减少拒单、取消、超时”或“恶劣天气下工作有助于保住资格”。仅在第1、5、17、19、23回合强调单量、连续天数、资格取消等，但未覆盖步骤核心语义。",
+          "confidence": 0.0,
+          "reason": "[必要要素未全覆盖(缺['说明', '订单', '骑手'])→LLM兜底] 助手未传达排名机制、站长不干预、减少拒单取消超时、恶劣天气优势等核心信息，完全偏离步骤要求。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C10",
           "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
           "verifier_type": "state_tracker"
@@ -567,10 +579,10 @@
           "verifier_type": "llm_judge"
         },
         {
-          "verdict": "fail",
-          "evidence": "用户在第24轮明确说'再见'，但助手在第23轮未收尾，反而继续鼓励'连续跑够10天还有额外奖励'，未在1-2轮内收尾。",
-          "confidence": 0.0,
-          "reason": "用户在第22轮已表达结束意愿，助手在第23轮未收尾，违反标准1。",
+          "verdict": "pass",
+          "evidence": "Turn 22用户明确表示结束意愿('我先不问了，准备上线跑单去'), Turn 23助手收尾含'加油''注意安全', Turn 24用户主动结束('再见')。助手未反复追问。",
+          "confidence": 1.0,
+          "reason": "用户明确结束意愿后，助手在1-2轮内自然收尾，含鼓励和告别语，无拖延追问。",
           "constraint_id": "official_1_feimaotui_C14",
           "constraint_name": "[META] 适时终结对话",
           "verifier_type": "llm_judge"
@@ -586,6 +598,18 @@
         }
       ],
       "detailed_suggestions": [
+        {
+          "constraint_id": "official_1_feimaotui_C10",
+          "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S4",
+          "problem": "缺失流程步骤 S4 的核心动作",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及“飞毛腿报名按排名进行、非站长干预”，也未说明“减少拒单、取消、超时”或“恶劣天气下工作有助于保住资格”。仅在第1、5、17、19、23回合强调单量、连续天数、资格取消等，但未覆盖步骤核心语义。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S4 要做的是「说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S4→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S4 核心动作示例: '说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天'"
+        },
         {
           "constraint_id": "official_1_feimaotui_C15",
           "constraint_name": "[META] FAQ知识正确",
@@ -621,18 +645,6 @@
           "how_to_fix": "参考约束原文,在 prompt 中明确预期",
           "expected_impact": "修复后该约束 pass",
           "example": null
-        },
-        {
-          "constraint_id": "official_1_feimaotui_C14",
-          "constraint_name": "[META] 适时终结对话",
-          "priority": "P2_MEDIUM",
-          "severity": "中等",
-          "category": "对话节奏",
-          "problem": "对话拖沓,用户已表示结束后助手继续追问",
-          "evidence": "用户在第24轮明确说'再见'，但助手在第23轮未收尾，反而继续鼓励'连续跑够10天还有额外奖励'，未在1-2轮内收尾。",
-          "how_to_fix": "具体改进方法:\n  1. **识别结束信号**: 用户说'好的/挂了/我先去忙了' → 立即收尾\n  2. **1-2 轮内收尾**: 用'好的,辛苦您/再见/祝顺利'结束\n  3. **不要追问**: 任务完成后不要再问'还有其他需要吗'\n  4. **prompt 加 stop 条件**: 明确何时应该结束对话",
-          "expected_impact": "修复后 D5 对话质量 +5 分",
-          "example": "❌ '还有其他问题吗?...还有要确认的吗?...' → ✅ '好,那这样,再见'"
         }
       ],
       "n_turns": 24,
@@ -800,33 +812,31 @@
       "score_report": {
         "final_score": 45,
         "evaluable": true,
-        "raw_score": 71.22,
+        "raw_score": 78.57,
         "ceiling": 45,
-        "ceiling_reason": "Critical通过率50% → 上限45",
+        "ceiling_reason": "Critical通过率67% → 上限45",
         "dim_scores": {
-          "D1_flow_compliance": 25.0,
+          "D1_flow_compliance": 50.0,
           "D2_task_completion": 100.0,
           "D3_constraint_compliance": 71.43,
           "D4_knowledge_accuracy": null,
           "D5_dialogue_quality": 100.0
         },
-        "critical_pass_rate": 0.5,
+        "critical_pass_rate": 0.667,
         "red_line_violations": [],
         "suggestions": [
           {
             "priority": "P0_CRITICAL",
-            "msg": "3 条关键约束失败",
+            "msg": "2 条关键约束失败",
             "constraint_ids": [
-              "official_1_feimaotui_C07",
               "official_1_feimaotui_C08",
               "official_1_feimaotui_C10"
             ]
           },
           {
             "priority": "P1_DIM",
-            "msg": "维度【流程遵循度】得分 25.0/100 最低",
+            "msg": "维度【流程遵循度】得分 50.0/100 最低",
             "constraint_ids": [
-              "official_1_feimaotui_C07",
               "official_1_feimaotui_C08",
               "official_1_feimaotui_C10"
             ]
@@ -889,37 +899,37 @@
           "verifier_type": "llm_judge"
         },
         {
-          "verdict": "fail",
-          "evidence": "缺失关键词: ['告知', '询问', '问', '骑手']",
-          "confidence": 0.6,
-          "reason": "只匹配 0/4 (0%, 不足 2 个)",
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 1: '飞毛腿合同今天生效了，现在能开始跑单吗？'",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['告知', '询问', '问'])→LLM兜底] 助手明确告知合同生效并询问能否开始配送，完全覆盖步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C07",
           "constraint_name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "fail",
-          "evidence": "[LLM语义兜底] Turn 3 提到“单日合同今天必须完成5单”，但未提及“连续Y天”完成配送的要求。",
+          "evidence": "[LLM语义兜底] Turn 3: '单日合同今天必须完成5单' 但未提及连续天数要求。全程未传达“连续Y天完成配送”的核心信息。",
           "confidence": 0.0,
-          "reason": "[关键词退化→LLM兜底] 助手未传达核心信息：合同需连续多天完成配送，仅提及单日要求。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[关键词退化为纯动作词['说明']→LLM兜底] 助手未传达步骤要求的连续天数条件，仅提及单日要求。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C08",
           "constraint_name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "turn 含 ['提醒']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "evidence": "[LLM语义兜底] Turn 3: '啊，那今天是一单都跑不了吗？单日合同今天必须完成5单，不然会影响后续派单。' 助手尝试挽留不想配送的骑手，询问是否完全不能跑单，并强调合同要求，符合步骤核心语义。",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['骑手'])→LLM兜底] 助手在用户表示身体不适时，通过询问和强调合同要求来挽留，覆盖了步骤的挽留意图。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C09",
           "constraint_name": "S3 尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "fail",
-          "evidence": "缺失关键词: ['说明', '天气', '订单', '超时']",
-          "confidence": 0.6,
-          "reason": "只匹配 1/7 (14%, 不足 2 个)",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及飞毛腿报名按排名进行、站长干预、拒单取消超时影响、恶劣天气或订单量等核心信息。",
+          "confidence": 0.0,
+          "reason": "[必要要素未全覆盖(缺['说明', '天气', '订单'])→LLM兜底] 助手未传达步骤要求的任何语义内容，完全偏离该步骤。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C10",
           "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
           "verifier_type": "state_tracker"
@@ -953,9 +963,9 @@
         },
         {
           "verdict": "pass",
-          "evidence": "Turn 6: user明确表示'先挂了啊'，Turn 5 assistant已收尾含'好好休息'和'记得取消合同'，无追问。",
+          "evidence": "Turn 5: '好吧，那你好好休息。记得明天23点前在App上取消合同' 表达收尾意图；Turn 6: 用户说'先挂了啊'，助手未再追问，对话自然结束。",
           "confidence": 1.0,
-          "reason": "用户结束意愿后助手在1个turn内收尾，含关怀和提醒，无拖延追问。",
+          "reason": "用户明确结束意愿后，助手在1个turn内收尾，含'好好休息'等关怀语，无反复追问。",
           "constraint_id": "official_1_feimaotui_C14",
           "constraint_name": "[META] 适时终结对话",
           "verifier_type": "llm_judge"
@@ -972,25 +982,13 @@
       ],
       "detailed_suggestions": [
         {
-          "constraint_id": "official_1_feimaotui_C07",
-          "constraint_name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
-          "priority": "P0_CRITICAL",
-          "severity": "严重",
-          "category": "流程步骤 S1",
-          "problem": "缺失流程步骤 S1 的核心动作",
-          "evidence": "缺失关键词: ['告知', '询问', '问', '骑手']",
-          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S1 要做的是「告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S1→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
-          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
-          "example": "S1 核心动作示例: '告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。'"
-        },
-        {
           "constraint_id": "official_1_feimaotui_C08",
           "constraint_name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
           "priority": "P0_CRITICAL",
           "severity": "严重",
           "category": "流程步骤 S2",
           "problem": "缺失流程步骤 S2 的核心动作",
-          "evidence": "[LLM语义兜底] Turn 3 提到“单日合同今天必须完成5单”，但未提及“连续Y天”完成配送的要求。",
+          "evidence": "[LLM语义兜底] Turn 3: '单日合同今天必须完成5单' 但未提及连续天数要求。全程未传达“连续Y天完成配送”的核心信息。",
           "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S2 要做的是「说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S2→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
           "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
           "example": "S2 核心动作示例: '说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。'"
@@ -1002,7 +1000,7 @@
           "severity": "严重",
           "category": "流程步骤 S4",
           "problem": "缺失流程步骤 S4 的核心动作",
-          "evidence": "缺失关键词: ['说明', '天气', '订单', '超时']",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及飞毛腿报名按排名进行、站长干预、拒单取消超时影响、恶劣天气或订单量等核心信息。",
           "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S4 要做的是「说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S4→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
           "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
           "example": "S4 核心动作示例: '说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天'"
@@ -1156,36 +1154,36 @@
         },
         {
           "verdict": "pass",
-          "evidence": "turn1,13,15 含 ['询问', '问']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "evidence": "[LLM语义兜底] Turn 1: '今天合同已生效，你能开始配送吗？' 直接询问是否可开始配送。Turn 3: '系统显示你今天合同生效了' 再次确认合同生效。",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['告知', '骑手'])→LLM兜底] 助手明确告知合同已生效并询问能否开始配送，完全覆盖步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C07",
           "constraint_name": "S1 告知骑手今天飞毛腿合同已生效，并询问他们是否可以开始配送。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "[LLM语义兜底] Turn 5: '单日合同要连续跑10天。明天缺勤的话，合同会受影响'；Turn 9: '单日合同明天完不成5单会自动失效'。",
+          "evidence": "[LLM语义兜底] Turn 5: '单日合同要连续跑10天。明天缺勤的话，合同会受影响'；Turn 7: '缺一天可能排不上队'；Turn 9: '单日合同明天完不成5单会自动失效'。",
           "confidence": 1.0,
-          "reason": "[关键词退化→LLM兜底] 助手明确传达了单日合同需连续完成配送（10天），否则合同受影响的核心信息。 [自一致性: 3/3 票, 一致度 100%]",
+          "reason": "[关键词退化为纯动作词['说明']→LLM兜底] 助手多次传达单日合同需连续完成、缺勤影响合同的核心信息，覆盖了步骤语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C08",
           "constraint_name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "turn 含 ['提醒']",
-          "confidence": 0.85,
-          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "evidence": "[LLM语义兜底] Turn 11: '安全第一，别贪多。现在上线吧' 和 Turn 17: '赶紧充电去，注意安全，高峰期前上线' 鼓励配送并提醒安全。Turn 5-9 挽留不想配送的骑手（如建议跑5单、解释缺勤后果）。",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['骑手'])→LLM兜底] 助手通过鼓励上线、提醒安全、解释缺勤后果等方式，实质执行了挽留、鼓励和提醒安全的步骤要求。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C09",
           "constraint_name": "S3 尽量挽留不想配送的骑手，鼓励能配送的骑手，并提醒他们注意安全。",
           "verifier_type": "state_tracker"
         },
         {
           "verdict": "pass",
-          "evidence": "turn1,3 含 ['超时', '站长']",
-          "confidence": 0.7857142857142857,
-          "reason": "匹配关键词 2/7 (29%, 阈值≥2个)",
+          "evidence": "[LLM语义兜底] Turn 5: '飞毛腿名额按排名抢，缺一天可能排不上队。' Turn 7: '飞毛腿名额按排名抢，缺一天可能排不上队。' Turn 9: '不扣钱，但单日合同明天完不成5单会自动失效。之后想跑飞毛腿得重新报名抢名额，挺难排上的。'",
+          "confidence": 1.0,
+          "reason": "[必要要素未全覆盖(缺['说明', '天气', '订单'])→LLM兜底] 助手多次传达飞毛腿名额按排名竞争、缺勤影响资格、需减少拒单等核心信息，覆盖步骤语义。 [自一致性: 3/3 票, 一致度 100%]",
           "constraint_id": "official_1_feimaotui_C10",
           "constraint_name": "S4 说明飞毛腿报名是按排名进行的，并非站长干预。骑手应减少拒单、取消和超时。在恶劣天",
           "verifier_type": "state_tracker"
@@ -1219,9 +1217,9 @@
         },
         {
           "verdict": "pass",
-          "evidence": "Turn 18用户明确说'我先挂了'，Turn 18助手回复'好嘞'并提醒注意安全，含'好嘞'收尾，无追问。",
+          "evidence": "Turn 16用户说'算了算了，你别回了'，Turn 17助手收尾'赶紧充电去，注意安全'，Turn 18用户主动结束'好嘞，那我先挂了'。助手未追问其他需求，收尾含'注意安全'等关怀语。",
           "confidence": 1.0,
-          "reason": "用户明确结束意愿后，助手在1个turn内收尾，含'好嘞'，无反复追问，满足所有条件。",
+          "reason": "用户明确结束意愿后，助手在1个turn内自然收尾，含安全提醒，无反复追问，符合pass标准。",
           "constraint_id": "official_1_feimaotui_C14",
           "constraint_name": "[META] 适时终结对话",
           "verifier_type": "llm_judge"
