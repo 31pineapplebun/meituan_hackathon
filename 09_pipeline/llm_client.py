@@ -176,6 +176,11 @@ def _extract_retry_after_seconds(err: Exception) -> Optional[float]:
 
 
 def _extract_error_code(err: Exception) -> str:
+    # 先按【异常类型】判 parse_error: parse_json_robust 抛的 ValueError 会把 LLM 原文拼进
+    # message, 其中可能含 "400"/"401" 等数字串; 若先做 HTTP 码子串匹配会把可重试的坏 JSON
+    # 误判成不可重试码、放弃 re-roll 并污染错误统计。故类型判定必须在子串匹配之前。
+    if isinstance(err, (json.JSONDecodeError, ValueError)):
+        return "parse_error"
     text = str(err).lower()
     if "429" in text or "rate limit" in text or "too many requests" in text:
         return "429"
@@ -186,8 +191,6 @@ def _extract_error_code(err: Exception) -> str:
         return "timeout"
     if "connection" in text or "network" in text:
         return "network"
-    if isinstance(err, (json.JSONDecodeError, ValueError)):
-        return "parse_error"
     return "unknown"
 
 
