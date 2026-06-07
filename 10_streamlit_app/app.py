@@ -628,16 +628,16 @@ if parsed:
 
 st.markdown("---")
 
-# ---- 第 2 步: 选待测模型 + 场景 ----
-st.markdown("### 2️⃣ 选择待测模型 + 测试场景")
-col_a, col_b = st.columns([1, 2])
-with col_a:
-    st.markdown("**待测模型** (被评测的对象)")
-    tested_model = st.selectbox("待测模型",
-        ["deepseek-v4-flash", "deepseek-v4-pro", "gpt-4o-mini", "gpt-5-mini"],
-        label_visibility="collapsed")
-with col_b:
-    st.markdown("**测试场景** (勾几个跑几通,模拟不同用户)")
+# ---- 第 2 步: 运行评测 ----
+# 设计: 粘完/选完指令, 下一步直接就是"运行评测"。选模型+选场景折叠进可选设置,
+# 默认值即可, 不再当成挡路的独立步骤(对齐用户反馈)。
+st.markdown("### 2️⃣ 运行评测")
+
+with st.expander("⚙️ 模拟与评测设置 (可选, 默认即可)", expanded=False):
+    tested_model = st.selectbox(
+        "待测模型 (让哪个模型来演「客服」生成模拟对话)",
+        ["deepseek-v4-flash", "deepseek-v4-pro", "gpt-4o-mini", "gpt-5-mini"])
+    st.markdown("**模拟哪些用户场景** (勾几个 = 根据指令模拟生成几通不同用户的对话)")
     persona_cols = st.columns(4)
     selected_personas = []
     persona_items = list(PERSONAS.items())
@@ -651,32 +651,28 @@ with col_b:
                 selected_personas.append(pid)
     st.caption("标 * 的场景仅 **完整运行** 模式支持(快速演示只含 4 个核心场景的真实数据)")
 
-st.markdown("---")
+# 模式: 预置指令才有「快速演示」; 自定义/上传指令只有「完整运行」(真模拟生成对话)
+mode_options = ["🔬 完整运行 (根据指令自动模拟对话 + 评测, 需 API key, 几分钟)"]
+if has_demo:
+    mode_options = ["⚡ 快速演示 (读预置真实结果, 秒出)"] + mode_options
+mode = st.radio("评测模式", mode_options, label_visibility="collapsed")
+is_fast = "快速演示" in mode
 
-# ---- 第 3 步: 模式 + 运行 ----
-st.markdown("### 3️⃣ 运行评测")
-col_m, col_run = st.columns([2, 1])
-with col_m:
-    # has_demo 已在第 1 步按指令来源设定 (预置读配置 / 自定义恒为 False); 不再依赖 instr_cfg
-    mode_options = ["🔬 完整运行 (真跑, 需 API key, 几分钟)"]
-    if has_demo:
-        mode_options = ["⚡ 快速演示 (预置真实结果, 秒出)"] + mode_options
-    mode = st.radio("评测模式", mode_options, label_visibility="collapsed")
-    is_fast = "快速演示" in mode
+if is_fast:
+    st.caption("ℹ️ 快速演示读取用 deepseek-flash 真实跑出的历史评测结果 (非 mock, 不重新模拟)")
+else:
+    st.caption(f"▶️ 点下面按钮 → 系统会**根据上面这份任务指令, 用 {tested_model} 自动模拟 "
+               f"{len(selected_personas)} 个用户场景的对话**, 再逐约束评测 → 出模型能力画像。"
+               f"(想换模型/场景点上方 ⚙️ 设置)")
 
-    if not has_demo and not is_fast:
-        st.caption(f"ℹ️ {instr_name} 无预置演示数据,将真实调用 {tested_model} (本地需设 API key)")
-    elif is_fast:
-        st.caption("ℹ️ 快速演示读取 Day 9 用 deepseek-flash 真实跑出的评测结果 (非 mock)")
-
-with col_run:
-    st.markdown("<br>", unsafe_allow_html=True)
-    run_clicked = st.button("🚀 开始评测模型", type="primary", use_container_width=True)
+run_clicked = st.button(
+    "🚀 运行评测 (读预置结果)" if is_fast else "🚀 运行评测 (根据指令自动模拟对话并评测)",
+    type="primary", use_container_width=True)
 
 # 运行逻辑
 if run_clicked:
     if not selected_personas:
-        st.error("请至少勾选一个测试场景")
+        st.error("请展开「⚙️ 模拟与评测设置」至少勾选一个用户场景(默认已勾合作型/越界型)")
     elif not constraints:
         st.error("指令未成功解析,无法评测")
     else:
