@@ -23,6 +23,7 @@ import verifier_state_tracker
 import verifier_llm_extract
 import verifier_llm_judge
 from pipeline import compute_p3_score
+from llm_client import get_stats_summary, reset_stats
 
 
 def load_all_instructions() -> dict:
@@ -36,7 +37,51 @@ def load_all_instructions() -> dict:
     return instructions
 
 
-def run_batch(gold_set_path: str, output_dir: str):
+def _safe_dispatch(constraint: dict, dialogue: dict, instruction: dict):
+    """单条约束兜底, 防止单约束异常打断整通评测"""
+    from verifier_base import VerdictResult
+    try:
+        return dispatch(constraint, dialogue, instruction)
+    except Exception as e:
+        return VerdictResult(
+            verdict="error",
+            constraint_id=constraint.get("id", "?"),
+            constraint_name=constraint.get("name", ""),
+            verifier_type=constraint.get("verifier", "?"),
+            reason=f"dispatch 异常: {e}",
+            confidence=0.0,
+        )
+
+
+def _load_existing_records(verdicts_path: Path, summary_path: Path):
+    """读取历史输出用于断点续跑"""
+    existing_verdicts = []
+    existing_summaries = []
+    completed_dialogues = set()
+
+    if verdicts_path.exists():
+        with open(verdicts_path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                row = json.loads(line)
+                existing_verdicts.append(row)
+                if row.get("dialogue_id"):
+                    completed_dialogues.add(row["dialogue_id"])
+
+    if summary_path.exists():
+        try:
+            old = json.loads(summary_path.read_text(encoding="utf-8"))
+            existing_summaries = old.get("summaries", [])
+            completed_dialogues.update(s.get("dialogue_id") for s in existing_summaries if s.get("dialogue_id"))
+        except Exception:
+            pass
+
+    return existing_verdicts, existing_summaries, completed_dialogues
+
+
+def run_batch(gold_set_path: str, output_dir: str, resume: bool = True):
     """跑全 50 通 Gold Set"""
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -63,8 +108,19 @@ def run_batch(gold_set_path: str, output_dir: str):
     if max_workers > 1:
         print(f"    并行度: {max_workers}")
     
+    verdicts_path = output_dir / "batch_verdicts.jsonl"
+    summary_path = output_dir / "batch_summary.json"
+
     all_verdicts = []  # 每条 verdict 一行
     all_summaries = []  # 每通对话一行
+    completed_dialogues = set()
+
+    if resume:
+        all_verdicts, all_summaries, completed_dialogues = _load_existing_records(verdicts_path, summary_path)
+        if completed_dialogues:
+            print(f"    断点续跑: 已存在 {len(completed_dialogues)} 通完成记录, 将自动跳过")
+
+    reset_stats()
     
     from concurrent.futures import ThreadPoolExecutor, as_completed
     
@@ -74,6 +130,10 @@ def run_batch(gold_set_path: str, output_dir: str):
         instr_name = dialogue["instruction_name"]
         instruction = instructions.get(instr_name)
         
+        if dlg_id in completed_dialogues:
+            print(f"  [{i}/{len(dialogues)}] {dlg_id}: ⏭️ 跳过 (已完成)")
+            continue
+
         if instruction is None:
             print(f"  [{i}/{len(dialogues)}] {dlg_id}: ⚠️ 跳过 (无对应指令 {instr_name})")
             continue
@@ -84,14 +144,14 @@ def run_batch(gold_set_path: str, output_dir: str):
         if max_workers > 1:
             results = [None] * len(constraints)
             with ThreadPoolExecutor(max_workers=max_workers) as executor:
-                futures = {executor.submit(dispatch, c, dialogue, instruction): idx 
+                futures = {executor.submit(_safe_dispatch, c, dialogue, instruction): idx
                            for idx, c in enumerate(constraints)}
                 for fut in as_completed(futures):
                     idx = futures[fut]
                     results[idx] = fut.result()
         else:
             # 顺序模式
-            results = [dispatch(c, dialogue, instruction) for c in constraints]
+            results = [_safe_dispatch(c, dialogue, instruction) for c in constraints]
         
         # 记录 verdicts
         for v in results:
@@ -133,20 +193,22 @@ def run_batch(gold_set_path: str, output_dir: str):
     
     # 写文件
     print(f"\n[4/4] 写输出")
-    verdicts_path = output_dir / "batch_verdicts.jsonl"
-    summary_path = output_dir / "batch_summary.json"
-    
+
     with open(verdicts_path, "w", encoding="utf-8") as f:
         for v in all_verdicts:
             f.write(json.dumps(v, ensure_ascii=False) + "\n")
     print(f"  ✓ {verdicts_path}: {len(all_verdicts)} 条 verdict")
-    
+
+    llm_stats = get_stats_summary()
     with open(summary_path, "w", encoding="utf-8") as f:
         json.dump({
             "total_dialogues": len(dialogues),
             "successful_dialogues": len(all_summaries),
             "total_verdicts": len(all_verdicts),
             "mode": "mock" if os.getenv("VERIFIER_LLM_MOCK", "1") == "1" else "real_llm",
+            "resumed": resume,
+            "completed_dialogues": sorted({s.get("dialogue_id") for s in all_summaries if s.get("dialogue_id")}),
+            "llm_stats": llm_stats,
             "summaries": all_summaries,
         }, f, ensure_ascii=False, indent=2)
     print(f"  ✓ {summary_path}: {len(all_summaries)} 通对话总结")
@@ -164,13 +226,18 @@ def run_batch(gold_set_path: str, output_dir: str):
     for k, v in overall_verdict.most_common():
         print(f"    {k}: {v} ({v*100/len(all_verdicts):.1f}%)")
     
-    avg_score = sum(s["final_score"] for s in all_summaries) / len(all_summaries)
-    print(f"  平均分数: {avg_score:.2f}")
+    if all_summaries:
+        avg_score = sum(s["final_score"] for s in all_summaries) / len(all_summaries)
+        print(f"  平均分数: {avg_score:.2f}")
+    print(f"  LLM 统计: calls={llm_stats['total_calls']}, cache_hit={llm_stats['cache_hits']}, "
+          f"retries={llm_stats['retries']}, failures={llm_stats['failures']}, "
+          f"p95={llm_stats['p95_latency_s']}s")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--gold_set", default="../06_gold_annotation/gold_set/gold_set_50.jsonl")
     parser.add_argument("--output_dir", default="batch_results")
+    parser.add_argument("--no_resume", action="store_true", help="禁用断点续跑, 强制全量重跑")
     args = parser.parse_args()
-    run_batch(args.gold_set, args.output_dir)
+    run_batch(args.gold_set, args.output_dir, resume=not args.no_resume)

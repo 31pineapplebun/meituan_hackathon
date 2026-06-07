@@ -1,1 +1,59 @@
+# --- 本项目运行时产物 ---
 .llm_cache/
+09_pipeline/results_test/
+09_pipeline/results/
+
+# --- Python ---
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+pip-wheel-metadata/
+
+# --- 虚拟环境 ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- 密钥与本地配置（勿提交）---
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# --- 日志与临时文件 ---
+*.log
+*.tmp
+*.bak
+*~
+
+# --- 测试 / 类型检查缓存 ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# --- 操作系统 ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDE ---
+.idea/
+*.swp
+
+# --- Jupyter ---
+.ipynb_checkpoints/
