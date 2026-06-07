@@ -220,6 +220,20 @@ def run_full_evaluation(
     import simulator_v2
     from pipeline import run_pipeline
 
+    # 修复: 完整模式此前把含 ${X}/${Y}/${rider_name} 等占位符的原始指令直接喂给
+    # 被测模型, 模型会复读("Y单")或瞎编("5单")占位符 → 对话被污染、分数不可复现。
+    # variable_values.json 里其实早有这些变量的具体值, 只是此路径从未应用。这里补上。
+    # 注意: 只替换"喂给模型"的指令文本; 约束(instruction)里仍保留 ${Y} 规范形式用于评测。
+    try:
+        variables = simulator_v2.load_variable_values(instruction_name)
+        if variables:
+            for k, v in variables.items():
+                instruction_text = instruction_text.replace(f"${{{k}}}", str(v))
+            if progress_callback:
+                progress_callback(0, len(persona_list), f"已应用变量替换: {list(variables.keys())}")
+    except Exception:
+        pass  # 找不到变量值就按原样(退回旧行为), 不阻断评测
+
     # 加载预解析指令
     with open(instruction_path, encoding="utf-8") as f:
         instruction = json.load(f)

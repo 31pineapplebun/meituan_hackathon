@@ -193,9 +193,11 @@ def _extract_error_code(err: Exception) -> str:
 
 def _is_retryable_error(err: Exception) -> bool:
     code = _extract_error_code(err)
-    if code in {"429", "408", "500", "502", "503", "504", "timeout", "network"}:
+    # parse_error 视为可重试: LLM 偶发吐出坏/非 JSON 时, re-roll 通常能救回
+    # (尤其 llm_judge)。坏文本不会入缓存(parse 在 _cache_set 之前), 重试即重新请求。
+    if code in {"429", "408", "500", "502", "503", "504", "timeout", "network", "parse_error"}:
         return True
-    if code in {"400", "401", "403", "404", "409", "422", "parse_error"}:
+    if code in {"400", "401", "403", "404", "409", "422"}:
         return False
     return False
 

@@ -1,11 +1,19 @@
 """
 state_tracker verifier - 判断流程 Step 是否被覆盖
 
-升级目标:
-1) 从“匹配 2 个关键词即 pass”升级为“必要要素清单 AND 判定”
-2) 条件分支先判触发，再判执行，避免条件未触发时误判 fail/pass
-3) 统一 evidence 输出，便于人工复核
+设计:
+- 主路径: 从约束 source_text 提取关键词, 在 assistant 全文中匹配
+- 子路径: 分支类约束(含"分支"/"若"字)走 LLM 判定
+- 兜底: 无法判定时返回 not_implemented
+
+约束的常见模式:
+1. 行动描述: "告知培训时间地点" → 提取 "培训", "时间", "地点" 等核心词
+2. 询问类: "询问是否参加" → 检查疑问句 + 核心词
+3. 分支判定: "若X→Y, 若A→B" → 关键词太抽象, 暂用 not_implemented
+
+输出统一用 VerdictResult.
 """
+import os
 import re
 import sys
 from pathlib import Path
@@ -14,91 +22,200 @@ sys.path.insert(0, str(Path(__file__).parent))
 from verifier_base import register, VerdictResult, get_assistant_turns, all_assistant_text
 
 
-ACTION_SYNONYMS = {
-    "告知": ["告知", "通知", "告诉", "说明", "提到", "讲", "说一下"],
-    "询问": ["询问", "请问", "问", "想问", "能否", "是否", "吗", "呢", "对吗"],
-    "提醒": ["提醒", "记得", "注意", "别忘", "务必"],
-    "确认": ["确认", "核实", "确定", "是不是", "是否"],
-    "引导": ["引导", "操作", "点击", "进入", "去", "打开"],
-    "记录": ["记录", "登记", "备注", "记下"],
-    "结束": ["结束", "再见", "挂断", "辛苦", "感谢", "祝您"],
+# ============================================================
+# 关键词提取
+# ============================================================
+
+# 停用词(出现频率高但不算"业务关键")
+STOPWORDS = {
+    "的", "了", "是", "在", "和", "也", "都", "这", "那", "有", "就", "我", "你", "她", "他",
+    "对", "并", "及", "或", "与", "如", "且", "等", "需要", "可以", "进行", "请", "您",
+    "为", "以", "向", "把", "被", "让", "给", "做", "比", "从", "到", "上", "下", "里",
+    "之", "其", "者", "之", "了", "啊", "哦", "呢", "嗯", "吗", "吧", "啦",
+    "若", "如果", "如", "时", "时候",
+    "进入", "跳到", "Step", "S", "S1", "S2", "S3", "S4", "S5", "S6", "S7",
+    "分支", "原因", "情况", "方式", "内容", "信息",
+    "**", "$", "{", "}",
 }
 
 
-def _contains_any(text: str, words: list) -> bool:
-    return any(w and w in text for w in words)
+# 同义词组: 解决"约束说告知, 模型说通知/跟您说"的字面匹配冤案
+# 每组内任一词出现, 都算命中该组里的任意关键词
+SYNONYM_GROUPS = [
+    {"告知", "通知", "告诉", "跟您说", "跟你说", "和您说", "说一下", "看到您", "提到", "讲"},
+    {"询问", "问", "请问", "想问", "了解一下", "您看"},
+    {"提醒", "提示", "记得", "别忘", "注意", "务必"},
+    {"确认", "核实", "对一下", "确定", "是不是", "对吗"},
+    {"说明", "解释", "介绍", "讲解", "阐述", "我们的"},
+    {"引导", "带您", "帮您", "协助", "您可以", "操作"},
+    {"记录", "登记", "记下", "标记", "备注"},
+    {"取消", "撤销", "退掉", "关闭"},
+    {"结束", "再见", "挂了", "祝您", "辛苦了", "就这样"},
+    {"差评", "评价", "评分", "不好的评价"},
+    {"超时", "慢", "晚", "延迟", "迟"},
+]
 
 
-def _extract_requirement_groups(constraint: dict) -> list:
-    """把约束转成必要要素组: 每组命中任一词即可, 所有组都需命中"""
-    text = f"{constraint.get('name', '')} {constraint.get('source_text', '')}"
+# 关键动作动词 (meta 行为词). 提到模块级: 既给关键词抽取用,
+# 也给"关键词退化为纯动作词→不可靠"的检测用 (见 verify_state_tracker)。
+ACTION_VERBS = [
+    "告知", "通知", "提醒", "询问", "问", "确认", "核实", "说明", "解释",
+    "强调", "引导", "记录", "提供", "传达", "介绍", "祝", "结束", "拒绝",
+]
+
+
+def _kw_in_text(kw: str, text: str) -> bool:
+    """关键词是否命中文本 — 支持同义词
+
+    1. 字面直接命中
+    2. 若 kw 属于某同义词组, 该组任一词命中也算
+    """
+    if kw in text:
+        return True
+    for group in SYNONYM_GROUPS:
+        if kw in group:
+            # kw 在这组里, 看这组其他词是否出现在文本
+            if any(syn in text for syn in group):
+                return True
+    return False
+
+
+def extract_step_keywords(constraint: dict) -> list:
+    """从约束名称和源文本提取关键词
+    
+    策略:
+    1. 移除 Sx/Step X 前缀, 占位符, 标记
+    2. 用更细粒度的分词: 按字符 n-gram 拆解出 2-4 字的核心词
+    3. 过滤停用词
+    4. 优先保留: 动词("告知"/"询问"/"提醒")+名词("培训"/"原因") 组合
+    """
+    name = constraint.get("name", "")
+    source = constraint.get("source_text", "")
+    
+    # 优先用 source_text(更完整), 兜底用 name
+    text = source if source and len(source) > len(name) // 2 else name
+    
+    # 移除 "S1/Step X" 前缀
+    text = re.sub(r"^S?\d+(\.\d+)?\s*", "", text)
+    text = re.sub(r"^Step\s*\d+\s*", "", text)
+    text = re.sub(r"^\*\*[^*]+\*\*[:：]?\s*", "", text)
+    
+    # 移除占位符
     text = re.sub(r"\$\{[^}]+\}", "", text)
-    groups = []
 
-    if "自我介绍" in text or "我是" in text:
-        groups.append(["我是", "这边是", "我是美团", "客服", "站长"])
-    if "负责人" in text:
-        groups.append(["负责人", "老板", "店长"])
-    if "时间" in text:
-        groups.append(["时间", "点", "月", "号", "明天", "今晚"])
-    if "地点" in text:
-        groups.append(["地点", "地址", "中心", "路", "门店", "应用商店", "APP", "在"])
-    if "询问" in text or "请问" in text or "是否" in text or "能否" in text:
-        groups.append(ACTION_SYNONYMS["询问"])
-    if "提醒" in text:
-        groups.append(ACTION_SYNONYMS["提醒"])
-    if "记录" in text:
-        groups.append(ACTION_SYNONYMS["记录"])
-    if "引导" in text or "操作" in text or "点击" in text:
-        groups.append(ACTION_SYNONYMS["引导"])
-    if "结束" in text or "挂断" in text or "道谢" in text:
-        groups.append(ACTION_SYNONYMS["结束"])
+    # 关键动词 (ACTION_VERBS) 现为模块级常量, 见文件上方
 
-    # 业务关键词也视为必要槽位
-    domain_keywords = ["培训", "头盔", "工牌", "身份证", "更新", "订单", "出餐", "差评", "申诉", "取消", "评级", "负责人"]
-    for kw in domain_keywords:
-        if kw in text:
-            groups.append([kw])
-
-    # 去重（组级）
-    dedup = []
+    # 关键名词 (业务核心)
+    DOMAIN_NOUNS = [
+        # 通用
+        "培训", "时间", "地点", "原因", "费用", "补贴", "评级", "证件",
+        # V1 骑手
+        "头盔", "工牌", "身份证", "安全培训", "接单",
+        # V2 APP更新
+        "APP", "更新", "强制", "版本", "应用商店", "登录", 
+        # V3 天气
+        "天气", "预警", "出勤", "暴雨", "调休",
+        # V4 商家出餐
+        "订单", "出餐", "超时", "高峰期", "缺货", "取消", "联系", "骑手", "用户",
+        # V5 差评
+        "差评", "申诉", "改善", "意见", "数量",
+        # V6 关店
+        "关店", "申请", "临时", "永久", "经营", "节假日",
+        # 角色
+        "负责人", "商家", "骑手", "客服", "站长",
+    ]
+    
+    found_verbs = [v for v in ACTION_VERBS if v in text]
+    found_nouns = [n for n in DOMAIN_NOUNS if n in text]
+    
+    keywords = []
+    
+    # 优先添加动词+名词组合(关键短语)
+    keywords.extend(found_verbs)
+    keywords.extend(found_nouns)
+    
+    # 兜底: 如果上面没找到, 按标点切分提取
+    if len(keywords) < 2:
+        segments = re.split(r"[，。；,;:、\s（()）]+|并|且|又|再|然后|接着|或", text)
+        for seg in segments:
+            seg = seg.strip()
+            if 2 <= len(seg) <= 6 and seg not in STOPWORDS:
+                # 去除常见后缀
+                seg = re.sub(r"(等)$", "", seg)
+                if seg and seg not in keywords:
+                    keywords.append(seg)
+    
+    # 去重保序
     seen = set()
-    for g in groups:
-        key = tuple(g)
-        if key not in seen:
-            seen.add(key)
-            dedup.append(g)
-    return dedup
-
-
-def _extract_fallback_keywords(constraint: dict) -> list:
-    text = f"{constraint.get('name', '')} {constraint.get('source_text', '')}"
-    text = re.sub(r"\$\{[^}]+\}", "", text)
-    tokens = re.split(r"[，。；,;:、\s（）()]+|并|且|然后|以及|或者|或", text)
-    kws = []
-    for tok in tokens:
-        tok = tok.strip()
-        if len(tok) >= 2 and tok not in {"若", "如果", "则", "进入", "跳到", "分支"}:
-            kws.append(tok)
-    out = []
-    seen = set()
-    for k in kws:
-        if k not in seen:
+    result = []
+    for k in keywords:
+        if k not in seen and len(k) >= 1:
             seen.add(k)
-            out.append(k)
-    return out[:6]
+            result.append(k)
+    
+    return result[:7]  # 最多 7 个
 
 
-def _extract_conditional_parts(constraint: dict):
-    text = f"{constraint.get('name', '')} {constraint.get('source_text', '')}"
-    m = re.search(r"若(.+?)(?:，|,|。|；|;|则|进入|跳到)(.+)", text)
-    if not m:
-        return None, None
-    cond = m.group(1).strip()
-    action = m.group(2).strip()
-    cond_tokens = [t for t in re.split(r"[，。；,;:、\s]+", cond) if len(t) >= 2][:4]
-    action_tokens = [t for t in re.split(r"[，。；,;:、\s]+", action) if len(t) >= 2][:4]
-    return cond_tokens, action_tokens
+def is_branch_constraint(constraint: dict) -> bool:
+    """是否分支判定类(暂不支持)"""
+    text = constraint.get("name", "") + " " + constraint.get("source_text", "")
+    # 含"分支"、多个"若"、"→" 等
+    if "分支" in text and "若" in text:
+        return True
+    if text.count("若") >= 2:
+        return True
+    if text.count("→") >= 2:
+        return True
+    return False
+
+
+# ============================================================
+# LLM 语义兜底 (关键词退化为纯动作词时启用)
+# ============================================================
+
+def _llm_step_covered(constraint: dict, dialogue: dict) -> dict:
+    """LLM 语义判定: assistant 是否真的覆盖/执行了该流程 step 的内容。
+
+    在关键词匹配不可靠时调用 — 即架构里说的 "state_tracker = 关键词 + 同义词, LLM 兜底"
+    的兜底分支。覆盖: 分支型 step / 关键词退化为纯动作词 / 抽不出关键词 / 关键词字面未命中。
+    返回 facts dict: {verdict, score, evidence, reason}
+    """
+    turns_text = "\n".join(
+        f"[Turn {t.get('turn')}] {t.get('role')}: {t.get('content')}"
+        for t in dialogue.get("turns", [])
+    )
+    step_desc = constraint.get("source_text") or constraint.get("name", "")
+    prompt = f"""# 任务: 判断助手是否在通话中真正"执行/覆盖"了下面这个流程步骤的语义内容
+
+# 流程步骤 (来自外呼任务指令)
+"{step_desc}"
+
+# 判定标准
+- pass: 助手用任意措辞, 实质性地传达/询问/执行了该步骤要求的核心信息
+        (看语义不看字面; 占位符如 ${{Y}} 被任意具体数值替代都算覆盖)。
+        若步骤是分支/条件型, 助手正确执行了对话中【实际触发】的那个分支即算 pass。
+- fail: 助手通篇没有传达/执行该步骤的核心信息。
+- na: 该步骤的触发前提在本次对话中未出现 (条件分支的条件未满足)。
+
+# 对话内容
+{turns_text}
+
+# 输出 JSON (不要任何其他文字)
+{{
+  "verdict": "pass" 或 "fail" 或 "na",
+  "score": 0.0-1.0,
+  "evidence": "引用具体 turn 与原文片段, 最多200字",
+  "reason": "简短理由, 最多100字"
+}}
+只输出 JSON."""
+
+    # 关键约束走自一致性投票 (复用 llm_judge 的实现), 抹平单次抖动
+    is_critical = constraint.get("is_critical", False)
+    if is_critical and os.getenv("LLM_SELF_CONSISTENCY", "1") == "1":
+        from verifier_llm_judge import _vote_judge
+        return _vote_judge(prompt, n=3)
+    from verifier_llm_extract import call_llm_for_extraction
+    return call_llm_for_extraction(prompt)
 
 
 # ============================================================
@@ -107,78 +224,88 @@ def _extract_conditional_parts(constraint: dict):
 
 @register("state_tracker")
 def verify_state_tracker(constraint: dict, dialogue: dict, instruction: dict) -> VerdictResult:
-    """流程 step 覆盖判定: 必要要素 AND 判定 + 条件先触发后执行"""
+    """流程 step 覆盖判定 (分层: 关键词命中 → 规则; 不可靠 → LLM 语义兜底)
+
+    1. 有内容关键词且非分支 → 关键词+同义词匹配; 命中(高精度)直接 pass, 省 LLM。
+    2. 关键词不可靠的情形 → 走 LLM 语义兜底 (架构承诺的"LLM 兜底"):
+       - 分支型 step 约束 (含"若X→Y"等条件分支)
+       - 关键词退化为纯动作词 (如仅 '说明', 业务名词抽不出来)
+       - 抽不出关键词
+       - 关键词字面未命中 (模型可能换了说法 → 字面 fail 是假阴性)
+       mock 模式无法语义判定: 分支/纯动作词/无关键词 → not_implemented;
+       关键词未命中 → 保留启发式 fail (便于离线测试, 不调 LLM)。
+    """
     name = constraint.get("name", "")
-
+    is_mock = os.getenv("VERIFIER_LLM_MOCK", "1") == "1"
     asst_text = all_assistant_text(dialogue)
-    if not asst_text:
-        return VerdictResult(verdict="na", reason="无 assistant 输出")
 
-    user_text = " ".join([t.get("content", "") for t in dialogue.get("turns", []) if t.get("role") == "user"])
+    is_branch = is_branch_constraint(constraint)
+    keywords = extract_step_keywords(constraint)
+    meta_only = bool(keywords) and all(kw in ACTION_VERBS for kw in keywords)
 
-    # 条件分支: 先判触发
-    cond_tokens, action_tokens = _extract_conditional_parts(constraint)
-    if cond_tokens:
-        cond_triggered = _contains_any(user_text, cond_tokens)
-        if not cond_triggered:
+    # ---- 路径 A: 关键词可靠 (有内容关键词 + 非分支 + 非纯动作词) → 先做规则匹配 ----
+    if keywords and not is_branch and not meta_only:
+        if not asst_text:
+            return VerdictResult(verdict="na", reason="无 assistant 输出")
+        matched, missed = [], []
+        for kw in keywords:
+            (matched if _kw_in_text(kw, asst_text) else missed).append(kw)
+        match_rate = len(matched) / len(keywords)
+        threshold_count = min(2, max(1, len(keywords) // 2))
+        if len(matched) >= threshold_count or match_rate >= 0.4:
+            # 关键词命中 = 高精度信号, 直接信任 (不调 LLM, 省成本)
+            evidence_turns = []
+            for t in get_assistant_turns(dialogue):
+                if any(kw in t.get("content", "") for kw in matched):
+                    evidence_turns.append(t.get("turn"))
+                    if len(evidence_turns) >= 3:
+                        break
             return VerdictResult(
-                verdict="na",
-                reason=f"条件未触发: {cond_tokens[:3]}",
-                confidence=0.85,
+                verdict="pass",
+                evidence=f"turn{','.join(map(str, evidence_turns))} 含 {matched[:4]}",
+                confidence=0.7 + match_rate * 0.3,
+                reason=f"匹配关键词 {len(matched)}/{len(keywords)} ({match_rate*100:.0f}%, 阈值≥{threshold_count}个)"
             )
-        if action_tokens and not _contains_any(asst_text, action_tokens):
+        # 关键词未命中: 字面不匹配可能是模型换了说法(假阴性)。
+        # mock 模式无 LLM, 保留启发式 fail; 真实模式 → 落到下面的 LLM 语义兜底复核。
+        if is_mock:
             return VerdictResult(
                 verdict="fail",
-                evidence=f"条件触发但未执行动作: {action_tokens[:3]}",
-                reason=f"条件已触发({cond_tokens[:3]}), 但助手未覆盖动作",
-                confidence=0.7,
+                evidence=f"缺失关键词: {missed[:4]}",
+                confidence=0.6,
+                reason=f"只匹配 {len(matched)}/{len(keywords)} ({match_rate*100:.0f}%, 不足 {threshold_count} 个)"
             )
+        # else: fall through to LLM 兜底
+
+    # ---- 路径 B: LLM 语义兜底 (分支 / 纯动作词 / 无关键词 / 真实模式下关键词未命中) ----
+    if is_branch:
+        cause = "分支型step"
+    elif meta_only:
+        cause = f"关键词退化为纯动作词{keywords}"
+    elif not keywords:
+        cause = "无法抽取关键词"
+    else:
+        cause = "关键词字面未命中"
+
+    if is_mock:
         return VerdictResult(
-            verdict="pass",
-            evidence=f"条件触发({cond_tokens[:3]}), 且动作覆盖({action_tokens[:3]})",
-            reason="分支约束满足",
-            confidence=0.8,
+            verdict="not_implemented",
+            reason=f"{cause}, mock 模式无法语义判定, 跳过: '{name[:30]}'"
         )
-
-    # 普通流程: 必要要素 AND 判定
-    groups = _extract_requirement_groups(constraint)
-    if not groups:
-        fallback = _extract_fallback_keywords(constraint)
-        if not fallback:
-            return VerdictResult(verdict="not_implemented", reason=f"无法提取流程要素: {name[:40]}")
-        groups = [[k] for k in fallback]
-
-    matched_groups = []
-    missed_groups = []
-    for g in groups:
-        if _contains_any(asst_text, g):
-            matched_groups.append(g)
-        else:
-            missed_groups.append(g)
-
-    evidence_turns = []
-    for t in get_assistant_turns(dialogue):
-        content = t.get("content", "")
-        if any(_contains_any(content, g) for g in matched_groups):
-            evidence_turns.append(str(t.get("turn")))
-            if len(evidence_turns) >= 3:
-                break
-
-    match_rate = len(matched_groups) / len(groups) if groups else 0
-    if len(missed_groups) == 0:
-        return VerdictResult(
-            verdict="pass",
-            evidence=f"turn{','.join(evidence_turns)} 覆盖要素组 {len(matched_groups)}/{len(groups)}",
-            confidence=0.75 + match_rate * 0.2,
-            reason=f"必要要素全部覆盖 ({len(groups)}/{len(groups)})",
-        )
-
-    missing_preview = ["|".join(g[:2]) for g in missed_groups[:3]]
+    if not asst_text:
+        return VerdictResult(verdict="na", reason="无 assistant 输出")
+    try:
+        facts = _llm_step_covered(constraint, dialogue)
+    except Exception as e:
+        return VerdictResult(verdict="error", reason=f"LLM 语义兜底失败: {e}")
+    verdict = facts.get("verdict", "error")
+    if verdict not in ("pass", "fail", "na"):
+        verdict = "error"
     return VerdictResult(
-        verdict="fail",
-        evidence=f"缺失要素组: {missing_preview}",
-        confidence=0.65,
-        reason=f"必要要素覆盖不足 {len(matched_groups)}/{len(groups)} ({match_rate*100:.0f}%)",
+        verdict=verdict,
+        evidence=("[LLM语义兜底] " + str(facts.get("evidence", "")))[:200],
+        confidence=facts.get("score", 0.7),
+        reason=(f"[{cause}→LLM兜底] " + str(facts.get("reason", "")))[:200],
     )
 
 
@@ -211,6 +338,7 @@ def _test():
     }
     result = verify_state_tracker(constraint, dialogue, {})
     print(f"\nTest 1 (V1_C08 完整匹配):")
+    print(f"  关键词: {extract_step_keywords(constraint)}")
     print(f"  verdict: {result.verdict}")
     print(f"  reason: {result.reason}")
     if result.verdict == "pass":
@@ -238,7 +366,7 @@ def _test():
     else:
         print(f"  ✗ 期望 fail")
     
-    # Test 3: 分支类约束 条件未触发 → na
+    # Test 3: 分支类约束 → not_implemented
     tests_total += 1
     branch_constraint = {
         "id": "V3_C11",
@@ -250,11 +378,11 @@ def _test():
     print(f"\nTest 3 (分支类):")
     print(f"  verdict: {result.verdict}")
     print(f"  reason: {result.reason}")
-    if result.verdict in ("na", "pass"):
+    if result.verdict == "not_implemented":
         print(f"  ✓ Pass")
         tests_passed += 1
     else:
-        print(f"  ✗ 期望 na/pass")
+        print(f"  ✗ 期望 not_implemented")
     
     # Test 4: mock 真实风格 V1 对话 (不依赖外部文件)
     tests_total += 1
@@ -269,6 +397,7 @@ def _test():
     }
     result = verify_state_tracker(constraint, real_dialogue, {})
     print(f"\nTest 4 (mock 真实风格 V1 对话, V1_C08):")
+    print(f"  关键词: {extract_step_keywords(constraint)}")
     print(f"  verdict: {result.verdict}")
     print(f"  evidence: {result.evidence}")
     print(f"  reason: {result.reason}")
@@ -278,22 +407,22 @@ def _test():
     else:
         print(f"  ⚠️ 不符合预期")
     
-    # Test 5: 要素提取规则验证
+    # Test 5: 关键词提取规则验证
     tests_total += 1
-    print(f"\nTest 5 (要素提取规则):")
+    print(f"\nTest 5 (关键词提取规则):")
     test_cases = [
-        ("S1 告知培训时间地点", ["培训", "时间", "地点"]),
-        ("S3 **分支**：询问出餐慢原因", ["询问", "出餐"]),
-        ("S2 告知 APP 有强制更新要求", ["APP", "更新"]),
+        ("S1 告知培训时间地点", ["告知", "培训", "时间", "地点"]),  # 简单
+        ("S3 **分支**：询问出餐慢原因", ["询问", "出餐慢", "原因"]),  # 含**分支**前缀
+        ("S2 告知 APP 有强制更新要求", ["告知", "APP", "强制", "更新", "要求"]),  # 含英文
     ]
     pass_cnt = 0
     for text, expected in test_cases:
-        groups = _extract_requirement_groups({"name": text, "source_text": text})
-        flat = "|".join(["|".join(g) for g in groups])
-        hit = sum(1 for e in expected if e in flat)
+        kws = extract_step_keywords({"name": text, "source_text": text})
+        # 检查 expected 中至少 60% 出现
+        hit = sum(1 for e in expected if any(e in k or k in e for k in kws))
         rate = hit / len(expected)
         marker = "✓" if rate >= 0.5 else "✗"
-        print(f"  {marker} '{text[:40]}' → {groups} (匹配率 {rate*100:.0f}%)")
+        print(f"  {marker} '{text[:40]}' → {kws} (匹配率 {rate*100:.0f}%)")
         if rate >= 0.5:
             pass_cnt += 1
     if pass_cnt == len(test_cases):
@@ -301,7 +430,31 @@ def _test():
         tests_passed += 1
     else:
         print(f"  ⚠️ {pass_cnt}/{len(test_cases)} 通过")
-    
+
+    # Test 6: 关键词退化为纯动作词 (C08 式) → mock 模式 not_implemented (退化保护)
+    tests_total += 1
+    os.environ["VERIFIER_LLM_MOCK"] = "1"   # 显式锁定 mock, 测退化兜底分支
+    degenerate = {
+        "id": "TEST_C08",
+        "name": "S2 说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
+        "verifier": "state_tracker",
+        "source_text": "说明单日飞毛腿合同需要**连续 ${Y} 天**完成配送；否则合同将受到影响。",
+        "is_critical": True,
+    }
+    kws = extract_step_keywords(degenerate)
+    r = verify_state_tracker(degenerate, {"turns": [
+        {"role": "assistant", "turn": 1, "content": "你好，合同已生效，今天能跑吗？"},
+    ]}, {})
+    print(f"\nTest 6 (关键词退化保护, C08 式):")
+    print(f"  抽取关键词: {kws} (应只剩动作词)")
+    print(f"  verdict: {r.verdict}  reason: {r.reason[:50]}")
+    only_action = bool(kws) and all(k in ACTION_VERBS for k in kws)
+    if only_action and r.verdict == "not_implemented":
+        print(f"  ✓ Pass (纯动作词 → mock 下 not_implemented, 不再误判 fail)")
+        tests_passed += 1
+    else:
+        print(f"  ✗ 期望 only_action=True 且 not_implemented")
+
     print()
     if tests_passed == tests_total:
         print(f"✅ {tests_passed}/{tests_total} 全过")

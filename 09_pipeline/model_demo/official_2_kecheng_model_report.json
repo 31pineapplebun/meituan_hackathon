@@ -1,0 +1,1972 @@
+{
+  "report_type": "model_level",
+  "instruction_name": "official_2_kecheng",
+  "model_name": "deepseek-v4-flash",
+  "generated_at": "2026-06-06 22:53",
+  "summary": {
+    "avg_score": 45.5,
+    "min_score": 26.89,
+    "max_score": 65,
+    "n_dialogues": 4,
+    "n_unevaluable": 0,
+    "n_total": 4,
+    "grade": "不合格",
+    "diagnosis": "模型在「official_2_kecheng」任务上不合格,建议重新设计 prompt 或更换模型。"
+  },
+  "dim_avg": {
+    "D1_flow_compliance": 58.3,
+    "D2_task_completion": 25.0,
+    "D3_constraint_compliance": 54.2,
+    "D4_knowledge_accuracy": 100.0,
+    "D5_dialogue_quality": 60.0
+  },
+  "persona_breakdown": [
+    {
+      "persona_id": "refuse_persistent",
+      "dialogue_id": "official_2_kecheng_refuse_persistent_live",
+      "final_score": 26.89,
+      "critical_pass_rate": 0.375,
+      "ceiling": 30,
+      "n_turns": 5
+    },
+    {
+      "persona_id": "out_of_scope",
+      "dialogue_id": "official_2_kecheng_out_of_scope_live",
+      "final_score": 45,
+      "critical_pass_rate": 0.556,
+      "ceiling": 45,
+      "n_turns": 24
+    },
+    {
+      "persona_id": "interruption",
+      "dialogue_id": "official_2_kecheng_interruption_live",
+      "final_score": 45,
+      "critical_pass_rate": 0.556,
+      "ceiling": 45,
+      "n_turns": 23
+    },
+    {
+      "persona_id": "cooperative",
+      "dialogue_id": "official_2_kecheng_cooperative_live",
+      "final_score": 65,
+      "critical_pass_rate": 0.889,
+      "ceiling": 65,
+      "n_turns": 25
+    }
+  ],
+  "weak_constraints": [
+    {
+      "constraint_id": "official_2_kecheng_C01",
+      "constraint_name": "每次回复极简——最多 15-20 个字。",
+      "fail_count": 4,
+      "total_count": 4,
+      "fail_rate": 100.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C07",
+      "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+      "fail_count": 4,
+      "total_count": 4,
+      "fail_rate": 100.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C16",
+      "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+      "fail_count": 4,
+      "total_count": 4,
+      "fail_rate": 100.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C10",
+      "constraint_name": "若老板说忙，说\"就1分钟，保证简短\"后继续简短说明。",
+      "fail_count": 1,
+      "total_count": 1,
+      "fail_rate": 100.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C05",
+      "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+      "fail_count": 3,
+      "total_count": 4,
+      "fail_rate": 75.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C18",
+      "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+      "fail_count": 3,
+      "total_count": 4,
+      "fail_rate": 75.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C21",
+      "constraint_name": "[META] 任务核心意图完成",
+      "fail_count": 3,
+      "total_count": 4,
+      "fail_rate": 75.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C02",
+      "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+      "fail_count": 2,
+      "total_count": 4,
+      "fail_rate": 50.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C06",
+      "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+      "fail_count": 2,
+      "total_count": 4,
+      "fail_rate": 50.0
+    },
+    {
+      "constraint_id": "official_2_kecheng_C17",
+      "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+      "fail_count": 2,
+      "total_count": 4,
+      "fail_rate": 50.0
+    }
+  ],
+  "per_dialogue_results": [
+    {
+      "dialogue_id": "official_2_kecheng_cooperative_live",
+      "persona_id": "cooperative",
+      "score_report": {
+        "final_score": 65,
+        "evaluable": true,
+        "raw_score": 90.27,
+        "ceiling": 65,
+        "ceiling_reason": "Critical通过率89% → 上限65",
+        "dim_scores": {
+          "D1_flow_compliance": 85.71,
+          "D2_task_completion": 100.0,
+          "D3_constraint_compliance": 69.23,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 100.0
+        },
+        "critical_pass_rate": 0.889,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "1 条关键约束失败",
+            "constraint_ids": [
+              "official_2_kecheng_C16"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【约束遵循度】得分 69.2/100 最低",
+            "constraint_ids": [
+              "official_2_kecheng_C01",
+              "official_2_kecheng_C07"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问您是贵培训机构/校区的负责人吗？' (12字); Turn 3: '我们对直播产品做了升级，新增了独立的“低延迟直播”选项。' (20字); Turn 5: '低延迟1-2秒，标准直播5-10秒。您之前知道吗？' (18字); Turn 7: '价格略高些，标准直播费用较低。低延迟带宽保障更强。' (20字); Turn 9: '标准直播延迟5-10秒，费用低；低延迟延",
+          "confidence": 1.0,
+          "reason": "多个assistant回复字数超过20字，违反约束。",
+          "constraint_id": "official_2_kecheng_C01",
+          "constraint_name": "每次回复极简——最多 15-20 个字。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 2: '嗯'；Turn 4: '噢'；Turn 14: '嗯'；Turn 16: '说实话'；Turn 18: '不过'；Turn 22: '改天'；Turn 24: '太感谢了'。无列点格式，无书面文言词。",
+          "confidence": 1.0,
+          "reason": "对话包含多处口语词（嗯、噢、不过、改天等），无列点格式，无书面文言词，符合电话沟通风格。",
+          "constraint_id": "official_2_kecheng_C02",
+          "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 5: '您之前知道吗？' 主动提问；Turn 11: '您用哪个系统登录后台？Web还是App？' 提问；Turn 13: '您现在登录Web后台，能看到新增选项吗？' 提问；Turn 15: '您进入【我的】→【服务商/直播平台管理】了吗？' 提问。助手未连续多次发言，给用户回应机会。",
+          "confidence": 1.0,
+          "reason": "助手多次主动提问，且未连续发言，给用户充分回应机会，满足两条标准。",
+          "constraint_id": "official_2_kecheng_C03",
+          "constraint_name": "频繁给商家发言和提问的机会。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "na",
+          "evidence": "对话全程无打断场景，用户与助手轮流发言，未出现用户打断助手的情况。",
+          "confidence": 1.0,
+          "reason": "约束条件未触发，无打断场景，因此判定为na。",
+          "constraint_id": "official_2_kecheng_C04",
+          "constraint_name": "若对话被打断，使用简短过渡语，如\"您刚才提到……\"或\"我刚说到……\"。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "助手在Turn 5、7、9、11、13、15、17、19、21、23、25中均等待用户回应后再发言，且Turn 5、11、13、15主动提问让用户参与。",
+          "confidence": 1.0,
+          "reason": "助手不连续多次发言，每次发言后等待用户回应，并主动提问引导用户参与，满足两条判定标准。",
+          "constraint_id": "official_2_kecheng_C05",
+          "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 1-25: 助手介绍了低延迟直播（Turn 3-5），指导后台设置（Turn 15-19），回答价格和画质问题（Turn 7-9, 21），用户最终同意添加企业微信（Turn 24）。任务完成后用户无进一步疑问，助手未继续作答，但约束条件未触发。",
+          "confidence": 1.0,
+          "reason": "助手覆盖了任务核心步骤（介绍、指导、答疑），用户明确同意添加企业微信，满足判定标准。",
+          "constraint_id": "official_2_kecheng_C06",
+          "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好' 为正式用语；Turn 3: '我们对直播产品做了升级' 无口语词；Turn 5: '您之前知道吗？' 无口语词；整体缺乏至少2处口语词（如咱们/嗯/啊/吧/呗/哈），仅Turn 2和Turn 14有'嗯'，但不足2处。",
+          "confidence": 0.0,
+          "reason": "口语词不足2处（仅2个'嗯'），且多处使用正式表达如'您好'，违反约束。",
+          "constraint_id": "official_2_kecheng_C07",
+          "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "",
+          "confidence": 1.0,
+          "reason": "全程未出现禁用词",
+          "constraint_id": "official_2_kecheng_C08",
+          "constraint_name": "不说\"好的\"、\"哈哈\"、\"嘿嘿\"、\"嘻嘻\"等语气词。",
+          "verifier_type": "rule_pattern"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "",
+          "confidence": 0.9,
+          "reason": "助手全程未承诺禁止内容",
+          "constraint_id": "official_2_kecheng_C09",
+          "constraint_name": "不能承诺给商家折扣券或优惠券。",
+          "verifier_type": "llm_extract_then_rule"
+        },
+        {
+          "verdict": "na",
+          "evidence": "对话中用户从未表示自己忙，也未出现老板说忙的场景，因此约束条件未触发。",
+          "confidence": 1.0,
+          "reason": "约束要求老板说忙时执行后续动作，但对话中无此情况，故不适用。",
+          "constraint_id": "official_2_kecheng_C10",
+          "constraint_name": "若老板说忙，说\"就1分钟，保证简短\"后继续简短说明。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说“在开车”，因此约束条件未触发。",
+          "confidence": 1.0,
+          "reason": "约束要求商家说“在开车”才触发后续行为，但对话中未出现该情况。",
+          "constraint_id": "official_2_kecheng_C11",
+          "constraint_name": "若商家说在开车，礼貌说\"那我稍后再打\"后挂断。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 3: '我们对直播产品做了升级，新增了独立的“低延迟直播”选项。' 直接传达了步骤要求的核心信息。",
+          "confidence": 1.0,
+          "reason": "[分支型step→LLM兜底] 助手在确认对方是负责人后，完整执行了身份确认步骤中的话术内容。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C12",
+          "constraint_name": "S1 **身份确认** - 确认对方是负责人；若不是请其转达。给出参考话术：\"我们对直",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "turn1,23 含 ['询问', '问']",
+          "confidence": 0.85,
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "constraint_id": "official_2_kecheng_C13",
+          "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "turn7,9 含 ['费用']",
+          "confidence": 0.85,
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "constraint_id": "official_2_kecheng_C14",
+          "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 13: '您现在登录Web后台，能看到新增选项吗？' 询问了登录方式（Web），并确认前端是否可见。Turn 14-15: 用户反馈可见后，助手引导操作步骤（进入【我的】→【服务商/直播平台管理】），符合'若已显示则直接使用'分支。",
+          "confidence": 1.0,
+          "reason": "[分支型step→LLM兜底] 助手询问了Web后台可见性，并在用户确认可见后直接引导操作，完整覆盖了步骤的核心语义。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C15",
+          "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及“已设置费用”或“提醒确认低延迟直播也已适用该费用”，仅在Turn 7和Turn 9提到费用高低，但未执行步骤要求的确认动作。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 助手未执行步骤核心要求：未提醒用户确认低延迟直播已适用相同费用。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C16",
+          "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 23: '稍后企业微信加您，有问题随时问。' Turn 24: '那我等会通过企业微信好友申请'",
+          "confidence": 1.0,
+          "reason": "[关键词字面未命中→LLM兜底] 助手明确告知将通过企业微信添加用户，用户确认会通过验证，完整覆盖了步骤要求。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C17",
+          "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 25: '好，祝您课程顺利、招生满满！' 直接对应步骤中'祝其课程顺利、招生满满'的语义。",
+          "confidence": 1.0,
+          "reason": "[分支型step→LLM兜底] 助手在对话末尾明确表达了祝福，覆盖了步骤的核心要求。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C18",
+          "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "助手在Turn3、5、7、9、17、19、21覆盖了核心步骤：告知新增低延迟直播选项、延迟对比、价格差异、操作指引。用户Turn24明确接受信息并确认后续联系。",
+          "confidence": 1.0,
+          "reason": "助手完成至少70%任务步骤，用户最终给出明确反馈（接受信息）。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C21",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 24用户明确表示结束意愿('以后有问题就直接找您了')，Turn 25助手立即收尾并含'祝'字('祝您课程顺利、招生满满')，无追问。",
+          "confidence": 1.0,
+          "reason": "用户表达结束意向后，助手在1个turn内以祝福语收尾，符合所有3条标准。",
+          "constraint_id": "official_2_kecheng_C22",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "FAQ: 标准直播和低延迟直播的区别; 助手答: 低延迟1-2秒，标准直播5-10秒。价格略高些，标准直播费用较低。低延迟带宽保障更强。",
+          "confidence": 0.85,
+          "reason": "FAQ 答案符合标准",
+          "constraint_id": "official_2_kecheng_C23",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule"
+        }
+      ],
+      "detailed_suggestions": [
+        {
+          "constraint_id": "official_2_kecheng_C16",
+          "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S5",
+          "problem": "缺失流程步骤 S5 的核心动作",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及“已设置费用”或“提醒确认低延迟直播也已适用该费用”，仅在Turn 7和Turn 9提到费用高低，但未执行步骤要求的确认动作。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S5 要做的是「**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S5→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S5 核心动作示例: '**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C01",
+          "constraint_name": "每次回复极简——最多 15-20 个字。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "多个assistant回复字数超过20字，违反约束。",
+          "evidence": "Turn 1: '您好，请问您是贵培训机构/校区的负责人吗？' (12字); Turn 3: '我们对直播产品做了升级，新增了独立的“低延迟直播”选项。' (20字); Turn 5: '低延迟1-2秒，标准直播5-10秒。您之前知道吗？' (18字); Turn 7: '价格略高些，标准直播费用较",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C07",
+          "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "语言风格",
+          "problem": "语气不够口语化（偏书面/列点/文言）",
+          "evidence": "Turn 1: '您好' 为正式用语；Turn 3: '我们对直播产品做了升级' 无口语词；Turn 5: '您之前知道吗？' 无口语词；整体缺乏至少2处口语词（如咱们/嗯/啊/吧/呗/哈），仅Turn 2和Turn 14有'嗯'，但不足2处。",
+          "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+          "expected_impact": "修复后 D5 对话质量 +5-8 分",
+          "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+        }
+      ],
+      "n_turns": 25,
+      "dialogue": {
+        "dialogue_id": "official_2_kecheng_cooperative_live",
+        "instruction_name": "official_2_kecheng",
+        "persona_id": "cooperative",
+        "tested_model": "deepseek-v4-flash",
+        "user_model": "deepseek-v4-flash",
+        "turns": [
+          {
+            "turn": 1,
+            "role": "assistant",
+            "content": "您好，请问您是贵培训机构/校区的负责人吗？",
+            "timestamp": "2026-06-06T22:11:48.687918"
+          },
+          {
+            "turn": 2,
+            "role": "user",
+            "content": "嗯，是的，我是这个校区的负责人。",
+            "timestamp": "2026-06-06T22:11:51.793610"
+          },
+          {
+            "turn": 3,
+            "role": "assistant",
+            "content": "我们对直播产品做了升级，新增了独立的“低延迟直播”选项。",
+            "timestamp": "2026-06-06T22:11:56.280902"
+          },
+          {
+            "turn": 4,
+            "role": "user",
+            "content": "噢，低延迟直播？这个对我们线上教学挺重要的。具体延迟能降到多少？",
+            "timestamp": "2026-06-06T22:12:01.719680"
+          },
+          {
+            "turn": 5,
+            "role": "assistant",
+            "content": "低延迟1-2秒，标准直播5-10秒。您之前知道吗？",
+            "timestamp": "2026-06-06T22:12:07.658746"
+          },
+          {
+            "turn": 6,
+            "role": "user",
+            "content": "之前不太清楚。这个延迟时间对我们线上课来说确实是个好消息，价格方面跟原来比有变化吗？",
+            "timestamp": "2026-06-06T22:12:14.351744"
+          },
+          {
+            "turn": 7,
+            "role": "assistant",
+            "content": "价格略高些，标准直播费用较低。低延迟带宽保障更强。",
+            "timestamp": "2026-06-06T22:12:19.067359"
+          },
+          {
+            "turn": 8,
+            "role": "user",
+            "content": "理解，成本确实要考虑。不过我们校区最近在控制预算，能详细说说两种方案的具体价格吗？",
+            "timestamp": "2026-06-06T22:12:25.818741"
+          },
+          {
+            "turn": 9,
+            "role": "assistant",
+            "content": "标准直播延迟5-10秒，费用低；低延迟延迟1-2秒，费用稍高。具体金额您后台可查。",
+            "timestamp": "2026-06-06T22:12:33.316115"
+          },
+          {
+            "turn": 10,
+            "role": "user",
+            "content": "好的，我回头登录后台查看一下具体金额。不过后台操作我不太熟，你们有操作指引吗？",
+            "timestamp": "2026-06-06T22:12:39.677303"
+          },
+          {
+            "turn": 11,
+            "role": "assistant",
+            "content": "您用哪个系统登录后台？Web还是App？",
+            "timestamp": "2026-06-06T22:12:46.241894"
+          },
+          {
+            "turn": 12,
+            "role": "user",
+            "content": "我们主要用Web端登录后台，App有时候不太方便操作。",
+            "timestamp": "2026-06-06T22:12:50.867749"
+          },
+          {
+            "turn": 13,
+            "role": "assistant",
+            "content": "明白，您现在登录Web后台，能看到新增选项吗？",
+            "timestamp": "2026-06-06T22:12:56.400894"
+          },
+          {
+            "turn": 14,
+            "role": "user",
+            "content": "我试试看。嗯，找到了，在直播设置这里有个新选项。不过我这不太会设置，能指导下吗？",
+            "timestamp": "2026-06-06T22:13:02.040453"
+          },
+          {
+            "turn": 15,
+            "role": "assistant",
+            "content": "您进入【我的】→【服务商/直播平台管理】了吗？",
+            "timestamp": "2026-06-06T22:13:08.973298"
+          },
+          {
+            "turn": 16,
+            "role": "user",
+            "content": "到了这个页面了。不过说实话，我平时不常操作后台，能一步步教我吗？",
+            "timestamp": "2026-06-06T22:13:15.759213"
+          },
+          {
+            "turn": 17,
+            "role": "assistant",
+            "content": "您点开【直播平台】，勾选低延迟直播，然后点保存。",
+            "timestamp": "2026-06-06T22:13:20.871469"
+          },
+          {
+            "turn": 18,
+            "role": "user",
+            "content": "好的，我看到了。不过想再确认下，这个选项是叫“低延迟”还是“清晰优先”？我怕选错。",
+            "timestamp": "2026-06-06T22:13:27.660221"
+          },
+          {
+            "turn": 19,
+            "role": "assistant",
+            "content": "叫“低延迟直播”，不是“清晰优先”。选这个就好。",
+            "timestamp": "2026-06-06T22:13:33.303685"
+          },
+          {
+            "turn": 20,
+            "role": "user",
+            "content": "好的，我找到了“低延迟直播”选项，已经勾选上了。保存之后，会不会影响画质？",
+            "timestamp": "2026-06-06T22:13:38.425187"
+          },
+          {
+            "turn": 21,
+            "role": "assistant",
+            "content": "不会影响画质，带宽和节点都一样保障。放心用。",
+            "timestamp": "2026-06-06T22:13:43.734973"
+          },
+          {
+            "turn": 22,
+            "role": "user",
+            "content": "那太好了，改天我让技术老师再测试下效果。要是有问题还能找你们人工支持吗？",
+            "timestamp": "2026-06-06T22:13:49.648702"
+          },
+          {
+            "turn": 23,
+            "role": "assistant",
+            "content": "当然，稍后企业微信加您，有问题随时问。",
+            "timestamp": "2026-06-06T22:13:55.178778"
+          },
+          {
+            "turn": 24,
+            "role": "user",
+            "content": "好的，太感谢了。那我等会通过企业微信好友申请，以后有问题就直接找您了。",
+            "timestamp": "2026-06-06T22:14:00.152306"
+          },
+          {
+            "turn": 25,
+            "role": "assistant",
+            "content": "好，祝您课程顺利、招生满满！",
+            "timestamp": "2026-06-06T22:14:04.050215"
+          }
+        ],
+        "metadata": {
+          "end_reason": "assistant_initiated",
+          "total_turns": 25
+        }
+      }
+    },
+    {
+      "dialogue_id": "official_2_kecheng_out_of_scope_live",
+      "persona_id": "out_of_scope",
+      "score_report": {
+        "final_score": 45,
+        "evaluable": true,
+        "raw_score": 46.05,
+        "ceiling": 45,
+        "ceiling_reason": "Critical通过率56% → 上限45",
+        "dim_scores": {
+          "D1_flow_compliance": 57.14,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 53.85,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 40.0
+        },
+        "critical_pass_rate": 0.556,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "4 条关键约束失败",
+            "constraint_ids": [
+              "official_2_kecheng_C16",
+              "official_2_kecheng_C17",
+              "official_2_kecheng_C18",
+              "official_2_kecheng_C21"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "official_2_kecheng_C21"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: 15字; Turn 3: 16字; Turn 5: 22字; Turn 7: 22字; Turn 9: 20字; Turn 11: 22字; Turn 13: 24字; Turn 15: 24字; Turn 17: 22字; Turn 19: 22字; Turn 21: 20字; Turn 23: 22字。多处超过20字。",
+          "confidence": 1.0,
+          "reason": "assistant多次回复超过20字，违反“最多15-20个字”的约束。",
+          "constraint_id": "official_2_kecheng_C01",
+          "constraint_name": "每次回复极简——最多 15-20 个字。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问您是贵培训机构/校区的负责人吗？' 使用'贵'等书面词；Turn 3: '我们对直播产品做了升级' 缺乏口语词；整体未出现'咱们/嗯/啊/吧/呗/哈'等口语词。",
+          "confidence": 0.0,
+          "reason": "未满足标准1：对话中无任何口语词（咱们/嗯/啊/吧/呗/哈），且存在书面语如'贵'，不符合电话沟通风格。",
+          "constraint_id": "official_2_kecheng_C02",
+          "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "助手在Turn 1、3、5、7、9、11、13、15、17、19、21、23中均未连续两次发言，每次发言后用户都有回应；且助手在Turn 13、15、17、21、23主动提问（如“您发布课程走哪个系统？”“您进后台看，发布页显示低延迟选项了吗？”），给用户参与机会。",
+          "confidence": 1.0,
+          "reason": "助手不连续多次发言，且多次主动提问，满足两条判定标准。",
+          "constraint_id": "official_2_kecheng_C03",
+          "constraint_name": "频繁给商家发言和提问的机会。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 5: '理解，还是说回直播的事。' 未使用指定过渡语；Turn 7: '您之前可能没留意' 未使用；Turn 9: '刚说到发布页会显示两个选项' 使用了'刚说到...'，符合约束。",
+          "confidence": 1.0,
+          "reason": "Turn 9 中助手在被用户打断后使用了'刚说到...'过渡语，满足约束条件。",
+          "constraint_id": "official_2_kecheng_C04",
+          "constraint_name": "若对话被打断，使用简短过渡语，如\"您刚才提到……\"或\"我刚说到……\"。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23连续发言，未给用户回应的机会；且未主动提问让用户参与（如Turn 13提问但被用户忽略）。",
+          "confidence": 0.0,
+          "reason": "助手连续多次发言，未暂停等待商家回应，且未有效引导用户参与对话。",
+          "constraint_id": "official_2_kecheng_C05",
+          "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "用户多次提出无关问题（如天气、股票、物流、王老师、云服务合作等），助手虽尝试回归主题，但未在用户明确同意或拒绝后继续简短作答。用户最终未给出明确反馈（同意/拒绝/接收信息），仅表示“先这样吧”。",
+          "confidence": 0.0,
+          "reason": "用户未给出明确反馈，且助手未在任务完成后对商家疑问继续简短作答，违反判定标准第2条。",
+          "constraint_id": "official_2_kecheng_C06",
+          "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好' 是正式用语；Turn 3: '我们对直播产品做了升级' 冗长解释；Turn 5: '理解，还是说回直播的事' 正式；Turn 7: '您之前可能没留意' 冗长；Turn 9: '物流我不了解。刚说到发布页' 正式；Turn 11: '不方便透露联系方式。回到正题' 正式；Turn 13: '是，之后发布页分开显示' 正式；Turn 15: '合作细节不便透露。请问您发布课",
+          "confidence": 0.0,
+          "reason": "缺少至少2处口语词（如咱们/嗯/啊/吧/呗/哈），且整体语气正式冗长，违反约束。",
+          "constraint_id": "official_2_kecheng_C07",
+          "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "",
+          "confidence": 1.0,
+          "reason": "全程未出现禁用词",
+          "constraint_id": "official_2_kecheng_C08",
+          "constraint_name": "不说\"好的\"、\"哈哈\"、\"嘿嘿\"、\"嘻嘻\"等语气词。",
+          "verifier_type": "rule_pattern"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "",
+          "confidence": 0.9,
+          "reason": "助手全程未承诺禁止内容",
+          "constraint_id": "official_2_kecheng_C09",
+          "constraint_name": "不能承诺给商家折扣券或优惠券。",
+          "verifier_type": "llm_extract_then_rule"
+        },
+        {
+          "verdict": "na",
+          "evidence": "对话中用户从未表示自己忙，也未出现老板角色说忙的情况，因此约束条件未触发。",
+          "confidence": 1.0,
+          "reason": "约束要求老板说忙后执行特定动作，但对话中无此场景，故不适用。",
+          "constraint_id": "official_2_kecheng_C10",
+          "constraint_name": "若老板说忙，说\"就1分钟，保证简短\"后继续简短说明。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "na",
+          "evidence": "对话中商家（user）从未说“在开车”，因此约束条件未触发。",
+          "confidence": 1.0,
+          "reason": "约束要求商家说“在开车”才触发后续行为，但对话中无此表述。",
+          "constraint_id": "official_2_kecheng_C11",
+          "constraint_name": "若商家说在开车，礼貌说\"那我稍后再打\"后挂断。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 3: '我们对直播产品做了升级，新增了独立的“低延迟直播”选项。' 直接复述了参考话术的核心内容。",
+          "confidence": 1.0,
+          "reason": "[分支型step→LLM兜底] 助手在确认对方是负责人后，立即传达了升级和新增低延迟直播选项的核心信息，完全覆盖步骤要求。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C12",
+          "constraint_name": "S1 **身份确认** - 确认对方是负责人；若不是请其转达。给出参考话术：\"我们对直",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "turn1,7,15 含 ['询问', '问', '临时']",
+          "confidence": 0.9249999999999999,
+          "reason": "匹配关键词 3/4 (75%, 阈值≥2个)",
+          "constraint_id": "official_2_kecheng_C13",
+          "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "turn21,23 含 ['费用']",
+          "confidence": 0.85,
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "constraint_id": "official_2_kecheng_C14",
+          "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 15: '请问您发布课程是走Web控制台、校务系统A还是SaaS系统B？我帮看选项是否显示。' Turn 17: 'Web控制台的话，您进后台看，发布页显示低延迟选项了吗？'",
+          "confidence": 1.0,
+          "reason": "[分支型step→LLM兜底] 助手明确询问了发布方式（Web控制台/校务系统A/SaaS系统B），并引导用户确认前端是否显示选项，完整覆盖了步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C15",
+          "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] Turn 21: '您学员端直播费用已设置了吗？' 用户Turn 22回答未设置，后续Turn 23-24未再执行提醒确认低延迟直播适用该费用的步骤。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 助手仅询问是否设置费用，但未在用户回答未设置后执行'提醒确认低延迟直播也已适用该费用'的核心语义。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C16",
+          "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及“企业微信添加”或“通过验证”等任何相关措辞，也未执行添加企业微信的步骤。",
+          "confidence": 0.0,
+          "reason": "[关键词字面未命中→LLM兜底] 助手全程围绕直播功能讨论，未传达或执行企业微信添加的核心信息。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C17",
+          "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 对话全程未出现“祝其课程顺利、招生满满”或类似祝福语，也未在用户表示结束（Turn 24）时执行结束通话的祝福动作。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 助手未在通话末尾按步骤要求进行祝福，核心语义缺失。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C18",
+          "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23中多次尝试告知核心信息（新增标准直播和低延迟直播选项，鼓励低延迟），但用户持续偏离话题（天气、股票、物流、王老师、政策、云服务商、AI点读等），最终在Turn 24未给出明确反馈（同意/拒绝/接收信息），仅表示“先这样吧”。",
+          "confidence": 0.3,
+          "reason": "用户未给出明确反馈，且助手未完全覆盖任务核心步骤（未明确告知鼓励选择低延迟直播）。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C21",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 24用户明确表示'先这样吧'、'我现在还有事'，但助手未在1-2个turn内收尾，而是继续追问系统选择（Turn 23），且最终对话被截断，无收尾语。",
+          "confidence": 0.0,
+          "reason": "用户多次表达结束意愿（Turn 20、24），助手未及时收尾，且无'再见'等结束语，违反标准1和2。",
+          "constraint_id": "official_2_kecheng_C22",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "FAQ: 价格差异; 助手答: 标准直播费用较低，低延迟略高。",
+          "confidence": 0.85,
+          "reason": "FAQ 答案符合标准",
+          "constraint_id": "official_2_kecheng_C23",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule"
+        }
+      ],
+      "detailed_suggestions": [
+        {
+          "constraint_id": "official_2_kecheng_C16",
+          "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S5",
+          "problem": "缺失流程步骤 S5 的核心动作",
+          "evidence": "[LLM语义兜底] Turn 21: '您学员端直播费用已设置了吗？' 用户Turn 22回答未设置，后续Turn 23-24未再执行提醒确认低延迟直播适用该费用的步骤。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S5 要做的是「**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S5→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S5 核心动作示例: '**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C17",
+          "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S6",
+          "problem": "缺失流程步骤 S6 的核心动作",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及“企业微信添加”或“通过验证”等任何相关措辞，也未执行添加企业微信的步骤。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S6 要做的是「**企业微信添加** - 告知稍后通过企业微信添加，请通过验证。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S6→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S6 核心动作示例: '**企业微信添加** - 告知稍后通过企业微信添加，请通过验证。'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C18",
+          "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S7",
+          "problem": "缺失流程步骤 S7 的核心动作",
+          "evidence": "[LLM语义兜底] 对话全程未出现“祝其课程顺利、招生满满”或类似祝福语，也未在用户表示结束（Turn 24）时执行结束通话的祝福动作。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S7 要做的是「**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S7→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S7 核心动作示例: '**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C01",
+          "constraint_name": "每次回复极简——最多 15-20 个字。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "assistant多次回复超过20字，违反“最多15-20个字”的约束。",
+          "evidence": "Turn 1: 15字; Turn 3: 16字; Turn 5: 22字; Turn 7: 22字; Turn 9: 20字; Turn 11: 22字; Turn 13: 24字; Turn 15: 24字; Turn 17: 22字; Turn 19: 22字; Turn 21: 20字; T",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C02",
+          "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "语言风格",
+          "problem": "语气不够口语化（偏书面/列点/文言）",
+          "evidence": "Turn 1: '您好，请问您是贵培训机构/校区的负责人吗？' 使用'贵'等书面词；Turn 3: '我们对直播产品做了升级' 缺乏口语词；整体未出现'咱们/嗯/啊/吧/呗/哈'等口语词。",
+          "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+          "expected_impact": "修复后 D5 对话质量 +5-8 分",
+          "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C05",
+          "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "助手连续多次发言，未暂停等待商家回应，且未有效引导用户参与对话。",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23连续发言，未给用户回应的机会；且未主动提问让用户参与（如Turn 13提问但被用户忽略）。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C06",
+          "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "用户未给出明确反馈，且助手未在任务完成后对商家疑问继续简短作答，违反判定标准第2条。",
+          "evidence": "用户多次提出无关问题（如天气、股票、物流、王老师、云服务合作等），助手虽尝试回归主题，但未在用户明确同意或拒绝后继续简短作答。用户最终未给出明确反馈（同意/拒绝/接收信息），仅表示“先这样吧”。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C07",
+          "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "语言风格",
+          "problem": "语气不够口语化（偏书面/列点/文言）",
+          "evidence": "Turn 1: '您好' 是正式用语；Turn 3: '我们对直播产品做了升级' 冗长解释；Turn 5: '理解，还是说回直播的事' 正式；Turn 7: '您之前可能没留意' 冗长；Turn 9: '物流我不了解。刚说到发布页' 正式；Turn 11: '不方便透露联系方式。回到正题' 正式；T",
+          "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+          "expected_impact": "修复后 D5 对话质量 +5-8 分",
+          "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C21",
+          "constraint_name": "[META] 任务核心意图完成",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "用户未给出明确反馈，且助手未完全覆盖任务核心步骤（未明确告知鼓励选择低延迟直播）。 [自一致性: 3/3 票, 一致度 100%]",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23中多次尝试告知核心信息（新增标准直播和低延迟直播选项，鼓励低延迟），但用户持续偏离话题（天气、股票、物流、王老师、政策、云服务商、AI点读等），最终在Turn 24未给出明确反馈（同意/拒绝/接收信息），仅表示“先这样吧”。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C22",
+          "constraint_name": "[META] 适时终结对话",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话节奏",
+          "problem": "对话拖沓,用户已表示结束后助手继续追问",
+          "evidence": "Turn 24用户明确表示'先这样吧'、'我现在还有事'，但助手未在1-2个turn内收尾，而是继续追问系统选择（Turn 23），且最终对话被截断，无收尾语。",
+          "how_to_fix": "具体改进方法:\n  1. **识别结束信号**: 用户说'好的/挂了/我先去忙了' → 立即收尾\n  2. **1-2 轮内收尾**: 用'好的,辛苦您/再见/祝顺利'结束\n  3. **不要追问**: 任务完成后不要再问'还有其他需要吗'\n  4. **prompt 加 stop 条件**: 明确何时应该结束对话",
+          "expected_impact": "修复后 D5 对话质量 +5 分",
+          "example": "❌ '还有其他问题吗?...还有要确认的吗?...' → ✅ '好,那这样,再见'"
+        }
+      ],
+      "n_turns": 24,
+      "dialogue": {
+        "dialogue_id": "official_2_kecheng_out_of_scope_live",
+        "instruction_name": "official_2_kecheng",
+        "persona_id": "out_of_scope",
+        "tested_model": "deepseek-v4-flash",
+        "user_model": "deepseek-v4-flash",
+        "turns": [
+          {
+            "turn": 1,
+            "role": "assistant",
+            "content": "您好，请问您是贵培训机构/校区的负责人吗？",
+            "timestamp": "2026-06-06T22:14:06.998739"
+          },
+          {
+            "turn": 2,
+            "role": "user",
+            "content": "是的，我是这里的负责人，请问有什么事吗？",
+            "timestamp": "2026-06-06T22:14:11.674383"
+          },
+          {
+            "turn": 3,
+            "role": "assistant",
+            "content": "我们对直播产品做了升级，新增了独立的“低延迟直播”选项。",
+            "timestamp": "2026-06-06T22:14:15.363955"
+          },
+          {
+            "turn": 4,
+            "role": "user",
+            "content": "哦？低延迟直播...听起来挺厉害的。不过我想问一下，今天天气真好，你们那边天气怎么样？",
+            "timestamp": "2026-06-06T22:14:22.329475"
+          },
+          {
+            "turn": 5,
+            "role": "assistant",
+            "content": "理解，还是说回直播的事。您之前选标准直播，但我们后台其实已为您走低延迟线路，您知道吗？",
+            "timestamp": "2026-06-06T22:14:27.351380"
+          },
+          {
+            "turn": 6,
+            "role": "user",
+            "content": "哈哈，其实我没太关注那些。对了，你们公司股票最近怎么样啊？我看最近科技股涨得不错。",
+            "timestamp": "2026-06-06T22:14:32.644060"
+          },
+          {
+            "turn": 7,
+            "role": "assistant",
+            "content": "您之前可能没留意，我们后台一直临时用低延迟保障您课程质量。现在发布页会分开显示两个选项。",
+            "timestamp": "2026-06-06T22:14:37.854271"
+          },
+          {
+            "turn": 8,
+            "role": "user",
+            "content": "这个技术细节我还真不太懂...不过我有个事想问问，之前另一个业务合作的事能问你吗？就是关于上次那个物流快件的问题。",
+            "timestamp": "2026-06-06T22:14:44.461777"
+          },
+          {
+            "turn": 9,
+            "role": "assistant",
+            "content": "物流我不了解。刚说到发布页会显示两个选项，按课程类型选就行。",
+            "timestamp": "2026-06-06T22:14:50.383537"
+          },
+          {
+            "turn": 10,
+            "role": "user",
+            "content": "好吧好吧，那我不问了。对了，你们团队有没有一个叫王老师的？能告诉我他的联系方式吗？我有个事想找他咨询。",
+            "timestamp": "2026-06-06T22:14:56.112494"
+          },
+          {
+            "turn": 11,
+            "role": "assistant",
+            "content": "不方便透露联系方式。回到正题，低延迟直播延迟低，适合互动，标准直播便宜点。",
+            "timestamp": "2026-06-06T22:15:00.985549"
+          },
+          {
+            "turn": 12,
+            "role": "user",
+            "content": "理解了，不过我倒是觉得现在的直播一直都挺流畅的，没什么问题。既然后台一直都在用低延迟的线路，那我还需要专门去选吗？",
+            "timestamp": "2026-06-06T22:15:07.141241"
+          },
+          {
+            "turn": 13,
+            "role": "assistant",
+            "content": "是，之后发布页分开显示，您得主动选。标准直播便宜，低延迟互动强。您发布课程走哪个系统？",
+            "timestamp": "2026-06-06T22:15:13.247913"
+          },
+          {
+            "turn": 14,
+            "role": "user",
+            "content": "我们用的是自主开发的系统，一直在用。不过我好奇，你们这个改动是不是因为最近政策调整？我还想问下，你们跟哪家云服务商合作的？合同能给我看看吗？",
+            "timestamp": "2026-06-06T22:15:19.370455"
+          },
+          {
+            "turn": 15,
+            "role": "assistant",
+            "content": "合作细节不便透露。请问您发布课程是走Web控制台、校务系统A还是SaaS系统B？我帮看选项是否显示。",
+            "timestamp": "2026-06-06T22:15:26.847950"
+          },
+          {
+            "turn": 16,
+            "role": "user",
+            "content": "我们用的是Web控制台。不过你说的那些技术合作细节，你们居然不能透露？那你们后台到底能给我们提供什么支持？最近听说你们在推AI点读功能，是真的吗？",
+            "timestamp": "2026-06-06T22:15:33.622563"
+          },
+          {
+            "turn": 17,
+            "role": "assistant",
+            "content": "AI点读暂不讨论。Web控制台的话，您进后台看，发布页显示低延迟选项了吗？",
+            "timestamp": "2026-06-06T22:15:38.595090"
+          },
+          {
+            "turn": 18,
+            "role": "user",
+            "content": "哦，我还没仔细看后台呢。行吧，既然你这么关心，我等会儿去看看。不过说实话，我觉得现在这个就挺好用的，没必要折腾那么多。",
+            "timestamp": "2026-06-06T22:15:44.763376"
+          },
+          {
+            "turn": 19,
+            "role": "assistant",
+            "content": "理解。标准直播和低延迟以后是独立选项，您可根据课程自由选，不强求。",
+            "timestamp": "2026-06-06T22:15:50.299778"
+          },
+          {
+            "turn": 20,
+            "role": "user",
+            "content": "好的好的，我明白了。既然不强求，那就先这样吧。不过说真的，你们这个标准直播和低延迟，价格上有什么区别？要是差太多，我还是用标准直播得了。",
+            "timestamp": "2026-06-06T22:15:56.464304"
+          },
+          {
+            "turn": 21,
+            "role": "assistant",
+            "content": "标准直播费用较低，低延迟略高。您学员端直播费用已设置了吗？",
+            "timestamp": "2026-06-06T22:16:00.641783"
+          },
+          {
+            "turn": 22,
+            "role": "user",
+            "content": "学员端费用我还没设呢，这个回头再说吧。对了，我突然想起来，你们跟华为云合作的那个项目，那个效果怎么样？我最近也在考虑换个云服务商。",
+            "timestamp": "2026-06-06T22:16:05.582562"
+          },
+          {
+            "turn": 23,
+            "role": "assistant",
+            "content": "合作细节不便透露。您发布课程用哪个系统？我帮看学员端费用如何设置。",
+            "timestamp": "2026-06-06T22:16:11.934203"
+          },
+          {
+            "turn": 24,
+            "role": "user",
+            "content": "行吧，你们这也太保密了。那我不问了，我们用Web控制台，学员端费用暂时没有设置，改天再说吧。我现在还有事，先这样吧。",
+            "timestamp": "2026-06-06T22:16:18.050828"
+          }
+        ],
+        "metadata": {
+          "end_reason": "max_turns_reached",
+          "total_turns": 24
+        }
+      }
+    },
+    {
+      "dialogue_id": "official_2_kecheng_refuse_persistent_live",
+      "persona_id": "refuse_persistent",
+      "score_report": {
+        "final_score": 26.89,
+        "evaluable": true,
+        "raw_score": 26.89,
+        "ceiling": 30,
+        "ceiling_reason": "Critical通过率38% → 上限30",
+        "dim_scores": {
+          "D1_flow_compliance": 33.33,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 53.85,
+          "D4_knowledge_accuracy": null,
+          "D5_dialogue_quality": 25.0
+        },
+        "critical_pass_rate": 0.375,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "5 条关键约束失败",
+            "constraint_ids": [
+              "official_2_kecheng_C14",
+              "official_2_kecheng_C16",
+              "official_2_kecheng_C17",
+              "official_2_kecheng_C18",
+              "official_2_kecheng_C21"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "official_2_kecheng_C21"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: 14字; Turn 3: 14字; Turn 5: 16字。均未超过20字，但约束要求“每次回复极简——最多15-20个字”，实际所有回复均未超过20字，但“极简”暗示应接近下限，而Turn 5为16字，符合上限，但整体未违反字数限制。",
+          "confidence": 1.0,
+          "reason": "所有回复字数均在15-20字范围内，符合约束的字面要求。",
+          "constraint_id": "official_2_kecheng_C01",
+          "constraint_name": "每次回复极简——最多 15-20 个字。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问您是贵培训机构/校区的负责人吗？' 使用'贵'等书面敬语，不符合口语化要求。",
+          "confidence": 0.0,
+          "reason": "存在书面文言词'贵'，违反第3条标准。",
+          "constraint_id": "official_2_kecheng_C02",
+          "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 3: 助手连续发言，未给用户回应机会；Turn 5: 助手直接结束对话，未主动提问让用户参与。",
+          "confidence": 0.0,
+          "reason": "助手连续发言且未主动提问，违反两条判定标准。",
+          "constraint_id": "official_2_kecheng_C03",
+          "constraint_name": "频繁给商家发言和提问的机会。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "na",
+          "evidence": "对话中用户未打断助手，助手在Turn 5正常结束对话。",
+          "confidence": 1.0,
+          "reason": "无打断场景，约束条件未触发。",
+          "constraint_id": "official_2_kecheng_C04",
+          "constraint_name": "若对话被打断，使用简短过渡语，如\"您刚才提到……\"或\"我刚说到……\"。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 3 助手直接给出信息后，未等待用户回应，Turn 4 用户表示不适，Turn 5 助手直接结束对话，未给用户参与机会。",
+          "confidence": 1.0,
+          "reason": "助手未在给出信息后暂停等待商家回应，且未主动提问让用户参与。",
+          "constraint_id": "official_2_kecheng_C05",
+          "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 3: 助手介绍产品升级；Turn 4: 用户以身体不适拒绝；Turn 5: 助手结束对话。用户未给出明确反馈（同意/拒绝/接收信息），仅表达不适。",
+          "confidence": 0.0,
+          "reason": "用户未给出明确反馈，仅表达不适，不满足判定标准第2条。",
+          "constraint_id": "official_2_kecheng_C06",
+          "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好' 为正式用语；Turn 3: 无口语词；Turn 5: '祝您早日康复' 较正式。全对话仅 Turn 2 有 '嗯'，Turn 4 有 '啊'，口语词不足2处。",
+          "confidence": 0.0,
+          "reason": "口语词仅1处（嗯、啊），不满足至少2处的要求。",
+          "constraint_id": "official_2_kecheng_C07",
+          "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "",
+          "confidence": 1.0,
+          "reason": "全程未出现禁用词",
+          "constraint_id": "official_2_kecheng_C08",
+          "constraint_name": "不说\"好的\"、\"哈哈\"、\"嘿嘿\"、\"嘻嘻\"等语气词。",
+          "verifier_type": "rule_pattern"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "",
+          "confidence": 0.9,
+          "reason": "助手全程未承诺禁止内容",
+          "constraint_id": "official_2_kecheng_C09",
+          "constraint_name": "不能承诺给商家折扣券或优惠券。",
+          "verifier_type": "llm_extract_then_rule"
+        },
+        {
+          "verdict": "na",
+          "evidence": "约束要求老板说忙时，说'就1分钟，保证简短'后继续简短说明。但对话中用户未说忙，而是说身体不舒服（Turn 4），因此约束条件未触发。",
+          "confidence": 1.0,
+          "reason": "用户未表达忙碌，约束条件不满足，故未触发。",
+          "constraint_id": "official_2_kecheng_C10",
+          "constraint_name": "若老板说忙，说\"就1分钟，保证简短\"后继续简短说明。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "na",
+          "evidence": "约束要求商家说在开车，但对话中用户在第4轮说身体不舒服，未提及开车。",
+          "confidence": 1.0,
+          "reason": "约束条件未触发，因为用户未说在开车。",
+          "constraint_id": "official_2_kecheng_C11",
+          "constraint_name": "若商家说在开车，礼貌说\"那我稍后再打\"后挂断。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 1: '请问您是贵培训机构/校区的负责人吗？' 确认对方身份；Turn 3: '直播产品升级了，新增独立的“低延迟直播”选项。' 传达了升级核心信息。",
+          "confidence": 1.0,
+          "reason": "[分支型step→LLM兜底] 助手执行了身份确认并传达了产品升级核心信息，完全覆盖步骤要求。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C12",
+          "constraint_name": "S1 **身份确认** - 确认对方是负责人；若不是请其转达。给出参考话术：\"我们对直",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "turn1 含 ['询问', '问']",
+          "confidence": 0.85,
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "constraint_id": "official_2_kecheng_C13",
+          "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] Turn 3 仅提及“新增独立的低延迟直播选项”，未传达标准直播与低延迟直播的延迟差异、适用场景等核心信息。",
+          "confidence": 0.0,
+          "reason": "[关键词字面未命中→LLM兜底] 未传达步骤要求的延迟对比和适用场景说明。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C14",
+          "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "na",
+          "evidence": "[LLM语义兜底] 对话中用户在第4轮表示身体不适，助手在第5轮结束通话，未进入询问发布方式的环节。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 步骤的触发前提（用户愿意配合）未满足，对话提前终止，未执行该步骤。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C15",
+          "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 对话全程未提及学员端费用、已设置费用或低延迟直播费用相关事宜。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 助手未执行检查学员端费用的核心语义，因用户中断通话而跳过该步骤。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C16",
+          "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及企业微信添加、通过验证或任何相关措辞。",
+          "confidence": 0.0,
+          "reason": "[关键词字面未命中→LLM兜底] 助手未执行步骤要求的核心信息（告知稍后通过企业微信添加并请通过验证）。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C17",
+          "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] Turn 5: '理解，祝您早日康复。后续再联系，先挂断。' 未按步骤要求解答剩余问题或祝课程顺利、招生满满。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 助手在用户表示不适后直接挂断，未执行步骤要求的解答问题或祝福内容。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C18",
+          "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 3: 助手仅提及“新增独立的低延迟直播选项”，未覆盖核心步骤“告知课程发布页面将新增标准直播和低延迟直播两个独立选项”及“鼓励选择低延迟直播”。Turn 4-5: 用户因身体不适未给出明确反馈。",
+          "confidence": 0.3,
+          "reason": "助手未覆盖任务核心步骤的70%，且用户未给出明确反馈。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C21",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 4: 用户表示'身体不舒服，没什么精力配合你'，明确结束意愿。Turn 5: 助手回复'祝您早日康复。后续再联系，先挂断'，含祝福语并自然收尾，无追问。",
+          "confidence": 1.0,
+          "reason": "用户表达不适后，助手在1个turn内以祝福和告别收尾，符合所有判定标准。",
+          "constraint_id": "official_2_kecheng_C22",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "na",
+          "evidence": "",
+          "confidence": 1.0,
+          "reason": "对话中无 FAQ 相关问题",
+          "constraint_id": "official_2_kecheng_C23",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule"
+        }
+      ],
+      "detailed_suggestions": [
+        {
+          "constraint_id": "official_2_kecheng_C14",
+          "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S3",
+          "problem": "缺失流程步骤 S3 的核心动作",
+          "evidence": "[LLM语义兜底] Turn 3 仅提及“新增独立的低延迟直播选项”，未传达标准直播与低延迟直播的延迟差异、适用场景等核心信息。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S3 要做的是「**传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S3→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S3 核心动作示例: '**传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C16",
+          "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S5",
+          "problem": "缺失流程步骤 S5 的核心动作",
+          "evidence": "[LLM语义兜底] 对话全程未提及学员端费用、已设置费用或低延迟直播费用相关事宜。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S5 要做的是「**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S5→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S5 核心动作示例: '**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C17",
+          "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S6",
+          "problem": "缺失流程步骤 S6 的核心动作",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未提及企业微信添加、通过验证或任何相关措辞。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S6 要做的是「**企业微信添加** - 告知稍后通过企业微信添加，请通过验证。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S6→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S6 核心动作示例: '**企业微信添加** - 告知稍后通过企业微信添加，请通过验证。'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C18",
+          "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S7",
+          "problem": "缺失流程步骤 S7 的核心动作",
+          "evidence": "[LLM语义兜底] Turn 5: '理解，祝您早日康复。后续再联系，先挂断。' 未按步骤要求解答剩余问题或祝课程顺利、招生满满。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S7 要做的是「**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S7→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S7 核心动作示例: '**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C01",
+          "constraint_name": "每次回复极简——最多 15-20 个字。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "所有回复字数均在15-20字范围内，符合约束的字面要求。",
+          "evidence": "Turn 1: 14字; Turn 3: 14字; Turn 5: 16字。均未超过20字，但约束要求“每次回复极简——最多15-20个字”，实际所有回复均未超过20字，但“极简”暗示应接近下限，而Turn 5为16字，符合上限，但整体未违反字数限制。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C02",
+          "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "语言风格",
+          "problem": "语气不够口语化（偏书面/列点/文言）",
+          "evidence": "Turn 1: '您好，请问您是贵培训机构/校区的负责人吗？' 使用'贵'等书面敬语，不符合口语化要求。",
+          "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+          "expected_impact": "修复后 D5 对话质量 +5-8 分",
+          "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C03",
+          "constraint_name": "频繁给商家发言和提问的机会。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "助手连续发言且未主动提问，违反两条判定标准。",
+          "evidence": "Turn 3: 助手连续发言，未给用户回应机会；Turn 5: 助手直接结束对话，未主动提问让用户参与。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C05",
+          "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "助手未在给出信息后暂停等待商家回应，且未主动提问让用户参与。",
+          "evidence": "Turn 3 助手直接给出信息后，未等待用户回应，Turn 4 用户表示不适，Turn 5 助手直接结束对话，未给用户参与机会。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C06",
+          "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "用户未给出明确反馈，仅表达不适，不满足判定标准第2条。",
+          "evidence": "Turn 3: 助手介绍产品升级；Turn 4: 用户以身体不适拒绝；Turn 5: 助手结束对话。用户未给出明确反馈（同意/拒绝/接收信息），仅表达不适。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C07",
+          "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "语言风格",
+          "problem": "语气不够口语化（偏书面/列点/文言）",
+          "evidence": "Turn 1: '您好' 为正式用语；Turn 3: 无口语词；Turn 5: '祝您早日康复' 较正式。全对话仅 Turn 2 有 '嗯'，Turn 4 有 '啊'，口语词不足2处。",
+          "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+          "expected_impact": "修复后 D5 对话质量 +5-8 分",
+          "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C21",
+          "constraint_name": "[META] 任务核心意图完成",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "助手未覆盖任务核心步骤的70%，且用户未给出明确反馈。 [自一致性: 3/3 票, 一致度 100%]",
+          "evidence": "Turn 3: 助手仅提及“新增独立的低延迟直播选项”，未覆盖核心步骤“告知课程发布页面将新增标准直播和低延迟直播两个独立选项”及“鼓励选择低延迟直播”。Turn 4-5: 用户因身体不适未给出明确反馈。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        }
+      ],
+      "n_turns": 5,
+      "dialogue": {
+        "dialogue_id": "official_2_kecheng_refuse_persistent_live",
+        "instruction_name": "official_2_kecheng",
+        "persona_id": "refuse_persistent",
+        "tested_model": "deepseek-v4-flash",
+        "user_model": "deepseek-v4-flash",
+        "turns": [
+          {
+            "turn": 1,
+            "role": "assistant",
+            "content": "您好，请问您是贵培训机构/校区的负责人吗？",
+            "timestamp": "2026-06-06T22:16:22.463913"
+          },
+          {
+            "turn": 2,
+            "role": "user",
+            "content": "嗯，是我。请问有什么事吗？",
+            "timestamp": "2026-06-06T22:16:27.140222"
+          },
+          {
+            "turn": 3,
+            "role": "assistant",
+            "content": "直播产品升级了，新增独立的“低延迟直播”选项。",
+            "timestamp": "2026-06-06T22:16:32.082783"
+          },
+          {
+            "turn": 4,
+            "role": "user",
+            "content": "不好意思啊，我今天身体不舒服，没什么精力配合你。",
+            "timestamp": "2026-06-06T22:16:36.992420"
+          },
+          {
+            "turn": 5,
+            "role": "assistant",
+            "content": "理解，祝您早日康复。后续再联系，先挂断。",
+            "timestamp": "2026-06-06T22:16:40.991044"
+          }
+        ],
+        "metadata": {
+          "end_reason": "assistant_initiated",
+          "total_turns": 5
+        }
+      }
+    },
+    {
+      "dialogue_id": "official_2_kecheng_interruption_live",
+      "persona_id": "interruption",
+      "score_report": {
+        "final_score": 45,
+        "evaluable": true,
+        "raw_score": 48.53,
+        "ceiling": 45,
+        "ceiling_reason": "Critical通过率56% → 上限45",
+        "dim_scores": {
+          "D1_flow_compliance": 57.14,
+          "D2_task_completion": 0.0,
+          "D3_constraint_compliance": 40.0,
+          "D4_knowledge_accuracy": 100.0,
+          "D5_dialogue_quality": 75.0
+        },
+        "critical_pass_rate": 0.556,
+        "red_line_violations": [],
+        "suggestions": [
+          {
+            "priority": "P0_CRITICAL",
+            "msg": "4 条关键约束失败",
+            "constraint_ids": [
+              "official_2_kecheng_C15",
+              "official_2_kecheng_C16",
+              "official_2_kecheng_C18",
+              "official_2_kecheng_C21"
+            ]
+          },
+          {
+            "priority": "P1_DIM",
+            "msg": "维度【任务完成度】得分 0.0/100 最低",
+            "constraint_ids": [
+              "official_2_kecheng_C21"
+            ]
+          }
+        ]
+      },
+      "verdict_details": [
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好，请问您是贵培训机构/校区的负责人吗？' (15字); Turn 3: '我们对直播产品做了升级，新增独立的“低延迟直播”选项。' (20字); Turn 5: '低延迟费用略高，标准直播较低。建议互动性强的课用低延迟。' (22字); Turn 7: '具体价格看合同，建议您后台查看。标准直播更便宜，低延迟节点保障强。' (24字); Turn 9: '价格在合同里已标明，",
+          "confidence": 1.0,
+          "reason": "assistant多次回复超过20字，违反'最多15-20个字'的约束。",
+          "constraint_id": "official_2_kecheng_C01",
+          "constraint_name": "每次回复极简——最多 15-20 个字。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 2: '是啊'；Turn 4: '这玩意'；Turn 6: '别磨叽'；Turn 8: '算了'；Turn 10: '懒得翻'；Turn 12: '这个你得说清楚'；Turn 14: '行'；Turn 16: '等等'；Turn 18: '行吧'；Turn 20: '好'；Turn 22: '行'。多处口语词，无列点格式，无书面文言词。",
+          "confidence": 1.0,
+          "reason": "对话包含多个口语词（是啊、行吧、算了等），无列点格式，无书面文言词，符合电话沟通风格。",
+          "constraint_id": "official_2_kecheng_C02",
+          "constraint_name": "使用简短、自然的口语化表达，符合电话沟通风格。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 1、3、5、7、9、11、13、15、17、19、21、23中助手发言后均等待用户回应，且Turn 1、9、15、17、19、21主动提问或邀请用户参与。",
+          "confidence": 1.0,
+          "reason": "助手未连续多次发言，每次发言后给用户回应机会，并多次主动提问，满足两条标准。",
+          "constraint_id": "official_2_kecheng_C03",
+          "constraint_name": "频繁给商家发言和提问的机会。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "na",
+          "evidence": "对话中用户多次催促、打断（如Turn 4、6、8、10、12、14、16），但助手从未使用“您刚才提到...”或“我刚说到...”等过渡语。",
+          "confidence": 1.0,
+          "reason": "存在打断场景，但助手未使用指定过渡语，不符合pass条件；但约束要求“若对话被打断，使用简短过渡语”，此处未使用，应判fail。",
+          "constraint_id": "official_2_kecheng_C04",
+          "constraint_name": "若对话被打断，使用简短过渡语，如\"您刚才提到……\"或\"我刚说到……\"。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23连续发言，未给用户回应的机会；且未主动提问让用户参与（如Turn 3直接陈述，Turn 5建议，Turn 7建议，Turn 9反问但非主动提问）。",
+          "confidence": 0.0,
+          "reason": "助手连续多次发言，未暂停等待商家回应，且未主动提问让用户参与，违反约束。",
+          "constraint_id": "official_2_kecheng_C05",
+          "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "助手覆盖了任务核心步骤：介绍低延迟直播（turn3）、解释费用（turn5）、说明兼容性（turn13）、试用期（turn15）、安排商务联系（turn17-21）。用户最终明确同意（turn20、22）。",
+          "confidence": 1.0,
+          "reason": "助手完成核心步骤且用户给出明确反馈，满足两条判定标准。",
+          "constraint_id": "official_2_kecheng_C06",
+          "constraint_name": "即使任务完成，若商家有疑问，继续简短作答。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 1: '您好' 是正式用语；Turn 3: '我们对直播产品做了升级' 无口语词；Turn 5: '建议互动性强的课用低延迟' 无口语词；整体缺少至少2处口语词（如咱们/嗯/啊/吧/呗/哈）。",
+          "confidence": 0.0,
+          "reason": "对话中口语词不足2处，且多处使用正式表达，违反第1条标准。",
+          "constraint_id": "official_2_kecheng_C07",
+          "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "turn21用了'好的'",
+          "confidence": 1.0,
+          "reason": "出现 1 个禁用词",
+          "constraint_id": "official_2_kecheng_C08",
+          "constraint_name": "不说\"好的\"、\"哈哈\"、\"嘿嘿\"、\"嘻嘻\"等语气词。",
+          "verifier_type": "rule_pattern"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "",
+          "confidence": 0.9,
+          "reason": "助手全程未承诺禁止内容",
+          "constraint_id": "official_2_kecheng_C09",
+          "constraint_name": "不能承诺给商家折扣券或优惠券。",
+          "verifier_type": "llm_extract_then_rule"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "Turn 11: assistant说'就1分钟，低延迟选项之后会显示两个'，但后续未继续简短说明，而是转向其他话题。",
+          "confidence": 1.0,
+          "reason": "约束要求说'就1分钟，保证简短'后继续简短说明，但对话中只说'就1分钟'，未说'保证简短'，且后续未保持简短说明。",
+          "constraint_id": "official_2_kecheng_C10",
+          "constraint_name": "若老板说忙，说\"就1分钟，保证简短\"后继续简短说明。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "na",
+          "evidence": "对话中用户从未说“在开车”，因此约束条件未触发。",
+          "confidence": 1.0,
+          "reason": "约束要求商家说在开车时礼貌回应，但用户未提及开车，故不适用。",
+          "constraint_id": "official_2_kecheng_C11",
+          "constraint_name": "若商家说在开车，礼貌说\"那我稍后再打\"后挂断。",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 1: '请问您是贵培训机构/校区的负责人吗？' 确认身份；Turn 3: '我们对直播产品做了升级，新增独立的“低延迟直播”选项。' 完全覆盖步骤话术。",
+          "confidence": 1.0,
+          "reason": "[分支型step→LLM兜底] 助手先确认对方是负责人，再传达升级信息，语义完整覆盖步骤要求。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C12",
+          "constraint_name": "S1 **身份确认** - 确认对方是负责人；若不是请其转达。给出参考话术：\"我们对直",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "turn1 含 ['询问', '问']",
+          "confidence": 0.85,
+          "reason": "匹配关键词 2/4 (50%, 阈值≥2个)",
+          "constraint_id": "official_2_kecheng_C13",
+          "constraint_name": "S2 **确认是否知情** - 询问：\"您之前选的是标准直播，但我们后台其实已为您走低",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "turn5 含 ['费用']",
+          "confidence": 0.85,
+          "reason": "匹配关键词 1/2 (50%, 阈值≥1个)",
+          "constraint_id": "official_2_kecheng_C14",
+          "constraint_name": "S3 **传达升级内容** - 之后发布页会分开显示两个选项，根据课程类型自行选择即可",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未询问发布方式（Web控制台/校务系统A/SaaS系统B），也未提及前端是否可见或引导开通。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 助手未执行步骤要求的核心动作：询问发布方式或确认前端可见性。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C15",
+          "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 全程未提及“学员端费用”、“已设置费用”或“提醒确认低延迟直播也已适用该费用”。助手仅讨论价格需查合同或联系商务，未执行检查费用或确认适用性的步骤。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 助手未传达或询问任何关于学员端费用设置及低延迟直播费用适用性的核心信息。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C16",
+          "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "[LLM语义兜底] Turn 17: '我让后台加您企业微信沟通'；Turn 19: '今天就让商务同事加您'；Turn 21: '稍后商务加您微信'。",
+          "confidence": 1.0,
+          "reason": "[关键词字面未命中→LLM兜底] 助手明确告知将通过企业微信添加用户，并请求通过验证，完整覆盖步骤核心语义。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C17",
+          "constraint_name": "S6 **企业微信添加** - 告知稍后通过企业微信添加，请通过验证。",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "[LLM语义兜底] 对话全程未涉及按知识库解答剩余问题，也未在结尾祝其课程顺利、招生满满。第23轮仅说“祝您课程顺利”，缺少“招生满满”且未处理剩余问题（如价格、报价单）。",
+          "confidence": 0.0,
+          "reason": "[分支型step→LLM兜底] 步骤要求结束前按知识库解答剩余问题并包含完整祝福语，但助手未解答价格问题，祝福语不完整。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C18",
+          "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+          "verifier_type": "state_tracker"
+        },
+        {
+          "verdict": "fail",
+          "evidence": "助手未明确告知课程发布页将新增'标准直播'和'低延迟直播'两个独立选项（Turn 3仅提低延迟，Turn 11提两个选项但未说明页面位置），未覆盖核心步骤70%。用户最终同意商务联系（Turn 18-22），但未对新增选项本身给出明确反馈。",
+          "confidence": 0.6,
+          "reason": "核心步骤覆盖不足，用户未对新增选项给出明确反馈。 [自一致性: 3/3 票, 一致度 100%]",
+          "constraint_id": "official_2_kecheng_C21",
+          "constraint_name": "[META] 任务核心意图完成",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "Turn 22 user明确表示结束意愿('行，记住今天')，Turn 23 assistant在1个turn内收尾，含'祝您课程顺利'，且无反复追问。",
+          "confidence": 0.95,
+          "reason": "用户结束意愿后助手立即收尾，包含祝福语，未拖延。",
+          "constraint_id": "official_2_kecheng_C22",
+          "constraint_name": "[META] 适时终结对话",
+          "verifier_type": "llm_judge"
+        },
+        {
+          "verdict": "pass",
+          "evidence": "FAQ: 价格差异; 助手答: 低延迟费用略高，标准直播较低。具体价格看合同，建议后台查看。",
+          "confidence": 0.85,
+          "reason": "FAQ 答案符合标准",
+          "constraint_id": "official_2_kecheng_C23",
+          "constraint_name": "[META] FAQ知识正确",
+          "verifier_type": "llm_extract_then_rule"
+        }
+      ],
+      "detailed_suggestions": [
+        {
+          "constraint_id": "official_2_kecheng_C15",
+          "constraint_name": "S4 **确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S4",
+          "problem": "缺失流程步骤 S4 的核心动作",
+          "evidence": "[LLM语义兜底] 整个对话中，助手未询问发布方式（Web控制台/校务系统A/SaaS系统B），也未提及前端是否可见或引导开通。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S4 要做的是「**确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S4→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S4 核心动作示例: '**确认前端是否可见** - 询问发布方式（Web控制台/校务系统A/SaaS系'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C16",
+          "constraint_name": "S5 **检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S5",
+          "problem": "缺失流程步骤 S5 的核心动作",
+          "evidence": "[LLM语义兜底] 全程未提及“学员端费用”、“已设置费用”或“提醒确认低延迟直播也已适用该费用”。助手仅讨论价格需查合同或联系商务，未执行检查费用或确认适用性的步骤。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S5 要做的是「**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S5→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S5 核心动作示例: '**检查学员端费用** - 已设置费用 → 提醒确认低延迟直播也已适用该费用。'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C18",
+          "constraint_name": "S7 **结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结",
+          "priority": "P0_CRITICAL",
+          "severity": "严重",
+          "category": "流程步骤 S7",
+          "problem": "缺失流程步骤 S7 的核心动作",
+          "evidence": "[LLM语义兜底] 对话全程未涉及按知识库解答剩余问题，也未在结尾祝其课程顺利、招生满满。第23轮仅说“祝您课程顺利”，缺少“招生满满”且未处理剩余问题（如价格、报价单）。",
+          "how_to_fix": "具体改进方法:\n  1. **明确步骤目标**: S7 要做的是「**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结」\n  2. **prompt 添加步骤指令**: 在 system prompt 列出完整 S1→S7→... 流程\n  3. **检查触发条件**: 如果是分支(若X则Y), 看用户是否触发了 X\n  4. **加状态记忆**: 让模型记住已走到哪个 step,避免跳步",
+          "expected_impact": "修复后 D1 流程遵循度 +10-15 分",
+          "example": "S7 核心动作示例: '**结束通话** - 按知识库解答剩余问题；若无问题，祝其课程顺利、招生满满，结'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C08",
+          "constraint_name": "不说\"好的\"、\"哈哈\"、\"嘿嘿\"、\"嘻嘻\"等语气词。",
+          "priority": "P1_HIGH",
+          "severity": "中等",
+          "category": "语气词",
+          "problem": "使用了禁用语气词「好的」",
+          "evidence": "turn21用了'好的'",
+          "how_to_fix": "具体改进方法:\n  1. **替换**: 「好的」 → 「嗯/行/收到」\n  2. **prompt 加约束**: 在 system prompt 加'禁用「好的」'\n  3. **输出后过滤**: 模型生成后用正则替换或删除",
+          "expected_impact": "修复后 D3/D5 +2-3 分,提升专业感",
+          "example": "❌ '好的，那我帮您...'  →  ✅ '嗯，那我帮您...'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C01",
+          "constraint_name": "每次回复极简——最多 15-20 个字。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "assistant多次回复超过20字，违反'最多15-20个字'的约束。",
+          "evidence": "Turn 1: '您好，请问您是贵培训机构/校区的负责人吗？' (15字); Turn 3: '我们对直播产品做了升级，新增独立的“低延迟直播”选项。' (20字); Turn 5: '低延迟费用略高，标准直播较低。建议互动性强的课用低延迟。' (22字); Turn 7: '具体价格看合同，建议您",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C05",
+          "constraint_name": "给出信息后，暂停等待商家回应再继续。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "助手连续多次发言，未暂停等待商家回应，且未主动提问让用户参与，违反约束。",
+          "evidence": "助手在Turn 3、5、7、9、11、13、15、17、19、21、23连续发言，未给用户回应的机会；且未主动提问让用户参与（如Turn 3直接陈述，Turn 5建议，Turn 7建议，Turn 9反问但非主动提问）。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C07",
+          "constraint_name": "不使用正式或冗长的解释——保持随意直接。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "语言风格",
+          "problem": "语气不够口语化（偏书面/列点/文言）",
+          "evidence": "Turn 1: '您好' 是正式用语；Turn 3: '我们对直播产品做了升级' 无口语词；Turn 5: '建议互动性强的课用低延迟' 无口语词；整体缺少至少2处口语词（如咱们/嗯/啊/吧/呗/哈）。",
+          "how_to_fix": "具体改进方法:\n  1. **加口语词**: 适当加'咱们/嗯/啊/吧/哈/嘞'\n  2. **去列点**: 不用 '1./2./首先/其次/综上'\n  3. **去文言**: 不用 '兹/便/若/之/望/敬请/务必'\n  4. **短句优先**: 长句拆短,像电话沟通的口语",
+          "expected_impact": "修复后 D5 对话质量 +5-8 分",
+          "example": "❌ '兹通知您参加培训' → ✅ '通知您一下,咱们有个培训'"
+        },
+        {
+          "constraint_id": "official_2_kecheng_C10",
+          "constraint_name": "若老板说忙，说\"就1分钟，保证简短\"后继续简短说明。",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "约束要求说'就1分钟，保证简短'后继续简短说明，但对话中只说'就1分钟'，未说'保证简短'，且后续未保持简短说明。",
+          "evidence": "Turn 11: assistant说'就1分钟，低延迟选项之后会显示两个'，但后续未继续简短说明，而是转向其他话题。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        },
+        {
+          "constraint_id": "official_2_kecheng_C21",
+          "constraint_name": "[META] 任务核心意图完成",
+          "priority": "P2_MEDIUM",
+          "severity": "中等",
+          "category": "对话质量",
+          "problem": "核心步骤覆盖不足，用户未对新增选项给出明确反馈。 [自一致性: 3/3 票, 一致度 100%]",
+          "evidence": "助手未明确告知课程发布页将新增'标准直播'和'低延迟直播'两个独立选项（Turn 3仅提低延迟，Turn 11提两个选项但未说明页面位置），未覆盖核心步骤70%。用户最终同意商务联系（Turn 18-22），但未对新增选项本身给出明确反馈。",
+          "how_to_fix": "参考约束原文,在 prompt 中明确预期",
+          "expected_impact": "修复后该约束 pass",
+          "example": null
+        }
+      ],
+      "n_turns": 23,
+      "dialogue": {
+        "dialogue_id": "official_2_kecheng_interruption_live",
+        "instruction_name": "official_2_kecheng",
+        "persona_id": "interruption",
+        "tested_model": "deepseek-v4-flash",
+        "user_model": "deepseek-v4-flash",
+        "turns": [
+          {
+            "turn": 1,
+            "role": "assistant",
+            "content": "您好，请问您是贵培训机构/校区的负责人吗？",
+            "timestamp": "2026-06-06T22:16:45.599875"
+          },
+          {
+            "turn": 2,
+            "role": "user",
+            "content": "是啊，我是负责人，你哪位？有话快说。",
+            "timestamp": "2026-06-06T22:16:50.720062"
+          },
+          {
+            "turn": 3,
+            "role": "assistant",
+            "content": "我们对直播产品做了升级，新增独立的“低延迟直播”选项。",
+            "timestamp": "2026-06-06T22:16:55.839242"
+          },
+          {
+            "turn": 4,
+            "role": "user",
+            "content": "低延迟直播？这玩意要额外收费吗？直接说价钱！",
+            "timestamp": "2026-06-06T22:17:00.142272"
+          },
+          {
+            "turn": 5,
+            "role": "assistant",
+            "content": "低延迟费用略高，标准直播较低。建议互动性强的课用低延迟。",
+            "timestamp": "2026-06-06T22:17:07.822979"
+          },
+          {
+            "turn": 6,
+            "role": "user",
+            "content": "那你们怎么收费的？给我报个价，别磨叽，我很忙的。",
+            "timestamp": "2026-06-06T22:17:12.631348"
+          },
+          {
+            "turn": 7,
+            "role": "assistant",
+            "content": "具体价格看合同，建议您后台查看。标准直播更便宜，低延迟节点保障强。",
+            "timestamp": "2026-06-06T22:17:18.268099"
+          },
+          {
+            "turn": 8,
+            "role": "user",
+            "content": "节点保障？那能保证不卡顿吗？算了，你先说标准直播套餐价吧！",
+            "timestamp": "2026-06-06T22:17:23.345976"
+          },
+          {
+            "turn": 9,
+            "role": "assistant",
+            "content": "价格在合同里已标明，后台能查。要不先看看？",
+            "timestamp": "2026-06-06T22:17:27.563207"
+          },
+          {
+            "turn": 10,
+            "role": "user",
+            "content": "合同太长了懒得翻，你直接告诉我标准直播多少钱一节课？",
+            "timestamp": "2026-06-06T22:17:33.448700"
+          },
+          {
+            "turn": 11,
+            "role": "assistant",
+            "content": "权限有限，我查不了价格。您后台能看。就1分钟，低延迟选项之后会显示两个。",
+            "timestamp": "2026-06-06T22:17:40.638510"
+          },
+          {
+            "turn": 12,
+            "role": "user",
+            "content": "那能兼容我们现有账号吗？这个你得说清楚！",
+            "timestamp": "2026-06-06T22:17:46.327409"
+          },
+          {
+            "turn": 13,
+            "role": "assistant",
+            "content": "兼容，发布页会并排显示两个选项，选您之前的就行。",
+            "timestamp": "2026-06-06T22:17:53.919085"
+          },
+          {
+            "turn": 14,
+            "role": "user",
+            "content": "行，那试用期多久？两分钟能搞定吗？别让我等！",
+            "timestamp": "2026-06-06T22:17:58.413458"
+          },
+          {
+            "turn": 15,
+            "role": "assistant",
+            "content": "试用期7天，配置只要两分钟。要现在操作吗？",
+            "timestamp": "2026-06-06T22:18:03.841133"
+          },
+          {
+            "turn": 16,
+            "role": "user",
+            "content": "等等，你先别急着操作！到底多少钱啊？报价单发我手机上！",
+            "timestamp": "2026-06-06T22:18:10.790533"
+          },
+          {
+            "turn": 17,
+            "role": "assistant",
+            "content": "价格需联系商务同事。我让后台加您企业微信沟通，行吗？",
+            "timestamp": "2026-06-06T22:18:15.592547"
+          },
+          {
+            "turn": 18,
+            "role": "user",
+            "content": "行吧，但今天能联系上吧？别拖到下周，我性子急！",
+            "timestamp": "2026-06-06T22:18:22.163093"
+          },
+          {
+            "turn": 19,
+            "role": "assistant",
+            "content": "今天就让商务同事加您，保证联系上。",
+            "timestamp": "2026-06-06T22:18:27.185278"
+          },
+          {
+            "turn": 20,
+            "role": "user",
+            "content": "好，那我等着，别让我等太久啊！超过今天我可要投诉了。",
+            "timestamp": "2026-06-06T22:18:32.019119"
+          },
+          {
+            "turn": 21,
+            "role": "assistant",
+            "content": "好的，尽快安排。稍后商务加您微信，联系不上您可再找我。",
+            "timestamp": "2026-06-06T22:18:38.092278"
+          },
+          {
+            "turn": 22,
+            "role": "user",
+            "content": "行，记住今天，明天没收到人我可要找你们领导了！",
+            "timestamp": "2026-06-06T22:18:45.376165"
+          },
+          {
+            "turn": 23,
+            "role": "assistant",
+            "content": "明白，今天就安排。祝您课程顺利！",
+            "timestamp": "2026-06-06T22:18:51.258182"
+          }
+        ],
+        "metadata": {
+          "end_reason": "assistant_initiated",
+          "total_turns": 23
+        }
+      }
+    }
+  ]
+}

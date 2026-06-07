@@ -3,28 +3,23 @@
 
 数据来源: 主页评测后,session 里的 per_dialogue_results
 """
-import json
-import sys
-from pathlib import Path
-
 import streamlit as st
-
-APP_ROOT = Path(__file__).resolve().parent.parent
-if str(APP_ROOT) not in sys.path:
-    sys.path.insert(0, str(APP_ROOT))
-
-from bootstrap import setup_paths
-from config.labels import PERSONAS
-from state.session_keys import DETAIL_DIALOGUES
+import json
 
 st.set_page_config(page_title="单通详查", page_icon="📂", layout="wide")
-setup_paths()
+
+PERSONAS = {
+    "cooperative": "🤝 合作型", "adversarial": "⚔️ 对抗型",
+    "out_of_scope": "🌀 越界提问型", "interruption": "✋ 打断型",
+    "refuse_persistent": "😤 坚持拒绝型", "state_busy": "🚗 状态型",
+    "ambiguous": "🤔 模糊型", "probing": "❓ 提问型",
+}
 
 st.title("📂 单通对话详查")
 st.caption("查看某一通对话的完整内容 + 逐约束判定 + 证据")
 st.markdown("---")
 
-dialogues = st.session_state.get(DETAIL_DIALOGUES, [])
+dialogues = st.session_state.get("detail_dialogues", [])
 
 if not dialogues:
     st.warning("⚠️ 还没有可查看的对话。请先在 **🎯 评测模型** 主页跑一次评测。")
