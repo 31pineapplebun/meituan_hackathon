@@ -8,6 +8,8 @@
 """
 import streamlit as st
 import json
+import os
+import re
 import sys
 import time
 import tempfile
@@ -17,6 +19,14 @@ PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "08_parser"))
 sys.path.insert(0, str(PROJECT_ROOT / "09_pipeline"))
 sys.path.insert(0, str(PROJECT_ROOT / "07_simulator"))
+
+# verifier 的 mock 开关在 verifier 模块 import 时被读取(USE_MOCK 常量), 之后改不动。
+# 这里在任何 verifier 被 import 前定个稳健默认: 有 key → 真实判定, 无 key → mock 预览。
+# 用 setdefault 尊重用户已显式设置的环境变量。
+os.environ.setdefault(
+    "VERIFIER_LLM_MOCK",
+    "0" if (os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY")) else "1",
+)
 
 st.set_page_config(
     page_title="美团对话外呼评测系统",
@@ -230,12 +240,289 @@ def render_model_report(report):
 
 
 # ============================================================
+# 单通对话评测 (评一通已有对话, 而非评模型) —— 复用后端 run_pipeline, 不改后端
+# ============================================================
+GENERIC_RUBRIC_PATH = PROJECT_ROOT / "03_examples" / "generic_qc_rubric.json"
+
+# 对话角色标签 → 统一 role
+_ASST_LABELS = {"客服", "坐席", "外呼", "外呼员", "助手", "客服专员", "客户经理", "站长",
+                "机器人", "ai", "assistant", "a", "agent", "bot", "外呼机器人"}
+_USER_LABELS = {"用户", "客户", "对方", "顾客", "骑手", "商家", "user", "u", "customer", "b"}
+
+
+def _norm_role(label, fallback="user"):
+    s = str(label).strip().lower()
+    if s in _ASST_LABELS:
+        return "assistant"
+    if s in _USER_LABELS:
+        return "user"
+    return fallback
+
+
+def _load_generic_rubric():
+    with open(GENERIC_RUBRIC_PATH, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _normalize_turns(turns):
+    """把任意 turns 列表规整成 {turn, role∈{assistant,user}, content}"""
+    out = []
+    for i, t in enumerate(turns):
+        if not isinstance(t, dict):
+            continue
+        role = _norm_role(t.get("role", t.get("speaker", "")), fallback="user")
+        content = str(t.get("content", t.get("text", ""))).strip()
+        if not content:
+            continue
+        out.append({"turn": t.get("turn", i + 1), "role": role, "content": content})
+    return out
+
+
+def _parse_dialogue_text(text):
+    """把'角色: 内容'文本解析成对话 dict。
+    未知角色标签按出现顺序兜底(外呼场景:先开口的=客服=assistant)。无标签行并入上一轮。
+    """
+    turns = []
+    unknown = []
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        m = re.match(r"^([^:：]{1,12})[:：]\s*(.*)$", line)
+        if not m:
+            if turns:
+                turns[-1]["content"] = (turns[-1]["content"] + " " + line).strip()
+            continue
+        label, content = m.group(1).strip(), m.group(2).strip()
+        if not content:
+            continue
+        s = label.lower()
+        if s in _ASST_LABELS:
+            role = "assistant"
+        elif s in _USER_LABELS:
+            role = "user"
+        else:
+            if s not in unknown:
+                unknown.append(s)
+            role = "assistant" if unknown.index(s) == 0 else "user"
+        turns.append({"turn": len(turns) + 1, "role": role, "content": content})
+    if not turns:
+        return None
+    return {"dialogue_id": "user_pasted", "turns": turns}
+
+
+def _load_dialogue_from_upload(file):
+    """从上传文件解析对话: 支持系统原生 jsonl(一行一个含 turns 的对话)、整文件 JSON、或纯文本。"""
+    raw = file.getvalue().decode("utf-8", errors="replace").strip()
+    if not raw:
+        return None
+    # 整文件 JSON: 一个 dialogue dict 或 turns 列表
+    try:
+        obj = json.loads(raw)
+        if isinstance(obj, dict) and obj.get("turns"):
+            return {"dialogue_id": obj.get("dialogue_id", "uploaded"), "turns": _normalize_turns(obj["turns"])}
+        if isinstance(obj, list):
+            return {"dialogue_id": "uploaded", "turns": _normalize_turns(obj)}
+    except Exception:
+        pass
+    # JSONL: 取第一条含 turns 的对话
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+            if isinstance(obj, dict) and obj.get("turns"):
+                return {"dialogue_id": obj.get("dialogue_id", "uploaded"), "turns": _normalize_turns(obj["turns"])}
+        except Exception:
+            continue
+    # 兜底: 当成"角色: 内容"文本
+    return _parse_dialogue_text(raw)
+
+
+_VERDICT_CN = {"pass": "✅ pass", "fail": "❌ fail", "na": "➖ na",
+               "not_implemented": "⚪ 未判定", "error": "⚠️ error"}
+
+
+def render_single_dialogue(output, rubric_label, dialogue):
+    """渲染单通对话评测结果: P3 分 + 5 维 + 逐约束判定 + 对话回放"""
+    sr = output.get("score_report", {})
+    vds = output.get("verdict_details", [])
+    score = sr.get("final_score")
+    st.markdown("---")
+    st.markdown("## 📋 这通对话的评测结果")
+
+    if score is None:
+        st.error("无法对这通对话评分(可能对话为空, 或全部约束 na/未判定)。"
+                 "若用的是内置通用标准, 多数约束需真实 LLM 判定 → 请设置 DEEPSEEK_API_KEY 后重跑。")
+    else:
+        c1, c2, grade = grade_color(score)
+        st.markdown(f"""
+        <div style="background: linear-gradient(135deg, {c1} 0%, {c2} 100%);
+                    padding: 30px; border-radius: 18px; text-align: center; color: white;
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+            <div style="font-size: 14px; opacity: 0.85;">评分标尺: {rubric_label}</div>
+            <div style="font-size: 64px; font-weight: 900; line-height: 1.1;">{score}<span style="font-size: 24px;"> / 100</span></div>
+            <div style="display: inline-block; padding: 4px 20px; background: rgba(255,255,255,0.25);
+                        border-radius: 18px; font-size: 15px; margin-top: 8px;">{grade}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # 5 维度
+    dims = sr.get("dim_scores", {})
+    cols = st.columns(5)
+    for i, (k, label) in enumerate(DIM_SHORT.items()):
+        with cols[i]:
+            v = dims.get(k)
+            st.metric(label, "—" if v is None else f"{v:.0f}")
+
+    # 逐约束判定分布 + 表
+    from collections import Counter
+    dist = Counter(v.get("verdict") for v in vds)
+    st.caption("逐约束判定: " + " · ".join(f"{_VERDICT_CN.get(k, k)}×{n}" for k, n in dist.items()))
+    import pandas as pd
+    rows = [{
+        "约束": (v.get("constraint_name", "") or "")[:34],
+        "判定": _VERDICT_CN.get(v.get("verdict"), v.get("verdict")),
+        "Verifier": VERIFIER_SHORT.get(v.get("verifier_type"), v.get("verifier_type")),
+        "理由/证据": (str(v.get("reason", "")) + " " + str(v.get("evidence", ""))).strip()[:100],
+    } for v in vds]
+    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    st.caption("说明: na=约束在该对话未触发; 未判定=mock 模式下主观约束无法离线判(设 key 真跑可消除)。")
+
+    with st.expander("💬 查看这通对话原文"):
+        for t in dialogue.get("turns", []):
+            who = "🧑‍💼 客服" if t.get("role") == "assistant" else "🙋 用户"
+            st.markdown(f"**{who}**(turn{t.get('turn')}): {t.get('content', '')}")
+
+    st.download_button("📥 下载评测结果 (JSON)",
+                       json.dumps(output, ensure_ascii=False, indent=2),
+                       file_name="single_dialogue_eval.json", mime="application/json")
+
+
+def render_single_dialogue_flow():
+    """单通对话评测主流程: ①定评分标尺(任务指令/通用标准) → ②给一通对话 → ③评测"""
+    st.markdown("### 1️⃣ 评分标尺")
+    rubric_mode = st.radio(
+        "评分标尺来源",
+        ["📐 按某个任务指令评 (精确, 贴题眼, 推荐)", "🆓 用内置通用外呼质检标准评 (只给对话)"],
+        label_visibility="collapsed", key="sd_rubric_mode",
+    )
+    instruction = None
+    rubric_label = ""
+
+    if rubric_mode.startswith("📐"):
+        src = st.radio("指令来源", ["📚 预置指令", "✍️ 自定义 / 上传指令"],
+                       horizontal=True, key="sd_instr_src")
+        if src.startswith("📚"):
+            label = st.selectbox("任务指令", list(INSTRUCTIONS.keys()), key="sd_preset")
+            instruction = load_parsed(INSTRUCTIONS[label])
+            rubric_label = label
+        else:
+            up = st.file_uploader("上传指令 (.md/.txt)", type=["md", "txt"], key="sd_instr_up")
+            pasted = st.text_area("或粘贴任务指令 (Markdown)", height=160, key="sd_instr_text",
+                                  placeholder="# Task ...\n# Constraints ...\n# Call Flow ...")
+            md_text = up.getvalue().decode("utf-8", errors="replace") if up is not None else pasted
+            if md_text.strip():
+                try:
+                    parse_instruction = _load_parse_instruction()
+                    with st.spinner("解析指令、拆约束…"):
+                        instruction = parse_instruction(md_text, instruction_id="CUSTOM",
+                                                        instruction_name="自定义指令", mock=True).to_dict()
+                    rubric_label = "自定义指令"
+                except Exception as e:
+                    st.error(f"指令解析失败: {e}")
+                    instruction = None
+        if instruction and instruction.get("atomic_constraints"):
+            st.success(f"✓ 评分标尺: **{rubric_label}** · 共 {len(instruction['atomic_constraints'])} 条约束")
+        elif instruction is not None:
+            st.warning("该指令没解析出约束, 换一个或检查格式。")
+            instruction = None
+    else:
+        instruction = _load_generic_rubric()
+        rubric_label = "内置通用外呼质检标准"
+        st.info(f"将用**内置通用外呼质检标准**(共 {len(instruction['atomic_constraints'])} 条: "
+                "开场身份/礼貌/口语化/避免重复/准确回应/推进/让出话轮/适时收尾)评这通对话。\n\n"
+                "⚠️ 这评的是**通话本身质量**, 不是是否遵守某个具体任务指令 —— "
+                "评不出任务专属违规(字数限制/必经流程/任务禁用词)。多数约束需真实 LLM 判定(建议设 key)。")
+
+    st.markdown("### 2️⃣ 给一通对话")
+    up_d = st.file_uploader("上传对话 (.jsonl/.json, 系统原生格式)", type=["jsonl", "json", "txt"], key="sd_dlg_up")
+    pasted_d = st.text_area(
+        "或直接粘贴对话 (每行 “客服: …” / “用户: …”)", height=200, key="sd_dlg_text",
+        placeholder="客服: 喂您好，是张师傅吗？我是美团客服小王，跟您说个事…\n用户: 是的，啥事\n客服: 就是…",
+    )
+    dialogue = None
+    if up_d is not None:
+        dialogue = _load_dialogue_from_upload(up_d)
+    elif pasted_d.strip():
+        dialogue = _parse_dialogue_text(pasted_d)
+
+    if dialogue and dialogue.get("turns"):
+        n = len(dialogue["turns"])
+        na = sum(1 for t in dialogue["turns"] if t["role"] == "assistant")
+        st.success(f"✓ 已解析 **{n} 轮**对话 (客服 {na} 轮 / 用户 {n - na} 轮)")
+        with st.expander("预览解析结果 (确认角色分对了)"):
+            for t in dialogue["turns"][:14]:
+                who = "🧑‍💼客服" if t["role"] == "assistant" else "🙋用户"
+                st.caption(f"{t['turn']}. {who}: {t['content'][:90]}")
+    elif (up_d is not None) or pasted_d.strip():
+        st.warning("没解析出对话轮次。粘贴请每行用“角色: 内容”; 上传请用含 turns 的 jsonl。")
+
+    st.markdown("### 3️⃣ 评测这通对话")
+    if st.button("🔍 评测这通对话", type="primary", use_container_width=True):
+        if not (instruction and instruction.get("atomic_constraints")):
+            st.error("请先确定评分标尺(选任务指令 或 用内置通用标准)。")
+            return
+        if not (dialogue and dialogue.get("turns")):
+            st.error("请先给一通可解析的对话。")
+            return
+        has_key = bool(os.getenv("DEEPSEEK_API_KEY"))
+        os.environ["VERIFIER_LLM_MOCK"] = "0" if has_key else "1"
+        os.environ.setdefault("VERIFIER_LLM_MODEL", "deepseek-v4-flash")
+        if not has_key:
+            st.warning("未检测到 DEEPSEEK_API_KEY → mock 预览模式: 主观/通用约束(llm_judge)多会显示“未判定”。"
+                       "要拿到完整逐约束判定, 请在启动 streamlit 的终端设好 key 再重跑。")
+        with st.status("正在逐约束评测这通对话…", expanded=True) as box:
+            try:
+                from pipeline import run_pipeline
+                t0 = time.time()
+                output = run_pipeline(instruction, dialogue)
+                box.update(label=f"✅ 评测完成 · 用时 {int(time.time() - t0)}s", state="complete", expanded=False)
+                st.session_state["sd_output"] = output
+                st.session_state["sd_rubric_label"] = rubric_label
+                st.session_state["sd_dialogue"] = dialogue
+            except Exception as e:
+                box.update(label="❌ 评测失败", state="error", expanded=True)
+                st.error(f"评测失败: {e}")
+                st.exception(e)
+
+    if "sd_output" in st.session_state:
+        render_single_dialogue(st.session_state["sd_output"],
+                               st.session_state.get("sd_rubric_label", ""),
+                               st.session_state.get("sd_dialogue", {}))
+
+
+# ============================================================
 # 主流程
 # ============================================================
-st.title("🎯 评测模型 — 一站式指令遵循能力评估")
-st.caption("输入任务指令 + 选择待测模型 → 自动模拟多场景对话并评测 → 产出模型能力画像")
+st.title("🎯 对话外呼指令遵循自动评测系统")
+st.caption("评测一个模型(自动模拟多场景对话) · 或 评测一通已有对话(直接评你给的对话)")
+
+# ---- 顶层: 你要做什么 ----
+flow_mode = st.radio(
+    "你要做什么?",
+    ["🤖 评测一个模型 (给指令 → 系统自动生成多场景对话再评 → 模型能力画像)",
+     "📋 评测一通已有对话 (直接评你粘贴/上传的对话)"],
+    key="flow_mode",
+)
 st.markdown("---")
 
+if flow_mode.startswith("📋"):
+    render_single_dialogue_flow()
+    st.stop()
+
+# ===== 以下为「评测一个模型」流程 =====
 # ---- 第 1 步: 选指令 (预置 / 自定义 二选一, 对齐赛题"用户输入任务指令") ----
 st.markdown("### 1️⃣ 选择任务指令")
 input_mode = st.radio(

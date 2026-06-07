@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "instruction_id": "GENERIC_QC",
+    "instruction_name": "通用外呼质检标准",
+    "task": "对一通外呼/客服通话做通用质量质检：评的是‘这通通话本身好不好’（开场、礼貌、口语化、回应、推进、收尾等通用维度），而非是否遵守某个具体任务指令。因此评不出任务专属违规（如字数限制、必经流程、任务禁用词）。",
+    "note": "这是内置的、任务无关的通用质检 rubric，用于‘只给对话、不给任务指令’的单通评测。约束尽量映射到 llm_judge 已知子类型，真实模式下逐条由 LLM 判定。"
+  },
+  "atomic_constraints": [
+    {
+      "id": "GQ_C01",
+      "name": "开场表明身份与来意",
+      "source_text": "客服在开场（前 1-2 轮）是否表明了自己的身份（如‘我是美团客服/站长/客户经理’或所属机构）并说明了本次来电的目的/事由。pass=身份与来意都清楚；fail=未表明身份或未说明来意；na=对话过短无法判断。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "llm_judge",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "GQ_C02",
+      "name": "全程礼貌，无冒犯、威胁、辱骂或不当用语",
+      "source_text": "客服全程是否保持礼貌、专业，无冒犯/威胁/辱骂/歧视/欺骗诱导等不当用语。pass=全程得体；fail=出现任何明显冒犯、威胁、辱骂或不当表达。这是关键项。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "is_critical": true,
+      "weight": 3
+    },
+    {
+      "id": "GQ_C03",
+      "name": "表达口语化、自然不书面",
+      "source_text": "客服语言是否口语化、自然、像正常打电话沟通，而不是念稿、书面腔或列点 1./2.。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "is_critical": false,
+      "weight": 1
+    },
+    {
+      "id": "GQ_C04",
+      "name": "避免重复啰嗦、不机械复读",
+      "source_text": "客服是否避免反复重复同一信息、机械复读同样的句子，表达是否灵活。",
+      "scoring_dimension": "D5_dialogue_quality",
+      "verifier": "llm_judge",
+      "is_critical": false,
+      "weight": 1
+    },
+    {
+      "id": "GQ_C05",
+      "name": "准确回应用户的提问与异议",
+      "source_text": "当用户提出问题、疑虑或异议时，客服是否给出了切题、准确、不回避的回应。pass=都有切题回应；fail=明显答非所问、回避或答错；na=用户全程没有提问或异议。",
+      "scoring_dimension": "D4_knowledge_accuracy",
+      "verifier": "llm_judge",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "GQ_C06",
+      "name": "推进外呼任务核心意图，不答非所问",
+      "source_text": "客服是否围绕本次通话的核心目的有效推进（传达信息/确认/办理等），而不是跑题、闲聊或无效绕圈，最终用户给出了明确反馈。",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "llm_judge",
+      "is_critical": false,
+      "weight": 2
+    },
+    {
+      "id": "GQ_C07",
+      "name": "关键信息后给用户发言机会（适当让出话轮）",
+      "source_text": "客服在说完关键信息后是否给用户回应的机会（如提问式暂停‘您看可以吗/对吗’），而不是连续大段独白不给用户开口。",
+      "scoring_dimension": "D1_flow_compliance",
+      "verifier": "llm_judge",
+      "is_critical": false,
+      "weight": 1
+    },
+    {
+      "id": "GQ_C08",
+      "name": "适时礼貌收尾、结束通话",
+      "source_text": "在事情说清、用户无更多问题后，客服是否适时、礼貌地收尾结束通话（含‘再见/谢谢/辛苦了/祝…’等），而不是拖延或反复追问‘还有其他需要吗’。若对话被用户主动中断/系统截断且末轮已表达收尾意图，可判 pass。",
+      "scoring_dimension": "D2_task_completion",
+      "verifier": "llm_judge",
+      "is_critical": false,
+      "weight": 1
+    }
+  ],
+  "faq_items": [],
+  "flow_steps": []
+}
