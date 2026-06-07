@@ -140,13 +140,11 @@ python pipeline.py \
 ### 演示路径 (评委 5 分钟体验)
 
 ```
-Tab 1 上传指令      选"🏢 官方 Sample 1"  →  解析出 15 条约束 + 5 类 verifier 饼图
-       ↓
-Tab 2 用户模拟器    选 "🏢 官方 sample 1" + "⚔️ 对抗型"  →  生成挑刺型用户对话
-       ↓
-Tab 3 评测         选"💬 用模拟器刚生成的" + LLM 模式  →  30 秒出 5 维度评分
-       ↓
-Tab 4 报告         评分卡 + 雷达图 + 优化建议  →  下载 JSON / MD / HTML
+主页 app.py 一站式流程:
+  1) 选择指令  → 自动展示约束分布
+  2) 选择模型 + persona 场景
+  3) 一键评测  → 生成模型能力画像
+  4) 查看单通详查页  → 展示逐约束证据
 ```
 
 ---
@@ -205,14 +203,11 @@ meituan_eval/
 │   ├── official_demo/                    # 官方 sample 演示对话 + 报告
 │   └── batch_results/                    # 1055 verdict + 三路对照结果
 │
-└── 10_streamlit_app/           # Streamlit UI (5 Tab)
+└── 10_streamlit_app/           # Streamlit UI (单页主流程 + 2 子页)
     ├── app.py
     └── pages/
-        ├── 1_📋_上传指令.py
-        ├── 2_💬_用户模拟器.py
-        ├── 3_🧪_评测.py
-        ├── 4_📊_报告.py
-        └── 5_📖_关于.py
+        ├── 1_📂_单通详查.py
+        └── 2_📖_关于.py
 ```
 
 ---
