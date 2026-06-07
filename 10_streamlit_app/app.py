@@ -37,12 +37,33 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    .main { padding-top: 1rem; }
-    div[data-testid="stMetricValue"] { font-size: 28px; }
-    .step-box {
-        background: #f8fafc; border-left: 4px solid #667eea;
-        padding: 8px 16px; border-radius: 8px; margin: 8px 0;
+    /* ===== 全局: 系统字体 + 浅灰底, 收窄内容宽度增加留白 ===== */
+    html, body, [class*="css"] {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                     "Microsoft YaHei", "Source Han Sans SC", sans-serif;
     }
+    [data-testid="stAppViewContainer"] { background: #f6f7f9; }
+    .block-container { padding-top: 2.0rem; padding-bottom: 3rem; max-width: 1080px; }
+    h1, h2, h3, h4, h5 { color: #1a2233; letter-spacing: -0.2px; }
+    hr { margin: 1.1rem 0; border-color: #e8ebf0; }
+
+    /* ===== 侧边栏: 干净浅色 + 细分隔线 ===== */
+    section[data-testid="stSidebar"] { background: #ffffff; border-right: 1px solid #eceff3; }
+
+    /* ===== Metric: 深蓝数字 + 灰标签 ===== */
+    [data-testid="stMetricValue"] { font-size: 24px; font-weight: 800; color: #1a2233; }
+    [data-testid="stMetricLabel"] { color: #6b7585; font-weight: 600; }
+
+    /* ===== 主按钮: 深蓝(替换默认红, 去"默认感") ===== */
+    .stButton > button[kind="primary"], button[data-testid="baseButton-primary"] {
+        background: #1a2233; color: #ffffff; border: none; border-radius: 10px;
+        font-weight: 600; letter-spacing: 0.3px; box-shadow: 0 2px 10px rgba(26,34,51,0.20);
+    }
+    .stButton > button[kind="primary"]:hover, button[data-testid="baseButton-primary"]:hover {
+        background: #2a3650; color: #ffffff;
+    }
+    .stButton > button { border-radius: 10px; }
+    [data-testid="stExpander"] { border: 1px solid #eceff3; border-radius: 12px; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -541,47 +562,67 @@ def render_rough_sim_flow():
 # ============================================================
 # 主流程
 # ============================================================
-# ---- 侧边栏: 项目品牌 + 能力/可靠性看板 (让评委一眼看出专业度) ----
+# ---- 侧边栏: 极简高级品牌看板 (留白 + 细金线 + 克制配色, 无渐变) ----
 with st.sidebar:
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                padding: 18px 16px; border-radius: 14px; color: white; margin-bottom: 16px;
-                box-shadow: 0 4px 14px rgba(102,126,234,0.40);">
-        <div style="font-size: 20px; font-weight: 800; line-height: 1.25;">🎯 外呼指令遵循<br>自动评测系统</div>
-        <div style="font-size: 11px; opacity: 0.92; margin-top: 7px; letter-spacing: 0.3px;">
-            Instruction-Following Evaluation<br>for Outbound-Call Dialogue</div>
+    <div style="padding: 4px 2px;">
+      <div style="height:3px;width:40px;background:#b8860b;border-radius:2px;margin-bottom:16px;"></div>
+      <div style="font-size:17px;font-weight:700;color:#1a2233;line-height:1.35;">外呼指令遵循<br>评测系统</div>
+      <div style="font-size:10px;color:#9aa3b2;letter-spacing:1.8px;margin-top:7px;">INSTRUCTION-FOLLOWING&nbsp;EVAL</div>
+
+      <div style="margin-top:28px;font-size:11px;color:#9aa3b2;letter-spacing:2px;font-weight:600;">核心能力</div>
+      <div style="margin-top:10px;color:#3d4759;font-size:13px;line-height:2.05;">
+        5 类 Verifier 分层判定<br>
+        8 Persona 用户模拟<br>
+        P3 三层评分 · 模型画像<br>
+        23 类约束体系
+      </div>
+
+      <div style="margin-top:28px;font-size:11px;color:#9aa3b2;letter-spacing:2px;font-weight:600;">评测可靠性</div>
+      <div style="margin-top:12px;display:flex;gap:24px;">
+        <div>
+          <div style="font-size:24px;font-weight:800;color:#1a2233;line-height:1;">0.81</div>
+          <div style="font-size:11px;color:#9aa3b2;margin-top:4px;">三路 LLM&nbsp;κ</div>
+        </div>
+        <div>
+          <div style="font-size:24px;font-weight:800;color:#1a2233;line-height:1;">81.8%</div>
+          <div style="font-size:11px;color:#9aa3b2;margin-top:4px;">人机一致率</div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;padding-top:14px;border-top:1px solid #e8ebf0;
+                  font-size:11px;color:#aab2c0;letter-spacing:0.3px;">美团黑客松 · 命题二</div>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("##### 🧩 核心能力")
-    st.markdown(
-        "- **5 类 Verifier** 分层判定 · 省 ~60% LLM 成本\n"
-        "- **8 Persona** 用户模拟器\n"
-        "- **P3 三层评分** · 加权 / Critical 钳制 / 红线\n"
-        "- **23 类约束** 体系 → 模型级能力画像")
+# ---- 主页 Hero: 克制排版(细金线 + 无渐变) ----
+st.markdown("""
+<div style="padding: 6px 0 2px;">
+  <div style="height:3px;width:52px;background:#b8860b;border-radius:2px;margin-bottom:14px;"></div>
+  <div style="font-size:30px;font-weight:800;color:#1a2233;letter-spacing:-0.6px;line-height:1.2;">
+    对话外呼指令遵循 · 自动评测系统</div>
+  <div style="font-size:14px;color:#6b7585;margin-top:9px;">
+    输入任务指令或对话 &nbsp;→&nbsp; 自动模拟 / 评测 &nbsp;→&nbsp; 可解释的模型能力画像</div>
+</div>
+""", unsafe_allow_html=True)
 
-    st.markdown("##### 📊 评测可靠性 (Kappa)")
-    _ms1, _ms2 = st.columns(2)
-    _ms1.metric("客观约束", "1.00")
-    _ms2.metric("三路 LLM 互查", "0.81")
-    _ms1.metric("人机一致率", "81.8%")
-    _ms2.metric("D3 约束遵循", "0.84")
-
-    st.markdown("##### ⚙️ 工程可靠性")
-    st.caption("LLM 重试 · seed 可复现 · 结果缓存 · 并发评测 · 自一致性投票 · 鲁棒 JSON 解析 · 同义词容错")
-
-    st.divider()
-    st.caption("美团黑客松 · 命题二 — 对话外呼任务指令遵循自动评测")
-
-st.title("🎯 对话外呼指令遵循自动评测系统")
-st.caption("预置指令 → 自动模拟多场景对话评测出模型画像 · 或 自定义(直接给对话 / 给大致描述模拟)评单通")
-
-# ---- 顶部能力数字条 (专业看板感) ----
-_hc = st.columns(4)
-_hc[0].metric("约束分类体系", "23 类")
-_hc[1].metric("Verifier 分层", "5 类")
-_hc[2].metric("用户模拟 Persona", "8 种")
-_hc[3].metric("三路 LLM 互查 κ", "0.81")
+# ---- 能力数字条: 干净白卡 ----
+st.markdown("""
+<div style="display:flex;gap:12px;margin:22px 0 8px;">
+  <div style="flex:1;background:#fff;border:1px solid #eceff3;border-radius:12px;padding:14px 16px;">
+    <div style="font-size:22px;font-weight:800;color:#1a2233;">23<span style="font-size:13px;font-weight:600;color:#6b7585;"> 类</span></div>
+    <div style="font-size:12px;color:#9aa3b2;margin-top:3px;">约束分类体系</div></div>
+  <div style="flex:1;background:#fff;border:1px solid #eceff3;border-radius:12px;padding:14px 16px;">
+    <div style="font-size:22px;font-weight:800;color:#1a2233;">5<span style="font-size:13px;font-weight:600;color:#6b7585;"> 类</span></div>
+    <div style="font-size:12px;color:#9aa3b2;margin-top:3px;">Verifier 分层</div></div>
+  <div style="flex:1;background:#fff;border:1px solid #eceff3;border-radius:12px;padding:14px 16px;">
+    <div style="font-size:22px;font-weight:800;color:#1a2233;">8<span style="font-size:13px;font-weight:600;color:#6b7585;"> 种</span></div>
+    <div style="font-size:12px;color:#9aa3b2;margin-top:3px;">用户模拟 Persona</div></div>
+  <div style="flex:1;background:#fff;border:1px solid #eceff3;border-radius:12px;padding:14px 16px;">
+    <div style="font-size:22px;font-weight:800;color:#b8860b;">0.81</div>
+    <div style="font-size:12px;color:#9aa3b2;margin-top:3px;">三路 LLM 互查 κ</div></div>
+</div>
+""", unsafe_allow_html=True)
 st.markdown("---")
 
 # ---- 第 1 步: 选择任务指令来源 ----
