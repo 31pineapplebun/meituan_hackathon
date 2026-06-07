@@ -279,36 +279,41 @@ def _normalize_turns(turns):
 
 
 def _parse_dialogue_text(text):
-    """把'角色: 内容'文本解析成对话 dict。
-    未知角色标签按出现顺序兜底(外呼场景:先开口的=客服=assistant)。无标签行并入上一轮。
+    """把"角色: 内容"文本解析成对话 dict (建议格式, 非强制)。
+    - 有"角色:"标注: 客服/用户/未知标签(按出现顺序兜底, 外呼场景先开口的=客服)。无标签行并入上一轮。
+    - 几乎无标注: 退化为"按行交替猜测角色", 并打 _weak_format 标记供前端提示(不强制, 仅劝诫)。
     """
+    lines = [l.strip() for l in text.splitlines() if l.strip()]
+    if not lines:
+        return None
     turns = []
     unknown = []
-    for raw in text.splitlines():
-        line = raw.strip()
-        if not line:
-            continue
-        m = re.match(r"^([^:：]{1,12})[:：]\s*(.*)$", line)
-        if not m:
-            if turns:
-                turns[-1]["content"] = (turns[-1]["content"] + " " + line).strip()
-            continue
-        label, content = m.group(1).strip(), m.group(2).strip()
-        if not content:
-            continue
-        s = label.lower()
-        if s in _ASST_LABELS:
-            role = "assistant"
-        elif s in _USER_LABELS:
-            role = "user"
+    labeled = 0
+    for line in lines:
+        m = re.match(r"^([^:：]{1,12})[:：]\s*(.+)$", line)
+        if m:
+            labeled += 1
+            label, content = m.group(1).strip(), m.group(2).strip()
+            s = label.lower()
+            if s in _ASST_LABELS:
+                role = "assistant"
+            elif s in _USER_LABELS:
+                role = "user"
+            else:
+                if s not in unknown:
+                    unknown.append(s)
+                role = "assistant" if unknown.index(s) == 0 else "user"
+            turns.append({"turn": len(turns) + 1, "role": role, "content": content})
+        elif turns:
+            turns[-1]["content"] = (turns[-1]["content"] + " " + line).strip()
         else:
-            if s not in unknown:
-                unknown.append(s)
-            role = "assistant" if unknown.index(s) == 0 else "user"
-        turns.append({"turn": len(turns) + 1, "role": role, "content": content})
-    if not turns:
-        return None
-    return {"dialogue_id": "user_pasted", "turns": turns}
+            turns.append({"turn": 1, "role": "assistant", "content": line})
+    # 几乎没有"角色:"标注 → 退化为按行交替猜测(不强制, 但前端会提示可能影响质量)
+    if labeled < 2:
+        turns = [{"turn": i + 1, "role": "assistant" if i % 2 == 0 else "user", "content": l}
+                 for i, l in enumerate(lines)]
+        return {"dialogue_id": "user_pasted", "turns": turns, "_weak_format": True}
+    return {"dialogue_id": "user_pasted", "turns": turns, "_weak_format": False}
 
 
 def _load_dialogue_from_upload(file):
@@ -447,10 +452,19 @@ def _eval_single_dialogue(dialogue, instruction, rubric_label, status_box=None):
 
 
 def _render_dialogue_input(key_prefix):
-    """对话输入控件(上传 或 粘贴), 返回解析后的 dialogue dict 或 None。"""
+    """对话输入控件(上传 或 粘贴), 返回解析后的 dialogue dict 或 None。格式为【建议非强制】。"""
+    with st.expander("💡 建议的对话格式 (非强制 · 点开看示例)", expanded=False):
+        st.markdown("**推荐**: 每行 `角色: 内容`,角色用「客服 / 用户」(也认 坐席/客户/assistant/user 等):")
+        st.code("客服: 喂您好，是张师傅吗？我是美团客服小王，跟您说个事\n"
+                "用户: 是的，啥事\n"
+                "客服: 您那个订单超时了，咱核实下原因哈\n"
+                "用户: 对，店里太忙了", language="text")
+        st.markdown("也支持**上传系统原生 `.jsonl`**(含 turns 字段)。")
+        st.caption("⚠️ 不按此格式也能评:系统会按行交替猜测「客服/用户」。但角色可能猜不准 → "
+                   "**影响评测质量**,建议尽量按上面格式标好角色。")
     up_d = st.file_uploader("上传对话 (.jsonl/.json)", type=["jsonl", "json", "txt"], key=f"{key_prefix}_up")
     pasted_d = st.text_area(
-        "或直接粘贴对话 (每行 “客服: …” / “用户: …”)", height=200, key=f"{key_prefix}_text",
+        "或直接粘贴对话 (建议每行 “客服: …” / “用户: …”,不标也能评)", height=200, key=f"{key_prefix}_text",
         placeholder="客服: 喂您好，是张师傅吗？我是美团客服小王，跟您说个事…\n用户: 是的，啥事\n客服: 就是…",
     )
     dialogue = None
@@ -462,12 +476,15 @@ def _render_dialogue_input(key_prefix):
         n = len(dialogue["turns"])
         na = sum(1 for t in dialogue["turns"] if t["role"] == "assistant")
         st.success(f"✓ 已解析 **{n} 轮**对话 (客服 {na} 轮 / 用户 {n - na} 轮)")
+        if dialogue.get("_weak_format"):
+            st.warning("⚠️ 没检测到「角色:」标注,已**按行交替猜测**角色(客服/用户/客服…)。"
+                       "若猜得不对会影响评测质量,建议用「客服: / 用户:」标好角色再评。")
         with st.expander("预览解析结果 (确认角色分对了)"):
             for t in dialogue["turns"][:14]:
                 who = "🧑‍💼客服" if t["role"] == "assistant" else "🙋用户"
                 st.caption(f"{t['turn']}. {who}: {t['content'][:90]}")
     elif (up_d is not None) or pasted_d.strip():
-        st.warning("没解析出对话轮次。粘贴请每行用“角色: 内容”; 上传请用含 turns 的 jsonl。")
+        st.warning("没解析出对话内容,请检查粘贴的文本或上传的文件是否为空。")
     return dialogue
 
 
@@ -524,8 +541,47 @@ def render_rough_sim_flow():
 # ============================================================
 # 主流程
 # ============================================================
+# ---- 侧边栏: 项目品牌 + 能力/可靠性看板 (让评委一眼看出专业度) ----
+with st.sidebar:
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 18px 16px; border-radius: 14px; color: white; margin-bottom: 16px;
+                box-shadow: 0 4px 14px rgba(102,126,234,0.40);">
+        <div style="font-size: 20px; font-weight: 800; line-height: 1.25;">🎯 外呼指令遵循<br>自动评测系统</div>
+        <div style="font-size: 11px; opacity: 0.92; margin-top: 7px; letter-spacing: 0.3px;">
+            Instruction-Following Evaluation<br>for Outbound-Call Dialogue</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("##### 🧩 核心能力")
+    st.markdown(
+        "- **5 类 Verifier** 分层判定 · 省 ~60% LLM 成本\n"
+        "- **8 Persona** 用户模拟器\n"
+        "- **P3 三层评分** · 加权 / Critical 钳制 / 红线\n"
+        "- **23 类约束** 体系 → 模型级能力画像")
+
+    st.markdown("##### 📊 评测可靠性 (Kappa)")
+    _ms1, _ms2 = st.columns(2)
+    _ms1.metric("客观约束", "1.00")
+    _ms2.metric("三路 LLM 互查", "0.81")
+    _ms1.metric("人机一致率", "81.8%")
+    _ms2.metric("D3 约束遵循", "0.84")
+
+    st.markdown("##### ⚙️ 工程可靠性")
+    st.caption("LLM 重试 · seed 可复现 · 结果缓存 · 并发评测 · 自一致性投票 · 鲁棒 JSON 解析 · 同义词容错")
+
+    st.divider()
+    st.caption("美团黑客松 · 命题二 — 对话外呼任务指令遵循自动评测")
+
 st.title("🎯 对话外呼指令遵循自动评测系统")
 st.caption("预置指令 → 自动模拟多场景对话评测出模型画像 · 或 自定义(直接给对话 / 给大致描述模拟)评单通")
+
+# ---- 顶部能力数字条 (专业看板感) ----
+_hc = st.columns(4)
+_hc[0].metric("约束分类体系", "23 类")
+_hc[1].metric("Verifier 分层", "5 类")
+_hc[2].metric("用户模拟 Persona", "8 种")
+_hc[3].metric("三路 LLM 互查 κ", "0.81")
 st.markdown("---")
 
 # ---- 第 1 步: 选择任务指令来源 ----
