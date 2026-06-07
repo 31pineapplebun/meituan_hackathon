@@ -16,9 +16,12 @@ import tempfile
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(Path(__file__).parent))   # 本目录: 供 import _theme
 sys.path.insert(0, str(PROJECT_ROOT / "08_parser"))
 sys.path.insert(0, str(PROJECT_ROOT / "09_pipeline"))
 sys.path.insert(0, str(PROJECT_ROOT / "07_simulator"))
+
+import _theme  # 共享主题(配色/CSS/侧边栏/页眉单一来源)
 
 # verifier 的 mock 开关在 verifier 模块 import 时被读取(USE_MOCK 常量), 之后改不动。
 # 这里在任何 verifier 被 import 前定个稳健默认: 有 key → 真实判定, 无 key → mock 预览。
@@ -35,37 +38,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.markdown("""
-<style>
-    /* ===== 全局: 系统字体 + 浅灰底, 收窄内容宽度增加留白 ===== */
-    html, body, [class*="css"] {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-                     "Microsoft YaHei", "Source Han Sans SC", sans-serif;
-    }
-    [data-testid="stAppViewContainer"] { background: #f6f7f9; }
-    .block-container { padding-top: 2.0rem; padding-bottom: 3rem; max-width: 1080px; }
-    h1, h2, h3, h4, h5 { color: #1a2233; letter-spacing: -0.2px; }
-    hr { margin: 1.1rem 0; border-color: #e8ebf0; }
-
-    /* ===== 侧边栏: 干净浅色 + 细分隔线 ===== */
-    section[data-testid="stSidebar"] { background: #ffffff; border-right: 1px solid #eceff3; }
-
-    /* ===== Metric: 深蓝数字 + 灰标签 ===== */
-    [data-testid="stMetricValue"] { font-size: 24px; font-weight: 800; color: #1a2233; }
-    [data-testid="stMetricLabel"] { color: #6b7585; font-weight: 600; }
-
-    /* ===== 主按钮: 深蓝(替换默认红, 去"默认感") ===== */
-    .stButton > button[kind="primary"], button[data-testid="baseButton-primary"] {
-        background: #1a2233; color: #ffffff; border: none; border-radius: 10px;
-        font-weight: 600; letter-spacing: 0.3px; box-shadow: 0 2px 10px rgba(26,34,51,0.20);
-    }
-    .stButton > button[kind="primary"]:hover, button[data-testid="baseButton-primary"]:hover {
-        background: #2a3650; color: #ffffff;
-    }
-    .stButton > button { border-radius: 10px; }
-    [data-testid="stExpander"] { border: 1px solid #eceff3; border-radius: 12px; }
-</style>
-""", unsafe_allow_html=True)
+_theme.inject_theme()
 
 
 # ============================================================
@@ -562,49 +535,13 @@ def render_rough_sim_flow():
 # ============================================================
 # 主流程
 # ============================================================
-# ---- 侧边栏: 极简高级品牌看板 (留白 + 细金线 + 克制配色, 无渐变) ----
-with st.sidebar:
-    st.markdown("""
-    <div style="padding: 4px 2px;">
-      <div style="height:3px;width:40px;background:#b8860b;border-radius:2px;margin-bottom:16px;"></div>
-      <div style="font-size:17px;font-weight:700;color:#1a2233;line-height:1.35;">外呼指令遵循<br>评测系统</div>
-      <div style="font-size:10px;color:#9aa3b2;letter-spacing:1.8px;margin-top:7px;">INSTRUCTION-FOLLOWING&nbsp;EVAL</div>
+# ---- 侧边栏: 极简高级品牌看板 (共享主题) ----
+_theme.render_sidebar_brand()
 
-      <div style="margin-top:28px;font-size:11px;color:#9aa3b2;letter-spacing:2px;font-weight:600;">核心能力</div>
-      <div style="margin-top:10px;color:#3d4759;font-size:13px;line-height:2.05;">
-        5 类 Verifier 分层判定<br>
-        8 Persona 用户模拟<br>
-        P3 三层评分 · 模型画像<br>
-        23 类约束体系
-      </div>
-
-      <div style="margin-top:28px;font-size:11px;color:#9aa3b2;letter-spacing:2px;font-weight:600;">评测可靠性</div>
-      <div style="margin-top:12px;display:flex;gap:24px;">
-        <div>
-          <div style="font-size:24px;font-weight:800;color:#1a2233;line-height:1;">0.81</div>
-          <div style="font-size:11px;color:#9aa3b2;margin-top:4px;">三路 LLM&nbsp;κ</div>
-        </div>
-        <div>
-          <div style="font-size:24px;font-weight:800;color:#1a2233;line-height:1;">81.8%</div>
-          <div style="font-size:11px;color:#9aa3b2;margin-top:4px;">人机一致率</div>
-        </div>
-      </div>
-
-      <div style="margin-top:32px;padding-top:14px;border-top:1px solid #e8ebf0;
-                  font-size:11px;color:#aab2c0;letter-spacing:0.3px;">美团黑客松 · 命题二</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-# ---- 主页 Hero: 克制排版(细金线 + 无渐变) ----
-st.markdown("""
-<div style="padding: 6px 0 2px;">
-  <div style="height:3px;width:52px;background:#b8860b;border-radius:2px;margin-bottom:14px;"></div>
-  <div style="font-size:30px;font-weight:800;color:#1a2233;letter-spacing:-0.6px;line-height:1.2;">
-    对话外呼指令遵循 · 自动评测系统</div>
-  <div style="font-size:14px;color:#6b7585;margin-top:9px;">
-    输入任务指令或对话 &nbsp;→&nbsp; 自动模拟 / 评测 &nbsp;→&nbsp; 可解释的模型能力画像</div>
-</div>
-""", unsafe_allow_html=True)
+# ---- 主页 Hero (共享主题) ----
+_theme.render_page_header(
+    "对话外呼指令遵循 · 自动评测系统",
+    "输入任务指令或对话 &nbsp;→&nbsp; 自动模拟 / 评测 &nbsp;→&nbsp; 可解释的模型能力画像")
 
 # ---- 能力数字条: 干净白卡 ----
 st.markdown("""

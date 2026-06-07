@@ -1,10 +1,16 @@
 """关于 - 技术原理 + 可靠性数据"""
 import streamlit as st
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _theme
 
 st.set_page_config(page_title="关于", page_icon="📖", layout="wide")
+_theme.inject_theme()
+_theme.render_sidebar_brand()
 
-st.title("📖 关于本系统")
-st.caption("技术原理 · 评测可靠性 · 数据来源")
+_theme.render_page_header("关于本系统", "技术原理 · 评测可靠性 · 数据来源")
 st.markdown("---")
 
 st.markdown("""

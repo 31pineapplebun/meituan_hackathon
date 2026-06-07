@@ -5,8 +5,15 @@
 """
 import streamlit as st
 import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _theme
 
 st.set_page_config(page_title="单通详查", page_icon="📂", layout="wide")
+_theme.inject_theme()
+_theme.render_sidebar_brand()
 
 PERSONAS = {
     "cooperative": "🤝 合作型", "adversarial": "⚔️ 对抗型",
@@ -15,8 +22,7 @@ PERSONAS = {
     "ambiguous": "🤔 模糊型", "probing": "❓ 提问型",
 }
 
-st.title("📂 单通对话详查")
-st.caption("查看某一通对话的完整内容 + 逐约束判定 + 证据")
+_theme.render_page_header("单通对话详查", "查看某一通对话的完整内容 · 逐约束判定 · 证据")
 st.markdown("---")
 
 dialogues = st.session_state.get("detail_dialogues", [])
