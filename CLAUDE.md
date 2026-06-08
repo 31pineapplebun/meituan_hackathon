@@ -80,8 +80,8 @@ meituan_eval/
 └── 10_streamlit_app/
     ├── app.py                   # ⭐一站式主页 (选指令→选模型→评测→画像)
     └── pages/
-        ├── 1_📂_单通详查.py      #   看某通对话逐约束判定
-        └── 2_📖_关于.py          #   技术原理 + kappa 数据
+        ├── 1_dialogue_detail.py      #   看某通对话逐约束判定
+        └── 2_about.py          #   技术原理 + kappa 数据
 ```
 
 ---

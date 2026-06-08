@@ -230,7 +230,7 @@ def render_model_report(report):
             mime="application/json", use_container_width=True)
     with col2:
         st.session_state["detail_dialogues"] = report.get("per_dialogue_results", [])
-        st.page_link("pages/1_📂_单通详查.py", label="📂 查看某一通对话的细节 →", use_container_width=True)
+        st.page_link("pages/1_dialogue_detail.py", label="📂 查看某一通对话的细节 →", use_container_width=True)
 
 
 # ============================================================

@@ -24,6 +24,8 @@ THEME_CSS = """
 
     /* ===== 侧边栏: 干净浅色 + 细分隔线 ===== */
     section[data-testid="stSidebar"] { background: #ffffff; border-right: 1px solid #eceff3; }
+    /* 隐藏默认多页自动导航(页面文件名改 ASCII 后会显示英文), 改用品牌区中文 page_link 导航 */
+    [data-testid="stSidebarNav"] { display: none; }
 
     /* ===== Metric: 深蓝数字 + 灰标签 ===== */
     [data-testid="stMetricValue"] { font-size: 24px; font-weight: 800; color: #1a2233; }
@@ -80,8 +82,15 @@ def inject_theme():
 
 
 def render_sidebar_brand():
-    """渲染侧边栏极简品牌看板。"""
+    """渲染侧边栏品牌看板 + 中文页面导航(替代被 CSS 隐藏的默认英文自动导航)。
+
+    页面文件名为纯 ASCII(跨平台部署稳定); 这里用 page_link 的中文 label 还原中文导航,
+    label 仅作显示、不参与文件查找, 故不受文件名编码影响。
+    """
     with st.sidebar:
+        st.page_link("app.py", label="🎯 评测主页")
+        st.page_link("pages/1_dialogue_detail.py", label="📂 单通详查")
+        st.page_link("pages/2_about.py", label="📖 关于")
         st.markdown(SIDEBAR_BRAND, unsafe_allow_html=True)
 
 
