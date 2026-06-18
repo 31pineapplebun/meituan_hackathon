@@ -1,0 +1,41 @@
+.wrap { display: flex; flex-direction: column; gap: 16px; margin-top: 18px; }
+
+.head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.meta { font-size: 13px; color: var(--muted); }
+.btn {
+  padding: 8px 16px;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.btn:hover { border-color: var(--brand); }
+
+.note {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.cardTitle { font-size: 15px; margin: 0 0 12px; }
+
+.stats { display: flex; gap: 14px; font-size: 14px; margin-bottom: 12px; color: var(--muted); }
+.pass { color: #166534; font-weight: 600; }
+.fail { color: #b91c1c; font-weight: 600; }
+.na { color: #475569; }
+
+@media (max-width: 760px) {
+  .grid2 { grid-template-columns: 1fr; }
+}

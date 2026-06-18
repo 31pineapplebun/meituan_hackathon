@@ -1,0 +1,21 @@
+.table { font-size: 14px; }
+.table th,
+.table td {
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.table th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 13px;
+}
+.num { text-align: right; }
+.mono { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 13px; }
+.rate { color: #dc2626; font-weight: 700; }
+.empty {
+  padding: 18px;
+  color: var(--muted);
+  background: #f0fdf4;
+  border-radius: 10px;
+}

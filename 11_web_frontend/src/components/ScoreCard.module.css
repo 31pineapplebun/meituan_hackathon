@@ -1,0 +1,30 @@
+.card {
+  border-radius: 16px;
+  padding: 28px 32px;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.scoreRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.score { font-size: 64px; font-weight: 800; line-height: 1; }
+.outOf { font-size: 20px; opacity: 0.85; }
+.grade {
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 4px 16px;
+  border-radius: 999px;
+}
+.diagnosis {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
