@@ -1,0 +1,31 @@
+.list { display: flex; flex-direction: column; gap: 12px; }
+
+.row {
+  display: grid;
+  grid-template-columns: 130px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+}
+.name { font-size: 14px; }
+.track {
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+.score { font-weight: 700; text-align: right; font-size: 14px; }
+
+.clickable {
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px 6px;
+  margin: 0 -6px;
+  transition: background 0.12s;
+}
+.clickable:hover { background: #f3f4fd; }
+.clickable:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }

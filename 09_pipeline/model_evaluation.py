@@ -264,7 +264,7 @@ def run_full_evaluation(
                 "dialogue_id": dialogue_id,
                 "persona_id": persona_id,
                 "error": str(e),
-                "score_report": {"final_score": 0, "dim_scores": {}},
+                "score_report": {"final_score": None, "evaluable": False, "dim_scores": {}},
                 "verdict_details": [],
                 "n_turns": 0,
             })
@@ -290,7 +290,7 @@ def run_full_evaluation(
                 "dialogue_id": dialogue_id,
                 "persona_id": persona_id,
                 "error": str(e),
-                "score_report": {"final_score": 0, "dim_scores": {}},
+                "score_report": {"final_score": None, "evaluable": False, "dim_scores": {}},
                 "verdict_details": [],
                 "n_turns": len(dlg_dict.get("turns", [])),
             })

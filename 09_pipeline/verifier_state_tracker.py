@@ -41,13 +41,15 @@ STOPWORDS = {
 
 # 同义词组: 解决"约束说告知, 模型说通知/跟您说"的字面匹配冤案
 # 每组内任一词出现, 都算命中该组里的任意关键词
+# 注: 已剔除"您看/是不是/对吗/我们的/您可以/操作"等【超通用词】——它们几乎在任何
+# 客服话术里必现, 作同义词会让动作动词被套话假命中(把没执行的步骤误判为覆盖)。
 SYNONYM_GROUPS = [
-    {"告知", "通知", "告诉", "跟您说", "跟你说", "和您说", "说一下", "看到您", "提到", "讲"},
-    {"询问", "问", "请问", "想问", "了解一下", "您看"},
+    {"告知", "通知", "告诉", "跟您说", "跟你说", "和您说", "说一下", "提到", "讲"},
+    {"询问", "问", "请问", "想问", "了解一下"},
     {"提醒", "提示", "记得", "别忘", "注意", "务必"},
-    {"确认", "核实", "对一下", "确定", "是不是", "对吗"},
-    {"说明", "解释", "介绍", "讲解", "阐述", "我们的"},
-    {"引导", "带您", "帮您", "协助", "您可以", "操作"},
+    {"确认", "核实", "对一下", "确定"},
+    {"说明", "解释", "介绍", "讲解", "阐述"},
+    {"引导", "带您", "帮您", "协助"},
     {"记录", "登记", "记下", "标记", "备注"},
     {"取消", "撤销", "退掉", "关闭"},
     {"结束", "再见", "挂了", "祝您", "辛苦了", "就这样"},
@@ -62,6 +64,13 @@ ACTION_VERBS = [
     "告知", "通知", "提醒", "询问", "问", "确认", "核实", "说明", "解释",
     "强调", "引导", "记录", "提供", "传达", "介绍", "祝", "结束", "拒绝",
 ]
+
+# 通用角色名词: 几乎每通外呼都会提到, 不锁定"这一步到底讲了什么内容"。
+# 一个 step 的关键词若【只剩 动作词 + 角色词】(没有具体业务名词如 合同/培训/费用),
+# 关键词匹配无法可靠判定它是否真被执行 → 当作不可靠, 交 LLM 语义兜底(见 verify_state_tracker)。
+GENERIC_NOUNS = {
+    "骑手", "商家", "客服", "站长", "负责人", "用户", "客户", "师傅", "老板", "对方", "您", "你",
+}
 
 
 def _kw_in_text(kw: str, text: str) -> bool:
@@ -285,7 +294,10 @@ def verify_state_tracker(constraint: dict, dialogue: dict, instruction: dict) ->
 
     is_branch = is_branch_constraint(constraint)
     keywords = extract_step_keywords(constraint)
-    meta_only = bool(keywords) and all(kw in ACTION_VERBS for kw in keywords)
+    # 低信息量保护: 关键词若只剩【动作词 / 通用角色词】、没有具体业务名词(合同/培训/费用…),
+    # 关键词匹配无法可靠判定该步是否真被执行 → 不走免 LLM 的高置信 pass, 交 LLM 语义兜底。
+    # (修复: 旧版只判"纯动作词", 漏了 [告知,询问,骑手] 这类"动作词+角色词", 会被套话假命中虚高给分)
+    meta_only = bool(keywords) and all((kw in ACTION_VERBS or kw in GENERIC_NOUNS) for kw in keywords)
 
     fallthrough_cause = None  # 真实模式下从路径 A 落到 LLM 兜底时记录原因
 
@@ -337,7 +349,7 @@ def verify_state_tracker(constraint: dict, dialogue: dict, instruction: dict) ->
     elif is_branch:
         cause = "分支型step"
     elif meta_only:
-        cause = f"关键词退化为纯动作词{keywords}"
+        cause = f"关键词无具体业务名词(仅动作/角色词){keywords}"
     elif not keywords:
         cause = "无法抽取关键词"
     else:
@@ -531,6 +543,30 @@ def _test():
         tests_passed += 1
     else:
         print(f"  ✗ 期望 pass + '全覆盖'")
+
+    # Test 8: 动作词+角色词、无具体业务名词 → 不可走免LLM假pass (mock 下 not_implemented)
+    # 防回归: [告知,询问,问,骑手] 这类, 助手只说套话('我跟您说...您看...骑手')不应被误判 pass。
+    tests_total += 1
+    os.environ["VERIFIER_LLM_MOCK"] = "1"
+    low_sig = {
+        "id": "TEST_LOWSIG",
+        "name": "S1 告知骑手合同已生效，并询问是否可以开始配送",
+        "verifier": "state_tracker",
+        "source_text": "告知骑手合同已生效，并询问是否可以开始配送",
+        "is_critical": True,
+    }
+    kws8 = extract_step_keywords(low_sig)
+    r8 = verify_state_tracker(low_sig, {"turns": [
+        {"role": "assistant", "turn": 1, "content": "骑手师傅您好，跑单路上注意安全，我跟您说慢点开。"},
+    ]}, {})
+    print(f"\nTest 8 (动作词+角色词无业务名词 → 不假pass):")
+    print(f"  关键词: {kws8}")
+    print(f"  verdict: {r8.verdict}  reason: {r8.reason[:50]}")
+    if r8.verdict == "not_implemented":
+        print(f"  ✓ Pass (套话未覆盖步骤内容 → mock 下 not_implemented, 不再虚高pass)")
+        tests_passed += 1
+    else:
+        print(f"  ✗ 期望 not_implemented(不应被套话假命中判 pass)")
 
     print()
     if tests_passed == tests_total:

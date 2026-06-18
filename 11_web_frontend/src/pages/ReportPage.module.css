@@ -1,0 +1,55 @@
+.page { display: flex; flex-direction: column; gap: 18px; }
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.title { font-size: 22px; margin: 0 0 4px; }
+.meta { color: var(--muted); font-size: 13px; }
+
+.btn {
+  padding: 9px 18px;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.btn:hover { border-color: var(--brand); }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.cardTitle { font-size: 15px; margin: 0 0 12px; }
+.hint { margin-top: 10px; font-size: 12px; color: var(--muted); text-align: right; }
+.muted { color: var(--muted); padding: 30px 0; text-align: center; }
+
+.empty,
+.errorBox {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+}
+.errorBox { border-color: #fecaca; }
+.errorBox p { color: #b91c1c; }
+.empty .btn,
+.errorBox .btn {
+  margin-top: 14px;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+}
+
+@media (max-width: 760px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .head { flex-direction: column; }
+}

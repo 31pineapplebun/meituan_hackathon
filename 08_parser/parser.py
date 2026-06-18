@@ -42,7 +42,9 @@ def extract_section(text: str, section_name: str) -> str:
     - # Section (FAQ) (官方 sample 1 的 'Knowledge Points (FAQ)')
     """
     # header 后允许有 : 或括号说明, 但不允许有其他文字直接跟在 section_name 后
-    pattern = rf"^#{{1,3}}\s*{re.escape(section_name)}\s*[:\:]?\s*\n+(.+?)(?=\n#[^#]|\Z)"
+    # 结束边界: 任意级别(# ~ ######)的 markdown 标题, 或文末。
+    # (旧版 (?=\n#[^#]) 只认单级 #, 导致用 ## / ### 写的指令里 Constraints 段贪婪吞掉后续 FAQ/Call Flow)
+    pattern = rf"^#{{1,3}}\s*{re.escape(section_name)}\s*[:\:]?\s*\n+(.+?)(?=\n#{{1,6}}\s|\Z)"
     match = re.search(pattern, text, re.DOTALL | re.IGNORECASE | re.MULTILINE)
     return match.group(1).strip() if match else ""
 

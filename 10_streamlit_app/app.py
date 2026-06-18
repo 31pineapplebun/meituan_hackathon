@@ -230,7 +230,7 @@ def render_model_report(report):
             mime="application/json", use_container_width=True)
     with col2:
         st.session_state["detail_dialogues"] = report.get("per_dialogue_results", [])
-        st.page_link("pages/1_📂_单通详查.py", label="📂 查看某一通对话的细节 →", use_container_width=True)
+        st.page_link("pages/1_dialogue_detail.py", label="📂 查看某一通对话的细节 →", use_container_width=True)
 
 
 # ============================================================
@@ -421,11 +421,14 @@ def _simulate_dialogue_from_prompt(prompt_text, model="deepseek-v4-flash"):
     return {"dialogue_id": "simulated_from_prompt", "turns": norm} if norm else None
 
 
-def _eval_single_dialogue(dialogue, instruction, rubric_label, status_box=None):
-    """对一通对话跑 run_pipeline 并存结果到 session(自定义对话/大致描述共用)。"""
+def _eval_single_dialogue(dialogue, instruction, rubric_label, source, status_box=None):
+    """对一通对话跑 run_pipeline 并存结果到 session(自定义对话/大致描述共用)。
+    source: 来源标识('cd'/'rs'), 渲染时据此校验, 避免切换子选项后展示另一流程的旧结果。"""
     has_key = bool(os.getenv("DEEPSEEK_API_KEY"))
     os.environ["VERIFIER_LLM_MOCK"] = "0" if has_key else "1"
-    os.environ.setdefault("VERIFIER_LLM_MODEL", "deepseek-v4-flash")
+    # 显式赋值(非 setdefault): 强制单通/大致描述路径用 DeepSeek 判官, 不被前次"评模型"
+    # (可能选了 GPT)残留在 env 里的 VERIFIER_LLM_MODEL 污染 → 否则缺 OPENAI_API_KEY 会 error。
+    os.environ["VERIFIER_LLM_MODEL"] = "deepseek-v4-flash"
     if not has_key:
         st.warning("未检测到 DEEPSEEK_API_KEY → mock 预览: 通用约束(llm_judge)多会显示“未判定”。"
                    "设好 key 再重跑可拿到完整逐约束判定。")
@@ -436,6 +439,7 @@ def _eval_single_dialogue(dialogue, instruction, rubric_label, status_box=None):
         st.session_state["sd_output"] = output
         st.session_state["sd_rubric_label"] = rubric_label
         st.session_state["sd_dialogue"] = dialogue
+        st.session_state["sd_source"] = source
         if status_box is not None:
             status_box.update(label=f"✅ 完成 · 用时 {int(time.time() - t0)}s", state="complete", expanded=False)
     except Exception as e:
@@ -494,8 +498,8 @@ def render_custom_dialogue_flow():
             st.error("请先给一通可解析的对话。")
             return
         with st.status("正在逐约束评测这通对话…", expanded=True) as box:
-            _eval_single_dialogue(dialogue, _load_generic_rubric(), "内置通用外呼质检标准", status_box=box)
-    if "sd_output" in st.session_state:
+            _eval_single_dialogue(dialogue, _load_generic_rubric(), "内置通用外呼质检标准", "cd", status_box=box)
+    if "sd_output" in st.session_state and st.session_state.get("sd_source") == "cd":
         render_single_dialogue(st.session_state["sd_output"],
                                st.session_state.get("sd_rubric_label", ""),
                                st.session_state.get("sd_dialogue", {}))
@@ -517,7 +521,7 @@ def render_rough_sim_flow():
                      "请在启动 streamlit 的终端设好 key 再重跑。")
             return
         os.environ["VERIFIER_LLM_MOCK"] = "0"
-        os.environ.setdefault("VERIFIER_LLM_MODEL", "deepseek-v4-flash")
+        os.environ["VERIFIER_LLM_MODEL"] = "deepseek-v4-flash"   # 显式: 模拟+判官都用 DeepSeek
         with st.status("正在根据描述模拟对话…", expanded=True) as box:
             dialogue = _simulate_dialogue_from_prompt(prompt_text)
             if not (dialogue and dialogue.get("turns")):
@@ -525,8 +529,8 @@ def render_rough_sim_flow():
                 st.error("没能生成对话, 请换个描述或检查 key/网络。")
                 return
             st.write(f"✓ 已模拟 {len(dialogue['turns'])} 轮对话, 开始逐约束评测…")
-            _eval_single_dialogue(dialogue, _load_generic_rubric(), "内置通用外呼质检标准", status_box=box)
-    if "sd_output" in st.session_state:
+            _eval_single_dialogue(dialogue, _load_generic_rubric(), "内置通用外呼质检标准", "rs", status_box=box)
+    if "sd_output" in st.session_state and st.session_state.get("sd_source") == "rs":
         render_single_dialogue(st.session_state["sd_output"],
                                st.session_state.get("sd_rubric_label", ""),
                                st.session_state.get("sd_dialogue", {}))
@@ -750,15 +754,21 @@ if run_clicked:
                         st.warning(f"⚠️ 快速演示只含 4 个核心场景的真实数据。"
                                    f"勾选的 [{miss_names}] 无预置数据,已跳过。"
                                    f"如需评测这些场景,请用 **完整运行** 模式真跑。")
-                    # 按匹配到的场景筛选 (若一个都没匹配, 用全部预置场景兜底)
-                    use = matched if matched else avail
-                    report["per_dialogue_results"] = [
-                        r for r in report["per_dialogue_results"]
-                        if r.get("persona_id") in use]
-                    from model_evaluation import aggregate_model_report
-                    report = aggregate_model_report(report["instruction_name"],
-                                                     report["model_name"],
-                                                     report["per_dialogue_results"])
+                    if not matched:
+                        # 一个匹配的预置场景都没有 → 不再用全部场景兜底(那会与上面"已跳过"自相矛盾),
+                        # 直接给明确提示, 不展示误导性画像。
+                        report = {"error": "⚠️ 你勾选的场景都没有预置数据,快速演示无法展示。"
+                                  "请改用 🔬 完整运行 真跑这些场景,或在 ⚙️ 设置里至少勾选一个核心场景"
+                                  "(合作型 / 越界型 / 坚持拒绝型 / 打断型)。"}
+                    else:
+                        # 只聚合勾选且有预置数据的场景, 与提示一致
+                        report["per_dialogue_results"] = [
+                            r for r in report["per_dialogue_results"]
+                            if r.get("persona_id") in matched]
+                        from model_evaluation import aggregate_model_report
+                        report = aggregate_model_report(report["instruction_name"],
+                                                         report["model_name"],
+                                                         report["per_dialogue_results"])
             st.session_state["me_model_report"] = report
             st.session_state["me_report_sig"] = (instr_name, tested_model,
                                                  tuple(sorted(selected_personas)), is_fast)

@@ -1,0 +1,45 @@
+.app {
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: var(--card);
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo { font-size: 28px; }
+.title { font-size: 18px; font-weight: 700; color: var(--ink); }
+.subtitle { font-size: 12px; color: var(--muted); }
+
+.nav { display: flex; gap: 8px; }
+.navItem {
+  padding: 6px 16px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .15s, color .15s;
+}
+.navItem:hover { background: #eef0f6; }
+.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}

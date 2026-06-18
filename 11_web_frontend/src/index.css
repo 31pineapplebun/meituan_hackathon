@@ -1,0 +1,26 @@
+:root {
+  --ink: #1a2233;        /* 主文字 / 深蓝 */
+  --gold: #b8860b;       /* 金色点缀 */
+  --bg: #f6f7f9;         /* 页面背景 */
+  --card: #ffffff;
+  --border: #e6e8ee;
+  --muted: #64748b;
+  --brand: #667eea;      /* 品牌紫(雷达 / 卡片渐变) */
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { color: var(--ink); margin: 0 0 .6em; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+table { border-collapse: collapse; width: 100%; }

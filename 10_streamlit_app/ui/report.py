@@ -124,5 +124,5 @@ def render_model_report(st, report):
             use_container_width=True,
         )
     with col2:
-        st.page_link("pages/1_📂_单通详查.py", label="📂 查看某一通对话的细节 →", use_container_width=True)
+        st.page_link("pages/1_dialogue_detail.py", label="📂 查看某一通对话的细节 →", use_container_width=True)
 

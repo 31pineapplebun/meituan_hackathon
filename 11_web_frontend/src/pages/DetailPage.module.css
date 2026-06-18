@@ -1,0 +1,88 @@
+.page { display: flex; flex-direction: column; gap: 18px; }
+
+.head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.title { font-size: 22px; margin: 0; }
+.picker {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  color: var(--ink);
+  min-width: 280px;
+}
+
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.metric {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.mLabel { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.mValue { font-size: 30px; font-weight: 800; line-height: 1.1; }
+.mValueSm { font-size: 17px; font-weight: 700; }
+
+.redline {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.cardTitle { font-size: 15px; margin: 0 0 12px; }
+
+.suggestions { display: flex; flex-direction: column; gap: 8px; }
+.sugg { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+.sugg summary { cursor: pointer; display: flex; gap: 8px; align-items: center; }
+.suggHead { font-size: 14px; }
+.prio {
+  font-size: 11px;
+  font-weight: 700;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 1px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.suggBody { font-size: 14px; margin: 10px 0 0; }
+.example {
+  background: #f6f7f9;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  margin: 10px 0 0;
+}
+
+.empty {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+}
+.btn {
+  margin-top: 14px;
+  padding: 10px 22px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ink);
+  border: none;
+  border-radius: 8px;
+}
+
+@media (max-width: 760px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .grid2 { grid-template-columns: 1fr; }
+}

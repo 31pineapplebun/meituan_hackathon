@@ -206,8 +206,8 @@ meituan_eval/
 └── 10_streamlit_app/           # Streamlit UI (单页主流程 + 2 子页)
     ├── app.py
     └── pages/
-        ├── 1_📂_单通详查.py
-        └── 2_📖_关于.py
+        ├── 1_dialogue_detail.py
+        └── 2_about.py
 ```
 
 ---

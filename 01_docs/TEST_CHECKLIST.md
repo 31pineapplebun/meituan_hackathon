@@ -22,11 +22,11 @@ bash scripts/run_all_tests.sh
 - 快速演示模式秒级产出能力画像
 - 完整运行模式在缺 key 时给出明确提示
 
-### 2.2 单通详查页 (`pages/1_📂_单通详查.py`)
+### 2.2 单通详查页 (`pages/1_dialogue_detail.py`)
 - 可从主页跳转并看到逐约束 verdict 与 evidence
 - 切换不同 persona 对话时数据刷新正确
 
-### 2.3 关于页 (`pages/2_📖_关于.py`)
+### 2.3 关于页 (`pages/2_about.py`)
 - 关键可靠性指标与技术说明正常展示
 
 ## 3) 数据完整性（必跑）
